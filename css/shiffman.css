@@ -1,0 +1,104 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: "Source Sans Pro", Helvetica, Verdana, Arial, sans-serif;
+  font-size: 100%; /* 16px */
+  line-height: 1.618em; /* */
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+header h1 {
+  font-size: 3em;
+  line-height: 1.8em;
+  margin: 0.5em 0;
+  text-align: center;
+  font-weight: 300;
+}
+
+#wrapper {
+  margin: 0 auto;
+  width: 43.75em;
+}
+
+/* NAVIGATION */
+nav {
+  font-family: "Droid Serif";
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  padding: 0.75em 0;
+  margin: 0.5em 0;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 0.5em;
+}
+
+nav a {
+  color: red;
+  text-decoration: none;
+}
+
+.blurb-pair {
+  margin-left: -1%;
+  margin-right: -1%;
+  position: relative;
+  height: 200px;
+}
+
+.blurb {
+  background-color: #efefef;
+  float: left;
+  padding: 1em;
+  width: 48%;
+  margin: 1%;
+  height: 100%;
+  position: relative;
+}
+
+.blurb.white {
+  color: white;
+}
+
+.blurb-text {
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+  right: 1em;
+}
+
+.blurb h1 {
+  font-weight: normal;
+  font-size: 1.618em;
+  margin: 0 0 0.5em;
+}
+
+.blurb a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.blurb .content {
+  font-size: 0.9em;
+  line-height: 1.2em;
+}
+
+.blurb.white .content {
+  font-weight: 300;
+}

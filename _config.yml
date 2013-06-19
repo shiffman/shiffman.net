@@ -1,0 +1,8 @@
+markdown: rdiscount
+pygments: true
+permalink: /:year/:month/:day/:title
+name: Daniel Shiffman
+url: http://shiffman.net
+future: false
+paginate: 5
+paginate_path: "/blog/:num"
