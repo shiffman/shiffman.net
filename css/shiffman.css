@@ -5,11 +5,22 @@
 }
 
 html, body {
+  background-color: #fff;
   font-family: "Source Sans Pro", Helvetica, Verdana, Arial, sans-serif;
   font-size: 100%; /* 16px */
   line-height: 1.618em; /* */
   margin: 0;
   padding: 0;
+}
+
+a {
+  color: #FF177A;
+  text-decoration: none;
+}
+
+a:hover, a:focus, a:active,
+nav a:hover, nav a:focus, nav a:active {
+  color: #0798F2;
 }
 
 img {
@@ -18,22 +29,39 @@ img {
 
 header h1 {
   font-size: 3em;
-  line-height: 1.8em;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  line-height: 1em;
   margin: 0.5em 0;
   text-align: center;
-  font-weight: 300;
+}
+
+header h1 a {
+  color: inherit;
+  text-decoration: none;
 }
 
 #wrapper {
+  clear: both;
   margin: 0 auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   width: 43.75em;
 }
 
-/* NAVIGATION */
+#wrapper.front-page {
+  margin-bottom: 4em;
+}
+
+/*
+ * Navigation
+ *
+ * Site navigation.
+ */
 nav {
-  font-family: "Droid Serif";
-  border-bottom: 1px solid #ccc;
-  border-top: 1px solid #ccc;
+  font-size: 0.9em;
+  border-bottom: 1px solid #B8D4F0;
+  border-top: 1px solid #B8D4F0;
   padding: 0.75em 0;
   margin: 0.5em 0;
 }
@@ -51,9 +79,35 @@ nav ul li {
 }
 
 nav a {
-  color: red;
+  color: #F6360C;
   text-decoration: none;
 }
+
+/*
+ * Simple Grid
+ *
+ *
+ */
+.left-half, .right-half {
+  /*float: left;*/
+  /*width: 48%;*/
+}
+
+.left-half {
+  /*padding-right: 1%;*/
+}
+
+.right-half {
+  /*padding-left: 1%;*/
+}
+
+/*
+ * Blurbs
+ *
+ * A section for the main page that works best in pairs. Big flat boxes with a
+ * title and description that are big links. Designed for links to Nature of
+ * Code and Learning Processing.
+ */
 
 .blurb-pair {
   margin-left: -1%;
@@ -65,7 +119,7 @@ nav a {
 .blurb {
   background-color: #efefef;
   float: left;
-  padding: 1em;
+  padding: 0;
   width: 48%;
   margin: 1%;
   height: 100%;
@@ -77,10 +131,11 @@ nav a {
 }
 
 .blurb-text {
+  padding: 0 1em 1em 1em;
   position: absolute;
-  bottom: 1em;
-  left: 1em;
-  right: 1em;
+  bottom: 0em;
+  left: 0em;
+  right: 0em;
 }
 
 .blurb h1 {
@@ -90,8 +145,15 @@ nav a {
 }
 
 .blurb a {
-  text-decoration: none;
   color: inherit;
+  display: block;
+  height: 100%;
+  text-decoration: none;
+}
+
+.blurb a:hover *,
+.blurb a:focus {
+  text-decoration: underline;
 }
 
 .blurb .content {
@@ -102,3 +164,158 @@ nav a {
 .blurb.white .content {
   font-weight: 300;
 }
+
+/*
+ * Footer
+ *
+ * Page footer, with links to Twitter, Github and maybe email. For all pages
+ * below the main page.
+ */
+
+footer {
+  line-height: 1.2em;
+  margin: 2em 0;
+  text-align: center;
+}
+
+footer, footer a {
+  color: #9C9B9B;
+}
+
+/*
+ * Post
+ *
+ * A blog post consisting of a Wrapper, Title, Date, Body, Comments
+ */
+
+.post {
+  border-bottom: 1px solid #B8D4F0;
+  margin: 2em 0 4em;
+  padding-bottom: 1em;
+}
+
+.post > h1 {
+  font-size: 3em;
+  line-height: 1.1em;
+  margin: 0.25em 0 0.5em;
+}
+
+.post > h1 a {
+  color: inherit;
+}
+
+.post > h1 a:hover,
+.post > h1 a:focus,
+.post > h1 a:active {
+  text-decoration: underline;
+}
+
+.post > h6 {
+  color: #9C9B9B;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1em;
+  margin: 0;
+  padding: 0;
+}
+
+.post .footer {
+  font-size: 0.9em;
+  padding: 1em 0;
+}
+
+.post .footer a {
+  color: #9C9B9B;
+}
+
+/*
+ * Code and Pre
+ *
+ * Formatting for <code> and <pre tags.
+ */
+
+pre, code {
+  font-family: "source code pro", monospace;
+  font-size: 0.95em;
+  line-height: 1.2em;
+}
+
+pre {
+  background-color: #efefef;
+  padding: 1em;
+}
+
+/*
+ * Pygments
+ * Modified from https://github.com/richleland/pygments-css
+ */
+
+.highlight .hll { background-color: #333333 }
+.highlight .c { color: #008800; font-style: italic; background-color: #dfdfdf } /* Comment */
+.highlight .err { color: #111111 } /* Error */
+.highlight .g { color: #111111 } /* Generic */
+.highlight .k { color: #fb660a; font-weight: bold } /* Keyword */
+.highlight .l { color: #111111 } /* Literal */
+.highlight .n { color: #111111 } /* Name */
+.highlight .o { color: #111111 } /* Operator */
+.highlight .x { color: #111111 } /* Other */
+.highlight .p { color: #111111 } /* Punctuation */
+.highlight .cm { color: #008800; font-style: italic; background-color: #dfdfdf } /* Comment.Multiline */
+.highlight .cp { color: #ff0007; font-weight: bold; font-style: italic; background-color: #dfdfdf } /* Comment.Preproc */
+.highlight .c1 { color: #008800; font-style: italic; background-color: #dfdfdf } /* Comment.Single */
+.highlight .cs { color: #008800; font-style: italic; background-color: #dfdfdf } /* Comment.Special */
+.highlight .gd { color: #111111 } /* Generic.Deleted */
+.highlight .ge { color: #111111 } /* Generic.Emph */
+.highlight .gr { color: #111111 } /* Generic.Error */
+.highlight .gh { color: #111111; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #111111 } /* Generic.Inserted */
+.highlight .go { color: #444444; background-color: #222222 } /* Generic.Output */
+.highlight .gp { color: #111111 } /* Generic.Prompt */
+.highlight .gs { color: #111111 } /* Generic.Strong */
+.highlight .gu { color: #111111; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #111111 } /* Generic.Traceback */
+.highlight .kc { color: #fb660a; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #fb660a; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #fb660a; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #fb660a } /* Keyword.Pseudo */
+.highlight .kr { color: #fb660a; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #cdcaa9; font-weight: bold } /* Keyword.Type */
+.highlight .ld { color: #111111 } /* Literal.Date */
+.highlight .m { color: #0086f7; font-weight: bold } /* Literal.Number */
+.highlight .s { color: #0086d2 } /* Literal.String */
+.highlight .na { color: #ff0086; font-weight: bold } /* Name.Attribute */
+.highlight .nb { color: #111111 } /* Name.Builtin */
+.highlight .nc { color: #111111 } /* Name.Class */
+.highlight .no { color: #0086d2 } /* Name.Constant */
+.highlight .nd { color: #111111 } /* Name.Decorator */
+.highlight .ni { color: #111111 } /* Name.Entity */
+.highlight .ne { color: #111111 } /* Name.Exception */
+.highlight .nf { color: #ff0086; font-weight: bold } /* Name.Function */
+.highlight .nl { color: #111111 } /* Name.Label */
+.highlight .nn { color: #111111 } /* Name.Namespace */
+.highlight .nx { color: #111111 } /* Name.Other */
+.highlight .py { color: #111111 } /* Name.Property */
+.highlight .nt { color: #fb660a; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #fb660a } /* Name.Variable */
+.highlight .ow { color: #111111 } /* Operator.Word */
+.highlight .w { color: #888888 } /* Text.Whitespace */
+.highlight .mf { color: #0086f7; font-weight: bold } /* Literal.Number.Float */
+.highlight .mh { color: #0086f7; font-weight: bold } /* Literal.Number.Hex */
+.highlight .mi { color: #0086f7; font-weight: bold } /* Literal.Number.Integer */
+.highlight .mo { color: #0086f7; font-weight: bold } /* Literal.Number.Oct */
+.highlight .sb { color: #0086d2 } /* Literal.String.Backtick */
+.highlight .sc { color: #0086d2 } /* Literal.String.Char */
+.highlight .sd { color: #0086d2 } /* Literal.String.Doc */
+.highlight .s2 { color: #0086d2 } /* Literal.String.Double */
+.highlight .se { color: #0086d2 } /* Literal.String.Escape */
+.highlight .sh { color: #0086d2 } /* Literal.String.Heredoc */
+.highlight .si { color: #0086d2 } /* Literal.String.Interpol */
+.highlight .sx { color: #0086d2 } /* Literal.String.Other */
+.highlight .sr { color: #0086d2 } /* Literal.String.Regex */
+.highlight .s1 { color: #0086d2 } /* Literal.String.Single */
+.highlight .ss { color: #0086d2 } /* Literal.String.Symbol */
+.highlight .bp { color: #111111 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #fb660a } /* Name.Variable.Class */
+.highlight .vg { color: #fb660a } /* Name.Variable.Global */
+.highlight .vi { color: #fb660a } /* Name.Variable.Instance */
+.highlight .il { color: #0086f7; font-weight: bold } /* Literal.Number.Integer.Long */

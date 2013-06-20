@@ -4,10 +4,12 @@ layout: default
 
 {% for post in paginator.posts %}
 <div class="post">
-  <h1>{{post.title}}</h1>
   <h6>{{post.date | date_to_string}}</h6>
+  <h1><a href="{{post.permalink}}">{{post.title}}</a></h1>
 
   <div class="post-content">{{post.content}}</div>
+
+  <div class="footer"><a href="{{post.permalink}}">Permalink</a></div>
 </div>
 {% endfor %}
 
