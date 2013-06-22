@@ -27,13 +27,16 @@ img {
   max-width: 100%;
 }
 
+p {
+  margin: 0 0 1em 0;
+}
+
 header h1 {
-  font-size: 3em;
+  font-size: 3.5em;
   font-weight: 300;
   letter-spacing: 0.06em;
   line-height: 1em;
-  margin: 0.5em 0;
-  text-align: center;
+  margin: 0.45em 0 0;
 }
 
 header h1 a {
@@ -49,10 +52,6 @@ header h1 a {
   width: 43.75em;
 }
 
-#wrapper.front-page {
-  margin-bottom: 4em;
-}
-
 /*
  * Navigation
  *
@@ -60,22 +59,20 @@ header h1 a {
  */
 nav {
   font-size: 0.9em;
-  border-bottom: 1px solid #B8D4F0;
   border-top: 1px solid #B8D4F0;
   padding: 0.75em 0;
-  margin: 0.5em 0;
+  margin: 0.5em 0 1.5em;
 }
 
 nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  text-align: center;
 }
 
 nav ul li {
   display: inline-block;
-  margin: 0 0.5em;
+  margin: 0 1em 0 0;
 }
 
 nav a {
@@ -112,8 +109,9 @@ nav a {
 .blurb-pair {
   margin-left: -1%;
   margin-right: -1%;
+  margin-bottom: 2em;
   position: relative;
-  height: 200px;
+  height: 160px;
 }
 
 .blurb {
@@ -183,21 +181,63 @@ footer, footer a {
 }
 
 /*
+ *
+ * Pages
+ *
+ */
+.page-content {
+  margin-bottom: 2em;
+}
+
+/*
+ *
+ * Front Page
+ *
+ */
+
+#wrapper.front-page {
+  margin-bottom: 4em;
+}
+
+#front-content h2 {
+  margin: 0 0 0.25em;
+}
+
+#front-content ul {
+  list-style: none;
+  margin: 0 0 2em;
+  padding: 0;
+}
+
+/*
+ *
+ * Bio Page
+ *
+ */
+#bio .bio-image {
+  float: right;
+  width: 48%;
+}
+
+#bio p {
+  width: 48%;
+}
+
+/*
  * Post
  *
  * A blog post consisting of a Wrapper, Title, Date, Body, Comments
  */
 
 .post {
-  border-bottom: 1px solid #B8D4F0;
   margin: 2em 0 4em;
   padding-bottom: 1em;
 }
 
 .post > h1 {
-  font-size: 3em;
+  font-size: 2em;
   line-height: 1.1em;
-  margin: 0.25em 0 0.5em;
+  margin: 0.5em 0 0.1em;
 }
 
 .post > h1 a {
@@ -207,7 +247,7 @@ footer, footer a {
 .post > h1 a:hover,
 .post > h1 a:focus,
 .post > h1 a:active {
-  text-decoration: underline;
+  color: #9C9B9B;
 }
 
 .post > h6 {
@@ -219,13 +259,21 @@ footer, footer a {
   padding: 0;
 }
 
+.post .post-content {
+  margin: 1.75em 0 0;
+}
+
 .post .footer {
   font-size: 0.9em;
-  padding: 1em 0;
+  padding: 0 0 1em;
 }
 
 .post .footer a {
   color: #9C9B9B;
+}
+
+.post .footer a:hover {
+  text-decoration: underline;
 }
 
 /*
@@ -241,7 +289,7 @@ pre, code {
 }
 
 pre {
-  background-color: #efefef;
+  background-color: #f5f5f5;
   padding: 1em;
 }
 
