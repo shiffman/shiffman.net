@@ -1,5 +1,5 @@
 ---
-title: bio
+title: Bio
 layout: page
 permalink: bio/index.html
 ---

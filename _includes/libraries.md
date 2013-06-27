@@ -1,5 +1,3 @@
-## Libraries
-
 - [Kinect](#)
 - [Most Pixels Ever](#)
 - [Face](#)

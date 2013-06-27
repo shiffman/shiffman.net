@@ -6,11 +6,19 @@
 
 html, body {
   background-color: #fafafa;
-  font-family: "Source Sans Pro", Helvetica, Verdana, Arial, sans-serif;
   font-size: 100%; /* 16px */
   line-height: 1.618em; /* */
   margin: 0;
   padding: 0;
+}
+
+html, body, h1, h2, h3, h4, h5, h6 {
+  font-family: "Source Sans Pro", Helvetica, Verdana, Arial, sans-serif;
+}
+
+.page-content,
+.post-content {
+  font-family: 'georgia';
 }
 
 a {
@@ -27,12 +35,21 @@ h1, h2, h3, h4, h5, h6, strong, b {
   font-weight: 600;
 }
 
+h2 {
+  font-size: 2em;
+}
+
 img {
   max-width: 100%;
 }
 
 p {
   margin: 0 0 1em 0;
+}
+
+ul {
+  margin-left: 0.5em;
+  padding-left: 1em;
 }
 
 header h1 {
@@ -190,7 +207,21 @@ footer, footer a {
  *
  */
 .page-content {
-  margin-bottom: 2em;
+  min-height: 300px;
+  margin: 1em 0 3em;
+}
+
+.page-content h1,
+.post > h1 {
+  line-height: 1.1em;
+  font-size: 1.6em;
+  margin: 1.25em 0 0.25em;
+  padding: 0;
+}
+
+.page-content h2,
+.post h2 {
+  font-size: 1.4em;
 }
 
 /*
@@ -236,12 +267,6 @@ footer, footer a {
 .post {
   margin: 2em 0 4em;
   padding-bottom: 1em;
-}
-
-.post > h1 {
-  font-size: 2em;
-  line-height: 1.1em;
-  margin: 0.5em 0 0.1em;
 }
 
 .post > h1 a {

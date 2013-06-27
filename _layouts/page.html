@@ -2,6 +2,8 @@
 layout: default
 ---
 
-<div class="page-content" id="{{page.title}}">
+<h2>{{page.title}}</h2>
+
+<div class="page-content" id="{{page.title | downcase | replace: " ","-"}}">
   {{content}}
 </div>
