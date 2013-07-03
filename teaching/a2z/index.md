@@ -4,8 +4,10 @@ author: Daniel
 layout: page
 ---
 
-<i>(Everything you wanted to know about text but were afraid to ask.)</i></p>
+_(Everything you wanted to know about text but were afraid to ask.)_
+
 <p>Spring 2008 syllabus: <a href="http://itp.nyu.edu/varwiki/Syllabus/A2Z-S08">http://itp.nyu.edu/varwiki/Syllabus/A2Z-S08</a></p>
+
 <h2><a href="http://www.shiffman.net/teaching/a2z/week1">The beginning</a></h2>
 <ul>
 <li><a href="http://www.shiffman.net/teaching/a2z/week1/#beyond">Beyond Processing and into Java</a></li>
