@@ -112,6 +112,35 @@ nav a {
 }
 
 /*
+ * Pagination
+ *
+ * Blog pagination links
+ */
+
+.pagination {
+  border-top: 1px solid $hover;
+  border-bottom: 1px solid $hover;
+  text-align: center;
+  margin: 0 0 2em;
+  padding: 0.75em 0;
+}
+
+.pagination a {
+  width: 8em;
+  display: inline-block;
+}
+
+.pagination .previous {
+  float: left;
+  text-align: left;
+}
+
+.pagination .next {
+  float: right;
+  text-align: right;
+}
+
+/*
  * Simple Grid
  *
  *
@@ -298,6 +327,10 @@ footer, footer a {
 .post {
   margin: 2em 0 4em;
   padding-bottom: 1em;
+}
+
+.post:last-child {
+  margin-bottom: 2em;
 }
 
 .post > h1 a {
