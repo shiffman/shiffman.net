@@ -3,7 +3,7 @@ title: Programming from A to Z
 author: Daniel
 layout: page
 ---
-<p><b>Programming from A to Z</b><br />
+
 <i>(Everything you wanted to know about text but were afraid to ask.)</i></p>
 <p>Spring 2008 syllabus: <a href="http://itp.nyu.edu/varwiki/Syllabus/A2Z-S08">http://itp.nyu.edu/varwiki/Syllabus/A2Z-S08</a></p>
 <h2><a href="http://www.shiffman.net/teaching/a2z/week1">The beginning</a></h2>
