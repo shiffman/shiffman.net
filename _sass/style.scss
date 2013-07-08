@@ -464,3 +464,62 @@ pre {
 .highlight .vg { color: $keyword_color } /* Name.Variable.Global */
 .highlight .vi { color: $keyword_color } /* Name.Variable.Instance */
 .highlight .il { color: #0086f7; font-weight: bold } /* Literal.Number.Integer.Long */
+
+
+// MEDIA QUERIES
+@media screen and (max-device-width: 480px) {
+  html {
+    -ms-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+  }
+
+  #wrapper {
+    width: 100%;
+    padding: 0 1em;
+  }
+
+  .page-content {
+    min-height: 0;
+    margin: 1em 0 1.5em;
+  }
+
+}
+
+@media screen and (max-width: 320px) {
+
+  #wrapper {
+    width: 100%;
+    padding: 0 1em;
+  }
+
+  header h1 {
+    font-size: 2.5em;
+    line-height: 1.5em;
+    margin: 0;
+  }
+
+  nav ul {
+    font-size: 120%;
+    text-align: center;
+  }
+
+  nav ul li {
+    margin: 0 0.25em 0 0.25em;
+  }
+
+  .blurb-pair {
+    height: auto;
+  }
+
+  .blurb {
+    width: 98%;
+    float: none;
+    min-height: 130px;
+    margin: 0 0 1em;
+  }
+
+}
+
+@media screen and (min-width: 480px) {
+  background: red;
+}
