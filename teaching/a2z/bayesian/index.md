@@ -57,12 +57,15 @@ pvc_views:
 <p>The last two digits of NYU ID, however, would be a much better hash function since we would expect this to be fairly randomized and would give us 100 possibilities (00 &#8211; 99) with relatively few collisions.</p>
 <p>Fortunately for us, we don&#8217;t have to worry about writing our own Hash Functions (though this would be an interesting avenue to pursue), we can simply use the HashMap class.  Here&#8217;s how we use a HashMap:</p>
 <p>Create an empty one:</p>
-<pre lang="java">
+
+{% highlight java %}
 HashMap words = new HashMap();
-</pre>
+{% endhighlight %}
+
 <p>Add some words to it (using a String as both the key and value)</p>
-<pre lang="java">
-String text = "This example demonstrates using a HashMap";  
+
+{% highlight java %}
+String text = "This example demonstrates using a HashMap";
 // Add every word to the hashmap
 String[] tokens = text.split("\W");
 for (int i = 0; i < tokens.length; i++) {
@@ -70,16 +73,19 @@ for (int i = 0; i < tokens.length; i++) {
     // Note we are using the same String for both Key and Value
     words.put(word,word);
 }
-</pre>
+{% endhighlight %}
+
 <p>Now we can use the <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/HashMap.html#containsKey(java.lang.Object)">containsKey()</a> method to search for a word:</p>
-<pre lang="java">    
+
+{% highlight java %}
 // Search the hash table for various words
 if (words.containsKey("example")) {
   System.out.println("I found the word example!");
 } else {
    System.out.println("I did not find the word example!");
 }
-</pre>
+{% endhighlight %}
+
 <p>full code: <a href="http://www.shiffman.net/itp/classes/a2z/week04/HashMapTest.java">HashMapTest.java</a></p>
 <div class ="pullquote">
 <b>Bayes&#8217; Theorem</b><br />
@@ -116,7 +122,8 @@ p(A|B) = ( p(B|A)*p(A) ) / ( p(B|A)*p(A) + p(B|~A)*p(~A) )
 <p>Before we attempt any of this we should read Paul Graham&#8217;s <a href="http://www.paulgraham.com/spam.html">A Plan for Spam</a>.  And perhaps we might take a look at <a href="http://www.paulgraham.com/better.html">Better Bayesian Filtering</a>.  Now, we can start putting together some code.  Note that the code is not a perfect Spam filter by any means.  There are lots of issues with it (it only considers certain types of words, it doesn&#8217;t know anything about the number of e-mails received, it may run into memory problems if very large training files are used, etc.)  Nevertheless, the example outlines the steps one might take to apply <a href="http://en.wikipedia.org/wiki/Bayesian_filtering">Bayesian Filtering</a> to text.  We would also use similar strategies to perform <a href="http://en.wikipedia.org/wiki/Naive_Bayes_classifier">Naive Bayes Classification</a> of text, much like is done in the <a href="http://www.noraproject.org/">Nora Project</a>.</p>
 <p><i><b>Fancy Word Class</b></i><br />
 The first thing we need to do is develop a class to describe any individual word.  Not only do we want to know what the String is itself, but we want to know how many times that word appears in spam e-mails, how many times in good e-mails, and ultimately the probability that an e-mail is Spam based on the appearance of that word.</p>
-<pre lang="java">
+
+{% highlight java %}
 public class Word {
   private String word;    // The String itself
   private int countBad;   // The total times it appears in "bad" messages
@@ -124,7 +131,7 @@ public class Word {
   private float rBad;     // bad count / total bad words
   private float rGood;    // good count / total good words
   private float pSpam;    // probability this word is Spam
-  
+
   // Create a word, initialize all vars to 0
   public Word(String s) {
     word = s;
@@ -135,32 +142,36 @@ public class Word {
     pSpam = 0.0f;
   }
 }
-</pre>
+{% endhighlight %}
+
 <p>That&#8217;s a good start and the above code encompasses all we need to store the necessary data for each Word object.  We&#8217;ll also need to give Word objects some functionality, such as increasing the the count for &#8220;bad&#8221; occurences, calculating the probability it occurs in spam messages, and more.  We&#8217;ll add some methods to the above class as follows (this is just a partial sample):</p>
-<pre lang="java">
+
+{% highlight java %}
   // Increment bad counter
   public void countBad() {
     countBad++;
   }
-  
+
   // Implement bayes rules to compute how likely this word is "spam"
   public void finalizeProb() {
     if (rGood + rBad > 0) pSpam = rBad / (rBad + rGood);
     if (pSpam < 0.01f) pSpam = 0.01f;
     else if (pSpam > 0.99f) pSpam = 0.99f;
   }
-  
+
   // The â€œinterestingâ€ rating for a word is
   // How different from 0.5 it is
   public float interesting() {
     return Math.abs(0.5f - pSpam);
   }
-</pre>
+{% endhighlight %}
+
 <p>Note that it will become important later to determine which words are &#8220;interesting.&#8221;  Our interesting rating is defined as how different the spam probability is from 0.5 (i.e. 50/50 is as boring as it gets).</p>
 <p>Once we have the Word object taken care of, we can create a <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/HashMap.html">HashMap</a> and start dumping words in it.  Where do we get these words?  We&#8217;ll train the filter via known spam e-mails and known &#8220;good&#8221; e-mails.  Every time we encounter a word, we will check if it already exists in the Hash Table.  If it does not, we will add it, if it does, we will simply increase the counter for &#8220;bad&#8221; or &#8220;good&#8221; (depending on whether it&#8217;s found in a good or bad e-mail.)</p>
-<pre lang="java">
+
+{% highlight java %}
 HashMap words = new HashMap();
-    
+
 // Read the content and break up into words
 A2ZFileReader fr = new A2ZFileReader(file);
 String content = fr.getContent();
@@ -181,32 +192,36 @@ for (int i = 0; i < tokens.length; i++) {
     words.put(word,w);
   }
 }
-</pre>
+{% endhighlight %}
+
 <p>The above steps would then be repeated for any good e-mails (using the same HashMap, but calling countGood() instead of countBad().)  Once all the "training" e-mails are read, the probability of an e-mail containing a certain word is Spam, can be calculated for every word.  This is done by creating an <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Iterator.html">Iterator</a> object from the HashMap.  The <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Iterator.html">Iterator</a> allows us to visit every single value in the HashMap and call a method on it, i.e.:</p>
-<pre lang="java">
+
+{% highlight java %}
 Iterator iterator = words.values().iterator();
 while (iterator.hasNext()) {
   Word word = (Word) iterator.next();
   word.finalizeProb();
- } 
-</pre>
+ }
+{% endhighlight %}
+
 <p>Now, our spam filter is trained!  For every word in the HashMap, we know the probability that an e-mail containing it is spam.   Now, all that is left to do is take a new e-mail, find the 15 most interesting words, and compute the total probability for the e-mail according to the formula specified in <a href="http://www.paulgraham.com/spam.html">Graham&#8217;s essay</a>.</p>
 <p>There are a number of different ways we can find the most interesting 15 words.  The following algorithm is an <a href="http://en.wikipedia.org/wiki/Insertion_sort">Insertion Sort</a> algorithm where an ArrayList is created one element at a time, inserting the elements the right spot to keep a descending sorted order.  If the list grows above 15, we just delete the last element to keep the top 15 words.</p>
-<pre lang="java">
+
+{% highlight java %}
 // Create an arraylist of 15 most "interesting" words
 // Words are most interesting based on how different their Spam probability is from 0.5
 ArrayList interesting = new ArrayList();
 
 // For every word in the String to be analyzed
 String[] tokens = stuff.split(splitregex);
-        
+
 for (int i = 0; i < tokens.length; i++) {
   String s = tokens[i].toLowerCase();
   Matcher m = wordregex.matcher(s);
   if (m.matches()) {
-    
+
     Word w;
-    
+
     // If the String is in our HashMap get the word out
     if (words.containsKey(s)) {
       w = (Word) words.get(s);
@@ -215,7 +230,7 @@ for (int i = 0; i < tokens.length; i++) {
       w = new Word(s);
       w.setPSpam(0.4f);
     }
-    
+
     // We will limit ourselves to the 15 most interesting word
     int limit = 15;
     // If this list is empty, then add this word in!
@@ -239,17 +254,19 @@ for (int i = 0; i < tokens.length; i++) {
         }
       }
     }
-    
+
     // If the list is bigger than the limit, delete entries
-    // at the end (the more "interesting" ones are at the 
+    // at the end (the more "interesting" ones are at the
     // start of the list
     while (interesting.size() > limit) interesting.remove(interesting.size()-1);
-    
+
   }
 }
-</pre>
+{% endhighlight %}
+
 <p>We&#8217;re almost there. . . now that we&#8217;ve got the probabilities for each word, we can move on to the <a href="http://www.paulgraham.com/naivebayes.html">combined probability</a>.   (<a href="http://www.mathpages.com/home/kmath267.htm">more here</a>)</p>
-<pre lang="java">
+
+{% highlight java %}
 // Apply Bayes' rule (via Graham)
 float pposproduct = 1.0f;
 float pnegproduct = 1.0f;
@@ -264,5 +281,6 @@ for (int i = 0; i < interesting.size(); i++) {
 
 // Apply formula
 float pSpam = pposproduct / (pposproduct + pnegproduct);
-</pre>
+{% endhighlight %}
+
 <p>. . .and if pSpam is greater than 0.9, we've found a spam e-mail, if not, we're ok!!</p>

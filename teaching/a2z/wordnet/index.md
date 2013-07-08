@@ -59,30 +59,39 @@ pvc_views:
 <h3>Using RiTa</h3>
 <p>We&#8217;re going to access Wordnet via <a href="http://www.rednoise.org/rita/wordnet/documentation/index.htm">RiTa Wordnet</a> by <a href="http://mrl.nyu.edu/~dhowe/">Daniel Howe</a>.   The RiTa Wordnet download comes with the Wordnet dictionary itself so all you need is to add two JAR files to your Eclipse build path: ritaWN.jar, supportWN.jar.  Both of these JARS are found in the <a href="http://www.rednoise.org/rita/wordnet/documentation/index.htm">download</a>.</p>
 <p>To use RiTa wordnet, you must first declare and initialize the <a href="http://www.rednoise.org/rita/wordnet/documentation/riwordnet_class_riwordnet.htm">RiWordnet</a> object.  </p>
-<pre lang="java">
+
+{% highlight java %}
 RiWordnet wordnet = new RiWordnet(null);
-</pre>
+{% endhighlight %}
+
 <p>Just as with <a href="http://www.shiffman.net/teaching/a2z/generative/">regular RiTa</a> from last week, RiTa wordnet expects a <a href="http://www.processing.org">Processing</a> PApplet.  Since our examples are java console apps, we can just pass in &#8220;null&#8221; to the constructor (but if you use RiTa with Processing you should pass in a reference to the PApplet).</p>
 <p>The wordnet object can then query the Wordnet dictionary for you.  There are many useful functions, such as: exists(), getAllAntonyms(), getAllHypernyms(), getAllSynonyms(), getPos(), getSenseIds(), getSoundsLike(), etc.  Let&#8217;s walk through a few examples.   </p>
 <p>Let&#8217;s say we are starting with a word: &#8220;run&#8221;.   Now word tokens are not the fundamental building blocks of Wordnet, everything in Wordnet is organized into synsets (senses) and a word can be a member of several synsets.  Run can mean a lot of different things.  As a noun, it can be a run scored in a baseball game or a jog around central park.  Run can also be a verb, of course, to run around the park or to run for office, etc.  Wordnet can tell us all of this.  We first start with a String.</p>
-<pre lang="java">
+
+{% highlight java %}
 String word = "run";
-</pre>
+{% endhighlight %}
+
 <p>And then ask RiTa wordnet for all the parts of speech available for that String.</p>
-<pre lang="java">
+
+{% highlight java %}
 String[] pos = wordnet.getPos(word);
-</pre>
+{% endhighlight %}
+
 <p>RiTa will give you the following Strings indicating parts of speech:</p>
 <p><b>n &#8211;> noun</b><br />
 <b>v &#8211;> verb</b><br />
 <b>a &#8211;> adjective</b><br />
 <b>r &#8211;> adverb</b></p>
 <p>Armed with a part of speech, you can then ask RiTa for all of the &#8220;senses&#8221; associated with that word.</p>
-<pre lang="java">
+
+{% highlight java %}
 int[] ids = wordnet.getSenseIds(word, pos[0]);
-</pre>
+{% endhighlight %}
+
 <p>In wordnet a &#8220;sense&#8221; is unique, and therefore as a unique ID #.  Looping through the ID #&#8217;s, we can get more information about the &#8220;sense&#8221;, such as a description, and the list of words in the synset.</p>
-<pre lang="java">
+
+{% highlight java %}
 for (int i = 0; i < ids.length; i++) {
   // Sense ID #
   System.out.println("Sense: " + ids[i]);
@@ -97,9 +106,11 @@ for (int i = 0; i < ids.length; i++) {
   }
   System.out.println("n-------------------------");
 }
-</pre>
+{% endhighlight %}
+
 <p>Wordnet is a massive network of pointers.  Every synset points to other synsets, and each pointer is of a certain type: antonynm, synonym, hypernym, etc.   RiTa wordnet simplifies these relationships by providing a series of functions that return (as an array of Strings) a list of related words for any given word (and part of speech).  For example, if you want the list of all hyponyms for a given word, you would say:</p>
-<pre lang="java">
+
+{% highlight java %}
 // Hyponyms for all senses
 String word = "cat";
 String pos = wordnet.getBestPos(word);
@@ -107,7 +118,8 @@ String[] result = wordnet.getAllHyponyms(word, pos);
 for (int i = 0; i < result.length; i++) {
   System.out.println(result[i]);
 }
-</pre>
+{% endhighlight %}
+
 <p>Note that this returns <b><i>all</i></b> hyponyms for <b><i>all</i></b> of the synsets that include the word cat.  If you wanted hyponyms for a specific sense, you would have to use a sense ID, in combination with the function: <a href="http://www.rednoise.org/rita/wordnet/documentation/riwordnet_method_gethyponyms.htm">getHyponyms()</a>.   You can get lists of other types of related words in exactly the same manner as above with the functions offered <a href="http://www.rednoise.org/rita/wordnet/documentation/">here</a>: getAllAntonyms(), getAllDerivedTerms(), getAllHolonyms(), getAllHypernyms(), getAllHyponyms(), getAllMeronyms(), getAllNominalizations(), getAllSynonyms(), etc.</p>
 <p>Here are some other examples:</p>
 <p>Listing Hyponyms: <a href="http://www.shiffman.net/itp/classes/a2z/wordnet/rita/Hyponyms.java">Hyponyms.java</a><br />
@@ -125,57 +137,74 @@ Rewriting a text using antonyms, synonyms, and hyponyms: <a href="http://www.shi
 <p><b>&lt;param name="dictionary_path" value="/Users/daniel/Desktop/WordNet-3.0/dict"/&gt;</b></p>
 <p>Once you have JWNL installed, you can access the WordNet database from your Java application and search for these semantic relationships.  </p>
 <p>First, you must initialize JWNL with the properties file.</p>
-<pre lang="java">
+
+{% highlight java %}
 JWNL.initialize(new FileInputStream(propsFile));
-</pre>
+{% endhighlight %}
+
 <p>Once the database is initialized, you can create a Dictionary object (that can be queried).</p>
-<pre lang="java">
+
+{% highlight java %}
 wordnet = Dictionary.getInstance();
-</pre>
+{% endhighlight %}
+
 <p>Once you have the Dictionary object, you can begin to look up words and search for relationships.  To do this, we need to get familiar with the following classes:</p>
 <p><b><a href="http://nlp.stanford.edu/nlp/javadoc/jwnl-docs/net/didion/jwnl/data/IndexWord.html">IndexWord</a></b>. An IndexWord is a single word and part of speech.  An IndexWord can be used to lookup a Synset object.</p>
-<pre lang="java">
+
+{% highlight java %}
 IndexWord word = wordnet.getIndexWord(POS.VERB,"run");
-</pre>
+{% endhighlight %}
+
 <p>Once you have an IndexWord, you can lookup all the <b><a href="http://nlp.stanford.edu/nlp/javadoc/jwnl-docs/net/didion/jwnl/data/Synset.html">Synset</a></b> objects associated with that word.   A Synset represents a concept, and contains the set of words whose meanings are synonymous.</p>
-<pre lang="java">
+
+{% highlight java %}
 Synset[] senses = word.getSenses();
 for (int i = 0; i < senses.length; i++) {
    System.out.println(word + ": " + senses[i].getGloss());
-}  
-</pre>
+}
+{% endhighlight %}
+
 <p>For simplicity, you might also just ask for the first one.</p>
-<pre lang="java">
+
+{% highlight java %}
 Synset sense = word.getSense(1);
-</pre>
+{% endhighlight %}
+
 <p>For any given Synset, you can search for all related Synsets (for any given type of relationship).  All the Synsets in WordNet that are related to each other <i>point</i> to each other.  The <a href="http://www-nlp.stanford.edu/nlp/javadoc/jwnl-docs/net/didion/jwnl/data/PointerUtils.html">PointerUtils </a> class provides a selection of methods that returns a list of Synsets that a given Synset points to.  For example:</p>
-<pre lang="java">
+
+{% highlight java %}
 PointerTargetNodeList relatedList = PointerUtils.getInstance().getSynonyms(sense);
-</pre>
+{% endhighlight %}
+
 <p>Once you have that list, you can iterate through it:</p>
-<pre lang="java">
+
+{% highlight java %}
 Iterator i = relatedList.iterator();
 while (i.hasNext()) {
   PointerTargetNode related = (PointerTargetNode) i.next();
   Synset s = related.getSynset();
   System.out.println(s);
 }
-</pre>
+{% endhighlight %}
+
 <p>With two Synsets, you can search for a relationship between them using the <a href="http://nlp.stanford.edu/nlp/javadoc/jwnl-docs/net/didion/jwnl/data/relationship/RelationshipFinder.html">RelationshipFinder</a>.<br />
 The RelationshipFinder requires that you specify a <b><a href="http://nlp.stanford.edu/nlp/javadoc/jwnl-docs/net/didion/jwnl/data/PointerType.html">PointerType</a></b>.  There is a PointerType for each of the semantic relationships described above, i.e.:</p>
 <p>PointerType.SYNONYM<br />
 PointerType.HYPERNYM<br />
 etc.</p>
-<pre lang="java">
+
+{% highlight java %}
 RelationshipList list = RelationshipFinder.getInstance().findRelationships(synset1, synset2, PointerType.SYNONYM);
 if (!list.isEmpty())  {
   Relationship rel = (Relationship) list.get(0);
   System.out.println(rel);
 }
-</pre>
+{% endhighlight %}
+
 <p>In the above example, a list of <a href="http://nlp.stanford.edu/nlp/javadoc/jwnl-docs/net/didion/jwnl/data/relationship/Relationship.html">Relationship</a> objects is returned.  However, for simplicity, only the first relationship is displayed.</p>
 <p>Once you have that Relationship object, you can call various methods to learn about that relationship.  For example, you can get the depth of that relationship (how many degrees of separation) via getDepth() as well as traverse the links between the Synsets by calling getNodeList().</p>
-<pre lang="java">
+
+{% highlight java %}
 System.out.println("The depth of this relationship is: " + rel.getDepth());
 
 PointerTargetNodeList nodelist = rel.getNodeList();
@@ -184,4 +213,5 @@ while (i.hasNext()) {
   PointerTargetNode related = (PointerTargetNode) i.next();
   System.out.println(related.getSynset());
 }
-</pre>
+{% endhighlight %}
+

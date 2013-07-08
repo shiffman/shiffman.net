@@ -45,20 +45,22 @@ pvc_views:
 <p>&nbsp;<br />
 Processing, of course, gives some extra stuff for free, and this is why itâ€™s a great tool for learning rich media programming.   Nevertheless, for the start of this semester, our programs will involve text / file processing and it will be simpler to compile and run programs from the command line.  However, the examples will also be provided via CVS as an Eclipse project and you should feel free to use <a href="http://www.eclipse.org">Eclipse</a> if you prefer (<a href="http://itp.nyu.edu/varwiki/A2Z/CVS">CVS Instructions</a>).   From time to time, I will also include <a href="http://www.perl.com/">Perl</a> and  <a href="http://www.php.net/">PHP</a> versions of the examples.  Using Java for the assignments will not be required if you prefer one of these languages.</p>
 <p>Let&#8217;s look at a basic first example.</p>
-<pre lang="java">
+
+{% highlight java %}
 public class HelloWorld
 {
   int x = 0;
   public static void main(String[] args)
   {
     int x = 0;
-    while (x < 10) { 
+    while (x < 10) {
       System.out.println("Look, I can count to " + x + "!");
       x++;
     }
   }
 }
-</pre>
+{% endhighlight %}
+
 <div class = "pullquote">
 Compile: <b>javac ClassName.java</b></p>
 <p>Run: <b>java ClassName</b>
@@ -87,47 +89,60 @@ Compile: <b>javac ClassName.java</b></p>
 <p>The <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html">String</a> class is what we will use to store textual information in our Java programs (from time to time, we may also use the <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/StringBuffer.html">StringBuffer</a> class, but <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html"> String</a> will do for now.)</p>
 <p>You may be familiar with the <a href="http://processing.org/reference/String.html">Processing reference page for Strings</a>.   The complete reference for String is <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html">http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html </a>.  And again, just in case, link to full JavaDocs: <a href="http://java.sun.com/j2se/1.4.2/docs/api">http://java.sun.com/j2se/1.4.2/docs/api</a>. </p>
 <p>A String, at its core, is really just a fancy way of storing an array of characters â€“ if we didnâ€™t have the String class, weâ€™d probably have to write some code like this:</p>
-<pre lang="java">
+
+{% highlight java %}
 char[] sometext = {â€˜Hâ€™, â€˜eâ€™, â€˜lâ€™, â€˜lâ€™, â€˜oâ€™, â€˜ â€˜, â€˜Wâ€™, â€˜oâ€™, â€˜râ€™, â€˜lâ€™, â€˜dâ€™};
-</pre>
+{% endhighlight %}
+
 <p>Clearly, this would be a royal pain in the programming behind.  Itâ€™s much simpler to do the following and make a String object:</p>
-<pre lang="java">
+
+{% highlight java %}
 String sometext = â€œHow to make a String? Characters between quotation marks!â€;
-</pre>
+{% endhighlight %}
+
 <p><b>Simple String Analysis</b></p>
 <p>Java provides us with a basic set of String functions that allow for simple manipulation and analysis.  <a href="http://www.shiffman.net/teaching/programming-from-a-to-z/regex">Next week</a>, we&#8217;ll also look at how <a href="http://en.wikipedia.org/wiki/Regular_expression">regular expressions</a> can allow to perform advanced String processing, but it&#8217;s good to pick up some of the basics first and gather some skills doing all of our text processing manually, character by character.   All of the availabe String methods are  functions are laid out on <a href="http://processing.org/reference/String.html">the JavaDoc page</a>, and weâ€™ll explore a few useful ones here.  Let&#8217;s take a closer look at three String class functions: indexOf(), substring(), and length(). </p>
 <p>indexOf() locates a sequence of characters within a string. For example, run this code and examine the result: </p>
-<pre lang="java">
+
+{% highlight java %}
 String sentence = â€œThe quick brown fox jumps over the lazy dog.â€;
 System.out.println(sentence.indexOf("quick"));
 System.out.println(sentence.indexOf("fo"));
 System.out.println(sentence.indexOf("The"));
 System.out.println(sentence.indexOf("blah blah"));
-</pre>
+{% endhighlight %}
+
 <p>Note that indexOf() returns a 0 for the first character, and a -1 if the search phrase is not part of the String. </p>
 <p>After we find a certain search phrase within a String, we might want to pull out part of the String and save it in a different variable. This is what we call a &#8220;substring&#8221; and we can use java&#8217;s substring() function to take care of this task. Examine and run the following code: </p>
-<pre lang="java">
+
+{% highlight java %}
 String sentence = "The quick brown fox jumps over the lazy dog.";
 String phrase = sentence.substring(4,9);
 System.out.println(phrase);
-</pre>
+{% endhighlight %}
+
 <p>Note that the substring begins at the specified beginIndex (the first argument) and extends to the character at endIndex (the second argument) minus one. Thus the length of the substring is endIndex minus beginIndex. </p>
 <p>At any given point, we might also want to access the length of the String. We can accomplish this by calling the length() function. </p>
-<pre lang="java">
+
+{% highlight java %}
 String sentence = "The quick brown fox jumps over the lazy dog.";
 System.out.println(sentence.length());
-</pre>
+{% endhighlight %}
+
 <p>Note this is different than accessing the length of an array. Here we are calling the length function available to us within the String class, and therefore must also have the open and close parentheses &#8212; length() &#8212; associated with calling a function.</p>
 <p>Itâ€™s also important to note that we can concatenate (i.e. join) a String together using the â€œ+â€ operator.   With numbers plus means add, with Strings (or characters), it means concatenate, i.e.</p>
-<pre lang="java">
+
+{% highlight java %}
 int num = 5 + 6; // ADDING TWO NUMBERS!
 String phrase = "To be" + " or not to be"; // JOINING TWO STRINGS!
 String anotherphrase = "Hell" + 'o'; //JOING A STRING WITH A CHAR!
-</pre>
+{% endhighlight %}
+
 <p><b>Splitting</b></p>
 <p>One String-related function that will prove very useful in our text analysis programs is <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html#split(java.lang.String)">split</a>. <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html#split(java.lang.String)">split</a> separates a group of strings embedded into a longer string into an array of strings.</p>
 <p>Examine the following code: </p>
-<pre lang="java">
+
+{% highlight java %}
 String spaceswords = "The quick brown fox jumps over the lazy dog.";
 String list1[] = spaceswords.split(" ");
 System.out.println(list1[0]);
@@ -141,19 +156,23 @@ for (int i = 0; i < list2.length; i++) {
 
 //calculate sum of a list of numbers in a string
 String numbers = "8,67,5,309";
-String numlist[] = numbers.split( ','); 
+String numlist[] = numbers.split( ',');
 int sum = 0;
 for (int i = 0; i < list.length; i++) {
   sum = sum + Integer.parseInt(list[i]);  // Converting each String into an int
 }
 System.out.println(sum);
-</pre>
+{% endhighlight %}
+
 <p>To perform the reverse of split, we can write a quick function that joins together an array of Strings.</p>
-<pre lang="java">
+
+{% highlight java %}
 String[] lines = {â€œItâ€, â€œwasâ€, â€œaâ€, â€œdarkâ€, â€œandâ€, â€œstormyâ€, â€œnight.â€};
-</pre>
+{% endhighlight %}
+
 <p>Knowing about loops and arrays we could join the above array of strings together as follows:</p>
-<pre lang="java">
+
+{% highlight java %}
 // Concatenating an array of Strings using the String class
 public String join(String str[], String separator) {
     String stuff = ""
@@ -174,12 +193,14 @@ public String join(String str[], String separator) {
     }
     return buffer.toString();
 }
-</pre>
+{% endhighlight %}
+
 <p><a name="file"></a></p>
 <h2>File Input and Output</h2>
 <p>To start, we are going to be working in the simple world of text in and text out.  We'll load some text from a file, analyze it, mess with it, etc. and then write some text back out to a file.   Most of the examples you might find online read text from a file line by line.  This is very useful for certain types of operations and you may want to investigate how to do this on your own (see: <a href="http://www.cafeaulait.org/slides/intljava/2001ny/javaio/57.html">http://www.cafeaulait.org/slides/intljava/2001ny/javaio/57.html</a> for an example).  For our purposes, however, we're just going to read the text in character by character (or byte by byte).  This can be accomplished using <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/io/package-summary.html">java.io</a> or <a href="http://java.sun.com/j2se/1.4.2/docs/guide/nio/">java.nio</a> .   java.nio is a java's "new and improved" input/output package that supposedly improves performance in  buffer management, network and file I/O, regular-expression support, etc. </p>
 <p><b>Simple File I/O with the old java.io package</b></p>
-<pre lang="java">
+
+{% highlight java %}
 // Simple File Input and Output using "old" I/O
 // Daniel Shiffman
 // Programming from A to Z, Spring 2006
@@ -192,7 +213,7 @@ import java.io.*;
 
 public class SimpleFileIO2 {
   public static void main (String[] args) throws IOException {
-  
+
     // Read the file into a String, character by character
     // (We could read it line by line with BufferedReader)
     // This could also be greatly improved using StringBuffer
@@ -203,10 +224,10 @@ public class SimpleFileIO2 {
       content += (char) c;
     }
     in.close();
-	
-	
+
+
     // Do our fancy string editing stuff here
-	
+
     // Write out a file with the content, character by character
     FileWriter out = new FileWriter(new File(args[1]));
     for (int i = 0; i < content.length(); i++) {
@@ -215,9 +236,11 @@ public class SimpleFileIO2 {
     out.close();
   }
 }
-</pre>
+{% endhighlight %}
+
 <p><b>Simple File I/O with the new java.nio package</b></p>
-<pre lang="java">
+
+{% highlight java %}
 // Simple File Input and Output using "new" I/O
 // Daniel Shiffman
 // Programming from A to Z, Spring 2006
@@ -238,31 +261,33 @@ public class SimpleFileIO {
     // Using first arguemnt as file name to read in
     FileInputStream fis = new FileInputStream(args[0]);
     FileChannel fc = fis.getChannel();
-  
+
     // Read the contents of a file into a ByteBuffer
     ByteBuffer bb = ByteBuffer.allocate((int)fc.size());
     fc.read(bb);
     fc.close();
-    
+
     // Convert ByteBuffer to one long String
     String content = new String(bb.array());
-    
+
     // Conceivably we would now mess with the string here
     // Doing all sorts of fun stuff
-    
+
     // Create an output stream and file channel
     // Using second argument as file name to write out
     FileOutputStream fos = new FileOutputStream(args[1]);
     FileChannel outfc = fos.getChannel();
-    
+
     // Convert content String into ByteBuffer and write out to file
     bb = ByteBuffer.wrap(content.getBytes());
     outfc.write(bb);
     outfc.close();
   }
-}</pre>
+}{% endhighlight %}
+
 <p>Once we&#8217;ve gotten the hang of reading and writing files, we can start to think about ways of creating output text based on an input text.  For example, we could do something as simple as make a new text with every other word from a source text.   To do this, we can split the text up into an array of Strings (with space as a delimiter) and create a new String by appended every other word to it.  StringBuffer is good to use in case we are dealing with really long texts.</p>
-<pre lang="java">
+
+{% highlight java %}
  //Split text by wherever there is a space
 String[] words = content.split(" ");
 StringBuffer everyotherword = new StringBuffer();
@@ -270,27 +295,33 @@ for (int i = 0; i < words.length; i+=2) {
    String word = words[i];
    everyotherword.append(word + " ");
 }
-</pre>
+{% endhighlight %}
+
 <p>Using the Nigerian Spam as a source text, the result is something like:</p>
-<pre lang="java">
-On 12th, a contractor the co-orporation, Kingdom Olaf made time 
+
+{% highlight java %}
+On 12th, a contractor the co-orporation, Kingdom Olaf made time
 Deposit  twelve months, at US$ (Seventeen Three Hundred fifty
-Thousand only) my maturity,I a notification his address but no 
+Thousand only) my maturity,I a notification his address but no
 After month, sent reminder finally from contract the Pertroleum
-co-orporation Mr.Olaf died an accident further found that died 
-making WILL,and attempts his of was therefore further and 
+co-orporation Mr.Olaf died an accident further found that died
+making WILL,and attempts his of was therefore further and
 that Olaf
-</pre>
+{% endhighlight %}
+
 <p>Another thing we might try is to search for every time a certain word appears.   The following code examines a text for every time the word &#8220;God&#8221; appears and keeps the word &#8220;God&#8221; along with what follows it:</p>
-<pre lang="java">
+
+{% highlight java %}
 for (int i = 0; i < words.length; i+=2) {
    if (words[i].equals("God")) {
       gods.append(words[i] + " " + words[i+1] + "n");
    }
  }
-</pre>
+{% endhighlight %}
+
 <p>The result applied to Genesis from the Bible looks something like:</p>
-<pre lang="java">
+
+{% highlight java %}
 God Almighty
 God forbid
 God hath
@@ -302,23 +333,28 @@ God make
 God of
 God of
 God meant
-God will</pre>
+God will{% endhighlight %}
+
 <p>We could also reverse all the characters in a text, by walking through the String backwards.  Note how the for loop starts at the end of the String (content.length() -1).</p>
-<pre lang="java">
+
+{% highlight java %}
 StringBuffer reverse = new StringBuffer();
 for (int i = content.length()-1; i >= 0; i--) {
    char c = content.charAt(i);
    reverse.append(c);
 }
-</pre>
+{% endhighlight %}
+
 <p>The result applied to the Nigerian Spam looks something like:</p>
-<pre lang="java">
+
+{% highlight java %}
 rof %5 dna uoy rof %53 dna em rof %06 fo oitar eht ni erahs ot su
 rof tnuocca ruoy otni diap eb lliw yenom ehT .refsnart eht rof rovaf
 ruoy ni noitartsinimda/etaborp fo rettel dna stnemucod yrassecen eht
 niatbo ot dna LLIW eht fo noitaziraton dna gnitfard rof yenrotta na
 fo secivres eht yolpme llahs eW .nik fo txen eht sa ecalp ni uoy tup
-lliw taht stivadiffa dna stnemucod yrassecen eht eraperp lliw yenrotta</pre>
+lliw taht stivadiffa dna stnemucod yrassecen eht eraperp lliw yenrotta{% endhighlight %}
+
 <p><a name="analysis"></a></p>
 <h2>Analysis</h2>
 <p> <img src="http://www.shiffman.net/itp/classes/a2z/week01/flesch.jpg" class="right" /> </p>
@@ -326,29 +362,35 @@ lliw taht stivadiffa dna stnemucod yrassecen eht eraperp lliw yenrotta</pre>
 <p>The Flesch Index is computed as a function of total words, total sentences, and total syllables.  It was developed by Dr. Rudolf Flesch and modified by J. P. Kincaid (thus the joint name).  Most word processing programs (MS Word, Corel Wordperfect, etc.) will compute the Flesch Index for you, which provides us with a nice method to check our results.</p>
 <p><b><i>Flesch Index = 206.835 &#8211; 1.015 * (total words / total sentences) + 84.6 * (total syllables / total words)</i></b></p>
 <p>Our pseudo-code will look something like this:</p>
-<pre lang="java">
+
+{% highlight java %}
 1) Read input file into String object
 2) Count words
 3) Count syllables
 4) Count sentences
 5) Apply formula
 6) Write out report file
-</pre>
+{% endhighlight %}
+
 <p>We know we can read in text from a file and store it in a Java String object as demonstrated in the example above.  Now, all we have to do is examine that String object, counting the total words, sentences, and syllables, applying the formula as a final step. To count words, we&#8217;ll use the <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/StringTokenizer.html">StringTokenizer</a>.  (It should be noted that the StringTokenizer is a legacy class.   split() should be used instead.  However, before we get to next week (and for nostaglia) we&#8217;re going to solve the Flesch Index problem in a highly manual way, using the Tokenizer.  Next week, you&#8217;ll be exposed to more advanced String parsing techniques using <a href="http://www.shiffman.net/teaching/programming-from-a-to-z/regex">regular expressions</a>.</p>
 <p>The first thing we&#8217;ll do is count the number of words in the text.  We&#8217;ve seen in some of the examples above that we could accomplish this by using the &#8220;split&#8221; function, the <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/StringTokenizer.html">StringTokenizer</a> works in a similar way.  To create a StringTokenizer, the constructor receives the String you want to tokenize as well as a set of delimiters (the characters that indicate where a token ends, and a new token begins.)  You may be asking, what the heck is a token??   In our case, we want to split the String up into words, so each word is one &#8220;token.&#8221;  Ok, so step one (creating the Tokenizer) looks like this:</p>
-<pre lang="java">
+
+{% highlight java %}
 String delimiters = ".,':;?{}[]=-+_!@#$%^&#038;*() ";
 StringTokenizer tokenizer = new StringTokenizer(content,delimiters);
-</pre>
+{% endhighlight %}
+
 <p>We could have simplified our lives by just using space (&#8221; &#8220;) as the delimiter, but here we&#8217;re saying that any of the punctuation characters listed indicates the end of one word and the start of another.  Now we just need to march through all the words (tokens) and count their syllables.</p>
-<pre lang="java">
+
+{% highlight java %}
 while (tokenizer.hasMoreTokens())
 {
   String word = tokenizer.nextToken();
   syllables += countSyllables(word);
   words++;
 }
-</pre>
+{% endhighlight %}
+
 <p>Ok, so &#8220;countSyllables&#8221; isn&#8217;t a function that exists anywhere in Java.  We&#8217;re going to have to write it ourselves.   The following method is not the most accurate way to count syllables, but it will do for now.  </p>
 <p><i>Syllables = total # of vowels in a word (not counting vowels that appear after another vowel and when &#8216;e&#8217; is found at the end of the word), i.e.:</i></p>
 <li class="arrow">&#8220;beach&#8221; &#8211;> one syllable</li>
@@ -356,7 +398,8 @@ while (tokenizer.hasMoreTokens())
 <li class="arrow">&#8220;home&#8221; &#8211;> one syllable</li>
 <p>&nbsp;<br />
 Our code looks like this:</p>
-<pre lang="java">
+
+{% highlight java %}
 // A method to count the number of syllables in a word
 // Pretty basic, just based off of the number of vowels
 // This could be improved
@@ -396,17 +439,21 @@ public static boolean isVowel(char c) {
     else                               { return false; }
   }
 }
-</pre>
+{% endhighlight %}
+
 <p>Again, this could be vastly improved using Regular Expressions, but it&#8217;s nice as an exercise to learn how to do all the String manipulation manually before we move on to more advanced techniques.</p>
 <p>Counting sentences is simple.  We&#8217;ll just tokenize the content using periods, question marks, exclamation points, etc. (&#8220;.:;?!&#8221;) as delimiters and count the total number of tokens.  This isn&#8217;t terribly accurate; for example, &#8220;My e-mail address is daniel.shiffman@nyu.edu.&#8221;  will be counted as three sentences.  Nevertheless, as a first pass, this will do. . .</p>
-<pre lang="java">
+
+{% highlight java %}
  //look for sentence delimiters
 String sentenceDelim = ".:;?!";
 StringTokenizer sentenceTokenizer = new StringTokenizer(content,sentenceDelim);
 sentences = sentenceTokenizer.countTokens();
-</pre>
+{% endhighlight %}
+
 <p>Now, all we need to do is apply the formula, generate a report. . .</p>
-<pre lang="java">
+
+{% highlight java %}
 //calculate flesch index
 final float f1 = (float) 206.835;
 final float f2 = (float) 84.6;
@@ -417,18 +464,20 @@ float flesch = f1 - (f2*r1) - (f3*r2);
 
 //Write Report
 String report = "";
-    
+
 report += "Total Syllables: " + syllables + "n";
 report += "Total Words    : " + words + "n";
 report += "Total Sentences: " + sentences + "n";
 report += "Flesch Index   : " + flesch + "n";
 System.out.println(report);
-</pre>
+{% endhighlight %}
+
 <p>. . . and we&#8217;re done!</p>
 <p>The full example code is here: <a href="http://www.shiffman.net/itp/classes/a2z/week01/FleschIndex.java"> FleschIndex.java</a></p>
 <h2> Related Perl and PHP examples </h2>
 <p><b>Perl</b>:</p>
-<pre lang="java">
+
+{% highlight java %}
 #!/usr/bin/perl
 
 # Reads a text and prints out wherever "I" appears along with the word following it
@@ -441,7 +490,8 @@ while (<>) {
     print("$1 n");
   }
 }
-</pre>
+{% endhighlight %}
+
 <p><b>PHP</b>:<br />
 Run it:  <a href="http://www.shiffman.net/itp/classes/a2z/week01/inputoutput.php">http://www.shiffman.net/itp/classes/a2z/week01/inputoutput.php</a><br />
 Source:  <a href="http://www.shiffman.net/itp/classes/a2z/week01/inputoutput.phps">http://www.shiffman.net/itp/classes/a2z/week01/inputoutput.phps</a></p>

@@ -31,29 +31,35 @@ pvc_views:
 <p><a name ="url"></a></p>
 <h5>Grabbing a URL</h5>
 <p>So far, we&#8217;ve only looked at how to retrieve textual information from a local file.   Of course, there&#8217;s also that wacky world wide web thing and it&#8217;s not terribly difficult for us to expand the functionality of our examples to include scraping information from a URL.   Here, we&#8217;ll need to introduce the <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/net/package-summary.html">java.net</a> package, which will allow us to open an <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/io/InputStream.html">InputStream</a> from a <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/net/URL.html">URL</a> object.</p>
-<pre lang="java">
+
+{% highlight java %}
 String urlpath = "http://www.mycoolwebsite.com";
-URL url = new URL(urlpath); 
-InputStream stream = url.openStream(); 
-</pre>
+URL url = new URL(urlpath);
+InputStream stream = url.openStream();
+{% endhighlight %}
+
 <p>Once we have the InputStream, we can use a <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/io/BufferedReader.html">BufferedReader</a> to read the stream (i.e. the source from the URL) line by line, appending it all to one big <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/StringBuffer.html">StringBuffer</a>.</p>
-<pre lang="java">
+
+{% highlight java %}
 StringBuffer stuff = new StringBuffer();
 //Create a BufferedReader from the InputStream
 BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
-			
+
 // Read the stream line by line and append to StringBuffer
 String line;
 while (( line = reader.readLine()) != null) {
   stuff.append(line + "\n");
 }
-// Close the reader 
+// Close the reader
 reader.close();
-</pre>
+{% endhighlight %}
+
 <p>Finally, we can simply convert the <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/StringBuffer.html">StringBuffer</a> into a good old fashioned <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html">String</a> and have our way with it.</p>
-<pre lang="java">
+
+{% highlight java %}
 String urlContent = stuff.toString();
-</pre>
+{% endhighlight %}
+
 <p>Source for URL reading class: <a href="http://www.shiffman.net/itp/classes/a2z/week05/urlgrab/A2ZUrlReader.java">A2ZUrlReader.java</a></p>
 <p><a name ="lists"></a></p>
 <h5>Making a list and keeping it twice</h5>
@@ -63,46 +69,56 @@ String urlContent = stuff.toString();
 <p>&nbsp;<br />
 (Note how we do not need to traverse the list itself.  We only are required to access the first element, as well as place elements on the end.)</p>
 <p>It&#8217;s pretty simple to use the java <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/LinkedList.html">LinkedList</a> class.</p>
-<pre lang="java">
+
+{% highlight java %}
 LinkedList urlsToVisit = new LinkedList();           // A queue of URLs to visit
 urlsToVisit.add("http://www.yahoo.com");             // Add a URL (as a String) to the list
 urlsToVisit.add("http://www.google.com");
 urlsToVisit.add("http://itp.nyu.edu");
 String urlpath = (String) urlsToVisit.removeFirst(); // Get the first URL (as a String)
-</pre>
+{% endhighlight %}
+
 <p>We could do something fancier, such as remove all the elements from the list one by one (as long as the list isn&#8217;t empty):</p>
-<pre lang="java">
+
+{% highlight java %}
 while (!urlsToVisit.isEmpty()) {
   String urlpath = (String) urlsToVisit.removeFirst();
   // Presumably do something here!
 }
-</pre>
+{% endhighlight %}
+
 <p>For our web crawler project, however, one list will not do.  For example, the following code would be somewhat tragic:</p>
-<pre lang="java">
-urlsToVisit.add("http://www.sadlittleurl.com"); 
-urlsToVisit.add("http://www.sadlittleurl.com"); 
-urlsToVisit.add("http://www.sadlittleurl.com"); 
-urlsToVisit.add("http://www.sadlittleurl.com"); 
-urlsToVisit.add("http://www.sadlittleurl.com"); 
-urlsToVisit.add("http://www.sadlittleurl.com"); 
-urlsToVisit.add("http://www.sadlittleurl.com"); 
-</pre>
+
+{% highlight java %}
+urlsToVisit.add("http://www.sadlittleurl.com");
+urlsToVisit.add("http://www.sadlittleurl.com");
+urlsToVisit.add("http://www.sadlittleurl.com");
+urlsToVisit.add("http://www.sadlittleurl.com");
+urlsToVisit.add("http://www.sadlittleurl.com");
+urlsToVisit.add("http://www.sadlittleurl.com");
+urlsToVisit.add("http://www.sadlittleurl.com");
+{% endhighlight %}
+
 <p>We shouldn&#8217;t be visiting the same URL over and over again.  This is why we&#8217;ll need a <i>second list</i>, one that keeps track of the URLs previously visited.   Ideally, a data structure that had constant time look-up &#8212; O(1) &#8212; would be great.  All we want to figure out is &#8212; here&#8217;s a URL, are you in the list or not?  Our friendly neighborhood <a href="http://en.wikipedia.org/wiki/Hash_table">hash table</a> from <a href="http://www.shiffman.net/teaching/programming-from-a-to-z/bayesian/#hash">last week</a> will do just fine.</p>
-<pre lang="java">
+
+{% highlight java %}
 LinkedList urlsToVisit = new LinkedList();   // A queue of URLs to visit
 HashMap urlsVisited = new HashMap();      // A hash table of visited URLs
 String url = "http://www.abcdefg.com";
 urlsVisited.put(url,url);
-urlsToVisit.add("url"); 
-</pre>
+urlsToVisit.add("url");
+{% endhighlight %}
+
 <p>For each URL, we place it in both lists.  (Note that the HashMap requires a key and a value, whereas the LinkedList requires only a value.)  This way, when it comes time to look at a new URL, we can check and see if it&#8217;s been visited first before we waste our time and look at it again.</p>
-<pre lang="java">
+
+{% highlight java %}
 String url = "http://www.iamtiredofmakingupurls.com";
 if (!urlsToVisit.containsKey(url)) {
   urlsVisited.put(url,url);
-  urlsToVisit.add("url"); 
+  urlsToVisit.add("url");
 }
-</pre>
+{% endhighlight %}
+
 <p>We can now see how we are well on the way to writing a web crawler.  We start with one URL, grab it, look for other URLs, check if we&#8217;ve already visited them, if not add them to the list, and start all over with the next URL!</p>
 <p><a name ="polite"></a></p>
 <h5>Being Polite</h5>
@@ -120,30 +136,37 @@ So far, we&#8217;ve covered the necessary code for every step except #4.</p>
 <h5>Finding URLs</h5>
 <p><a href="http://www.shiffman.net/teaching/programming-from-a-to-z/regex">Remembering</a> <a href="http://en.wikipedia.org/wiki/Regular_expression">regular expressions</a>, we can create a <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/regex/Pattern.html">Pattern</a> object to match any reference to a URL.  </p>
 <p>URL references on web pages generally look like this:</p>
-<pre lang="java">&lt;a href = "http://www.someurl.com"&gt;</pre>
+
+{% highlight java %}&lt;a href = "http://www.someurl.com"&gt;{% endhighlight %}
+
 <p>For simplicity&#8217;s sake, we&#8217;ll ignore any references to links specified by a relative path and assume that the URL has to start with &#8220;http&#8221;.  We can begin to build a regular expression. . .</p>
-<pre lang="java">
-href            # match href 
+
+{% highlight java %}
+href            # match href
 s*             # match optional infinite whitespace
 =               # match equal sign
 s*             # match optional infinite whitespace
 "               # match quote
 (http[^"s]+)   # capture the URL itself, http followed by one or more non whitespace/quote
 "               # end with a quote
-</pre>
+{% endhighlight %}
+
 <p>Sure, this could be improved a number of ways, but it will do as a start.  In Java, it will look like this:</p>
-<pre lang="java">
+
+{% highlight java %}
 Pattern href;
 // Match URLs
 // Note using Pattern.COMMENTS flag which ignores white spaces and anything after '#' in a regex
-href = Pattern.compile( "href            # match href \n" + 
-                        "\\s*=\\s*"     # 0 or more spaces, =, 0 ore more spaces, quote n" + 
+href = Pattern.compile( "href            # match href \n" +
+                        "\\s*=\\s*"     # 0 or more spaces, =, 0 ore more spaces, quote n" +
                         "(http[^\"\\s]*) # capture the URL itself, http followed by no spaces and no quotes n" +
                         "\"              # ending with a quote \n",
                         Pattern.CASE_INSENSITIVE | Pattern.COMMENTS);
-</pre>
+{% endhighlight %}
+
 <p>Now, as we grab some html source code, we can look for URLs and add them if appropriate:</p>
-<pre lang="java">
+
+{% highlight java %}
 // Grab the URL content
 A2ZUrlReader urlr = new A2ZUrlReader(urlpath);
 String stuff = urlr.getContent();
@@ -161,50 +184,56 @@ while (m.find()) {
     urlsVisited.put(newurl,newurl);
   }
 }
-</pre>
+{% endhighlight %}
+
 <p>Now, not all URLs are treated equally.  If our goal, for example, is to analyze text on the web, we can certainly ignore references to media files, such as jpgs, movs, etc.  We&#8217;ll use a second regular expression for this:</p>
-<pre lang="java">
+
+{% highlight java %}
 // We will ignore URLs ending with certain extensions
 String ignore = ".*(mov|jpg|gif|pdf)$";
-</pre>
+{% endhighlight %}
+
 <p>This allows us to not only check if the URL has already been visited, but confirm that it is not one of the listed excluded types.</p>
-<pre lang="java">
+
+{% highlight java %}
 if (!newurl.matches(ignore) &#038;&#038; !urlsVisited.containsKey(newurl)) {
   urlsToVisit.add(newurl);
   urlsVisited.put(newurl,newurl);
 }
-</pre>
+{% endhighlight %}
+
 <p><a name ="crawler"></a></p>
 <h5>A Crawler Class</h5>
 <p>The following Crawler class encompasses all of the basic elements described above.  Its data is of a queue of URLs, a hash table of visited URLs, a regex for matching URL references, and a regex for URLs to ignore.  It has methods to add a new URL, crawl to the next URL, read source of a URL (called in the &#8216;crawl&#8217; method), and check if the queue is empty.  </p>
-<pre lang="java">/* Daniel Shiffman               */
+
+{% highlight java %}/* Daniel Shiffman               */
 /* Programming from A to Z       */
 /* Spring 2006                   */
 /* http://www.shiffman.net       */
 /* daniel.shiffman@nyu.edu       */
-	
+
 // Simple example of a web crawler
 // URL queue: linked list
 // Sites already visited: hash table
-	
+
 // Needs to be updated to comply with ROBOTS.TXT!
-	
+
 package a2z;
-	
+
 import java.util.*;
 import java.util.regex.*;
-	
+
 public class Crawler {
-	
+
   private LinkedList urlsToVisit; // A queue of URLs to visit
   private HashMap urlsVisited;    // A table of already visited URLs
   private Pattern href;           // A Pattern to match an href tag
   private String ignore;          // To be used as a regex for ignoring media files (JPG,MOV, etc.)
-	
+
   public Crawler() {
     urlsToVisit = new LinkedList();
     urlsVisited = new HashMap();
-	
+
     // Match URLs
     // Note using Pattern.COMMENTS flag which ignores white spaces and anything after '#' in a regex
     href = Pattern.compile( "href             # match href n" +
@@ -212,36 +241,36 @@ public class Crawler {
                             "(http[^"\s]*)  # capture the URL itself, http followed by no spaces and no quotes n" +
                             ""               # ending with a quote n",
                             Pattern.CASE_INSENSITIVE | Pattern.COMMENTS);
-	
+
     // We will ignore URLs ending with certain extensions
     ignore = ".*(mov|jpg|gif|pdf)$";
   }
-	
+
   public void addUrl(String urlpath) {
     // Add it to both the LinkedList and the HashMap
     urlsToVisit.add(urlpath);
     urlsVisited.put(urlpath,urlpath);
-	
+
   }
-	
+
   public boolean queueEmpty() {
     return urlsToVisit.isEmpty();
   }
-	
+
   public void crawl() {
       String urlpath = (String) urlsToVisit.removeFirst();
       read(urlpath);
   }
-	
+
   private void read(String urlpath) {
     System.out.println(urlsVisited.size() + " " + urlsToVisit.size() + " " + urlpath);
     try {
       // Grab the URL content
       A2ZUrlReader urlr = new A2ZUrlReader(urlpath);
       String stuff = urlr.getContent();
-	
+
       // OK I COULD DO SOMETHING WITH ALL OF THE CONTENT HERE!!
-	
+
       // Match the URL pattern to the content
       Matcher m = href.matcher(stuff);
       // While there are URLs
@@ -258,12 +287,14 @@ public class Crawler {
       // e.printStackTrace();
     }
   }
-	
+
 }
 
-</pre>
+{% endhighlight %}
+
 <p>It is important to note that this crawler does not loop on its own.  The driver program must check and see if the queue has elements and call the &#8220;crawl&#8221; method in a loop, i.e.:</p>
-<pre lang="java">
+
+{% highlight java %}
 // Create a crawler object
 Crawler crawler = new Crawler();
 // Put the URL into the crawler object
@@ -271,9 +302,11 @@ crawler.addUrl("http://www.blahlbah.com");
 while (!crawler.queueEmpty()) {
   crawler.crawl();
 }
-</pre>
+{% endhighlight %}
+
 <p>In the <a href="http://www.shiffman.net/itp/classes/a2z/week05/valentinecrawler.zip">full example</a>, I&#8217;ve built in a little safety net so that the crawler doesn&#8217;t run rampant (although it might be fun to let it do so!)</p>
-<pre lang="java">
+
+{% highlight java %}
 // Since this crawler isn't particularly polite: http://www.robotstxt.org/wc/guidelines.html
 // I'm limited it to viewing 100 url requests
 int count = 0; int limit = 100;
@@ -282,19 +315,22 @@ while (!crawler.queueEmpty()) {
   count++;
   if (count > limit) break;
 }
-</pre>
+{% endhighlight %}
+
 <p>Writing one&#8217;s own crawler is a useful and productive exercise, however, if all you need is basic crawling functionality, another option is to use an existing crawling library, such as <a href="http://www.cs.cmu.edu/~rcm/websphinx/">WebSphinx</a>.  To use WebSphinx, simply download <a href="http://www.cs.cmu.edu/~rcm/websphinx/#download">download websphinx.jar</a> and import it into you Eclipse project (make sure to add it to the &#8220;build path&#8221; as well.)  You can then create your own Crawler class that extends <a href="http://www.cs.cmu.edu/~rcm/websphinx/doc/websphinx/Crawler.html">Crawler</a>.  By overriding the <a href="http://www.cs.cmu.edu/~rcm/websphinx/doc/websphinx/Crawler.html#visit(websphinx.Page)">visit()</a> method, you can have customize what you want the Crawler to do each time it visits a page.  </p>
-<pre lang="java">
+
+{% highlight java %}
 // What to do when we visit the page
 public void visit(Page page) {
     System.out.println("Visiting: " + page.getTitle());
     String content = page.getContent();
     // Do something with the content String!
-        
+
     // Since we don't need to retain the pages
     // This code helps with memory management
     page.getOrigin().setPage(null);
-    page.discardContent();        
+    page.discardContent();
 }
-</pre>
+{% endhighlight %}
+
 <p><a href="http://www.shiffman.net/itp/classes/a2z/week05/sphinx/web_sphinx.zip">Here is an example</a> of a basic Crawler implemented via WebSphinx.  For other possibilities, take a look at the <a href="http://www.cs.cmu.edu/~rcm/websphinx/doc/index.html">WebSphinx API</a>.</p>
