@@ -619,7 +619,7 @@ pre {
   font-weight: bold; }
 
 /* Literal.Number.Integer.Long */
-@media screen and (max-device-width: 480px) {
+@media screen and (max-width: 480px) {
   html {
     -ms-text-size-adjust: none;
     -webkit-text-size-adjust: none; }
@@ -630,7 +630,21 @@ pre {
 
   .page-content {
     min-height: 0;
-    margin: 1em 0 1.5em; } }
+    margin: 1em 0 1.5em; }
+
+  .blurb-pair {
+    height: auto;
+    clear: both;
+    overflow-y: auto; }
+
+  .blurb {
+    float: none;
+    width: 98%; }
+
+  .blurb-text {
+    position: relative;
+    padding: 1em;
+    margin: 0; } }
 @media screen and (max-width: 320px) {
   #wrapper {
     width: 100%;
@@ -646,15 +660,8 @@ pre {
     text-align: center; }
 
   nav ul li {
-    margin: 0 0.25em 0 0.25em; }
-
-  .blurb-pair {
-    height: auto; }
-
-  .blurb {
-    width: 98%;
-    float: none;
-    min-height: 130px;
-    margin: 0 0 1em; } }
-@media screen and (min-width: 480px) {
-  background: red; }
+    margin: 0 0.25em 0 0.25em; } }
+@media screen and (max-width: 768px) {
+  #wrapper {
+    width: 100%;
+    padding: 0 1em; } }
