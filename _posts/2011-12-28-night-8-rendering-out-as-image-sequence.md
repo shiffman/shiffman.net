@@ -15,11 +15,13 @@ tags:
   - saveFrame
 ---
 <p>How can one render a movie from a Processing sketch?  In Processing 1.5.1, there is a class called MovieMaker which generates a Quicktime file directly.  However, this class uses ye old Quicktime for Java and will be removed from Processing 2.0.  Instead, 2.0 is going to introduce a MovieMaker &#8220;tool&#8221; which will generate a movie file from a directory containing an image sequence.  So how do you get this image sequence?  Easy:</p>
-<pre lang="java">
+
+```java
 void draw() {
   saveFrame("output/frames####.png");
 }
-</pre>
+```
+
 <p>This will create a folder called &#8220;output&#8221; in your sketch folder and for each frame of draw(), it will write a file &#8212; frames0001.png, frames0002.png, etc.  The &#8216;#&#8217; sign tells processing to auto-number the images.</p>
 <p>There are a couple additional tricks included in this new example.  First, it uses a boolean variable to turn rendering on and off and cycles the boolean in keyPressed() allowing recording to be stopped and started by pressing &#8216;r&#8217;. </p>
 <pre lang="java">
