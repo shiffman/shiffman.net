@@ -1,4 +1,0 @@
-- [Intro to Computational Media](#)
-- [Nature of Code](#)
-- [Big Screens](#)
-- [Programming A to Z](/teaching/a2z)
