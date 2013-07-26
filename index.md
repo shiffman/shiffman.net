@@ -2,10 +2,18 @@
 layout: front
 ---
 
-## Teaching
+<div class="row">
+  <div class="col6">
+    <h2>Teaching</h2>
 
-{% include teaching.md %}
+    {% include teaching.md %}
 
-## Libraries
+  </div>
 
-{% include libraries.md %}
+  <div class="col6">
+    <h2>Libraries</h2>
+
+    {% include libraries.md %}
+
+  </div>
+</div>

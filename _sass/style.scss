@@ -167,8 +167,8 @@ nav a {
  */
 
 .blurb-pair {
-  margin-left: -1%;
-  margin-right: -1%;
+  // margin-left: -1%;
+  // margin-right: -1%;
   margin-bottom: 2em;
   position: relative;
   height: 160px;
@@ -176,10 +176,7 @@ nav a {
 
 .blurb {
   background-color: #efefef;
-  float: left;
   padding: 0;
-  width: 48%;
-  margin: 1%;
   height: 100%;
   position: relative;
 }
@@ -221,6 +218,33 @@ nav a {
 
 .blurb.white .content {
   font-weight: 300;
+}
+
+/*
+ * Columns
+ *
+ * Currently just 2 columns
+ */
+.row {
+  &:after {
+    clear: both;
+  }
+
+  [class*="col"] {
+    display: block;
+    float: left;
+    min-height: 30px;
+    margin-left: 2.4%;
+  }
+
+  // Two columns, but named to be able to be extended to 12.
+  .col6 {
+    width: 48.8%;
+  }
+
+  [class*="col"]:first-child {
+    margin-left: 0;
+  }
 }
 
 /*
@@ -384,170 +408,4 @@ pre, code {
 pre {
   background-color: #fff;
   padding: 1em;
-}
-
-/*
- * Pygments
- * Modified from https://github.com/richleland/pygments-css
- */
-
- $comment_color: #888;
- $comment_background: #f3f3f3;
- $keyword_color: #fb661a;
-
-.highlight .hll { background-color: #333333 }
-.highlight .c { color: $comment_color; background-color: $comment_background } /* Comment */
-.highlight .err { color: #111111 } /* Error */
-.highlight .g { color: #111111 } /* Generic */
-.highlight .k { color: $keyword_color; font-weight: bold } /* Keyword */
-.highlight .l { color: #111111 } /* Literal */
-.highlight .n { color: #111111 } /* Name */
-.highlight .o { color: #111111 } /* Operator */
-.highlight .x { color: #111111 } /* Other */
-.highlight .p { color: #111111 } /* Punctuation */
-.highlight .cm { color: $comment_color; background-color: $comment_background } /* Comment.Multiline */
-.highlight .cp { color: #ff0007; font-weight: bold; background-color: $comment_background } /* Comment.Preproc */
-.highlight .c1 { color: $comment_color; background-color: $comment_background } /* Comment.Single */
-.highlight .cs { color: $comment_color; background-color: $comment_background } /* Comment.Special */
-.highlight .gd { color: #111111 } /* Generic.Deleted */
-.highlight .ge { color: #111111 } /* Generic.Emph */
-.highlight .gr { color: #111111 } /* Generic.Error */
-.highlight .gh { color: #111111; font-weight: bold } /* Generic.Heading */
-.highlight .gi { color: #111111 } /* Generic.Inserted */
-.highlight .go { color: #444444; background-color: #222222 } /* Generic.Output */
-.highlight .gp { color: #111111 } /* Generic.Prompt */
-.highlight .gs { color: #111111 } /* Generic.Strong */
-.highlight .gu { color: #111111; font-weight: bold } /* Generic.Subheading */
-.highlight .gt { color: #111111 } /* Generic.Traceback */
-.highlight .kc { color: $keyword_color; font-weight: bold } /* Keyword.Constant */
-.highlight .kd { color: $keyword_color; font-weight: bold } /* Keyword.Declaration */
-.highlight .kn { color: $keyword_color; font-weight: bold } /* Keyword.Namespace */
-.highlight .kp { color: $keyword_color } /* Keyword.Pseudo */
-.highlight .kr { color: $keyword_color; font-weight: bold } /* Keyword.Reserved */
-.highlight .kt { color: #cdcaa9; font-weight: bold } /* Keyword.Type */
-.highlight .ld { color: #111111 } /* Literal.Date */
-.highlight .m { color: #0086f7; font-weight: bold } /* Literal.Number */
-.highlight .s { color: #0086d2 } /* Literal.String */
-.highlight .na { color: #ff0086; font-weight: bold } /* Name.Attribute */
-.highlight .nb { color: #111111 } /* Name.Builtin */
-.highlight .nc { color: #111111 } /* Name.Class */
-.highlight .no { color: #0086d2 } /* Name.Constant */
-.highlight .nd { color: #111111 } /* Name.Decorator */
-.highlight .ni { color: #111111 } /* Name.Entity */
-.highlight .ne { color: #111111 } /* Name.Exception */
-.highlight .nf { color: #ff0086; font-weight: bold } /* Name.Function */
-.highlight .nl { color: #111111 } /* Name.Label */
-.highlight .nn { color: #111111 } /* Name.Namespace */
-.highlight .nx { color: #111111 } /* Name.Other */
-.highlight .py { color: #111111 } /* Name.Property */
-.highlight .nt { color: $keyword_color; font-weight: bold } /* Name.Tag */
-.highlight .nv { color: $keyword_color } /* Name.Variable */
-.highlight .ow { color: #111111 } /* Operator.Word */
-.highlight .w { color: #888888 } /* Text.Whitespace */
-.highlight .mf { color: #0086f7; font-weight: bold } /* Literal.Number.Float */
-.highlight .mh { color: #0086f7; font-weight: bold } /* Literal.Number.Hex */
-.highlight .mi { color: #0086f7; font-weight: bold } /* Literal.Number.Integer */
-.highlight .mo { color: #0086f7; font-weight: bold } /* Literal.Number.Oct */
-.highlight .sb { color: #0086d2 } /* Literal.String.Backtick */
-.highlight .sc { color: #0086d2 } /* Literal.String.Char */
-.highlight .sd { color: #0086d2 } /* Literal.String.Doc */
-.highlight .s2 { color: #0086d2 } /* Literal.String.Double */
-.highlight .se { color: #0086d2 } /* Literal.String.Escape */
-.highlight .sh { color: #0086d2 } /* Literal.String.Heredoc */
-.highlight .si { color: #0086d2 } /* Literal.String.Interpol */
-.highlight .sx { color: #0086d2 } /* Literal.String.Other */
-.highlight .sr { color: #0086d2 } /* Literal.String.Regex */
-.highlight .s1 { color: #0086d2 } /* Literal.String.Single */
-.highlight .ss { color: #0086d2 } /* Literal.String.Symbol */
-.highlight .bp { color: #111111 } /* Name.Builtin.Pseudo */
-.highlight .vc { color: $keyword_color } /* Name.Variable.Class */
-.highlight .vg { color: $keyword_color } /* Name.Variable.Global */
-.highlight .vi { color: $keyword_color } /* Name.Variable.Instance */
-.highlight .il { color: #0086f7; font-weight: bold } /* Literal.Number.Integer.Long */
-
-
-// MEDIA QUERIES
-@media screen and (max-width: 480px) {
-  html {
-    -ms-text-size-adjust: none;
-    -webkit-text-size-adjust: none;
-  }
-
-  #wrapper {
-    width: 100%;
-    padding: 0 1em;
-  }
-
-  .page-content {
-    min-height: 0;
-    margin: 1em 0 1.5em;
-  }
-
-
-  .blurb-pair {
-    height: auto;
-    clear: both;
-    overflow-y: auto;
-  }
-
-  .blurb {
-    float:none;
-    width: 98%;
-  }
-
-  .blurb-text {
-    position: relative;
-    padding: 1em;
-    margin: 0;
-  }
-
-  #bio .bio-image {
-    float: right;
-    width: 40%;
-  }
-
-  #bio p {
-    width: 58%;
-  }
-}
-
-@media screen and (max-width: 320px) {
-
-  #wrapper {
-    width: 100%;
-    padding: 0 1em;
-  }
-
-  #bio .bio-image {
-    float: none;
-    width: 98%;
-  }
-
-  #bio p {
-    width: 100%;
-  }
-
-
-  header h1 {
-    font-size: 2.5em;
-    line-height: 1.5em;
-    margin: 0;
-  }
-
-  nav ul {
-    font-size: 120%;
-    text-align: center;
-  }
-
-  nav ul li {
-    margin: 0 0.25em 0 0.25em;
-  }
-
-}
-
-@media screen and (max-width: 768px) {
-  #wrapper {
-    width: 100%;
-    padding: 0 1em;
-  }
 }
