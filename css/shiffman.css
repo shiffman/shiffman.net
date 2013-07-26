@@ -659,7 +659,15 @@ pre {
     width: 40%; }
 
   #bio p {
-    width: 58%; } }
+    width: 58%; }
+
+  .blurb {
+    margin-bottom: 0.5em; }
+
+  .row [class*="col"] {
+    float: none;
+    width: 100%;
+    margin-left: 0; } }
 @media screen and (max-width: 320px) {
   #wrapper {
     width: 100%;
@@ -684,7 +692,8 @@ pre {
   nav ul li {
     margin: 0 0.25em 0 0.25em; }
 
-  [class*="col"] {
+  .row [class*="col"] {
+    float: none;
     width: 100%;
     margin-left: 0; } }
 @media screen and (max-width: 768px) {
