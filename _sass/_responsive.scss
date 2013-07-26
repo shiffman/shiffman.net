@@ -22,11 +22,6 @@
     overflow-y: auto;
   }
 
-  .blurb {
-    float:none;
-    width: 98%;
-  }
-
   .blurb-text {
     position: relative;
     padding: 1em;
@@ -73,6 +68,11 @@
 
   nav ul li {
     margin: 0 0.25em 0 0.25em;
+  }
+
+  [class*="col"] {
+    width: 100%;
+    margin-left: 0;
   }
 
 }
