@@ -1,7 +1,6 @@
 ---
 title: Books
 layout: page
-permalink: books/index.html
 ---
 
 Daniel Shiffman is the author of two books.
