@@ -14,7 +14,7 @@ categories:
 <p>So first, the part everyone should feel free to ignore. . .</p>
 <ul>
 <li>April 2011. I visited my good friend <a href="http://www.talespin.com/">Chris Ault</a> at The College of New Jersey and gave a presentation about the Nature of Code and Most Pixels Ever and saw several demos of student work.</li>
-<li>June 2011. I attended Seb Lee-Delisle&#8217;s <a href="http://sebleedelisle.com/training/">Creative JS</a> course in NYC.  I made this: <a href="http://www.shiffman.net/creativejs/particles.html">fibonacci particles</a></li>
+<li>June 2011. I attended Seb Lee-Delisle&#8217;s <a href="http://sebleedelisle.com/training/">Creative JS</a> course in NYC.  I made this: <a href="http://shiffman.net/creativejs/particles.html">fibonacci particles</a></li>
 <li>June 17-20 2011. I participated in the Processing 2.0 summit. Ben Fry, Casey Reas, Andres Colubri, Jer Thorp, Patrick Hebron, and I worked together to define the 2.0 release.  (Thanks to Casey for the photos below.)</li>
 <p><img src="http://reas.com/blog/wp-content/uploads/2011/07/itp2.jpg" alt="Processing 2.0" /><br />
 <img alt="Processing 2.0" src="http://reas.com/blog/wp-content/uploads/2011/07/itp1.jpg" /></p>

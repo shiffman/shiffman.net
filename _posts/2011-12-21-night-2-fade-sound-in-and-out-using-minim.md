@@ -53,5 +53,5 @@ void draw() {
   }
 {% endhighlight %}
 <p>Following is an example that does this with a double threshold (fading up above a value and fading down below a value).  In addition, it offers some other improvements (such as having the sound fade from its current gain level). The mouseX location is the stand-in for a sensor value.</p>
-<p><a href="http://www.shiffman.net/wp/wp-content/uploads/2011/12/SoundFade.zip"><img src="http://www.shiffman.net/wp/wp-content/uploads/2011/12/soundfade.png" alt="" title="soundfade" width="400" height="239" class="alignnone size-full wp-image-979" /></a></p>
-<p>Source: <a href="http://www.shiffman.net/wp/wp-content/uploads/2011/12/SoundFade.zip">SoundFade.zip</a></p>
+<p><a href="http://shiffman.net/wp/wp-content/uploads/2011/12/SoundFade.zip"><img src="http://shiffman.net/wp/wp-content/uploads/2011/12/soundfade.png" alt="" title="soundfade" width="400" height="239" class="alignnone size-full wp-image-979" /></a></p>
+<p>Source: <a href="http://shiffman.net/wp/wp-content/uploads/2011/12/SoundFade.zip">SoundFade.zip</a></p>

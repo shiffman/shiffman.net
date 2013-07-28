@@ -5,7 +5,7 @@ layout: post
 enclosure:
   - |
     |
-        http://www.shiffman.net/siggraph/movies/siggraph_CD.mov
+        http://shiffman.net/siggraph/movies/siggraph_CD.mov
         23025947
         video/quicktime
         
@@ -18,6 +18,6 @@ categories:
   - vlog
 ---
 <p>Here is a video taken at Siggraph of some of my work presented there in 2004. . . . it&#8217;s old, sigh, someday i&#8217;ll have some time to show something new. . .  </p>
-<p><a href="http://www.shiffman.net/siggraph/movies/siggraph_CD.mov"><img alt = "siggraph qt" src="http://www.shiffman.net/siggraph/images/qtl.jpg"/></a><br />
-<a href="http://www.shiffman.net/siggraph/movies/siggraph_CD.mov">download video</a></p>
+<p><a href="http://shiffman.net/siggraph/movies/siggraph_CD.mov"><img alt = "siggraph qt" src="http://shiffman.net/siggraph/images/qtl.jpg"/></a><br />
+<a href="http://shiffman.net/siggraph/movies/siggraph_CD.mov">download video</a></p>
 <p>Enjoy!</p>

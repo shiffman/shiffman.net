@@ -87,7 +87,7 @@ Animation[] animations = new Animation[6];</p>
 <p>  // Load the image sequence
   PImage[] seq = new PImage[40];
   for (int i = 0; i < seq.length; i++) {
-    seq[i] = loadImage("http://www.shiffman.net/p5/stick/stick"+nf(i+1,2)+".png"); 
+    seq[i] = loadImage("http://shiffman.net/p5/stick/stick"+nf(i+1,2)+".png"); 
   }</p>
 <p>  // Make all the objects
   float y = 0;
@@ -109,7 +109,7 @@ Animation[] animations = new Animation[6];</p>
 <p>// Daniel Shiffman
 // Hanukkah 2011
 // 8 nights of Processing examples
-// http://www.shiffman.net</p>
+// http://shiffman.net</p>
 <p>// The animation object</p>
 <p>class Animation {
   float x;  // location for Animation
@@ -156,4 +156,4 @@ Animation[] animations = new Animation[6];</p>
   }
 }
 </script></p>
-<p>Download source: <a href='http://www.shiffman.net/wp/wp-content/uploads/2011/12/AnimationExample.zip'>AnimationExample.zip</a></p>
+<p>Download source: <a href='http://shiffman.net/wp/wp-content/uploads/2011/12/AnimationExample.zip'>AnimationExample.zip</a></p>

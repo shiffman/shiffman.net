@@ -19,12 +19,12 @@ pvc_views:
 <p><i><a href="http://wiki.processing.org/w/Threading">http://wiki.processing.org/w/Threading</a></i></b></p>
 <h2>Examples:</h2>
 <ul>
-<li><a href="http://www.shiffman.net/itp/classes/a2z/week10/simplethreads.zip">simplethreads.zip</a>, <a href="http://www.shiffman.net/itp/classes/a2z/week10/SimpleThread.java">SimpleThread.java</a>, <a href="http://www.shiffman.net/itp/classes/a2z/week10/ThreadDriver.java">ThreadDriver.java</a></li>
-<li><a href="http://www.shiffman.net/itp/classes/a2z/week10/newsreader.zip">newsreader.zip</a>, <a href="http://www.shiffman.net/itp/classes/a2z/week10/XMLNewsChecker.java">XMLNewsChecker.java</a>, <a href="http://www.shiffman.net/itp/classes/a2z/week10/CheckThread.java">CheckThread.java</a>, <a href="http://www.shiffman.net/itp/classes/a2z/week10/a2z.zip">a2z package</a></li>
-<li>Applet source: <a href="http://www.shiffman.net/itp/classes/a2z/week10/threads_news.zip">threads_news.zip</a>, <a href="http://www.shiffman.net/itp/classes/a2z/week10/nothreads_news.zip">nothreads_news.zip</a></li>
-<li>a2z Processing library: <a href="http://www.shiffman.net/itp/classes/a2z/week10/a2z.jar">a2z.jar</a> (required for above applets)</li>
-<li>Simple Processing Event library: <a href="http://www.shiffman.net/itp/classes/a2z/week10/pevent.jar">pevent.jar</a>, Library source: <a href="http://www.shiffman.net/itp/classes/a2z/week10/pevent.zip">pevent.zip</a>, Applet source: <a href="http://www.shiffman.net/itp/classes/a2z/week10/simple_eventlib.zip">simple_eventlib.zip</a></li>
-<li>Processing NewsReader Event library: <a href="http://www.shiffman.net/itp/classes/a2z/week10/news.jar">news.jar</a>, Library source: <a href="http://www.shiffman.net/itp/classes/a2z/week10/news.zip">news.zip</a>, Applet source: <a href="http://www.shiffman.net/itp/classes/a2z/week10/news_event.zip">news_event.zip</a></li>
+<li><a href="http://shiffman.net/itp/classes/a2z/week10/simplethreads.zip">simplethreads.zip</a>, <a href="http://shiffman.net/itp/classes/a2z/week10/SimpleThread.java">SimpleThread.java</a>, <a href="http://shiffman.net/itp/classes/a2z/week10/ThreadDriver.java">ThreadDriver.java</a></li>
+<li><a href="http://shiffman.net/itp/classes/a2z/week10/newsreader.zip">newsreader.zip</a>, <a href="http://shiffman.net/itp/classes/a2z/week10/XMLNewsChecker.java">XMLNewsChecker.java</a>, <a href="http://shiffman.net/itp/classes/a2z/week10/CheckThread.java">CheckThread.java</a>, <a href="http://shiffman.net/itp/classes/a2z/week10/a2z.zip">a2z package</a></li>
+<li>Applet source: <a href="http://shiffman.net/itp/classes/a2z/week10/threads_news.zip">threads_news.zip</a>, <a href="http://shiffman.net/itp/classes/a2z/week10/nothreads_news.zip">nothreads_news.zip</a></li>
+<li>a2z Processing library: <a href="http://shiffman.net/itp/classes/a2z/week10/a2z.jar">a2z.jar</a> (required for above applets)</li>
+<li>Simple Processing Event library: <a href="http://shiffman.net/itp/classes/a2z/week10/pevent.jar">pevent.jar</a>, Library source: <a href="http://shiffman.net/itp/classes/a2z/week10/pevent.zip">pevent.zip</a>, Applet source: <a href="http://shiffman.net/itp/classes/a2z/week10/simple_eventlib.zip">simple_eventlib.zip</a></li>
+<li>Processing NewsReader Event library: <a href="http://shiffman.net/itp/classes/a2z/week10/news.jar">news.jar</a>, Library source: <a href="http://shiffman.net/itp/classes/a2z/week10/news.zip">news.zip</a>, Applet source: <a href="http://shiffman.net/itp/classes/a2z/week10/news_event.zip">news_event.zip</a></li>
 </ul>
 <h2>Related:</h2>
 <ul>
@@ -32,7 +32,7 @@ pvc_views:
 </ul>
 <h2>Exercises (optional):</h2>
 <ul>
-<li>Rewrite the <a href="http://www.shiffman.net/teaching/programming-from-a-to-z/crawling/">spider</a> so that each URL request is its own thread.</li>
+<li>Rewrite the <a href="http://shiffman.net/teaching/programming-from-a-to-z/crawling/">spider</a> so that each URL request is its own thread.</li>
 <li>Recreate one of your previous exercises as a Processing library.</li>
 </ul>
 <p><a name ="thread"></a></p>
@@ -120,7 +120,7 @@ thread1.start();
 thread2.start();
 {% endhighlight %}
 
-<p><a href="http://www.shiffman.net/itp/classes/a2z/week10/newsreader.zip">Here&#8217;s a more sophisticated example that involves reading the Google news RSS feed in a thread.</a> </p>
+<p><a href="http://shiffman.net/itp/classes/a2z/week10/newsreader.zip">Here&#8217;s a more sophisticated example that involves reading the Google news RSS feed in a thread.</a> </p>
 <p><a name="synchronize"></a></p>
 <h2>Synchronized Threads</h2>
 <p>Writing an independent thread is easy, nevertheless, there are often times where one needs to access and manipulate information inside a thread externally (perhaps in the &#8220;main&#8221; program, or another thread, etc.)   This problem occurs in data visualization programs, where we might require that an animation driven by data from the network runs smoothly, without having to pause and wait each time that data reloads.   Let&#8217;s look at this applet:</p>
@@ -299,6 +299,6 @@ void draw() {
 
 <p>Full source:</p>
 <ul>
-<li>Simple Processing Event library: <a href="http://www.shiffman.net/itp/classes/a2z/week10/pevent.jar">pevent.jar</a>, Library source: <a href="http://www.shiffman.net/itp/classes/a2z/week10/pevent.zip">pevent.zip</a>, Applet source: <a href="http://www.shiffman.net/itp/classes/a2z/week10/simple_eventlib.zip">simple_eventlib.zip</a></li>
-<li>Processing NewsReader Event library: <a href="http://www.shiffman.net/itp/classes/a2z/week10/news.jar">news.jar</a>, Library source: <a href="http://www.shiffman.net/itp/classes/a2z/week10/news.zip">news.zip</a>, Applet source: <a href="http://www.shiffman.net/itp/classes/a2z/week10/news_event.zip">news_event.zip</a></li>
+<li>Simple Processing Event library: <a href="http://shiffman.net/itp/classes/a2z/week10/pevent.jar">pevent.jar</a>, Library source: <a href="http://shiffman.net/itp/classes/a2z/week10/pevent.zip">pevent.zip</a>, Applet source: <a href="http://shiffman.net/itp/classes/a2z/week10/simple_eventlib.zip">simple_eventlib.zip</a></li>
+<li>Processing NewsReader Event library: <a href="http://shiffman.net/itp/classes/a2z/week10/news.jar">news.jar</a>, Library source: <a href="http://shiffman.net/itp/classes/a2z/week10/news.zip">news.zip</a>, Applet source: <a href="http://shiffman.net/itp/classes/a2z/week10/news_event.zip">news_event.zip</a></li>
 </ul>

@@ -9,7 +9,7 @@ pvc_views:
 ---
 <p><b>ShakespeareMonkey@Home</b><br />
 A somewhat odd attempt to answer the question:</p>
-<p><img src ="http://www.shiffman.net/images/question.gif"/></p>
+<p><img src ="http://shiffman.net/images/question.gif"/></p>
 <p>(Please note no monkeys were harmed during the course of this experiment.)</p>
 <p>ShakespeareMonkey@Home is a distributed application that simulates a population of evolving monkeys typing lines from The Complete Works of William Shakespeare (Each client represents one monkey family typing). The family connects to the &#8220;Zoo&#8221; (a mySQL database containing Shakespeare&#8217;s complete works), selects a play to work on, and receives a line from that play to type.  Once the line is completed, the family reports its work to the zoo and waits to receive a new line.</p>
 <p><b>CURRENT MONKEY STATUS</b>:  Unfortunately the server that housed the database is no longer operational.  As soon as I can get the server application back up and running in a new home, the client will be available again.</p>

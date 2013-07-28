@@ -14,7 +14,7 @@ categories:
 ---
 <p><a href="http://www.flickr.com/photos/shiffman/5176786585/" title="Kinect Processing Library in Action by shiffman, on Flickr"><img src="http://farm2.static.flickr.com/1384/5176786585_7f4e7b534f.jpg" width="500" height="359" alt="Kinect Processing Library in Action" /></a></p>
 <p>This is all very preliminary, but here is a first pass as a Processing Kinect library:</p>
-<p><del>http://www.shiffman.net/p5/kinect.zip</del><br />
+<p><del>http://shiffman.net/p5/kinect.zip</del><br />
 (Mac OSX only for now, sorry!)<br />
 UPDATE (12/18/10): New version of the library can be downloaded from github:</p>
 <p><a href="https://github.com/shiffman/libfreenect/raw/master/wrappers/java/processing/distribution/openkinect.zip">openkinect.zip</a>.  </p>

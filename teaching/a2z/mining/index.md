@@ -14,17 +14,17 @@ pvc_views:
 <li class="arrow"><a href="#api">APIs</a></li>
 </div>
 <h2>Examples:</h2>
-<li class="arrow"><a href="http://www.shiffman.net/itp/classes/a2z/week06/A2ZUrlReader.java">A2ZUrlReader.java</a>, <a href="http://www.shiffman.net/itp/classes/a2z/week06/WeatherGrabberHTML.java">WeatherGrabberHTML.java</a></li>
-<li class="arrow"><a href="http://www.shiffman.net/itp/classes/a2z/week06/A2ZXMLHelper.java">A2ZXMLHelper.java</a>, <a href="http://www.shiffman.net/itp/classes/a2z/week06/XMLWeatherGrab.java">XMLWeatherGrab.java</a>, <a href="http://www.shiffman.net/itp/classes/a2z/week06/XMLTraverse.java">XMLTraverse.java</a></li>
-<li class="arrow"><a href="http://www.shiffman.net/itp/classes/a2z/week06/YahooNameSearch.java">YahooNameSearch.java</a></li>
-<li class="arrow"><a href="http://www.shiffman.net/itp/classes/a2z/week06/DeliciousTest.java">DeliciousTest.java</a></li>
-<li class="arrow"><a href="http://www.shiffman.net/itp/classes/a2z/week06/FlickrHelper.java">FlickrHelper.java</a>, <a href="http://www.shiffman.net/itp/classes/a2z/week06/FlickrProcessing.java">FlickrProcessing.java</a></li>
+<li class="arrow"><a href="http://shiffman.net/itp/classes/a2z/week06/A2ZUrlReader.java">A2ZUrlReader.java</a>, <a href="http://shiffman.net/itp/classes/a2z/week06/WeatherGrabberHTML.java">WeatherGrabberHTML.java</a></li>
+<li class="arrow"><a href="http://shiffman.net/itp/classes/a2z/week06/A2ZXMLHelper.java">A2ZXMLHelper.java</a>, <a href="http://shiffman.net/itp/classes/a2z/week06/XMLWeatherGrab.java">XMLWeatherGrab.java</a>, <a href="http://shiffman.net/itp/classes/a2z/week06/XMLTraverse.java">XMLTraverse.java</a></li>
+<li class="arrow"><a href="http://shiffman.net/itp/classes/a2z/week06/YahooNameSearch.java">YahooNameSearch.java</a></li>
+<li class="arrow"><a href="http://shiffman.net/itp/classes/a2z/week06/DeliciousTest.java">DeliciousTest.java</a></li>
+<li class="arrow"><a href="http://shiffman.net/itp/classes/a2z/week06/FlickrHelper.java">FlickrHelper.java</a>, <a href="http://shiffman.net/itp/classes/a2z/week06/FlickrProcessing.java">FlickrProcessing.java</a></li>
 <p>  Fore more on Processing in Eclipse: <a href="http://www.mostpixelsever.com/tutorial/eclipse/">http://www.mostpixelsever.com/tutorial/eclipse/</a></p>
 <h2>Exercises (optional):</h2>
-<li class="arrow">Combine these examples with one of the text analysis programs.  Try using RSS news feed to train a <a href="http://www.shiffman.net/teaching/programming-from-a-to-z/bayesian/">bayesian filter</a>.</li>
+<li class="arrow">Combine these examples with one of the text analysis programs.  Try using RSS news feed to train a <a href="http://shiffman.net/teaching/programming-from-a-to-z/bayesian/">bayesian filter</a>.</li>
 <li class="arrow">Develop some visualization / analysis driven by yahoo searches.  Here&#8217;s <a href="http://osteele.com/archives/2005/12/aargh">an interesting example</a>.</li>
 <p>&nbsp;<br />
-<a href="http://www.shiffman.net/teaching/programming-from-a-to-z/">So far</a> we&#8217;ve looked at several techniques for analyzing and manipulating text, dealing mostly with locally stored text files.  <a href="http://www.shiffman.net/teaching/programming-from-a-to-z/crawling/">Last week</a>, we tasted the delicious nectar of mining the web by developing <a href="http://www.shiffman.net/teaching/programming-from-a-to-z/crawling/#url">an example that grabbed a the source from a URL</a>.  This week, we&#8217;ll look further at the possibilites of grabbing textual content from the network, exploring parsing <a href="#html">HTML</a> / <a href="#xml">XML</a>, as well as looking at three available APIs, <a href="http://developer.yahoo.com/">Yahoo</a>, <a href="http://sourceforge.net/projects/delicious-java/">del.icio.us</a>, and <a href="http://www.flickr.com/services/api/">flickr</a>.</p>
+<a href="http://shiffman.net/teaching/programming-from-a-to-z/">So far</a> we&#8217;ve looked at several techniques for analyzing and manipulating text, dealing mostly with locally stored text files.  <a href="http://shiffman.net/teaching/programming-from-a-to-z/crawling/">Last week</a>, we tasted the delicious nectar of mining the web by developing <a href="http://shiffman.net/teaching/programming-from-a-to-z/crawling/#url">an example that grabbed a the source from a URL</a>.  This week, we&#8217;ll look further at the possibilites of grabbing textual content from the network, exploring parsing <a href="#html">HTML</a> / <a href="#xml">XML</a>, as well as looking at three available APIs, <a href="http://developer.yahoo.com/">Yahoo</a>, <a href="http://sourceforge.net/projects/delicious-java/">del.icio.us</a>, and <a href="http://www.flickr.com/services/api/">flickr</a>.</p>
 <p><a name ="html"></a></p>
 <h2>Parsing HTML</h2>
 <p>Grabbing data from an HTML page can be an uncomfortable experience.  All that HTML whoozeemawhatsit is related to the visual appearance of a page, making the data appear rather disorganized.  Nevertheless, there&#8217;s a lot of useful junk to be found out there in the world of HTML and with a little perserverence, it&#8217;s all there for free.   There are different ways we might approach the problem of pulling information from a webpage.  We can return to some of the basic <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html">String class</a> functionality of yesteryear or use regular expressions.</p>
@@ -106,7 +106,7 @@ System.out.println("The low for today is: " + low + " degrees.");
 <p><a name ="xml"></a></p>
 <h2>XML</h2>
 <p>So, yes, HTML is an ugly, scary place with inconsistently formatted pages that are difficult to reverse engineer and parse effectively.  Fortunately for you, there is the world of <a href="http://en.wikipedia.org/wiki/XML">XML</a> (Extensible Markup Language) page.  XML is designed to facilitate the sharing of data across different systems and its format wonâ€™t cause your hair to go gray as fast.  Let&#8217;s examine how we might grab exactly the same weather information from <a href="http://xml.weather.yahoo.com/forecastrss?p=94089">Yahooâ€™s RSS feed</a>.</p>
-<p>XML organizes information in a tree structure.  The code we&#8217;ll write to search and traverse an XML document is somewhat similar to the work we did in building a <a href="http://www.shiffman.net/teaching/programming-from-a-to-z/concordance/#tree">binary search tree</a> and will involve <a href="http://en.wikipedia.org/wiki/Recursion">recursion</a>.  Let&#8217;s look at the XML for Yahoo weather&#8217;s RSS feed (this is only part of the source in order to simplify the discussion.)</p>
+<p>XML organizes information in a tree structure.  The code we&#8217;ll write to search and traverse an XML document is somewhat similar to the work we did in building a <a href="http://shiffman.net/teaching/programming-from-a-to-z/concordance/#tree">binary search tree</a> and will involve <a href="http://en.wikipedia.org/wiki/Recursion">recursion</a>.  Let&#8217;s look at the XML for Yahoo weather&#8217;s RSS feed (this is only part of the source in order to simplify the discussion.)</p>
 
 {% highlight java %}
 &lt;?xml version="1.0" encoding="UTF-8" standalone="yes" ?&gt;
@@ -183,7 +183,7 @@ for (int i = 0; i < children.getLength(); i++) {
 }
 {% endhighlight %}
 
-<p>If we run the above code, which grabs a list of children and prints out their corresponding tag names, the result isn't terribly interesting.  All we get is "channel."  This is because the root element "RSS" has only one child, "channel."  So, what's next?  We'll need to look at the children of "channel"!  Oh, and then we might need to look at the children of the children of "channel" (if there are any)!   Indeed, this is where our recursive <a href="http://www.shiffman.net/teaching/programming-from-a-to-z/concordance/#tree">tree traversal</a> code will come in handy.  The following function searches for specific element (in our case, we'll want to look for "yweather:forecast").   As long as it is still searching, it will traverse each node's child nodes.  It's a bit confusing as we have to deal with both <a href="http://java.sun.com/j2se/1.4.2/docs/api/org/w3c/dom/Node.html">Node</a> objects and <a href="http://java.sun.com/j2se/1.4.2/docs/api/org/w3c/dom/Element.html">Element</a> objects.  The code checks each Node to see if it is of the type Element and if so, quickly converts it by casting the Node reference.</p>
+<p>If we run the above code, which grabs a list of children and prints out their corresponding tag names, the result isn't terribly interesting.  All we get is "channel."  This is because the root element "RSS" has only one child, "channel."  So, what's next?  We'll need to look at the children of "channel"!  Oh, and then we might need to look at the children of the children of "channel" (if there are any)!   Indeed, this is where our recursive <a href="http://shiffman.net/teaching/programming-from-a-to-z/concordance/#tree">tree traversal</a> code will come in handy.  The following function searches for specific element (in our case, we'll want to look for "yweather:forecast").   As long as it is still searching, it will traverse each node's child nodes.  It's a bit confusing as we have to deal with both <a href="http://java.sun.com/j2se/1.4.2/docs/api/org/w3c/dom/Node.html">Node</a> objects and <a href="http://java.sun.com/j2se/1.4.2/docs/api/org/w3c/dom/Element.html">Element</a> objects.  The code checks each Node to see if it is of the type Element and if so, quickly converts it by casting the Node reference.</p>
 
 {% highlight java %}
 public Element findElement(Element currElement, String elementName)
@@ -249,7 +249,7 @@ public void traverseXML (Node currNode)
 }
 {% endhighlight %}
 
-<p>Of course, the inevitable question now comes up.  Gosh, that seems awfully complicated.  Parsing the HTML was, well, simpler!  Indeed, getting up to speed with using XML can be a steep climb.  Nevertheless, the rewards are greater.  And since I've packaged the above code into its own class: <a href="http://www.shiffman.net/itp/classes/a2z/week06/A2ZXMLHelper.java">A2ZXMLHelper.java</a>, you should feel free to simply use its functionality.    This base class (<a href="http://www.shiffman.net/itp/classes/a2z/week06/A2ZXMLHelper.java">A2ZXMLHelper.java</a>)should provide you with a framework for getting started parsing XML documents.  See: <a href="http://www.shiffman.net/itp/classes/a2z/week06/XMLWeatherGrab.java">XMLWeatherGrab.java</a> for the example pulling weather information from Yahoo's RSS.</p>
+<p>Of course, the inevitable question now comes up.  Gosh, that seems awfully complicated.  Parsing the HTML was, well, simpler!  Indeed, getting up to speed with using XML can be a steep climb.  Nevertheless, the rewards are greater.  And since I've packaged the above code into its own class: <a href="http://shiffman.net/itp/classes/a2z/week06/A2ZXMLHelper.java">A2ZXMLHelper.java</a>, you should feel free to simply use its functionality.    This base class (<a href="http://shiffman.net/itp/classes/a2z/week06/A2ZXMLHelper.java">A2ZXMLHelper.java</a>)should provide you with a framework for getting started parsing XML documents.  See: <a href="http://shiffman.net/itp/classes/a2z/week06/XMLWeatherGrab.java">XMLWeatherGrab.java</a> for the example pulling weather information from Yahoo's RSS.</p>
 <p>Another thing you might notice about XML is how "object-oriented" it seems.  If you take a look at an RSS feed, for example, you might notice that the tree structures contains a list of "item" elements (each item as a date, title, description, link, etc.).  Below is a simplification:</p>
 
 {% highlight java %}
@@ -281,9 +281,9 @@ public class Post {
     title = t;
 }
 
-Full code: <a href="http://www.shiffman.net/itp/classes/a2z/week06/Post.java">Post.java</a>
+Full code: <a href="http://shiffman.net/itp/classes/a2z/week06/Post.java">Post.java</a>
 
-Now that we have this Post class, we can read the XML document and create Post objects for each "item" element.  We first use the <a href="http://www.shiffman.net/itp/classes/a2z/week06/A2ZXMLHelper">A2ZXMLHelper.java</a> class which includes a function to fill an ArrayList with all XML Elements with a specific name.
+Now that we have this Post class, we can read the XML document and create Post objects for each "item" element.  We first use the <a href="http://shiffman.net/itp/classes/a2z/week06/A2ZXMLHelper">A2ZXMLHelper.java</a> class which includes a function to fill an ArrayList with all XML Elements with a specific name.
 
 {% endhighlight %}
 
@@ -338,8 +338,8 @@ for (int i = 0; i < items.size(); i++) {
 }
 {% endhighlight %}
 
-<p>Full code: <a href="http://www.shiffman.net/itp/classes/a2z/week06/BlogReader.java">BlogReader.java</a><br />
-Full code: <a href="http://www.shiffman.net/itp/classes/a2z/week06/Post.java">Post.java</a></p>
+<p>Full code: <a href="http://shiffman.net/itp/classes/a2z/week06/BlogReader.java">BlogReader.java</a><br />
+Full code: <a href="http://shiffman.net/itp/classes/a2z/week06/Post.java">Post.java</a></p>
 <p><a name ="api"></a></p>
 <h2>APIs</h2>
 <p>Sure, we can parse HTML.  Sure, we can wade through nicely formatted XML.  But wouldn't it be nicer if we didn't have to do either and could simply access the data of a web site via some sort of API?  In fact, with many sites we can.  For starters: <a href="http://programmableweb.com/apis">The Programmable Web: APIs</a>.  Woohoo!</p>
@@ -354,7 +354,7 @@ Full code: <a href="http://www.shiffman.net/itp/classes/a2z/week06/Post.java">Po
 <li class="arrow"><a href="http://developer.yahoo.com/search/">Yahoo Developer Site</a></li>
 <li class="arrow"><a href="http://search.yahooapis.com/webservices/register_application">Get A Developer Key</a></li>
 <li class="arrow"><a href="http://developer.yahoo.com/download/">Download the API</a> (which includes "yahoo_search-2.0.1.jar")</li>
-<li class="arrow"><a href="http://www.shiffman.net/itp/classes/a2z/week06/YahooNameSearch.java">Try this example.</a></li>
+<li class="arrow"><a href="http://shiffman.net/itp/classes/a2z/week06/YahooNameSearch.java">Try this example.</a></li>
 <p>The code for dealing with the API is pretty simple.  Import the library:</p>
 
 {% highlight java %}import com.yahoo.search.*;{% endhighlight %}
@@ -428,5 +428,5 @@ for (int i = 0; i < list.size(); i++) {
 {% endhighlight %}
 
 <p>The full example takes these photos and loads the as PImage objects in a <a href"http://www.processing.org">Processing</a> sketch.  </p>
-<p><a href="http://www.shiffman.net/itp/classes/a2z/week06/FlickrHelper.java">FlickrHelper.java</a><br />
-<a href="http://www.shiffman.net/itp/classes/a2z/week06/FlickrProcessing.java">FlickrProcessing.java</a></p>
+<p><a href="http://shiffman.net/itp/classes/a2z/week06/FlickrHelper.java">FlickrHelper.java</a><br />
+<a href="http://shiffman.net/itp/classes/a2z/week06/FlickrProcessing.java">FlickrProcessing.java</a></p>

@@ -9,11 +9,11 @@ videoComments_video_height:
 videoComments_video_text:
   - Ze Paris Hotel
 videoComments_video_image:
-  - http://www.shiffman.net/movies/frenchy.jpg
+  - http://shiffman.net/movies/frenchy.jpg
 videoComments_video_display:
   - top
 videoComments_video_url:
-  - http://www.shiffman.net/movies/frenchy.mov
+  - http://shiffman.net/movies/frenchy.mov
 dsq_thread_id:
   - 249553594
 pvc_views:

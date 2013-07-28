@@ -15,7 +15,7 @@ dsq_needs_sync:
 <p>Before you proceed, however, you may want to instead consider using the wonderful <a href="http://code.google.com/p/simple-openni/">SimpleOpenNI library</a> and Greg Borenstein&#8217;s <a href="http://urbanhonking.com/ideasfordozens/2011/10/08/making-things-see-available-for-early-release/">Making Things See</a> book!  OpenNI has lots of features (skeleton tracking, gesture recognition, etc.) that are not available in this library.</p>
 <h2>I&#8217;m ready to get started right now</h2>
 <ul>
-<li>Download library and examples: <a href="http://www.shiffman.net/p5/libraries/openkinect/openkinect.zip">openkinect.zip</a></li>
+<li>Download library and examples: <a href="http://shiffman.net/p5/libraries/openkinect/openkinect.zip">openkinect.zip</a></li>
 <li>Source code: <a href="https://github.com/shiffman/libfreenect/tree/master/wrappers/java/processing">https://github.com/shiffman/libfreenect/tree/master/wrappers/java/processing</a></li>
 <li>Open Kinect: <a href="http://openkinect.org/">openkinect.org</a></li>
 </ul>

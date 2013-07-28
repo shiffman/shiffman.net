@@ -15,19 +15,19 @@ pvc_views:
 <li class="arrow"><a href="#coding">Inform: coding</a></li>
 </div>
 <h2>Examples:</h2>
-<li class="arrow"><a href="http://www.shiffman.net/itp/classes/a2z/week08/HelloWorld.inf">HelloWorld.inf</a></li>
-<li class="arrow"><a href="http://www.shiffman.net/itp/classes/a2z/week08/ITP.inf">ITP.inf</a></li>
+<li class="arrow"><a href="http://shiffman.net/itp/classes/a2z/week08/HelloWorld.inf">HelloWorld.inf</a></li>
+<li class="arrow"><a href="http://shiffman.net/itp/classes/a2z/week08/ITP.inf">ITP.inf</a></li>
 <li class="arrow"><a href="http://www.nickm.com/if/if/kits.tgz">Two starter kits</a> by <a href="http://www.nickm.com/">Nick Montfort</a></li>
 <li class="arrow"><a href="http://www.firthworks.com/roger/downloads/IBGgames.zip">IBG examples</a> by Roger Firth and Sonja Kesserich.  Use along with the <a href="http://www.inform-fiction.org/manual/download_ibg.html">Inform Beginnner&#8217;s Guide</a>.</li>
 <h2>Reading:</h2>
 <li class="arrow"><a href="http://nickm.com/if/toward.html">Toward a Theory of Interactive Fiction</a>, Nick Montfort</li>
-<li class="arrow"><a href="http://nickm.com/if/rec.html">Interactive Fiction Recommendations</a>, Nick Montfort (pick one to play and write a short response on the <a href="http://www.shiffman.net/a2z/">course blog.</a>)
+<li class="arrow"><a href="http://nickm.com/if/rec.html">Interactive Fiction Recommendations</a>, Nick Montfort (pick one to play and write a short response on the <a href="http://shiffman.net/a2z/">course blog.</a>)
 </li>
 <li class="arrow"><a href="#">The Inform Beginner&#8217;s Guide</a>, Chapters 1-5</li>
 <li class="arrow"><a href="http://nickm.com/twisty/">Twisty Little Passages</a>, Nick Montfort (suggested)</li>
 <li class="arrow"><a href="#">Inform User&#8217;s Manual</a> (suggested) </li>
 <h2>Assignment:</h2>
-<li class="arrow">Develop your own interactive fiction work using <a href="http://www.inform-fiction.org/">Inform</a>.  Feel free to work in groups and base your story off of the provided examples.  Keep it simple.   Do not feel obligated to make your work a game or puzzle.  Publish your work along with the source to the <a href="http://www.shiffman.net/a2z/">course blog</a>.</li>
+<li class="arrow">Develop your own interactive fiction work using <a href="http://www.inform-fiction.org/">Inform</a>.  Feel free to work in groups and base your story off of the provided examples.  Keep it simple.   Do not feel obligated to make your work a game or puzzle.  Publish your work along with the source to the <a href="http://shiffman.net/a2z/">course blog</a>.</li>
 <h2>Exercises (optional):</h2>
 <li class="arrow">Examine the simple ITP text adventure above.  What is missing?  What doesn&#8217;t really make sense / work?  Can you fix / improve it?</li>
 <p><a name ="if"></a></p>
@@ -39,7 +39,7 @@ pvc_views:
 <h2>How to play: Interpreters and basic commands</h2>
 <p>Just as <a href="http://java.sun.com">java</a> programs run on a <a href="http://en.wikipedia.org/wiki/Java_virtual_machine">Java vitual machine</a> (the same java bytecode can be run on different platforms as long as a virtual machine exists for that platform) most interactive fiction programs run via a virtual machine, also known as an &#8220;interpreter.&#8221;   For the Mac OS X, I suggest you download and install <a href="http://www.logicalshift.demon.co.uk/mac/zoom.html">Zoom</a> as your interpreter, for Windows: <a href="http://ifarchive.giga.or.at/if-archive/interpreters-infocom-zcode/frotz/">Windows Frotz 2002</a>.   Note that not all interactive fiction works exist as Z-code files that run on Z-machine interpreters.   <a href="http://www.tads.org/">TADS</a> (Text Adventures Development System) is also a popular authoring tool for IF and for these works, you&#8217;ll need a <a href="http://www.tads.org/download.htm">TADS interpreter</a>.</p>
 <p>If you want to incorporate IF into your java programs, you might be interested in checking out <a href="http://sourceforge.net/projects/zplet/">zplet</a>, an open-source java interpreter.  <a href="http://www.eblong.com/zarf/zplet/shade.html">Here&#8217;s an example</a> of the IF work <a href="http://www.eblong.com/zarf/if.html#shade">Shade</a> by Andrew Plotkin running as a zplet.</p>
-<p><a href="http://www.shiffman.net/itp/classes/a2z/week08/zork1.jpg"><img src="http://www.shiffman.net/itp/classes/a2z/week08/zork1small.jpg" alt = "zork" class = "right"/></a></p>
+<p><a href="http://shiffman.net/itp/classes/a2z/week08/zork1.jpg"><img src="http://shiffman.net/itp/classes/a2z/week08/zork1small.jpg" alt = "zork" class = "right"/></a></p>
 <p>A comprehensive resource for tools to play IF can be found on the <a href="http://www.ifwiki.org/index.php/Websites_for_downloading_or_playing_IF">Interactive Fiction wiki</a>.  To find works, you might look through the <a href="http://www.ifarchive.org/">Interactive Fiction Archive</a> or check out <a href="http://www.nickm.com/if/rec.html">this list of recommendations</a> by <a href="http://www.nickm.com/">Nick Montfort</a>.  <a href="http://www.wurb.com/if/index">Baf&#8217;s Guide to the Interactive Fiction Archive</a> is another good resource.</p>
 <p>Exploring interactive fiction worlds is often a relatively intuitive process (certainly, there are exceptions).  However, if you&#8217;re new to it, there are some useful conventions and familiarizing yourself with a few basic commands (see: <a href="http://jerz.setonhill.edu/if/gallery/help.html#Basics">this article</a>) will help you get started.  </p>
 <p>Some examples of common IF commands:</p>
@@ -61,7 +61,7 @@ pvc_views:
 <h2>Inform: compiling</h2>
 <p>To develop your own interactive fiction works, you&#8217;re probably going to want to use an existing authoring environment, such as <a href="http://www.inform-fiction.org/">Inform</a> or <a href="http://www.tads.org/">TADs</a>.  The following instructions document how to compile interactive fiction works using Inform on a Mac (<a href="http://www.firthworks.com/roger/informfaq/pp.html#6">PC instructions</a>).</p>
 <p>First, <a href="http://www.inform-fiction.org/software/current.html">download the appropriate compiler for your system</a>.  Extract the files to your hard drive.  With the Mac OS X compiler, you&#8217;ll have two crucial elements: &#8220;inform630_macosx&#8221; &#8212; the executable compiler &#8212; and &#8220;lib&#8221; &#8212; a directory with all the required library files.  (Note you may find it interesting to look through the library files, as they will provide insight into the guts of the Inform parser.) </p>
-<p>Ok, you&#8217;re ready to compile.  Download <a href="http://www.shiffman.net/itp/classes/a2z/week08/HelloWorld.inf">HelloWorld.inf</a> and use the syntax below (note I placed the inform compiler in the applications directory, but you may have placed it somewhere else).</p>
+<p>Ok, you&#8217;re ready to compile.  Download <a href="http://shiffman.net/itp/classes/a2z/week08/HelloWorld.inf">HelloWorld.inf</a> and use the syntax below (note I placed the inform compiler in the applications directory, but you may have placed it somewhere else).</p>
 {% highlight java %}
 $ /Applications/inform/inform630_macosx +include_path=/Applications/inform/lib/ HelloWorld.inf
 {% endhighlight %}
@@ -74,8 +74,8 @@ $ alias inform='/Applications/inform/inform630_macosx +include_path=/Application
 $ inform HelloWorld.inf
 {% endhighlight %}
 <p>How it might look:<br />
-<img src="http://www.shiffman.net/itp/classes/a2z/week08/compiling.jpg" alt="compiling"/></p>
-<p>Compiling should yield the z-code file <a href="http://www.shiffman.net/itp/classes/a2z/week08/HelloWorld.z5">HelloWorld.z5</a> which you can then run with Zoom.</p>
+<img src="http://shiffman.net/itp/classes/a2z/week08/compiling.jpg" alt="compiling"/></p>
+<p>Compiling should yield the z-code file <a href="http://shiffman.net/itp/classes/a2z/week08/HelloWorld.z5">HelloWorld.z5</a> which you can then run with Zoom.</p>
 <p><a name ="coding"></a></p>
 <h2>Inform: coding</h2>
 <p>For a full guide to programming interactive fiction with <a href="http://www.inform-fiction.org/">Inform</a> I suggest you read the <a href="http://www.inform-fiction.org/manual/about_dm4.html">Designer&#8217;s Manual</a> or the <a href="http://www.inform-fiction.org/manual/about_ibg.html">Inform beginner&#8217;s guide</a>.  <a href="http://chicagodave.wordpress.com/">David Cornelson&#8217;s</a> <a href="http://www.ifwiki.org/index.php/House_1_Inform_Tutorial">House Tutorial</a> is also an excellent resource.  In addition, <a href="http://www.nickm.com/">Nick Montfort</a> provides two introductory <a href="http://www.nickm.com/if/#advice">starter kits</a> for Inform.</p>
@@ -127,7 +127,7 @@ with     property value,
          property value,
 has      attribute attribute . . . attribute
 {% endhighlight %}
-<p>For example, a computer lab in the example <a href="http://www.shiffman.net/itp/classes/a2z/week08/ITP.inf">ITP.inf</a> is described as follows:</p>
+<p>For example, a computer lab in the example <a href="http://shiffman.net/itp/classes/a2z/week08/ITP.inf">ITP.inf</a> is described as follows:</p>
 {% highlight java %}
 Object  lab "The Computer Lab."
   with  description

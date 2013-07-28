@@ -55,5 +55,5 @@ void draw() {
 }
 {% endhighlight %}
 <p>Until 2.0 is released, I recommend you use 3rd party software to take the image sequence and turn it into a movie.  The old Quicktime 7 will do the trick, as well as any number of video production applications like final cut, after effects, iMovie, etc.  The nice thing about using a PNG sequence is that the images are uncompressed, but aren&#8217;t as large as say TIFFs.  I don&#8217;t recommend saving JPGs because then you will likely be compressing twice (once when saving the image, once when exporting the movie file).</p>
-<p><a href='http://www.shiffman.net/wp/wp-content/uploads/2011/12/SavingFrames.zip'><img src="http://www.shiffman.net/wp/wp-content/uploads/2011/12/frames.png" alt="" title="frames" width="590" height="352" class="alignnone size-full wp-image-1075" /></a></p>
-<p>Source: <a href='http://www.shiffman.net/wp/wp-content/uploads/2011/12/SavingFrames.zip'>SavingFrames.zip</a></p>
+<p><a href='http://shiffman.net/wp/wp-content/uploads/2011/12/SavingFrames.zip'><img src="http://shiffman.net/wp/wp-content/uploads/2011/12/frames.png" alt="" title="frames" width="590" height="352" class="alignnone size-full wp-image-1075" /></a></p>
+<p>Source: <a href='http://shiffman.net/wp/wp-content/uploads/2011/12/SavingFrames.zip'>SavingFrames.zip</a></p>

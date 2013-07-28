@@ -12,6 +12,6 @@ categories:
   - p5
   - teaching_
 ---
-<p><a href="http://www.shiffman.net/teaching/the-nature-of-code/week-1/"><img src="http://www.shiffman.net/itp/classes/nature/week01_s06/noc1.jpg" alt="nature of code"/></a><br />
-<a href="http://www.shiffman.net/teaching/the-nature-of-code/week-1/">week 1 tutorial</a></p>
-<p>Ok, so the first edition of the new revised <a href="http://www.shiffman.net/teaching/the-nature-of-code">nature of code</a> tutorials is up and online.  As I continue to update the lessons over the course of the semester, I&#8217;ll slowly take the <a href="http://www.shiffman.net/itp/classes/nature/">old site</a> down.  Comments, critiques, welcome!</p>
+<p><a href="http://shiffman.net/teaching/the-nature-of-code/week-1/"><img src="http://shiffman.net/itp/classes/nature/week01_s06/noc1.jpg" alt="nature of code"/></a><br />
+<a href="http://shiffman.net/teaching/the-nature-of-code/week-1/">week 1 tutorial</a></p>
+<p>Ok, so the first edition of the new revised <a href="http://shiffman.net/teaching/the-nature-of-code">nature of code</a> tutorials is up and online.  As I continue to update the lessons over the course of the semester, I&#8217;ll slowly take the <a href="http://shiffman.net/itp/classes/nature/">old site</a> down.  Comments, critiques, welcome!</p>

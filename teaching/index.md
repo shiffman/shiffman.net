@@ -39,11 +39,11 @@ What can computation add to human communication? Creating computer applications,
 There are 16,000 free books in the Project Gutenberg digital catalog. Google print is scanning millions. With all this digitized text, what can we do with it beyond simply search and browse? This course will focus on programming strategies and techniques behind procedural analysis and generation of text. We&#8217;ll explore topics ranging from evaluating text according to its statistical properties to the automated production of text via artificial intelligence. Student will be encouraged to develop their own systems and methods, from poetry machines to intelligent spiders to evolutionary language generators, etc. Examples will be demonstrated using Java and Processing with a focus on advanced data structures (linked lists, hash tables, binary trees) associated with storing and manipulating text. Prerequisite: H79.2233 Introduction to Computational Media or equivalent programming experience.
 
 * [2008 Syllabus](http://itp.nyu.edu/varwiki/Syllabus/A2Z-S08)
-* [Tutorials](http://www.shiffman.net/teaching/a2z/) (a bit out of date)
+* [Tutorials](http://shiffman.net/teaching/a2z/) (a bit out of date)
 
 
 ## Procedural Painting (2004)
 
 This introductory level course covers the basics of computer programming within the context of images, drawing and responsive visual forms.   The first few weeks will focus on basic programming concepts: variables, arrays, conditional statements, and iteration.   The second-half of the course will cover more advanced topics, such as recursion, 3D transformations, and image processing. Processing will be used as the primary development environment for the class.
 
-- [Class Web Site](http://www.shiffman.net/itp/classes/ppaint/) (very out of date!)
+- [Class Web Site](http://shiffman.net/itp/classes/ppaint/) (very out of date!)

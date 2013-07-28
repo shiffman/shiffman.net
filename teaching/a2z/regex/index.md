@@ -19,15 +19,15 @@ pvc_views:
 </div>
 <h2>Examples:</h2>
 <ul>
-<li><a href="http://www.shiffman.net/itp/classes/a2z/week02/RegexHelloWorld.java">RegexHelloWorld.java</a></li>
-<li><a href="http://www.shiffman.net/itp/classes/a2z/week02/DoubleWords.java">DoubleWords.java</a></li>
-<li><a href="http://www.shiffman.net/itp/classes/a2z/week02/VowelCounter.java">VowelCounter.java</a></li>
-<li><a href="http://www.shiffman.net/itp/classes/a2z/week02/WordSplitterRegex.java">WordSplitterRegex.java</a></li>
-<li><a href="http://www.shiffman.net/itp/classes/a2z/week02/ReplaceDemo1.java">ReplaceDemo1.java</a></li>
-<li><a href="http://www.shiffman.net/itp/classes/a2z/week02/ReplaceDemo2.java">ReplaceDemo2.java</a></li>
-<li><a href="http://www.shiffman.net/itp/classes/a2z/week02/ReplaceBackReference.java">ReplaceBackReference.java</a></li>
-<li><a href="http://www.shiffman.net/itp/classes/a2z/week02/HTMLTagRemover.java">HTMLTagRemover.java</a></li>
-<li>Some sample input files: <a href="http://www.shiffman.net/itp/classes/a2z/week01/spam.txt">spam.txt</a>, <a href="http://www.shiffman.net/itp/classes/a2z/week01/nytimes.txt">nytimes.txt</a>, <a href="http://www.shiffman.net/itp/classes/a2z/week01/bible.txt">bible.txt</a>, <a href="http://www.shiffman.net/itp/classes/a2z/week02/a2z.txt">a2z.txt</a>, <a href="http://www.shiffman.net/itp/classes/a2z/week02/doubletext.txt">doubletext.txt</a>, <a href="http://www.shiffman.net/itp/classes/a2z/week02/nytimes.html">nytimes.html</a></li>
+<li><a href="http://shiffman.net/itp/classes/a2z/week02/RegexHelloWorld.java">RegexHelloWorld.java</a></li>
+<li><a href="http://shiffman.net/itp/classes/a2z/week02/DoubleWords.java">DoubleWords.java</a></li>
+<li><a href="http://shiffman.net/itp/classes/a2z/week02/VowelCounter.java">VowelCounter.java</a></li>
+<li><a href="http://shiffman.net/itp/classes/a2z/week02/WordSplitterRegex.java">WordSplitterRegex.java</a></li>
+<li><a href="http://shiffman.net/itp/classes/a2z/week02/ReplaceDemo1.java">ReplaceDemo1.java</a></li>
+<li><a href="http://shiffman.net/itp/classes/a2z/week02/ReplaceDemo2.java">ReplaceDemo2.java</a></li>
+<li><a href="http://shiffman.net/itp/classes/a2z/week02/ReplaceBackReference.java">ReplaceBackReference.java</a></li>
+<li><a href="http://shiffman.net/itp/classes/a2z/week02/HTMLTagRemover.java">HTMLTagRemover.java</a></li>
+<li>Some sample input files: <a href="http://shiffman.net/itp/classes/a2z/week01/spam.txt">spam.txt</a>, <a href="http://shiffman.net/itp/classes/a2z/week01/nytimes.txt">nytimes.txt</a>, <a href="http://shiffman.net/itp/classes/a2z/week01/bible.txt">bible.txt</a>, <a href="http://shiffman.net/itp/classes/a2z/week02/a2z.txt">a2z.txt</a>, <a href="http://shiffman.net/itp/classes/a2z/week02/doubletext.txt">doubletext.txt</a>, <a href="http://shiffman.net/itp/classes/a2z/week02/nytimes.html">nytimes.html</a></li>
 </ul>
 <h2>Related:</h2>
 <ul>
@@ -113,19 +113,19 @@ This is really really super super duper duper fun.  Fun!
 %  egrep -i 'five' bible.txt
 {% endhighlight %}
 
-<p><img src="http://www.shiffman.net/itp/classes/a2z/week02/four.jpg"/> <img src="http://www.shiffman.net/itp/classes/a2z/week02/five.jpg"/></p>
+<p><img src="http://shiffman.net/itp/classes/a2z/week02/four.jpg"/> <img src="http://shiffman.net/itp/classes/a2z/week02/five.jpg"/></p>
 <p>The -i flag indicates that the match should be case-insensitive.  You can find full documentation for the &#8220;egrep&#8221; command here (with full flags): <a href="http://www.unet.univie.ac.at/aix/cmds/aixcmds2/egrep.htm">http://www.unet.univie.ac.at/aix/cmds/aixcmds2/egrep.htm</a>.</p>
 <p>Let&#8217;s look at some other examples (special thanks to <a href="http://regex.info">Friedl&#8217;s Mastering Regular Expressions</a>).</p>
 <p>Match URL&#8217;s:</p>
 
 {% highlight java %}%  egrep -i 'http://[^ ]*' a2z.txt{% endhighlight %}
 
-<p>(run this with the following sample file: <a href="http://www.shiffman.net/itp/classes/a2z/week02/a2z.txt">a2z.txt</a>)</p>
+<p>(run this with the following sample file: <a href="http://shiffman.net/itp/classes/a2z/week02/a2z.txt">a2z.txt</a>)</p>
 <p>Match double words:</p>
 
 {% highlight java %}%  egrep -i '\< (w+) +\1\>' doubletext.txt{% endhighlight %}
 
-<p>(run this with the following sample file: <a href="http://www.shiffman.net/itp/classes/a2z/week02/a2z.txt">doubletext.txt</a>)</p>
+<p>(run this with the following sample file: <a href="http://shiffman.net/itp/classes/a2z/week02/a2z.txt">doubletext.txt</a>)</p>
 <p>(Note, in the above example, the metacharacter <regex>< </regex> means &#8220;start of word boundary&#8221; and </regex><regex>></regex> means &#8220;end of word boundary.&#8221;  This is different than the <regex>b</regex> we&#8217;ll find in Java.</p>
 <p><a name ="java"></a></p>
 <h2>Regular Expressions in Java</h2>
@@ -151,7 +151,7 @@ This is really really super super duper duper fun.  Fun!
 </ul>
 <p>Our first regex program will follow this pseudo-code:</p>
 <ul>
-<li> 1 &#8212; Get input text that we want to match (presumably we would use the <a href="http://www.shiffman.net/teaching/programming-from-a-to-z/week-1-a-to-z/#file">File I/O</a> samples demonstrated last week.)</li>
+<li> 1 &#8212; Get input text that we want to match (presumably we would use the <a href="http://shiffman.net/teaching/programming-from-a-to-z/week-1-a-to-z/#file">File I/O</a> samples demonstrated last week.)</li>
 <li>2 &#8212; Create a String representation of a regex</li>
 <li>3 &#8212; Compile regex into a Pattern object</li>
 <li>4 &#8212; Create a matcher object from Pattern by handing it input text</li>
@@ -198,7 +198,7 @@ while (m.find()) {
 
 {% highlight java %}Pattern p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE | Pattern.COMMENTS);{% endhighlight %}
 
-<p>It&#8217;s easy to notice, how easy it would be to improve the <a href="http://www.shiffman.net/teaching/programming-from-a-to-z/week-1-a-to-z/#analysis">Flesch Index</a> example from last week.  For example, we could use a regular expression to very quickly count vowels:</p>
+<p>It&#8217;s easy to notice, how easy it would be to improve the <a href="http://shiffman.net/teaching/programming-from-a-to-z/week-1-a-to-z/#analysis">Flesch Index</a> example from last week.  For example, we could use a regular expression to very quickly count vowels:</p>
 
 {% highlight java %}
 String regex = "[aeiou]";
@@ -213,7 +213,7 @@ System.out.println("Total vowels: " + vowelcount);
 
 <p><a name="split"></a></p>
 <h2>Splitting with Regular Expressions</h2>
-<p>It should briefly be noted that the <a href="http://www.shiffman.net/teaching/programming-from-a-to-z/week-1-a-to-z/#string">split function we examined last week</a> actually takes a regular expression as an argument.  An input String is split into an array wherever any part of that input String that matches that regular expression.  For example. . . </p>
+<p>It should briefly be noted that the <a href="http://shiffman.net/teaching/programming-from-a-to-z/week-1-a-to-z/#string">split function we examined last week</a> actually takes a regular expression as an argument.  An input String is split into an array wherever any part of that input String that matches that regular expression.  For example. . . </p>
 
 {% highlight java %}
 String regex = "\\W";  // Use any "non-word character" as a delimiter
@@ -302,5 +302,5 @@ print $stuff;
 {% endhighlight %}
 
 <p><b>PHP</b>:<br />
-Run it:  <a href="http://www.shiffman.net/itp/classes/a2z/week02/voweldoubler.php">http://www.shiffman.net/itp/classes/a2z/week02/voweldoubler.php</a><br />
-Source:  <a href="http://www.shiffman.net/itp/classes/a2z/week02/voweldoubler.phps">http://www.shiffman.net/itp/classes/a2z/week02/voweldoubler.phps</a></p>
+Run it:  <a href="http://shiffman.net/itp/classes/a2z/week02/voweldoubler.php">http://shiffman.net/itp/classes/a2z/week02/voweldoubler.php</a><br />
+Source:  <a href="http://shiffman.net/itp/classes/a2z/week02/voweldoubler.phps">http://shiffman.net/itp/classes/a2z/week02/voweldoubler.phps</a></p>

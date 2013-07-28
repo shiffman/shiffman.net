@@ -17,11 +17,11 @@ pvc_views:
 </div>
 <h2>Examples:</h2>
 <ul>
-<li><a href="http://www.shiffman.net/itp/classes/a2z/week04/HashMapTest.java">HashMapTest.java</a></li>
-<li>simple text analysis example: <a href="http://www.shiffman.net/itp/classes/a2z/week04/simple/a2z.zip">a2z.zip</a></li>
-<li>individual files: <a href="http://www.shiffman.net/itp/classes/a2z/week04/simple/TextAnalyzer.java"> TextAnalyzer.java</a>, <a href="http://www.shiffman.net/itp/classes/a2z/week04/simple/A2ZFileReader.java">A2ZFileReader.java</a>, <a href="http://www.shiffman.net/itp/classes/a2z/week04/simple/A2ZFileWriter.java">A2ZFileWriter.java</a>, <a href="http://www.shiffman.net/itp/classes/a2z/week04/simple/WordMap.java">WordMap.java</a>, <a href="http://www.shiffman.net/itp/classes/a2z/week04/simple/Word.java">Word.java</a></li>
-<li>full bayesian spam filter example: <a href="http://www.shiffman.net/itp/classes/a2z/week04/bayesianspam.zip">bayesianspam.zip</a></li>
-<li>individual files: <a href="http://www.shiffman.net/itp/classes/a2z/week04/bayes/Bayesian.java">Bayesian.java</a>, <a href="http://www.shiffman.net/itp/classes/a2z/week04/a2z/A2ZFileReader.java">A2ZFileReader.java</a>, <a href="http://www.shiffman.net/itp/classes/a2z/week04/bayes/SpamFilter.java">SpamFilter.java</a>, <a href="http://www.shiffman.net/itp/classes/a2z/week04/bayes/Word.java">Word.java</a></li>
+<li><a href="http://shiffman.net/itp/classes/a2z/week04/HashMapTest.java">HashMapTest.java</a></li>
+<li>simple text analysis example: <a href="http://shiffman.net/itp/classes/a2z/week04/simple/a2z.zip">a2z.zip</a></li>
+<li>individual files: <a href="http://shiffman.net/itp/classes/a2z/week04/simple/TextAnalyzer.java"> TextAnalyzer.java</a>, <a href="http://shiffman.net/itp/classes/a2z/week04/simple/A2ZFileReader.java">A2ZFileReader.java</a>, <a href="http://shiffman.net/itp/classes/a2z/week04/simple/A2ZFileWriter.java">A2ZFileWriter.java</a>, <a href="http://shiffman.net/itp/classes/a2z/week04/simple/WordMap.java">WordMap.java</a>, <a href="http://shiffman.net/itp/classes/a2z/week04/simple/Word.java">Word.java</a></li>
+<li>full bayesian spam filter example: <a href="http://shiffman.net/itp/classes/a2z/week04/bayesianspam.zip">bayesianspam.zip</a></li>
+<li>individual files: <a href="http://shiffman.net/itp/classes/a2z/week04/bayes/Bayesian.java">Bayesian.java</a>, <a href="http://shiffman.net/itp/classes/a2z/week04/a2z/A2ZFileReader.java">A2ZFileReader.java</a>, <a href="http://shiffman.net/itp/classes/a2z/week04/bayes/SpamFilter.java">SpamFilter.java</a>, <a href="http://shiffman.net/itp/classes/a2z/week04/bayes/Word.java">Word.java</a></li>
 </ul>
 <h2>Related:</h2>
 <ul>
@@ -33,7 +33,7 @@ pvc_views:
 <li>For a Perl implementation: <a href="http://www.ddj.com/documents/s=9698/ddj0505a/0505a.html?temp=7vfW-Dp7KD">Naive Bayesian Text Classification</a> (sorry, you have to register).</li>
 <li><a href="http://www.noraproject.org/">The Nora Project</a></li>
 </ul>
-<p>Our goal for this week is to develop a very simple example of applying <a href="http://en.wikipedia.org/wiki/Bayes%27_theorem">Bayes&#8217; Theorem</a> to text analysis.  The example we will use is modeled after <a href="http://www.paulgraham.com/">Paul Graham&#8217;s</a> &#8220;<a href="http://www.paulgraham.com/spam.html">A Plan for Spam</a>.&#8221;   This example will be demonstrated through storing Word objects in a <a href=http://en.wikipedia.org/wiki/Hash_table">Hash Table</a>, instead of a <a href="http://en.wikipedia.org/wiki/Binary_search_tree">Binary Search Tree</a> (as with <a href="http://www.shiffman.net/teaching/programming-from-a-to-z/concordance">last week&#8217;s concordance example</a>).  We can use a Hash Table here because the order of the words is not relevant to this problem.</p>
+<p>Our goal for this week is to develop a very simple example of applying <a href="http://en.wikipedia.org/wiki/Bayes%27_theorem">Bayes&#8217; Theorem</a> to text analysis.  The example we will use is modeled after <a href="http://www.paulgraham.com/">Paul Graham&#8217;s</a> &#8220;<a href="http://www.paulgraham.com/spam.html">A Plan for Spam</a>.&#8221;   This example will be demonstrated through storing Word objects in a <a href=http://en.wikipedia.org/wiki/Hash_table">Hash Table</a>, instead of a <a href="http://en.wikipedia.org/wiki/Binary_search_tree">Binary Search Tree</a> (as with <a href="http://shiffman.net/teaching/programming-from-a-to-z/concordance">last week&#8217;s concordance example</a>).  We can use a Hash Table here because the order of the words is not relevant to this problem.</p>
 <div class ="pullquote">
 <b>Big O Notation for Searching Data Structures:</b></p>
 <ul>
@@ -44,7 +44,7 @@ pvc_views:
 </div>
 <p><a name ="hash"></a></p>
 <h2>Hash Tables</h2>
-<p><a href="http://www.shiffman.net/teaching/programming-from-a-to-z/concordance">Last week</a>, we discovered that we could improve on the efficiency of searching through an ordered list of words via <a href="http://www.shiffman.net/teaching/programming-from-a-to-z/concordance/#tree">a binary tree data structure</a>.  This structure provided O(logN) look-up time, a great improvement over O(N) look-up that a simple <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/ArrayList.html">ArrayList</a> or <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/LinkedList.html">LinkedList</a> provided.  We wrote our own Tree class, however, we could have simplified our lives by using the Java <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/TreeMap.html">TreeMap</a>.</p>
+<p><a href="http://shiffman.net/teaching/programming-from-a-to-z/concordance">Last week</a>, we discovered that we could improve on the efficiency of searching through an ordered list of words via <a href="http://shiffman.net/teaching/programming-from-a-to-z/concordance/#tree">a binary tree data structure</a>.  This structure provided O(logN) look-up time, a great improvement over O(N) look-up that a simple <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/ArrayList.html">ArrayList</a> or <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/LinkedList.html">LinkedList</a> provided.  We wrote our own Tree class, however, we could have simplified our lives by using the Java <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/TreeMap.html">TreeMap</a>.</p>
 <p>Wouldn&#8217;t it be nice if we could search for a word in a data structure and have constant time (i.e. O(1)) look-up for any word?  This is similar to the speed at which we can look-up any element in an array by accessing it via its index.  We only need one computation cycle!  In fact, a hash table does exactly this!  Although we could build our own as we did with the Tree, this time we&#8217;ll use the existing Java <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/HashMap.html">HashMap</a> class.</p>
 <p>A hash table provides constant-time look-up of any value via its key.  In our case, the key and the value can essentially be the same (the word we are searching for).  The key is transformed into a numerical value via a hash function.  That number is then used as an index in an array to check if the key exists and/or retrieve the value associated with that key.   Consider a room full of approximately 50 ITP students that we want to put into a Hash Table.  We need to come up with a function that takes the person and converts them into a numerical value.   Let&#8217;s try a few different solutions:</p>
 <ul>
@@ -86,7 +86,7 @@ if (words.containsKey("example")) {
 }
 {% endhighlight %}
 
-<p>full code: <a href="http://www.shiffman.net/itp/classes/a2z/week04/HashMapTest.java">HashMapTest.java</a></p>
+<p>full code: <a href="http://shiffman.net/itp/classes/a2z/week04/HashMapTest.java">HashMapTest.java</a></p>
 <div class ="pullquote">
 <b>Bayes&#8217; Theorem</b><br />
 p(A|B) = ( p(B|A)*p(A) ) / ( p(B|A)*p(A) + p(B|~A)*p(~A) )
@@ -117,7 +117,7 @@ p(A|B) = ( p(B|A)*p(A) ) / ( p(B|A)*p(A) + p(B|~A)*p(~A) )
 <p>This reads as &#8220;the probability that a positive TID means you have ITPosis&#8221; equals. . . .</p>
 <p>So why do we care?  This type of reasoning can be applied quite nicely to text analysis.   The example we&#8217;ll look at is Spam Filtering.  If we know the probability that a spam e-mail contains certain words and that non-spam e-mails contain certain words, we can calculate the likelihood that an e-mail is spam based on what words it contains.</p>
 <p><a name ="spam"></a><br />
-<img src="http://www.shiffman.net/itp/classes/a2z/week04/spam_small.jpg" class="right"/></p>
+<img src="http://shiffman.net/itp/classes/a2z/week04/spam_small.jpg" class="right"/></p>
 <h2>Spam Filtering using Bayesian Analysis</h2>
 <p>Before we attempt any of this we should read Paul Graham&#8217;s <a href="http://www.paulgraham.com/spam.html">A Plan for Spam</a>.  And perhaps we might take a look at <a href="http://www.paulgraham.com/better.html">Better Bayesian Filtering</a>.  Now, we can start putting together some code.  Note that the code is not a perfect Spam filter by any means.  There are lots of issues with it (it only considers certain types of words, it doesn&#8217;t know anything about the number of e-mails received, it may run into memory problems if very large training files are used, etc.)  Nevertheless, the example outlines the steps one might take to apply <a href="http://en.wikipedia.org/wiki/Bayesian_filtering">Bayesian Filtering</a> to text.  We would also use similar strategies to perform <a href="http://en.wikipedia.org/wiki/Naive_Bayes_classifier">Naive Bayes Classification</a> of text, much like is done in the <a href="http://www.noraproject.org/">Nora Project</a>.</p>
 <p><i><b>Fancy Word Class</b></i><br />

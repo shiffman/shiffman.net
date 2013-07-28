@@ -9,7 +9,7 @@ pvc_views:
 categories:
   - General
 ---
-<p>The question of how to rotate a PVector object (the data of the vector itself, I&#8217;m not talking about rotating while drawing) came up in my <a href="http://www.shiffman.net/teaching/nature/">nature of code</a> course yesterday.   To do this, you&#8217;ll need to convert the vector to polar coordinates (radius + angle), adjust the angle, and the convert it back to cartesian to solve for the components (x and y).  A function would look something like:</p>
+<p>The question of how to rotate a PVector object (the data of the vector itself, I&#8217;m not talking about rotating while drawing) came up in my <a href="http://shiffman.net/teaching/nature/">nature of code</a> course yesterday.   To do this, you&#8217;ll need to convert the vector to polar coordinates (radius + angle), adjust the angle, and the convert it back to cartesian to solve for the components (x and y).  A function would look something like:</p>
 {% highlight java %}
 // Rotate a vector in 2D
 void rotate2D(PVector v, float theta) {

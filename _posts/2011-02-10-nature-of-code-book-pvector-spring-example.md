@@ -14,7 +14,7 @@ tags:
   - processing.org
   - springs
 ---
-<p>I&#8217;m working this week on Chapter 3 of my <a href="https://www.kickstarter.com/projects/shiffman/the-nature-of-code-book-project">upcoming Nature of Code book</a>.   For the most part, if you are looking to connect particles with springs, I recommend the wonderful verlet physics of <a href="http://toxiclibs.org/">toxiclibs</a>, and I have some examples for that <a href="http://www.shiffman.net/teaching/nature/toxiclibs/">here</a>.  Nevertheless, I am including an elementary implementation of a single &#8220;bob&#8221; connected  to an &#8220;anchor&#8221; point via a &#8220;spring&#8221; force.   The example implements <a href="http://en.wikipedia.org/wiki/Hooke's_law">Hooke&#8217;s Law</a> (Spring Force = -k * displacement) with the <a href="http://processing.org/reference/PVector.html">PVector</a> class, using the Euler integration model of all my other examples.  Here it is below.</p>
+<p>I&#8217;m working this week on Chapter 3 of my <a href="https://www.kickstarter.com/projects/shiffman/the-nature-of-code-book-project">upcoming Nature of Code book</a>.   For the most part, if you are looking to connect particles with springs, I recommend the wonderful verlet physics of <a href="http://toxiclibs.org/">toxiclibs</a>, and I have some examples for that <a href="http://shiffman.net/teaching/nature/toxiclibs/">here</a>.  Nevertheless, I am including an elementary implementation of a single &#8220;bob&#8221; connected  to an &#8220;anchor&#8221; point via a &#8220;spring&#8221; force.   The example implements <a href="http://en.wikipedia.org/wiki/Hooke's_law">Hooke&#8217;s Law</a> (Spring Force = -k * displacement) with the <a href="http://processing.org/reference/PVector.html">PVector</a> class, using the Euler integration model of all my other examples.  Here it is below.</p>
 <p><script type="application/processing">
 // Mover object
 Bob bob;</p>
@@ -168,4 +168,4 @@ Spring spring;</p>
   }</p>
 <p>}
 </script></p>
-<p>Source: <a href="http://www.shiffman.net/itp/classes/nature/week04_s11/_03spring.zip">_03spring.zip</a></p>
+<p>Source: <a href="http://shiffman.net/itp/classes/nature/week04_s11/_03spring.zip">_03spring.zip</a></p>

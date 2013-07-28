@@ -12,4 +12,4 @@ categories:
   - p5
   - teaching_
 ---
-<p>My <a href="http://www.shiffman.net/teaching/the-nature-of-code/ga/">genetic algorithm</a> example from <a href="http://www.shiffman.net/teaching/the-nature-of-code/">the nature of code</a> has been translated to Finnish and posted at <a href="http://www.nokturno.org/index.php?poeetta=shiffman">http://www.nokturno.org/index.php?poeetta=shiffman</a>.  What a great site!  Lots of interesting text-based digital work there.</p>
+<p>My <a href="http://shiffman.net/teaching/the-nature-of-code/ga/">genetic algorithm</a> example from <a href="http://shiffman.net/teaching/the-nature-of-code/">the nature of code</a> has been translated to Finnish and posted at <a href="http://www.nokturno.org/index.php?poeetta=shiffman">http://www.nokturno.org/index.php?poeetta=shiffman</a>.  What a great site!  Lots of interesting text-based digital work there.</p>

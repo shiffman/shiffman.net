@@ -64,17 +64,17 @@ void branch(float len) {
 }
 {% endhighlight %}
 <p>The example below takes the above a few steps further.  It uses Perlin noise to generate the angles, as well as animate them.  In addition, it draws each branch with a thickness according to its level and sometimes shrinks a branch by a factor of two to vary where the levels begin.</p>
-<p><a href='http://www.shiffman.net/wp/wp-content/uploads/2011/12/TreeStochasticNoise.zip'><img src="http://www.shiffman.net/wp/wp-content/uploads/2011/12/tree1.png" alt="" title="tree" width="580" height="347" class="alignnone size-full wp-image-1058" /></a></p>
-<p><a href='http://www.shiffman.net/wp/wp-content/uploads/2011/12/TreeStochasticNoise.zip'>TreeStochasticNoise.zip</a></p>
+<p><a href='http://shiffman.net/wp/wp-content/uploads/2011/12/TreeStochasticNoise.zip'><img src="http://shiffman.net/wp/wp-content/uploads/2011/12/tree1.png" alt="" title="tree" width="580" height="347" class="alignnone size-full wp-image-1058" /></a></p>
+<p><a href='http://shiffman.net/wp/wp-content/uploads/2011/12/TreeStochasticNoise.zip'>TreeStochasticNoise.zip</a></p>
 <p>Next up an excerpt from the Genetic Algorithm chapter.</p>
 <p><strong>Chapter 9: Evolution and Code</strong></p>
 <p>In 2009, <a href="http://blog.blprnt.com">Jer Thorp</a>  released a great genetic algorithms example on his blog entitled “<a href="http://blog.blprnt.com/blog/blprnt/project-smart-rockets">Smart Rockets</a>.”   Jer points out that NASA uses evolutionary computing techniques to solve all sorts of problems, from satellite antenna design to rocket firing patterns. This inspired him to create a Flash demonstration of evolving rockets.  Here is a description of the scenario:</p>
 <p>A population of rockets launches from the bottom of the screen with the goal of hitting a target at the top of the screen (with obstacles blocking a straight line path).   </p>
-<p><img src="http://www.shiffman.net/wp/wp-content/uploads/2011/12/rockets.png" alt="" title="rockets" width="300" height="187" class="alignnone size-full wp-image-1061" /></p>
+<p><img src="http://shiffman.net/wp/wp-content/uploads/2011/12/rockets.png" alt="" title="rockets" width="300" height="187" class="alignnone size-full wp-image-1061" /></p>
 <p>Each rocket is equipped with five thrusters of variable strength and direction.    The thrusters don’t fire all at once and continuously; rather, they fire one at a time in a custom sequence.  In this example, we’re going to evolve our own simplified Smart Rockets, inspired by Jer Thorp’s.   You can leave implementing some of Jer’s additional advanced features as an exercise.  </p>
 <p>Our rockets will have only one thruster, and this thruster will be able to fire in any direction with any strength in every single frame of animation.  This isn't particularly realistic, but it will make building out the framework a little easier. (We can always make the rocket and its thrusters more advanced and realistic later.)   </p>
-<p><a href='http://www.shiffman.net/wp/wp-content/uploads/2011/12/SmartRockets.zip'><img src="http://www.shiffman.net/wp/wp-content/uploads/2011/12/rockets2.png" alt="" title="rockets2" width="590" height="352" class="alignnone size-full wp-image-1063" /></a></p>
-<p>Source: <a href='http://www.shiffman.net/wp/wp-content/uploads/2011/12/SmartRockets.zip'>SmartRockets.zip</a></p>
+<p><a href='http://shiffman.net/wp/wp-content/uploads/2011/12/SmartRockets.zip'><img src="http://shiffman.net/wp/wp-content/uploads/2011/12/rockets2.png" alt="" title="rockets2" width="590" height="352" class="alignnone size-full wp-image-1063" /></a></p>
+<p>Source: <a href='http://shiffman.net/wp/wp-content/uploads/2011/12/SmartRockets.zip'>SmartRockets.zip</a></p>
 <p>And here's a short excerpt from the beginning of the chapter on neural networks, as well as the example that closes out the chapter demonstrating how to visualize the flow of information through a network.</p>
 <p><strong>Chapter 10: The Brain</strong></p>
 <p>Computer scientists have long been inspired by the human brain.   In 1943, Warren S. McCulloch, a neuroscientist, and Walter Pitts, a logician, developed the first conceptual model of an artificial neural network.  In their paper, "A logical calculus of the ideas imminent in nervous activity,” they describe the concept of a neuron, a single cell living in a network of cells that receives inputs, processes those inputs, and generates an output.</p>
@@ -222,7 +222,7 @@ void branch(float len) {
   }
 }</p>
 <p>// An animated drawing of a Neural Network
-// Daniel Shiffman <http://www.shiffman.net>
+// Daniel Shiffman <http://shiffman.net>
 // Nature of Code</p>
 <p>class Neuron {
   // Neuron has a location
@@ -273,4 +273,4 @@ void branch(float len) {
   }
 }</p>
 <p></script></p>
-<p>Source: <a href='http://www.shiffman.net/wp/wp-content/uploads/2011/12/NetworkAnimation.zip'>NetworkAnimation.zip</a></script></p>
+<p>Source: <a href='http://shiffman.net/wp/wp-content/uploads/2011/12/NetworkAnimation.zip'>NetworkAnimation.zip</a></script></p>

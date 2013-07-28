@@ -15,7 +15,7 @@ categories:
   - sftp
 ---
 <p>I know, I know, you&#8217;ve been waiting your whole life for this.</p>
-<p><a href="http://www.shiffman.net/p5/libraries/sftp/sftp.zip">Download beta SFTP Processing library</a> (source and example included in zip).</p>
+<p><a href="http://shiffman.net/p5/libraries/sftp/sftp.zip">Download beta SFTP Processing library</a> (source and example included in zip).</p>
 <p>The library uses <a href="http://www.jcraft.com/jsch/">JSch (Java Secure Channel)</a>.<br />
 Copyright (c) 2002,2003,2004,2005,2006,2007 Atsuhiko Yamanaka, JCraft, Inc.</p>
 {% highlight java %}

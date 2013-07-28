@@ -7,7 +7,7 @@ pvc_views:
 dsq_thread_id:
   - 646118491
 ---
-<p><applet code="Babble" archive="http://www.shiffman.net/p5/babble/Babble.jar" width="360" height="184" mayscript="true"></p>
+<p><applet code="Babble" archive="http://shiffman.net/p5/babble/Babble.jar" width="360" height="184" mayscript="true"></p>
 <param name="image" value="loading.gif">
 </param>
 <param name="boxmessage" value="Loading Processing software...">

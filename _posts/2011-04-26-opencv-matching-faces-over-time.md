@@ -101,4 +101,4 @@ ArrayList faceList;
        f.update(faces[i]);
     } 
 {% endhighlight %}
-<p>Full source is here: <a href="http://www.shiffman.net/p5/whichface.zip">whichface.zip</a></p>
+<p>Full source is here: <a href="http://shiffman.net/p5/whichface.zip">whichface.zip</a></p>

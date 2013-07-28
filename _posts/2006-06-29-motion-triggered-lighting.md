@@ -9,11 +9,11 @@ videoComments_video_height:
 videoComments_video_text:
   - Video of Motion Triggered Lighting
 videoComments_video_image:
-  - http://www.shiffman.net/movies/motion_lighting.jpg
+  - http://shiffman.net/movies/motion_lighting.jpg
 videoComments_video_display:
   - top
 videoComments_video_url:
-  - http://www.shiffman.net/movies/motion_lighting.mov
+  - http://shiffman.net/movies/motion_lighting.mov
 dsq_thread_id:
   - 249553640
 pvc_views:

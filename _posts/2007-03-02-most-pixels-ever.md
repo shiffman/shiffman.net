@@ -5,37 +5,37 @@ layout: post
 enclosure:
   - |
     |
-        http://www.shiffman.net/movies/mpe.mov
+        http://shiffman.net/movies/mpe.mov
         1219277
         video/quicktime
         
   - |
     |
-        http://www.shiffman.net/movies/mpe.mov
+        http://shiffman.net/movies/mpe.mov
         1219277
         video/quicktime
         
   - |
     |
-        http://www.shiffman.net/movies/mpe.mov
+        http://shiffman.net/movies/mpe.mov
         1219277
         video/quicktime
         
   - |
     |
-        http://www.shiffman.net/movies/mpe.mov
+        http://shiffman.net/movies/mpe.mov
         1219277
         video/quicktime
         
   - |
     |
-        http://www.shiffman.net/movies/mpe.mov
+        http://shiffman.net/movies/mpe.mov
         1219277
         video/quicktime
         
   - |
     |
-        http://www.shiffman.net/movies/mpe.mov
+        http://shiffman.net/movies/mpe.mov
         1219277
         video/quicktime
         

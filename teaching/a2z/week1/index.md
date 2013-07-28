@@ -15,16 +15,16 @@ pvc_views:
 <li class="arrow"><a href="#analysis">Simple Analysis</a></li>
 </div>
 <h2>Examples:</h2>
-<li class="arrow"><a href="http://www.shiffman.net/itp/classes/a2z/week01/HelloWorld.java">HelloWorld.java</a></li>
-<li class="arrow"><a href="http://www.shiffman.net/itp/classes/a2z/week01/BankAccountTest.java">BankAccountTest.java</a> <a href="http://www.shiffman.net/itp/classes/a2z/week01/BankAccount.java">BankAccount.java</a></li>
-<li class="arrow"><a href="http://www.shiffman.net/itp/classes/a2z/week01/SimpleFileIO.java"> SimpleFileIO.java</a></li>
-<li class="arrow"><a href="http://www.shiffman.net/itp/classes/a2z/week01/SimpleFileIO2.java"> SimpleFileIO2.java</a></li>
-<li class="arrow"><a href="http://www.shiffman.net/itp/classes/a2z/week01/EveryOtherWord.java"> EveryOtherWord.java</a></li>
-<li class="arrow"><a href="http://www.shiffman.net/itp/classes/a2z/week01/ReverseWords.java"> ReverseWords.java</a></li>
-<li class="arrow"><a href="http://www.shiffman.net/itp/classes/a2z/week01/ReverseCharacters.java"> ReverseCharacters.java</a></li>
-<li class="arrow"><a href="http://www.shiffman.net/itp/classes/a2z/week01/God.java"> God.java</a></li>
-<li class="arrow"><a href="http://www.shiffman.net/itp/classes/a2z/week01/FleschIndex.java"> FleschIndex.java</a></li>
-<li class="arrow">Some sample input files: <a href="http://www.shiffman.net/itp/classes/a2z/week01/spam.txt">spam.txt</a>, <a href="http://www.shiffman.net/itp/classes/a2z/week01/nytimes.txt">nytimes.txt</a>, <a href="http://www.shiffman.net/itp/classes/a2z/week01/bible.txt">bible.txt</a></li>
+<li class="arrow"><a href="http://shiffman.net/itp/classes/a2z/week01/HelloWorld.java">HelloWorld.java</a></li>
+<li class="arrow"><a href="http://shiffman.net/itp/classes/a2z/week01/BankAccountTest.java">BankAccountTest.java</a> <a href="http://shiffman.net/itp/classes/a2z/week01/BankAccount.java">BankAccount.java</a></li>
+<li class="arrow"><a href="http://shiffman.net/itp/classes/a2z/week01/SimpleFileIO.java"> SimpleFileIO.java</a></li>
+<li class="arrow"><a href="http://shiffman.net/itp/classes/a2z/week01/SimpleFileIO2.java"> SimpleFileIO2.java</a></li>
+<li class="arrow"><a href="http://shiffman.net/itp/classes/a2z/week01/EveryOtherWord.java"> EveryOtherWord.java</a></li>
+<li class="arrow"><a href="http://shiffman.net/itp/classes/a2z/week01/ReverseWords.java"> ReverseWords.java</a></li>
+<li class="arrow"><a href="http://shiffman.net/itp/classes/a2z/week01/ReverseCharacters.java"> ReverseCharacters.java</a></li>
+<li class="arrow"><a href="http://shiffman.net/itp/classes/a2z/week01/God.java"> God.java</a></li>
+<li class="arrow"><a href="http://shiffman.net/itp/classes/a2z/week01/FleschIndex.java"> FleschIndex.java</a></li>
+<li class="arrow">Some sample input files: <a href="http://shiffman.net/itp/classes/a2z/week01/spam.txt">spam.txt</a>, <a href="http://shiffman.net/itp/classes/a2z/week01/nytimes.txt">nytimes.txt</a>, <a href="http://shiffman.net/itp/classes/a2z/week01/bible.txt">bible.txt</a></li>
 <h2>Related:</h2>
 <li class="arrow"><a href="http://bioportal.weizmann.ac.il/course/prog2/tutorial/java/data/strings.html">Characters and Strings tutorial</a></li>
 <h2>Exercises (<i>optional and purposefully mundane</i>):</h2>
@@ -67,13 +67,13 @@ Compile: <b>javac ClassName.java</b></p>
 </div>
 <p>Take the above code and make a text file called HelloWorld.java (using notepad, textpad, bbedit, textwrangler, etc.)  Congratulations, you've written your first java program.  However, unlike with processing, we don't have a "Run" or "Play" button.  You have to compile and run the program yourself.</p>
 <p>On a Mac, you can accomplish this via the <a href="http://www.apple.com/macosx/features/unix/">Terminal</a>.</p>
-<p><img src ="http://www.shiffman.net/itp/classes/a2z/week01/java0.jpg"/></p>
+<p><img src ="http://shiffman.net/itp/classes/a2z/week01/java0.jpg"/></p>
 <p><b>Holy more than one file, batman</b></p>
 <p>Let's take a look at an object oriented example where our class (Bank Account) is kept in its own file and a "driver" program accesses it.  Here are the two files you need:<br />
-<b><a href="http://www.shiffman.net/itp/classes/a2z/week01/BankAccount.java">BankAccount.java</a><br />
-<a href="http://www.shiffman.net/itp/classes/a2z/week01/BankAccountTest.java">BankAccountTest.java</a></b></p>
+<b><a href="http://shiffman.net/itp/classes/a2z/week01/BankAccount.java">BankAccount.java</a><br />
+<a href="http://shiffman.net/itp/classes/a2z/week01/BankAccountTest.java">BankAccountTest.java</a></b></p>
 <p>As long as these files are both in the same directory, we can compile BankAccountTest.java, which, since it uses the BankAccount.java class, will instigate the compilation of that class.</p>
-<p><img src ="http://www.shiffman.net/itp/classes/a2z/week01/java1.jpg"/></p>
+<p><img src ="http://shiffman.net/itp/classes/a2z/week01/java1.jpg"/></p>
 <p>(examples from <a href="http://www.horstmann.com/bigjava.html">Big Java by Cay Horstmann</a>.)</p>
 <p><b>What's new?</b></p>
 <li class="arrow">The "main" method â€“ Every Java program must have a <b>main</b> method.  In Processing, we controlled the flow of the program via setup() and draw().   Under the covers, however, every PApplet has a main method that creates initializes the applet, creates the window, etc. etc.  Since we are writing Java programs <i>from scratch</i>, we'll need to write our own main method.   <a href="http://java.sun.com/docs/books/tutorial/getStarted/application/index.html#MAIN">A full explanation of the main method is available here.</a>  One thing that is important for us to note is that the main method takes an array of Strings as an argument, i.e. "main(String[] args)".  When the program is run via the command line, you can pass Strings into the program using the array.  This will prove incredibly useful for doing file processing (see below).</li>
@@ -101,7 +101,7 @@ String sometext = â€œHow to make a String? Characters between quotation mark
 {% endhighlight %}
 
 <p><b>Simple String Analysis</b></p>
-<p>Java provides us with a basic set of String functions that allow for simple manipulation and analysis.  <a href="http://www.shiffman.net/teaching/programming-from-a-to-z/regex">Next week</a>, we&#8217;ll also look at how <a href="http://en.wikipedia.org/wiki/Regular_expression">regular expressions</a> can allow to perform advanced String processing, but it&#8217;s good to pick up some of the basics first and gather some skills doing all of our text processing manually, character by character.   All of the availabe String methods are  functions are laid out on <a href="http://processing.org/reference/String.html">the JavaDoc page</a>, and weâ€™ll explore a few useful ones here.  Let&#8217;s take a closer look at three String class functions: indexOf(), substring(), and length(). </p>
+<p>Java provides us with a basic set of String functions that allow for simple manipulation and analysis.  <a href="http://shiffman.net/teaching/programming-from-a-to-z/regex">Next week</a>, we&#8217;ll also look at how <a href="http://en.wikipedia.org/wiki/Regular_expression">regular expressions</a> can allow to perform advanced String processing, but it&#8217;s good to pick up some of the basics first and gather some skills doing all of our text processing manually, character by character.   All of the availabe String methods are  functions are laid out on <a href="http://processing.org/reference/String.html">the JavaDoc page</a>, and weâ€™ll explore a few useful ones here.  Let&#8217;s take a closer look at three String class functions: indexOf(), substring(), and length(). </p>
 <p>indexOf() locates a sequence of characters within a string. For example, run this code and examine the result: </p>
 
 {% highlight java %}
@@ -357,7 +357,7 @@ lliw taht stivadiffa dna stnemucod yrassecen eht eraperp lliw yenrotta{% endhigh
 
 <p><a name="analysis"></a></p>
 <h2>Analysis</h2>
-<p> <img src="http://www.shiffman.net/itp/classes/a2z/week01/flesch.jpg" class="right" /> </p>
+<p> <img src="http://shiffman.net/itp/classes/a2z/week01/flesch.jpg" class="right" /> </p>
 <p>We&#8217;ll end this week by looking at a basic example of text analysis.  We will read in a file, examine some of its statistical properties, and write out a new file that will contain our report.   Our example will compute the <a href="http://en.wikipedia.org/wiki/Flesch-Kincaid_Readability_Test">Flesch Index</a>  (aka Flesch-Kincaid Reading Ease test), a numeric score that indicates the readability of a text.   The lower the score, the more difficult the text.  The higher, the easier.  For example, texts with a score of 90-100 are, say, around the 5th grade level, wheras 0-30 would be for &#8220;college graduates&#8221;.  The result of the test on a few sample texts (the Bible, spam, a New York Times article, and Processing tutorials I&#8217;m writing) are displayed to the right.  </p>
 <p>The Flesch Index is computed as a function of total words, total sentences, and total syllables.  It was developed by Dr. Rudolf Flesch and modified by J. P. Kincaid (thus the joint name).  Most word processing programs (MS Word, Corel Wordperfect, etc.) will compute the Flesch Index for you, which provides us with a nice method to check our results.</p>
 <p><b><i>Flesch Index = 206.835 &#8211; 1.015 * (total words / total sentences) + 84.6 * (total syllables / total words)</i></b></p>
@@ -372,7 +372,7 @@ lliw taht stivadiffa dna stnemucod yrassecen eht eraperp lliw yenrotta{% endhigh
 6) Write out report file
 {% endhighlight %}
 
-<p>We know we can read in text from a file and store it in a Java String object as demonstrated in the example above.  Now, all we have to do is examine that String object, counting the total words, sentences, and syllables, applying the formula as a final step. To count words, we&#8217;ll use the <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/StringTokenizer.html">StringTokenizer</a>.  (It should be noted that the StringTokenizer is a legacy class.   split() should be used instead.  However, before we get to next week (and for nostaglia) we&#8217;re going to solve the Flesch Index problem in a highly manual way, using the Tokenizer.  Next week, you&#8217;ll be exposed to more advanced String parsing techniques using <a href="http://www.shiffman.net/teaching/programming-from-a-to-z/regex">regular expressions</a>.</p>
+<p>We know we can read in text from a file and store it in a Java String object as demonstrated in the example above.  Now, all we have to do is examine that String object, counting the total words, sentences, and syllables, applying the formula as a final step. To count words, we&#8217;ll use the <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/StringTokenizer.html">StringTokenizer</a>.  (It should be noted that the StringTokenizer is a legacy class.   split() should be used instead.  However, before we get to next week (and for nostaglia) we&#8217;re going to solve the Flesch Index problem in a highly manual way, using the Tokenizer.  Next week, you&#8217;ll be exposed to more advanced String parsing techniques using <a href="http://shiffman.net/teaching/programming-from-a-to-z/regex">regular expressions</a>.</p>
 <p>The first thing we&#8217;ll do is count the number of words in the text.  We&#8217;ve seen in some of the examples above that we could accomplish this by using the &#8220;split&#8221; function, the <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/StringTokenizer.html">StringTokenizer</a> works in a similar way.  To create a StringTokenizer, the constructor receives the String you want to tokenize as well as a set of delimiters (the characters that indicate where a token ends, and a new token begins.)  You may be asking, what the heck is a token??   In our case, we want to split the String up into words, so each word is one &#8220;token.&#8221;  Ok, so step one (creating the Tokenizer) looks like this:</p>
 
 {% highlight java %}
@@ -473,7 +473,7 @@ System.out.println(report);
 {% endhighlight %}
 
 <p>. . . and we&#8217;re done!</p>
-<p>The full example code is here: <a href="http://www.shiffman.net/itp/classes/a2z/week01/FleschIndex.java"> FleschIndex.java</a></p>
+<p>The full example code is here: <a href="http://shiffman.net/itp/classes/a2z/week01/FleschIndex.java"> FleschIndex.java</a></p>
 <h2> Related Perl and PHP examples </h2>
 <p><b>Perl</b>:</p>
 
@@ -493,5 +493,5 @@ while (<>) {
 {% endhighlight %}
 
 <p><b>PHP</b>:<br />
-Run it:  <a href="http://www.shiffman.net/itp/classes/a2z/week01/inputoutput.php">http://www.shiffman.net/itp/classes/a2z/week01/inputoutput.php</a><br />
-Source:  <a href="http://www.shiffman.net/itp/classes/a2z/week01/inputoutput.phps">http://www.shiffman.net/itp/classes/a2z/week01/inputoutput.phps</a></p>
+Run it:  <a href="http://shiffman.net/itp/classes/a2z/week01/inputoutput.php">http://shiffman.net/itp/classes/a2z/week01/inputoutput.php</a><br />
+Source:  <a href="http://shiffman.net/itp/classes/a2z/week01/inputoutput.phps">http://shiffman.net/itp/classes/a2z/week01/inputoutput.phps</a></p>

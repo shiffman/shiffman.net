@@ -10,5 +10,5 @@ categories:
   - blog
   - p5
 ---
-<p><a href="http://www.shiffman.net/p5/selfreference"><img src="http://www.shiffman.net/p5/selfreference/selfreference.jpg" alt="selfrefence"/></a><br />
-<a href="http://www.shiffman.net/p5/selfreference">click to view applet</a></p>
+<p><a href="http://shiffman.net/p5/selfreference"><img src="http://shiffman.net/p5/selfreference/selfreference.jpg" alt="selfrefence"/></a><br />
+<a href="http://shiffman.net/p5/selfreference">click to view applet</a></p>

@@ -13,12 +13,12 @@ pvc_views:
 <li class="arrow"><a href="#wordnet">WordNet</a></li>
 </div>
 <h2>Examples:</h2>
-<li class="arrow">All the code as two Eclipse projects: <a href="http://www.shiffman.net/itp/classes/a2z/wordnet/rita/wordnet_week9.zip">wordnet_week9.zip</a> </li>
+<li class="arrow">All the code as two Eclipse projects: <a href="http://shiffman.net/itp/classes/a2z/wordnet/rita/wordnet_week9.zip">wordnet_week9.zip</a> </li>
 <li class="arrow">Updates on CVS: /home/dts204/a2z/examples/ &#8212; Projects: WordNetJWNL, WordNetRiTa</li>
-<li class="arrow">RiTa code examples (adapted from Daniel Howe): <a href="http://www.shiffman.net/itp/classes/a2z/wordnet/rita/Hyponyms.java">Hyponyms.java</a>, <a href="http://www.shiffman.net/itp/classes/a2z/wordnet/rita/Synonyms.java">Synonyms.java</a>, <a href="http://www.shiffman.net/itp/classes/a2z/wordnet/rita/Substitutionalized.java">Substitutionalized.java</a></li>
-<li class="arrow">Additional RiTa examples: <a href="http://www.shiffman.net/itp/classes/a2z/wordnet/rita/WordNetDemo.java">WordNetDemo.java</a>, <a href="http://www.shiffman.net/itp/classes/a2z/wordnet/rita/SensesLookup.java">SensesLookup.java</a>, <a href="http://www.shiffman.net/itp/classes/a2z/wordnet/rita/Rewrite.java">Rewrite.java</a>, <a href="http://www.shiffman.net/itp/classes/a2z/wordnet/rita/Replacer.java">Replacer.java</a>
+<li class="arrow">RiTa code examples (adapted from Daniel Howe): <a href="http://shiffman.net/itp/classes/a2z/wordnet/rita/Hyponyms.java">Hyponyms.java</a>, <a href="http://shiffman.net/itp/classes/a2z/wordnet/rita/Synonyms.java">Synonyms.java</a>, <a href="http://shiffman.net/itp/classes/a2z/wordnet/rita/Substitutionalized.java">Substitutionalized.java</a></li>
+<li class="arrow">Additional RiTa examples: <a href="http://shiffman.net/itp/classes/a2z/wordnet/rita/WordNetDemo.java">WordNetDemo.java</a>, <a href="http://shiffman.net/itp/classes/a2z/wordnet/rita/SensesLookup.java">SensesLookup.java</a>, <a href="http://shiffman.net/itp/classes/a2z/wordnet/rita/Rewrite.java">Rewrite.java</a>, <a href="http://shiffman.net/itp/classes/a2z/wordnet/rita/Replacer.java">Replacer.java</a>
 </li>
-<li class="arrow">JWNL examples: <a href="http://www.shiffman.net/itp/classes/a2z/wordnet/SynReplace.java">SynReplace.java</a>,  <a href="http://www.shiffman.net/itp/classes/a2z/wordnet/WordNetDemo.java">WordNetDemo.java</a>, <a href="http://www.shiffman.net/itp/classes/a2z/wordnet/WordNetHelper.java">WordNetHelper.java</a></li>
+<li class="arrow">JWNL examples: <a href="http://shiffman.net/itp/classes/a2z/wordnet/SynReplace.java">SynReplace.java</a>,  <a href="http://shiffman.net/itp/classes/a2z/wordnet/WordNetDemo.java">WordNetDemo.java</a>, <a href="http://shiffman.net/itp/classes/a2z/wordnet/WordNetHelper.java">WordNetHelper.java</a></li>
 <h2>Related:</h2>
 <li class="arrow"><a href="http://marimba.d.umn.edu/cgi-bin/similarity.cgi">WordNet Similarity</a></li>
 <li class="arrow"><a href="http://pinker.wjh.harvard.edu/articles/papers/Edinburgh.pdf">Words and Rules</a> by Steven Pinker.  You might also be interested in watching the lecture <a href="http://mitworld.mit.edu/video/143/">Words and Rules</a> or reading the entire <a href="http://pinker.wjh.harvard.edu/books/wr/index.html">the book</a>.</li>
@@ -26,7 +26,7 @@ pvc_views:
 <h2>Exercises:</h2>
 <li class="arrow">Write a function that lists all antonyms for any given word.</li>
 <li class="arrow">Write a function that traverses the tree of hypernyms (or hyponyms) for any given word.</li>
-<li class="arrow">A semantic concordance is a concordance where every word sense (as opposed to word string) is counted.  Revise <a href="http://www.shiffman.net/teaching/a2z/concordance/">our concordance example</a> to produce a semantic concordance via WordNet.</li>
+<li class="arrow">A semantic concordance is a concordance where every word sense (as opposed to word string) is counted.  Revise <a href="http://shiffman.net/teaching/a2z/concordance/">our concordance example</a> to produce a semantic concordance via WordNet.</li>
 <p><a name ="wordnet"></a></p>
 <h2>WordNet</h2>
 <p>Traditional dictionaries (in book format) are designed to be readable and searchable by a human being and the driving organizational principle behind such a dictionary is alphabetic order.    A dictionary (or <a href="http://en.wikipedia.org/wiki/Lexicon">lexicon</a>) designed to be machine-readable, however, does not have to live under such constraints.  <a href="http://wordnet.princeton.edu/">WordNet</a> is a lexical database of the English language where words (separated into the parts of speech: nouns, verbs, adjectives, and adverbs) are linked via semantic relationships.  It&#8217;s a social network, so to speak, for words.</p>
@@ -64,7 +64,7 @@ pvc_views:
 RiWordnet wordnet = new RiWordnet(null);
 {% endhighlight %}
 
-<p>Just as with <a href="http://www.shiffman.net/teaching/a2z/generative/">regular RiTa</a> from last week, RiTa wordnet expects a <a href="http://www.processing.org">Processing</a> PApplet.  Since our examples are java console apps, we can just pass in &#8220;null&#8221; to the constructor (but if you use RiTa with Processing you should pass in a reference to the PApplet).</p>
+<p>Just as with <a href="http://shiffman.net/teaching/a2z/generative/">regular RiTa</a> from last week, RiTa wordnet expects a <a href="http://www.processing.org">Processing</a> PApplet.  Since our examples are java console apps, we can just pass in &#8220;null&#8221; to the constructor (but if you use RiTa with Processing you should pass in a reference to the PApplet).</p>
 <p>The wordnet object can then query the Wordnet dictionary for you.  There are many useful functions, such as: exists(), getAllAntonyms(), getAllHypernyms(), getAllSynonyms(), getPos(), getSenseIds(), getSoundsLike(), etc.  Let&#8217;s walk through a few examples.   </p>
 <p>Let&#8217;s say we are starting with a word: &#8220;run&#8221;.   Now word tokens are not the fundamental building blocks of Wordnet, everything in Wordnet is organized into synsets (senses) and a word can be a member of several synsets.  Run can mean a lot of different things.  As a noun, it can be a run scored in a baseball game or a jog around central park.  Run can also be a verb, of course, to run around the park or to run for office, etc.  Wordnet can tell us all of this.  We first start with a String.</p>
 
@@ -122,10 +122,10 @@ for (int i = 0; i < result.length; i++) {
 
 <p>Note that this returns <b><i>all</i></b> hyponyms for <b><i>all</i></b> of the synsets that include the word cat.  If you wanted hyponyms for a specific sense, you would have to use a sense ID, in combination with the function: <a href="http://www.rednoise.org/rita/wordnet/documentation/riwordnet_method_gethyponyms.htm">getHyponyms()</a>.   You can get lists of other types of related words in exactly the same manner as above with the functions offered <a href="http://www.rednoise.org/rita/wordnet/documentation/">here</a>: getAllAntonyms(), getAllDerivedTerms(), getAllHolonyms(), getAllHypernyms(), getAllHyponyms(), getAllMeronyms(), getAllNominalizations(), getAllSynonyms(), etc.</p>
 <p>Here are some other examples:</p>
-<p>Listing Hyponyms: <a href="http://www.shiffman.net/itp/classes/a2z/wordnet/rita/Hyponyms.java">Hyponyms.java</a><br />
-Listing Synonyms: <a href="http://www.shiffman.net/itp/classes/a2z/wordnet/rita/Synonyms.java">Synonyms.java</a><br />
-Listing Synsets: <a href="http://www.shiffman.net/itp/classes/a2z/wordnet/rita/SensesLookup.java">SensesLookup.java</a>,<br />
-Rewriting a text using antonyms, synonyms, and hyponyms: <a href="http://www.shiffman.net/itp/classes/a2z/wordnet/rita/Rewrite.java">Rewrite.java</a>, <a href="http://www.shiffman.net/itp/classes/a2z/wordnet/rita/Replacer.java">Replacer.java</a></p>
+<p>Listing Hyponyms: <a href="http://shiffman.net/itp/classes/a2z/wordnet/rita/Hyponyms.java">Hyponyms.java</a><br />
+Listing Synonyms: <a href="http://shiffman.net/itp/classes/a2z/wordnet/rita/Synonyms.java">Synonyms.java</a><br />
+Listing Synsets: <a href="http://shiffman.net/itp/classes/a2z/wordnet/rita/SensesLookup.java">SensesLookup.java</a>,<br />
+Rewriting a text using antonyms, synonyms, and hyponyms: <a href="http://shiffman.net/itp/classes/a2z/wordnet/rita/Rewrite.java">Rewrite.java</a>, <a href="http://shiffman.net/itp/classes/a2z/wordnet/rita/Replacer.java">Replacer.java</a></p>
 <h3>Using JWNL</h3>
 <p><a href="http://sourceforge.net/projects/jwordnet">JWNL</a> (Java WordNet Library) is a Java API for accessing the WordNet dictionary.  I recommend that you use the much friendlier RiTa Wordnet (as described above), however if you want to delve deeper into the code and walk through the "pointer" relationships in wordnet more manually, JWNL is the place to be.  Here's how you can get started.</p>
 <h2>Step 1.  Download WordNet.</h2>

@@ -17,4 +17,4 @@ categories:
   - teaching_
 ---
 <p>How to connect to <a href="http://www.processing.org">Processing</a> from a phone call:</p>
-<p><a href="http://www.shiffman.net/p5/asterisk">http://www.shiffman.net/p5/asterisk</a></p>
+<p><a href="http://shiffman.net/p5/asterisk">http://shiffman.net/p5/asterisk</a></p>

@@ -16,7 +16,7 @@ pvc_views:
 <li class="arrow"><a href="#ga">Genetic Algorithms</a></li>
 </div>
 <h2>Examples:</h2>
-<li class="arrow">All the code as an Eclipse project zip: <a href="http://www.shiffman.net/itp/classes/a2z/week09/2008/a2z_week8.zip">a2z_week8.zip</a> </li>
+<li class="arrow">All the code as an Eclipse project zip: <a href="http://shiffman.net/itp/classes/a2z/week09/2008/a2z_week8.zip">a2z_week8.zip</a> </li>
 <li class="arrow">Updates on CVS: /home/dts204/a2z/examples/</li>
 <h2>Related</h2>
 <li class="arrow">A lot of the code and discussion below is based on examples from <a href="http://mrl.nyu.edu/~dhowe/">Daniel Howe</a> Check out: <a href="http://www.rednoise.org/rita/">RiTa site</a> and <a href="http://www.rednoise.org/pdal/">Programming for Digital Art &#038; Literature</a>.</li>
@@ -24,7 +24,7 @@ pvc_views:
 <li class="arrow"><a href="http://www.cs.princeton.edu/courses/archive/spr05/cos126/assignments/markov.html">Markov Models of Natural Language</a></li>
 <li class="arrow"><a href="http://chomsky.info/articles/195609--.pdf">Three Models for the Description of Language (Chomsky)</a></li>
 <p>&nbsp;<br />
-Remember the ol&#8217; <a href="http://www.shiffman.net/projects/shakespearemonkeyhome/">monkey typing at a keyboard problem</a>? </p>
+Remember the ol&#8217; <a href="http://shiffman.net/projects/shakespearemonkeyhome/">monkey typing at a keyboard problem</a>? </p>
 
 {% highlight java %}
  String monkey = "";
@@ -40,7 +40,7 @@ Remember the ol&#8217; <a href="http://www.shiffman.net/projects/shakespearemonk
 <p><a name ="random"></a></p>
 <h2>Probability and Chance Operations</h2>
 <p>A true monkey types totally at random, meaning there is an equal probability that any key on the keyboard will be hit at any given time.  What if we could generate our own custom probability map for a keyboard (or perhaps a sequence of word tokens)?  What kind of results could we achieve?  Some interesting examples of text generated via this type of methodology are <a href="http://www.beardofbees.com/gnoetry.html">Gnoetry</a> and <a href="http://www.eskimo.com/~rstarr/poormfa/travesty.html">Travesty</a>.</p>
-<p>Before we dive into code, it might be useful to review some probablility basics.   You might look at this <a href="http://www.shiffman.net/teaching/the-nature-of-code/week-1/">handout for the nature of code course</a>, as well as <a href="http://www.peterwebb.co.uk/probability.htm">The Laymanâ€™s Guide to Probability</a> and this page from <a href="http://library.thinkquest.org/20991/alg2/prob.html">Math for Morons like Us</a>. </p>
+<p>Before we dive into code, it might be useful to review some probablility basics.   You might look at this <a href="http://shiffman.net/teaching/the-nature-of-code/week-1/">handout for the nature of code course</a>, as well as <a href="http://www.peterwebb.co.uk/probability.htm">The Laymanâ€™s Guide to Probability</a> and this page from <a href="http://library.thinkquest.org/20991/alg2/prob.html">Math for Morons like Us</a>. </p>
 <p>Let's examine the following example, where letters are more likely to appear in alphabetical sequence than not.  This won't necessarily produce interesting results, but it will demonstrate the basics.  First we create a class to represent each letter.</p>
 
 {% highlight java %}
@@ -124,7 +124,7 @@ public char pickNext() {
 }
 {% endhighlight %}
 
-<p>Code: <a href="http://www.shiffman.net/itp/classes/a2z/week09/Letter.java">Letter.java</a>, <a href="http://www.shiffman.net/itp/classes/a2z/week09/ProbDriver.java">ProbDriver.java</a>, full source: <a href="http://www.shiffman.net/itp/classes/a2z/week09/prob.zip">prob.zip</a>.</p>
+<p>Code: <a href="http://shiffman.net/itp/classes/a2z/week09/Letter.java">Letter.java</a>, <a href="http://shiffman.net/itp/classes/a2z/week09/ProbDriver.java">ProbDriver.java</a>, full source: <a href="http://shiffman.net/itp/classes/a2z/week09/prob.zip">prob.zip</a>.</p>
 <p><a name ="markov"></a></p>
 <h2>Markov Chains and N-Grams</h2>
 <p>A <a href="http://en.wikipedia.org/wiki/Markov_chain">Markov Chain</a> can be described as a sequence of random "states" where each new state is conditional only on the previous state.   An example of a Markov Chain is monopoly.   The "next" state of the monopoly board depends on the current state and the roll of the dice.  It doesn't matter how we got to that current state, only what it is at the moment.  A game like blackjack, for example, is different in that the deal of the cards is dependent on the history of many previous deals (assuming a single-deck not continuously shuffled.)    <a href="http://www.bewersdorff-online.de/amonopoly/">Monopoly as Markov Chain</a>.</p>
@@ -198,7 +198,7 @@ It is like a beggar beneath your window.
 {% endhighlight %}
 
 <p>Here&#8217;s another great example, direct from our class: <a href="http://itp.nyu.edu/~ap1607/cgi-bin/thesis_title">Thesis Title Generator</a> by Adam Parrish.</p>
-<p>Examples: <a href="http://www.shiffman.net/itp/classes/a2z/week09/2008/markov/Markov.java">Markov.java</a>, <a href="http://www.shiffman.net/itp/classes/a2z/week09/2008/markov/Ngram.java">Ngram.java</a></p>
+<p>Examples: <a href="http://shiffman.net/itp/classes/a2z/week09/2008/markov/Markov.java">Markov.java</a>, <a href="http://shiffman.net/itp/classes/a2z/week09/2008/markov/Ngram.java">Ngram.java</a></p>
 <h2>Context Free Grammars (CFGs)</h2>
 <p><a name="grammars"></a><br />
 From <a href="http://en.wikipedia.org/wiki/Grammar">Wikipedia</a>:  &#8220;Grammar is the study of the rules governing the use of a given natural language, and, as such, is a field of linguistics. Traditionally, grammar included morphology and syntax; in modern linguistics these subfields are complemented by phonetics, phonology, semantics, and pragmatics.&#8221;  </p>
@@ -305,8 +305,8 @@ System.out.println(text);
 {% endhighlight %}
 
 <p>In the above grammer, &#8220;b&#8221; is twice as likely to be selected as &#8220;c&#8221;.</p>
-<p>Code: <a href="http://www.shiffman.net/itp/classes/a2z/week09/2008/grammar/CFG.java">CFG.java</a>.  Grammar file: <a href="http://www.shiffman.net/itp/classes/a2z/week09/2008/data/simple.g">simple.g</a>.</p>
-<p>Finally, a grammar file is something we can generate ourselves as well based on some algorithm.  For example, using <a href="http://www.rednoise.org/rita/examples/haiku.g">this haiku grammar file from Daniel Howe</a>, we could read in a source text, analyze the syllable counts of all the words, and rewrite the grammar file to reflect these new words.  Here is a version of this grammar file using words from an Obama speech: <a href="http://www.shiffman.net/itp/classes/a2z/week09/2008/data/generated_grammar.g">generated_grammar.g</a>.</p>
+<p>Code: <a href="http://shiffman.net/itp/classes/a2z/week09/2008/grammar/CFG.java">CFG.java</a>.  Grammar file: <a href="http://shiffman.net/itp/classes/a2z/week09/2008/data/simple.g">simple.g</a>.</p>
+<p>Finally, a grammar file is something we can generate ourselves as well based on some algorithm.  For example, using <a href="http://www.rednoise.org/rita/examples/haiku.g">this haiku grammar file from Daniel Howe</a>, we could read in a source text, analyze the syllable counts of all the words, and rewrite the grammar file to reflect these new words.  Here is a version of this grammar file using words from an Obama speech: <a href="http://shiffman.net/itp/classes/a2z/week09/2008/data/generated_grammar.g">generated_grammar.g</a>.</p>
 <p>Writing the grammar file is easy using our A2ZFileWriter class:</p>
 
 {% highlight java %}
@@ -317,7 +317,7 @@ fw.appendLine("&lt;5-line> % &lt;7-line&gt; % &lt;5-line&gt;");
 fw.appendLine("}n");
 {% endhighlight %}
 
-<p>Here is the full source: <a href="http://www.shiffman.net/itp/classes/a2z/week09/2008/grammar/GrammarMaker.java">GrammarMaker.java</a>.  Note the use of a Concordance to get all the words from a source file as well as RiTa&#8217;s Analyzer object to count syllables.</p>
+<p>Here is the full source: <a href="http://shiffman.net/itp/classes/a2z/week09/2008/grammar/GrammarMaker.java">GrammarMaker.java</a>.  Note the use of a Concordance to get all the words from a source file as well as RiTa&#8217;s Analyzer object to count syllables.</p>
 <p><a name ="lsystem"></a></p>
 <h2>L-Systems</h2>
 <p><a href="http://en.wikipedia.org/wiki/Lindenmayer_system">L-Systems</a> were developed by <a href="http://en.wikipedia.org/wiki/Aristid_Lindenmayer">Aristid Lindenmayer</a> in 1968 as a means for modeling plant cell structure.  L-Systems, although used primarily to generate graphics (often resulting in <a href="http://en.wikipedia.org/wiki/Fractal">fractals</a>), are based on a formal grammar, consisting of an alphabet, a set of rules, and an axiom (the starting sentence).    An L-System can be generated with a CFG, as demonstrated in <a href="http://www.rednoise.org/rita/examples/LSysCFGEx1/">example</a> by Daniel Howe.  Here, we&#8217;ll demonstrate how to generate an L-System without CFGs and the RiTa library.</p>
@@ -336,14 +336,14 @@ Generation #4: ABAAABABABAAABAAABAAABABABAAABABABAAABAAABABAABC
 Generation #5: ABAAABABABAAABAAABAAABABABAAABABABAAABABABAAABAAABAAABABABAAABAAABAAABABABAAABABABAAABAAABABAABC
 {% endhighlight %}
 
-<div class="nohigh"><a href="http://www.shiffman.net/itp/classes/a2z/week09/lsystem/"><img src="http://www.shiffman.net/itp/classes/a2z/week09/lsystem.jpg" class="right"/></a></div>
+<div class="nohigh"><a href="http://shiffman.net/itp/classes/a2z/week09/lsystem/"><img src="http://shiffman.net/itp/classes/a2z/week09/lsystem.jpg" class="right"/></a></div>
 <p>To generate imagery from an L-System, the sentences are deciphered as directions for a <a href="http://en.wikipedia.org/wiki/Logo_programming_language">turtle graphics</a> engine.  For example:</p>
 <li class="arrow">Alphabet: F (go forward), + (turn right), &#8211; (turn left), [ (save current location), ] (return to last saved location)</li>
 <li class="arrow">Rules: F &rarr; F[F]-F+F[--F]+F-F</li>
 <li class="arrow">Axiom: F-F-F-F</li>
 <p>&nbsp;<br />
-The <a href="http://www.shiffman.net/itp/classes/a2z/week09/lsystem/">applet</a> to the right visualizes the result.</p>
-<p>Let&#8217;s look a bit at how the code is implemented.  Our program will involve two classes, <a href="http://www.shiffman.net/itp/classes/a2z/week09/LSystem.java">LSystem.java</a> and <a href="http://www.shiffman.net/itp/classes/a2z/week09/Rule.java">Rule.java</a>.   </p>
+The <a href="http://shiffman.net/itp/classes/a2z/week09/lsystem/">applet</a> to the right visualizes the result.</p>
+<p>Let&#8217;s look a bit at how the code is implemented.  Our program will involve two classes, <a href="http://shiffman.net/itp/classes/a2z/week09/LSystem.java">LSystem.java</a> and <a href="http://shiffman.net/itp/classes/a2z/week09/Rule.java">Rule.java</a>.   </p>
 <p>The LSystem class includes a String for the current sentence, an int to keep track of the total # of generations, and an array of Rule objects to describe the rules of the system.</p>
 
 {% highlight java %}
@@ -391,12 +391,12 @@ public class Rule {
 <li class="arrow">If it does not, append itself to the StringBuffer</li>
 
 {% highlight java %}
-some weird bug is preventing me from pasting the code here, visit: <a href="http://www.shiffman.net/itp/classes/a2z/week09/LSystem.java">LSystem.java</a> and look for the generate() method.
+some weird bug is preventing me from pasting the code here, visit: <a href="http://shiffman.net/itp/classes/a2z/week09/LSystem.java">LSystem.java</a> and look for the generate() method.
 {% endhighlight %}
 
-<p>Code: <a href="http://www.shiffman.net/itp/classes/a2z/week09/LSys.java">LSys.java</a>, <a href="http://www.shiffman.net/itp/classes/a2z/week09/LSystem.java">LSystem.java</a>, <a href="http://www.shiffman.net/itp/classes/a2z/week09/Rule.java">Rule.java</a>,full source: <a href="http://www.shiffman.net/itp/classes/a2z/week09/lsystem.zip">lsystem.zip</a>.</p>
+<p>Code: <a href="http://shiffman.net/itp/classes/a2z/week09/LSys.java">LSys.java</a>, <a href="http://shiffman.net/itp/classes/a2z/week09/LSystem.java">LSystem.java</a>, <a href="http://shiffman.net/itp/classes/a2z/week09/Rule.java">Rule.java</a>,full source: <a href="http://shiffman.net/itp/classes/a2z/week09/lsystem.zip">lsystem.zip</a>.</p>
 <p><a name ="ga"></a></p>
 <h2>Genetic Algorithms</h2>
-<p>We can also accomplish some interesting results generating text via genetic algorithms.  For example, what if a String of characters is considered DNA?  For examples and explanation, visit the <a href="http://www.shiffman.net/teaching/the-nature-of-code/ga/">nature of code GA handout</a>.</p>
-<p>Code: <a href="http://www.shiffman.net/itp/classes/a2z/week09/2008/genetic/DNA.java">DNA.java</a>, <a href="http://www.shiffman.net/itp/classes/a2z/week09/2008/genetic/Population.java</a>Population.java</a>, <a href="http://www.shiffman.net/itp/classes/a2z/week09/2008/genetic/GAShakespeare.java">GAShakespeare.java</a>.<br />
+<p>We can also accomplish some interesting results generating text via genetic algorithms.  For example, what if a String of characters is considered DNA?  For examples and explanation, visit the <a href="http://shiffman.net/teaching/the-nature-of-code/ga/">nature of code GA handout</a>.</p>
+<p>Code: <a href="http://shiffman.net/itp/classes/a2z/week09/2008/genetic/DNA.java">DNA.java</a>, <a href="http://shiffman.net/itp/classes/a2z/week09/2008/genetic/Population.java</a>Population.java</a>, <a href="http://shiffman.net/itp/classes/a2z/week09/2008/genetic/GAShakespeare.java">GAShakespeare.java</a>.<br />
 </w></p>

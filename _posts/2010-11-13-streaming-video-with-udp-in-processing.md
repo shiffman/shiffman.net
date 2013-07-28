@@ -49,5 +49,5 @@ ds.send(new DatagramPacket(packet,packet.length,client,clientPort));
 <p>The port can be anything (as long as it doesn&#8217;t conflict with a port you are using for something else).  Generally, 9000 and above is a safe bet.   The IP address should be the IP of the machine receiving the video stream.  For demonstration purposes, it&#8217;s simply &#8220;localhost&#8221;, i.e. we&#8217;re going to send and receive on the same machine.</p>
 <p>Finally, the checkForNewImage() function in the VideoReceiver example is blocking, meaning if no data is coming in Processing will stop and wait.  So really, it should exist in a separate thread.  Stay tuned for an updated threaded version as well as simple thread tutorial!</p>
 <p>Update: the thread example is in the download and more here: </p>
-<p><a href="http://www.shiffman.net/2010/11/13/processing-and-threads/">http://www.shiffman.net/2010/11/13/processing-and-threads/</a></p>
-<p>Download the code for sending and receiving: <a href="http://www.shiffman.net/p5/image_streaming.zip">image_streaming.zip</a>.</p>
+<p><a href="http://shiffman.net/2010/11/13/processing-and-threads/">http://shiffman.net/2010/11/13/processing-and-threads/</a></p>
+<p>Download the code for sending and receiving: <a href="http://shiffman.net/p5/image_streaming.zip">image_streaming.zip</a>.</p>

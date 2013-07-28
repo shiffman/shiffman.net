@@ -97,5 +97,5 @@ void mouseDragged() {
   offset.y = (mouseY - mouse.y)/zoom + poffset.y;
 }</p>
 <p></script></p>
-<p>Source: <a href='http://www.shiffman.net/wp/wp-content/uploads/2011/02/PanZoom2D.zip'>PanZoom2D.zip</a></p>
+<p>Source: <a href='http://shiffman.net/wp/wp-content/uploads/2011/02/PanZoom2D.zip'>PanZoom2D.zip</a></p>
 <p></script></p>

@@ -13,7 +13,7 @@ categories:
   - teaching_
 ---
 <p>How to export a processing application full-screen:</p>
-<p><img src="http://www.shiffman.net/p5/p5_fullscreen.jpg" alt="p5 fullscreen"/></p>
+<p><img src="http://shiffman.net/p5/p5_fullscreen.jpg" alt="p5 fullscreen"/></p>
 <p>I&#8217;ve received several inquiries regarding how to make a Processing exported application run fullscreen. . .  Here are a few simple steps and some code (using my <a href="http://www.processing.org/learning/examples/mandelbrot.html">Mandelbrot</a> example). . . More information can be found in the <a href="http://www.processing.org/faq/bugs.html#application">Processing FAQ</a>.</p>
 <p>Step #1:<br />
 In order to auto-launch in &#8220;present&#8221; mode, you must write your own &#8220;main&#8221; function and specify the relevant arguments:</p>
@@ -25,6 +25,6 @@ In order to auto-launch in &#8220;present&#8221; mode, you must write your own &
 <p><i>size(screen.width,screen.height);</i></p>
 <p>(Use the above code with caution, if your screen resolution is very large, slowness may ensue. . .) </p>
 <p>Application and Source for Example:<br />
-<a href="http://www.shiffman.net/p5/mandelbrot_mac.zip">Mac Version</a><br />
-<a href="http://www.shiffman.net/p5/mandelbrot_windows.zip">Windows Version</a><br />
-<a href="http://www.shiffman.net/p5/mandelbrot_linux.zip">Linux Version</a></p>
+<a href="http://shiffman.net/p5/mandelbrot_mac.zip">Mac Version</a><br />
+<a href="http://shiffman.net/p5/mandelbrot_windows.zip">Windows Version</a><br />
+<a href="http://shiffman.net/p5/mandelbrot_linux.zip">Linux Version</a></p>

@@ -16,4 +16,4 @@ categories:
   - programming
   - teaching_
 ---
-<p>A first pass at my Neural Networks in processing tutorial is ready for public consumption.  So, before you go and consume a turkey,  consume <a href="http://www.shiffman.net/teaching/the-nature-of-code/nn/">this link</a>.   And let me know if it makes any sense at all. . .?  The examples are still trivial  &#8212; Linear classification, Solving XOR &#8212; but I hope to develop some more advanced pattern recognition examples soon!</p>
+<p>A first pass at my Neural Networks in processing tutorial is ready for public consumption.  So, before you go and consume a turkey,  consume <a href="http://shiffman.net/teaching/the-nature-of-code/nn/">this link</a>.   And let me know if it makes any sense at all. . .?  The examples are still trivial  &#8212; Linear classification, Solving XOR &#8212; but I hope to develop some more advanced pattern recognition examples soon!</p>

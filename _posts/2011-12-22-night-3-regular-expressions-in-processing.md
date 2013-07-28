@@ -12,7 +12,7 @@ tags:
   - processing.org
   - regex
 ---
-<p>Several years ago I became somewhat obsessed with regular expressions while reading Jeffrey Friedl&#8217;s <a href="http://regex.info">Mastering Regular Expressions</a>.  At the time, I wrote <a href="http://www.shiffman.net/teaching/a2z/regex/">a short tutorial about regular expressions</a> for my course Programming from A to Z.  The sad truth is that if you&#8217;ve ever done regular expressions in Java, it&#8217;s pretty darn awkward compared to, say, python or perl.  The good news is there are some nice regex helper functions in Processing that can make it a bit easier.  Before we get to that let&#8217;s start with the Java API: </p>
+<p>Several years ago I became somewhat obsessed with regular expressions while reading Jeffrey Friedl&#8217;s <a href="http://regex.info">Mastering Regular Expressions</a>.  At the time, I wrote <a href="http://shiffman.net/teaching/a2z/regex/">a short tutorial about regular expressions</a> for my course Programming from A to Z.  The sad truth is that if you&#8217;ve ever done regular expressions in Java, it&#8217;s pretty darn awkward compared to, say, python or perl.  The good news is there are some nice regex helper functions in Processing that can make it a bit easier.  Before we get to that let&#8217;s start with the Java API: </p>
 <ul>
 <li><a href="http://docs.oracle.com/javase/6/docs/api/java/util/regex/Pattern.html">Pattern</a> &#8212; a compiled representation of a regular expression.</li>
 <li><a href="http://docs.oracle.com/javase/6/docs/api/java/util/regex/Matcher.html">Matcher</a> &#8212; an engine that performs match operations on a character sequence (or String) by interpreting a Pattern.</li>
@@ -64,5 +64,5 @@ for (int i = 0; i < m.length; i++) {
 }
 {% endhighlight %}
 <p>This new example uses a regex that matches anything inside an HTML href tag and draws it the screen.</p>
-<p><a href='http://www.shiffman.net/wp/wp-content/uploads/2011/12/Regex.zip'><img src="http://www.shiffman.net/wp/wp-content/uploads/2011/12/regex.png" alt="" title="regex" width="500" height="298" class="alignnone size-full wp-image-994" /></a></p>
-<p><a href='http://www.shiffman.net/wp/wp-content/uploads/2011/12/Regex.zip'>Regex.zip</a></p>
+<p><a href='http://shiffman.net/wp/wp-content/uploads/2011/12/Regex.zip'><img src="http://shiffman.net/wp/wp-content/uploads/2011/12/regex.png" alt="" title="regex" width="500" height="298" class="alignnone size-full wp-image-994" /></a></p>
+<p><a href='http://shiffman.net/wp/wp-content/uploads/2011/12/Regex.zip'>Regex.zip</a></p>

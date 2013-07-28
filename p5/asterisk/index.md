@@ -20,10 +20,10 @@ pvc_views:
 <p><object type="application/x-shockwave-flash" width="300" height = "252" data="http://vimeo.com/moogaloop.swf?clip_id=327214&amp;server=vimeo.com&amp;fullscreen=1&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF"><param name="quality" value="best" /><param name="allowfullscreen" value="true" /><param name="scale" value="showAll" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=327214&amp;server=vimeo.com&amp;fullscreen=1&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF" /></object><br /><a href="http://vimeo.com/327214/l:embed_327214">1-800-Processing</a> from <a href="http://vimeo.com/shiffman/l:embed_327214">shiffman</a> on <a href="http://vimeo.com/l:embed_327214">Vimeo</a>.</p>
 <h2>Code you need:</h2>
 <ul>
-<li>Asterisk configuration: <a href="http://www.shiffman.net/itp/asterisk/extensions.conf">extensions.conf</a>, <a href="http://www.shiffman.net/itp/asterisk/runEAGI.sh">runEAGI.sh</a></li>
-<li>JEAGI Client: <a href="http://www.shiffman.net/itp/asterisk/JEAGIClient.java">JEAGIClient.java</a>, <a href="http://www.shiffman.net/itp/asterisk/Client.java">Client.java</a></li>
-<li>JEAGI Server: <a href="http://www.shiffman.net/itp/asterisk/JEAGIServer.java">JEAGIServer.java</a>, <a href="http://www.shiffman.net/itp/asterisk/ServerThread.java">ServerThread.java</a></li>
-<li>Processing examples: <a href="http://www.shiffman.net/itp/asterisk/Asterisk.pde">Asterisk.pde</a>, <a href="http://www.shiffman.net/itp/asterisk/AsteriskMulti.zip">AsteriskMulti.zip</a></li>
+<li>Asterisk configuration: <a href="http://shiffman.net/itp/asterisk/extensions.conf">extensions.conf</a>, <a href="http://shiffman.net/itp/asterisk/runEAGI.sh">runEAGI.sh</a></li>
+<li>JEAGI Client: <a href="http://shiffman.net/itp/asterisk/JEAGIClient.java">JEAGIClient.java</a>, <a href="http://shiffman.net/itp/asterisk/Client.java">Client.java</a></li>
+<li>JEAGI Server: <a href="http://shiffman.net/itp/asterisk/JEAGIServer.java">JEAGIServer.java</a>, <a href="http://shiffman.net/itp/asterisk/ServerThread.java">ServerThread.java</a></li>
+<li>Processing examples: <a href="http://shiffman.net/itp/asterisk/Asterisk.pde">Asterisk.pde</a>, <a href="http://shiffman.net/itp/asterisk/AsteriskMulti.zip">AsteriskMulti.zip</a></li>
 </ul>
 <h2>Helpful Links:</h2>
 <ul>
@@ -92,7 +92,7 @@ while ((line = bin.readLine()) != null &#038;&#038; loop) {
   // if we want to quit we can set loop = false (i.e. in the case of a hangup)
 }
 {% endhighlight %}
-<p>The phone number of the caller will show up as &#8220;agi_callerid:##########&#8221; and when a digit is pressed, a message will arrive in the form &#8220;200 result=49&#8243; with 49 being the ASCII code for &#8220;1&#8243;.  The JEAGIClient can therefore extract this information using some simple <a href="http://www.shiffman.net/teaching/a2z/mining/#html">String parsing</a> techniques:</p>
+<p>The phone number of the caller will show up as &#8220;agi_callerid:##########&#8221; and when a digit is pressed, a message will arrive in the form &#8220;200 result=49&#8243; with 49 being the ASCII code for &#8220;1&#8243;.  The JEAGIClient can therefore extract this information using some simple <a href="http://shiffman.net/teaching/a2z/mining/#html">String parsing</a> techniques:</p>
 {% highlight java %}
 String agi_callerid = "agi_callerid:";
 int index = line.indexOf(agi_callerid);
@@ -121,7 +121,7 @@ if (index > -1) {
 }
 {% endhighlight %}
 <p>The Client itself just needs three objects: <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/net/Socket.html">Socket</a> (to make a socket connection to the Server), a <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/io/PrintWriter.html">PrintWriter</a> (to write out to the Server), and a <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/io/BufferedReader.html">BufferedReader</a> (to read in from the Server).</p>
-<p>Here is the full code for <a href="http://www.shiffman.net/itp/asterisk/JEAGIClient.java">JEAGIClient.java</a> and <a href="http://www.shiffman.net/itp/asterisk/Client.java">Client.java</a>.  </p>
+<p>Here is the full code for <a href="http://shiffman.net/itp/asterisk/JEAGIClient.java">JEAGIClient.java</a> and <a href="http://shiffman.net/itp/asterisk/Client.java">Client.java</a>.  </p>
 <p>The Server itself is also quite simple and requires a <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/net/ServerSocket.html">ServerSocket</a> (to listen for incoming connections).  Each connection is farmed out to another class, which manages reading and writing to that connection as its own thread and added to an ArrayList.  This is a very simple chat server.</p>
 {% highlight java %}
 ArrayList allConnections = new ArrayList();
@@ -133,8 +133,8 @@ while (true) {
   allConnections.add(newConnection);
 }
 {% endhighlight %}
-<p>The ServerThread class is quite similar to <a href="http://www.shiffman.net/itp/asterisk/Client.java">Client.java</a> and includes a <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/net/Socket.html">Socket</a>, <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/io/PrintWriter.html">PrintWriter</a>, and <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/io/BufferedReader.html">BufferedReader</a>.</p>
-<p>Here is the full code for <a href="http://www.shiffman.net/itp/asterisk/JEAGIServer.java">JEAGIServer.java</a> and <a href="http://www.shiffman.net/itp/asterisk/ServerThread.java">ServerThread.java</a>. </p>
+<p>The ServerThread class is quite similar to <a href="http://shiffman.net/itp/asterisk/Client.java">Client.java</a> and includes a <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/net/Socket.html">Socket</a>, <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/io/PrintWriter.html">PrintWriter</a>, and <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/io/BufferedReader.html">BufferedReader</a>.</p>
+<p>Here is the full code for <a href="http://shiffman.net/itp/asterisk/JEAGIServer.java">JEAGIServer.java</a> and <a href="http://shiffman.net/itp/asterisk/ServerThread.java">ServerThread.java</a>. </p>
 <p>A quick note about putting this together.  You&#8217;ll need whatever machine you are running Asterisk on to have Java installed, of course.  You&#8217;ll need to compile and execute JEAGIServer.java on your own, however, for JEAGIClient, you only need to compile the classes since it will be executed by the shell script: runEAGI.sh.  You&#8217;ll have to make sure that your paths are set up correctly in runEAGI.sh and that you are using the same port number in both the JEAGIClient and JEAGIServer.</p>
 <p><a name ="processing"></a></p>
 <h2>Processing gets the Call</h2>
@@ -157,10 +157,10 @@ if (client.available() > 0) {
 } 
 {% endhighlight %}
 <p>And it&#8217;s as simple as that!</p>
-<p>Here is a basic example that displays information from a call: <a href="http://www.shiffman.net/itp/asterisk/Asterisk.pde">Asterisk.pde</a>.</p>
+<p>Here is a basic example that displays information from a call: <a href="http://shiffman.net/itp/asterisk/Asterisk.pde">Asterisk.pde</a>.</p>
 <p><a name ="objects"></a></p>
 <h2>A List of Call Objects</h2>
-<p>One of the first things you will likely want to do when receiving phone calls in Processing is spawn an object for every new caller.  Most of the time when you want to have multiple objects, a simple <a href="http://processing.org/reference/Array.html">array</a> or even  <a href="http://www.shiffman.net/teaching/nature/particles/">ArrayList</a> will do.  Arrays allow you to store an ordered list of data with each element accessible via its index (the location in the array).  </p>
+<p>One of the first things you will likely want to do when receiving phone calls in Processing is spawn an object for every new caller.  Most of the time when you want to have multiple objects, a simple <a href="http://processing.org/reference/Array.html">array</a> or even  <a href="http://shiffman.net/teaching/nature/particles/">ArrayList</a> will do.  Arrays allow you to store an ordered list of data with each element accessible via its index (the location in the array).  </p>
 <p>In this case, however, an array or ArrayList is not a good data structure for storing multiple call objects.  Consider the following scenario (which will continually occur in our program):</p>
 <ul>
 <li>Processing receives: &#8220;5558675309,newcall&#8221; Create a new object and add it to our ArrayList.</li>
@@ -175,7 +175,7 @@ if (listOfCalls.contains("5558675309")) {
    call.issueCommand("5");
 }
 {% endhighlight %}
-<p>One data structure that will allow us to do this is a <a href="http://en.wikipedia.org/wiki/Hash_table">Hash Table</a>.  In Java, we&#8217;ll use the <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/HashMap.html">HashMap</a> class.   <a href="http://www.shiffman.net/teaching/a2z/bayesian/#hash">Here is a tutorial</a> I wrote up last year about Hash Tables.  Every object stored in a hash map must have both a key and a value.  The key is what we use to look up the object, and the value is the object itself.  We need the key to be unique and this is perfect since by definition every call has a unique key: the phone number itself!  So, when we receive a message from the server:</p>
+<p>One data structure that will allow us to do this is a <a href="http://en.wikipedia.org/wiki/Hash_table">Hash Table</a>.  In Java, we&#8217;ll use the <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/HashMap.html">HashMap</a> class.   <a href="http://shiffman.net/teaching/a2z/bayesian/#hash">Here is a tutorial</a> I wrote up last year about Hash Tables.  Every object stored in a hash map must have both a key and a value.  The key is what we use to look up the object, and the value is the object itself.  We need the key to be unique and this is perfect since by definition every call has a unique key: the phone number itself!  So, when we receive a message from the server:</p>
 <p>&#8220;5558675309,newcall&#8221;  or &#8220;5558675309,5&#8243; or &#8220;5558675309,*&#8221; or &#8220;5558675309,hangup&#8221; </p>
 <p>We should first split the message into two String tokens:</p>
 {% highlight java %}
@@ -202,4 +202,4 @@ if (tokens[1].equals("hangup")) {
 } 
 {% endhighlight %}
 <p>The full example is available here: </p>
-<p><a href="http://www.shiffman.net/itp/asterisk/AsteriskMulti.zip">AsteriskMulti.zip</a></p>
+<p><a href="http://shiffman.net/itp/asterisk/AsteriskMulti.zip">AsteriskMulti.zip</a></p>

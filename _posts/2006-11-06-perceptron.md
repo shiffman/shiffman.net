@@ -14,8 +14,8 @@ categories:
   - programming
   - teaching_
 ---
-<p><a href="http://www.shiffman.net/itp/classes/nature/week10_s06/perceptron/"><img id="image145" src="http://www.shiffman.net/wp-content/uploads/2006/11/perceptron.jpg" alt="perceptron" /></a><br />
-<a href="http://www.shiffman.net/itp/classes/nature/week10_s06/perceptron/">view applet and source</a></p>
+<p><a href="http://shiffman.net/itp/classes/nature/week10_s06/perceptron/"><img id="image145" src="http://shiffman.net/wp-content/uploads/2006/11/perceptron.jpg" alt="perceptron" /></a><br />
+<a href="http://shiffman.net/itp/classes/nature/week10_s06/perceptron/">view applet and source</a></p>
 <p>Long overdue, I&#8217;ve started working on a series of <a href="http://www.processing.org"Processing</a> examples that implement neural networks.  First up is the simplest, a little </a><a href="http://en.wikipedia.org/wiki/Perceptron">Perceptron</a> that learns whether points live on one side of a line (in Cartesian space) or the other.</p>
 <p>y = x*0.9-0.2</p>
 <p>In this example, the perceptron is trained via an array of known point objects (with known answers), and the resulting &#8220;guess&#8221; line is displayed in real-time.  I made the learning constant rather low so that one can see the slow progression of changing weights.  I&#8217;ve been spending some quality time with <a href="http://www.cs.unm.edu/~luger/index.html">Artifical Intelligence, by George Luger</a>.  It&#8217;s a wonderful book, and even better, it&#8217;s free for download online!</p>

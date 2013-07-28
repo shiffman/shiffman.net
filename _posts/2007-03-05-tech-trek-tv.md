@@ -22,6 +22,6 @@ categories:
 <p>March 4th 2007. New York City<br />3 Minutes</p>
 <p>Wherein we pick a name we like (Tech Trek: Inside ITP) and catch ITP researcher and teacher Dan Shiffman working on 6, 32-inch TVs. His project is was just up and running when we talked to him. It&#8217;s an open source Java framework for spanning real-time graphics applets/applications across multiple screens. </p>
 <ul>
-<li>More Info: Dan Shiffman: www.shiffman.net</li>
+<li>More Info: Dan Shiffman: shiffman.net</li>
 </ul>
 </div>

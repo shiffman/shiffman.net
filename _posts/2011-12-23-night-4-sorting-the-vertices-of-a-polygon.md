@@ -32,9 +32,9 @@ void draw() {
 }
 {% endhighlight %}
 <p>But depending on how the user set the vertices, you might end up with:</p>
-<p><img src="http://www.shiffman.net/wp/wp-content/uploads/2011/12/unsorted.png" alt="" title="unsorted" width="500" height="298" class="alignnone size-full wp-image-1006" /></p>
+<p><img src="http://shiffman.net/wp/wp-content/uploads/2011/12/unsorted.png" alt="" title="unsorted" width="500" height="298" class="alignnone size-full wp-image-1006" /></p>
 <p>when what you really want is the following:</p>
-<p><img src="http://www.shiffman.net/wp/wp-content/uploads/2011/12/sorted.png" alt="" title="sorted" width="500" height="298" class="alignnone size-full wp-image-1007" /></p>
+<p><img src="http://shiffman.net/wp/wp-content/uploads/2011/12/sorted.png" alt="" title="sorted" width="500" height="298" class="alignnone size-full wp-image-1007" /></p>
 <p>One solution for solving this problem is to always sort all of the vertices according to their relative angle from the center.  Let&#8217;s say you calculate the center of the polygon as the average location of all vertices.</p>
 {% highlight java %}
   PVector centroid = new PVector();
@@ -56,7 +56,7 @@ void draw() {
 // Daniel Shiffman
 // Hanukkah 2011
 // 8 nights of Processing examples
-// http://www.shiffman.net</p>
+// http://shiffman.net</p>
 <p>// A Polygon object
 Poly p;</p>
 <p>void setup() {
@@ -92,7 +92,7 @@ void mousePressed() {
 <p>// Daniel Shiffman
 // Hanukkah 2011
 // 8 nights of Processing examples
-// http://www.shiffman.net</p>
+// http://shiffman.net</p>
 <p>// A class that generates a polygon sorted
 // according to relative angle from center</p>
 <p>class Poly {
@@ -200,4 +200,4 @@ void mousePressed() {
   }
 }
 </script></p>
-<p>Source: <a href='http://www.shiffman.net/wp/wp-content/uploads/2011/12/PolygonVertexSorting.zip'>PolygonVertexSorting.zip</a></p>
+<p>Source: <a href='http://shiffman.net/wp/wp-content/uploads/2011/12/PolygonVertexSorting.zip'>PolygonVertexSorting.zip</a></p>

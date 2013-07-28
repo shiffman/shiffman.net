@@ -13,8 +13,8 @@ categories:
   - p5
   - processing.org
 ---
-<p>While it may not be nearly as kooky as <a href="http://www.shiffman.net/p5/asterisk">calling Processing on the phone</a>, I&#8217;ve been asked about checking e-mail from Processing several times this semester.  So rather than try to dig up example code on the internets, I&#8217;ve quickly thrown together one that checks a <a href="http://en.wikipedia.org/wiki/Post_Office_Protocol">POP account</a> and/or sends mail via <a href="http://en.wikipedia.org/wiki/Smtp">SMTP</a>.  It&#8217;s all done with <a href="http://en.wikipedia.org/wiki/Smtp">Javamail</a>.</p>
-<p><a href="http://www.shiffman.net/p5/Email.zip">Download the example sketch.</a></p>
+<p>While it may not be nearly as kooky as <a href="http://shiffman.net/p5/asterisk">calling Processing on the phone</a>, I&#8217;ve been asked about checking e-mail from Processing several times this semester.  So rather than try to dig up example code on the internets, I&#8217;ve quickly thrown together one that checks a <a href="http://en.wikipedia.org/wiki/Post_Office_Protocol">POP account</a> and/or sends mail via <a href="http://en.wikipedia.org/wiki/Smtp">SMTP</a>.  It&#8217;s all done with <a href="http://en.wikipedia.org/wiki/Smtp">Javamail</a>.</p>
+<p><a href="http://shiffman.net/p5/Email.zip">Download the example sketch.</a></p>
 <p>Code snippets after the jump. . .</p>
 <p><!--more--></p>
 {% highlight java %}

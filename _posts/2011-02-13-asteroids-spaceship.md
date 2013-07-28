@@ -20,7 +20,7 @@ tags:
 <p>// Nature of Code 2011
 // Daniel Shiffman
 // Chapter 3: Asteroids exercise
-// http://www.shiffman.net</p>
+// http://shiffman.net</p>
 <p>// Mover object
 Spaceship ship;</p>
 <p>void setup() {
@@ -133,4 +133,4 @@ Spaceship ship;</p>
   }
 }
 </script></p>
-<p>Source: <a href="http://www.shiffman.net/itp/classes/nature/week04_s11/_03_asteroids.zip">_03_asteroids.zip</a></script></p>
+<p>Source: <a href="http://shiffman.net/itp/classes/nature/week04_s11/_03_asteroids.zip">_03_asteroids.zip</a></script></p>

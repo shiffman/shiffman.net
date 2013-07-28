@@ -16,9 +16,9 @@ pvc_views:
 <li class="arrow"><a href="#crawler">A Crawler Class</a></li>
 </div>
 <h5>Examples:</h5>
-<li class="arrow">simple URL retrieval: <a href="http://www.shiffman.net/itp/classes/a2z/week05/urlgrab/A2ZUrlReader.java">A2ZUrlReader.java</a>, <a href="http://www.shiffman.net/itp/classes/a2z/week05/urlgrab/UrlGrab.java">UrlGrab.java</a></li>
-<li class="arrow">Valentine&#8217;s day crawler: <a href="http://www.shiffman.net/itp/classes/a2z/week05/valentinecrawler.zip">valentinecrawler.zip</a>,  <a href="http://www.shiffman.net/itp/classes/a2z/week05/crawler/Crawler.java">Crawler.java</a>, <a href="http://www.shiffman.net/itp/classes/a2z/week05/crawler/Crawling.java">Crawling.java</a></li>
-<li class="arrow">Example that uses <a href="http://www.cs.cmu.edu/~rcm/websphinx/">WebSphinx</a> (a java open-source crawling library): <a href="http://www.shiffman.net/itp/classes/a2z/week05/sphinx/MyCrawler.java">MyCrawler.java</a>, <a href="http://www.shiffman.net/itp/classes/a2z/week05/sphinx/WebSphinxTest.java">WebSphinxTest.java</a>, <a href="http://www.shiffman.net/itp/classes/a2z/week05/sphinx/web_sphinx.zip">web_sphinx.zip</a>.</li>
+<li class="arrow">simple URL retrieval: <a href="http://shiffman.net/itp/classes/a2z/week05/urlgrab/A2ZUrlReader.java">A2ZUrlReader.java</a>, <a href="http://shiffman.net/itp/classes/a2z/week05/urlgrab/UrlGrab.java">UrlGrab.java</a></li>
+<li class="arrow">Valentine&#8217;s day crawler: <a href="http://shiffman.net/itp/classes/a2z/week05/valentinecrawler.zip">valentinecrawler.zip</a>,  <a href="http://shiffman.net/itp/classes/a2z/week05/crawler/Crawler.java">Crawler.java</a>, <a href="http://shiffman.net/itp/classes/a2z/week05/crawler/Crawling.java">Crawling.java</a></li>
+<li class="arrow">Example that uses <a href="http://www.cs.cmu.edu/~rcm/websphinx/">WebSphinx</a> (a java open-source crawling library): <a href="http://shiffman.net/itp/classes/a2z/week05/sphinx/MyCrawler.java">MyCrawler.java</a>, <a href="http://shiffman.net/itp/classes/a2z/week05/sphinx/WebSphinxTest.java">WebSphinxTest.java</a>, <a href="http://shiffman.net/itp/classes/a2z/week05/sphinx/web_sphinx.zip">web_sphinx.zip</a>.</li>
 <h5>Related:</h5>
 <li class="arrow"><a href="http://www.robotstxt.org/wc/guidelines.html">Guidelines for Robot Writers</a> &#8212; examples above are terribly impolite!</li>
 <li class="arrow"><a href="http://www-db.stanford.edu/~backrub/google.html">The Anatomy of a Large-Scale Hypertextual Web Search Engine</a></li>
@@ -60,7 +60,7 @@ reader.close();
 String urlContent = stuff.toString();
 {% endhighlight %}
 
-<p>Source for URL reading class: <a href="http://www.shiffman.net/itp/classes/a2z/week05/urlgrab/A2ZUrlReader.java">A2ZUrlReader.java</a></p>
+<p>Source for URL reading class: <a href="http://shiffman.net/itp/classes/a2z/week05/urlgrab/A2ZUrlReader.java">A2ZUrlReader.java</a></p>
 <p><a name ="lists"></a></p>
 <h5>Making a list and keeping it twice</h5>
 <p>Sure, visiting one URL and grabbing data is super duper fun.   But there is more joy out there and it comes in the form of crawling the web via a <a href="http://en.wikipedia.org/wiki/Queue">queue</a> of URLs to visit.  To accomplish this, we&#8217;ll dive into the <a href="http://en.wikipedia.org/wiki/Linked_list">linked list</a> data structure.  Sure, we could use an <a href="http://java.sun.com/j2se/1.3/docs/api/java/util/ArrayList.html">ArrayList</a> here to keep track of multiple URLs in order, but a <a href="http://en.wikipedia.org/wiki/Linked_list">linked list</a> will be more efficient because we only need some very basic functionality.  We need to:</p>
@@ -99,7 +99,7 @@ urlsToVisit.add("http://www.sadlittleurl.com");
 urlsToVisit.add("http://www.sadlittleurl.com");
 {% endhighlight %}
 
-<p>We shouldn&#8217;t be visiting the same URL over and over again.  This is why we&#8217;ll need a <i>second list</i>, one that keeps track of the URLs previously visited.   Ideally, a data structure that had constant time look-up &#8212; O(1) &#8212; would be great.  All we want to figure out is &#8212; here&#8217;s a URL, are you in the list or not?  Our friendly neighborhood <a href="http://en.wikipedia.org/wiki/Hash_table">hash table</a> from <a href="http://www.shiffman.net/teaching/programming-from-a-to-z/bayesian/#hash">last week</a> will do just fine.</p>
+<p>We shouldn&#8217;t be visiting the same URL over and over again.  This is why we&#8217;ll need a <i>second list</i>, one that keeps track of the URLs previously visited.   Ideally, a data structure that had constant time look-up &#8212; O(1) &#8212; would be great.  All we want to figure out is &#8212; here&#8217;s a URL, are you in the list or not?  Our friendly neighborhood <a href="http://en.wikipedia.org/wiki/Hash_table">hash table</a> from <a href="http://shiffman.net/teaching/programming-from-a-to-z/bayesian/#hash">last week</a> will do just fine.</p>
 
 {% highlight java %}
 LinkedList urlsToVisit = new LinkedList();   // A queue of URLs to visit
@@ -134,7 +134,7 @@ if (!urlsToVisit.containsKey(url)) {
 So far, we&#8217;ve covered the necessary code for every step except #4.</p>
 <p><a name ="find"></a></p>
 <h5>Finding URLs</h5>
-<p><a href="http://www.shiffman.net/teaching/programming-from-a-to-z/regex">Remembering</a> <a href="http://en.wikipedia.org/wiki/Regular_expression">regular expressions</a>, we can create a <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/regex/Pattern.html">Pattern</a> object to match any reference to a URL.  </p>
+<p><a href="http://shiffman.net/teaching/programming-from-a-to-z/regex">Remembering</a> <a href="http://en.wikipedia.org/wiki/Regular_expression">regular expressions</a>, we can create a <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/regex/Pattern.html">Pattern</a> object to match any reference to a URL.  </p>
 <p>URL references on web pages generally look like this:</p>
 
 {% highlight java %}&lt;a href = "http://www.someurl.com"&gt;{% endhighlight %}
@@ -209,7 +209,7 @@ if (!newurl.matches(ignore) &#038;&#038; !urlsVisited.containsKey(newurl)) {
 {% highlight java %}/* Daniel Shiffman               */
 /* Programming from A to Z       */
 /* Spring 2006                   */
-/* http://www.shiffman.net       */
+/* http://shiffman.net       */
 /* daniel.shiffman@nyu.edu       */
 
 // Simple example of a web crawler
@@ -304,7 +304,7 @@ while (!crawler.queueEmpty()) {
 }
 {% endhighlight %}
 
-<p>In the <a href="http://www.shiffman.net/itp/classes/a2z/week05/valentinecrawler.zip">full example</a>, I&#8217;ve built in a little safety net so that the crawler doesn&#8217;t run rampant (although it might be fun to let it do so!)</p>
+<p>In the <a href="http://shiffman.net/itp/classes/a2z/week05/valentinecrawler.zip">full example</a>, I&#8217;ve built in a little safety net so that the crawler doesn&#8217;t run rampant (although it might be fun to let it do so!)</p>
 
 {% highlight java %}
 // Since this crawler isn't particularly polite: http://www.robotstxt.org/wc/guidelines.html
@@ -333,4 +333,4 @@ public void visit(Page page) {
 }
 {% endhighlight %}
 
-<p><a href="http://www.shiffman.net/itp/classes/a2z/week05/sphinx/web_sphinx.zip">Here is an example</a> of a basic Crawler implemented via WebSphinx.  For other possibilities, take a look at the <a href="http://www.cs.cmu.edu/~rcm/websphinx/doc/index.html">WebSphinx API</a>.</p>
+<p><a href="http://shiffman.net/itp/classes/a2z/week05/sphinx/web_sphinx.zip">Here is an example</a> of a basic Crawler implemented via WebSphinx.  For other possibilities, take a look at the <a href="http://www.cs.cmu.edu/~rcm/websphinx/doc/index.html">WebSphinx API</a>.</p>

@@ -13,5 +13,5 @@ categories:
   - processing.org
   - rhizome
 ---
-<p><a href="http://rhizome.org/editorial/2960"><img src="http://www.shiffman.net/wp/wp-content/uploads/2009/09/interview.jpg" alt="interview" title="interview" width="500" height="380" class="alignnone size-full wp-image-452" /></a></p>
+<p><a href="http://rhizome.org/editorial/2960"><img src="http://shiffman.net/wp/wp-content/uploads/2009/09/interview.jpg" alt="interview" title="interview" width="500" height="380" class="alignnone size-full wp-image-452" /></a></p>
 <p>Yesterday, Rhizome published a short <a href="http://rhizome.org/editorial/2960">interview I conducted with Casey Reas and Ben Fry</a> about the past, present, and future of <a href="http://www.processing.org">Processing</a>.</p>
