@@ -1,0 +1,130 @@
+	•	Home | About | Projects | Teaching | Press | Contact
+Shiffle
+Programming from A to Z
+Back to Teaching
+Posted by Daniel (Nov 2005) (edit this)
+Programming from A to Z
+(Everything you wanted to know about text but were afraid to ask.)
+Course Mailing List: http://forums.nyu.edu/cgi-bin/nyu.pl?enter=itp-text
+Course Blog: http://www.shiffman.net/a2z
+Course Presentation Schedule: http://www.shiffman.net/coursewiki/index.php?title=Presentations_A2Z
+Office Hours Sign-Up: http://www.shiffman.net/coursewiki/index.php?title=Office_Hours
+Syllabus (Spring 2006)
+(tutorials, examples, readings, and assignments are on each individual week’s page)
+Week 1 — The beginning
+Beyond Processing and into Java
+The String Class
+File I/O
+Simple Analysis
+ 
+Week 2 — Regular Expressions
+egrep
+searching and replacing
+Java regex package
+ 
+Week 3 — The Concordance
+Sorting, Binary Trees
+A Simple Text Concordance
+Reading:
+Examples:
+Assignment:
+ 
+Week 4 — Analysis
+Naive Bayesian Analysis - Spam Filtering
+Word Adjacency, Probabilities
+Reading:
+Examples:
+Assignment:
+ 
+Week 5 — Spiders
+Linked Lists, Hash Tables
+A simple crawler
+Reading:
+Examples:
+Assignment:
+ 
+Week 6 — Mining
+Deciphering HTML (yuck)
+RSS, XML Feeds (mmm)
+The Google API
+Databases?
+Reading:
+Examples:
+Assignment:
+ 
+Week 7 — Midterm Workshop
+Week 8 — Choose your own adventure
+Guest speaker?
+Simulating poetic form
+Interactive Fiction, MUDs, IRC Bots, Digital Poetry
+Reading:
+Examples:
+Assignment:
+ 
+Week 9 — Generative Text
+Random text
+Genetic Algorithms
+“Fractal” Text — L-Systems
+Reading:
+Examples:
+Assignment:
+ 
+Week 10 — Visualization
+Returing to processing. . .
+Flying text
+Computational fonts. . .
+guest?
+ 
+Week 11 — final project workshop
+Present final project ideas
+ 
+Week 12 — final project workshop
+guest speaker?
+ 
+Week 13 — final project presentations
+Week 14 — final project presentations
+Course Description
+There are 16,000 free books in the Project Gutenberg digital catalog. Google print is scanning millions. With all this digitized text, what can we do with it beyond simply search and browse? This course will focus on programming strategies and techniques behind procedural analysis and generation of text. We’ll explore topics ranging from evaluating text according to its statistical properties to the automated production of text via artificial intelligence. Student will be encouraged to develop their own systems and methods, from poetry machines to intelligent spiders to evolutionary language generators, etc. Examples will be demonstrated using Java and Processing with a focus on advanced data structures (linked lists, hash tables, binary trees) associated with storing and manipulating text. Prerequisite: H79.2233 Introduction to Computational Media or equivalent programming experience.
+Homework
+Students are required to complete a programming exercise each week (assignments to be specified on the weekly handouts linked above). Documenation for each assignment should be posted to the course blog http://www.shiffman.net/a2z. You will need to register for an account on the blog.
+Presentations
+Each student is required to make a “research” presentation once during the course of the semester to supplement the material presented in class. 2-3 people should sign up for each week (and can present as a group or separately.) The format for the presentations is extremely open (feel free to think creatively here). They should be brief (10-20 minutes, longer for 3 people) and could include any of the following: information on related projects, a history lesson, a performance/reading, links to online sources and tutorials, book reviews, source code examples, diagrams, etc. You should include a link to documentation of your talk on the presentation schedule wiki.
+Some links:
+class del.icio.us
+Machines Visions: Towards a Poetics of Artificial Intelligence
+The Nora Project
+Electronic Literature Organization
+Text Liberation Society
+Oulipo
+Gnoetry
+Travesty
+Computational Linguistics
+Electronic Poetry Center
+Jackson Mac Low
+John Cage
+Humument
+Texts and Technology
+Grand Text Auto
+Google Poem Generator
+Nick Montfort
+TextMine
+Linguistic Data Consortium at Penn
+Inform
+TADS
+WordNet
+Aargh
+Poetry on the Road
+2 RESPONSES TO “PROGRAMMING FROM A TO Z”
+	1.	Greg Says: 
+January 5th, 2006 at 8:37 am e
+	2.	I’m an APCS teacher in high school and I’m really interested in this text. How accessible do you think it would be for an advanced high school student? I cover binary trees and we do some basic dictionary problems but I’d love to give some more difficult work to my brightest students. At what level is the text written? How many of the techniques you describe have you applied to your own book? 
+	3.	Thanks!!
+	4.	Greg
+	5.	Daniel Says: 
+January 16th, 2006 at 12:02 am e
+	6.	The material isn’t going into a book, it’s just a set of tutorials I’m posting for my course at ITP. Feel free to follow along, new lessons will be posted each week!
+LEAVE A REPLY
+Logged in as Daniel. Logout »
+
+
+Hmmm, I could put a footer here. . .

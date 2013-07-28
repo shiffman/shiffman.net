@@ -1,0 +1,158 @@
+<html>
+<head>
+
+<title>daniel shiffman -- procedural painting</title>
+
+<link type="text/css" rel="stylesheet" href="../style.css">
+<basefont face="Georgia" size=2>
+	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+	</script>
+	<script type="text/javascript">
+	_uacct = "UA-94163-1";
+	urchinTracker();
+	</script>
+</head>
+<body bgcolor="#FFFFFF">
+
+
+<div class="header"><br></div>
+<div class="shadow1"></div>
+<div class="shadow2"></div>
+
+<div class="content">
+<!-- ============= CONTENT ============= -->
+
+<h1>Week 9 -- Intro to Digital Image Processing cntd. . .</h1>
+<div class="rule"></div>
+<a href="../index.html">back to syllabus</a>
+<br><br>
+<a href="index2.html">previous page</a>
+<br><br>
+<h3>Level II: Pixel Group Processing</h3>
+
+In our previous examples, there was a one-to-one relationship between
+our source pixels and our destination pixels, i.e to increase an image's brightness,
+we simply add a number to each pixel's RGB values. "However, point operations
+cannot provide the ability to alter spatial scene details within an image.
+This is because point processes act pixel by pixel by mapping a single input
+pixel to a single corresponding output pixel.  The point process does
+not consider neighboring input pixels in its processing.  <i>Pixel group processing</i>
+operates on a group of input pixels surrounding a center pixel." (Baxes, Digital Image Processing)
+<br><br>
+In order to perform more advanced image processing functions, we employ a method
+called "spatial convolution."  This process uses a <i>weighted average</i> of an input pixel
+and its neighbors to calculate an output pixel value.  We can use neighboring groups of different
+sizes, such as 3x3, 5x5, etc.
+<br><br>
+Different combinations of different weights for each pixel can result in different effects: blurs,
+edge enhancement.  For example, we can "sharpen" the image by subtracting the neighboring pixel
+values and increasing the center point pixel.  We can achieve a blur by taking an average of all
+neighboring pixels.  (Note that we want all the values of our convolution matrix to add up to 1).
+<br><br>
+For example,
+<pre>
+Sharpen:
+-1   -1   -1
+-1    9   -1
+-1   -1   -1
+
+Blur:
+1/9  1/9  1/9
+1/9  1/9  1/9
+1/9  1/9  1/9
+</pre>
+
+Following is a processing example that performs a convolultion on any given X,Y point.  The convolution
+matrix is stored in an array, i.e. for sharpen the array looks like:  {-1,-1,-1,-1,9,-1,-1,-1,-1}.
+<br><br>
+<applet code="week9b" archive="week9b.jar" width=320 height=240></applet>
+<Pre>
+BImage a;
+
+void setup()
+{
+  size(320, 240);
+  a = loadImage("sunflower.jpg");
+}
+
+void loop()
+{
+  //we're only going to process a portion of the image so let's set the whole image as the background first
+  image(a,0,0);
+
+  //For drawing a black rectangle defining area for processing
+  stroke(0);
+  noFill();
+  rectMode(CENTER_DIAMETER);
+  rect(mouseX,mouseY,81,81);
+
+  //what are the boundaries for the pixels we are processing
+  int X1 = constrain(mouseX-40,0,a.width);
+  int Y1 = constrain(mouseY-40,0,a.height);
+  int X2 = constrain(mouseX+40,0,a.width);
+  int Y2 = constrain(mouseY+40,0,a.height);
+
+  //begin our loop for every pixel
+  for (int x = X1; x < X2; x++) {
+    for (int y = Y1; y < Y2; y++ ) {
+
+      float[] Matrix= { -1,-1,-1,
+                        -1, 9,-1,
+                        -1,-1,-1  };
+      color c = Convolve(x,y,Matrix,a);
+      int loc = x + y*a.width;
+      pixels[loc] = c;
+    }
+  }
+}
+
+color Convolve(int x, int y, float[] Matrix, BImage a)
+{
+
+  float sumR = 0.0;
+  float sumG = 0.0;
+  float sumB = 0.0;
+
+  //is our matrix 3x3, 5x5, etc.?
+  int MatrixSize = int(sqrt(Matrix.length));
+  //to keep track of where we are in convolution matrix
+  int countMatrix = 0;
+
+  for (int i =-MatrixSize/2; i <= MatrixSize/2; i++){
+    for (int j=-MatrixSize/2; j <= MatrixSize/2; j++){
+      //what pixel are we testing
+      int xloc = x+i;
+      int yloc = y+j;
+      int loc = xloc + a.width*(yloc+j);
+      //make sure we haven not walked off our image
+      loc = constrain(loc,0,a.pixels.length-1);
+      //calculate the convolution
+      sumB += (blue(a.pixels[loc]) * Matrix[countMatrix]);
+      sumG += (green(a.pixels[loc]) * Matrix[countMatrix]);
+      sumR += (red(a.pixels[loc]) * Matrix[countMatrix]);
+      countMatrix++;
+    }
+  }
+
+  //make sure RGB is withing range
+  sumR = constrain(sumR,0,255);
+  sumG = constrain(sumG,0,255);
+  sumB = constrain(sumB,0,255);
+
+  //return the resulting color
+  return color(sumR,sumG,sumB);
+
+}
+</pre>
+
+
+continue to next page for a blur example. . .
+
+
+<br><br>
+<b><a href="index3a.html">CONTINUE ON TO 3a. . . </a></b>
+<br><br>
+<a href="../index.html">back to syllabus</a>
+</span>
+</body>
+</html>

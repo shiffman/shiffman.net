@@ -1,0 +1,173 @@
+<html>
+<head>
+
+<title>daniel shiffman -- procedural painting</title>
+
+<link type="text/css" rel="stylesheet" href="../style.css">
+<basefont face="Georgia" size=2>
+	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+	</script>
+	<script type="text/javascript">
+	_uacct = "UA-94163-1";
+	urchinTracker();
+	</script>
+
+</head>
+<body bgcolor="#FFFFFF">
+
+
+<div class="header"><br></div>
+<div class="shadow1"></div>
+<div class="shadow2"></div>
+
+<div class="content">
+<!-- ============= CONTENT ============= -->
+
+<h1>Week 8 -- Intro to 3D concepts</h1>
+<div class="rule"></div>
+<a href="../index.html">back to syllabus</a>
+<h3>3D Primitives</h3>
+
+In addition to drawing 2D primitives (line, rect, curve, ellipse, etc.), we can also draw "3D"
+primitives, such as "boxes" and "spheres".  For example, here is ye ol' bouncing ball example
+with a "3D" box.  Click the mouse inside to change it to a sphere.  Note that the sphere
+is actually just a hollow connected set of vertices (tessellated triangles).
+<br><br>
+<applet code="week8f" archive="week8f.jar" width=200 height=200></applet>
+<pre>
+int xspeed,yspeed,zspeed;
+int x,y,z,r;
+boolean shape;
+
+//our setup function
+void setup() {
+  size(200,200);
+  xspeed = 3; yspeed = 1; zspeed = 3;
+  x = width/2; y = height/2; z = 0;
+  r = 50;
+  shape = true;
+}
+
+void loop() {
+  background(50);                 //first we draw the background
+  ellipseMode(CENTER_DIAMETER);   //set our ellipse mode
+  translate(x,y,z);
+  stroke(200);
+  noFill();
+  if (shape) {
+    box(r);
+  }else{
+    sphere(r);
+  }
+  x = x + xspeed;  y = y + yspeed;  z = z + zspeed;
+  //acount for bouncing off edges
+  if ((x > width) || (x < 0)) {
+    xspeed = xspeed * -1;
+  }
+  if ((y > height) || (y < 0)) {
+    yspeed = yspeed * -1;
+  }
+  if ((z > 10) || (z < -200)) {
+    zspeed = zspeed * -1;
+  }
+}
+
+void mousePressed() {
+  shape = !(shape);
+}
+</pre>
+
+<h3>Vertices</h3>
+The other way you can draw shapes in 3D is with vertices. The necessary processing commands are:
+<b><br><a href="http://processing.org/reference/beginShape_.html">beginShape</a>
+<br><a href="http://processing.org/reference/endShape_.html">endShape</a>
+<br><a href="http://processing.org/reference/vertex_.html">vertex</a>
+</b>
+<br><br>
+From the processing web site:
+"Using the beginShape() and endShape() functions allow creating more complex forms. beginShape() begins recording vertices for a shape and endShape() stops recording. The beginShape() function requires a parameter to tell it which type of shape to create from the provided vertices. The parameters available for beginShape() are LINES, LINE_STRIP, LINE_LOOP, TRIANGLES, TRIANGLE_STRIP, QUADS, QUAD_STRIP, and POLYGON. After calling the beginShape() function, a series of vertex() commands must follow. To stop drawing the shape, call endShape(). The vertex() function with two parameters specifies a position in 2D and the vertex() function with three parameters specifies a position in 3D. Each shape will be outlined with the current stroke color and filled with the fill color. Transformations such as translate(), rotate(), and scale() do not work within beginShape(). "
+<br><br>
+Here's an example that draws a 4-sided pyramid structure, with 4 triangles.
+<br><br>
+<applet code="week8g" archive="week8g.jar" width=200 height=200></applet>
+<pre>
+float theta1 = 0.0f;
+float theta2 = 0.0f;
+
+void setup() {
+  size(200,200);
+  rectMode(CENTER_DIAMETER);
+  colorMode(RGB,255,255,255,100);
+}
+
+void loop() {
+  background(0);
+  theta1 += 0.01f;
+  theta2 += 0.02f;
+
+  //translate to center and rotate the scene
+  translate(100,100,0);
+  rotateX(theta1);
+  rotateY(theta2);
+  stroke(200);
+
+  //call our pyramid drawing function
+  drawPyramid(20);
+
+  //translate the scene again
+  translate(50,50,20);
+
+  //call the pyramid drawing function
+  drawPyramid(10);
+
+}
+
+void drawPyramid(int t) {
+
+  //this pyramid has 4 sides, each drawn as a separate "beginShape" call
+  //each side has 3 vertices, making up a triangle shape
+  //the parameter "t" determines the size of the pyramid
+
+  fill(150,0,0,50);
+  beginShape(TRIANGLES);
+  vertex(-t,-t,-t);
+  vertex( t,-t,-t);
+  vertex( 0, 0, t);
+  endShape();
+
+  fill(0,150,0,50);
+  beginShape(TRIANGLES);
+  vertex( t,-t,-t);
+  vertex( t, t,-t);
+  vertex( 0, 0, t);
+  endShape();
+
+  fill(0,0,150,50);
+  beginShape(TRIANGLES);
+  vertex( t, t,-t);
+  vertex(-t, t,-t);
+  vertex( 0, 0, t);
+  endShape();
+
+  fill(150,0,150,50);
+  beginShape(TRIANGLES);
+  vertex(-t, t,-t);
+  vertex(-t,-t,-t);
+  vertex( 0, 0, t);
+  endShape();
+
+}
+</pre>
+
+For more on drawing various types of 3D shapes, visit this link:
+<a href="http://www.antiexperience.com/edtang/works/p5.html">http://www.antiexperience.com/edtang/works/p5.html</a>.
+
+
+
+<br><br>
+<b><a href="index3.html">CONTINUE ON TO 3. . . </a></b>
+<br><br>
+<a href="../index.html">back to syllabus</a>
+</span>
+</body>
+</html>

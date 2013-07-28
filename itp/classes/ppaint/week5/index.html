@@ -1,0 +1,316 @@
+<html>
+<head>
+
+<title>daniel shiffman -- procedural painting</title>
+
+<link type="text/css" rel="stylesheet" href="../style.css">
+<basefont face="Georgia" size=2>
+
+	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+	</script>
+	<script type="text/javascript">
+	_uacct = "UA-94163-1";
+	urchinTracker();
+	</script>
+
+</head>
+<body bgcolor="#FFFFFF">
+
+
+<div class="header"><br></div>
+<div class="shadow1"></div>
+<div class="shadow2"></div>
+
+<div class="content">
+<!-- ============= CONTENT ============= -->
+
+<h1>Week 5 -- Data and Functionality, together at last. . .</h1>
+<div class="rule"></div>
+<a href="../index.html">back to syllabus</a>
+<h3>Object Oriented Design</h3>
+
+"The term <i>object-oriented design</i> refers to the art of decomposing an application
+into some number of objects, self-contained application components that work together.
+The goal is to break your problem down into a number of smaller problems that are
+simpler and easier to handle and maintain."<br>
+-- Learning Java, Neimeyer, Knudsen
+
+<br><br>
+Let's say we were writing a program that simulates a car race (with just one car).  Before today our
+pseudo-code might have looked something like this.
+<pre>
+<b>Data</b>:
+Car color.
+Car x location.
+Car y location.
+Car x velocity.
+Car y velocity.
+Car x acceleration.
+Car y acceleration.
+
+<b>Setup</b>:
+Initialize car color.
+Initialize car location to starting point.
+Initialize car velocity.
+Initialize car acceleration.
+
+<b>Loop</b>:
+adjust velocity by acceleration
+adjust location by velocity
+Paint background
+draw car at location with color
+
+</pre>
+
+This is all well and good.  Nevertheless, using all these variables might become more and
+more unpleasant
+as we expand and adjust our program.  We can do better.  We can create a car "object" that holds
+onto all the data for the car
+(color, location, velocity, acceleration).  The real magic, though, is not in the data. . It's
+in the functionality.  The car not only had
+a set of data associated with it. In addition, it has a set of fucntions.  In other words,
+we can say: "Drive the car" or "Draw the Car", etc.
+<br><br>
+Therefore, using our object-oriented design, our pseudo-code might look something like this:
+<pre>
+<b>Data</b>:
+Car object
+
+<b>Setup</b>:
+Initialize car object
+
+<b>Loop</b>:
+Paint Background
+Accelerate car
+Drive car
+Draw car
+</pre>
+
+Our code becomes much simpler.  All the work is now done <i>inside</i> each object (note
+i've left out the code for the actual Car "class" for the time being)
+<br><br>
+Let's take a look at
+what the actual body of our program might look like.
+<pre>
+Car c;
+
+void setup() {
+  c = new Car(**parameters go here**);
+}
+
+void loop() {
+  background(0);
+  c.draw();
+  c.accelerate();
+  c.drive();
+}
+</pre>
+
+Here, we have a variable of type "Car."  Just like we have variables of type int, float, color, etc.,
+we've now established a new type.  However, in order to be able to use a variable of this type,
+we first need to create an object "class".
+
+<h3>Classes</h3>
+In processing, a class is a "blueprint" or "template" for the creation of an object.
+To write our class, we must do the following:
+<br><br>
+<li><b>name the class</b> -- this is done by saying "class objectName".  As
+always, we then enclose the code for the class in curly brackets.
+<li><b>declare instance variables for the class</b> -- these are variables that
+will hold onto the data associated with each instance of an object born from our template.
+<li><b>declare a constructor</b> --  The constructor
+is a method that always has the same name as the class.  It specifies any
+required parameters for creating an "instance" of the object. (Note that an object can
+have more than one constructor.)  For example, if we want to make a new car, we must
+"construct" one based on a set of parameters (color, size, location, etc.)
+<li><b>write any necessary functions</b> -- we can add functionality to our object
+by writing methods.  These are done in the same way as described in week 4 --
+return type, function name, function parameters, function code.
+<br><br>
+Here's how the code looks:
+<pre>
+class Car
+{
+
+  color c;
+  int xpos;
+  int ypos;
+  int xvel;
+
+  //****CONSTRUCTOR*****//
+  Car(color c_, int xp, int yp, int xv) {
+    c = c_;
+    xpos = xp;
+    ypos = yp;
+    xvel = xv;
+  }
+
+  void draw () {
+    rectMode(CENTER_DIAMETER);
+    fill(c);
+    rect(xpos,ypos,20,10);
+  }
+
+  void drive () {
+    xpos = xpos + xvel;
+    if (xpos > width) { xpos = 0; }
+  }
+}
+</pre>
+
+<h3>Instance of an object</h3>
+An instance of an object is declared in the same way that we declare a variable.
+We specify the data type (the class name) and the variable name (whatever we choose).
+
+<pre>
+Car myCar;
+</pre>
+
+The above indicates that we're going to have a variable named "myCar" of type "Car" (and
+this is an acceptable type because we've presumably set-up a class entitled "Car").  An object
+is then allocated using the <b><i>new</i></b> operator.  The argument to new is the
+constructor for the class.
+<pre>
+Car myCar = new Car();
+</pre>
+In this case, however, we want pass some arguments to the constructor to specify information about
+the kind of car we want to create (its color, x location, y location, and speed.)
+<pre>
+color tempcolor = color(255,0,0);
+Car myCar = new Car(tempcolor,0,50,1);
+</pre>
+In the body of our code, we can now call on various functions associated with the object.
+To do this, we first write the variable name that holds the reference to our object, then
+a dot ('.'), then the name of the function, i.e.
+<pre>
+myCar.drive();
+myCar.draw();
+</pre>
+
+Let's look at an example, where we create two instances of our car object.
+<br><br>
+<applet code="week5a" archive="week5a.jar" width=100 height=100></applet><br>
+<pre>
+Car myCar1;
+Car myCar2;
+
+void setup() {
+  size(100,100);
+  colorMode(RGB,255,255,255,100);
+  color tempcolor = color(255,0,0);
+  myCar1 = new Car(tempcolor,0,50,1);
+  tempcolor = color(0,255,0);
+  myCar2 = new Car(tempcolor,0,75,2);
+}
+
+void loop() {
+  background(0);
+  myCar1.draw();
+  myCar2.draw();
+  myCar1.drive();
+  myCar2.drive();
+}
+
+class Car
+{
+
+  color c;
+  int xpos;
+  int ypos;
+  int xvel;
+
+  //****CONSTRUCTOR*****//
+  Car(color c_, int xp, int yp, int xv) {
+    c = c_;
+    xpos = xp;
+    ypos = yp;
+    xvel = xv;
+  }
+
+  void draw () {
+    rectMode(CENTER_DIAMETER);
+    fill(c);
+    rect(xpos,ypos,20,10);
+  }
+
+  void drive () {
+    xpos = xpos + xvel;
+    if (xpos > width+20) { xpos = -20; }
+  }
+}
+</pre>
+
+Now, let's expand on this idea and make an array of our objects.<br><br>
+
+<applet code="week5b" archive="week5b.jar" width=200 height=200></applet><br>
+<pre>
+int MAX = 200;
+//declare array of Cars
+Car[] myCars = new Car[MAX];
+
+void setup() {
+  size(200,200);
+  //set colorMode
+  colorMode(RGB,255,255,255,100);
+  //fill array of cars using "New" -- all cars are random color, random y location
+  for (int i = 0; i < MAX; i++) {
+    color tempcolor = color(random(255),random(255),random(255), random(100));
+    myCars[i] = new Car(tempcolor,0,random(height),random(1,5));
+  }
+}
+
+void loop() {
+  background(0);
+  //for every car in the myCars array, call the drive and draw functions
+  for (int i = 0; i < MAX; i++) {
+    myCars[i].drive();
+    myCars[i].draw();
+  }
+}
+
+class Car
+{
+
+  color c;
+  float xpos;
+  float ypos;
+  float xvel;
+
+  //****CONSTRUCTOR*****//
+  Car(color c_, float xp, float yp, float xv) {
+    c = c_;
+    xpos = xp;
+    ypos = yp;
+    xvel = xv;
+  }
+
+  void draw () {
+    rectMode(CENTER_DIAMETER);
+    fill(c);
+    noStroke();
+    rect(xpos,ypos,20,10);
+  }
+
+  void drive () {
+    xpos = xpos + xvel;
+  if (xpos > width+20) { xpos = -20; }
+  }
+}
+</pre>
+
+
+<a href="oscillation.html"><b>Click here for another more advanced example of using
+an object in processing -- uses sine and cosine</a></b>
+
+
+<h3>Related Examples from the Processing Web Site</h3>
+<a href="http://processing.org/learning/examples/objects.html">objects</a><br>
+<a href="http://processing.org/learning/examples/scrollbar.html">scrollbar</a><br>
+<a href="http://processing.org/learning/examples/springs.html">springs</a>
+
+
+<br><br>
+<a href="../index.html">back to syllabus</a>
+</span>
+</body>
+</html>

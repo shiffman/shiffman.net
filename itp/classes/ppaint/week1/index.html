@@ -1,0 +1,262 @@
+<html>
+<head>
+
+<title>daniel shiffman -- procedural painting</title>
+
+<link type="text/css" rel="stylesheet" href="../style.css">
+	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+	</script>
+	<script type="text/javascript">
+	_uacct = "UA-94163-1";
+	urchinTracker();
+	</script>
+</head>
+<body bgcolor="#FFFFFF">
+
+
+<div class="header"><br></div>
+<div class="shadow1"></div>
+<div class="shadow2"></div>
+
+<div class="content">
+<!-- ============= CONTENT ============= -->
+
+<h1>Week 1 -- Whaaaaaaaaaaaaaaa?</h1>
+<div class="rule"></div>
+
+<h3>What is programming?</h3>
+Programming is the process of creating steps for a computer to perform a desired task.
+Let's say you needed to program your computer to feed your cat.
+<br><br>
+<img src = "../images/cat.jpg">
+<pre>
+Decide that an appropriate amount of food for a cat is one cup.
+Go to where the cat lives
+unlock door
+walk inside
+get food
+pet cat
+pour an appropriate amount of food in bowl
+if it is the morning, replace bowl of water
+otherwise just pet the cat
+pet cat until you are tired of petting cat
+walk outside
+lock door
+</pre>
+<span class = "pullquote">
+<b>IMPORTANT ALGORITHM CONSTRUCTS:</b>
+<br>
+<br>
+<br>Sequence:&nbsp; series of steps
+<br>Selection:&nbsp; choice between alternative paths
+<br>Iteration:&nbsp; repetition
+<br>
+<br><b>Steps for developing your program</b>
+<br>
+<br><li>Specify your idea / problem to solve.</li>
+<br><li>Design an algorithm (sequence of steps) for implementing the idea.</li>
+<br><li>Express the algorithm as a computer program in a programming language.</li>
+<br><li>Compile and run the program.</li>
+</span>
+
+Notice that the order of the instructions is just as important as the instructions themselves.
+For example, you would not want to stop petting the cat before you poured water!  The order of your
+instructions, <i>how</i> you figured out how to feed the cat is called an <b>Algorithm</b>
+(a procedure or formula for solving a problem.)
+<br><br>
+The other fundamental element of programming is <b>Data</b>, this is the stuff that the program
+knows about and operates on.  For example, in the above program our data might be the "appropriate portion of food"
+or the weather conditions outside.  We'll get into this more next week.
+<br><br>
+Here's another example that implements several ideas that we will cover over the coming weeks
+(variables, iteration, etc.):
+<br>
+<br>Let's describe an algorithm that shows how the sum 1+2+3+ . . . + N can be evaluated, if N is a given
+whole number > 0.
+<br><br>
+<span class = "code">
+1) set SUM = 0 and a counter K = 1
+<br>2) Repeat the following steps until K is greater than N.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;(2.1) Calculate SUM + K and save the result in SUM.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;(2.2) Increase the value of K by 1.
+<br>3) The solution is now the number saved in SUM
+<br><br>
+
+</span>
+<h3>What is <a href="http://www.proce55ing.net">Processing</a>?</h3>
+<br>
+From the Processing web site:
+<br><br>
+<i>"The Processing project introduces a new audience to
+computer programming and encourages an audience of hybrid artist/designer/programmers.
+It integrates a programming language, development environment, and teaching methodology
+into a unified structure for learning. Its goal is to introduce programming in the context
+of electronic art and to open electronic art concepts to a programming audience. Unlike
+other popular web programming environments such as Flash and Director, Processing is an
+extension of Java and supports many of the existing Java structures, but with a simplified
+syntax. The application runs locally and exports programs to Java applets, which may be
+viewed over the Internet. It is not a commercial production tool, but is build specifically
+for learning and prototyping...
+<br><br>
+Processing provides three different modes of programming—each one more structurally complex
+than the previous. In the most basic mode, programs are single line commands for drawing primitive
+shapes to the screen. In the most complex mode, Java code may be written within the environment.
+The intermediate mode allows for the creation of dynamic software in a hybrid
+procedural/object-oriented structure. It strives to achieve a balance between features
+and clarity, which encourages the experimentation process and reduces the learning curve.</i>"
+<br><br>
+This week we will focus on the most basic mode, but we will quickly move on to the "intermediate" mode.
+
+<h3>How do I get <a href="http://www.proce55ing.net">Processing</a>?</h3>
+<br>
+Processing should already be installed on all the ITP machines in the lab.  If you need to
+install it, it is available for free download from:
+<a href="http://www.proce55ing.net/download/index.html">http://www.proce55ing.net/download/index.html</a>.
+The Windows Expert version is for advanced users who can take care of installing Java themselves
+(as described in the readme). It is included because it is a smaller download
+(11 MB instead of 29 MB for the Standard download). but it is more difficult to set up so if there's
+any question as to which version you want, go for the Standard.
+<br><br>
+The Processing Environment consists of an integrated text editor and display window for showing
+programs. When the "run" button is pushed, the program compiles and plays in the graphic window.
+From the main environment window, it is possible to run, stop, save, open, and export files.
+<br><br>
+The processing web site is also the definitive resource for learning the syntax and structure of
+the language.  Visit:
+<a href="http://www.proce55ing.net/reference/index.html">http://www.proce55ing.net/reference/index.html</a>.
+<br><br>
+<h3>Coordinates</h3>
+<br>
+<img src="http://www.proce55ing.net/reference/environment/images/coordinates.gif"><br><br>
+Processing uses a Cartesian coordinate system with the origin in the upper-left corner.
+<br><br>
+<h3>Publishing your Program</h3>
+<br>
+Processing also allows you to "publish" your program, by exporting it as a java applet.
+Go to "File" --> "Export to web" .  You'll then have three files that you need:
+<br><br>
+<li>index.html -- html source for viewing the applet page</li>
+<li>filename.jar -- compiled applet classes</li>
+<li>filename.pde -- source code</li>
+<br><br>
+You should publish each assignment you create for this class online, and include the source.
+<br><br>
+<h3>Week One Assignment</h3>
+
+<li>Create a web site to house your work for the class and e-mail me (daniel.shiffman@nyu.edu)
+the link to your site.</li>
+<li>Create a static screen "drawing" using only black and white colors, and the commands listed below.</li>
+<li>Make your drawing interactive by using "mouseX" and/or "mouseY" commands.
+<br>
+<h3>Drawing Primitives</h3>
+<br>
+        <i>2D Primitives</i> <br>
+        <a href="http://www.proce55ing.net/reference/point_.html">point() </a><br>
+        <a href="http://www.proce55ing.net/reference/line_.html">line() </a> <br>
+        <a href="http://www.proce55ing.net/reference/triangle_.html">triangle() </a><br>
+        <a href="http://www.proce55ing.net/reference/quad_.html">quad() </a><br>
+        <a href="http://www.proce55ing.net/reference/rect_.html">rect() </a><br>
+        <a href="http://www.proce55ing.net/reference/rectMode_.html">rectMode()</a> <br>
+        <a href="http://www.proce55ing.net/reference/ellipse_.html">ellipse() </a><br>
+        <a href="http://www.proce55ing.net/reference/ellipseMode_.html">ellipseMode()</a><br>
+        <br>
+        <i>Stroke attributes</i> <br>
+        <font color="#999966"><a href="http://www.proce55ing.net/reference/strokeWeight_.html">strokeWeight()</a>
+        </font><br>
+        <br>
+
+        <i>Colors</i><br>
+		<a href="http://www.proce55ing.net/reference/background_.html">background()</a><br>
+		<a href="http://www.proce55ing.net/reference/stroke_.html">stroke()</a><br>
+		<a href="http://www.proce55ing.net/reference/noStroke_.html">noStroke()</a><br>
+		<a href="http://www.proce55ing.net/reference/fill_.html">fill()</a><br>
+		<a href="http://www.proce55ing.net/reference/noFill_.html">noFill()</a> <br>
+        <a href="http://www.proce55ing.net/reference/colorMode_.html">colorMode()</a><br>
+        <br>
+
+         <i>Mouse</i> <br>
+		        <a href="http://www.proce55ing.net/reference/mouseX.html">mouseX </a><br>
+		        <a href="http://www.proce55ing.net/reference/mouseY.html">mouseY </a><br>
+		        <a href="http://www.proce55ing.net/reference/pmouseX.html">pmouseX </a><br>
+       	 		<a href="http://www.proce55ing.net/reference/pmouseY.html">pmouseY </a><br>
+        <br>
+
+<h3>Examples</h3>
+<br>
+<applet code="week1a" archive="week1a.jar" width=100 height=100></applet>
+<pre>
+size(100,100);
+background(0);
+stroke(255);
+line(40,50,70,35);
+line(20,30,50,15);
+line(70,35,50,15);
+line(40,50,20,30);
+line(40,50,50,70);
+line(70,35,50,70);
+line(20,30,50,70);
+</pre>
+<applet code="week1b" archive="week1b.jar" width=100 height=100></applet>
+<pre>
+void setup() {
+  size(100, 100);
+  background(50);
+}
+
+void loop() {
+  background(50);
+  stroke(255);
+  line(mouseX,mouseY,70,35);
+  line(20,30,50,15);
+  line(70,35,50,15);
+  line(mouseX,mouseY,20,30);
+  line(mouseX,mouseY,50,70);
+  line(70,35,50,70);
+  line(20,30,50,70);
+}
+</pre>
+
+<h3>What's wrong this program?</h3>
+
+This program should produce a grayscale background based on the mouse location left to right,
+but it stays black -- why??
+<br><br>
+<applet code="week1c" archive="week1c.jar" width=100 height=100></applet>
+<pre>
+void setup() {
+  size(100, 100);
+  background(0);
+}
+void loop() {
+  background(( mouseX / 100) * 255);
+}
+</pre>
+
+This program has code to draw two rectangles, why doesn't it?
+<br><br>
+<applet code="week1d" archive="week1d.jar" width=100 height=100></applet>
+<pre>
+size(100, 100);
+background(150);
+rectMode(CENTER_DIAMETER);
+
+noStroke();
+fill(0,255,0);
+rect(50, 50, 10, 10);
+fill(0,0,255);
+rect(50, 50, 50, 50);
+</pre>
+<br><br>
+<a href="../index.html">back to syllabus</a>
+<br><br>
+
+
+
+
+
+<i>site stylesheet courtesy of <a href="http://www.style.org">www.style.org</a>
+
+
+
+</body>
+</html>

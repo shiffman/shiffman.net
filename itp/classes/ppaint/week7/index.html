@@ -1,0 +1,216 @@
+<html>
+<head>
+
+<title>daniel shiffman -- procedural painting</title>
+
+<link type="text/css" rel="stylesheet" href="../style.css">
+<basefont face="Georgia" size=2>
+
+	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+	</script>
+	<script type="text/javascript">
+	_uacct = "UA-94163-1";
+	urchinTracker();
+	</script>
+
+</head>
+<body bgcolor="#FFFFFF">
+
+
+<div class="header"><br></div>
+<div class="shadow1"></div>
+<div class="shadow2"></div>
+
+<div class="content">
+<!-- ============= CONTENT ============= -->
+
+<h1>Week 7 -- Recursion, 2D Arrays</h1>
+<div class="rule"></div>
+<a href="../index.html">back to syllabus</a>
+<h3>Recursive Functions</h3>
+
+We've know that a function/method can call another function/method.  We do this all the time when
+we write our function calls from the "main" or "setup" method.  But can a function call itself?
+<br><br>
+Functions that call themselves are called "recursive" and are appropriate for solving different
+types of problems.  This occurs often in mathematical calculations; the most common example of
+this is with "factorial."  If we remember, the factorial of any number <n>, usually written
+as <i>n!</i> is defined as:
+<br><br>
+n! = 1 x 2 x 3 x 4 x . . .x n<br>
+0! = 1
+<br><br>
+We might write a function to do this in processing like:
+<pre>
+int fact(int n) {
+  int f = 1;
+  for (int i = 0; i < n; i++) {
+    f = f * (i+1);
+  }
+  return f;
+}
+</pre>
+
+but we can also define factorial as:
+<br><br>
+n! = n x (n-1)!<br>
+0! = 0
+<br><br>
+This is where the "recursion" or "self-reference" happens.  N factorial is defined as N times N - 1
+factorial.  We can then write a function that does exactly this:
+<pre>
+int fact(int n) {
+  if (n == 0) {
+    return 1;
+  } else {
+    return n * fact(n-1);
+  }
+}
+</pre>
+The same principle can be applied to a drawing application.  In the following example, the function
+"drawCircle" draws an ellipse based on a set of parameters, then calls itself with adjusted parameters.
+The result is a sequence of circles being drawn inside circles.  The same result could have been
+achieved with simple iteratrion. . . Nevertheless, using recursion is an elegant solution.
+<br><br>
+<applet code="week7a" archive="week7a.jar" width=200 height=200></applet>
+<pre>
+// Recursion
+// by REAS <www.groupc.net>
+// simplified DS
+
+int MAXLEVELS = 6;
+
+int x = 100;
+int y = 100;
+int level = MAXLEVELS;
+int radius = 100;
+
+void setup()
+{
+  size(200, 200);
+  background(0);
+  colorMode(RGB, 255);
+  ellipseMode(CENTER_RADIUS);
+  drawCircle(x, radius, level);
+}
+
+void loop()
+{
+}
+
+void drawCircle(int x, int radius, int level)
+{
+  noFill();
+  stroke(200);
+  ellipse(x, y, radius, radius);
+  if(level > 1) {
+    level = level - 1;
+    drawCircle(x - radius/2, radius/2, level);
+    drawCircle(x + radius/2, radius/2, level);
+  }
+}
+</pre>
+
+Here's another example of recursion.  Here a "tree-like" structure is simulated.
+The functions draws a branch (i.e. a line) then calls itself to draw more branches
+from its endpoint (and so on and so forth. . .)
+<br><br>
+<applet code="week7b" archive="week7b.jar" width=300 height=300></applet>
+<pre>
+// Recursion
+// DS
+
+int MAXLEVELS = 6;
+int x,y;
+int level = MAXLEVELS;
+
+void setup()
+{
+  size(300, 300);
+  colorMode(RGB, 255);
+  background(0);
+  x = width/2;
+  y = height;
+}
+
+void loop()
+{
+  framerate(1);
+  background(0);
+  //make call to recursive function once per loop
+  drawBranch(x,y,level);
+}
+
+void drawBranch(int x, int y, int level)
+{
+  //set color of branch
+  stroke(200);
+
+  //get random values for offsetting new branch
+  int factor = 15;
+  int x1 = int(random(-level*factor, level*factor));
+  int y1 = int(random(level*factor));
+
+  //draw branch (line)
+  line(x,y,x-x1,y-y1);
+
+  //set number of branches
+  int no_branches = int(random(8));
+
+  //if we're not at the end recursively call this function to draw new branches
+  if(level > 1) {
+    level = level - 1;
+    for (int i = 0; i < no_branches; i++) {
+      drawBranch(x - x1, y -  y1,level);
+    }
+  }
+}
+</pre>
+
+
+
+And here it is with bezier curves this time instead of simple lines. (only the recursive
+function is shown, the rest of the code is the same)
+<br><br>
+<applet code="week7b_2" archive="week7b_2.jar" width=300 height=300></applet>
+<pre>
+void drawBranch(int x, int y, int level)
+{
+  //set color of branch
+  stroke(200);
+
+  //get random values for offsetting new branch
+  int factor = 15;
+  int x1 = int(random(-level*factor, level*factor));
+  int y1 = int(random(level*factor));
+  //get random values for offsetting bezier points
+  int b1 = int(random(-level*factor, level*factor));
+  int b2 = int(random(-level*factor, level*factor));
+  int b3 = int(random(-level*factor, level*factor));
+  int b4 = int(random(-level*factor, level*factor));
+
+  //draw bezier curve
+  bezier(x,y,x+b1,y+b2,x+b3,y+b4,x-x1,y-y1);
+
+  //set number of branches
+  int no_branches = int(random(8));
+
+  //if we're not at the end recursively call this function to draw new branches
+  if(level > 1) {
+    level = level - 1;
+    for (int i = 0; i < no_branches; i++) {
+      drawBranch(x - x1, y -  y1,level);
+    }
+  }
+}
+</pre>
+
+<b><a href="index2.html">CONTINUE ON TO 2. . . </a></b>
+
+
+
+<br><br>
+<a href="../index.html">back to syllabus</a>
+</span>
+</body>
+</html>

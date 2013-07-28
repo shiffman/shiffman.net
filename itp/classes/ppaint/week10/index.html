@@ -1,0 +1,115 @@
+<html>
+<head>
+
+<title>daniel shiffman -- procedural painting</title>
+
+<link type="text/css" rel="stylesheet" href="../style.css">
+<basefont face="Georgia" size=2>
+	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+	</script>
+	<script type="text/javascript">
+	_uacct = "UA-94163-1";
+	urchinTracker();
+	</script>
+</head>
+<body bgcolor="#FFFFFF">
+
+
+<div class="header"><br></div>
+<div class="shadow1"></div>
+<div class="shadow2"></div>
+
+<div class="content">
+<!-- ============= CONTENT ============= -->
+
+<h1>Week 10 -- Intro to Digital Image Processing cntd. . .</h1>
+<div class="rule"></div>
+<a href="../index.html">back to syllabus</a>
+<br><br>
+<h3>Working with live video</h3>
+
+In processing, we can deal treat a live video image the same way we treat a BImage object.  We
+can draw a frame to the screen (multiple times / at varying scales, etc.) and we can access
+its pixels.
+<br><br>
+There are a few things we'll need to do in order to get set-up for video.  First, you'll need
+to have a video camera (duh), connect it to your machine, and install the proper drivers.
+If you're on a mac, you should be all set.  On a PC, however, you'll need to make sure
+you have quicktime installed (<a href="http://www.apple.com/quicktime/">http://www.apple.com/quicktime/</a>).
+PCs also require a
+vdig to allow quicktime to take over capturing -- you can get a free one here:
+<a href="http://www.vdig.com/WinVDIG/">http://www.vdig.com/WinVDIG/</a>.
+<br><br>
+To start the video stream, you'll want to call the beginVideo function.  beginVideo takes
+3 parameters, the width and height of the captured video and desired frames per second.
+Note that these are fixed values that cannot be changed as the program runs.
+<span class = "pullquote">
+<b>Reference links to Processing Site</b><br>
+        <a href="http://processing.org/reference/libraries/video/beginVideo_.html">beginVideo()</a><br>
+         <a href="http://processing.org/reference/libraries/video/endVideo_.html">endVideo()</a><br>
+         <a href="http://processing.org/reference/libraries/video/videoEvent_.html">videoEvent()</a><br>
+         <a href="http://processing.org/reference/libraries/video/video.html">video</a>
+</span>
+
+<pre>
+  beginVideo(320, 240, 15);
+</pre>
+
+
+Once you've started capturing, you can then draw the video to the screen just as you
+would with a BImage. The video variable always contains the most recently captured video frame.
+<pre>
+
+  image(video, 0, 0);
+</pre>
+
+
+This first example draws the video to the screen at point (0,0) with a width and height
+determined by mouseX and mouseY.  Note the use of "videoEvent" -- while this is not
+required, this example shows that we are only drawing a new frame when one is available.
+<br><br>
+<img src="video1.jpg"><br>
+<a href="week10b.pde">source code</a>
+<br><br>
+
+
+This next example demonstrates that we can take an existing pixel point processing
+example from week 9 and apply the same effect to a live video stream.
+
+<br><br>
+<img src="video2.jpg"><br>
+<a href="week10c.pde">source code</a>
+<br><br>
+
+This third example shows how we could use the "tint" command to average frames
+together, creating a motion blur effect.
+
+<br><br>
+<img src="video3.jpg"><br>
+<a href="week10d.pde">source code</a>
+<br><br>
+
+An example of "creative visualization" -- each pixel from the video source is drawn
+as a rectangle with rotation based on brightness.
+
+<br><br>
+<img src="video4.jpg"><br>
+<a href="week10f.pde">source code</a>
+<br><br>
+
+Simple black and white example.  Each pixel is a white rectangle, size
+determined by brightness.
+
+<br><br>
+<img src="video5.jpg"><br>
+<a href="week10g.pde">source code</a>
+<br><br>
+<br><br>
+<b><a href="index2.html">CONTINUE ON TO 2. . . </a></b>
+<br><br>
+
+
+<a href="../index.html">back to syllabus</a>
+</span>
+</body>
+</html>

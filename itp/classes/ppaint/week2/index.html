@@ -1,0 +1,388 @@
+<html>
+<head>
+
+<title>daniel shiffman -- procedural painting</title>
+
+<link type="text/css" rel="stylesheet" href="../style.css">
+	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+	</script>
+	<script type="text/javascript">
+	_uacct = "UA-94163-1";
+	urchinTracker();
+	</script>
+</head>
+<body bgcolor="#FFFFFF">
+
+
+<div class="header"><br></div>
+<div class="shadow1"></div>
+<div class="shadow2"></div>
+
+<div class="content">
+<!-- ============= CONTENT ============= -->
+
+<h1>Week 2 -- Stuff</h1>
+<div class="rule"></div>
+
+<h3>What is a variable</h3>
+
+A variable is a named pointer to a location in the computer's memory.  You can
+think of it as a storage locker for data.  Computers only
+process information one instruction at a time -- using a variable allows a programmer
+to save information calculated at one point in the program and refer back to it at a later
+time.
+
+<h3>Data Types</h3>
+
+<span class = "pullquote">
+<B>
+<li>Variables must have a type.</li>
+<li>Variables must have a name.</li>
+</B>
+<br><br>
+<B>PRIMITIVE TYPES</b>
+<li>boolean: true or false</li>
+<li>char: 16 bit Unicode character (0-65535)</li>
+<br>
+<li>byte: 8 bits, -128 to 127</li>
+<li>short: 16 bits, -32768 to 32767</li>
+<li>int: 32 bits, -2147483648 to 2147483647</li>
+<li>long: 64 bits, -big number to big number</li>
+<li>float: 32 bit floating point number</li>
+<li>double: 64 bit floating point number</li>
+</span>
+
+Variables can hold different types of information and in Java, we have to explicitly
+define what kind of information we want to hold in a variable before we begin to use
+the variable.
+<br><br>
+Variables can hold <b>primitive</b> values or <b>references to objects / arrays</b>.  For now,
+we're just going to worry about primitives -- we'll get to objects and arrays later.
+<br><br>
+In order to use a variable, you must first declare your intentions. Variables
+are declared by first stating the type, followed by the name.  Note that your variable
+names must be one word (no spaces) and must start with a letter (they can include numbers,
+but cannot start with a number).
+<pre>
+int count;
+</pre>
+The variable can also be initialized with a value, another variable, or by evaluating
+an expression. Here are some examples:
+<br><br>
+<pre>
+int  count = 0;          // declare an int named count, assigned the value 0
+char letter = 'a';       // declare a char named letter, assigned the value 'a'
+double d = 132.32;       // declare a double named d, assigned the value 132.32
+boolean happy  = false;  // declare a boolean named happy, assigned the value false
+float x = 4.0f;          // declare a float named x, assigned the value 4.0
+                         // (note the 'f'; required since default floating point type is double)
+float y;                 // declare a float named y (no assignment)
+y = 5.2f;                // assigned the value 5.2 to the previously declared y
+float z = x*y + 15.0f;   // declare a variable named z, assign it the value which is x times y + 15.0.
+</pre>
+
+<h3>Scope</h3>
+
+In proce55ing, variables may either have a global or local "scope".
+A global variable is one that is declared outside of setup() and loop() and
+can be used anywhere in the program.
+<br><br>
+A local variable is one declared inside of a "block" of code (such as
+the setup() or loop() function, your own function, your own "class" (we'll
+get to what this means later), or a selection or iteration structure.
+<br><br>
+If a local variable is declared
+with the same name as a global variable, the program will use the local
+variable to make its calculations within the current scope.
+<br><br>
+An example is below.  For a more sophisticated example (which employs loops and functions that
+we haven't yet covered), visit: <a href="http://processing.org/learning/examples/variable_scope.html">
+http://processing.org/learning/examples/variable_scope.html</a>.
+<br><br>
+<applet code="week2a" archive="week2a.jar" width=100 height=100></applet>
+<pre>
+int x = 20;  // Create a global variable "x"
+int b = 51;  // Create a global variable "b"
+
+void setup()
+{
+  int s = 255;     // create a variable, local to setup
+  size(100, 100);
+  background(b);  //use global variable
+  stroke(s);
+}
+
+void loop()
+{
+  background(b); //use global variable
+  // Draw a line using the global variable "x"
+  line(x, 0, x, height);
+  // Create a new variable "y" local to the loop() function
+  int y = 255;
+  stroke(y);
+  //make use of the global variable 'x'
+  x++;
+  if (x > width) {
+    x = 0;
+  }
+}
+</pre>
+
+<h3>Control Flow -- Selection</h3>
+<span class = "pullquote">
+<B>SYNTAX REMINDERS</b>
+<li>Each statement must end in a semi-colon:
+<br><b>x = x + 1;</b></li>
+<li>A single-line comment begins with two forward slashes:
+<br><b>// i feel like commenting</b></li>
+<li>blocks of code (methods, classes, conditionals, loops) must be defined within a pair
+of curly brackets:
+<br><b>void setup() {
+<br>&nbsp;&nbsp;&nbsp;//code goes here;
+<br>}</b></li>
+</span>
+The key element of a selection structure is the <i>conditional test</i>.  A conditional
+test is an expression that results in a <i>boolean</i> value -- it is either <b>true</b>
+or <b>false</b>.
+<br><br>
+We can use the following operators in a conditional test:
+<br><br>
+<b>Relational Operators</b>
+<br>> (greater than)
+<br>< (less than)
+<br>>= (greater than or equal to)
+<br><= (less than or equal to)
+<br>== (equality)
+<br>!= (inequality)
+<br>
+<br><b>Logical operators</b>
+<br>|| (logical OR)
+<br>&& (logical AND)
+<br>! (logical NOT)
+
+
+<br><br>
+For example, following are some conditional tests and their result:<br>
+<pre>
+ ( 5 ==  6) -->  F
+ ( 5 ==  5) -->  T
+!(15  > 20) -->  T
+
+((5==6) && (5==5)) --> F
+((5==6) || (5==5)) --> T
+</pre>
+
+Now depending on the test, the program can take alternative paths:
+<br>
+<pre>
+int x = 5;
+if (x == 5) {
+  println("X is 5!");
+} else {
+  println("X is not 5!");
+}
+</pre>
+Or even:
+<br>
+<pre>
+int x = 5;
+if (x == 5) {
+  println("X is 5!");
+} else if (x == 6) {
+  println("X is 6!");
+} else if (x == 7) {
+  println("X is 7!");
+} else {
+  println("X is not 5,6, or 7!");
+}
+</pre>
+Now, what's <i>wrong</i> with this code? (The syntax is right, but
+the logic is problematic.)
+<br>
+<pre>
+int x = 5;
+
+//change 5 to 6, or 6 to 5
+void loop() {
+  if (x == 5) {
+    x = 6;
+  }
+  if (x == 6) {
+    x = 5;
+  }
+}
+</pre>
+
+
+<h3>A Very Very Quick Introduction to Color Models</h3>
+There are different ways to express certain colors mathematically.
+Color models allow for a precise specification of the color shade desired.
+In processing, we will only express colors in two ways, RGB and HSB.
+<Br><br>
+RGB stands for red, green, blue.
+Each of the three colors may have a value between 0 (zero) and 255.
+The RGB value 0-0-0 corresponds to black, 255-255-255 is white.  We can also express the
+RGB values as hexadecimal numbers, floating points (from 0 to 1.0, for example), etc.
+<br><br>
+HSB is the acronym for hue, saturation, and brightness. Traditionally,
+hue has a value from 0 to 360 degrees, saturation and brightness values range from 0% to 100%.
+<br><br>
+Grayscale ranges between 0% and 100% black.  In processing, we can also refer to grayscale values
+as numbers ranging from 0 to 255.
+<br><br>
+Examine these commands for defining color in processing:
+<br><br>
+        <i>Colors</i><br>
+		<a href="http://www.proce55ing.net/reference/background_.html">background()</a><br>
+		<a href="http://www.proce55ing.net/reference/stroke_.html">stroke()</a><br>
+		<a href="http://www.proce55ing.net/reference/noStroke_.html">noStroke()</a><br>
+		<a href="http://www.proce55ing.net/reference/fill_.html">fill()</a><br>
+		<a href="http://www.proce55ing.net/reference/noFill_.html">noFill()</a> <br>
+        <a href="http://www.proce55ing.net/reference/colorMode_.html">colorMode()</a><br>
+<br><br>
+<b>Examples from the Processing Site</b><br>
+<a href="http://processing.org/learning/examples/integers_floats.html">Integers and Floats</a><br>
+<a href="http://processing.org/learning/examples/increment_decrement.html">Increment Decrement</a><br>
+<a href="http://processing.org/learning/examples/mouse_2d.html">Mouse 2D</a><br>
+<a href="http://processing.org/learning/examples/creating.html">RGB Color</a><br>
+<a href="http://processing.org/learning/examples/brightness.html">Brightness</a><br>
+
+
+<h3>Week 2 Examples</h3>
+
+<applet code="week2e" archive="week2e.jar" width=100 height=100></applet>
+<pre>
+void setup() {
+  size(100,100);
+}
+void loop() {
+  colorMode(RGB,1.0);
+  background( (float) mouseX / width, (float) mouseY / height,0.0f);
+}
+</pre>
+
+
+<applet code="week2f" archive="week2f.jar" width=100 height=100></applet>
+<pre>
+int bness;
+void setup() {
+  size(100,100);
+  bness = 0;
+}
+void loop() {
+  bness = (bness + 1) % 1000;
+  colorMode(HSB,1.0,1.0,1000);
+  background( (float) mouseX / width, (float) mouseY / height,bness);
+}
+</pre>
+
+<applet code="week2g" archive="week2g.jar" width=400 height=200></applet>
+<pre>
+// Continuous Lines
+// by REAS <www.groupc.net>
+// altered by DS
+// Click and drag the mouse to draw a line.
+
+float alf;
+
+void setup() {
+  size(400, 200);
+  background(102);
+  alf = 0.0f;
+}
+
+void loop() {
+  colorMode(RGB,255,255,255,255);
+  stroke(255,200,0,alf);
+  strokeWeight(1);
+  if(mousePressed && pmouseX != 0 && pmouseY != 0) {
+    alf++;
+    line(mouseX, mouseY, pmouseX, pmouseY);
+  if (alf > 255) { alf = 255; }
+  } else {
+    alf = 0;
+  }
+}
+
+</pre>
+<applet code="week2d" archive="week2d.jar" width=400 height=200></applet>
+<pre>
+//the bouncing ball example
+//DS
+
+//set up some global variables
+int xspeed;
+int yspeed;
+int x;
+int y;
+int r;
+
+//our setup function
+void setup() {
+  size(400,200);                  //define size
+  xspeed = 3;                     //(int) random(-5,5);    //if we want random (note "random" gives us a float
+  yspeed = 1;                     //(int) random(-5,5);    //so we have to "cast" it back into an "int")
+  x = width/2;                    //initialize our x,y,r variables
+  y = height/2;
+  r = 10;
+}
+
+void loop() {
+  background(50);                 //first we draw the background
+  ellipseMode(CENTER_DIAMETER);   //set our ellipse mode
+  noStroke();
+  fill(255,200,0);                //set ellipse color
+  ellipse(x,y,r,r);               //draw ellipse
+
+  //radius always decreases back to 10 if it's bigger
+  if (r > 10) {
+    r--;
+  }
+  //adjust x,y based on speed
+  x = x + xspeed;
+  y = y + yspeed;
+  //acount for bouncing off edges
+  if ((x > width) || (x < 0)) {
+    xspeed = xspeed * -1;
+    r = 30; //adjust radius when bouncing
+  }
+  if ((y > height) || (y < 0)) {
+    yspeed = yspeed * -1;
+    r = 30;
+  }
+}
+</pre>
+<h3>Week 2 Assignment</h3>
+<br>
+Create a "dynamic" processing applet that uses variables to store information associated
+with your animated graphics.  Use variables to keep track of the size, shape, and color
+of drawn objects, as well as to track the location, direction, and movement.
+Consider these questions:
+<br><br>
+<li>What's a good way to name my variables to make my code readable?</li><br>
+<li>What data type is appropriate for each variable?</li><br>
+<li>Where do I need a global variable vs. a local variable?</li><br>
+<li>Where do I initialize my variables?</li>
+<li>What's a good way to organize the various pieces of code? (consider separating
+your drawing code from your code that does the <i>calculation</i> tasks.)
+<br><br>
+In addition, think about how you want to define the way the elements of your applet are colored.
+Is HSB mode appropriate?  RGB?
+<br><br>
+Before writing your program, write out a brief summary of your idea (one or two sentences
+is ok.)  Then write, in regular ol' English, the sequence of steps required
+to realize the idea.  Work out the logic before translating it into actual code.
+Include these descriptions on the web page for this assignment.
+<br><br>
+<br><br>
+<a href="../index.html">back to syllabus</a>
+<br><br>
+
+
+<i>site stylesheet courtesy of <a href="http://www.style.org">www.style.org</a>
+
+<br><br>
+
+</span>
+</body>
+</html>

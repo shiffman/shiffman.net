@@ -1,0 +1,144 @@
+<html>
+<head>
+
+<title>daniel shiffman -- procedural painting</title>
+
+<link type="text/css" rel="stylesheet" href="../style.css">
+<basefont face="Georgia" size=2>
+	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+	</script>
+	<script type="text/javascript">
+	_uacct = "UA-94163-1";
+	urchinTracker();
+	</script>
+</head>
+<body bgcolor="#FFFFFF">
+
+
+<div class="header"><br></div>
+<div class="shadow1"></div>
+<div class="shadow2"></div>
+
+<div class="content">
+<!-- ============= CONTENT ============= -->
+
+<h1>Week 8 -- Intro to 3D concepts</h1>
+<div class="rule"></div>
+<a href="../index.html">back to syllabus</a>
+<h3>Push and Pop (the stack)</h3>
+
+In computer science, a "stack" is an area of memory used to implement a data
+structure that follows the last in, first out method of access.  It's called a "stack"
+b/c it follows the physical principals of a stack of stuff, such as papers -- one
+adds papers to the top and remove papers from the top.  If we wrote down a sequence of information
+on pieces of paper and stacked them, that physical stack would provide us
+with a method of tracking that information in reverse order
+<br><br>
+As we saw with recursion, a stack is used by the processor to keep track of subroutine calls and
+returns.  In the case of 3d transformations, the stack is used to keep track of the
+current transformation matrix.  "The push() function saves the current
+coordinate system to the stack and pop() restores the prior coordinate system. push()
+and pop() are used in conjuction with the other transformation methods and may be
+embedded to control the scope of the transformations."
+<br><br>
+For example, examine the different result between the following two applets:
+<br><br>
+<table>
+<tr>
+<td  width = 450><applet code="week8h" archive="week8h.jar" width=100 height=100></applet></td>
+<td><applet code="week8i" archive="week8i.jar" width=100 height=100></applet></td>
+</tr>
+
+<tr>
+<td>
+<pre>
+float angle1 = radians(30);
+float angle2 = radians(60);
+
+void setup() {
+  size(100,100);
+}
+
+void loop() {
+  background(0);
+  stroke(255);
+  //translate origin to center of the screen
+  translate(50,50,0);
+  //rotate by first angle and draw line
+  rotateZ(angle1);
+  line(0,0,0,-50);
+  //rotate by second angle and draw line
+  rotateZ(angle2);
+  line(0,0,0,-50);
+
+}
+</pre>
+</td>
+<td>
+<pre>
+float angle1 = radians(30);
+float angle2 = radians(60);
+
+void setup() {
+  size(100,100);
+}
+
+void loop() {
+  background(0);
+  stroke(255);
+  //translate origin to center of the screen
+  translate(50,50,0);
+  //rotate by first angle and draw line
+  /***add push and pop to save the current transformation and
+      restore it before rotating the second time***/
+  push();
+  rotateZ(angle1);
+  line(0,0,0,-50);
+  pop();
+  //rotate by second angle and draw line
+  rotateZ(angle2);
+  line(0,0,0,-50);
+
+}
+</pre>
+</td>
+</tr>
+</table>
+<br><br>
+If we increment the angle values to animate the rotation, the difference is even more apparent.
+<br><br>
+<table>
+<tr>
+<td width = 450><applet code="week8j" archive="week8j.jar" width=100 height=100></applet></td>
+<td><applet code="week8k" archive="week8k.jar" width=100 height=100></applet></td>
+</tr>
+<tr>
+<td>
+<pre>
+angle1 += 0.01f;
+angle2 += 0.01f;
+</pre>
+</td>
+<td>
+<pre>
+angle1 += 0.01f;
+angle2 += 0.01f;
+</pre>
+</td>
+</tr>
+</table>
+
+It's important to learn and understand the concepts of "push" and "pop".  However, Amit Pitaru
+has written
+an external Processing library that helps with the placement and transformation of
+graphical content, called BSpace.  For a full explanation with instructions and samples using BSpace, visit:
+
+<b><a href="http://www.pitaru.com/processing/BSpace/">http://www.pitaru.com/processing/BSpace/</a></b>.
+
+<br><br>
+<b><a href="index4.html">CONTINUE ON TO 4. . . </a></b>
+<br><br>
+<a href="../index.html">back to syllabus</a>
+</span>
+</body>
+</html>

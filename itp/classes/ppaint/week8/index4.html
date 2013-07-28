@@ -1,0 +1,100 @@
+<html>
+<head>
+
+<title>daniel shiffman -- procedural painting</title>
+
+<link type="text/css" rel="stylesheet" href="../style.css">
+<basefont face="Georgia" size=2>
+	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+	</script>
+	<script type="text/javascript">
+	_uacct = "UA-94163-1";
+	urchinTracker();
+	</script>
+</head>
+<body bgcolor="#FFFFFF">
+
+
+<div class="header"><br></div>
+<div class="shadow1"></div>
+<div class="shadow2"></div>
+
+<div class="content">
+<!-- ============= CONTENT ============= -->
+
+<h1>Week 8 -- Intro to 3D concepts</h1>
+<div class="rule"></div>
+<a href="../index.html">back to syllabus</a>
+<h3>2D system inside 3D space</h3>
+
+Here's an example that pulls together our discussion of visualizing 2D arrays
+from last week with this week's exploration of 3D transformations.  Like in the game
+of life, each cell is a rectangle.  However, each cell moves and rotates using
+translate and rotateY.  Note the use of push() and pop() to draw each element with
+rotation around its center point.  Push() and pop() are also used to translate each
+column along the z axis.
+
+<Br><br>
+<applet code="week8z" archive="week8z.jar" width=400 height=400></applet>
+<pre>
+//size of each rect
+int cellsize = 16;
+//number of columns and rows in our system
+int COLS, ROWS;
+//global angle variable
+float angle = 0.0f;
+
+void setup()
+{
+  size(400, 400);
+  //initialize rows
+  COLS = width/cellsize;
+  ROWS = height/cellsize;
+  colorMode(RGB,255,255,255,100);
+  rectMode(CENTER_DIAMETER);
+  background(0);
+}
+
+void loop()
+{
+  background(0);
+  fill(100,100,100,50);
+  stroke(200);
+
+  //increment angle for sine calculation
+  angle += 0.1f;
+
+  //begin loop for columns
+  for ( int i = 0; i < COLS;i++) {
+    //save transformation matrix
+    push();
+    //calculate a z transformation based on sine
+    float z = sin(i/5.0f+angle)*40.0f;
+    translate(0,0,z);
+    //begin loop for rows
+    for ( int j = 0; j < ROWS;j++) {
+      //save transformation matrix
+      push();
+      //calculate x and y location and translate
+      int x = i*cellsize + cellsize/2;
+      int y = j*cellsize + cellsize/2;
+      translate(x,y,0);
+      //determine distance from mouse and rotate based on that
+      float dist = sqrt(sq(mouseX-x) + sq(mouseY-y)) / 50.0f;
+      rotateY(dist);
+      //draw rect
+      rect(0,0,cellsize-3,cellsize-3);
+      //restore transformation matrix
+      pop();
+    }
+    //restore transformation matrix
+    pop();
+  }
+}
+</pre>
+
+<br><br>
+<a href="../index.html">back to syllabus</a>
+</span>
+</body>
+</html>

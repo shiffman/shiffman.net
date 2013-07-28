@@ -1,0 +1,165 @@
+<html>
+<head>
+
+<title>daniel shiffman -- procedural painting</title>
+
+<link type="text/css" rel="stylesheet" href="../style.css">
+<basefont face="Georgia" size=2>
+	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+	</script>
+	<script type="text/javascript">
+	_uacct = "UA-94163-1";
+	urchinTracker();
+	</script>
+</head>
+<body bgcolor="#FFFFFF">
+
+
+<div class="header"><br></div>
+<div class="shadow1"></div>
+<div class="shadow2"></div>
+
+<div class="content">
+<!-- ============= CONTENT ============= -->
+
+<h1>Week 9 -- Intro to Digital Image Processing</h1>
+<div class="rule"></div>
+<a href="../index.html">back to syllabus</a>
+<br><br>
+<h3>What is image processing?</h3>
+
+From <a href="http://www.microsoft.com/windowsxp/experiences/glossary_h-n.asp">http://www.microsoft.com/windowsxp/experiences/glossary_h-n.asp</a>
+<br><br>
+Image processing is defined as "the analysis, manipulation, storage, and display of graphical images from sources such as
+photographs, drawings, and video. Image processing spans a sequence of three steps.
+The input step (image capture and digitizing) converts the differences in coloring and
+shading in the picture into binary values that a computer can process. The processing step
+can include image enhancement and data compression. The output step consists of the display
+or printing of the processed image. Image processing is used in such applications as television
+and film, medicine, satellite weather mapping, machine vision, and computer–based pattern
+recognition."
+<br><br>
+This week, we'll look at a series of image processing examples implemented in processing.  They
+will be grouped in 3 stages.  Let's call them:
+<br><br>
+<li>Level 1: Pixel Point Processing</li>
+<li>Level 2: Pixel Group Processing</li>
+<li>Level 3: Creative Visualizations</li>
+<br><br>
+<h3>Processing: The PIXEL array and LOCATION calculation</h3>
+
+In processing, we can get at the pixels of the display window, using the array "pixels".
+Each pixel on the screen has an X,Y coordinate.  However, the array "pixels" in a one-dimensional array.
+In other words, we need to think of every pixel as living in 2 dimensions, but access
+the information in one.  We can do this through the following formula:
+<br>
+<br>1. Assume a window or image with a given WIDTH and HEIGHT.
+<br>2. We then know the pixel array has a total number of elements equaling WIDTH * HEIGHT.
+<br>3. For any given point in the windows (X,Y), the location in our 1 dimensional pixel array is:
+<br><br>
+<b>LOCATION = X + Y*WIDTH</b>
+<br><br>
+Examine the following simple example.  This program sets each pixel in a 50x50 window
+to a random grayscale value.  Note the use of a nested loop for each XY coordinate
+in combination with our location formula from above.
+<br><br>
+<applet code="week9a" archive="week9a.jar" width=50 height=50></applet>
+<pre>
+size(50,50);
+//nested loop to walk through every x and y coordinate
+//like with our 2D array
+for (int x = 0; x < width; x++) {
+  for (int y = 0; y < height; y++) {
+    //pick a random number, 0 to 255
+    int rand = int(random(255));
+    //create a grayscale color based on random number
+    color c = color(rand,rand,rand);
+    //do our location calculation
+    int loc = x + y*width;
+    //set pixel at that location to random color
+    pixels[loc] = c;
+  }
+}
+</pre>
+If you examine the above program closely, you may notice that a nested loop and location calculation
+is not required here.
+Rather, we could have used a single for loop to walk through every element of the display window's pixel
+array.  However, we use a nested loop with X and Y because as we move towards more advanced image
+processing functions, this will be required.
+<Br><br>
+<h3>Level 1: Pixel Point Operations</h3>
+We're going to take a step forward from the previous example and instead of setting every pixel
+to a random color, we're going to pull colors from an image and set colors in our display window
+accordingly.
+<br><br>
+To understand the workings of the code below, you'll want to examine the following processing
+reference pages:
+<br><br>
+<b><a href="http://processing.org/reference/BImage.html">BImage</a><br>
+<a href="http://processing.org/reference/BImage_pixels.html">BImage.pixels</a><br>
+<a href="http://processing.org/reference/loadImage_.html">loadImage()</a><br>
+  <a href="http://processing.org/reference/color_.html">color() </a> <br>
+        <a href="http://processing.org/reference/red_.html">red()</a><br>
+        <a href="http://processing.org/reference/green_.html">green()</a><br>
+        <a href="http://processing.org/reference/blue_.html">blue()</a><br>
+        <a href="http://processing.org/reference/hue_.html">hue()</a><br>
+        <a href="http://processing.org/reference/saturation_.html">saturation()</a><br>
+        <a href="http://processing.org/reference/brightness_.html">brightness()</a></b>
+<br><br>
+Ok, for our first level one example, we want to:
+
+simply load an image, get its pixels, and
+repaint it in our display window.
+<br><br>
+<applet code="week9a_1" archive="week9a_1.jar" width=320 height=240></applet>
+<pre>
+BImage a;
+
+void setup()
+{
+  size(320, 240);
+  a = loadImage("sunflower.jpg");
+}
+
+void loop()
+{
+  background(0);
+
+  image(a,0,0);
+
+  for (int x = 0; x < a.width; x++) {
+    for (int y = 0; y < a.height; y++ ) {
+      //calculate the 1D location from a 2D grid
+      int loc = x + y*a.width;
+      //get the R,G,B values from image
+      float r,g,b;
+      r = red   (a.pixels[loc]);
+      g = green (a.pixels[loc]);
+      b = blue  (a.pixels[loc]);
+
+      //****DO OUR IMAGE PROCESSING STUFF HERE*******/
+
+      //make a new color and set pixel in the window
+      color c = color(r,g,b);
+      pixels[loc] = c;
+
+    }
+  }
+}
+</pre>
+
+Again, examining the above code closely, we'll notice that we could have done
+numerous simplifications in order to merely display the image (for example, we
+could just use the <a href="http://processing.org/reference/image_.html">image()</a>
+function and skipped all this pixel work.  However, now that we have a framework
+for getting the red, green, and blue values for each pixel, we can now move on
+and perform simple image processing techniques.
+
+
+<br><br>
+<b><a href="index2.html">CONTINUE ON TO 2. . . </a></b>
+<br><br>
+<a href="../index.html">back to syllabus</a>
+</span>
+</body>
+</html>

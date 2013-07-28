@@ -1,0 +1,184 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!  ITP
+!  ITP.inf                       
+!  Prepared by Daniel Shiffman          
+!  Example for Programming from A to Z, Spring 2006
+
+!===============================================================================
+
+! Global variables and constants
+
+Constant Story "ITP";
+Constant Headline
+            "^A simple Inform example
+             ^A story about ITP
+	     ^by Daniel Shiffman.^
+	     ^Programming from A to Z, Spring 2006^
+	     ^Special thanks to Nick Monfort, Roger Firth, and Sonja Kesserich^";
+
+Constant MAX_CARRIED 1;
+
+Constant NUMBER_TASKS = 3;
+Constant MAX_SCORE = 3;
+Array task_scores -> 1 1 1;
+
+Include "Parser";
+
+!===============================================================================
+! The game objects
+!
+!
+! Generic object format
+!
+! Object   object_id "interpreter name" parent_object_id
+! with     property value,
+!          property value,
+!          .
+!          .
+!          .
+!          property value,
+! has      attribute attribute . . . attribute
+
+Object  lobby "The ITP Lobby."
+  with  description
+          "You stand in front of a wooden mirror.
+           To the west is a room filled with computers.
+           There is an elevator to the south.",
+        w_to lab,
+        s_to elevator,
+        cant_go "Try going west.",
+  has   light;
+  
+Object  mirror "wooden mirror" lobby
+  with  description
+          "The mirror is pret5",
+        w_to lab,
+        s_to elevator,
+        cant_go "Try going west.",
+  has   light;
+
+Object  elevator "Elevator"
+  with  description "An elevator out of ITP.",
+  	n_to lobby,
+        each_turn [; 
+	   if (thesis in mailbox) {
+	     deadflag=2;
+	   } else {
+	     deadflag=3;
+	   }
+        ],
+  has   light;
+  
+
+Object  mailbox "mailbox" lobby
+  with  description "The mailbox says 'Burns' on it.",
+        name 'mailbox',
+        each_turn [; 
+	   if (thesis in mailbox) 
+            Achieved(2);
+        ],
+  has   static container open ~openable;
+
+  
+Object  lab "The Computer lab."  !id and 
+  with  description
+          "A mysterious figure in the corner types madly at a keyboard. 
+	   To the west is a classroom. You see a printer.",
+        e_to lobby,
+        w_to four0four,
+  has   light;
+  
+Object  printer "printer" lab
+  with  description
+           "Your standard ol' HP printer.",
+ 	name 'printer',
+        after [; 
+	  SwitchOn:
+	  if (paper in printer) {
+	    Achieved(1);
+	    move thesis to printer;
+	    "The printer begins to hum.  Beautiful pages emerge.  It's your thesis!";
+	  } else {
+	    "The printer begins to hum.  
+	    A red light blinks and a message reads 'PC Load Letter.'
+	    It beeps loudly.  This is rather annoying.";
+	  }
+	  Receive:
+	  if (noun == paper) {
+	    if (self has on) {
+              Achieved(1);
+	      move thesis to printer;
+	      "The printer begins to hum.  Beautiful pages emerge.  It's your thesis!";
+	    } else {
+              "You should probably turn the printer on.";
+	    }
+	  }
+        ],	   
+  has	static scenery container openable switchable;
+  
+
+Object  thesis "thesis"  ! we can use the arrow to indicate the letter is in 404
+  with  description "Wow, what a thesis!",
+        name 'thesis',
+  has   ;
+
+
+Object  student "mysterious figure" lab
+  with  description 
+           "The mysterious figure appears to be a stressed out student, quietly muttering.",
+        ! name indicates all the possible ways we could refer to this object
+	name 'student' 'person' 'figure' 'man' 'woman' 'mysterious figure',
+	! we can handle actions/events here
+	! before handles the event *before* the usual action taken by the interpreter
+        before [;
+          Listen: "Paper.  It needs paper.  Find the paper.";
+        ],
+  has   scenery;  ! Scenery cannot be picked up or moved around
+  
+  
+Object  four0four "Room 404"
+  with  description
+          "Several students are sleeping at a table.  A rather odd
+          looking fellow blabs on and on about something called 'Processing.'
+          To the east is a computer lab.",
+        e_to lab,
+  has   light;
+
+  
+Object  paper "ream of paper" four0four
+  with  description
+           "The paper looks quite useful.",
+	name 'paper' 'ream',
+        after [;
+          Take: Achieved(0);
+        ],
+  has   ;
+            
+
+!!===============================================================================
+! Routines
+
+[ Initialise; 
+    location = lobby; 
+];
+
+[ DeathMessage;
+  if (deadflag == 3)
+    {
+      print "You did not receive your degree.";
+    }
+];
+
+!===============================================================================
+! Standard and extended grammar
+
+Include "Grammar";
+Include "VerbLib";
+
+!!===============================================================================
+!! Verbs
+Verb meta 'about'                   *           -> About;
+
+[ AboutSub;
+  print "Graduating from ITP is easy!^";
+];

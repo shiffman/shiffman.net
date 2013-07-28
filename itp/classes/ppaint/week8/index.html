@@ -1,0 +1,152 @@
+<html>
+<head>
+
+<title>daniel shiffman -- procedural painting</title>
+
+<link type="text/css" rel="stylesheet" href="../style.css">
+<basefont face="Georgia" size=2>
+	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+	</script>
+	<script type="text/javascript">
+	_uacct = "UA-94163-1";
+	urchinTracker();
+	</script>
+
+</head>
+<body bgcolor="#FFFFFF">
+
+
+<div class="header"><br></div>
+<div class="shadow1"></div>
+<div class="shadow2"></div>
+
+<div class="content">
+<!-- ============= CONTENT ============= -->
+
+<h1>Week 8 -- Intro to 3D concepts</h1>
+<div class="rule"></div>
+<a href="../index.html">back to syllabus</a>
+<h3>Coordinate Systems</h3>
+
+
+
+We know that to describe the pixels on a 2D screen, we use cartesian (named after René Descartes's)
+coordinates to
+identify any point, i.e. we have to coordinates: (x,y).  X refers
+to the horizontal axis and y the vertical.  In 3 dimensions, we add a z-axis, referring
+to the depth of any given point.  The coordinates become: (x,y,z).  Cartesian 3D systems
+can be described as "left-handed" or "right-handed".  If you point your index finger in the
+positive y direction (up) and your thumb in the positive x direction (to the right), the
+rest of your fingers will point towards the postive z direction.  It's left-handed if you
+use your left hand and do the same.  In processing, the system is left-handed (since postive y
+is the downward direction), i.e.:
+<br><br>
+<img src="http://www.proce55ing.net/reference/environment/images/coordinates.gif">
+
+<h3>Translate / Rotate</h3>
+There are two ways we can "transform" the screen matrix in order to be able to move
+objects in our virtual <i>3D</i> space -- translate and rotate.
+<br><br>
+For example, in previous examples, we've used translate in 2D in order to move the origin (0,0)
+from the top left corner of the screen, i.e.
+<br><br>
+<applet code="week8a" archive="week8a.jar" width=100 height=100></applet>
+<pre>
+void setup() {
+  size(100,100);
+}
+
+void loop() {
+  background(0);
+  translate(50,50);
+  rectMode(CENTER_DIAMETER);
+  stroke(200);
+  fill(50);
+  rect(0,0,50,50);
+}
+</pre>
+
+Now, let's also translate by a "z" value (and while we're at it, let's use sine so that we have a
+nice oscillation)
+<br><br>
+<applet code="week8b" archive="week8b.jar" width=100 height=100></applet>
+<pre>
+float theta = 0.0f;
+
+void setup() {
+  size(100,100);
+  rectMode(CENTER_DIAMETER);
+}
+
+void loop() {
+
+  background(0);
+  theta += 0.1f;
+  float z = sin(theta)*20.0f;
+  translate(50,50,z);
+  stroke(200);
+  fill(50);
+  rect(0,0,50,50);
+}
+</pre>
+We can also rotate the screen matrix by any angle
+(expressed in radians) along any axis: x,y, or z using rotateX, rotateY, rotateZ
+<br><br>
+<table>
+<tr>
+  <td><applet code="week8c" archive="week8c.jar" width=100 height=100></applet></td>
+  <td><applet code="week8d" archive="week8d.jar" width=100 height=100></applet></td>
+  <td><applet code="week8e" archive="week8e.jar" width=100 height=100></applet></td>
+<tr>
+<td>
+<pre>
+void loop() {
+  background(0);
+  theta += 0.05f;
+  float z = sin(theta)*20.0f;
+  translate(50,50,z);
+  rotateZ(theta);
+  stroke(200);
+  fill(50);
+  rect(0,0,50,50);
+}
+<pre>
+</td>
+<td>
+<pre>
+void loop() {
+  background(0);
+  theta += 0.05f;
+  float z = sin(theta)*20.0f;
+  translate(50,50,z);
+  rotateX(theta);
+  stroke(200);
+  fill(50);
+  rect(0,0,50,50);
+}
+<pre>
+</td>
+<td>
+<pre>
+void loop() {
+  background(0);
+  theta += 0.05f;
+  float z = sin(theta)*20.0f;
+  translate(50,50,z);
+  rotateY(theta);
+  stroke(200);
+  fill(50);
+  rect(0,0,50,50);
+}
+<pre>
+</td>
+</tr>
+</table>
+
+<br><br>
+<b><a href="index2.html">CONTINUE ON TO 2. . . </a></b>
+<br><br>
+<a href="../index.html">back to syllabus</a>
+</span>
+</body>
+</html>

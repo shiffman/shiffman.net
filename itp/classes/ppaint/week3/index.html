@@ -1,0 +1,407 @@
+<html>
+<head>
+
+<title>daniel shiffman -- procedural painting</title>
+
+<link type="text/css" rel="stylesheet" href="../style.css">
+<basefont face="Georgia" size=2>
+	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+	</script>
+	<script type="text/javascript">
+	_uacct = "UA-94163-1";
+	urchinTracker();
+	</script>
+
+</head>
+<body bgcolor="#FFFFFF">
+
+
+<div class="header"><br></div>
+<div class="shadow1"></div>
+<div class="shadow2"></div>
+
+<div class="content">
+<!-- ============= CONTENT ============= -->
+
+<h1>Week 3 -- over and over and over again</h1>
+<div class="rule"></div>
+<a href="../index.html">back to syllabus</a>
+<h3>What is an array</h3>
+
+Just like a variable allows us to keep track of information from one line of code
+to another, so does an array.  An array, however, keeps track
+of multiple pieces of information at once.  You can think of it as a list of variables,
+with each element having the same <b>type</b> (float, int, etc.).  We can access
+each element of the list via its <b>index</b>, a integer value that uniquely designates
+its position in the list.
+
+<h3>When is an array useful?</h3>
+
+Anytime a program requires multiple instances of similar data or computation, it might be
+time to use an array.  For example, consider our previous "bouncing ball" example.  The ball
+required several variables to keep track of the relevant information -- x and y location,
+x and y speed, ball diameter.  What if we wanted to have multiple bouncing balls?  We'd need
+separate variables for each ball -- xspeed1, xspeed2, xspeed3, xlocation1, xlocation2, etc. etc.
+etc.  With a large number of bouncing balls, this would quickly become a major annoyance.
+Using an array, we can store all the variables of similar type in order using one name.
+
+<h3>Creation and Initialization</h3>
+
+An array-type variable is denote by a based type followed by empty brackets, [].
+<pre>
+int[] arrayOfInts;
+</pre>
+We have to use the "new" operator to create an instance of an array (this is the moment where
+the memory required to store the information inside the array is allocated.)  We'll get into
+what "new" means more when we discuss objects.  When allocating the array, we have to define how many elements we want the array to hold.  We use the new operator,
+followed by the data type, followed by a brackted integer expression (indicating the total
+# of elements).
+<pre>
+arrayOfInts = new int[42];
+arrayOfInts = new int[x + 5];
+</pre>
+If we want to hardcode the values of the array, we can also write it out as a list enclosed
+in curly brackets and separated by commas.
+<pre>
+arrayOfInts = {1, 5, 8, 9, 4, 5};
+</pre>
+
+
+<h3>Using an Array</h3>
+
+The name of an array is a placeholder for the address in the computer's memory where
+the array begins.  Since each element of the array is of the same type (and therefore
+takes up the same amount of space), we can access any individual element of the array using a
+"base + offset" calculation.  We refer to an element of the array by the name of the
+array, followed by an index number enclosed in brackets.  In Java, we consider the first
+element of the array, as element #0 (if we think about this for a moment, it makes perfect sense
+since the first element of the array is located at the beginning of
+the array (duh) and has an "offset" of 0.)
+<pre>
+int[] stuff = new int[5];
+stuff[0] = 5;
+stuff[1] = 5;
+stuff[2] = 5;
+stuff[3] = 5;
+stuff[4] = 5;
+</pre>
+<span class = "pullquote">
+<b> Increment / Decrement Operators </b><br>
+The shortcut for adding or subtracting 1 from a variable is as follows:<br>
+<br><b>x++;</b>
+<br>
+is equivalent to:<br>
+<b>x = x + 1;</b><br>
+meaning: "increment x by 1" or<br> "add 1 to the current value of x"<br>
+<br><b>x--;</b>
+<br>
+is equivalent to:
+<br><b>x = x - 1;</b>
+<br>
+<br>We also have:
+<br><b> x += 2;</b> &nbsp;&nbsp;==>&nbsp;&nbsp; <B>x = x + 2;</B>
+<br><b> x *= 3;</b> &nbsp;&nbsp;==>&nbsp;&nbsp; <B>x = x * 3;</B>
+<br>etc.
+
+
+</span>
+
+<h3>Iteration</h3>
+
+
+
+An array is a powerful tool given its ability to store multiple pieces of information
+all together in sequence.  We discover just how powerful by performing identical operations
+on each element of the array.  Certainly we could do this:
+<pre>
+stuff[0] = stuff[0] + 1;
+stuff[1] = stuff[1] + 1;
+stuff[2] = stuff[2] + 1;
+stuff[3] = stuff[3] + 1;
+stuff[4] = stuff[4] + 1;
+</pre>
+Not too bad, I suppose.  But what if our array contained 100 elements?  Would we really
+want to write out 100 lines of code?  How can we "iterate" through each
+element of the array?
+<br><br>
+There are three types of "loops", the "for" loop, the "while", and the "do-while" loop.
+
+<h3>WHILE LOOP</h3>
+Just as with our conditional (if / else) statements a while loop employs boolean test
+(in the example below it is (x < 10)) that must
+evaluate to true in order for the instructions enclosed in the curly brackets to be executed.
+The difference is that the instructions continue to be executed until the test condition
+becomes false.
+<pre>
+int x = 0;
+while (x < 10) {
+  println("x = is less than 10.");
+  x++;
+}
+</pre>
+Considering this, can you see why this code is problematic?
+<pre>
+int x = 0;
+while (x < 10) {
+  println("x = is less than 10.");
+  x--;
+}
+</pre>
+<h3>DO-WHILE LOOP</h3>
+A "do-while" loop is exactly the same as a while loop, only the code inside the curly brackets
+is always executed at least once (the boolean test condition is evaluated afterwards).  Examine
+and test the following code:
+<pre>
+int x = 0;
+do {
+  println(x);
+} while (x > 1);
+
+x = 0;
+while (x > 1) {
+  println(x);
+}
+</pre>
+<h3>THE FOR LOOP</h3>
+A for loop is made up of three parts:<br><br>
+<li><b>Initialization</b>:  Here, a variable is declared and initialized for use
+within the body of the loop.  This variable is often used as a counter.</li>
+<li><b>Boolean Test</b>:  This is exactly the same as our boolean tests in
+conditional statements or while loops.  It can be any expression that resolves to
+being true or false.</li>
+<li><b> Iteration Expression</b>:  The last element is one (or more) instruction
+that you want to happen with each loop cycle.  Note that the instruction is exectued at the end
+of each loop.</li>
+<br><br>
+Example:
+<pre>
+for (int i = 0; i < 10; i++) {
+  //lines of code to execute here
+}
+</pre>
+In English, the above means: repeat this code 10 times.
+<br><br>
+To the machine, it means the following:
+<li>declare a local variable i, and set its initial value to 0</li>
+<li>while i is less than 10, repeat this code</li>
+<li>at the end of each iteration, add 1 to i</li>
+<br><br>
+Also, note that we could do the same exact loop with a while format:
+<pre>
+int i = 0;
+while (i < 10) {
+  i++;
+  //lines of code to execute here
+}
+</pre>
+<h3>Arrays and Loops: Together at Last</h3>
+It's now pretty clear how we can find harmony between arrays and loops, and save ourselves
+a lot of unecessary typing to perform one operation on many elements.  Consider the following example.
+<br><br>
+<applet code="week3a" archive="week3a.jar" width=100 height=100></applet>
+<pre>
+//a variable to store the maximum # of elements in the array
+int MAX = 10;
+
+//declare array names and allocate the space to store them
+int[] x = new int[MAX];
+int[] y = new int[MAX];
+
+void setup() {
+  size(100,100);
+  //use a for loop to initialize each element of the array
+  //note the use of "random()" and "int()" here -- visit:
+  //http://processing.org/reference/random_.html
+  //http://processing.org/reference/int_.html
+  for (int i = 0; i < MAX; i++) {
+    x[i] = int( random(0,width ) );
+    y[i] = int( random(0,height) );
+  }
+}
+
+void loop() {
+  //set background stroke and fill
+  background(0);
+  stroke(255);
+  fill(255);
+  //use a for loop to draw MAX #'s of ellipses based on the array values
+  for (int i = 0; i < MAX; i++) {
+    ellipse(x[i],y[i],5,5);
+    //y[i]++; //add this line of code to increment each element of the array "y"
+  }
+}
+</pre>
+<h3>Basic Array and Loop Examples from the Processing Web Site</h3>
+<a href="http://processing.org/reference/Array.html">Array Basics</a><br>
+<a href="http://processing.org/learning/examples/array.html">Array</a><br>
+<a href="http://processing.org/reference/while_.html">While Loop</a><br>
+<a href="http://processing.org/reference/for_.html">For Loop</a><br>
+<a href="http://processing.org/learning/examples/iteration.html">More Iteration</a>
+<a href="http://processing.org/learning/examples/conditionals_1.html">Iteration and Conditionals</a>
+
+
+
+<h3>The Bouncing Ball -- Again. . .and again, and again</h3>
+Remember the bouncing ball example?  Thinking in terms of arrays, it's not too hard to create
+an example with multiple bouncing balls.  Run this code and try adjusting the number for
+MAX.
+<br><br>
+<applet code="week3b" archive="week3b.jar" width=400 height=200></applet>
+<pre>
+//the bouncing ball example
+//DS
+
+//Max number of balls
+int MAX = 8;
+
+//set up some global variables as arrays now
+int[] xspeed = new int[MAX];
+int[] yspeed = new int[MAX];
+int[] x = new int[MAX];
+int[] y = new int[MAX];
+int[] r = new int[MAX];
+
+//our setup function
+void setup() {
+  size(400,200);                  //define size
+  //initialize all arrays
+  for (int i = 0; i < MAX; i++) {
+    xspeed[i] = int(random(-5,5));
+    yspeed[i] = int(random(-5,5));
+    x[i] = width/2;
+    y[i] = height/2;
+    r[i] = 10;
+  }
+}
+
+void loop() {
+  background(50);                 //first we draw the background
+  ellipseMode(CENTER_DIAMETER);   //set our ellipse mode
+  noStroke();
+  for (int i = 0; i < MAX; i++) {
+    fill(255,200,0);                			//set ellipse color
+    ellipse(x[i],y[i],r[i],r[i]);               //draw ellipse
+    //radius always decreases back to 10 if it's bigger
+    if (r[i] > 10) {
+      r[i]--;
+    }
+    //adjust x,y based on speed
+    x[i] = x[i] + xspeed[i];
+    y[i] = y[i] + yspeed[i];
+    //acount for bouncing off edges
+    if ((x[i] > width) || (x[i] < 0)) {
+      xspeed[i] = xspeed[i] * -1;
+      r[i] = 30; //adjust radius when bouncing
+    }
+    if ((y[i] > height) || (y[i] < 0)) {
+      yspeed[i] = yspeed[i] * -1;
+      r[i] = 30;
+    }
+  }
+}
+</pre>
+<h3>More on Color</h3>
+Following is an example of using an RGB color mode with an alpha channel. The example
+draws two squares, one on top of each other (one w/ 60% alpha, one w/ 40% alpha.)  Notice
+how the blended color is different depending on which square is drawn first:
+<br><br>
+<applet code="week3d" archive="week3d.jar" width=100 height=100></applet>
+&nbsp;&nbsp;
+<applet code="week3e" archive="week3e.jar" width=100 height=100></applet>
+<pre>
+size(100,100);
+background(200,200,200);
+noStroke();
+//define colormode as RGB color with 0-255 range and 0-100 alpha range
+colorMode(RGB,255,255,255,100);
+//try doing these in opposite orders and look how the blend changes
+//draw rect 1
+fill(200,0,0,60);
+rect(0,0,75,75);
+//draw rect 2
+fill(0,0,200,40);
+rect(25,25,75,75);
+</pre>
+
+<h3>Rotation</h3>
+We can also rotate elements drawn to the screen.  However, we have to be aware of the
+"origin" point for rotation.  The origin point can be changed using the "Translate" command.
+What if we want to rotate a square around the center.  Examine the difference between these
+two programs:
+<table width = 100%>
+<tr>
+<td>
+<applet code="week3f" archive="week3f.jar" width=100 height=100></applet>
+<pre>
+float x = 0.0f;
+
+void setup() {
+  size(100,100);
+}
+
+void loop() {
+  background(100);
+  noStroke();
+  fill(255);
+  rectMode(CENTER_DIAMETER);
+  x += 0.01f;
+  rotate(x);
+  rect(width/2,height/2,50,50);
+}
+</pre>
+</td>
+<td>
+<applet code="week3g" archive="week3g.jar" width=100 height=100></applet>
+<pre>
+float x = 0.0f;
+
+void setup() {
+  size(100,100);
+}
+
+void loop() {
+  background(100);
+  noStroke();
+  fill(255);
+  rectMode(CENTER_DIAMETER);
+  x += 0.01f;
+  translate(width/2,height/2);
+  rotate(x);
+  rect(0,0,50,50);
+}
+</pre>
+</td>
+</tr>
+</table>
+
+For an example making use of simple rotation along with iteration, check out:<br>
+<a href="http://www.architecture.yale.edu/872a/processingExamples/turningSquares/index.html">
+http://www.architecture.yale.edu/872a/processingExamples/turningSquares/index.html</a>.
+<br><br>
+Note that the angle rotation is defined in radians, not degrees.
+Working in degrees, one full revolution is 360 degrees.  In radians,
+there are two pi(2 times pi) radians in one revolution.  So:
+<br><br>
+  360 degrees = 2 pi radians
+<br><br>
+i.e.
+<br><br>
+  1 degree = 2 pi/360 radians
+<br><br>
+  1 radian = 360/(2 pi)
+<br><br>
+To convert radians into degrees you should multiply by 180/pi.<Br>
+To convert degrees into radians you should multiply by pi/180.
+<br><br>
+<h3>Homework Assignment</h3>
+<li>Develop a simple idea for a static or animated screen drawing (it could be interactive.)</li>
+<li>Take your idea and duplicate it many times using a loop -- and possibly an array.</li>
+<li>Again, write out a brief summary of your idea (one or two sentences is ok.) as well
+the sequence of steps required to realize the idea. (your "pseudo-code")</li>.
+<li>In class example: <a href="inclass/index.html">click here</a>.</li>
+
+<br><br>
+<a href="../index.html">back to syllabus</a>
+</span>
+</body>
+</html>

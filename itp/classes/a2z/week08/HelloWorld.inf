@@ -1,0 +1,48 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!  Hello World
+!  HelloWorld.inf                       
+!  by Daniel Shiffman          
+!  Example for Programming from A to Z, Spring 2006
+
+!===============================================================================
+
+! Global variables and constants
+
+Constant Story "Hello World";
+Constant Headline
+            "^Inform Hello Word
+	     ^by Daniel Shiffman.^
+	     ^Programming from A to Z, Spring 2006^
+	     ^Special thanks to examples provided by Nick Monfort, Roger Firth, and Sonja Kesserich^";
+
+Include "Parser";
+Include "VerbLib";
+
+!===============================================================================
+! The game objects
+!
+
+Object  hello "Hello World"
+  with  description
+          "You're in the hello world room!",
+  has   light;
+  
+            
+!!===============================================================================
+! Routines
+
+[ Initialise; 
+    location = hello; 
+];
+
+!===============================================================================
+! Standard and extended grammar
+
+Include "Grammar";
+
+Verb meta 'about'    *     -> About;
+
+[ AboutSub;
+  print "Hello World!^";
+];
+
