@@ -15,16 +15,18 @@ layout: default
 {% endfor %}
 </div>
 
-<div class="pagination">
+<div class="pagination row">
+  <div class="col4 previous">
   {% if paginator.previous_page %}
-    <a href="/blog/{{ paginator.previous_page }}" class="previous">Previous</a>
-  {% else %}
-    <span class="previous"></span>
+    <a href="/blog/{{ paginator.previous_page }}">Previous</a>
   {% endif %}
-  <span class="page_number ">{{ paginator.page }}/{{ paginator.total_pages }}</span>
+  </div>
+  <div class="col4">
+    <span class="page_number ">{{ paginator.page }}/{{ paginator.total_pages }}</span>
+  </div>
+  <div class="col4 next">
   {% if paginator.next_page %}
-    <a href="/blog/{{ paginator.next_page }}" class="next">Next</a>
-  {% else %}
-    <span class="next "></span>
+    <a href="/blog/{{ paginator.next_page }}">Next</a>
   {% endif %}
+  </div>
 </div>

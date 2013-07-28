@@ -125,18 +125,11 @@ nav a {
   padding: 0.75em 0;
 }
 
-.pagination a {
-  width: 8em;
-  display: inline-block;
-}
-
 .pagination .previous {
-  float: left;
   text-align: left;
 }
 
 .pagination .next {
-  float: right;
   text-align: right;
 }
 
@@ -226,6 +219,13 @@ nav a {
  * Currently just 2 columns
  */
 .row {
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    line-height: 0;
+  }
+
   &:after {
     clear: both;
   }
@@ -240,6 +240,11 @@ nav a {
   // Two columns, but named to be able to be extended to 12.
   .col6 {
     width: 48.8%;
+  }
+
+  // Three Columns
+  .col4 {
+    width: 31.733333333%;
   }
 
   [class*="col"]:first-child {
