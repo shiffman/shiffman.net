@@ -30,7 +30,7 @@ void setup() {
   // Now when you make the animation object, you pass it the image array!
   a = new Animation(seq);  
 }
-</pre>
+{% endhighlight %}
 <p>The class then receives the array in the constructor and passes it to its own array.</p>
 {% highlight java %}
 class Animation {
@@ -40,7 +40,7 @@ class Animation {
   Animation(PImage[] images_) {
     images = images_;
   }
-</pre>
+{% endhighlight %}
 <p>This way (as you&#8217;ll see in the example) if we make an array of objects, each one uses the same array of images (which we loaded only once). Another feature of this improvement is that the Animation object is more generic, and can be created with any arbitrary array of images.</p>
 <p>The original example demonstrated how to have the sequences start at different images so that they didn&#8217;t all appear to be perfectly in sync.  However, the question I usually get is instead: &#8220;How can the sequences play back at variable speeds?&#8221;   </p>
 <p>The original example used an integer to keep track of the current &#8220;frame&#8221; of the animation.</p>
@@ -50,7 +50,7 @@ int index = 0;
 void next() {
   index = (index + 1) % images.length;
 }
-</pre>
+{% endhighlight %}
 <p>Here, you see that we move one spot in the array each frame, and the animation is then shown at the frame rate of our sketch.  So in theory, you could change the above to &#8220;index = index + 2&#8243; to, say, double the speed.   A more flexible way to vary the rate of the animation, however, is to use a float for the index in the array, i.e.</p>
 {% highlight java %}
 float index = 0;
@@ -66,14 +66,14 @@ void next() {
     index -= images.length;
   } 
 }
-</pre>
+{% endhighlight %}
 <p>Of course, you can&#8217;t actually use this float when you go to look up an image in the array &#8212; indices must be integers!  So we simply convert it to an int when the time comes to draw the image.</p>
 {% highlight java %}
 void display() {
   int imageIndex = int(index);
   image(images[imageIndex], x, y);
 }
-</pre>
+{% endhighlight %}
 <p>Here is the example.</p>
 <p><script type="application/processing">
 // An array of "Animation" objects

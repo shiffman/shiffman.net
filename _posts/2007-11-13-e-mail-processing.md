@@ -57,7 +57,7 @@ categories:
     // Close the session
     folder.close(false);
     store.close();
-</pre>
+{% endhighlight %}
 <p>and sending:</p>
 {% highlight java %}
   // Create a session
@@ -98,4 +98,4 @@ categories:
   {
     e.printStackTrace();
   }
-</pre>
+{% endhighlight %}

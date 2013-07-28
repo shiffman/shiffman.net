@@ -33,7 +33,7 @@ void someFunction() {
   // This function will run as a thread when called via
   // thread("someFunction") as it was in setup!
 }
-</pre>
+{% endhighlight %}
 <p>The thread() function receives a String as an argument. The String should match the name of the function you want to run as a thread.   While using the thread() function is a very simple way of getting an independent thread, it is somewhat limited. Being able to make a thread object is a great deal more powerful, and this can be done by extending java&#8217;s <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Thread.html">Thread</a> class.</p>
 <p>For more about how to do that, take a look at <a href="http://wiki.processing.org/w/Threading">the full tutorial</a>.</p>
 <p>Following is an example draws a loading bar in the &#8220;animation&#8221; thread that reports progress on another thread().  This is a nice demonstration, however, it would not be necessary in a sketch where you wanted to load data in the background and hide this from the user, allowing the draw() loop to simply continue.</p>

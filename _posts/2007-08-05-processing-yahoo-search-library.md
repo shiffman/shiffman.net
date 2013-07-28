@@ -70,6 +70,6 @@ void searchEvent(YahooSearch yahoo) {
   // import com.yahoo.search.WebSearchResults;
   // See Yahoo API documentation for more
 }
-</pre>
+{% endhighlight %}
 <p>There's also a fancier example (mostly uncommented, sorry) that produced the image at the top of this post <a href="http://www.shiffman.net/p5/pyahoo_files/names.zip">here</a>.  </p>
 <p>Thoughts?  Helpful?  Useful?  </p>

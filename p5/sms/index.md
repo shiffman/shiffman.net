@@ -23,7 +23,7 @@ public static int getSMSY();
 
 // Return just the Z
 public static int getSMSZ();
-</pre>
+{% endhighlight %}
 <p>Example code:</p>
 {% highlight java %}
 import sms.*;
@@ -36,7 +36,7 @@ void draw() {
   int[] vals = Unimotion.getSMSArray();
   println(vals[0] + " " + vals[1] + " " + vals[2]);
 }
-</pre>
+{% endhighlight %}
 <p><b>History of Motion</b></p>
 <li class="arrow">Written by Christian Klein</li>
 <li class="arrow">JNI Implementation of motion by Dave Chatting</li>

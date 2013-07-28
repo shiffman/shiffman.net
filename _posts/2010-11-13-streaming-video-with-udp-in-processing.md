@@ -38,14 +38,14 @@ tags:
   } catch (IOException e) {
     e.printStackTrace();
   }
-</pre>
+{% endhighlight %}
 <p>You might also notice that the above code includes a <a href="http://download.oracle.com/javase/tutorial/essential/exceptions/">try/catch</a> statement around the encoding of the JPG.  Certain &#8220;exceptions&#8221; (i.e. errors) in Java require special handling and try/catch is one way of fulfilling that requirement.  You&#8217;ll see in the example code that try/catch is also required for the UDP communication.  For more about exception handling in Processing check out: <a href="http://wiki.processing.org/w/Exceptions">http://wiki.processing.org/w/Exceptions</a>.</p>
 <p>Finally, you&#8217;ll also notice in the examples that you are required to specify the IP address you are sending to and the port, i.e.</p>
 {% highlight java %}
 int clientPort = 9100; 
 InetAddress client =  InetAddress.getByName("localhost"); 
 ds.send(new DatagramPacket(packet,packet.length,client,clientPort));
-</pre>
+{% endhighlight %}
 <p>The port can be anything (as long as it doesn&#8217;t conflict with a port you are using for something else).  Generally, 9000 and above is a safe bet.   The IP address should be the IP of the machine receiving the video stream.  For demonstration purposes, it&#8217;s simply &#8220;localhost&#8221;, i.e. we&#8217;re going to send and receive on the same machine.</p>
 <p>Finally, the checkForNewImage() function in the VideoReceiver example is blocking, meaning if no data is coming in Processing will stop and wait.  So really, it should exist in a separate thread.  Stay tuned for an updated threaded version as well as simple thread tutorial!</p>
 <p>Update: the thread example is in the download and more here: </p>

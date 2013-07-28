@@ -49,4 +49,4 @@ PImage depth;
   image(img,0,0,320,240);
   image(depth,320,0,320,240);
 }
-</pre>
+{% endhighlight %}

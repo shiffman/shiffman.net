@@ -21,5 +21,5 @@ tags:
 <p>UPDATE: Step 1a is to create OPENGL textures directly like so:</p>
 {% highlight java %}
 particleTex = TextureIO.newTexture(new File(dataPath("particle.png")), true);
-</pre>
+{% endhighlight %}
 <p>(Thanks to Jeff Gentes and Ben Hosken for chiming in)</p>

@@ -28,7 +28,7 @@ if (m.find()) {
 } else {
   System.out.println("No match!");   // No match!
 }
-</pre>
+{% endhighlight %}
 <p>Of course, in most cases, you want to do something more sophisticated where you iterate over many matches.</p>
 {% highlight java %}
 // Regex that matches double words
@@ -40,7 +40,7 @@ Matcher m = p.matcher(content);         // Create Matcher
 while (m.find()) {
   System.out.println(m.group());
 }
-</pre>
+{% endhighlight %}
 <p>Processing provides some regex helper functions that wrap all of this Java Pattern/Matcher stuff.  They are <a href="http://processing.org/reference/match_.html">match()</a> and <a href="http://processing.org/reference/matchAll_.html">matchAll()</a>.  </p>
 <p>The match() function is used to apply a regular expression to a piece of text, and return matching groups (elements found inside parentheses) as a String array. If there is no match, the function will return null. If no groups are specified in the regular expression, but the sequence matches, an array of length one (with the matched text as the first element of the array) will be returned. </p>
 <p>Here&#8217;s an example (this is straight from the reference page).</p>
@@ -50,7 +50,7 @@ String[] m = match(s, "<tag>(.*?)</tag>");
 println("Found '" + m[1] + "' inside the tag.");
 // Prints to the console:
 // "Found 'content' inside the tag."
-</pre>
+{% endhighlight %}
 <p>The matchAll() function is at first a bit confusing because it returns a two dimensional array.  But if you look right back to how match() works, it&#8217;s pretty simple.  match() assumes you want just one match, and gives you an array, a list of all the groups for that single match.  matchAll() assumes you want all the matches, so it gives you a bunch of those arrays, one for every match.   What&#8217;s an array of an array?  A two dimensional array!  The first dimension is the match itself, and the second dimension is the group for that match, i.e.</p>
 {% highlight java %}
 String s = "Some tags! <tag>one</tag> <tag>two</tag> <tag>three</tag>.";
@@ -62,7 +62,7 @@ for (int i = 0; i < m.length; i++) {
   // Print out group 1 for each match                
   println("Found '" + m[i][1] + "' inside a tag."); 
 }
-</pre>
+{% endhighlight %}
 <p>This new example uses a regex that matches anything inside an HTML href tag and draws it the screen.</p>
 <p><a href='http://www.shiffman.net/wp/wp-content/uploads/2011/12/Regex.zip'><img src="http://www.shiffman.net/wp/wp-content/uploads/2011/12/regex.png" alt="" title="regex" width="500" height="298" class="alignnone size-full wp-image-994" /></a></p>
 <p><a href='http://www.shiffman.net/wp/wp-content/uploads/2011/12/Regex.zip'>Regex.zip</a></p>

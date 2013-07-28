@@ -43,7 +43,7 @@ void draw() {
 public void mousePressed() {
   mm.finishMovie();
 }
-</pre>
+{% endhighlight %}
 <p>Available constants:<br />
 code: RAW, JPEG, CINEPAK, SORENSON, VIDEO<br />
 quality: LOW, MEDIUM, HIGH, BEST<br />

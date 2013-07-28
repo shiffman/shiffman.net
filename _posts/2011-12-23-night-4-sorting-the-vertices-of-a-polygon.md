@@ -20,7 +20,7 @@ tags:
 void mousePressed() {
   vertices.add(new PVector(mouseX,mouseY));
 }
-</pre>
+{% endhighlight %}
 <p>You could then draw that list as a polygon using beginShape() and endShape().</p>
 {% highlight java %}
 void draw() {
@@ -30,7 +30,7 @@ void draw() {
   } 
   endShape(CLOSE);
 }
-</pre>
+{% endhighlight %}
 <p>But depending on how the user set the vertices, you might end up with:</p>
 <p><img src="http://www.shiffman.net/wp/wp-content/uploads/2011/12/unsorted.png" alt="" title="unsorted" width="500" height="298" class="alignnone size-full wp-image-1006" /></p>
 <p>when what you really want is the following:</p>
@@ -42,14 +42,14 @@ void draw() {
     centroid.add(v);
   } 
   centroid.div(vertices.size());
-</pre>
+{% endhighlight %}
 <p>You can then make a vector that points from the center to each vertex and get its direction (using PVector&#8217;s heading2D() method).</p>
 {% highlight java %}
   for (PVector v : vertices) {
     PVector dir = PVector.sub(v, centroid);
     float a = dir.heading2D() + PI;
   }
-</pre>
+{% endhighlight %}
 <p>Note how we add PI to the angle.  The heading2D() function will return an angle between -PI and PI and it&#8217;ll be easier to sort if we just have an angle between 0 and TWO_PI.  One way to sort an ArrayList is called a <a href="http://en.wikipedia.org/wiki/Selection_sort">Selection Sort</a>.  In the example below, you&#8217;ll find a variation of the selection sort.   The code iterates through the ArrayList, finds the element with the highest angle, removes that element and sticks it at the end of a new ArrayList.  It does this again and again until the original ArrayList is empty.  The result is a new ArrayList in sorted order.</p>
 <p>Following is that example which implements all of the above into a class. If you are looking for an exercise, try allowing the user to move or delete existing vertices.   Also, how you would make a system of these polygons so that the user can draw more than one?</p>
 <p><script type="application/processing">

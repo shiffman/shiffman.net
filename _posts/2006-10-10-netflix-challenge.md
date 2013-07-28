@@ -22,7 +22,7 @@ Add the squares of all errors together = 3.25
 
 MSE = Sum of Squares divided by Total Guesses = 3.25 / 2 = 1.625
 
-RMSE = square root of MSE = sqrt(1.625) = 1.275</pre>
+RMSE = square root of MSE = sqrt(1.625) = 1.275{% endhighlight %}
 <p>Let&#8217;s take a simple algorithm to solve the problem: for any user rating any movie, predict a future rating as the global average rating for that movie.  This algorithm produces an RMSE of 1.05, not too shabby.  The RSME for Netflix&#8217;s Cinematch system (which presumably employs <a href="http://en.wikipedia.org/wiki/Collaborative_filtering">collaborative filtering</a> techniques) is around 0.95, a mere 10% improvement.   The problem is indeed a difficult one.   Netflix will award a one million dollar prize to anyone who can improve the system by an additional 10%.</p>
 <p>I submitted my first prediction file today, mostly as a test, nowhere near the <a href="http://www.netflixprize.com/leaderboard">leaderboard</a>, with the following algorithm:</p>
 <p>A customer C will rating a movie M based on the following function:</p>

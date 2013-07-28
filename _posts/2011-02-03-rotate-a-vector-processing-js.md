@@ -25,7 +25,7 @@ void rotate2D(PVector v, float theta) {
   v.x = m * cos(a);
   v.y = m * sin(a);
 }
-</pre>
+{% endhighlight %}
 <p>(Update thanks to Vilhelm&#8217;s comment below: You can also use a 2D rotation matrix!)</p>
 {% highlight java %}
 void rotate2D(PVector v, float theta) {
@@ -33,7 +33,7 @@ void rotate2D(PVector v, float theta) {
   v.x = v.x*cos(theta) - v.y*sin(theta);
   v.y = xTemp*sin(theta) + v.y*cos(theta);
 }
-</pre>
+{% endhighlight %}
 <p>Now, this is really just a ruse.  A big excuse for me to figure out how to get a Processing example in a wordpress post using processing.js!  I was able to do this fairly quickly with three quick steps:</p>
 <p>1) Download <a href="http://processingjs.org/download">processing.js 1.0</a>.<br />
 2) Install <a href="http://wordpress.org/extend/plugins/processingjs/">wordpress processing.js plug-in</a>.<br />
@@ -133,4 +133,4 @@ void drawVector(PVector v, float x, float y, float scayl) {
   line(len,0,len-arrowsize,-arrowsize/2);
   popMatrix();
 }
-</pre>
+{% endhighlight %}

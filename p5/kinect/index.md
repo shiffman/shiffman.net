@@ -51,17 +51,17 @@ etc.</p>
 {% highlight java %}
 import org.openkinect.*;
 import org.openkinect.processing.*;
-</pre>
+{% endhighlight %}
 <p>As well as a reference to a &#8220;Kinect&#8221; object, i.e.</p>
 {% highlight java %}
 // Kinect Library object
 Kinect kinect;
-</pre>
+{% endhighlight %}
 <p>Then in setup() you can initialize that kinect object:</p>
 {% highlight java %}
   kinect = new Kinect(this);
   kinect.start();
-</pre>
+{% endhighlight %}
 <p>Once you&#8217;ve done this you can begin to access data from the kinect sensor.</p>
 <p>Currently, the library makes data available to you in four ways: </p>
 <ol>
@@ -73,39 +73,39 @@ Kinect kinect;
 <p>Let&#8217;s look at these one at a time.  If you want to use the Kinect just like a regular old webcam, you can request that the RGB image is captured:</p>
 {% highlight java %}
   kinect.enableRGB(true);
-</pre>
+{% endhighlight %}
 <p>Then you simply ask for the image as a <a href="http://processing.org/reference/PImage.html">PImage!</a></p>
 {% highlight java %}
   PImage img = kinect.getVideoImage();
   image(img,0,0);
-</pre>
+{% endhighlight %}
 <p>Alternatively, you can enable the IR image:</p>
 {% highlight java %}
   kinect.enableIR(true);
-</pre>
+{% endhighlight %}
 <p>Currently, you cannot have both the RGB image and the IR image.  They are both passed back via getVideoImage() so whichever one was most recently enabled is the one you will get.</p>
 <p>Now, if you want the depth image, you can:</p>
 {% highlight java %}
   kinect.enableDepth(true);
-</pre>
+{% endhighlight %}
 <p>and request the grayscale image:</p>
 {% highlight java %}
   PImage img = kinect.getDepthImage();
   image(img,0,0);
-</pre>
+{% endhighlight %}
 <p>As well as the raw depth data:</p>
 {% highlight java %}
   int[] depth = kinect.getRawDepth();
-</pre>
+{% endhighlight %}
 <p>If you are looking at the raw depth data only, you can turn off the library&#8217;s behind the scenes depth image processing to make it slightly more efficient:</p>
 {% highlight java %}
   kinect.processDepthImage(false);
-</pre>
+{% endhighlight %}
 <p>Finally, you can also adjust the camera angle with the tilt() function, i.e.:</p>
 {% highlight java %}
 float deg = 15;
 kinect.tilt(deg);
-</pre>
+{% endhighlight %}
 <p>So, there you have it, here are all the useful functions you might need to use the Processing kinect library:</p>
 <ol>
 <li><b>enableRGB(boolean)</b> &#8212; turn on or off the RGB camera image</li>
@@ -134,7 +134,7 @@ Code: <a href="https://github.com/shiffman/libfreenect/tree/master/wrappers/java
 <p>The real work of this example, however, doesn&#8217;t come from me at all.  The raw depth values from the kinect are not directly proportional to physical depth.  Rather, they scale with the inverse of the depth according to this formula:</p>
 {% highlight java %}
 depthInMeters = 1.0 / (rawDepth * -0.0030711016 + 3.3309495161);
-</pre>
+{% endhighlight %}
 <p>Rather than do this calculation all the time, we can precompute all of these values in a lookup table since there are only 2048 depth values.</p>
 {% highlight java %}
 float[] depthLookUp = new float[2048];
@@ -148,7 +148,7 @@ float rawDepthToMeters(int depthValue) {
   }
   return 0.0f;
 }
-</pre>
+{% endhighlight %}
 <p>Thanks to <a href="http://graphics.stanford.edu/~mdfisher/Kinect.html">Matthew Fisher</a> for the above formula.  (Note: for the results to be more accurate, you would need to calibrate your specific kinect device, but the formula is close enough for me so I'm sticking with it for now.  More about calibration in a moment.)</p>
 <p>Finally, we can draw some points based on the depth values in meters:</p>
 {% highlight java %}
@@ -170,7 +170,7 @@ float rawDepthToMeters(int depthValue) {
       popMatrix();
     }
   }
- </pre>
+ {% endhighlight %}
 <h2>Average Point Tracking</h2>
 <p>The real magic of the kinect lies in its computer vision capabilities.  With depth information, you can do all sorts of fun things like say: "the background is anything beyond 5 feet.  Ignore it!"  Without depth, background removal involves all sorts of painstaking pixel comparisons.  As a quick demonstration of this idea, here is a very basic example that compute the average xy location of any pixels in front of a given depth threshold.</p>
 <p><iframe src="http://player.vimeo.com/video/18750684?title=0&amp;byline=0&amp;portrait=0&amp;color=ff9933" width="500" height="313" frameborder="0"></iframe></p>
@@ -180,7 +180,7 @@ float rawDepthToMeters(int depthValue) {
 float sumX = 0;
 float sumY = 0;
 float count = 0;
-</pre>
+{% endhighlight %}
 <p>Then, whenever we find a given point that complies with our threshold, we add the x and y to the sum:</p>
 {% highlight java %}
   if (rawDepth < threshold) {
@@ -188,7 +188,7 @@ float count = 0;
     sumY += y;
     count++;
   }
-</pre>
+{% endhighlight %}
 <p>When we're done, we calculate the average and draw a point!</p>
 {% highlight java %}
 if (count != 0) {
@@ -197,7 +197,7 @@ if (count != 0) {
   fill(255,0,0);
   ellipse(avgX,avgY,16,16);
 }
-</pre>
+{% endhighlight %}
 <h2>Why don&#8217;t the RGB images and depth values correspond properly?</h2>
 <p>Unfortunately, b/c the RGB camera and the IR camera are not physically located in the same spot, we have a stereo vision problem.  Pixel XY in one image is not the same XY in an image from a camera an inch to the right.  I&#8217;m hoping to stretch my brain to try to understand this better and work out some examples that calibrate the data in Processing.  Stay tuned!  </p>
 <p>If you are interested in more (and software that will do this very job!) check out Nicolas Burrus&#8217; amazing work:</p>

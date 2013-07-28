@@ -43,4 +43,4 @@ void mousePressed() {
   sftp.executeCommand("ls");
   sftp.executeCommand("get file.txt");
 }
-</pre>
+{% endhighlight %}

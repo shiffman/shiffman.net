@@ -29,7 +29,7 @@ tags:
 {% highlight java %}
 cd ~/wherever/you/want/to/put/it
 svn co https://code.ros.org/svn/opencv/trunk
-</pre>
+{% endhighlight %}
 <p><b>Step 2. Use the CMake GUI to create &#8220;make&#8221; files</b></p>
 <p>You can do all this with unix commands via terminal, but I found the Cmake Gui to be quite useful.  You can download it here:</p>
 <p><a href="http://www.cmake.org/cmake/resources/software.html">http://www.cmake.org/cmake/resources/software.html</a></p>

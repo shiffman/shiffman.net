@@ -42,5 +42,5 @@ void train(float[] vals, int desired) {
     weights[i] += weightChange * vals[i];         
   }
 }
-</pre>
+{% endhighlight %}
 <p>For related work, check out <a href="http://www.robotacid.com/PBeta/AILibrary/">Aaron Steed's site</a>.</p>

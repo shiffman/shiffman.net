@@ -20,18 +20,18 @@ tags:
 <p>First, you need to make sure you translate to the center of your window.</p>
 {% highlight java %}
   translate(width/2, height/2);
-</pre>
+{% endhighlight %}
 <p>Then you can use the <a href="http://processing.org/learning/basics/scale.html">scale()</a> function to scale the world according to a percentage (i.e. 2.0 is 200%, 0.5 is 50%).  We&#8217;ll use a variable called zoom.</p>
 {% highlight java %}
   float zoom = 1.5;  // 150%
   scale(zoom);
-</pre>
+{% endhighlight %}
 <p>Then we can translate additionally to pan according to some offset.</p>
 {% highlight java %}
   float offsetX = 100;  // Some arbitrary offset
   float offsetY = 0;
   translate(offsetX,offsetY);
-</pre>
+{% endhighlight %}
 <p>Here is an example (running in processing.js) that allows the user to pan around a design by dragging the mouse, and zoom in and out using key presses.</p>
 <p><script type="application/processing">
 // The scale of our world

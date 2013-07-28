@@ -33,15 +33,15 @@ class Face {
   
   // Assign a number to each face
   int id;
-</pre>
+{% endhighlight %}
 <p>Our main program then needs an ArrayList to keep track of the Face objects that currently exist:</p>
 {% highlight java %}
 ArrayList faceList;
-</pre>
+{% endhighlight %}
 <p>Finally, in draw(), OpenCV gives us an array of Rectangle objects, the faces it currently sees.</p>
 {% highlight java %}
   Rectangle[] faces = opencv.detect();
-</pre>
+{% endhighlight %}
 <p>It&#8217;s our job to match these with any Face objects we have in our ArrayList.  The way I see it, there are three scenarios.</p>
 <p>1) We have nothing in our Face ArrayList.  In this case, we add a new Face object for every single Rectangle in the faces array, i.e.</p>
 {% highlight java %}
@@ -50,7 +50,7 @@ ArrayList faceList;
     for (int i = 0; i < faces.length; i++) {
       faceList.add(new Face(faces[i].x,faces[i].y,faces[i].width,faces[i].height));
     }
-</pre>
+{% endhighlight %}
 <p>2) OpenCV found more faces than we currently have in our list.   In this case, we need to match our current Face objects with an OpenCV Rectangle and then add new Face objects for any remaining Rectangles.</p>
 {% highlight java %}
 } else if (faceList.size() < = faces.length) {
@@ -72,7 +72,7 @@ ArrayList faceList;
        used[index] = true;
        f.update(faces[index]);
     }
-</pre>
+{% endhighlight %}
 <p>Notice how in the above code boolean variables are used to keep track of which Rectangles have already been matched.  We don't want two Face objects to think they are the same face!</p>
 <p>3) Finally, the third scenario is that we have more Face objects than OpenCV has found.  In this case, we need to match our existing Face objects and then mark any leftover ones for deletion.</p>
 {% highlight java %}
@@ -100,5 +100,5 @@ ArrayList faceList;
        f.available = false;
        f.update(faces[i]);
     } 
-</pre>
+{% endhighlight %}
 <p>Full source is here: <a href="http://www.shiffman.net/p5/whichface.zip">whichface.zip</a></p>
