@@ -1,6 +1,6 @@
 ---
 title: Books
-layout: page
+layout: nobooks
 ---
 
 Daniel Shiffman is the author of two books.
