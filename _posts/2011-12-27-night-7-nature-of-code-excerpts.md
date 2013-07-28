@@ -20,7 +20,7 @@ tags:
 <p>This first example expands on the existing <a href="http://processing.org/learning/topics/tree.html">Recursive Tree</a> example that comes with Processing.</p>
 <p><strong>Chapter 8: Recursion and Fractals</strong></p>
 <p>The recursive tree fractal is a nice example of a scenario in which adding a little bit of randomness can make the tree look more natural.  Take a look outside and you’ll notice that branch lengths and angles vary from branch to branch, not to mention the fact that branches don’t all have exactly the same number of smaller branches.   First, let’s see what happens when we simply vary the angle and length.  This is a pretty easy one, given that we can just ask Processing for a random number each time we draw the tree.</p>
-<pre lang="java">
+{% highlight java %}
 void branch(float len) {	
   // Start by picking a random angle for each branch
   float theta = random(0,PI/3);  
@@ -41,7 +41,7 @@ void branch(float len) {
 }
 </pre>
 <p>In the above function, we always call branch() twice.  But why not pick a random number of branches and call branch() that number of times?</p>
-<pre lang="java">
+{% highlight java %}
 void branch(float len) {	
   
   line(0, 0, 0, -len);

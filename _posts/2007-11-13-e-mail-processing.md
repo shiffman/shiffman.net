@@ -17,7 +17,7 @@ categories:
 <p><a href="http://www.shiffman.net/p5/Email.zip">Download the example sketch.</a></p>
 <p>Code snippets after the jump. . .</p>
 <p><!--more--></p>
-<pre lang="java">
+{% highlight java %}
     Properties props = System.getProperties();
 
     props.put("mail.pop3.host", "pop.gmail.com");
@@ -59,7 +59,7 @@ categories:
     store.close();
 </pre>
 <p>and sending:</p>
-<pre lang="java">
+{% highlight java %}
   // Create a session
   String host="smtp.gmail.com";
   Properties props=new Properties();

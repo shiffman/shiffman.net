@@ -48,7 +48,7 @@ pvc_views:
 <h2>Java Answers the Phone</h2>
 <p>Once you have Asterisk running, you will need to create a &#8220;Dialplan.&#8221;  The Dialplan is controlled by a configuration file named &#8220;extensions.conf&#8221; and will control how incoming and outgoing calls are handled and routed.  You can read more about extensions.conf  at <a href="http://www.voip-info.org/tiki-index.php?page=Asterisk%20config%20extensions.conf">voip-info</a> or on <a href="http://itp.nyu.edu/~sve204/redial_fall07/week2.html">Shawn Van Every&#8217;s syllabus</a>.  For us, however, we only need to do one thing when a call is received: trigger a shell script which will in turn allow us to launch a Java process.   Here is the example extensions.conf that I am using:</p>
 <p>extensions.conf:</p>
-<pre lang="java">
+{% highlight java %}
 [dts204_default]
 exten => _X,1,Goto(s,1);
 exten => _X.,1,Goto(s,1);
@@ -57,13 +57,13 @@ exten => s,n,EAGI(/path/toyour/shellscript/runEAGI.sh);
 </pre>
 <p>The shell script itself launches the Java app:</p>
 <p>runEAGI.sh:</p>
-<pre lang="java">
+{% highlight java %}
 #!/bin/sh
 /usr/java/jdk1.5.0_10/bin/java -classpath /path/toyour/javaclass/ JEAGIClient $$
 </pre>
 <p>Incidentally, <a href="http://www.voip-info.org/wiki-Asterisk+AGI">EAGI</a> stands for &#8220;Enhanced Asterisk Gateway Interface&#8221;, which is what allows us to program for Asterisk in Java (the &#8220;E&#8221; is for controlling to the sound channel.)  </p>
 <p>So, just what does JEAGIClient.java do?   The JEAGIClient reads input from and writes output to Asterisk.  It can execute commands  (such as &#8220;Wait for Digit&#8221;) and listen to activity on the phone call (such as &#8220;The digit 1 was pressed.&#8221;).  It&#8217;s a pretty  simple application that has a <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/io/BufferedReader.html">BufferedReader</a> for input and an <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/io/OutputStream.html">OutputStream</a> for output.   Here is a snippet of code showing these elements declared and initialized.</p>
-<pre lang="java">
+{% highlight java %}
 public class JEAGIClient
 {
   // EAGI Streams
@@ -78,13 +78,13 @@ public class JEAGIClient
   }
 </pre>
 <p>We can now issue commands to asterisk.    The following will wait 10 seconds for the caller to press a digit.</p>
-<pre lang="java">
+{% highlight java %}
 // Get started waiting for digits
 String wait = "WAIT FOR DIGIT -1n";
 out.write(wait.getBytes());
 </pre>
 <p>We can also read the input:</p>
-<pre lang="java">
+{% highlight java %}
 String line = null;
 boolean loop = true;
 while ((line = bin.readLine()) != null &#038;&#038; loop) {
@@ -93,7 +93,7 @@ while ((line = bin.readLine()) != null &#038;&#038; loop) {
 }
 </pre>
 <p>The phone number of the caller will show up as &#8220;agi_callerid:##########&#8221; and when a digit is pressed, a message will arrive in the form &#8220;200 result=49&#8243; with 49 being the ASCII code for &#8220;1&#8243;.  The JEAGIClient can therefore extract this information using some simple <a href="http://www.shiffman.net/teaching/a2z/mining/#html">String parsing</a> techniques:</p>
-<pre lang="java">
+{% highlight java %}
 String agi_callerid = "agi_callerid:";
 int index = line.indexOf(agi_callerid);
 if (index > -1) {
@@ -103,7 +103,7 @@ if (index > -1) {
 <p><a name ="middle"></a></p>
 <h2>Simple Server in the Middle</h2>
 <p>Once the information is read from Asterisk, it needs to be passed to a server running locally (that Processing will also connect to).  This is done by building a simple Java Client class that can be included inside JEAGIClient.java.  The Client will run as its own thread and connect to localhost on an arbitrarily chosen port.</p>
-<pre lang="java">
+{% highlight java %}
 public class JEAGIClient
 {
   Client client;
@@ -114,7 +114,7 @@ public class JEAGIClient
   }
 </pre>
 <p>Later, when the phone number is parsed, the Client can send that number out to the server:</p>
-<pre lang="java">
+{% highlight java %}
 if (index > -1) {
   String id = line.substring(index + agi_callerid.length()+1,line.length());
   client.send(id);
@@ -123,7 +123,7 @@ if (index > -1) {
 <p>The Client itself just needs three objects: <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/net/Socket.html">Socket</a> (to make a socket connection to the Server), a <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/io/PrintWriter.html">PrintWriter</a> (to write out to the Server), and a <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/io/BufferedReader.html">BufferedReader</a> (to read in from the Server).</p>
 <p>Here is the full code for <a href="http://www.shiffman.net/itp/asterisk/JEAGIClient.java">JEAGIClient.java</a> and <a href="http://www.shiffman.net/itp/asterisk/Client.java">Client.java</a>.  </p>
 <p>The Server itself is also quite simple and requires a <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/net/ServerSocket.html">ServerSocket</a> (to listen for incoming connections).  Each connection is farmed out to another class, which manages reading and writing to that connection as its own thread and added to an ArrayList.  This is a very simple chat server.</p>
-<pre lang="java">
+{% highlight java %}
 ArrayList allConnections = new ArrayList();
 ServerSocket server = new ServerSocket(9001);
 while (true) {
@@ -139,7 +139,7 @@ while (true) {
 <p><a name ="processing"></a></p>
 <h2>Processing gets the Call</h2>
 <p>The quickest way to make sure everything is working is to just telnet to your server and make a call.  You&#8217;ll see that you will receive the callerID along with digits pressed, etc.  This is not automatic, this is how we set up JEAGIClient.java to broadcast the information (so you should feel free to design your own communication protocol).  Once you&#8217;ve confirmed all the pieces are working, you are ready to connect to the JEAGIServer (on the machine running Asterisk) via Processing using the <a href="http://processing.org/reference/libraries/net/">net library</a>.</p>
-<pre lang="java">
+{% highlight java %}
 import processing.net.*; 
 
 // Declare a client 
@@ -150,7 +150,7 @@ void setup() {
 } 
 </pre>
 <p>In draw(), you can check and see if any messages are available:</p>
-<pre lang="java">
+{% highlight java %}
 // If there is information available to read from the Server 
 if (client.available() > 0) { 
   String messageFromServer = client.readString();   // Read it as a String 
@@ -169,7 +169,7 @@ if (client.available() > 0) {
 </ul>
 <p>In other words, when we look up an object in our list of objects, we want to be able to find it via its unique phone number, not via its index in an array.  One solution would be to loop through the array and check each object&#8217;s phone number until we find a match, but this isn&#8217;t terribly efficient (although to be honest, with only a handful of callers, this really isn&#8217;t a big deal.)  </p>
 <p>It would be preferable to write code that resembles:</p>
-<pre lang="java">
+{% highlight java %}
 if (listOfCalls.contains("5558675309")) {
    Call call = listOfCalls.get("5558675309");
    call.issueCommand("5");
@@ -178,25 +178,25 @@ if (listOfCalls.contains("5558675309")) {
 <p>One data structure that will allow us to do this is a <a href="http://en.wikipedia.org/wiki/Hash_table">Hash Table</a>.  In Java, we&#8217;ll use the <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/HashMap.html">HashMap</a> class.   <a href="http://www.shiffman.net/teaching/a2z/bayesian/#hash">Here is a tutorial</a> I wrote up last year about Hash Tables.  Every object stored in a hash map must have both a key and a value.  The key is what we use to look up the object, and the value is the object itself.  We need the key to be unique and this is perfect since by definition every call has a unique key: the phone number itself!  So, when we receive a message from the server:</p>
 <p>&#8220;5558675309,newcall&#8221;  or &#8220;5558675309,5&#8243; or &#8220;5558675309,*&#8221; or &#8220;5558675309,hangup&#8221; </p>
 <p>We should first split the message into two String tokens:</p>
-<pre lang="java">
+{% highlight java %}
 String[] tokens = msg.trim().split(",");
 </pre>
 <p>We can then check and see if the phone number is already a key in the HashMap (making a new object if not):</p>
-<pre lang="java">
+{% highlight java %}
 if (!calls.containsKey(tokens[0])) {
   Call call = new Call(tokens[0],random(width),random(height));
   calls.put(call.id,call);
 } 
 </pre>
 <p>We can also issue a command via the digit that was pressed:</p>
-<pre lang="java">
+{% highlight java %}
 Call call = (Call) calls.get(tokens[0]);
 if (call != null) {
   call.command(tokens[1]);
 }
 </pre>
 <p>Or remove it if the caller hangs up:</p>
-<pre lang="java">
+{% highlight java %}
 if (tokens[1].equals("hangup")) {
   calls.remove(tokens[0]);
 } 

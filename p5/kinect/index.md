@@ -48,17 +48,17 @@ etc.</p>
 <p>At the moment, my library only works with Mac OS X (intel, 10.5 or 10.6 should both be ok).  Hopefully this will be remedied soon enough.  However, if you are interested in working with Kinect on windows, I recommend <a href="http://code.google.com/p/simple-openni/">SimpleOpenNI</a>.</p>
 <h2>What code do I write?</h2>
 <p>To get started using the library, you need to include the proper import statements at the top of your code:</p>
-<pre lang="java">
+{% highlight java %}
 import org.openkinect.*;
 import org.openkinect.processing.*;
 </pre>
 <p>As well as a reference to a &#8220;Kinect&#8221; object, i.e.</p>
-<pre lang="java">
+{% highlight java %}
 // Kinect Library object
 Kinect kinect;
 </pre>
 <p>Then in setup() you can initialize that kinect object:</p>
-<pre lang="java">
+{% highlight java %}
   kinect = new Kinect(this);
   kinect.start();
 </pre>
@@ -71,38 +71,38 @@ Kinect kinect;
 <li>Raw depth data (11 bit numbers  between 0 and 2048) as an int[] array</li>
 </ol>
 <p>Let&#8217;s look at these one at a time.  If you want to use the Kinect just like a regular old webcam, you can request that the RGB image is captured:</p>
-<pre lang="java">
+{% highlight java %}
   kinect.enableRGB(true);
 </pre>
 <p>Then you simply ask for the image as a <a href="http://processing.org/reference/PImage.html">PImage!</a></p>
-<pre lang="java">
+{% highlight java %}
   PImage img = kinect.getVideoImage();
   image(img,0,0);
 </pre>
 <p>Alternatively, you can enable the IR image:</p>
-<pre lang="java">
+{% highlight java %}
   kinect.enableIR(true);
 </pre>
 <p>Currently, you cannot have both the RGB image and the IR image.  They are both passed back via getVideoImage() so whichever one was most recently enabled is the one you will get.</p>
 <p>Now, if you want the depth image, you can:</p>
-<pre lang="java">
+{% highlight java %}
   kinect.enableDepth(true);
 </pre>
 <p>and request the grayscale image:</p>
-<pre lang="java">
+{% highlight java %}
   PImage img = kinect.getDepthImage();
   image(img,0,0);
 </pre>
 <p>As well as the raw depth data:</p>
-<pre lang="java">
+{% highlight java %}
   int[] depth = kinect.getRawDepth();
 </pre>
 <p>If you are looking at the raw depth data only, you can turn off the library&#8217;s behind the scenes depth image processing to make it slightly more efficient:</p>
-<pre lang="java">
+{% highlight java %}
   kinect.processDepthImage(false);
 </pre>
 <p>Finally, you can also adjust the camera angle with the tilt() function, i.e.:</p>
-<pre lang="java">
+{% highlight java %}
 float deg = 15;
 kinect.tilt(deg);
 </pre>
@@ -132,11 +132,11 @@ Code:<a href="https://github.com/shiffman/libfreenect/tree/master/wrappers/java/
 Code: <a href="https://github.com/shiffman/libfreenect/tree/master/wrappers/java/processing/distribution/openkinect/examples/PointCloud">PointCloud</a></p>
 <p>Here, we&#8217;re doing something a bit fancier.  Number one, we&#8217;re using the 3D capabilities of Processing to draw points in space.  You&#8217;ll want to familiarize yourself with <a href="http://processing.org/reference/translate_.html">translate()</a>, <a href="http://processing.org/reference/rotate_.html">rotate()</a>, <a href="http://processing.org/reference/pushMatrix_.html">pushMatrix()</a>, <a href="http://processing.org/reference/popMatrix_.html">popMatrix()</a>.  This <a href="http://processing.org/learning/transform2d/">tutorial</a> is also a good place to start.  In addition, the example uses a PVector to describe a point in 3D space.  More here: <a href="http://processing.org/learning/pvector/">PVector tutorial</a>.</p>
 <p>The real work of this example, however, doesn&#8217;t come from me at all.  The raw depth values from the kinect are not directly proportional to physical depth.  Rather, they scale with the inverse of the depth according to this formula:</p>
-<pre lang="java">
+{% highlight java %}
 depthInMeters = 1.0 / (rawDepth * -0.0030711016 + 3.3309495161);
 </pre>
 <p>Rather than do this calculation all the time, we can precompute all of these values in a lookup table since there are only 2048 depth values.</p>
-<pre lang="java">
+{% highlight java %}
 float[] depthLookUp = new float[2048];
 for (int i = 0; i < depthLookUp.length; i++) {
   depthLookUp[i] = rawDepthToMeters(i);
@@ -151,7 +151,7 @@ float rawDepthToMeters(int depthValue) {
 </pre>
 <p>Thanks to <a href="http://graphics.stanford.edu/~mdfisher/Kinect.html">Matthew Fisher</a> for the above formula.  (Note: for the results to be more accurate, you would need to calibrate your specific kinect device, but the formula is close enough for me so I'm sticking with it for now.  More about calibration in a moment.)</p>
 <p>Finally, we can draw some points based on the depth values in meters:</p>
-<pre lang="java">
+{% highlight java %}
   for(int x = 0; x < w; x += skip) {
     for(int y = 0; y < h; y += skip) {
       int offset = x+y*w;
@@ -176,13 +176,13 @@ float rawDepthToMeters(int depthValue) {
 <p><iframe src="http://player.vimeo.com/video/18750684?title=0&amp;byline=0&amp;portrait=0&amp;color=ff9933" width="500" height="313" frameborder="0"></iframe></p>
 <p>Source: <a href="https://github.com/shiffman/libfreenect/tree/master/wrappers/java/processing/distribution/openkinect/examples/AveragePointTracking">AveragePointTracking</a></p>
 <p>In this example, we declare two variables to add up all the appropriate x's and y's and one variable to keep track of how many there are.</p>
-<pre lang="java">
+{% highlight java %}
 float sumX = 0;
 float sumY = 0;
 float count = 0;
 </pre>
 <p>Then, whenever we find a given point that complies with our threshold, we add the x and y to the sum:</p>
-<pre lang="java">
+{% highlight java %}
   if (rawDepth < threshold) {
     sumX += x;
     sumY += y;
@@ -190,7 +190,7 @@ float count = 0;
   }
 </pre>
 <p>When we're done, we calculate the average and draw a point!</p>
-<pre lang="java">
+{% highlight java %}
 if (count != 0) {
   float avgX = sumX/count;
   float avgY = sumY/count;

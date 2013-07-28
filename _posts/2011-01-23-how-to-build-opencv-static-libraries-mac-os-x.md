@@ -26,7 +26,7 @@ tags:
 <p>You can download it from here:</p>
 <p>http://sourceforge.net/projects/opencvlibrary/</p>
 <p>or use the command line to get it via SVN:</p>
-<pre lang="java">
+{% highlight java %}
 cd ~/wherever/you/want/to/put/it
 svn co https://code.ros.org/svn/opencv/trunk
 </pre>

@@ -14,7 +14,7 @@ categories:
 <p>Netflix recently released 100 million movie rating records as part of a <a href="http://netflixprize.com">contest</a> to improve its movie recommendation system.  </p>
 <p><strong>The problem:</strong></p>
 <p>I know how I rated a whole bunch of movies.  I know how everyone else has rated a whole bunch of movies.   For any given movie that I have not yet rated (but others have), predict how I would rate it based on my and everyone else&#8217;s rating history.  Netflix uses the root mean squared error (RMSE) to evaluate results.  In other words, let&#8217;s guess that I would give the movie <a href="http://www.imdb.com/title/tt0087957/">Purple Rain</a> a rating of 5, when in reality, I would only rate it a 4.  And let&#8217;s also guess that I would rate <a href="http://www.imdb.com/title/tt0045152/">Singin&#8217; in the Rain</a> a 3.5 when my true rating is a 5.  Here&#8217;s how we would calculate the RMSE:</p>
-<pre lang="java">Purple Rain Prediction Error:  5 - 4 = 1
+{% highlight java %}Purple Rain Prediction Error:  5 - 4 = 1
 Singin' in the Rain Prediction Error: 3.5 - 5 = -1.5
 
 Squaring each error:  1*1 = 1, -1.5*-1.5 = 2.25

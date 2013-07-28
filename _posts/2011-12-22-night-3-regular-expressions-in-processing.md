@@ -18,7 +18,7 @@ tags:
 <li><a href="http://docs.oracle.com/javase/6/docs/api/java/util/regex/Matcher.html">Matcher</a> &#8212; an engine that performs match operations on a character sequence (or String) by interpreting a Pattern.</li>
 </ul>
 <p>An example of Pattern and Matcher in Java (which you can write directly into Processing) looks like the following:</p>
-<pre lang="java">
+{% highlight java %}
 String inputtext = "This is a test of regular expressions.";  // Input text
 String regex = "test";              // The regular expression to match
 Pattern p = Pattern.compile(regex); // Making a Pattern object with the regex 
@@ -30,7 +30,7 @@ if (m.find()) {
 }
 </pre>
 <p>Of course, in most cases, you want to do something more sophisticated where you iterate over many matches.</p>
-<pre lang="java">
+{% highlight java %}
 // Regex that matches double words
 // Ugh, look at all these double back slashes!!
 String regex = "\\b(\\w+)\\b\\W+\\1";   
@@ -44,7 +44,7 @@ while (m.find()) {
 <p>Processing provides some regex helper functions that wrap all of this Java Pattern/Matcher stuff.  They are <a href="http://processing.org/reference/match_.html">match()</a> and <a href="http://processing.org/reference/matchAll_.html">matchAll()</a>.  </p>
 <p>The match() function is used to apply a regular expression to a piece of text, and return matching groups (elements found inside parentheses) as a String array. If there is no match, the function will return null. If no groups are specified in the regular expression, but the sequence matches, an array of length one (with the matched text as the first element of the array) will be returned. </p>
 <p>Here&#8217;s an example (this is straight from the reference page).</p>
-<pre lang="java">
+{% highlight java %}
 String s = "Inside a tag, you will find <tag>content</tag>.";
 String[] m = match(s, "<tag>(.*?)</tag>");
 println("Found '" + m[1] + "' inside the tag.");
@@ -52,7 +52,7 @@ println("Found '" + m[1] + "' inside the tag.");
 // "Found 'content' inside the tag."
 </pre>
 <p>The matchAll() function is at first a bit confusing because it returns a two dimensional array.  But if you look right back to how match() works, it&#8217;s pretty simple.  match() assumes you want just one match, and gives you an array, a list of all the groups for that single match.  matchAll() assumes you want all the matches, so it gives you a bunch of those arrays, one for every match.   What&#8217;s an array of an array?  A two dimensional array!  The first dimension is the match itself, and the second dimension is the group for that match, i.e.</p>
-<pre lang="java">
+{% highlight java %}
 String s = "Some tags! <tag>one</tag> <tag>two</tag> <tag>three</tag>.";
 
 // Match this regular expression

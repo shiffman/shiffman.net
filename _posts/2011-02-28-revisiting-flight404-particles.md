@@ -19,7 +19,7 @@ tags:
 <p>Check out the <a href="https://github.com/shiffman/The-Nature-of-Code/tree/master/chp4_systems/flight404">source</a> or download <a href="https://github.com/shiffman/The-Nature-of-Code/blob/master/chp4_systems/flight404.zip?raw=true">flight404.zip</a>.</p>
 <p>Step 2 is to use the wonderful <a href="http://codeanticode.wordpress.com/">Andrés Colubri</a>&#8216;s <a href="http://glgraphics.sourceforge.net/">GLGraphics</a> library to optimize for performance.   Stay tuned.</p>
 <p>UPDATE: Step 1a is to create OPENGL textures directly like so:</p>
-<pre lang="java">
+{% highlight java %}
 particleTex = TextureIO.newTexture(new File(dataPath("particle.png")), true);
 </pre>
 <p>(Thanks to Jeff Gentes and Ben Hosken for chiming in)</p>

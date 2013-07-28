@@ -17,7 +17,7 @@ tags:
 <p>I have <a href="http://www.learningprocessing.com/exercises/chapter-15/exercise-15-5/">an example from Learning Processing</a> which demonstrates how to package a &#8220;pre-made&#8221; animation (i.e. sequence of images) into an object in Processing so that it can be duplicated many times on screen.   For tonight&#8217;s example, I&#8217;m going to make a new version that improves a few key points.</p>
 <p>First, in the original example the the image files are loaded in the class itself.  This is problematic.  Sure, if you make one object then you are loading files from the hard drive once.  However, if you make many objects, then you are loading the same images over and over again which is totally unnecessary (and can cause problems like using too much memory, stuttering if objects are made during draw(), taking too long to start up, etc.).</p>
 <p>We can fix this by loading an array of images in setup() and passing it to the object.</p>
-<pre lang="java">
+{% highlight java %}
 Animation a;
 
 void setup() {
@@ -32,7 +32,7 @@ void setup() {
 }
 </pre>
 <p>The class then receives the array in the constructor and passes it to its own array.</p>
-<pre lang="java">
+{% highlight java %}
 class Animation {
   // The array of images
   PImage[] images;
@@ -44,7 +44,7 @@ class Animation {
 <p>This way (as you&#8217;ll see in the example) if we make an array of objects, each one uses the same array of images (which we loaded only once). Another feature of this improvement is that the Animation object is more generic, and can be created with any arbitrary array of images.</p>
 <p>The original example demonstrated how to have the sequences start at different images so that they didn&#8217;t all appear to be perfectly in sync.  However, the question I usually get is instead: &#8220;How can the sequences play back at variable speeds?&#8221;   </p>
 <p>The original example used an integer to keep track of the current &#8220;frame&#8221; of the animation.</p>
-<pre lang="java">
+{% highlight java %}
 int index = 0;
 
 void next() {
@@ -52,7 +52,7 @@ void next() {
 }
 </pre>
 <p>Here, you see that we move one spot in the array each frame, and the animation is then shown at the frame rate of our sketch.  So in theory, you could change the above to &#8220;index = index + 2&#8243; to, say, double the speed.   A more flexible way to vary the rate of the animation, however, is to use a float for the index in the array, i.e.</p>
-<pre lang="java">
+{% highlight java %}
 float index = 0;
 float speed = random(1,5);
 
@@ -68,7 +68,7 @@ void next() {
 }
 </pre>
 <p>Of course, you can&#8217;t actually use this float when you go to look up an image in the array &#8212; indices must be integers!  So we simply convert it to an int when the time comes to draw the image.</p>
-<pre lang="java">
+{% highlight java %}
 void display() {
   int imageIndex = int(index);
   image(images[imageIndex], x, y);

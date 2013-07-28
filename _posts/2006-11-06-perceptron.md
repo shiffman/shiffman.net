@@ -21,7 +21,7 @@ categories:
 <p>In this example, the perceptron is trained via an array of known point objects (with known answers), and the resulting &#8220;guess&#8221; line is displayed in real-time.  I made the learning constant rather low so that one can see the slow progression of changing weights.  I&#8217;ve been spending some quality time with <a href="http://www.cs.unm.edu/~luger/index.html">Artifical Intelligence, by George Luger</a>.  It&#8217;s a wonderful book, and even better, it&#8217;s free for download online!</p>
 <p>All the code is in the link, but here&#8217;s a quick peek at the meat of the matter: a function inside the Perceptron class that adjusts weights according to 3 input values and their corresponding &#8220;known&#8221; output.  (Note if the perceptron&#8217;s guess output produces the desired result, the weights are not changed.)</p>
 <p>A more involved write-up will arrive online at some point. . . </p>
-<pre lang="java">
+{% highlight java %}
 // Function to train the Perceptron
 // Weights are adjusted based on "desired" answer
 void train(float[] vals, int desired) {

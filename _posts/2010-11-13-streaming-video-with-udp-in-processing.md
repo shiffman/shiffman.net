@@ -17,7 +17,7 @@ tags:
 <p>This example owes a ton to the <a href="http://ubaa.net/shared/processing/udp/">Processing UDP Library</a> by Stephane Cousot.  I&#8217;m using the Java <a href="http://download.oracle.com/javase/tutorial/networking/datagrams/index.html">DataGram</a> classes directly instead of the Processing library, but the code draws heavily on techniques from the UDP library.</p>
 <p>A couple quick notes about the code.  </p>
 <p>First, whenever sending data over a network, it&#8217;s generally a good idea to try to minimize the amount of data.  A 320&#215;240 image has 76,800 pixels, each pixel having 3 bytes (red, green, and blue).  That&#8217;s 230,400 bytes that need to be sent 30 times per second.  It&#8217;s do-able, but if we could compress the image first (encoding it as a JPG, for example) before sending, this will save a ton.   Encoding a JPG in Java is pretty easy since the <a href="http://download.oracle.com/javase/1.4.2/docs/api/javax/imageio/ImageIO.html">ImageIO</a> classes take care of that for you.  Assuming you have a PImage variable &#8220;img&#8221; the code looks something like:</p>
-<pre lang="java">
+{% highlight java %}
   // We need a buffered image to do the JPG encoding
   int w = img.width;
   int h = img.height;
@@ -41,7 +41,7 @@ tags:
 </pre>
 <p>You might also notice that the above code includes a <a href="http://download.oracle.com/javase/tutorial/essential/exceptions/">try/catch</a> statement around the encoding of the JPG.  Certain &#8220;exceptions&#8221; (i.e. errors) in Java require special handling and try/catch is one way of fulfilling that requirement.  You&#8217;ll see in the example code that try/catch is also required for the UDP communication.  For more about exception handling in Processing check out: <a href="http://wiki.processing.org/w/Exceptions">http://wiki.processing.org/w/Exceptions</a>.</p>
 <p>Finally, you&#8217;ll also notice in the examples that you are required to specify the IP address you are sending to and the port, i.e.</p>
-<pre lang="java">
+{% highlight java %}
 int clientPort = 9100; 
 InetAddress client =  InetAddress.getByName("localhost"); 
 ds.send(new DatagramPacket(packet,packet.length,client,clientPort));

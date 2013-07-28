@@ -10,7 +10,7 @@ categories:
   - General
 ---
 <p>The question of how to rotate a PVector object (the data of the vector itself, I&#8217;m not talking about rotating while drawing) came up in my <a href="http://www.shiffman.net/teaching/nature/">nature of code</a> course yesterday.   To do this, you&#8217;ll need to convert the vector to polar coordinates (radius + angle), adjust the angle, and the convert it back to cartesian to solve for the components (x and y).  A function would look something like:</p>
-<pre lang="java">
+{% highlight java %}
 // Rotate a vector in 2D
 void rotate2D(PVector v, float theta) {
   // What's the magnitude?
@@ -27,7 +27,7 @@ void rotate2D(PVector v, float theta) {
 }
 </pre>
 <p>(Update thanks to Vilhelm&#8217;s comment below: You can also use a 2D rotation matrix!)</p>
-<pre lang="java">
+{% highlight java %}
 void rotate2D(PVector v, float theta) {
   float xTemp = v.x;
   v.x = v.x*cos(theta) - v.y*sin(theta);
@@ -84,7 +84,7 @@ void drawVector(PVector v, float x, float y, float scayl) {
 }
 </script></p>
 <p>And now the source:</p>
-<pre lang="java">
+{% highlight java %}
 // Rotate2D function
 // Daniel Shiffman
 

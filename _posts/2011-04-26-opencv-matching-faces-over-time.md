@@ -16,7 +16,7 @@ tags:
 <p>One of the most common questions I get regarding blob tracking is &#8220;memory.&#8221;   How do I know which blob is which over time?  Computer vision libraries, for the most part, simply pass you a list of blobs (with x, y, width, and height properties) for any given moment in time.  But the blobs themselves represent only a snapshot of that particular moment and contain no information related to whether the blobs existed before this very moment.   This may seem absurd given that as human beings it&#8217;s so easy for us to watch a rectangle moving across a screen and understand conceptually that it is the same rectangle.  But without additional information (such as color matching, an AR marker, etc.) there&#8217;s no way for an algorithm that analyzes one frame of video to know anything about a previous frame.  And so we need to apply the same intuitions our brain uses (it was there a moment ago, it&#8217;s probably still there now) to our algorithms.  </p>
 <p>To illustrate one solution to this problem, I&#8217;ve created an example that tags an OpenCV face &#8220;rectangle&#8221; with an ID number and attempts to track that face over time, matching new faces that OpenCV finds with earlier ones.  This example is somewhat of an oversimplification whose purpose is to demonstrate a particular technique &#8212; a new face is the same as the previous one that was closest to it.  But there are certainly additional and more sophisticated ways that the match could be made.  In addition, it&#8217;s likely useful to add some interpolation to the face&#8217;s movement and size changes so that it appears less jittery.</p>
 <p>First, we need to establish our own Face class.  OpenCV just gives us a new array of Rectangle objects every frame so we need our own Face object that persists (in an ArrayList).</p>
-<pre lang="JAVA">
+{% highlight java %}
 class Face {
   
   // A Rectangle
@@ -35,16 +35,16 @@ class Face {
   int id;
 </pre>
 <p>Our main program then needs an ArrayList to keep track of the Face objects that currently exist:</p>
-<pre lang="JAVA">
+{% highlight java %}
 ArrayList faceList;
 </pre>
 <p>Finally, in draw(), OpenCV gives us an array of Rectangle objects, the faces it currently sees.</p>
-<pre lang="JAVA">
+{% highlight java %}
   Rectangle[] faces = opencv.detect();
 </pre>
 <p>It&#8217;s our job to match these with any Face objects we have in our ArrayList.  The way I see it, there are three scenarios.</p>
 <p>1) We have nothing in our Face ArrayList.  In this case, we add a new Face object for every single Rectangle in the faces array, i.e.</p>
-<pre lang="JAVA">
+{% highlight java %}
   if (faceList.isEmpty()) {
     // Just make a Face object for every face Rectangle
     for (int i = 0; i < faces.length; i++) {
@@ -52,7 +52,7 @@ ArrayList faceList;
     }
 </pre>
 <p>2) OpenCV found more faces than we currently have in our list.   In this case, we need to match our current Face objects with an OpenCV Rectangle and then add new Face objects for any remaining Rectangles.</p>
-<pre lang="JAVA">
+{% highlight java %}
 } else if (faceList.size() < = faces.length) {
     boolean[] used = new boolean[faces.length];
     // Match existing Face objects with a Rectangle
@@ -75,7 +75,7 @@ ArrayList faceList;
 </pre>
 <p>Notice how in the above code boolean variables are used to keep track of which Rectangles have already been matched.  We don't want two Face objects to think they are the same face!</p>
 <p>3) Finally, the third scenario is that we have more Face objects than OpenCV has found.  In this case, we need to match our existing Face objects and then mark any leftover ones for deletion.</p>
-<pre lang="JAVA">
+{% highlight java %}
   } else {
     // All Face objects start out as available
     for (Face f : faceList) {

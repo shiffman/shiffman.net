@@ -18,7 +18,7 @@ tags:
 <p>(This following is excerpted from the tutorial).</p>
 <p>You are likely familiar with the idea of writing a program that follows a specific sequence of steps &#8212; setup() first then draw() over and over and over again! A Thread is also a series of steps with a beginning, a middle, and an end. A Processing sketch is a single thread, often referred to as the &#8220;Animation&#8221; thread. Other threads sequences, however, can run independently of the main &#8220;Processing&#8221; sketch. In fact, you can launch any number of threads at one time and they will all run concurrently.</p>
 <p>Processing does this all the time, whenever you write an event callback, such as serialEvent(), or captureEvent(), etc. these functions are triggered by a different thread running behind the scenes, and they alert Processing whenever they have something to report. This is useful whenever you need to perform a task that takes too long and would slow down the main animation&#8217;s frame rate, such as grabbing data from the network (XML, database, etc.) If a separate thread gets stuck or has an error, the entire program won&#8217;t grind to a halt, since the error only stops that individual thread. To create independent, asynchronous threads, you can use the thread() function built into Processing.</p>
-<pre lang="java">
+{% highlight java %}
 void setup() {
   size(200,200);
   // This will tell someFunction() to execute now as a separate thread

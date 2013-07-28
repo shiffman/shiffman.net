@@ -24,7 +24,7 @@ UPDATE (12/18/10): New version of the library can be downloaded from github:</p>
 <p>Video in action here:</p>
 <p><iframe src="http://player.vimeo.com/video/16832724?title=0&amp;byline=0&amp;portrait=0&amp;color=ff9933" width="501" height="282" frameborder="0"></iframe></p>
 <p>Processing code looks like:</p>
-<pre lang="java">
+{% highlight java %}
 
 import shiffman.kinect.*;
 

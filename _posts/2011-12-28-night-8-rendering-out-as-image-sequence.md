@@ -42,7 +42,7 @@ void keyPressed() {
 {% endhighlight %}
 
 <p>In addition, if you draw anything after saveFrame() it won&#8217;t actually appear in the output, but will be seen on screen.  This is useful for debugging information that you don&#8217;t want included in the render.</p>
-<pre lang="java">
+{% highlight java %}
 void draw() {
  
   // Draw lots of stuff to be recorded!

@@ -22,7 +22,7 @@ categories:
 <p>&nbsp;<br />
 E-mail me bug reports, questions, comments, etc.!</p>
 <p>Example code:</p>
-<pre lang="java">
+{% highlight java %}
 import moviemaker.*;
 
 MovieMaker mm;

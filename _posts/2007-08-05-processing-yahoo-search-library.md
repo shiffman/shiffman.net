@@ -25,7 +25,7 @@ categories:
 <li class="arrow"><a href="http://developer.yahoo.com">Go and get a developer ID</a></li>
 <li class="arrow"><a href="http://developer.yahoo.com/download">Download the Yahoo! Search SDK</a>  Find the file: yahoo_search-2.X.X.jar and put it in the library folder (along with the above download).</li>
 <p>Finally, take a peek at this example code. </p>
-<pre lang="java">
+{% highlight java %}
 // Import the library
 import pyahoo.*;
 

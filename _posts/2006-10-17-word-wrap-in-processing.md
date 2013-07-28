@@ -13,7 +13,7 @@ categories:
   - teaching_
 ---
 <p>I&#8217;ve been meaning to add something to <a href="http://www.processinghacks.com/">processing hacks</a> for quite some time now.   This morning, I needed a basic function to wrap text in Processing so came up with <a href="http://www.processinghacks.com/hacks/wordwrap">this snippet</a>.</p>
-<pre lang="java">
+{% highlight java %}
 // Function to return an ArrayList of Strings
 // (maybe redo to just make simple array?)
 // Arguments: String to be wrapped, maximum width in pixels of line

@@ -11,7 +11,7 @@ pvc_views:
 <p>Thanks to the open source <a href="http://members.optusnet.com.au/lbramsay/programs/unimotion.html">Unimotion</a> library by <a href="http://members.optusnet.com.au/a1291762/">Lincoln Ramsay</a>, I have developed a java native interface that allows access to the <a href="http://docs.info.apple.com/article.html?artnum=300781">Apple Sudden Motion Sensor</a> available in powerbooks (and macbooks) since 2005.</p>
 <p>Download the library <a href="http://www.shiffman.net/p5/libraries/sms/sms.zip">sms.zip</a>.  Source code for unimotion.c and Unimotion.java is contained in the src directory.</p>
 <p>Available functions:</p>
-<pre lang="java">
+{% highlight java %}
 // Return x, y, and z values as array
 public static int[] getSMSArray();
     
@@ -25,7 +25,7 @@ public static int getSMSY();
 public static int getSMSZ();
 </pre>
 <p>Example code:</p>
-<pre lang="java">
+{% highlight java %}
 import sms.*;
 
 void setup() {

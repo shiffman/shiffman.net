@@ -16,13 +16,13 @@ tags:
 ---
 <p>The following problem came up in my ICM course this year.  A student was working on a sketch that involved tiling polygons arbitrarily drawn by a user.  Allowing a user to set the vertices of a polygon should be easy enough, right?  But what if the user does not happen to draw them in a nice clock-wise (or counter clock-wise) order?</p>
 <p>Imagine for a moment, you have an ArrayList of PVectors called &#8220;vertices.&#8221;  When the user clicks, the mouse you could add that mouse location to that ArrayList.</p>
-<pre lang="java">
+{% highlight java %}
 void mousePressed() {
   vertices.add(new PVector(mouseX,mouseY));
 }
 </pre>
 <p>You could then draw that list as a polygon using beginShape() and endShape().</p>
-<pre lang="java">
+{% highlight java %}
 void draw() {
   beginShape();
   for (PVector v : vertices) {
@@ -36,7 +36,7 @@ void draw() {
 <p>when what you really want is the following:</p>
 <p><img src="http://www.shiffman.net/wp/wp-content/uploads/2011/12/sorted.png" alt="" title="sorted" width="500" height="298" class="alignnone size-full wp-image-1007" /></p>
 <p>One solution for solving this problem is to always sort all of the vertices according to their relative angle from the center.  Let&#8217;s say you calculate the center of the polygon as the average location of all vertices.</p>
-<pre lang="java">
+{% highlight java %}
   PVector centroid = new PVector();
   for (PVector v : vertices) {
     centroid.add(v);
@@ -44,7 +44,7 @@ void draw() {
   centroid.div(vertices.size());
 </pre>
 <p>You can then make a vector that points from the center to each vertex and get its direction (using PVector&#8217;s heading2D() method).</p>
-<pre lang="java">
+{% highlight java %}
   for (PVector v : vertices) {
     PVector dir = PVector.sub(v, centroid);
     float a = dir.heading2D() + PI;

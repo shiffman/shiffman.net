@@ -18,16 +18,16 @@ tags:
 ---
 <p>This came up in my course &#8220;Introduction to Computational Media&#8221; this year.  How does one pan and/or zoom in a 2D Processing world?  We could certainly introduce P3D into the mix, but there is a nice, elegant way we can create the effect of panning and zooming and still live in 2D.  Here&#8217;s how it works.</p>
 <p>First, you need to make sure you translate to the center of your window.</p>
-<pre lang="java">
+{% highlight java %}
   translate(width/2, height/2);
 </pre>
 <p>Then you can use the <a href="http://processing.org/learning/basics/scale.html">scale()</a> function to scale the world according to a percentage (i.e. 2.0 is 200%, 0.5 is 50%).  We&#8217;ll use a variable called zoom.</p>
-<pre lang="java">
+{% highlight java %}
   float zoom = 1.5;  // 150%
   scale(zoom);
 </pre>
 <p>Then we can translate additionally to pan according to some offset.</p>
-<pre lang="java">
+{% highlight java %}
   float offsetX = 100;  // Some arbitrary offset
   float offsetY = 0;
   translate(offsetX,offsetY);
