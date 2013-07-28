@@ -11,9 +11,9 @@ layout: front
   </div>
 
   <div class="col6">
-    <h2>Libraries</h2>
+    <h2>Open Source Projects</h2>
 
-    {% include libraries.html %}
+    {% include opensource.html %}
 
   </div>
 </div>
