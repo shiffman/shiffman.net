@@ -28,7 +28,7 @@ What can computation add to human communication? Creating computer applications,
 
 - [2013 Syllabus](https://github.com/ITPNYU/ICM-2013/blob/master/Syllabus-2013.md)
 - [Class github](https://github.com/ITPNYU/ICM-2013/)
-- [Video Lessons](https://vimeo.com/channels/natureofcode)
+- [Video Lessons](https://vimeo.com/channels/introcompmedia)
 - [Learning Processing book](http://www.amazon.com/gp/product/0123736021/ref=as_li_ss_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=0123736021&linkCode=as2&tag=shiffman-20)
 - [Learning Processing examples](http://github.com/shiffman/LearningProcessing)
 - [Old class syllabi](itp.nyu.edu/icm)
