@@ -42,33 +42,33 @@ void rotate2D(PVector v, float theta) {
 2) Install <a href="http://wordpress.org/extend/plugins/processingjs/">wordpress processing.js plug-in</a>.<br />
 3) Update the plug-in to use processing.js 1.0 (it hasn&#8217;t been yet).  <a href="http://wordpress.org/support/topic/plugin-processing-js-updating-to-processingjs-10">Follow these instructions</a>.</p>
 <p>And here it is!</p>
-<p><script type="application/processing">
+<p><script type="application/processing" data-processing-target="processing-canvas">
 // Rotate2D function
 // Daniel Shiffman</p>
-<p>void setup() {
+void setup() {
   size(200,200);
   smooth();
-}</p>
-<p>void draw() {
+}
+void draw() {
   background(100);
   PVector xaxis = new PVector(75,0);
   float theta = map(mouseX,0,width,0,TWO_PI);
   rotate2D(xaxis,theta);
   drawVector(xaxis,width/2,height/2,1.0);
-}</p>
-<p>// Rotate a vector in 2D
+}
+// Rotate a vector in 2D
 void rotate2D(PVector v, float theta) {
   // What's the magnitude?
   float m = v.mag();
   // What's the angle?
-  float a = v.heading2D();</p>
-<p>  // Change the angle
-  a += theta;</p>
-<p>  // Now use polar to cartesian coordinates to calculate the new xy components
+  float a = v.heading2D();
+  // Change the angle
+  a += theta;
+  // Now use polar to cartesian coordinates to calculate the new xy components
   v.x = m * cos(a);
   v.y = m * sin(a);
-}</p>
-<p>// Renders a vector object 'v' as an arrow and a location 'loc'
+}
+// Renders a vector object 'v' as an arrow and a location 'loc'
 void drawVector(PVector v, float x, float y, float scayl) {
   pushMatrix();
   float arrowsize = 4;
@@ -85,7 +85,10 @@ void drawVector(PVector v, float x, float y, float scayl) {
   line(len,0,len-arrowsize,-arrowsize/2);
   popMatrix();
 }
-</script></p>
+</script>
+<canvas id="processing-canvas"> </canvas>
+
+</p>
 <p>And now the source:</p>
 {% highlight java %}
 // Rotate2D function
