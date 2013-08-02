@@ -19,23 +19,23 @@ pvc_views:
 import qrcodeprocessing.*;
 </pre>
 <p>Create and initialize a decoder object:</p>
-<pre lang="java">
+{% highlight java %}
 Decoder decoder;
 
 void setup() {
   decoder = new Decoder(this);
 }
-</pre>
+{% endhighlight %}
 <p>You can ask the Decoder object to decode any image:</p>
-<pre lang="java">
+{% highlight java %}
 PImage img = loadImage("qrcode.jpg");
 decoder.decodeImage(img);
-</pre>
+{% endhighlight %}
 <p>It runs in a separate thread and whenever it is finished, an event is triggered via the decoderEvent() method:</p>
-<pre lang="java">
+{% highlight java %}
 void decoderEvent(Decoder decoder) {
   String statusMsg = decoder.getDecodedString(); 
   println(statusMsg);
 }
-</pre>
+{% endhighlight %}
 <p>Ok, have fun!!</p>
