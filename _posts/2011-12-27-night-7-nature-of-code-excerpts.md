@@ -20,6 +20,7 @@ tags:
 <p>This first example expands on the existing <a href="http://processing.org/learning/topics/tree.html">Recursive Tree</a> example that comes with Processing.</p>
 <p><strong>Chapter 8: Recursion and Fractals</strong></p>
 <p>The recursive tree fractal is a nice example of a scenario in which adding a little bit of randomness can make the tree look more natural.  Take a look outside and you’ll notice that branch lengths and angles vary from branch to branch, not to mention the fact that branches don’t all have exactly the same number of smaller branches.   First, let’s see what happens when we simply vary the angle and length.  This is a pretty easy one, given that we can just ask Processing for a random number each time we draw the tree.</p>
+
 {% highlight java %}
 void branch(float len) {	
   // Start by picking a random angle for each branch
@@ -40,7 +41,9 @@ void branch(float len) {
   }
 }
 {% endhighlight %}
+
 <p>In the above function, we always call branch() twice.  But why not pick a random number of branches and call branch() that number of times?</p>
+
 {% highlight java %}
 void branch(float len) {	
   
@@ -63,6 +66,7 @@ void branch(float len) {
   }
 }
 {% endhighlight %}
+
 <p>The example below takes the above a few steps further.  It uses Perlin noise to generate the angles, as well as animate them.  In addition, it draws each branch with a thickness according to its level and sometimes shrinks a branch by a factor of two to vary where the levels begin.</p>
 <p><a href='http://shiffman.net/wp/wp-content/uploads/2011/12/TreeStochasticNoise.zip'><img src="http://shiffman.net/wp/wp-content/uploads/2011/12/tree1.png" alt="" title="tree" width="580" height="347" class="alignnone size-full wp-image-1058" /></a></p>
 <p><a href='http://shiffman.net/wp/wp-content/uploads/2011/12/TreeStochasticNoise.zip'>TreeStochasticNoise.zip</a></p>

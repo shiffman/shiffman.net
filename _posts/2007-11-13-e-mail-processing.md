@@ -17,6 +17,7 @@ categories:
 <p><a href="http://shiffman.net/p5/Email.zip">Download the example sketch.</a></p>
 <p>Code snippets after the jump. . .</p>
 <p><!--more--></p>
+
 {% highlight java %}
     Properties props = System.getProperties();
 

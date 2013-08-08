@@ -22,6 +22,7 @@ categories:
 <p>&nbsp;<br />
 E-mail me bug reports, questions, comments, etc.!</p>
 <p>Example code:</p>
+
 {% highlight java %}
 import moviemaker.*;
 
@@ -44,6 +45,7 @@ public void mousePressed() {
   mm.finishMovie();
 }
 {% endhighlight %}
+
 <p>Available constants:<br />
 code: RAW, JPEG, CINEPAK, SORENSON, VIDEO<br />
 quality: LOW, MEDIUM, HIGH, BEST<br />

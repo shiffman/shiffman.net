@@ -17,6 +17,7 @@ tags:
 <p>This example owes a ton to the <a href="http://ubaa.net/shared/processing/udp/">Processing UDP Library</a> by Stephane Cousot.  I&#8217;m using the Java <a href="http://download.oracle.com/javase/tutorial/networking/datagrams/index.html">DataGram</a> classes directly instead of the Processing library, but the code draws heavily on techniques from the UDP library.</p>
 <p>A couple quick notes about the code.  </p>
 <p>First, whenever sending data over a network, it&#8217;s generally a good idea to try to minimize the amount of data.  A 320&#215;240 image has 76,800 pixels, each pixel having 3 bytes (red, green, and blue).  That&#8217;s 230,400 bytes that need to be sent 30 times per second.  It&#8217;s do-able, but if we could compress the image first (encoding it as a JPG, for example) before sending, this will save a ton.   Encoding a JPG in Java is pretty easy since the <a href="http://download.oracle.com/javase/1.4.2/docs/api/javax/imageio/ImageIO.html">ImageIO</a> classes take care of that for you.  Assuming you have a PImage variable &#8220;img&#8221; the code looks something like:</p>
+
 {% highlight java %}
   // We need a buffered image to do the JPG encoding
   int w = img.width;

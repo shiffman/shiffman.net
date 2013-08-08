@@ -16,12 +16,15 @@ tags:
 ---
 <p>The following problem came up in my ICM course this year.  A student was working on a sketch that involved tiling polygons arbitrarily drawn by a user.  Allowing a user to set the vertices of a polygon should be easy enough, right?  But what if the user does not happen to draw them in a nice clock-wise (or counter clock-wise) order?</p>
 <p>Imagine for a moment, you have an ArrayList of PVectors called &#8220;vertices.&#8221;  When the user clicks, the mouse you could add that mouse location to that ArrayList.</p>
+
 {% highlight java %}
 void mousePressed() {
   vertices.add(new PVector(mouseX,mouseY));
 }
 {% endhighlight %}
+
 <p>You could then draw that list as a polygon using beginShape() and endShape().</p>
+
 {% highlight java %}
 void draw() {
   beginShape();
@@ -31,11 +34,13 @@ void draw() {
   endShape(CLOSE);
 }
 {% endhighlight %}
+
 <p>But depending on how the user set the vertices, you might end up with:</p>
 <p><img src="http://shiffman.net/wp/wp-content/uploads/2011/12/unsorted.png" alt="" title="unsorted" width="500" height="298" class="alignnone size-full wp-image-1006" /></p>
 <p>when what you really want is the following:</p>
 <p><img src="http://shiffman.net/wp/wp-content/uploads/2011/12/sorted.png" alt="" title="sorted" width="500" height="298" class="alignnone size-full wp-image-1007" /></p>
 <p>One solution for solving this problem is to always sort all of the vertices according to their relative angle from the center.  Let&#8217;s say you calculate the center of the polygon as the average location of all vertices.</p>
+
 {% highlight java %}
   PVector centroid = new PVector();
   for (PVector v : vertices) {
@@ -43,15 +48,19 @@ void draw() {
   } 
   centroid.div(vertices.size());
 {% endhighlight %}
+
 <p>You can then make a vector that points from the center to each vertex and get its direction (using PVector&#8217;s heading2D() method).</p>
+
 {% highlight java %}
   for (PVector v : vertices) {
     PVector dir = PVector.sub(v, centroid);
     float a = dir.heading2D() + PI;
   }
 {% endhighlight %}
+
 <p>Note how we add PI to the angle.  The heading2D() function will return an angle between -PI and PI and it&#8217;ll be easier to sort if we just have an angle between 0 and TWO_PI.  One way to sort an ArrayList is called a <a href="http://en.wikipedia.org/wiki/Selection_sort">Selection Sort</a>.  In the example below, you&#8217;ll find a variation of the selection sort.   The code iterates through the ArrayList, finds the element with the highest angle, removes that element and sticks it at the end of a new ArrayList.  It does this again and again until the original ArrayList is empty.  The result is a new ArrayList in sorted order.</p>
 <p>Following is that example which implements all of the above into a class. If you are looking for an exercise, try allowing the user to move or delete existing vertices.   Also, how you would make a system of these polygons so that the user can draw more than one?</p>
+
 <p><script type="application/processing">
 // Daniel Shiffman
 // Hanukkah 2011
