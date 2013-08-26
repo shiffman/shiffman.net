@@ -1,0 +1,49 @@
+import processing.core.*; import java.applet.*; import java.awt.*; import java.awt.image.*; import java.awt.event.*; import java.io.*; import java.net.*; import java.text.*; import java.util.*; import java.util.zip.*; public class simpleVector3D extends PApplet {// Simple Vector3D
+// Daniel Shiffman <http://www.shiffman.net>
+
+// A Vector3D object is generated based 
+// mouse location relative to window's center
+
+// Created 2 May 2005
+
+public void setup() {
+  size(200,200);
+  framerate(30);
+  smooth();}
+
+public void draw() {
+  background(100);
+  
+  // A "vector" (really a point) to store the mouse location and screen center location
+  Vector3D mouseLoc = new Vector3D(mouseX,mouseY);
+  Vector3D centerLoc = new Vector3D(width/2,height/2);  
+  
+  // Aha, a vector to store the displacement between the mouse and center
+  Vector3D v = Vector3D.sub(mouseLoc,centerLoc);
+  
+  // Render the vector
+  drawVector(v,centerLoc,1.0f);
+
+}
+
+// Renders a vector object 'v' as an arrow and a location 'loc'
+public void drawVector(Vector3D v, Vector3D loc, float scayl) {
+  pushMatrix();
+  float arrowsize = 4;
+  // Translate to location to render vector
+  translate(loc.x,loc.y);
+  stroke(255);
+  // Call vector heading function to get direction (note that pointing up is a heading of 0) and rotate
+  rotate(v.heading2D());
+  // Calculate length of vector & scale it to be bigger or smaller if necessary
+  float len = v.magnitude()*scayl;
+  // Draw three lines to make an arrow (draw pointing up since we've rotate to the proper direction)
+  line(0,0,len,0);
+  line(len,0,len-arrowsize,+arrowsize/2);
+  line(len,0,len-arrowsize,-arrowsize/2);
+  popMatrix();
+}
+
+
+
+static public void main(String args[]) {   PApplet.main(new String[] { "simpleVector3D" });}}

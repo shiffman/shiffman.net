@@ -1,0 +1,67 @@
+import processing.core.*; import java.applet.*; import java.awt.*; import java.awt.image.*; import java.awt.event.*; import java.io.*; import java.net.*; import java.text.*; import java.util.*; import java.util.zip.*; public class noisewave extends PApplet {Wave w;
+
+public void setup() {
+  size(640,200);
+  colorMode(RGB,255,255,255,100);
+  w = new Wave(75,16,width,300);
+}
+
+public void draw() {
+  background(0);
+  w.calcWave();
+  translate(0,height/2);  /*hmmm, maybe this should be taken care of in the wave class itself
+                            how do we deal with the relative positioning of a wave?*/
+  w.render();
+}
+
+
+
+class Wave {
+  int xspacing;   //how far should each x point be spaced
+  int w;          //width of entire wave
+  
+  float yoff;      //2nd dimension will be "time"
+  float amplitude;//height
+  float period;   //we don't repeat here, but still tells us about the character of the wave-like structure
+  float dx;       //calculated based on period
+  float[] yvalues;//using an array to store height values for the wave
+
+  //**CONSTRUCTOR INITIALIZES ALL INSTANCE VARIABLES**/
+  Wave(float a, int xspace, int w_, float p_) {
+    amplitude = a;
+    xspacing = xspace;
+    w = w_;
+    period = p_;
+    dx = (1.0f / period) * xspacing;
+    yvalues = new float[w/xspacing];    //note declaring the array here forces us to have fixed size wave
+                                        //we would need to redeclare it if we ever change those values
+  }
+
+  void calcWave() {
+    //increment time by 0.01 (this should be made into an instance variable);
+    yoff += 0.01f;
+    
+    //For every x value, calculate a y value based on sine or cosine
+    float x = yoff;   //**OPTION #1****/
+    //float x = 0.0f;   //**OPTION #2****/
+    for (int i = 0; i < yvalues.length; i++) {
+      float n = 2*noise(x)-1.0f;       //**OPTION #1****/  //scale noise to be between 1 and -1
+      //float n = 2*noise(x,yoff)-1.0f;  //**OPTION #2****/  //scale noise to be between 1 and -1
+      yvalues[i] = n*amplitude;
+      x+=dx;
+    }
+  }
+
+  void render() {
+    //a simple way to draw the wave with an ellipse at each location
+    //this could be improved in so many ways
+    smooth();
+    for (int x = 0; x < yvalues.length; x++) {
+      noStroke();
+      fill(0,0,255,100);
+      ellipseMode(CENTER);
+      ellipse(x*xspacing,yvalues[x],16,16);
+    }
+  }
+}
+}
