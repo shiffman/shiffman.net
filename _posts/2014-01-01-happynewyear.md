@@ -12,7 +12,7 @@ layout: post
 
 <p>Made with <a href="http://processing.org/">Processing</a>, <a href="http://processingjs.org">Processing.js</a>, <a href="http://toxiclibs.org/">toxiclibs</a>, and <a href="http://haptic-data.com/toxiclibsjs/">toxiclibs.js</a></p>
 
-<p><a href="http://ccmixter.org/files/unreal_dm/29684">Auld Lang Syne (Bossa)"</a><br/>by unreal_dm 2010 - Licensed under Creative Commons Attribution (3.0)</p>
+<p><a href="http://ccmixter.org/files/unreal_dm/29684">Auld Lang Syne (Bossa)</a><br/>by unreal_dm 2010 - Licensed under Creative Commons Attribution (3.0)</p>
 
 
 
