@@ -49,16 +49,10 @@ void setup() {
 
   s1 = new Skeleton(3*width/4, 100,1,"e");
   s2 = new Skeleton(width/4, 160,0.75,"o");
-
   audio.setAttribute("src","http://shiffman.net/p5/newyears/2014/auld2.mp3");
-  audio.addEventListener('loadedmetadata', godance, false);
-  audio.play();
-
-}
-
-var godance = function() {
   dance = true;
-};
+  audio.play();
+}
 
 int counter = 0;
 
