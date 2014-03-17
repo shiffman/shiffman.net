@@ -25,7 +25,7 @@ category = Video / Vision
 # repeating the name of your library here. Also, avoid saying anything redundant 
 # like mentioning that it's a library. This should start with a capitalized 
 # letter, and end with a period.
-sentence = A library to interface with Rekognition[https://rekognition.com/], an cloud-based visual recognition solution.
+sentence = A library to interface with [Rekognition](https://rekognition.com/), an cloud-based visual recognition solution.
 
 # Additional information suitable for the Processing website. The value of
 # 'sentence' always will be prepended, so you should start by writing the
