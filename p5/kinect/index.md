@@ -24,7 +24,7 @@ Since the kinect launched in November 2010, there have been several models relea
   <li><b>Kinect for Windows version 2</b>: This is the brand spanking new kinect with all the features found in the XBox One Kinect.  As <a href="https://github.com/OpenKinect/libfreenect2">libfreenect2</a> gets further along, I hope to be able to add support for this kinect in Processing.
 </ul>
 
-<p>Now, before you proceed, you may want to instead consider using the <a href="http://code.google.com/p/simple-openni/">SimpleOpenNI library</a> and read Greg Borenstein&#8217;s <a href="http://urbanhonking.com/ideasfordozens/2011/10/08/making-things-see-available-for-early-release/">Making Things See</a> book!  OpenNI has lots of features (skeleton tracking, gesture recognition, etc.) that are not available in this library.  Unfortunately, <a href="http://www.openni.org/">OpenNI was recently purchased by Apple</a> and appears to be shutting down.  It's unclear what the future will be of OpenNI and SimpleOpenNI.</p>
+<p>Now, before you proceed, you could also consider using the <a href="http://code.google.com/p/simple-openni/">SimpleOpenNI library</a> and read Greg Borenstein&#8217;s <a href="http://www.amazon.com/gp/product/1449307078/ref=as_li_ss_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=1449307078&linkCode=as2&tag=learniproces-20">Making Things See</a> book.  OpenNI has lots of features (skeleton tracking, gesture recognition, etc.) that are not available in this library.  Unfortunately, <a href="http://www.openni.org/">OpenNI was recently purchased by Apple</a> and appears to be shutting down.  It's unclear what the future will be of OpenNI and SimpleOpenNI.</p>
 
 <h2>I&#8217;m ready to get started right now</h2>
 <ul>
