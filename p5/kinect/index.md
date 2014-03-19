@@ -12,17 +12,30 @@ dsq_needs_sync:
 ---
 <p><iframe src="http://player.vimeo.com/video/18058700?title=0&amp;byline=0&amp;portrait=0&amp;color=ff9933" width="400" height="225" frameborder="0"></iframe></p>
 <p>So, you want to use the Kinect in Processing.  Great.  This page will serve to document the current state of my Processing Kinect library, with some tips and info.</p>
-<p>Before you proceed, however, you may want to instead consider using the wonderful <a href="http://code.google.com/p/simple-openni/">SimpleOpenNI library</a> and Greg Borenstein&#8217;s <a href="http://urbanhonking.com/ideasfordozens/2011/10/08/making-things-see-available-for-early-release/">Making Things See</a> book!  OpenNI has lots of features (skeleton tracking, gesture recognition, etc.) that are not available in this library.</p>
+
+<h2>The current state of affairs</h2>
+
+Since the kinect launched in November 2010, there have been several models released.  Here's a quick list of what is out there and what is supported in Processing for Mac OS X.
+
+<ul>
+  <li><b>Kinect 1414</b>: This is the original kinect and works with the library documented on this page in Processing 2.1</li>
+  <li><b>Kinect 1473</b>: This looks identical to the 1414, but is an updated model.  This kinect does not currently work with any of the Processing libraries, but I hope to update the library soon for compatibility.  If you would like to help with this, please get in touch!</li>
+  <li><b>Kinect for Windows version 1</b>: This kinect also does not curently work with Processing, but as with the 1473, I hope to get the library updated soon.
+  <li><b>Kinect for Windows version 2</b>: This is the brand spanking new kinect with all the features found in the XBox One Kinect.  As <a href="https://github.com/OpenKinect/libfreenect2">libfreenect2</a> gets further along, I hope to be able to add support for this kinect in Processing.
+</ul>
+
+<p>Now, before you proceed, you may want to instead consider using the <a href="http://code.google.com/p/simple-openni/">SimpleOpenNI library</a> and read Greg Borenstein&#8217;s <a href="http://urbanhonking.com/ideasfordozens/2011/10/08/making-things-see-available-for-early-release/">Making Things See</a> book!  OpenNI has lots of features (skeleton tracking, gesture recognition, etc.) that are not available in this library.  Unfortunately, <a href="http://www.openni.org/">OpenNI was recently purchased by Apple</a> and appears to be shutting down.  It's unclear what the future will be of OpenNI and SimpleOpenNI.</p>
+
 <h2>I&#8217;m ready to get started right now</h2>
 <ul>
-<li>Download library and examples: <a href="http://shiffman.net/p5/libraries/openkinect/openkinect.zip">openkinect.zip</a></li>
-<li>Source code: <a href="https://github.com/shiffman/libfreenect/tree/master/wrappers/java/processing">https://github.com/shiffman/libfreenect/tree/master/wrappers/java/processing</a></li>
+<li>Install the library via the Processing Contribution manager or <a href="https://github.com/shiffman/OpenKinect-for-Processing/releases">get it here</a>.</li>
+<li>Source code: <a href="https://github.com/shiffman/OpenKinect-for-Processing">https://github.com/shiffman/OpenKinect-for-Processing</a></li>
 <li>Open Kinect: <a href="http://openkinect.org/">openkinect.org</a></li>
 </ul>
 <h2>What hardware do I need?</h2>
-<p>First you need a &#8220;stand-alone&#8221; kinect.  You do not need to buy an Xbox.  If you get the stand-alone kinect listed below, it will come with a USB adapter and power supply.</p>
+<p>First you need a &#8220;stand-alone&#8221; kinect (model 1414 only for now!).  You do not need to buy an Xbox.  If you get the stand-alone kinect listed below, it will come with a USB adapter and power supply.</p>
 <p><a href="http://www.amazon.com/gp/product/B002BSA298?ie=UTF8&#038;tag=learniproces-20&#038;linkCode=as2&#038;camp=1789&#038;creative=390957&#038;creativeASIN=B002BSA298">Standalone Kinect Sensor</a><img src="http://www.assoc-amazon.com/e/ir?t=learniproces-20&#038;l=as2&#038;o=1&#038;a=B002BSA298" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p>
-<p>If you have a kinect that came with an XBox, it will not include the USB adapter.  You&#8217;ll need to purchase this separately:</p>
+<p>If you have a previous kinect that came with an XBox, it will not include the USB adapter.  You&#8217;ll need to purchase this separately:</p>
 <p><a href="http://store.microsoft.com/microsoft/Kinect-Sensor-Power-Supply/product/9A4CFC08">Kinect Sensor Power Supply</a></p>
 <h2>Um, what is Processing?</h2>
 <p>I&#8217;m going to assume you are familiar with Processing, but just in case you are not, I suggest checking out: <a href="http://processing.org/">processing.org</a>  (Processing is an open source programming language and environment for people who want to create images, animations, and interactions. Initially developed to serve as a software sketchbook and to teach fundamentals of computer programming within a visual context, Processing also has evolved into a tool for generating finished professional work. Today, there are tens of thousands of students, artists, designers, researchers, and hobbyists who use Processing for learning, prototyping, and production.)</p>
@@ -33,19 +46,21 @@ dsq_needs_sync:
 <p>More resources from: <a href="http://openkinect.org">The OpenKinect Project</a></p>
 <h2>I&#8217;ve got Processing, how do I download and install the library?</h2>
 <p>By default Processing will create a &#8220;sketchbook&#8221; folder in your Documents directory, i.e. on my machine it&#8217;s:</p>
-<p>/Users/daniel/Documents/Processing/</p>
-<p>If there isn&#8217;t already, create a folder called &#8220;libraries&#8221; there, i.e.</p>
-<p>/Users/daniel/Documents/Processing/libraries/</p>
-<p>Then go and download <a href="https://github.com/shiffman/libfreenect/raw/master/wrappers/java/processing/distribution/openkinect.zip">openkinect.zip</a> and extract it in the libraries folder, i.e. you should now see</p>
-<p>/Users/daniel/Documents/Processing/libraries/openkinect/<br />
-/Users/daniel/Documents/Processing/libraries/openkinect/library/<br />
-/Users/daniel/Documents/Processing/libraries/openkinect/examples/<br />
-etc.</p>
-<p>Restart Processing, open up one of the examples in the examples folder and you are good to go!</p>
-<p>More about installing libraries:</p>
-<p><a href="http://wiki.processing.org/w/How_to_Install_a_Contributed_Library">http://wiki.processing.org/w/How_to_Install_a_Contributed_Library</a><br />
-<a href="http://www.learningprocessing.com/tutorials/libraries/">http://www.learningprocessing.com/tutorials/libraries/</a></p>
-<p>At the moment, my library only works with Mac OS X (intel, 10.5 or 10.6 should both be ok).  Hopefully this will be remedied soon enough.  However, if you are interested in working with Kinect on windows, I recommend <a href="http://code.google.com/p/simple-openni/">SimpleOpenNI</a>.</p>
+
+<pre>
+/Users/daniel/Documents/Processing/
+</pre>
+
+<p>The easiest way to install the library is to go to SKETCH-->IMPORT LIBRARIES-->ADD LIBRARY and search for "Kinect".  A button will appear labeled "install".</p>
+
+<p>If you want to install it manually, find the libraries folder (create it if it isn't already there).  On my machine it's:</p>
+
+<pre>
+/Users/daniel/Documents/Processing/libraries/
+</pre>
+
+<p>Then go and download <a href="https://github.com/shiffman/OpenKinect-for-Processing/releases">the most recent release</a> and extract it in the libraries folder.  Restart Processing, open up one of the examples in the examples folder and you are good to go!</p>
+
 <h2>What code do I write?</h2>
 <p>To get started using the library, you need to include the proper import statements at the top of your code:</p>
 {% highlight java %}
@@ -205,7 +220,7 @@ if (count != 0) {
 <a href="http://nicolas.burrus.name/index.php/Research/KinectRgbDemoV3">version 0.3 of RGBDemo</a></p>
 <h2>What&#8217;s missing?</h2>
 <p>Lots! Open a github issue if you want to add an item to my to do list!</p>
-<p><a href="https://github.com/shiffman/libfreenect/issues">https://github.com/shiffman/libfreenect/issues</a></p>
+<p><a href="https://github.com/shiffman/OpenKinect-for-Processing/">https://github.com/shiffman/OpenKinect-for-Processing/releases</a></p>
 <h2>FAQ</h2>
 <p>1. What are there shadows in the depth image?</p>
 <p><a href="http://media.zero997.com/kinect_shadow.pdf">Kinect Shadow diagram</a></p>
