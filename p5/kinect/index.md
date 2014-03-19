@@ -132,9 +132,9 @@ kinect.tilt(deg);
 <li><b>int[] getRawDepth()</b> &#8212; grab the raw depth data</li>
 <li><b>tilt(float)</b> &#8212; adjust the camera angle (between 0 and 30 degrees)</li>
 </ol>
-<h2>Where&#8217;s the javadoc?</h2>
-<p>Stay tuned, I&#8217;ll get something up soon.  All the source is here:</p>
-<p><a href="https://github.com/shiffman/libfreenect/tree/master/wrappers/java/processing">https://github.com/shiffman/libfreenect/tree/master/wrappers/java/processing</a></p>
+For everything else, you can also take a look at <a href="http://shiffman.net/p5/kinect/reference/">the javadoc reference</a>.
+</p>
+
 <h2>So now what?</h2>
 <p>So far, I only have three basic examples:</p>
 <h2>Display RGB, IR, and Depth Images</h2>
