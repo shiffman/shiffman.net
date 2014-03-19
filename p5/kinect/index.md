@@ -139,12 +139,12 @@ For everything else, you can also take a look at <a href="http://shiffman.net/p5
 <p>So far, I only have three basic examples:</p>
 <h2>Display RGB, IR, and Depth Images</h2>
 <p><iframe src="http://player.vimeo.com/video/18748853?title=0&amp;byline=0&amp;portrait=0&amp;color=ff9933" width="500" height="313" frameborder="0"></iframe><br />
-Code:<a href="https://github.com/shiffman/libfreenect/tree/master/wrappers/java/processing/distribution/openkinect/examples/RGBDepthTest">RGBDepthTest</a></p>
+Code:<a href="https://github.com/shiffman/OpenKinect-for-Processing/blob/master/OpenKinect-Processing/examples/RGBDepthTest/RGBDepthTest.pde">RGBDepthTest</a></p>
 <p>(NOTE: KNOWN BUG IN IR IMAGE RIGHT NOW)</p>
 <p>This example does nothing but use all of the above listed functions to display the data from the kinect sensor.</p>
 <h2>Point Cloud</h2>
 <p><iframe src="http://player.vimeo.com/video/18058700?title=0&amp;byline=0&amp;portrait=0&amp;color=ff9933" width="501" height="282" frameborder="0"></iframe><br />
-Code: <a href="https://github.com/shiffman/libfreenect/tree/master/wrappers/java/processing/distribution/openkinect/examples/PointCloud">PointCloud</a></p>
+Code: <a href="https://github.com/shiffman/OpenKinect-for-Processing/blob/master/OpenKinect-Processing/examples/PointCloud/PointCloud.pde">PointCloud</a></p>
 <p>Here, we&#8217;re doing something a bit fancier.  Number one, we&#8217;re using the 3D capabilities of Processing to draw points in space.  You&#8217;ll want to familiarize yourself with <a href="http://processing.org/reference/translate_.html">translate()</a>, <a href="http://processing.org/reference/rotate_.html">rotate()</a>, <a href="http://processing.org/reference/pushMatrix_.html">pushMatrix()</a>, <a href="http://processing.org/reference/popMatrix_.html">popMatrix()</a>.  This <a href="http://processing.org/learning/transform2d/">tutorial</a> is also a good place to start.  In addition, the example uses a PVector to describe a point in 3D space.  More here: <a href="http://processing.org/learning/pvector/">PVector tutorial</a>.</p>
 <p>The real work of this example, however, doesn&#8217;t come from me at all.  The raw depth values from the kinect are not directly proportional to physical depth.  Rather, they scale with the inverse of the depth according to this formula:</p>
 {% highlight java %}
@@ -189,7 +189,7 @@ float rawDepthToMeters(int depthValue) {
 <h2>Average Point Tracking</h2>
 <p>The real magic of the kinect lies in its computer vision capabilities.  With depth information, you can do all sorts of fun things like say: "the background is anything beyond 5 feet.  Ignore it!"  Without depth, background removal involves all sorts of painstaking pixel comparisons.  As a quick demonstration of this idea, here is a very basic example that compute the average xy location of any pixels in front of a given depth threshold.</p>
 <p><iframe src="http://player.vimeo.com/video/18750684?title=0&amp;byline=0&amp;portrait=0&amp;color=ff9933" width="500" height="313" frameborder="0"></iframe></p>
-<p>Source: <a href="https://github.com/shiffman/libfreenect/tree/master/wrappers/java/processing/distribution/openkinect/examples/AveragePointTracking">AveragePointTracking</a></p>
+<p>Source: <a href="https://github.com/shiffman/OpenKinect-for-Processing/tree/master/OpenKinect-Processing/examples/AveragePointTracking">AveragePointTracking</a></p>
 <p>In this example, we declare two variables to add up all the appropriate x's and y's and one variable to keep track of how many there are.</p>
 {% highlight java %}
 float sumX = 0;
