@@ -220,7 +220,7 @@ if (count != 0) {
 <a href="http://nicolas.burrus.name/index.php/Research/KinectRgbDemoV3">version 0.3 of RGBDemo</a></p>
 <h2>What&#8217;s missing?</h2>
 <p>Lots! Open a github issue if you want to add an item to my to do list!</p>
-<p><a href="https://github.com/shiffman/OpenKinect-for-Processing/">https://github.com/shiffman/OpenKinect-for-Processing/releases</a></p>
+<p><a href="https://github.com/shiffman/OpenKinect-for-Processing/issues">https://github.com/shiffman/OpenKinect-for-Processing/issues</a></p>
 <h2>FAQ</h2>
 <p>1. What are there shadows in the depth image?</p>
 <p><a href="http://media.zero997.com/kinect_shadow.pdf">Kinect Shadow diagram</a></p>
