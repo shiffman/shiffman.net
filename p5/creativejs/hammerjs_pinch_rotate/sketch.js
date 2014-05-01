@@ -1,10 +1,12 @@
+
 var s = 1.0;
 var r = 0;
 
+
 function setup() {
-console.log("HI");
-  createCanvas(windowWidth, windowHeight); 
-  noStroke(); 
+  console.log("HI");
+  createCanvas(windowWidth, windowHeight);
+  noStroke();
   rectMode(CENTER);
 
   // set options to prevent default behaviors for swipe, pinch, etc
@@ -35,10 +37,12 @@ function draw() {
 
 
 function rotateRect(event) {
+  console.log("rotate!");
   r = radians(event.gesture.rotation);
 }
 
 
 function scaleRect(event) {
+  console.log("scale!");
   s = event.gesture.scale;
 }
