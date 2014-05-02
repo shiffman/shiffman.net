@@ -31,10 +31,12 @@ function draw() {
 
 function swipeUp(event) {
   str = "you swiped up!";
+  console.log("up!");
 }
 
 function swipeDown(event) {
   str = "you swiped down!";
+  console.log(event);
 }
 
 function swipeLeft(event) {
