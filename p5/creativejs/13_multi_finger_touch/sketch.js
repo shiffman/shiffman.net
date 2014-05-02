@@ -7,10 +7,6 @@ function setup() {
   background(200, 190, 190);
 }
 
-function draw() {
-  console.log(touches.length);
-}
-
 function touchStarted() {
   fill(0, 255, 0);
   for(var i = 0; i < touches.length; i++) {
