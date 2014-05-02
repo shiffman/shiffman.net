@@ -9,6 +9,7 @@ function setup() {
 
 // mousePressed
 function touchStarted() {
+  console.log("TOUCH EVENT!");
   fill(0, 255, 0);
   print('pressed or started');
   ellipse(touchX, touchY, 80, 80);
