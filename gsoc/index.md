@@ -9,7 +9,7 @@ layout: post
 
 ![Name of your image](images/sample.png) or a video?  <iframe src="//player.vimeo.com/video/##########" width="500" height="281" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
-1) [Name of your project](http://link to your project) by [Your Name](link to your site), mentored by. . . . . .
+1) [Name of your project](http://link to your project) by [Your Name](link to your site), mentored by [names].  Write a few sentences describing your project and [link to your source code](http://url).
 
 
 
