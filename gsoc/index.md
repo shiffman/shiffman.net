@@ -6,6 +6,8 @@ layout: post
 
 2014 marks [The Processing Foundation](http://processing.org)'s fourth year participating in [Google Summer of Code](https://developers.google.com/open-source/soc/).  Following is a summary of the eleven projects, in alphabetical order by project name, completed this summer by a terrific group of students.
 
+<iframe src="//player.vimeo.com/video/97796242" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+N) [ofSketch](https://github.com/olab-io/ofSketch) by [Brannon Dorsey](http://brannondorsey.com), mentored by [Christopher Baker](http://christopherbaker.net). ofSketch is a barebones browser-based IDE for [openFrameworks](http://openframeworks.cc). Targeted towards new users, ofSketch decreases the openFrameworks barrier to entry by providing a "plug and play" development environment that allows users to spend more time coding and less time with configuration. In addition to its simplicity, ofSketch supports powerful extended functionality like API specific autocomplete, compilation feedback, error reporting, project export, remote coding capabilities, and Raspberry Pi support to fit the needs of intermediate coders.
 
 ![POculus](images/POculus.png)
 N) **[POculus](https://github.com/pratik9891/ProcessingOculus)** by [Pratik Sharma](http://pratikgsoc.wordpress.com), mentored by Elie Zananiri. POculus provides an Oculus renderer for Processing. Any P3D sketch can be made Oculus ready by using the POculus renderer. ([Source Code](https://github.com/pratik9891/ProcessingOculus)).
