@@ -481,6 +481,7 @@ report += "Flesch Index   : " + flesch + "\n";
 
 The full example code is here.
 
+<a name ="p5analysis"></a>
 ## Back to p5.js
 
 Now that we've worked out some simple algorithms for manipulating and processing text, we can return to p5.js and process text from a user.  The simplest way will be to create a [textarea](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea) HTML element.  We can do this with [createElement()](http://p5js.org/reference/#/p5/createElement).
@@ -515,4 +516,5 @@ Try it out below! (and [take a look at the source](https://github.com/shiffman/P
 <button value="undefined" id="fleschit">Compute the Flesch Index!</button>
 <p id="fleschreport"></p>
 
+Also, here's a [full tutorial about the p5.dom library](https://github.com/lmccart/p5.js/wiki/Beyond-the-canvas).
 
