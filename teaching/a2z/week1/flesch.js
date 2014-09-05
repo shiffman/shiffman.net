@@ -14,7 +14,7 @@ function setup() {
   button.mousePressed(flesch);
     
   // An HTML Element for the resulting text
-  fleschReport = createP("");
+  fleschReport = getElement("fleschreport");
 }
 
 function flesch() {

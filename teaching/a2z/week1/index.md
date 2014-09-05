@@ -505,6 +505,6 @@ Try it out below! (and [take a look at the source](https://github.com/shiffman/P
 <script language="javascript" type="text/javascript" src="flesch.js"></script>
 <textarea rows="10" cols="100" id ="input">Enter some text.</textarea>
 <button value="undefined" id="fleschit">Compute the Flesch Index!</button>
-
+<p id="fleschreport"></p>
 
 
