@@ -7,7 +7,7 @@ function setup() {
   // A text area
   input = getElement("input");
   input.attribute("rows",10);
-  input.attribute("cols",100);
+  input.attribute("cols",50);
 
   // A button
   var button = getElement("fleschit");
