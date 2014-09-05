@@ -8,12 +8,17 @@ pvc_views:
   - 5436
 ---
 
+<script language="javascript" type="text/javascript" src="//cdn.jsdelivr.net/p5.js/0.3.5/p5.min.js"></script>
+<script language="javascript" type="text/javascript" src="//cdn.jsdelivr.net/p5.js/0.3.5/addons/p5.dom.js"></script>
+
+
 ## This week&#8217;s topics:
 * Beyond Processing and into JavaScript and p5.js
+* Installing Node
 * JavaScript 101
 * Strings in JavaScript
-* File I/0
-* Simple Analysis
+* File I/0 with Node
+* Back to p5.js, processing text from a user
 
 ## Examples:
 
@@ -21,6 +26,7 @@ pvc_views:
 ## Related Links:
 
 <a name ="beyond"></a>
+* Simple Text Analysis
 ## Beyond Processing and into JavaScript and p5.js
 
 [p5.js](http://p5js.org). created by Lauren McCarthy, is a JavaScript library that starts with the original goal of Processing, to make coding accessible for artists, designers, educators, and beginners, and reinterprets this for the web.  While we are not going to use p5.js exclusively in this class, it will serve as a good foundation for getting up and running with JavaScript to make browser-based text experiments.
@@ -43,6 +49,22 @@ Basic p5.js sketches look a lot like Processing code, just in JavaScript.  There
 You'll also want to get used to using the console and other developer tools in the browser.  Here's some [documentation for Chrome](https://developer.chrome.com/extensions/tut_debugging)).  For Firefox, check out this [Firebug tutorial](http://www.developerfusion.com/article/139949/debugging-javascript-with-firebug/).
 
 You might also consider using [JSFiddle](http://jsfiddle.net/) for quick and dirty experiments.  Here is a [sample JSFiddle using p5.js](http://jsfiddle.net/shiffman/cLVHA/) To get a fiddle to work, you need to reference [the p5.js CDN](http://cdnjs.com/libraries/p5.js) as an external resource and select "No-Library (pure JS)" and "no wrap" under options.
+
+## JS with Node
+
+We're also going to explore running some simple JavaScript programs via the command line in this class.  This will allow us to easily test out ideas as well as process text files.  This will also give us a head-start to building server-side programs that analyze text as well.  
+
+The first thing we need to do to get up and running is to [install node](http://nodejs.org/download/).  Once you've installed node, to make sure it's working just open up terminal and type `node`.  If it's installed you'll see a prompt.  You can type any JavaScript here just like in the browser console to test (hit cntrl-c twice to exit.)
+
+Now make any old file with JavaScript code in it.  For example, make a file called "hello.js" with:
+
+```javascript
+console.log('Hello!');
+```
+
+Now back in terminal type `node hello.js`.  You should see `Hello!` back in the console.
+
+Congratulations, you are now executing server-side JS code via the command line!
 
 <a name ="js101"></a>
 ## JavaScript 101
@@ -452,3 +474,39 @@ report += "Flesch Index   : " + flesch + "\n";
 {% endhighlight %}
 
 The full example code is here.
+
+## Back to p5.js
+
+Now that we've worked out some simple algorithms for manipulating and processing text, we can return to p5.js and process text from a user.  The simplest way will be to create a [textarea](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea) HTML element.  We can do this with [createElement()](http://p5js.org/reference/#/p5/createElement).
+
+```javascript
+var input = createElement("textarea","Enter some text.");
+input.attribute("rows",10);  // specifying an attribute for the text area's size
+input.attribute("cols",100);
+```
+
+We can then make a button that executes a function to process the text whenever the user clicks the button.
+
+```javascript
+var button = createButton("Compute the Flesch Index!");
+button.mousePressed(flesch);  // flesch() is a callback that is triggered whenever the button is pressed
+```
+
+Writing the flesch function is just like we did with node only we are pulling text from the textarea, rather than a file.
+
+```javascript
+function flesch() {
+  // What has the user entered?
+  var data = input.value();
+  
+  // all the rest of the code from before
+```
+
+Try it out below! (and [take a look at the source](https://github.com/shiffman/Programming-from-A-to-Z-F14/blob/master/week1/05_p5_text/flesch/sketch.js)).
+
+<script language="javascript" type="text/javascript" src="flesch.js"></script>
+
+
+
+
+
