@@ -7,102 +7,122 @@ dsq_thread_id:
 pvc_views:
   - 5436
 ---
-<div class="pullquote">
-<b>This week&#8217;s topics:</b></p>
-<li class="arrow"><a href="#beyond">Beyond Processing and into Java</a></li>
-<li class="arrow"><a href="#string">The String Class</a></li>
-<li class="arrow"><a href="#file">File I/O</a></li>
-<li class="arrow"><a href="#analysis">Simple Analysis</a></li>
-</div>
-<h2>Examples:</h2>
-<li class="arrow"><a href="http://shiffman.net/itp/classes/a2z/week01/HelloWorld.java">HelloWorld.java</a></li>
-<li class="arrow"><a href="http://shiffman.net/itp/classes/a2z/week01/BankAccountTest.java">BankAccountTest.java</a> <a href="http://shiffman.net/itp/classes/a2z/week01/BankAccount.java">BankAccount.java</a></li>
-<li class="arrow"><a href="http://shiffman.net/itp/classes/a2z/week01/SimpleFileIO.java"> SimpleFileIO.java</a></li>
-<li class="arrow"><a href="http://shiffman.net/itp/classes/a2z/week01/SimpleFileIO2.java"> SimpleFileIO2.java</a></li>
-<li class="arrow"><a href="http://shiffman.net/itp/classes/a2z/week01/EveryOtherWord.java"> EveryOtherWord.java</a></li>
-<li class="arrow"><a href="http://shiffman.net/itp/classes/a2z/week01/ReverseWords.java"> ReverseWords.java</a></li>
-<li class="arrow"><a href="http://shiffman.net/itp/classes/a2z/week01/ReverseCharacters.java"> ReverseCharacters.java</a></li>
-<li class="arrow"><a href="http://shiffman.net/itp/classes/a2z/week01/God.java"> God.java</a></li>
-<li class="arrow"><a href="http://shiffman.net/itp/classes/a2z/week01/FleschIndex.java"> FleschIndex.java</a></li>
-<li class="arrow">Some sample input files: <a href="http://shiffman.net/itp/classes/a2z/week01/spam.txt">spam.txt</a>, <a href="http://shiffman.net/itp/classes/a2z/week01/nytimes.txt">nytimes.txt</a>, <a href="http://shiffman.net/itp/classes/a2z/week01/bible.txt">bible.txt</a></li>
-<h2>Related:</h2>
-<li class="arrow"><a href="http://bioportal.weizmann.ac.il/course/prog2/tutorial/java/data/strings.html">Characters and Strings tutorial</a></li>
-<h2>Exercises (<i>optional and purposefully mundane</i>):</h2>
-<li class="arrow">Write a program that opens multiple source text files and combines them together writing them out as one file.</li>
-<li class="arrow">Write a program that counts the number of punctuation occurrences in a source text.</li>
-<li class="arrow">Revise the file input / output program to have full error handling.</li>
-<p>&nbsp;<br />
-<a name ="beyond"></a></p>
-<h2>Beyond <a href="http://www.processing.org">Processing</a> and into <a href="http://java.sun.com/">Java</a></h2>
-<p>This course assumes one semester of programming experience in <a href="http://www.processing.org">Processing</a>.  If you&#8217;re already familiar with compiling and running your own Java programs without Processing feel free to skip this section.   </p>
-<p>Pulling back the curtain of <a href="http://www.processing.org">Processing</a>, what weâ€™ll discover is it really is Java.  For example, in Java, you:</p>
-<li class="arrow">Declare, initialize and use variables the same way</li>
-<li class="arrow">Declare, initialize and use arrays the same way</li>
-<li class="arrow">Employ conditional and loop statements the same way</li>
-<li class="arrow">Define and call functions the same way</li>
-<li class="arrow">Create classes the same way.</li>
-<li class="arrow">Instantiate objects the same way.</li>
-<p>&nbsp;<br />
-Processing, of course, gives some extra stuff for free, and this is why itâ€™s a great tool for learning rich media programming.   Nevertheless, for the start of this semester, our programs will involve text / file processing and it will be simpler to compile and run programs from the command line.  However, the examples will also be provided via CVS as an Eclipse project and you should feel free to use <a href="http://www.eclipse.org">Eclipse</a> if you prefer (<a href="http://itp.nyu.edu/varwiki/A2Z/CVS">CVS Instructions</a>).   From time to time, I will also include <a href="http://www.perl.com/">Perl</a> and  <a href="http://www.php.net/">PHP</a> versions of the examples.  Using Java for the assignments will not be required if you prefer one of these languages.</p>
-<p>Let&#8217;s look at a basic first example.</p>
 
-{% highlight java %}
-public class HelloWorld
-{
-  int x = 0;
-  public static void main(String[] args)
-  {
-    int x = 0;
-    while (x < 10) {
-      System.out.println("Look, I can count to " + x + "!");
-      x++;
-    }
-  }
-}
+## This week&#8217;s topics:
+* Beyond Processing and into JavaScript and p5.js
+* JavaScript 101
+* Strings in JavaScript
+* File I/0
+* Simple Analysis
+
+## Examples:
+
+
+## Related Links:
+
+<a name ="beyond"></a>
+## Beyond Processing and into JavaScript and p5.js
+
+[p5.js](http://p5js.org). created by Lauren McCarthy, is a JavaScript library that starts with the original goal of Processing, to make coding accessible for artists, designers, educators, and beginners, and reinterprets this for the web.  While we are not going to use p5.js exclusively in this class, it will serve as a good foundation for getting up and running with JavaScript to make browser-based text experiments.
+
+The p5.js editor (created by Sam Lavigne) is currently in development, for your assignments you are welcome to try out the [alpha](https://github.com/antiboredom/jside/releases/download/v0.1.7/p5.zip).  You can help by posting [feedback and bugs](https://github.com/antiboredom/jside/issues) Support for Windows and Linux coming soon, along with more [features](https://github.com/antiboredom/jside/labels/enhancement).  [Download the current release](https://github.com/antiboredom/jside/releases/download/v0.1.7/p5.zip).
+
+If you prefer, you could also just use a text editor.  Here are some options:
+
+  * [Sublime](http://www.sublimetext.com/2) -- recommended, need a license or deal with pop ups
+  * [TextWrangler](http://www.barebones.com/products/textwrangler/) -- free
+  * [brackets.io](http://brackets.io/) -- free, dynamic code update, a little more confusing gui at first
+
+With a text editor, you'll want to run a local server (Python SimpleHTTPServer or Apache) to test your work.
+
+  * [Tutorial: setting up a local server](https://github.com/lmccart/p5.js/wiki/Local-server)
+  * [Tutorial: MacOS Python SimpleHTTPServer steps](https://github.com/lmccart/itp-creative-js/wiki/SimpleHTTPServer)
+
+Basic p5.js sketches look a lot like Processing code, just in JavaScript.  There are some key differences, however.  [This tutorial](https://github.com/lmccart/p5.js/wiki/Processing-transition) outlines those differences and [this tutorial](https://github.com/lmccart/p5.js/wiki/Getting-Started) will walk you through the basics of getting started.
+
+You'll also want to get used to using the console and other developer tools in the browser.  Here's some [documentation for Chrome](https://developer.chrome.com/extensions/tut_debugging)).  For Firefox, check out this [Firebug tutorial](http://www.developerfusion.com/article/139949/debugging-javascript-with-firebug/).
+
+You might also consider using [JSFiddle](http://jsfiddle.net/) for quick and dirty experiments.  Here is a [sample JSFiddle using p5.js](http://jsfiddle.net/shiffman/cLVHA/) To get a fiddle to work, you need to reference [the p5.js CDN](http://cdnjs.com/libraries/p5.js) as an external resource and select "No-Library (pure JS)" and "no wrap" under options.
+
+<a name ="js101"></a>
+## JavaScript 101
+
+(This is just a list of what I'll be covering in class, write-up coming soon).
+
+* File setup, using `<script>`
+
+* Variables and data types 
+    * Numbers
+    * Strings
+        * [Built-in JS String functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+        * [p5 string functions](https://github.com/lmccart/p5.js/wiki/API#string-functions)
+    * Booleans
+    * Functions
+    * Objects
+    * Arrays
+    * Null
+    * Undefined
+
+* Operators
+    * Arithmetic: `+`, `-`, `*`, `/`, `%`, `++`, `--`
+    * Equality: `==`, `===`, `!=`, `!==`
+    * Relational: `<`, `>`, `<=`, `>=`
+    * String: `+`, equality, relational
+    * Logical: `&&`, `||`, `!`
+
+* Logic
+    * `if`, `else if`, `else`
+    * `switch`, `case`
+    * `for(var i=0;...)` vs `for (var k in arr)`
+    * `while`, `do...while`
+    * `break`, `continue`
+
+* Arrays
+    * Creating, initializing, setting, accessing elements
+    * [Built-in JS array functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+
+* Objects
+    * Setting and accessing properties and methods
+
+* Functions
+    * Function definition
+    * Passing in args
+    * `return`
+
+* Scope
+
+<a name ="strings"></a>
+## Strings in JS
+
+In all of our JavaScript programs, we'll be using [String objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) to store textual information.   You may be familiar with [Strings in Processing](http://processing.org/reference/String.html) or poked around the [Javadoc reference for Strings](http://docs.oracle.com/javase/7/docs/api/java/lang/String.html).  Strings in JavaScript have a lot of the same functionality that they do in Java and we'll start by looking at some of the basic methods for manipulating Strings in JS.
+
+A String, at its core, is really just a fancy way of storing an array of characters.  With the String object, we might find ourselves writing code like.
+
+{% highlight javascript %}
+var sometext = ['h','e','l','l','o'];
 {% endhighlight %}
 
-<div class = "pullquote">
-Compile: <b>javac ClassName.java</b></p>
-<p>Run: <b>java ClassName</b>
-</div>
-<p>Take the above code and make a text file called HelloWorld.java (using notepad, textpad, bbedit, textwrangler, etc.)  Congratulations, you've written your first java program.  However, unlike with processing, we don't have a "Run" or "Play" button.  You have to compile and run the program yourself.</p>
-<p>On a Mac, you can accomplish this via the <a href="http://www.apple.com/macosx/features/unix/">Terminal</a>.</p>
-<p><img src ="http://shiffman.net/itp/classes/a2z/week01/java0.jpg"/></p>
-<p><b>Holy more than one file, batman</b></p>
-<p>Let's take a look at an object oriented example where our class (Bank Account) is kept in its own file and a "driver" program accesses it.  Here are the two files you need:<br />
-<b><a href="http://shiffman.net/itp/classes/a2z/week01/BankAccount.java">BankAccount.java</a><br />
-<a href="http://shiffman.net/itp/classes/a2z/week01/BankAccountTest.java">BankAccountTest.java</a></b></p>
-<p>As long as these files are both in the same directory, we can compile BankAccountTest.java, which, since it uses the BankAccount.java class, will instigate the compilation of that class.</p>
-<p><img src ="http://shiffman.net/itp/classes/a2z/week01/java1.jpg"/></p>
-<p>(examples from <a href="http://www.horstmann.com/bigjava.html">Big Java by Cay Horstmann</a>.)</p>
-<p><b>What's new?</b></p>
-<li class="arrow">The "main" method â€“ Every Java program must have a <b>main</b> method.  In Processing, we controlled the flow of the program via setup() and draw().   Under the covers, however, every PApplet has a main method that creates initializes the applet, creates the window, etc. etc.  Since we are writing Java programs <i>from scratch</i>, we'll need to write our own main method.   <a href="http://java.sun.com/docs/books/tutorial/getStarted/application/index.html#MAIN">A full explanation of the main method is available here.</a>  One thing that is important for us to note is that the main method takes an array of Strings as an argument, i.e. "main(String[] args)".  When the program is run via the command line, you can pass Strings into the program using the array.  This will prove incredibly useful for doing file processing (see below).</li>
-<li class="arrow">Import Statements â€“  Although this particular HelloWorld program does not include any import statements, Java programs require that classes and libraries are explicitly imported.  Weâ€™ve experienced this before when using the video, serial, or opengl library in Processing, i.e. import processing.video.*; .</li>
-<li class="arrow">public â€“ In Java, variables, functions, and classes can be â€œpublicâ€ or â€œprivate.â€  This designation indicates what level of access should be granted to a particular piece of code.  Itâ€™s not something we have to worry much about right now, but it becomes an important consideration when moving on to larger Java programs.</li>
-<li class="arrow">class HelloWorld â€“ Sound somewhat familiar?  Java, it turns out, is a true object-oriented language.  There is nothing written in Java that is not part of a class!  Every program, even the main program is a class too! </li>
-<p>&nbsp;<br />
-<b>Exploring the Java API</b></p>
-<p>The Processing reference quickly became our BFF while learning to program.  The Java API is going to be more of our rascally nemesis.  We can explore the full java documentation by visiting <a href="http://java.sun.com/">http://java.sun.com</a>.  There, we can click over to â€œAPIâ€ specifications: <a href="http://java.sun.com/reference/api/index.html">http://java.sun.com/reference/api/index.html</a> and find a selection of versions of Java.  We'll be using the JavaTM 2 Platform, Standard Edition, v 1.4.2: <a href="http://java.sun.com/j2se/1.4.2/docs/api/">http://java.sun.com/j2se/1.4.2/docs/api/</a>.</p>
-<p>And so, very quickly, youâ€™ll find yourself completely lost.  And thatâ€™s ok.  The Java API is huge.  Humongous.  Itâ€™s not meant to be read or even perused.  Itâ€™s really more of a reference for looking up specific classes.  For example, you might be working on a program that requires sophisticated random number generation, and perhaps you overheard a conversation about the class â€œRandomâ€ and thought â€œHey, maybe I should check that out!â€  You can find the appropriate reference page by scrolling down the â€œAll Classesâ€ list or else by knowing that it lives in the java.util package (which you can select from the package list on the top left.)  Even better, if you type <a href="http://www.google.com/search?client=safari&#038;rls=en&#038;q=Java+Random&#038;ie=UTF-8&#038;oe=UTF-8">Java Random</a> into google, the Random documentation page will be the first to appear.  Much like Processing, youâ€™ll find a reference page with an explanation of what the class does, the Constructors for creating an object instance, and available methods (functions).  Since Random is part of the java.util package, we donâ€™t need to explicitly write an import statement to use it.  </p>
-<p><a name="string"></a></p>
-<h2>The â€œStringâ€ class</h2>
-<p>The <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html">String</a> class is what we will use to store textual information in our Java programs (from time to time, we may also use the <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/StringBuffer.html">StringBuffer</a> class, but <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html"> String</a> will do for now.)</p>
-<p>You may be familiar with the <a href="http://processing.org/reference/String.html">Processing reference page for Strings</a>.   The complete reference for String is <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html">http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html </a>.  And again, just in case, link to full JavaDocs: <a href="http://java.sun.com/j2se/1.4.2/docs/api">http://java.sun.com/j2se/1.4.2/docs/api</a>. </p>
-<p>A String, at its core, is really just a fancy way of storing an array of characters â€“ if we didnâ€™t have the String class, weâ€™d probably have to write some code like this:</p>
+Interestingly enough, there is no distinction between an individual character or a String in JS.  Both of the variables below are storing the same datatype.
 
-{% highlight java %}
-char[] sometext = {â€˜Hâ€™, â€˜eâ€™, â€˜lâ€™, â€˜lâ€™, â€˜oâ€™, â€˜ â€˜, â€˜Wâ€™, â€˜oâ€™, â€˜râ€™, â€˜lâ€™, â€˜dâ€™};
-{% endhighlight %}
+```
+var a = 'a';
+var h = 'hello';
+```
 
-<p>Clearly, this would be a royal pain in the programming behind.  Itâ€™s much simpler to do the following and make a String object:</p>
+In JavaScript, Strings can be literal primitives or objects.
 
-{% highlight java %}
-String sometext = â€œHow to make a String? Characters between quotation marks!â€;
-{% endhighlight %}
+```
+var s1 = 'hello';               // a primitive
+var s2 = new String('hello');   // an object
+```
 
-<p><b>Simple String Analysis</b></p>
-<p>Java provides us with a basic set of String functions that allow for simple manipulation and analysis.  <a href="http://shiffman.net/teaching/programming-from-a-to-z/regex">Next week</a>, we&#8217;ll also look at how <a href="http://en.wikipedia.org/wiki/Regular_expression">regular expressions</a> can allow to perform advanced String processing, but it&#8217;s good to pick up some of the basics first and gather some skills doing all of our text processing manually, character by character.   All of the availabe String methods are  functions are laid out on <a href="http://processing.org/reference/String.html">the JavaDoc page</a>, and weâ€™ll explore a few useful ones here.  Let&#8217;s take a closer look at three String class functions: indexOf(), substring(), and length(). </p>
-<p>indexOf() locates a sequence of characters within a string. For example, run this code and examine the result: </p>
+For the most part, this is a distinction we don't have to worry about.  JS will automatically covert our primitive String into an object when necessary. In general, it's good practice to initialize your Strings as primtives to increase performance.
+
+## Manipulating Strings
+
+JavaScript provides us with a basic set of String functions that allow for simple manipulation and analysis.  <a href="http://shiffman.net/teaching/a2z/regex">Next week</a>, we&#8217;ll also look at how <a href="http://en.wikipedia.org/wiki/Regular_expression">regular expressions</a> can allow to perform advanced String processing, but we'll start this week with non-regex String methods and gather some skills doing all of our text processing manually, character by character.   All of the availabe String properties and functions are laid out in [the JavaScript reference](ttp://docs.oracle.com/javase/7/docs/api/java/lang/String.html), and we'll explore a few useful ones here.  Let&#8217;s take a closer look at three: indexOf(), substring(), and the length property.
+
+`indexOf()` locates a sequence of characters within a string. For example, run this code and examine the result:
 
 {% highlight java %}
 String sentence = â€œThe quick brown fox jumps over the lazy dog.â€;
