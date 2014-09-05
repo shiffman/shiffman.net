@@ -5,12 +5,12 @@ function setup() {
   noCanvas();
 
   // A text area
-  input = createElement("textarea","Enter some text.");
+  input = getElement("input");
   input.attribute("rows",10);
   input.attribute("cols",100);
 
   // A button
-  var button = createButton("Compute the Flesch Index!");
+  var button = getElement("fleschit");
   button.mousePressed(flesch);
     
   // An HTML Element for the resulting text
@@ -72,10 +72,10 @@ function countSyllables(word) {
 
   // Check each word for vowels (don't count more than one vowel in a row)
   for (var i = 0; i < length; i++) {
-    if (isVowel(word.charAt(i)) && (vowel == false)) {
+    if (isVowel(word.charAt(i)) && (vowel === false)) {
       vowel = true;
       syl++;
-    } else if (isVowel(word.charAt(i)) && (vowel == true)) {
+    } else if (isVowel(word.charAt(i)) && (vowel === true)) {
       vowel = true;
     } else {
       vowel = false;

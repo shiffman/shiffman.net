@@ -503,8 +503,8 @@ function flesch() {
 Try it out below! (and [take a look at the source](https://github.com/shiffman/Programming-from-A-to-Z-F14/blob/master/week1/05_p5_text/flesch/sketch.js)).
 
 <script language="javascript" type="text/javascript" src="flesch.js"></script>
-
-
+<textarea rows="10" cols="100" id ="input">Enter some text.</textarea>
+<button value="undefined" id="fleschit">Compute the Flesch Index!</button>
 
 
 
