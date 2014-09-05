@@ -2,6 +2,8 @@
 title: Week 1 A to Z
 author: Daniel
 layout: page
+dsq_thread_id:
+  - 279552139
 pvc_views:
   - 5436
 ---
