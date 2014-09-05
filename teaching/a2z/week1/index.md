@@ -330,8 +330,6 @@ lliw taht stivadiffa dna stnemucod yrassecen eht eraperp lliw yenrotta
 <a name="analysis"></a>
 ## Analysis
 
-![Flesch](http://shiffman.net/itp/classes/a2z/week01/flesch.jpg)
-
 We&#8217;ll end this week by looking at a basic example of text analysis.  We will read in a file, examine some of its statistical properties, and write a report.  Our example will compute the [Flesch Index](http://en.wikipedia.org/wiki/Flesch-Kincaid_Readability_Test)  (aka Flesch-Kincaid Reading Ease test), a numeric score that indicates the readability of a text.   The lower the score, the more difficult the text.  The higher, the easier.  For example, texts with a score of 90-100 are, say, around the 5th grade level, wheras 0-30 would be for &#8220;college graduates&#8221;.  The result of the test on a few sample texts (the Bible, spam, a New York Times article, and Processing tutorials I&#8217;m writing) are displayed to the right.
 
 The Flesch Index is computed as a function of total words, total sentences, and total syllables.  It was developed by Dr. Rudolf Flesch and modified by J. P. Kincaid (thus the joint name).  Most word processing programs will compute the Flesch Index for you, which provides us with a nice method to check our results.
