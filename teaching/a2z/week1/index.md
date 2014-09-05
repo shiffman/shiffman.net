@@ -337,7 +337,7 @@ We&#8217;ll end this week by looking at a basic example of text analysis.  We wi
 The Flesch Index is computed as a function of total words, total sentences, and total syllables.  It was developed by Dr. Rudolf Flesch and modified by J. P. Kincaid (thus the joint name).  Most word processing programs (MS Word, Corel Wordperfect, etc.) will compute the Flesch Index for you, which provides us with a nice method to check our results.
 
 
-*Flesch Index = 206.835 &#8211; 1.015 * (total words / total sentences) + 84.6 * (total syllables / total words)*
+***Flesch Index = 206.835 &#8211; 1.015 * (words / sentences) + 84.6 * (syllables / words)***
 
 Our pseudo-code will look something like this:
 
