@@ -18,15 +18,14 @@ pvc_views:
 * JavaScript 101
 * Strings in JavaScript
 * File I/0 with Node
+* Simple Text Analysis
 * Back to p5.js, processing text from a user
 
 ## Examples:
 
-
 ## Related Links:
 
 <a name ="beyond"></a>
-* Simple Text Analysis
 ## Beyond Processing and into JavaScript and p5.js
 
 [p5.js](http://p5js.org). created by Lauren McCarthy, is a JavaScript library that starts with the original goal of Processing, to make coding accessible for artists, designers, educators, and beginners, and reinterprets this for the web.  While we are not going to use p5.js exclusively in this class, it will serve as a good foundation for getting up and running with JavaScript to make browser-based text experiments.
