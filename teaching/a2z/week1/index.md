@@ -29,7 +29,7 @@ pvc_views:
 * [File I/O in Node](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week1/04_fileinput)
 * [Process user text in p5](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week1/05_p5_text)
 
-## Related Links:
+*(Some of these notes were adapted from the [Creative JavaScript](https://github.com/lmccart/itp-creative-js) ITP course.)*
 
 <a name ="beyond"></a>
 ## Beyond Processing and into JavaScript and p5.js
