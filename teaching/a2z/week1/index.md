@@ -13,15 +13,21 @@ pvc_views:
 
 
 ## This week&#8217;s topics:
-* Beyond Processing and into JavaScript and p5.js
-* Installing Node
-* JavaScript 101
-* Strings in JavaScript
-* File I/0 with Node
-* Simple Text Analysis
-* Back to p5.js, processing text from a user
+* [Beyond Processing and into JavaScript and p5.js](#beyond)
+* [Installing Node](#node)
+* [JavaScript 101](#js101)
+* [Strings in JavaScript](#strings)
+* [File I/0 with Node](#file)
+* [Simple Text Analysis](#analysis)
+* [Back to p5.js, processing text from a user](#p5analysis)
 
 ## Examples:
+* [Processing to p5](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week1/00_Processing_to_p5.js)
+* [OOP in JS](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week1/01_objects_in_JS)
+* [DOM manipulation in p5](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week1/02_DOM_p5)
+* [Strings in JS](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week1/03_Strings)
+* [File I/O in Node](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week1/04_fileinput)
+* [Process user text in p5](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week1/05_p5_text)
 
 ## Related Links:
 
@@ -49,6 +55,7 @@ You'll also want to get used to using the console and other developer tools in t
 
 You might also consider using [JSFiddle](http://jsfiddle.net/) for quick and dirty experiments.  Here is a [sample JSFiddle using p5.js](http://jsfiddle.net/shiffman/cLVHA/) To get a fiddle to work, you need to reference [the p5.js CDN](http://cdnjs.com/libraries/p5.js) as an external resource and select "No-Library (pure JS)" and "no wrap" under options.
 
+<a name ="node"></a>
 ## JS with Node
 
 We're also going to explore running some simple JavaScript programs via the command line in this class.  This will allow us to easily test out ideas as well as process text files.  This will also give us a head-start to building server-side programs that analyze text as well.  
