@@ -287,7 +287,7 @@ for (var i = 0; i < words.length-1; i++) {
 }
 {% endhighlight %}
 
-<p>The result applied to Genesis from the Bible looks something like:</p>
+The result applied to Genesis from the Bible looks something like:
 
 
 ```
@@ -315,7 +315,7 @@ for (var i = data.length-1; i >= 0; i--) {
 }
 {% endhighlight %}
 
-<p>The result applied to the Nigerian Spam looks something like:</p>
+The result applied to the Nigerian Spam looks something like:
 
 
 ```
@@ -327,12 +327,12 @@ fo secivres eht yolpme llahs eW .nik fo txen eht sa ecalp ni uoy tup
 lliw taht stivadiffa dna stnemucod yrassecen eht eraperp lliw yenrotta
 ```
 
-<p><a name="analysis"></a></p>
+<a name="analysis"></a>
 ## Analysis
 
 ![Flesch](http://shiffman.net/itp/classes/a2z/week01/flesch.jpg)
 
-We&#8217;ll end this week by looking at a basic example of text analysis.  We will read in a file, examine some of its statistical properties, and write a report.  Our example will compute the <a href="http://en.wikipedia.org/wiki/Flesch-Kincaid_Readability_Test">Flesch Index</a>  (aka Flesch-Kincaid Reading Ease test), a numeric score that indicates the readability of a text.   The lower the score, the more difficult the text.  The higher, the easier.  For example, texts with a score of 90-100 are, say, around the 5th grade level, wheras 0-30 would be for &#8220;college graduates&#8221;.  The result of the test on a few sample texts (the Bible, spam, a New York Times article, and Processing tutorials I&#8217;m writing) are displayed to the right.
+We&#8217;ll end this week by looking at a basic example of text analysis.  We will read in a file, examine some of its statistical properties, and write a report.  Our example will compute the [Flesch Index](http://en.wikipedia.org/wiki/Flesch-Kincaid_Readability_Test)  (aka Flesch-Kincaid Reading Ease test), a numeric score that indicates the readability of a text.   The lower the score, the more difficult the text.  The higher, the easier.  For example, texts with a score of 90-100 are, say, around the 5th grade level, wheras 0-30 would be for &#8220;college graduates&#8221;.  The result of the test on a few sample texts (the Bible, spam, a New York Times article, and Processing tutorials I&#8217;m writing) are displayed to the right.
 
 The Flesch Index is computed as a function of total words, total sentences, and total syllables.  It was developed by Dr. Rudolf Flesch and modified by J. P. Kincaid (thus the joint name).  Most word processing programs (MS Word, Corel Wordperfect, etc.) will compute the Flesch Index for you, which provides us with a nice method to check our results.
 
@@ -349,7 +349,7 @@ Our pseudo-code will look something like this:
 5) Apply formula
 6) Write out report file
 
-We know we can read in text from a file and store it in a String object as demonstrated in the example above.  Now, all we have to do is examine that String object, counting the total words, sentences, and syllables, applying the formula as a final step. To count words, we&#8217;ll use `split()`.</p>
+We know we can read in text from a file and store it in a String object as demonstrated in the example above.  Now, all we have to do is examine that String object, counting the total words, sentences, and syllables, applying the formula as a final step. To count words, we&#8217;ll use `split()`.
 
 The first thing we&#8217;ll do is count the number of words in the text.  We&#8217;ve seen in some of the examples above that we can accomplish this by using `split()` to split a String up into an array wherever there is a space.  For this example, however, we are going to want to split by more than a space.  A new word occurs whenever there is a space or some sort of punctuation.
 
