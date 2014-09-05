@@ -46,7 +46,9 @@ You might also consider using [JSFiddle](http://jsfiddle.net/) for quick and dir
 
 <a name ="js101"></a>
 ## JavaScript 101
+
 (This is just a list of what I'll be covering in class, hope to have write-up at some point).
+
 * File setup, using `<script>`
 * Variables and data types 
     * Numbers
@@ -179,13 +181,13 @@ console.log(sum);
 
 To perform the reverse of split, we can write a quick function that joins together an array of Strings.
 
-{% highlight java %}
+{% highlight javascript %}
 var words = ['it','was','a','dark','and','stormy','night'];
 {% endhighlight %}
 
 <p>Knowing about loops and arrays we could join the above array of strings together as follows:</p>
 
-{% highlight java %}
+{% highlight javascript %}
 // Concatenating an array of Strings manually
 function join(str, separator) {
   var stuff = '';
@@ -205,40 +207,40 @@ To start, we are going to be working in the simple world of text in and text out
 
 Let's start with a simple node.js program.  To load from a file, we'll use the [file system module](http://nodejs.org/api/fs.html). 
 
-```
+{% highlight javascript %}
 var fs = require('fs');
-```  
+{% endhighlight %}
 
 One thing that is nice about working with the command line is that we can pass in filenames as arguments to a program.  For example, let's say we have a JS file `process.js`.  From the command line, we'll say:
 
-```
+{% highlight javascript %}
 % node processing.js myfile.txt
-```
+{% endhighlight %}
 
 The program will then read this text file as input.  To accomplish this, we can grab the filename as the third element (index 2) of the arugments array.
 
-```
+{% highlight javascript %}
 var filename = process.argv[2];
-```
+{% endhighlight %}
 
 We can even check to make sure the user entered a file name.
 
-```
+{% highlight javascript %}
 if (process.argv.length < 3) {
   console.log('Oops, you forgot to pass in a text file.');
   process.exit(1);
 }
-```
+{% endhighlight %}
 
 We'll use the `readFile()` method to read the file.  `readFile()` takes three arguments -- the name of the file, the format of the file, and a function that will executed when the data from the file is ready (known as a *callback*). 
 
-```
+{% highlight javascript %}
 fs.readFile(filename, 'utf8', analyze);
-```
+{% endhighlight %}
 
 The use of a callback is very typical of JavaScript, and we'll be seeing many examples of this over the course of the semester.  It's also possible to write an "anonymous" function directly as an argument to `readFile()` but this will make the code a bit harder to follow.  Let's take a look at the `analyze()` function.
 
-```
+{% highlight javascript %}
 function analyze(err, data) {
   if (err) {
     throw err;
@@ -246,7 +248,7 @@ function analyze(err, data) {
   console.log('OK: ' + filename);
   console.log(data);
 }
-```
+{% endhighlight %}
 
 The function takes two arguments: err and data.  err will be undefined (unless there's an error) and data will contain all of the text from the file in a String (unless there was an error).   If you're not familiar with `throw err`, take a look at the documentation for [throw](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/throw) and [try/catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch).
 
@@ -276,7 +278,7 @@ that Olaf
 
 Another thing we might try is to search for every time a certain word appears.   The following code examines a text for every time the word &#8220;God&#8221; appears and keeps the word &#8220;God&#8221; along with what follows it:
 
-{% highlight java %}
+{% highlight javascript %}
 var words = data.split(' ');
 for (var i = 0; i < words.length-1; i++) {
   if (words[i] == 'God') {
@@ -287,7 +289,8 @@ for (var i = 0; i < words.length-1; i++) {
 
 <p>The result applied to Genesis from the Bible looks something like:</p>
 
-{% highlight java %}
+
+```
 God Almighty
 God forbid
 God hath
@@ -299,11 +302,12 @@ God make
 God of
 God of
 God meant
-God will{% endhighlight %}
+God will
+```
 
 <p>We could also reverse all the characters in a text, by walking through the String backwards.  Note how the for loop starts at the end of the String (`data.length - 1`).
 
-{% highlight java %}
+{% highlight javascript %}
 // Reverse all the characters in the text
 var output = '';
 for (var i = data.length-1; i >= 0; i--) {
@@ -313,24 +317,27 @@ for (var i = data.length-1; i >= 0; i--) {
 
 <p>The result applied to the Nigerian Spam looks something like:</p>
 
-{% highlight java %}
+
+```
 rof %5 dna uoy rof %53 dna em rof %06 fo oitar eht ni erahs ot su
 rof tnuocca ruoy otni diap eb lliw yenom ehT .refsnart eht rof rovaf
 ruoy ni noitartsinimda/etaborp fo rettel dna stnemucod yrassecen eht
 niatbo ot dna LLIW eht fo noitaziraton dna gnitfard rof yenrotta na
 fo secivres eht yolpme llahs eW .nik fo txen eht sa ecalp ni uoy tup
-lliw taht stivadiffa dna stnemucod yrassecen eht eraperp lliw yenrotta{% endhighlight %}
+lliw taht stivadiffa dna stnemucod yrassecen eht eraperp lliw yenrotta
+```
 
 <p><a name="analysis"></a></p>
 ## Analysis
-<img src="http://shiffman.net/itp/classes/a2z/week01/flesch.jpg"/>
+
+![Flesch](http://shiffman.net/itp/classes/a2z/week01/flesch.jpg)
 
 We&#8217;ll end this week by looking at a basic example of text analysis.  We will read in a file, examine some of its statistical properties, and write a report.  Our example will compute the <a href="http://en.wikipedia.org/wiki/Flesch-Kincaid_Readability_Test">Flesch Index</a>  (aka Flesch-Kincaid Reading Ease test), a numeric score that indicates the readability of a text.   The lower the score, the more difficult the text.  The higher, the easier.  For example, texts with a score of 90-100 are, say, around the 5th grade level, wheras 0-30 would be for &#8220;college graduates&#8221;.  The result of the test on a few sample texts (the Bible, spam, a New York Times article, and Processing tutorials I&#8217;m writing) are displayed to the right.
 
 The Flesch Index is computed as a function of total words, total sentences, and total syllables.  It was developed by Dr. Rudolf Flesch and modified by J. P. Kincaid (thus the joint name).  Most word processing programs (MS Word, Corel Wordperfect, etc.) will compute the Flesch Index for you, which provides us with a nice method to check our results.
 
 ```
-Flesch Index = 206.835 &#8211; 1.015 * (total words / total sentences) + 84.6 * (total syllables / total words)</i></b></p>
+Flesch Index = 206.835 &#8211; 1.015 * (total words / total sentences) + 84.6 * (total syllables / total words)
 ```
 
 Our pseudo-code will look something like this:
@@ -347,16 +354,16 @@ We know we can read in text from a file and store it in a String object as demon
 The first thing we&#8217;ll do is count the number of words in the text.  We&#8217;ve seen in some of the examples above that we can accomplish this by using `split()` to split a String up into an array wherever there is a space.  For this example, however, we are going to want to split by more than a space.  A new word occurs whenever there is a space or some sort of punctuation.
 
 {% highlight javascript %}
-var delimiters = /[.:;?! !@#$%^&amp;*()]+/;
+var delimiters = /[.:;?! !@#$%^&*()]+/;
 var words = data.split(delimiters);
 {% endhighlight %}
 
-You'll notice some new syntax here.  `/[.:;?! !@#$%^&amp;*()]+/` is a regular expression.  We are going to cover regex in detail next week.  For now, we should just understand this as something that indicates a list of possible delimiters (any character than appears between `/[` and `]+/`).
+You'll notice some new syntax here.  `/[.:;?! !@#$%^&*()]+/` is a regular expression.  We are going to cover regex in detail next week.  For now, we should just understand this as something that indicates a list of possible delimiters (any character than appears between `/[` and `]+/`).
 
-Now we have split up the text, we can march through all the words (tokens) and count their syllables.</p>
+Now we have split up the text, we can march through all the words (tokens) and count their syllables.
 
 {% highlight javascript %}
-for (var i = 0; i &lt; words.length; i++) {
+for (var i = 0; i < words.length; i++) {
   var word = words[i];
   totalSyllables += countSyllables(word);
   totalWords++;
@@ -373,7 +380,7 @@ Syllables = total # of vowels in a word (not counting vowels that appear after a
 * &#8220;banana&#8221; &#8211;> three syllables
 * &#8220;home&#8221; &#8211;> one syllable
 
-Our code looks like this:</p>
+Our code looks like this:
 
 {% highlight javascript %}
 // A method to count the number of syllables in a word
