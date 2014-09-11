@@ -8,60 +8,60 @@ _(Everything you wanted to know about text but were afraid to ask.)_
 
 <p>Spring 2008 syllabus: <a href="http://itp.nyu.edu/varwiki/Syllabus/A2Z-S08">http://itp.nyu.edu/varwiki/Syllabus/A2Z-S08</a></p>
 
-<h2><a href="/teaching/a2z/week1">The beginning</a></h2>
+<h2><a href="/teaching/a2z_2008/week1">The beginning</a></h2>
 <ul>
-<li><a href="/teaching/a2z/week1/#beyond">Beyond Processing and into Java</a></li>
-<li><a href="/teaching/a2z/week1/#string">The String Class</a></li>
-<li><a href="/teaching/a2z/week1/#file">File I/O</a></li>
-<li><a href="/teaching/a2z/week1/#analysis">Simple Analysis</a></li>
+<li><a href="/teaching/a2z_2008/week1/#beyond">Beyond Processing and into Java</a></li>
+<li><a href="/teaching/a2z_2008/week1/#string">The String Class</a></li>
+<li><a href="/teaching/a2z_2008/week1/#file">File I/O</a></li>
+<li><a href="/teaching/a2z_2008/week1/#analysis">Simple Analysis</a></li>
 </ul>
-<h2><a href="/teaching/a2z/regex/">Regular Expressions</a></h2>
+<h2><a href="/teaching/a2z_2008/regex/">Regular Expressions</a></h2>
 <ul>
-<li><a href="/teaching/a2z/regex/#regex">Regular Expressions</a></li>
-<li><a href="/teaching/a2z/regex/#egrep">egrep</a></li>
-<li><a href="/teaching/a2z/regex/#java">Java Regex Package</a></li>
-<li><a href="/teaching/a2z/regex/#searchreplace">Splitting with Regex</a></li>
-<li><a href="/teaching/a2z/regex/#searchreplace">Search and Replace</a></li>
+<li><a href="/teaching/a2z_2008/regex/#regex">Regular Expressions</a></li>
+<li><a href="/teaching/a2z_2008/regex/#egrep">egrep</a></li>
+<li><a href="/teaching/a2z_2008/regex/#java">Java Regex Package</a></li>
+<li><a href="/teaching/a2z_2008/regex/#searchreplace">Splitting with Regex</a></li>
+<li><a href="/teaching/a2z_2008/regex/#searchreplace">Search and Replace</a></li>
 </ul>
-<h2><a href="/teaching/a2z/concordance/">The Concordance</a></h2>
+<h2><a href="/teaching/a2z_2008/concordance/">The Concordance</a></h2>
 <ul>
-<li><a href="/teaching/a2z/concordance/#tree">Binary Search Tree</a></li>
-<li><a href="/teaching/a2z/concordance/#package">Updated File I/O</a></li>
-<li><a href="/teaching/a2z/concordance/#concordance">Concordance</a></li>
+<li><a href="/teaching/a2z_2008/concordance/#tree">Binary Search Tree</a></li>
+<li><a href="/teaching/a2z_2008/concordance/#package">Updated File I/O</a></li>
+<li><a href="/teaching/a2z_2008/concordance/#concordance">Concordance</a></li>
 </ul>
-<h2><a href="/teaching/a2z/bayesian/">Bayesian Text Analysis</a></h2>
+<h2><a href="/teaching/a2z_2008/bayesian/">Bayesian Text Analysis</a></h2>
 <ul>
-<li><a href="/teaching/a2z/bayesian/#hash">Hash Tables</a></li>
-<li><a href="/teaching/a2z/bayesian/#bayesian">Bayes&#8217; Rule</a></li>
-<li><a href="/teaching/a2z/bayesian/#spam">Spam Filtering using Bayesian Analysis</a></li>
+<li><a href="/teaching/a2z_2008/bayesian/#hash">Hash Tables</a></li>
+<li><a href="/teaching/a2z_2008/bayesian/#bayesian">Bayes&#8217; Rule</a></li>
+<li><a href="/teaching/a2z_2008/bayesian/#spam">Spam Filtering using Bayesian Analysis</a></li>
 </ul>
-<h2><a href="/teaching/a2z/crawling/">Spiders</a></h2>
+<h2><a href="/teaching/a2z_2008/crawling/">Spiders</a></h2>
 <ul>
 <li>(some catch-up from week 3 &#038; 4)</li>
-<li><a href="/teaching/a2z/crawling/#url">URL grabbing</a></li>
-<li><a href="/teaching/a2z/crawling/#lists">Linked Lists</a></li>
-<li><a href="/teaching/a2z/crawling/#polite">Being Polite</a></li>
-<li><a href="/teaching/a2z/crawling/#find">Finding new URLs</a></li>
-<li><a href="/teaching/a2z/crawling/#crawler">A Crawler Class</a></li>
+<li><a href="/teaching/a2z_2008/crawling/#url">URL grabbing</a></li>
+<li><a href="/teaching/a2z_2008/crawling/#lists">Linked Lists</a></li>
+<li><a href="/teaching/a2z_2008/crawling/#polite">Being Polite</a></li>
+<li><a href="/teaching/a2z_2008/crawling/#find">Finding new URLs</a></li>
+<li><a href="/teaching/a2z_2008/crawling/#crawler">A Crawler Class</a></li>
 </ul>
-<h2><a href="/teaching/a2z/mining/">Mining</a></h2>
+<h2><a href="/teaching/a2z_2008/mining/">Mining</a></h2>
 <ul>
-<li><a href="/teaching/a2z/mining/#html">HTML (yuck)</a></li>
-<li><a href="/teaching/a2z/mining/#xml">XML / RSS (yum)</a></li>
-<li><a href="/teaching/a2z/mining/#api">APIs (googly del.icio.us tasty treat!)</a></li>
+<li><a href="/teaching/a2z_2008/mining/#html">HTML (yuck)</a></li>
+<li><a href="/teaching/a2z_2008/mining/#xml">XML / RSS (yum)</a></li>
+<li><a href="/teaching/a2z_2008/mining/#api">APIs (googly del.icio.us tasty treat!)</a></li>
 </ul>
-<h2><a href="/teaching/a2z/wordnet/">WordNet</a></h2>
-<h2><a href="/teaching/a2z/generative/">Generative Text</a></h2>
+<h2><a href="/teaching/a2z_2008/wordnet/">WordNet</a></h2>
+<h2><a href="/teaching/a2z_2008/generative/">Generative Text</a></h2>
 <ul>
-<li><a href="/teaching/a2z/generative/#random">Chance Operations &#038; Probability</a></li>
-<li><a href="/teaching/a2z/generative/#lsystem">LSystems</a></li>
-<li><a href="/teaching/a2z/generative/#ga">Genetic Algorithms</a></li>
+<li><a href="/teaching/a2z_2008/generative/#random">Chance Operations &#038; Probability</a></li>
+<li><a href="/teaching/a2z_2008/generative/#lsystem">LSystems</a></li>
+<li><a href="/teaching/a2z_2008/generative/#ga">Genetic Algorithms</a></li>
 </ul>
-<h2><a href="/teaching/a2z/threads/">Threads</a></h2>
+<h2><a href="/teaching/a2z_2008/threads/">Threads</a></h2>
 <ul>
-<li><a href="/teaching/a2z/threads/#thread">independent threads</a></li>
-<li><a href="/teaching/a2z/threads/#synchronize">synchronized threads</a></li>
-<li><a href="/teaching/a2z/threads/#library">making p5 libraries</a></li>
+<li><a href="/teaching/a2z_2008/threads/#thread">independent threads</a></li>
+<li><a href="/teaching/a2z_2008/threads/#synchronize">synchronized threads</a></li>
+<li><a href="/teaching/a2z_2008/threads/#library">making p5 libraries</a></li>
 </ul>
 <h2>Course Description</h2>
 <p>There are 16,000 free books in the Project Gutenberg digital catalog. Google print is scanning millions. With all this digitized text, what can we do with it beyond simply search and browse? This course will focus on programming strategies and techniques behind procedural analysis and generation of text. We&#8217;ll explore topics ranging from evaluating text according to its statistical properties to the automated production of text via artificial intelligence. Student will be encouraged to develop their own systems and methods, from poetry machines to intelligent spiders to evolutionary language generators, etc. Examples will be demonstrated using Java and Processing with a focus on advanced data structures (linked lists, hash tables, binary trees) associated with storing and manipulating text. Prerequisite: H79.2233 Introduction to Computational Media or equivalent programming experience.</p>
