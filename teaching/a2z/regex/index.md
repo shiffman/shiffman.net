@@ -42,11 +42,11 @@ pvc_views:
 <p><a name ="regex"></a></p>
 
 <a name ="beyond"></a>
-## Regular Expressions
+## Regular Expressions 
 
 ***WARNING: This is a woefully incomplete overview of regular expressions.  It would be absurd to try to fully cover the topic in a short handout like this.  Hopefully, this will provide some of the basics to get you started, but to really understand regular expressions, I implore you to read as much of [Mastering Regular Expressions](http://safari.oreilly.com/0596002890/) by Jeffrey E.F. Friedl as you have time for.***
 
-A **[regular expression](http://en.wikipedia.org/wiki/Regular_expression)** is a sequence of characters that describes or matches a given amount of text.  For example, the sequence <span class="regex">bob</span>, considered as a regular expression, would match any occurance of the word &#8220;bob&#8221; inside of another text.    The following is a rather rudimentary introduction to the basics of regular expressions.  We could spend the entire semester studying regular expressions if we put our mind to it. . . Nevertheless, we&#8217;ll just have a basic introduction to them this week and learn more advanced technique as we explore different text processing applications over the course of the semester.
+A **[regular expression](http://en.wikipedia.org/wiki/Regular_expression)** is a sequence of characters that describes or matches a given amount of text.  For example, the sequence <span class="regex">bob</span>, considered as a regular expression, would match any occurance of the word &#8220;bob&#8221; inside of another text. The following is a rather rudimentary introduction to the basics of regular expressions.  We could spend the entire semester studying regular expressions if we put our mind to it. Nevertheless, we&#8217;ll just have a basic introduction to them this week and learn more advanced technique as we explore different text processing applications over the course of the semester.
 
 A truly wonderful book written on the subject is: <a href="http://regex.info/">Mastering Regular Expressions</a> by Jeffrey Friedl.  I would recommend at least reading [Chapter 1](http://safari.oreilly.com/0596002890/mastregex2-CHP-1).
 
@@ -114,7 +114,7 @@ Parentheses also serve the purpose of capturing groups for back-references.  For
 
 The first part of the expression without parentheses would read: <span class="regex">b([0-9A-Za-z]+)</span> meaning match any &#8220;word&#8221; containing at least one or more letters/digits.  The next part <span class="regex">s+</span> means any sequence of at least one white space.  The third part <span class="regex">1</span> says match whatever you matched that was enclosed inside the first set of parentheses, i.e. <span class="regex">([0-9A-Za-z]+)</span>.   So, thinking this over, what will this regular expression match in the following line:
 
-This is really really super super duper duper fun.  Fun!
+*This is really really super super duper duper fun.  Fun!*
 
 <p><a name ="egrep"></a></p>
 ## Testing regex with egrep
@@ -124,13 +124,13 @@ This is really really super super duper duper fun.  Fun!
 The syntax is simple:
 
 ```
-egrep  -flags &#8216;regexpattern&#8217; filename
+egrep  -flags 'regexpattern' filename
 ```
 
 If we want to output a file:
 
 ```
-egrep  -flags &#8216;regexpattern&#8217; filename >> outputfilename
+egrep  -flags 'regexpattern' filename >> outputfilename
 ```
 
 ```
@@ -147,20 +147,18 @@ Let&#8217;s look at some other examples (special thanks to [Friedl&#8217;s Maste
 ### Match URL&#8217;s:
 
 ```
-egrep -i 'http://[^ ]*' a2z.txt
+egrep -i 'http://\S*' a2z.txt
 ```
-
 (run this with the following sample file: [a2z.txt](http://shiffman.net/itp/classes/a2z/week02/a2z.txt).
 
 ### Match double words:
 
 ```
-egrep -i '\< (w+) +\1\>' doubletext.txt
+egrep -i '\<(\w+)\s+\1\>' doubletext.txt
 ```
-
 (run this with the following sample file: [doubletext.txt](http://shiffman.net/itp/classes/a2z/week02/doubletext.txt)).
 
-(Note, in the above example, the metacharacter <span class="regex"><</span> means &#8220;start of word boundary&#8221; and </span><span class="regex">></span> means &#8220;end of word boundary.&#8221;  This is different than the <span class="regex">\b</span> we&#8217;ll find in JavaScript.
+(Note, in the above example, the metacharacter <span class="regex">\<</span> means &#8220;start of word boundary&#8221; and </span><span class="regex">\></span> means &#8220;end of word boundary.&#8221;  This is different than the <span class="regex">\b</span> we&#8217;ll find in JavaScript which is the metacharacter for the beginning *or* end of a word (also known as a ‘word boundary’).
 
 <a name ="java"></a>
 ## Regular Expressions in JavaScript

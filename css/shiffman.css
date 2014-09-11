@@ -23,8 +23,9 @@ html, body, h1, h2, h3, h4, h5, h6 {
 /* For regex tutorial*/
 .regex {
   font-family: "source code pro", monospace;
-  background: #555555;
-  color:#EFEFEF;
+  background: #BBBBBB;
+  font-weight: bold;  
+  color:#000000;
   padding: 2px;
 }
 
