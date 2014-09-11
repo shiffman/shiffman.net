@@ -23,3 +23,6 @@ N) **[Contributions Manager: Reloaded](http://www.joelmoniz.com/gsoc-2014/)** by
 
 
 N) **[TweakMode for Processing 3.0](http://www.galsasson.com/tweakmode/)** by [Gal Sasson](http://www.galsasson.com), mentored by [Daniel Shiffman](http://shiffman.net/) - Tweak is a new execution mode in Processing 3.0 that allows changing sketch parameters in real-time. TweakMode was created last year in GSoC 2013 as a separate mode, and was brought into Processing 3.0 this summer, with some modifications and fixes. ([Source code](https://github.com/processing/processing/commits/master?author=galsasson))
+
+<iframe src="//player.vimeo.com/video/105612127" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+N) **[Sound for Processing 3.0](https://github.com/processing/processing/tree/master/java/libraries/sound)** by [Wilm Thoben](http://www.wilmthoben.com), mentored by [Casey Reas](www.reas.com) - Sound is the new core lightweight sound library for Processing. The project started in late 2013 and in GSoC 2014 new features, bug fixes and cross platform support was introduced. Sound is using a customized and enhanced version of methcla, a C++ sound engine. The native bindings allow for low latency support which is a new feature. Sound is a collection of sound-synthesis objects, analyzers and effects.
