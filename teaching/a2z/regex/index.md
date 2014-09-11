@@ -46,91 +46,125 @@ pvc_views:
 
 ***WARNING: This is a woefully incomplete overview of regular expressions.  It would be absurd to try to fully cover the topic in a short handout like this.  Hopefully, this will provide some of the basics to get you started, but to really understand regular expressions, I implore you to read as much of [Mastering Regular Expressions](http://safari.oreilly.com/0596002890/) by Jeffrey E.F. Friedl as you have time for.***
 
-A **[regular expression](http://en.wikipedia.org/wiki/Regular_expression)** is a sequence of characters that describes or matches a given amount of text.  For example, the sequence <span class="regex">bob</span>, considered as a regular expression, would match any occurance of the word &#8220;bob&#8221; inside of another text.    The following is a rather rudimentary introduction to the basics of regular expressions.  We could spend the entire semester studying regular expressions if we put our mind to it. . . Nevertheless, we&#8217;ll just have a basic introduction to them this week and learn more advanced technique as we explore different text processing applications over the course of the semester.</p>
-<p>A truly wonderful book written on the subject is: <a href="http://regex.info/">Mastering Regular Expressions</a> by Jeffrey Friedl.   Chapter 1, available via the Safari Network (through NYU) can be found here:</p>
-<p><a href=" http://safari.oreilly.com/0596002890/mastregex2-CHP-1"> http://safari.oreilly.com/0596002890/mastregex2-CHP-1</a></p>
-<p>Regular expressions (sometimes referred to as &#8216;regex&#8217; for short) have both literal characters and meta characters.  In <span class="regex">bob</span>, all three characters are literal, i.e. the &#8216;b&#8217; wants to match a &#8216;b&#8217;, the &#8216;o&#8217; an &#8216;o&#8217;, etc.    We might also have the regular expression:</p>
-<p><span class="regex">^bob</span></p>
-<p>In this case, the &#8216;^&#8217; is a meta character, i.e. it does not want to match the character &#8216;^&#8217;, but instead indicates the &#8220;beginning of a line.&#8221;  In other words the regex above would find a match in:</p>
-<p><i>bob goes to the park.</i></p>
-<p>but would not find a match in:</p>
-<p><i>jill and bob go to the park.</i></p>
-<p>Here are a few common meta-characters (I&#8217;m listing them below as they would appear in a Java regular expression, which may differ slightly from perl, php, .net, etc.) used to get us started:  </p>
-<p><b>Position Metacharacters:</b></p>
+A **[regular expression](http://en.wikipedia.org/wiki/Regular_expression)** is a sequence of characters that describes or matches a given amount of text.  For example, the sequence <span class="regex">bob</span>, considered as a regular expression, would match any occurance of the word &#8220;bob&#8221; inside of another text.    The following is a rather rudimentary introduction to the basics of regular expressions.  We could spend the entire semester studying regular expressions if we put our mind to it. . . Nevertheless, we&#8217;ll just have a basic introduction to them this week and learn more advanced technique as we explore different text processing applications over the course of the semester.
 
-{% highlight java %}
-^     beginning of line
-$     end of line
-\b    word boundary
-\B    a non word boundary
-{% endhighlight %}
+A truly wonderful book written on the subject is: <a href="http://regex.info/">Mastering Regular Expressions</a> by Jeffrey Friedl.  I would recommend at least reading [Chapter 1](http://safari.oreilly.com/0596002890/mastregex2-CHP-1).
 
-<p><b>Single Character Metacharacters:</b></p>
+Regular expressions (referred to as &#8216;regex&#8217; for short) have both literal characters and meta characters.  In <span class="regex">bob</span>, all three characters are literal, i.e. the &#8216;b&#8217; wants to match a &#8216;b&#8217;, the &#8216;o&#8217; an &#8216;o&#8217;, etc.    We might also have the regular expression:
 
-{% highlight java %}
-.     any one character
-\d    any digit from 0 to 9
-\w    any word character (a-z,A-Z,0-9)
-\W    any non-word character
-\s    any whitespace character (tab, new line, form feed, end of line, carriage return)
-\S    any non whitespace character
-{% endhighlight %}
+<span class="regex">^bob</span>
 
-<p><b>Quantifiers (refer to the character that precedes it):</b></p>
+In this case, the &#8216;^&#8217; is a meta character, i.e. it does not want to match the character &#8216;^&#8217;, but instead indicates the &#8220;beginning of a line.&#8221;  In other words the regex above would find a match in:
 
-{% highlight java %}
-?     appearing once or not at all
-*     appearing zero or more times
-+     appearing one or more times
-{min,max} appearing within the specified range
-{% endhighlight %}
+<i>bob goes to the park.</i>
 
-<p>Using the above, we could come up with some quick examples:</p>
-<p><span class="regex">^$</span> &#8211;> matches beginning of line followed by end of line, i.e. match any blank line!</p>
-<p><span class="regex">ingb</span> &#8211;> matches &#8216;ing&#8217; followed by a word boundary, i.e. any time &#8216;ing&#8217; appears at the end of a word!</p>
-<p><b>Character Classes</b> allow one to do an &#8220;or&#8221; statement amongst individual characters and are denoted by characters enclosed in brackets, i.e. <span class="regex">[aeiou]</span> means match any vowel.  Using a &#8220;^&#8221; negates the character class, i.e. <span class="regex">[^aeiou]</span> means match any character not a vowel (note this isn&#8217;t just limited to letters, it really means <i>anything at all</i> that is not an a, e, i, o, or u.)  A hyphen indicates a range of characters, such as <span class="regex">[0-9]</span> or <span class="regex">[a-z]</span>.</p>
-<p>Another key metacharacter is |, meaning or.  This is known as the concept of <b>Alternation</b>.  </p>
-<p> <span class="regex">John | Jon</span> -> match &#8220;John&#8221; or Jon&#8221;</p>
-<p>note: this regex could also be written as <span class="regex">Joh?n</span>, meaning match &#8220;Jon&#8221; with an option &#8220;h&#8221; between the &#8220;o&#8221; and &#8220;n.&#8221;</p>
-<p>Parentheses can also be used to constrain the alternation, i.e.:</p>
-<p><span class="regex"> (212|646|917)d*</span>  matches any sequence of zero or more digits preceded by 212, 646, or 917 (presumably to retrieve phone #&#8217;s with NYC area codes).  Note this regular expression would need to be improved to take into consideration white spaces and/or punctuation.</p>
-<p>Parentheses also serve the purpose of capturing groups for back-references.  For example, examine the following regular expression:</p>
-<p><span class="regex">b([0-9A-Za-z]+)s+1b</span></p>
-<p>The first part of the expression without parentheses would read: <span class="regex">b([0-9A-Za-z]+)</span> meaning match any &#8220;word&#8221; containing at least one or more letters/digits.  The next part <span class="regex">s+</span> means any sequence of at least one white space.  The third part <span class="regex">1</span> says match whatever you matched that was enclosed inside the first set of parentheses, i.e. <span class="regex">([0-9A-Za-z]+)</span>.   So, thinking this over, what will this regular expression match in the following line:</p>
+but would not find a match in:
 
-{% highlight java %}
+<i>jill and bob go to the park.</i>
+
+Here are a few common meta-characters (I&#8217;m listing them below as they would appear in a Java regular expression, which may differ slightly from perl, php, .net, etc.) used to get us started:
+
+### Position Metacharacters:
+
+```
+<span class="regex">^</span>     beginning of line
+<span class="regex">$</span>     end of line
+<span class="regex">\b</span>    word boundary
+<span class="regex">\B</span>    a non word boundary
+```
+
+### Single Character Metacharacters:
+
+```
+<span class="regex">.</span>     any one character
+<span class="regex">\d</span>    any digit from 0 to 9
+<span class="regex">\w</span>    any word character (a-z,A-Z,0-9)
+<span class="regex">\W</span>    any non-word character
+<span class="regex">\s</span>    any whitespace character (tab, new line, form feed, end of line, carriage return)
+<span class="regex">\S</span>    any non whitespace character
+```
+
+### Quantifiers (refer to the character that precedes it):
+
+```
+<span class="regex">?</span>         appearing once or not at all
+<span class="regex">*</span>         appearing zero or more times
+<span class="regex">+</span>         appearing one or more times
+<span class="regex">{min,max}</span> appearing within the specified range
+```
+
+Using the above, we could come up with some quick examples:
+
+* <span class="regex">^$</span> &#8211;> matches beginning of line followed by end of line, i.e. match any blank line!
+* <span class="regex">ingb</span> &#8211;> matches &#8216;ing&#8217; followed by a word boundary, i.e. any time &#8216;ing&#8217; appears at the end of a word!
+
+**Character Classes** allow one to do an &#8220;or&#8221; statement amongst individual characters and are denoted by characters enclosed in brackets, i.e. <span class="regex">[aeiou]</span> means match any vowel.  Using a &#8220;^&#8221; negates the character class, i.e. <span class="regex">[^aeiou]</span> means match any character not a vowel (note this isn&#8217;t just limited to letters, it really means <i>anything at all</i> that is not an a, e, i, o, or u.)  A hyphen indicates a range of characters, such as <span class="regex">[0-9]</span> or <span class="regex">[a-z]</span>.
+
+Another key metacharacter is |, meaning or.  This is known as the concept of **Alternation**.
+
+<span class="regex">John | Jon</span> -> match &#8220;John&#8221; or Jon&#8221;
+
+Note: this regex could also be written as <span class="regex">Joh?n</span>, meaning match &#8220;Jon&#8221; with an option &#8220;h&#8221; between the &#8220;o&#8221; and &#8220;n.&#8221;
+
+Parentheses can also be used to constrain the alternation, i.e.:
+
+<span class="regex"> (212|646|917)\d*</span>  matches any sequence of zero or more digits preceded by 212, 646, or 917 (presumably to retrieve phone #&#8217;s with NYC area codes).  Note this regular expression would need to be improved to take into consideration white spaces and/or punctuation.
+
+Parentheses also serve the purpose of capturing groups for back-references.  For example, examine the following regular expression: <span class="regex">b([0-9A-Za-z]+)s+1b</span>.
+
+The first part of the expression without parentheses would read: <span class="regex">b([0-9A-Za-z]+)</span> meaning match any &#8220;word&#8221; containing at least one or more letters/digits.  The next part <span class="regex">s+</span> means any sequence of at least one white space.  The third part <span class="regex">1</span> says match whatever you matched that was enclosed inside the first set of parentheses, i.e. <span class="regex">([0-9A-Za-z]+)</span>.   So, thinking this over, what will this regular expression match in the following line:
+
 This is really really super super duper duper fun.  Fun!
-{% endhighlight %}
 
 <p><a name ="egrep"></a></p>
-<h2>egrep</h2>
-<p><a href="http://en.wikipedia.org/wiki/Grep">grep</a> is a unix command line utility that takes an input file, a regular expression and outputs the lines that contain matches for that regular expression.  It&#8217;s a quick way for us to test some regexes (and we can use it on ITP&#8217;s server or on any Mac OS X machine.)  As a point of history, the name comes from the form &#8220;g/re/p&#8221; which stands for &#8220;Global Regular Expression Print.&#8221;  We&#8217;ll be used egrep, which allows for more sophisticated regular expression searches.  (Note: the examples below use a slightly different regex &#8220;flavor&#8221; than what we will see in Java.  This is something we&#8217;ll have to get used to, and will likely cause a bit of confusion.  Not to worry, confusion over regular expression flavors is extremely normal.  No need to seek professional help.)</p>
-<p>The syntax is simple:</p>
-<p><b><i>egrep  -flags &#8216;regexpattern&#8217; filename</i></b></p>
-<p>If we want to output a file:</p>
-<p><b><i>egrep  -flags &#8216;regexpattern&#8217; filename >> outputfilename</i></b></p>
+## Testing regex with egrep
 
-{% highlight java %}
+[grep](http://en.wikipedia.org/wiki/Grep) is a unix command line utility that takes an input file, a regular expression and outputs the lines that contain matches for that regular expression.  It&#8217;s a quick way for us to test some regexes.  As a point of history, the name comes from the form &#8220;g/re/p&#8221; which stands for &#8220;Global Regular Expression Print.&#8221;  We&#8217;ll be used egrep, which allows for more sophisticated regular expression searches.  (Note: the examples below use a slightly different regex &#8220;flavor&#8221; than what we will see in JavaScript.  This is something we&#8217;ll have to get used to, and will likely cause a bit of confusion.  Not to worry, confusion over regular expression flavors is extremely normal.  No need to seek professional help.)</p>
+
+The syntax is simple:
+
+```
+egrep  -flags &#8216;regexpattern&#8217; filename
+```
+
+If we want to output a file:
+
+```
+egrep  -flags &#8216;regexpattern&#8217; filename >> outputfilename
+```
+
+```
 %  egrep -i 'four' bible.txt
 %  egrep -i 'five' bible.txt
-{% endhighlight %}
+```
 
-<p><img src="http://shiffman.net/itp/classes/a2z/week02/four.jpg"/> <img src="http://shiffman.net/itp/classes/a2z/week02/five.jpg"/></p>
-<p>The -i flag indicates that the match should be case-insensitive.  You can find full documentation for the &#8220;egrep&#8221; command here (with full flags): <a href="http://www.unet.univie.ac.at/aix/cmds/aixcmds2/egrep.htm">http://www.unet.univie.ac.at/aix/cmds/aixcmds2/egrep.htm</a>.</p>
-<p>Let&#8217;s look at some other examples (special thanks to <a href="http://regex.info">Friedl&#8217;s Mastering Regular Expressions</a>).</p>
-<p>Match URL&#8217;s:</p>
+![regex four](http://shiffman.net/itp/classes/a2z/week02/four.jpg) ![regex four](http://shiffman.net/itp/classes/a2z/week02/five.jpg)
 
-{% highlight java %}%  egrep -i 'http://[^ ]*' a2z.txt{% endhighlight %}
+The `-i` flag indicates that the match should be case-insensitive.  You can find  documentation for [the &#8220;egrep&#8221; command here](http://www.unet.univie.ac.at/aix/cmds/aixcmds2/egrep.htm) (with a full list of flags).
 
-<p>(run this with the following sample file: <a href="http://shiffman.net/itp/classes/a2z/week02/a2z.txt">a2z.txt</a>)</p>
-<p>Match double words:</p>
+Let&#8217;s look at some other examples (special thanks to [Friedl&#8217;s Mastering Regular Expressions](http://regex.info)).
 
-{% highlight java %}%  egrep -i '\< (w+) +\1\>' doubletext.txt{% endhighlight %}
+### Match URL&#8217;s:
 
-<p>(run this with the following sample file: <a href="http://shiffman.net/itp/classes/a2z/week02/a2z.txt">doubletext.txt</a>)</p>
-<p>(Note, in the above example, the metacharacter <span class="regex">< </span> means &#8220;start of word boundary&#8221; and </span><span class="regex">></span> means &#8220;end of word boundary.&#8221;  This is different than the <span class="regex">b</span> we&#8217;ll find in Java.</p>
-<p><a name ="java"></a></p>
-<h2>Regular Expressions in Java</h2>
+```
+egrep -i 'http://[^ ]*' a2z.txt
+```
+
+(run this with the following sample file: [a2z.txt](http://shiffman.net/itp/classes/a2z/week02/a2z.txt).
+
+### Match double words:
+
+```
+egrep -i '\< (w+) +\1\>' doubletext.txt
+```
+
+(run this with the following sample file: [doubletext.txt](http://shiffman.net/itp/classes/a2z/week02/doubletext.txt)).
+
+(Note, in the above example, the metacharacter <span class="regex"><</span> means &#8220;start of word boundary&#8221; and </span><span class="regex">></span> means &#8220;end of word boundary.&#8221;  This is different than the <span class="regex">\b</span> we&#8217;ll find in JavaScript.
+
+<a name ="java"></a>
+## Regular Expressions in JavaScript
+
 <p>With Java 1.4, Sun introduced the <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/regex/package-summary.html">java.util.regex</a> package.  Having regex support come standard with Java is a great thing, and there are many advantages to working with regexes in a robust object-oriented environment.  Nevertheless, unlike with Perl (where regexes are a low-level component of the language), using regexes in Java can prove to be a bit awkward.  The following will offer a brief overview of using regexes in Java, for more information I would suggest reading Chapter 8 of <a href="http://regex.info">Mastering Regular Expressions</a>, the book <a href="http://www.amazon.com/gp/product/1590591070/">Java Regular Expressions</a>, and the <a href="http://java.sun.com/docs/books/tutorial/extra/regex/">online Sun tutorial</a>.</p>
 <h2>Making a String into a Regular Expression</h2>
 <p>Perl accepts normal strings as regular expressions, which makes life lovely.  With Java, however, a regular expression is a <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/regex/Pattern.html">Pattern</a> object that is made with a String.  We have to deal with Java&#8217;s own String metacharacters when putting together a String that will be used as a Regular Expression.   In other words, in Java if you use a backslash in a String, it will be considered as a metacharacter, i.e.: </p>
