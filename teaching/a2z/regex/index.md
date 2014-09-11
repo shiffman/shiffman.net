@@ -7,44 +7,46 @@ dsq_thread_id:
 pvc_views:
   - 25117
 ---
-<div class="pullquote">
-<b>This week&#8217;s topics:</b></p>
-<ul>
-<li><a href="#regex">Regular Expressions</a></li>
-<li><a href="#egrep">egrep</a></li>
-<li><a href="#java">Java Regex Package</a></li>
-<li><a href="#searchreplace">Splitting with Regex</a></li>
-<li><a href="#searchreplace">Search and Replace</a></li>
-</ul>
-</div>
-<h2>Examples:</h2>
-<ul>
-<li><a href="http://shiffman.net/itp/classes/a2z/week02/RegexHelloWorld.java">RegexHelloWorld.java</a></li>
-<li><a href="http://shiffman.net/itp/classes/a2z/week02/DoubleWords.java">DoubleWords.java</a></li>
-<li><a href="http://shiffman.net/itp/classes/a2z/week02/VowelCounter.java">VowelCounter.java</a></li>
-<li><a href="http://shiffman.net/itp/classes/a2z/week02/WordSplitterRegex.java">WordSplitterRegex.java</a></li>
-<li><a href="http://shiffman.net/itp/classes/a2z/week02/ReplaceDemo1.java">ReplaceDemo1.java</a></li>
-<li><a href="http://shiffman.net/itp/classes/a2z/week02/ReplaceDemo2.java">ReplaceDemo2.java</a></li>
-<li><a href="http://shiffman.net/itp/classes/a2z/week02/ReplaceBackReference.java">ReplaceBackReference.java</a></li>
-<li><a href="http://shiffman.net/itp/classes/a2z/week02/HTMLTagRemover.java">HTMLTagRemover.java</a></li>
-<li>Some sample input files: <a href="http://shiffman.net/itp/classes/a2z/week01/spam.txt">spam.txt</a>, <a href="http://shiffman.net/itp/classes/a2z/week01/nytimes.txt">nytimes.txt</a>, <a href="http://shiffman.net/itp/classes/a2z/week01/bible.txt">bible.txt</a>, <a href="http://shiffman.net/itp/classes/a2z/week02/a2z.txt">a2z.txt</a>, <a href="http://shiffman.net/itp/classes/a2z/week02/doubletext.txt">doubletext.txt</a>, <a href="http://shiffman.net/itp/classes/a2z/week02/nytimes.html">nytimes.html</a></li>
-</ul>
-<h2>Related:</h2>
-<ul>
-<li><a href="http://safari.oreilly.com/0596002890/mastregex2-CHP-1">Chapter 1, Mastering Regular Expressions</a></li>
-<li><a href="http://library.books24x7.com/book/id_11305/viewer.asp?bookid=11305&#038;chunkid=882628477">Beginning Regular Expressions: Regular Expressions in Java</a></li>
-<li><a href="http://www.javaregex.com/agame.html">Play the regex game!</a></li>
-</ul>
-<h2>Exercises (<i>optional</i>):</h2>
-<ul>
-<li>Write a regular expression that matches any e-mail address.</li>
-<li>Take that regular expression and do a search and replace so that any e-mail address is made into a &#8220;mailto:&#8221; link.</li>
-<li>Challenging:  Examine the HTML tag remover example.  Can you write a regular expression that searches for text in an HTML page, but ignores any text inside HTML tags, while leaving them intact?</li>
-</ul>
+
+## This week&#8217;s topics:
+* [Regular Expressions](#regex)
+* [Testing regex with egrep](#egrep)
+* [Regex in JavaScript](#jsregex)
+* [Strings in JavaScript](#strings)
+* [Splitting with Regex](#splitting)
+* [Simple Text Analysis](#analysis)
+* [Search and Replace](#searchreplace)
+
+## Examples:
+* [RegexHelloWorld](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week1/00_Processing_to_p5.js)
+* [Doublewords](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week1/01_objects_in_JS)
+* [VowelCounter](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week1/02_DOM_p5)
+* [WordSplitterRegex](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week1/03_Strings)
+* [ReplaceDemo1](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week1/04_fileinput)
+* [ReplaceDemo2](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week1/05_p5_text)
+* [ReplaceBackReference]
+* [HTMLTagRemover]
+* sample input files
+
+## Related references
+* [Chapter 1, Mastering Regular Expressions](http://safari.oreilly.com/0596002890/mastregex2-CHP-1)
+* . . .
+* regex game http://www.javaregex.com/agame.html
+
+## Exercise ideas
+* Write a regular expression that matches any e-mail address.
+* Take that regular expression and do a search and replace so that any e-mail address is made into a &#8220;mailto:&#8221; link.</li>
+<li>Challenging:  Examine the HTML tag remover example.  Can you write a regular expression that searches for text in an HTML page, but ignores any text inside HTML tags, while leaving them intact?
+* Challenging:  Examine the HTML tag remover example.  Can you write a regular expression that searches for text in an HTML page, but ignores any text inside HTML tags, while leaving them intact?
+
 <p><a name ="regex"></a></p>
-<h2>Regular Expressions</h2>
-<p><b><i>WARNING: This is a woefully incomplete overview of regular expressions.  It would be absurd to try to fully cover the topic in a short handout like this.  Hopefully, this will provide some of the basics to get you started, but to really understand regular expressions, I implore you to read as much of <a href="http://safari.oreilly.com/0596002890/">Mastering Regular Expressions</a> by Jeffrey E.F. Friedl as you have time for.</i></b></p>
-<p>A <b><a href="http://en.wikipedia.org/wiki/Regular_expression">regular expression</a></b> is a sequences of characters that describes or matches a given amount of text.  For example, the sequence <span class="regex">bob</span>, considered as a regular expression, would match any occurance of the word &#8220;bob&#8221; inside of another text.    The following is a rather rudimentary introduction to the basics of regular expressions.  We could spend the entire semester studying regular expressions if we put our mind to it. . . Nevertheless, we&#8217;ll just have a basic introduction to them this week and learn more advanced technique as we explore different text processing applications over the course of the semester.</p>
+
+<a name ="beyond"></a>
+## Regular Expressions
+
+***WARNING: This is a woefully incomplete overview of regular expressions.  It would be absurd to try to fully cover the topic in a short handout like this.  Hopefully, this will provide some of the basics to get you started, but to really understand regular expressions, I implore you to read as much of [Mastering Regular Expressions](http://safari.oreilly.com/0596002890/) by Jeffrey E.F. Friedl as you have time for.***
+
+A **[regular expression](http://en.wikipedia.org/wiki/Regular_expression)** is a sequence of characters that describes or matches a given amount of text.  For example, the sequence <span class="regex">bob</span>, considered as a regular expression, would match any occurance of the word &#8220;bob&#8221; inside of another text.    The following is a rather rudimentary introduction to the basics of regular expressions.  We could spend the entire semester studying regular expressions if we put our mind to it. . . Nevertheless, we&#8217;ll just have a basic introduction to them this week and learn more advanced technique as we explore different text processing applications over the course of the semester.</p>
 <p>A truly wonderful book written on the subject is: <a href="http://regex.info/">Mastering Regular Expressions</a> by Jeffrey Friedl.   Chapter 1, available via the Safari Network (through NYU) can be found here:</p>
 <p><a href=" http://safari.oreilly.com/0596002890/mastregex2-CHP-1"> http://safari.oreilly.com/0596002890/mastregex2-CHP-1</a></p>
 <p>Regular expressions (sometimes referred to as &#8216;regex&#8217; for short) have both literal characters and meta characters.  In <span class="regex">bob</span>, all three characters are literal, i.e. the &#8216;b&#8217; wants to match a &#8216;b&#8217;, the &#8216;o&#8217; an &#8216;o&#8217;, etc.    We might also have the regular expression:</p>
@@ -249,7 +251,7 @@ String output = m.replaceAll("ze");
 String input = "Anytime a sequence of one or more vowels appears, n" +
                "we're going to double the vowels.";
 String regex = "[aeiou]+";  //
-String output = input.replaceAll(regex,	"$0$0");
+String output = input.replaceAll(regex, "$0$0");
 {% endhighlight %}
 
 <p>Output yields:<br />
