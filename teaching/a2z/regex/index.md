@@ -67,30 +67,30 @@ Here are a few common meta-characters (I&#8217;m listing them below as they woul
 ### Position Metacharacters:
 
 ```
-<span class="regex">^</span>     beginning of line
-<span class="regex">$</span>     end of line
-<span class="regex">\b</span>    word boundary
-<span class="regex">\B</span>    a non word boundary
+^     beginning of line
+$     end of line
+\b    word boundary
+\B    a non word boundary
 ```
 
 ### Single Character Metacharacters:
 
 ```
-<span class="regex">.</span>     any one character
-<span class="regex">\d</span>    any digit from 0 to 9
-<span class="regex">\w</span>    any word character (a-z,A-Z,0-9)
-<span class="regex">\W</span>    any non-word character
-<span class="regex">\s</span>    any whitespace character (tab, new line, form feed, end of line, carriage return)
-<span class="regex">\S</span>    any non whitespace character
+.     any one character
+\d    any digit from 0 to 9
+\w    any word character (a-z,A-Z,0-9)
+\W    any non-word character
+\s    any whitespace character (tab, new line, form feed, end of line, carriage return)
+\S    any non whitespace character
 ```
 
 ### Quantifiers (refer to the character that precedes it):
 
 ```
-<span class="regex">?</span>         appearing once or not at all
-<span class="regex">*</span>         appearing zero or more times
-<span class="regex">+</span>         appearing one or more times
-<span class="regex">{min,max}</span> appearing within the specified range
+?         appearing once or not at all
+*         appearing zero or more times
++         appearing one or more times
+{min,max} appearing within the specified range
 ```
 
 Using the above, we could come up with some quick examples:
