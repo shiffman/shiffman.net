@@ -12,39 +12,35 @@ pvc_views:
 * [Regular Expressions](#regex)
 * [Testing regex with egrep](#egrep)
 * [Regex in JavaScript](#jsregex)
-* [Strings in JavaScript](#strings)
 * [Splitting with Regex](#splitting)
-* [Simple Text Analysis](#analysis)
 * [Search and Replace](#searchreplace)
 
-## Examples:
-* [RegexHelloWorld](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week1/00_Processing_to_p5.js)
-* [Doublewords](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week1/01_objects_in_JS)
-* [VowelCounter](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week1/02_DOM_p5)
-* [WordSplitterRegex](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week1/03_Strings)
-* [ReplaceDemo1](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week1/04_fileinput)
-* [ReplaceDemo2](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week1/05_p5_text)
-* [ReplaceBackReference]
-* [HTMLTagRemover]
-* sample input files
+## Plain JS Examples:
+* [Basic Regex: exec()](https://github.com/shiffman/Programming-from-A-to-Z-F14/blob/master/week2_regex/regex_node/regex_helloworld1.js)
+* [Basic Regex: match()](https://github.com/shiffman/Programming-from-A-to-Z-F14/blob/master/week2_regex/regex_node/regex_helloworld2.js)
+* [VowelCounter](https://github.com/shiffman/Programming-from-A-to-Z-F14/blob/master/week2_regex/regex_node/vowelcounter.js)
+* [WordSplitterRegex](https://github.com/shiffman/Programming-from-A-to-Z-F14/blob/master/week2_regex/regex_node/split.js)
+* [Simple replace](https://github.com/shiffman/Programming-from-A-to-Z-F14/blob/master/week2_regex/regex_node/replace1.js)
+* [Replace back reference](https://github.com/shiffman/Programming-from-A-to-Z-F14/blob/master/week2_regex/regex_node/replace2.js)
+
+## P5 examples
+* [Find double words](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week2_regex/regex_p5/doublewords)
+* [Double the vowels](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week2_regex/regex_p5/voweldoubler)
 
 ## Related references
 * [Chapter 1, Mastering Regular Expressions](http://safari.oreilly.com/0596002890/mastregex2-CHP-1)
-* . . .
-* regex game http://www.javaregex.com/agame.html
+* [Guide to regex in JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+* [Eloquent JavaScript Regular Expressions](http://eloquentjavascript.net/09_regexp.html)
 
 ## Exercise ideas
 * Write a regular expression that matches any e-mail address.
-* Take that regular expression and do a search and replace so that any e-mail address is made into a &#8220;mailto:&#8221; link.</li>
-<li>Challenging:  Examine the HTML tag remover example.  Can you write a regular expression that searches for text in an HTML page, but ignores any text inside HTML tags, while leaving them intact?
-* Challenging:  Examine the HTML tag remover example.  Can you write a regular expression that searches for text in an HTML page, but ignores any text inside HTML tags, while leaving them intact?
+* Take that regular expression and do a search and replace so that any e-mail address is made into a &#8220;mailto:&#8221; link.
+* Create an example that reads an HTML page and removes any markup and leaves only the raw content.
 
-<p><a name ="regex"></a></p>
-
-<a name ="beyond"></a>
+<a name ="regex"></a>
 ## Regular Expressions 
 
-***WARNING: This is a woefully incomplete overview of regular expressions.  It would be absurd to try to fully cover the topic in a short handout like this.  Hopefully, this will provide some of the basics to get you started, but to really understand regular expressions, I implore you to read as much of [Mastering Regular Expressions](http://safari.oreilly.com/0596002890/) by Jeffrey E.F. Friedl as you have time for.***
+<div style="background: #DDDDDD; padding: 2px">*WARNING: This is a woefully incomplete overview of regular expressions.  It would be absurd to try to fully cover the topic in a short handout like this.  Hopefully, this will provide some of the basics to get you started, but to really understand regular expressions, I suggest you to read as much of [Mastering Regular Expressions](http://safari.oreilly.com/0596002890/) by Jeffrey E.F. Friedl as you have time for.  In addition, the [regular expressions chapter in Eloquent JavaScript](http://eloquentjavascript.net/09_regexp.html) is more comprehensive than below.*</div>
 
 A **[regular expression](http://en.wikipedia.org/wiki/Regular_expression)** is a sequence of characters that describes or matches a given amount of text.  For example, the sequence <span class="regex">bob</span>, considered as a regular expression, would match any occurance of the word &#8220;bob&#8221; inside of another text. The following is a rather rudimentary introduction to the basics of regular expressions.  We could spend the entire semester studying regular expressions if we put our mind to it. Nevertheless, we&#8217;ll just have a basic introduction to them this week and learn more advanced technique as we explore different text processing applications over the course of the semester.
 
@@ -116,7 +112,7 @@ The first part of the expression without parentheses would read: <span class="re
 
 *This is really really super super duper duper fun.  Fun!*
 
-<p><a name ="egrep"></a></p>
+<a name ="egrep"></a>
 ## Testing regex with egrep
 
 [grep](http://en.wikipedia.org/wiki/Grep) is a unix command line utility that takes an input file, a regular expression and outputs the lines that contain matches for that regular expression.  It&#8217;s a quick way for us to test some regexes.  As a point of history, the name comes from the form &#8220;g/re/p&#8221; which stands for &#8220;Global Regular Expression Print.&#8221;  We&#8217;ll be used egrep, which allows for more sophisticated regular expression searches.  (Note: the examples below use a slightly different regex &#8220;flavor&#8221; than what we will see in JavaScript.  This is something we&#8217;ll have to get used to, and will likely cause a bit of confusion.  Not to worry, confusion over regular expression flavors is extremely normal.  No need to seek professional help.)</p>
@@ -160,7 +156,7 @@ egrep -i '\<(\w+)\s+\1\>' doubletext.txt
 
 (Note, in the above example, the metacharacter <span class="regex">\<</span> means &#8220;start of word boundary&#8221; and </span><span class="regex">\></span> means &#8220;end of word boundary.&#8221;  This is different than the <span class="regex">\b</span> we&#8217;ll find in JavaScript which is the metacharacter for the beginning *or* end of a word (also known as a ‘word boundary’).
 
-<a name ="java"></a>
+<a name ="jsregex"></a>
 ## Regular Expressions in JavaScript
 
 In JavaScript, regular expressions like Strings are objects.  For example, a regex object can be created like so:
@@ -180,9 +176,9 @@ The `RegExp` object has two methods.  The key method to examine is `exec()` whic
 For example:
 
 {% highlight javascript %}
-var text = "This is a test of regular expressions."; // The String the search in
-var regex = /test/;                                  // The regex  
-var results = regex.exec(text);                      // Execute the search
+var text = "This is a test.";   // The String the search in
+var regex = /test/;             // The regex  
+var results = regex.exec(text); // Execute the search
 {% endhighlight %}
 
 `results` now contains the following array:
@@ -190,13 +186,13 @@ var results = regex.exec(text);                      // Execute the search
 {% highlight javascript %}
 [ 'test',
   index: 10,
-  input: 'This is a test of regular expressions.' ]
+  input: 'This is a test.' ]
 {% endhighlight %}
 
 If the regular expression included capturing parenthese, the groups would also appear in the array.  For example, let's say you needed a regex to match any phone numbers a String.
 
 {% highlight javascript %}
-var text = "Now another test including phone numbers: 212-555-1234 and 917-555-4321 and 646.555.9876.";  
+var text = 'Phone numbers: 212-555-1234 and 917-555-4321 and 646.555.9876.';  
 var regex = /(\d+)[-.]\d+[-.]\d+/;               
 var results = regex.exec(text);
 {% endhighlight %}
@@ -207,7 +203,7 @@ The above isn't necessarily the greatest phone number matching regex, but it'll 
 [ '212-555-1234',
   '212',
   index: 42,
-  input: 'Now another test including phone numbers: 212-555-1234 and 917-555-4321 and 646.555.9876.' ]
+  input: 'Phone numbers: 212-555-1234 and 917-555-4321 and 646.555.9876.' ]
 {% endhighlight %}
 
 Notice how the full phone number match appears as the first (index 0) element and the captured group (the area code) follows.  You might notice, however, that there are threep phone numbers in the original input String and yet `exec()` only matched the first one.  In order to find all the matches, we'll need to add two more steps.
@@ -225,7 +221,7 @@ var regex = /(\d+)[-.]\d+[-.]\d+/g;  // Now includes the global flag
 The `exec()` function, even with the global flag, will still return only the first match.  However, if we call `exec()` a second time with the same regex and input String, it will move on and return the results for the second match (or `null` if there is no match.)  We can therefore write a `while` loop to keep checking until the result is null.
 
 {% highlight javascript %}
-var text = "Now another test including phone numbers: 212-555-1234 and 917-555-4321 and 646.555.9876.";  
+var text = 'Phone numbers: 212-555-1234 and 917-555-4321 and 646.555.9876.';  
 var regex = /(\d+)[-.]\d+[-.]\d+/g;               
 var results = regex.exec(text);
 
@@ -273,7 +269,7 @@ The above produces the identical result as we saw with `exec()` with results con
 If we try to global match of phone numbers, however, we'll get different results.
 
 {% highlight javascript %}
-var text = "Now another test including phone numbers: 212-555-1234 and 917-555-4321 and 646.555.9876.";  
+var text = 'Phone numbers: 212-555-1234 and 917-555-4321 and 646.555.9876.';  
 var regex = /(\d+)[-.]\d+[-.]\d+/g;               
 var results = text.match(regex);
 {% endhighlight %}
@@ -288,14 +284,15 @@ This is quite a bit more convenient in many cases, however, we've lost some info
 
 Another method of the String object is `search()` which works just like `indexOf()` returning the index of the match or a `-1` if there is no match.  
 
-<p><a name="split"></a></p>
+<a name="splitting"></a>
 ## Splitting with Regular Expressions
 
 We can now revisit the [split function we examined previously](http://shiffman.net/teaching/a2z/#string) and understand how regular expressions work as a delimiter.  An input String is split into an array of substrings beginning at each match of that regular expression. Here's a simple example that quickyl counts the # of words (not perfect by any means).
 
 {% highlight javascript %}
-var text = "Here is some text. There are characters, spaces, and some punctuation.";
-var regex = /\W+/;   // one or more non word characters, i.e. anything not a-z0-9
+var text = "This text has characters, spaces, and some punctuation.";
+var regex = /\W+/; // one or more non-word chars (anything not a-z0-9)
+
 var words = text.split(regex);
 console.log('Total words: ' + words.length);
 {% endhighlight %}
@@ -303,12 +300,9 @@ console.log('Total words: ' + words.length);
 The `words` array now contains:
 
 {% highlight javascript %}
-[ 'Here',
-  'is',
-  'some',
+[ 'This',
   'text',
-  'There',
-  'are',
+  'has',
   'characters',
   'spaces',
   'and',
@@ -320,17 +314,11 @@ The `words` array now contains:
 What if you, however, would like to include all the delimiters?  To accomplish this, simply enclose your delimiters in capturing parentheses.With `var regex = /(\W+)/;` therefore you'll get the following result.
 
 {% highlight javascript %}
-[ 'Here',
-  ' ',
-  'is',
-  ' ',
-  'some',
+[ 'This',
   ' ',
   'text',
-  '. ',
-  'There',
   ' ',
-  'are',
+  'has',
   ' ',
   'characters',
   ', ',
@@ -346,27 +334,38 @@ What if you, however, would like to include all the delimiters?  To accomplish t
 {% endhighlight %}
 
 <a name="searchreplace"></a>
-
 ## Search and Replace
 
 Running a search and replace is one of the more powerful things one can do with regular expressions.  This can be accomplished with the String's `replace()` method.  The method receives two arguments, a regex and a replacement String.  Wherever there is a regex match, it is replaced with the String provided.
 
 
-{% highlight java %}
+{% highlight javascript %}
 var text = 'Replace every time the word "the" appears with the word ze.'; 
+
 // \b is a word boundary
-// You can think of this as an invisible boundary between a non-word character and a word character.
+// You can think of this as an invisible boundary 
+// between a non-word character and a word character.
 var regex = /\bthe\b/g;  
+
 var replaced = text.replace(regex,'ze');
 {% endhighlight %}
 
-The result is “Replace every time ze word "ze" appears with ze word ze.” 
+The result is:
+
+```
+Replace every time ze word "ze" appears with ze word ze.
+```
 
 We can also reference the matched text using a backreference to a captured group in the substitution string.  A backreference to the first group is indicated as <span class="regex">$1</span>, <span class="regex">$2</span> is the second, and so on and so forth.
 {% highlight javascript %}
-var text = "Anytime a sequence of one or more vowels appears, we're going to double the vowels.";
+var text = "Double the vowels.";
 var regex = /([aeiou]+)/g;
 var replaced = text.replace(regex, '$1$1');
 {% endhighlight %}
 
-The result is “Anytiimee aa seequeuencee oof oonee oor mooree vooweels aappeaears, wee\'ree goioing too dououblee thee vooweels”.
+The result is:
+
+```
+Dououblee thee vooweels
+```
+
