@@ -34,13 +34,14 @@ What can computation add to human communication? Creating computer applications,
 - [Old class syllabi](itp.nyu.edu/icm)
 
 
-## Programming from A to Z (2007, 2008)
+## Programming from A to Z (2007, 2008, 2014)
 
-There are 16,000 free books in the Project Gutenberg digital catalog. Google print is scanning millions. With all this digitized text, what can we do with it beyond simply search and browse? This course will focus on programming strategies and techniques behind procedural analysis and generation of text. We&#8217;ll explore topics ranging from evaluating text according to its statistical properties to the automated production of text via artificial intelligence. Student will be encouraged to develop their own systems and methods, from poetry machines to intelligent spiders to evolutionary language generators, etc. Examples will be demonstrated using Java and Processing with a focus on advanced data structures (linked lists, hash tables, binary trees) associated with storing and manipulating text. Prerequisite: H79.2233 Introduction to Computational Media or equivalent programming experience.
+This course focuses on programming strategies and techniques behind procedural analysis and generation of text-based data. We'll explore topics ranging from evaluating text according to its statistical properties to the automated production of text with probabilistic methods to text visualization. Students will learn server-side and client-side JavaScript programming and develop projects that can be shared and interacted with online. There will be weekly homework assignments as well as a final project.
 
+* [2014 Syllabus](https://github.com/shiffman/Programming-from-A-to-Z-F14)
+* [Tutorials](http://shiffman.net/teaching/a2z/)
 * [2008 Syllabus](http://itp.nyu.edu/varwiki/Syllabus/A2Z-S08)
-* [Tutorials](http://shiffman.net/teaching/a2z/) (a bit out of date)
-
+* [Old Tutorials](http://shiffman.net/teaching/a2z_2008/)
 
 ## Procedural Painting (2004)
 
