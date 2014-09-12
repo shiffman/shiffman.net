@@ -163,178 +163,210 @@ egrep -i '\<(\w+)\s+\1\>' doubletext.txt
 <a name ="java"></a>
 ## Regular Expressions in JavaScript
 
-<p>With Java 1.4, Sun introduced the <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/regex/package-summary.html">java.util.regex</a> package.  Having regex support come standard with Java is a great thing, and there are many advantages to working with regexes in a robust object-oriented environment.  Nevertheless, unlike with Perl (where regexes are a low-level component of the language), using regexes in Java can prove to be a bit awkward.  The following will offer a brief overview of using regexes in Java, for more information I would suggest reading Chapter 8 of <a href="http://regex.info">Mastering Regular Expressions</a>, the book <a href="http://www.amazon.com/gp/product/1590591070/">Java Regular Expressions</a>, and the <a href="http://java.sun.com/docs/books/tutorial/extra/regex/">online Sun tutorial</a>.</p>
-<h2>Making a String into a Regular Expression</h2>
-<p>Perl accepts normal strings as regular expressions, which makes life lovely.  With Java, however, a regular expression is a <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/regex/Pattern.html">Pattern</a> object that is made with a String.  We have to deal with Java&#8217;s own String metacharacters when putting together a String that will be used as a Regular Expression.   In other words, in Java if you use a backslash in a String, it will be considered as a metacharacter, i.e.: </p>
+In JavaScript, regular expressions like Strings are objects.  For example, a regex object can be created like so:
 
-{% highlight java %}String newline = "\n";{% endhighlight %}
+{% highlight javascript %}
+var regex = new RegExp('aregex');
+{% endhighlight %}
 
-<p>To actually have a backslash in a regular expression, we need to escape it with another backslash, i.e.:</p>
+While the above is technically correct (and sometimes necessary, we'll get to this later), a more common way to create a regex in JavaScript is with forward slashes.  Whereas a String is an array of characters between quotes, a regex is an array of characters between forward slashes.  For example:
 
-{% highlight java %}String newlineregex = "\\n";{% endhighlight %}
+{% highlight javascript %}
+var regex = /aregex/;
+{% endhighlight %}
 
-<p>Conceptually, it might take us a moment to wrap our heads around this distinction, nevertheless, functionally, in Java, the solution is simple:  whenever you want to have backslash in your regex, use 2!</p>
-<p>Ok, moving on to using a regex in Java, our program must impor the <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/regex/package-summary.html">java.util.regex</a> package:</p>
+The `RegExp` object has two methods.  The key method to examine is `exec()` which executes a search in a given String for matches of the regular expression.  It returns an array of information including the matched String, the index where the String appears, and the input String (in case you forgot.)
 
-{% highlight java %}import java.util.regex.*{% endhighlight %}
+For example:
 
-<p>The classes we will use are as follows:</p>
-<ul>
-<li><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/regex/Pattern.html">Pattern</a> &#8212; a compiled representation of a regular expression.</li>
-<li><a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/regex/Matcher.html">Matcher</a> &#8212; an engine that performs match operations on a character sequence (or String) by interpreting a Pattern.</li>
-</ul>
-<p>Our first regex program will follow this pseudo-code:</p>
-<ul>
-<li> 1 &#8212; Get input text that we want to match (presumably we would use the <a href="http://shiffman.net/teaching/programming-from-a-to-z/week-1-a-to-z/#file">File I/O</a> samples demonstrated last week.)</li>
-<li>2 &#8212; Create a String representation of a regex</li>
-<li>3 &#8212; Compile regex into a Pattern object</li>
-<li>4 &#8212; Create a matcher object from Pattern by handing it input text</li>
-<li>5 &#8212; Test if matcher has a match, if it does &#8211;> display match</li>
-<li>6 &#8212; If matcher has no match &#8211;> display &#8220;no match&#8221;</li>
-</ul>
-<p>Ok, let&#8217;s take a look at the actual code:</p>
+{% highlight javascript %}
+var text = "This is a test of regular expressions."; // The String the search in
+var regex = /test/;                                  // The regex  
+var results = regex.exec(text);                      // Execute the search
+{% endhighlight %}
 
-{% highlight java %}
-import java.util.regex.*;
+`results` now contains the following array:
 
-public class RegexHelloWorld {
-  public static void main(String[] args) {
-    String inputtext = "This is a test of regular expressions.";  // Step #1
-    String regex = "test";               // Step #2
-    Pattern p = Pattern.compile(regex);  // Step #3
-    Matcher m = p.matcher(inputtext);    // Step #4
-    if (m.find()) {
-      System.out.println(m.group());     // Step #5
-    } else {
-      System.out.println("No match!");   // Step #6
-    }
-  }
+{% highlight javascript %}
+[ 'test',
+  index: 10,
+  input: 'This is a test of regular expressions.' ]
+{% endhighlight %}
+
+If the regular expression included capturing parenthese, the groups would also appear in the array.  For example, let's say you needed a regex to match any phone numbers a String.
+
+{% highlight javascript %}
+var text = "Now another test including phone numbers: 212-555-1234 and 917-555-4321 and 646.555.9876.";  
+var regex = /(\d+)[-.]\d+[-.]\d+/;               
+var results = regex.exec(text);
+{% endhighlight %}
+
+The above isn't necessarily the greatest phone number matching regex, but it'll do for this example.  One or more numbers followed by a dash or period followed by one or more numbers, a dash or period again, and one or more numbers.  Let's look at the resulting array.
+
+{% highlight javascript %}
+[ '212-555-1234',
+  '212',
+  index: 42,
+  input: 'Now another test including phone numbers: 212-555-1234 and 917-555-4321 and 646.555.9876.' ]
+{% endhighlight %}
+
+Notice how the full phone number match appears as the first (index 0) element and the captured group (the area code) follows.  You might notice, however, that there are threep phone numbers in the original input String and yet `exec()` only matched the first one.  In order to find all the matches, we'll need to add two more steps.
+
+1. Add the global flag: `g`.
+
+Regular expressions can include flags that modify how the search operates.  For example the flag `i` is for case-insensitivity so that the regular expression <span class="regex">hello</span> with the flag `i` would match “hello”, “Hello”, “HELLO”, and “hElLO” (and other permutations).  A flag is added after the second forward slash like so: `/hello/i`.  The global flag `g` tells the regular expression that we want to search for *all* of the matches and not just the first one.
+
+{% highlight javascript %}
+var regex = /(\d+)[-.]\d+[-.]\d+/g;  // Now includes the global flag 
+{% endhighlight %}
+
+2. Add a `while` loop to continue calling `exec()`
+
+The `exec()` function, even with the global flag, will still return only the first match.  However, if we call `exec()` a second time with the same regex and input String, it will move on and return the results for the second match (or `null` if there is no match.)  We can therefore write a `while` loop to keep checking until the result is null.
+
+{% highlight javascript %}
+var text = "Now another test including phone numbers: 212-555-1234 and 917-555-4321 and 646.555.9876.";  
+var regex = /(\d+)[-.]\d+[-.]\d+/g;               
+var results = regex.exec(text);
+
+while (results != null) {
+  // do something with the matched results and then
+
+  // Check again
+  results = regex.exec(text);
 }
 {% endhighlight %}
 
-<p>Note the use of the <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/regex/Matcher.html#find()">find()</a> method, which attempts to find the next subsequence of the input sequence that matches the pattern (returns true or false based on whether it finds something) and <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/regex/Matcher.html#group()">group()</a> which returns the input subsequence captured by the given group during the previous match operation.</p>
-<p>If we want to look for multiple matches, we can simply use a &#8220;while&#8221; loop instead of an &#8220;if&#8221;:</p>
+This could also be written with the following shorthand (The examples linked from here, however, use the longer-winded code for clarity.)
 
-{% highlight java %}
-String regex = "\\b(\\w+)\\b\\W+\\1";   // Regex that matches double words
-Pattern p = Pattern.compile(regex);     // Compile Regex
-Matcher m = p.matcher(content);         // Create Matcher
-while (m.find()) {
-  System.out.println(m.group());
+{% highlight javascript %}
+var results;
+while ((results = regex.exec(text)) != null) {
+  // do something with the matched results and then
 }
 {% endhighlight %}
 
-<p>We can also add flags when compiling the regex.  For example, if we want to have a case insensitive regex:</p>
+The `RegExp` object also includes another method `test()` which simply returns `true` or `false` depending on whether or not at least one match was found.  
 
-{% highlight java %}Pattern p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);{% endhighlight %}
-
-<p>Two flags can be added using the bitwise OR, i.e. | </p>
-
-{% highlight java %}Pattern p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE | Pattern.COMMENTS);{% endhighlight %}
-
-<p>It&#8217;s easy to notice, how easy it would be to improve the <a href="http://shiffman.net/teaching/programming-from-a-to-z/week-1-a-to-z/#analysis">Flesch Index</a> example from last week.  For example, we could use a regular expression to very quickly count vowels:</p>
-
-{% highlight java %}
-String regex = "[aeiou]";
-Pattern p = Pattern.compile(regex,Pattern.CASE_INSENSITIVE);
-int vowelcount = 0;
-Matcher m = p.matcher(content);         // Create Matcher
-while (m.find()) {
-  vowelcount++;
-}
-System.out.println("Total vowels: " + vowelcount);
+{% highlight javascript %}
+var text = 'This is a regex example.';
+var regex = /example/;
+var found = regex.test(text);  // Results in TRUE
 {% endhighlight %}
+
+The String object also includes methods that receive regular expression objects as arguments.  For example, `match()` works almost identically as `exec()`.   There are only two differences.  One, the method is called on a String with a RegExp as an argument.  And second, it works differently in the case of global matches.  Let's look at a simple example first.
+
+{% highlight javascript %}
+var text = "This is a test of regular expressions.";  
+var regex = /test/;               
+var results = text.match(regex);
+{% endhighlight %}
+
+The above produces the identical result as we saw with `exec()` with results containing the following array.
+
+{% highlight javascript %}
+[ 'test',
+  index: 10,
+  input: 'This is a test of regular expressions.' ]
+{% endhighlight %}
+
+If we try to global match of phone numbers, however, we'll get different results.
+
+{% highlight javascript %}
+var text = "Now another test including phone numbers: 212-555-1234 and 917-555-4321 and 646.555.9876.";  
+var regex = /(\d+)[-.]\d+[-.]\d+/g;               
+var results = text.match(regex);
+{% endhighlight %}
+
+Here we do not need to employ a loop and instead get an array of all the matches.
+
+{% highlight javascript %}
+[ '212-555-1234', '917-555-4321', '646.555.9876' ]
+{% endhighlight %}
+
+This is quite a bit more convenient in many cases, however, we've lost some information.  If we require the capturing group matches or the index locations of the matches, we'll need to go back to using `exec()` in RegExp.
+
+Another method of the String object is `search()` which works just like `indexOf()` returning the index of the match or a `-1` if there is no match.  
 
 <p><a name="split"></a></p>
-<h2>Splitting with Regular Expressions</h2>
-<p>It should briefly be noted that the <a href="http://shiffman.net/teaching/programming-from-a-to-z/week-1-a-to-z/#string">split function we examined last week</a> actually takes a regular expression as an argument.  An input String is split into an array wherever any part of that input String that matches that regular expression.  For example. . . </p>
+## Splitting with Regular Expressions
 
-{% highlight java %}
-String regex = "\\W";  // Use any "non-word character" as a delimiter
-String[] words = content.split(regex);
-System.out.println("Total words: " + words.length);
+We can now revisit the [split function we examined previously](http://shiffman.net/teaching/a2z/#string) and understand how regular expressions work as a delimiter.  An input String is split into an array of substrings beginning at each match of that regular expression. Here's a simple example that quickyl counts the # of words (not perfect by any means).
+
+{% highlight javascript %}
+var text = "Here is some text. There are characters, spaces, and some punctuation.";
+var regex = /\W+/;   // one or more non word characters, i.e. anything not a-z0-9
+var words = text.split(regex);
+console.log('Total words: ' + words.length);
 {% endhighlight %}
 
-<p>. . .is a very quick way to use regular expressions to count the # of words (This method is not perfect by any means.)</p>
-<p><a name="searchreplace"></a></p>
-<h2>Search and Replace</h2>
-<p>Running a search and replace is one of the more powerful things one can do with regular expressions.  In Java, it&#8217;s simple.  The String function itself has a <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/String.html#replaceAll(java.lang.String,%20java.lang.String)">replaceAll()</a> method built-in.  The method takes two arguments, a regex and a replacement String.  Wherever there is a regex match, it is replaced with the String provided, i.e.:</p>
+The `words` array now contains:
 
-{% highlight java %}
-String input = "Replace every time the word "the" appears with the word ze.";
-String regex = "\\bthe\\b";  // Use any "non-word character" as a delimiter
-String output = input.replaceAll(regex,"ze");
+{% highlight javascript %}
+[ 'Here',
+  'is',
+  'some',
+  'text',
+  'There',
+  'are',
+  'characters',
+  'spaces',
+  'and',
+  'some',
+  'punctuation'
+]
 {% endhighlight %}
 
-<p>Output yields: <i>Replace every time ze word &#8220;ze&#8221; appears with ze word ze.</i></p>
-<p>The <a href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/regex/Matcher.html#replaceAll(java.lang.String)">replaceAll()</a> method is also available in the Matcher class, i.e.:</p>
+What if you, however, would like to include all the delimiters?  To accomplish this, simply enclose your delimiters in capturing parentheses.With `var regex = /(\W+)/;` therefore you'll get the following result.
 
-{% highlight java %}
-String input = "Replace every time the word "the" appears with the word ze.";
-String regex = "\\bthe\\b";  // Use any "non-word character" as a delimiter
-Pattern p = Pattern.compile(regex);
-Matcher m = p.matcher(input);
-String output = m.replaceAll("ze");
+{% highlight javascript %}
+[ 'Here',
+  ' ',
+  'is',
+  ' ',
+  'some',
+  ' ',
+  'text',
+  '. ',
+  'There',
+  ' ',
+  'are',
+  ' ',
+  'characters',
+  ', ',
+  'spaces',
+  ', ',
+  'and',
+  ' ',
+  'some',
+  ' ',
+  'punctuation',
+  '.',
+  '' ]
 {% endhighlight %}
 
-<p>We can also reference the matched text using a backreference in the substitution string.  A backreference to the entire match is indicated as <span class="regex">$0</span>.  If there are capturing parentheses, you can reference specifics groups as <span class="regex">$1</span>, <span class="regex">$2</span>, etc. . . </p>
+<a name="searchreplace"></a>
+
+## Search and Replace
+
+Running a search and replace is one of the more powerful things one can do with regular expressions.  This can be accomplished with the String's `replace()` method.  The method receives two arguments, a regex and a replacement String.  Wherever there is a regex match, it is replaced with the String provided.
+
 
 {% highlight java %}
-String input = "Anytime a sequence of one or more vowels appears, n" +
-               "we're going to double the vowels.";
-String regex = "[aeiou]+";  //
-String output = input.replaceAll(regex, "$0$0");
+var text = 'Replace every time the word "the" appears with the word ze.'; 
+// \b is a word boundary
+// You can think of this as an invisible boundary between a non-word character and a word character.
+var regex = /\bthe\b/g;  
+var replaced = text.replace(regex,'ze');
 {% endhighlight %}
 
-<p>Output yields:<br />
-<i>Anytiimee aa seequeuencee oof oonee oor mooree vooweels aappeaears, wee&#8217;ree goioing too dououblee thee vooweels.</i></p>
-<p>The closing example from this week using a regular expression to remove all HTML tags from a source file.  A nice way to write regular expressions is to start with an exact text and then slowly generalize it, i.e.:</p>
-<p>Let&#8217;s start with the regular expression:</p>
-<p><span class="regex">&lt;table&gt;</span></p>
-<p>Ok, now let&#8217;s generalize it to be:</p>
-<p><span class="regex">< wwwww></span><br />
-(less than followed by 5 word characters followed by a greater than)</p>
-<p>Well, this can be further generalized to:</p>
-<p><span class="regex">< w*></span></p>
-<p>But really we should allow for white spaces, punctuation, and other characters inside the opening and closing brackets.  Basically, we want to allow for any character that is not &#8220;>&#8221;!</p>
-<p><span class="regex">< [^>]*></span></p>
-<p>The code to replace this match with nothing is then:</p>
+The result is “Replace every time ze word "ze" appears with ze word ze.” 
 
-{% highlight java %}
-// A Regex to match anything in between <>
-// Reads as: Match a "< "
-// Match one or more characters that are not ">"
-// Match "< ";
-String tagregex = "<[^>]*>";
-Pattern p2 = Pattern.compile(tagregex);
-Matcher m2 = p2.matcher(content);
-count = 0;
-// Just counting all the tags first
-while (m2.find()) {
-  //System.out.println(m.group());
-  count++;
-}
-// Replace any matches with nothing
-content = m2.replaceAll("");
-System.out.println("Removed " + count + " other tags."); {% endhighlight %}
-
-<h2>Related Perl / PHP Examples</h2>
-<p><b>Perl version of the vowel doubler:</b></p>
-
-{% highlight java %}
-#!/usr/bin/perl
-
-undef $/;    # File "slurp" mode
-$stuff = <>; # read in the first file
-
-# double any vowel occurences
-# g -- global
-# i -- case insensitive
-$stuff =~ s/([aeiou]+)/$1$1/g;
-
-print $stuff;
+We can also reference the matched text using a backreference to a captured group in the substitution string.  A backreference to the first group is indicated as <span class="regex">$1</span>, <span class="regex">$2</span> is the second, and so on and so forth.
+{% highlight javascript %}
+var text = "Anytime a sequence of one or more vowels appears, we're going to double the vowels.";
+var regex = /([aeiou]+)/g;
+var replaced = text.replace(regex, '$1$1');
 {% endhighlight %}
 
-<p><b>PHP</b>:<br />
-Run it:  <a href="http://shiffman.net/itp/classes/a2z/week02/voweldoubler.php">http://shiffman.net/itp/classes/a2z/week02/voweldoubler.php</a><br />
-Source:  <a href="http://shiffman.net/itp/classes/a2z/week02/voweldoubler.phps">http://shiffman.net/itp/classes/a2z/week02/voweldoubler.phps</a></p>
+The result is “Anytiimee aa seequeuencee oof oonee oor mooree vooweels aappeaears, wee\'ree goioing too dououblee thee vooweels”.

@@ -64,9 +64,9 @@ The first thing we need to do to get up and running is to [install node](http://
 
 Now make any old file with JavaScript code in it.  For example, make a file called "hello.js" with:
 
-```javascript
+{% highlight javascript %}
 console.log('Hello!');
-```
+{% endhighlight %}
 
 Now back in terminal type `node hello.js`.  You should see `Hello!` back in the console.
 
