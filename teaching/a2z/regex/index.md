@@ -26,16 +26,20 @@ pvc_views:
 ## P5 examples
 * [Find double words](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week2_regex/regex_p5/doublewords)
 * [Double the vowels](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week2_regex/regex_p5/voweldoubler)
+* [Test a regex](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week2_regex/regex_p5/regex_tester)
 
 ## Related references
 * [Chapter 1, Mastering Regular Expressions](http://safari.oreilly.com/0596002890/mastregex2-CHP-1)
 * [Guide to regex in JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
 * [Eloquent JavaScript Regular Expressions](http://eloquentjavascript.net/09_regexp.html)
+* [Play the regex crossword!](http://regexcrossword.com/)
 
 ## Exercise ideas
 * Write a regular expression that matches any e-mail address.
 * Take that regular expression and do a search and replace so that any e-mail address is made into a &#8220;mailto:&#8221; link.
 * Create an example that reads an HTML page and removes any markup and leaves only the raw content.
+* Adapt the [regex tester](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week2_regex/regex_p5/regex_tester) to bea  search/replace tester.
+* Create a regex that matches only code comments in code.
 
 <a name ="regex"></a>
 ## Regular Expressions 
