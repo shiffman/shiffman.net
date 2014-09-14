@@ -101,7 +101,7 @@ $     end of line
 Using the above, we could come up with some quick examples:
 
 * <span class="regex">^$</span> &#8211;> matches beginning of line followed by end of line, i.e. match any blank line!
-* <span class="regex">ingb</span> &#8211;> matches &#8216;ing&#8217; followed by a word boundary, i.e. any time &#8216;ing&#8217; appears at the end of a word!
+* <span class="regex">ing\b</span> &#8211;> matches &#8216;ing&#8217; followed by a word boundary, i.e. any time &#8216;ing&#8217; appears at the end of a word!
 
 **Character Classes** allow one to do an &#8220;or&#8221; statement amongst individual characters and are denoted by characters enclosed in brackets, i.e. <span class="regex">[aeiou]</span> means match any vowel.  Using a &#8220;^&#8221; negates the character class, i.e. <span class="regex">[^aeiou]</span> means match any character not a vowel (note this isn&#8217;t just limited to letters, it really means <i>anything at all</i> that is not an a, e, i, o, or u.)  A hyphen indicates a range of characters, such as <span class="regex">[0-9]</span> or <span class="regex">[a-z]</span>.
 
@@ -115,9 +115,9 @@ Parentheses can also be used to constrain the alternation, i.e.:
 
 <span class="regex"> (212|646|917)\d*</span>  matches any sequence of zero or more digits preceded by 212, 646, or 917 (presumably to retrieve phone #&#8217;s with NYC area codes).  Note this regular expression would need to be improved to take into consideration white spaces and/or punctuation.
 
-Parentheses also serve the purpose of capturing groups for back-references.  For example, examine the following regular expression: <span class="regex">b([0-9A-Za-z]+)s+1b</span>.
+Parentheses also serve the purpose of capturing groups for back-references.  For example, examine the following regular expression: <span class="regex">\b([0-9A-Za-z]+)s+\1\b</span>.
 
-The first part of the expression without parentheses would read: <span class="regex">b([0-9A-Za-z]+)</span> meaning match any &#8220;word&#8221; containing at least one or more letters/digits.  The next part <span class="regex">s+</span> means any sequence of at least one white space.  The third part <span class="regex">1</span> says match whatever you matched that was enclosed inside the first set of parentheses, i.e. <span class="regex">([0-9A-Za-z]+)</span>.   So, thinking this over, what will this regular expression match in the following line:
+The first part of the expression in parentheses reads: <span class="regex">\b([0-9A-Za-z]+)</span> meaning match any &#8220;word&#8221; containing at least one or more letters/digits.  The next part <span class="regex">\s+</span> means any sequence of at least one white space.  The third part <span class="regex">\1</span> says match whatever you matched that was enclosed inside the first set of parentheses, i.e. <span class="regex">([0-9A-Za-z]+)</span>.   So, thinking this over, what will this regular expression match in the following line:
 
 *This is really really super super duper duper fun.  Fun!*
 
