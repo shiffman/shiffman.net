@@ -8,8 +8,8 @@ pvc_views:
   - 5436
 ---
 
-<script language="javascript" type="text/javascript" src="//cdn.jsdelivr.net/p5.js/0.3.5/p5.min.js"></script>
-<script language="javascript" type="text/javascript" src="//cdn.jsdelivr.net/p5.js/0.3.5/addons/p5.dom.js"></script>
+<script language="javascript" type="text/javascript" src="//cdn.jsdelivr.net/p5.js/0.3.6/p5.min.js"></script>
+<script language="javascript" type="text/javascript" src="//cdn.jsdelivr.net/p5.js/0.3.6/addons/p5.dom.js"></script>
 
 
 ## This week&#8217;s topics:
@@ -28,6 +28,7 @@ pvc_views:
 * [Strings in JS](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week1/03_Strings)
 * [File I/O in Node](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week1/04_fileinput)
 * [Process user text in p5](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week1/05_p5_text)
+* [Process files in p5](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week1/06_p5_text)
 
 *(Some of these notes were adapted from the [Creative JavaScript](https://github.com/lmccart/itp-creative-js) ITP course.)*
 
@@ -517,4 +518,6 @@ Try it out below! (and [take a look at the source](https://github.com/shiffman/P
 <p id="fleschreport"></p>
 
 Also, here's a [full tutorial about the p5.dom library](https://github.com/lmccart/p5.js/wiki/Beyond-the-canvas).
+
+## Process files in p5.js
 

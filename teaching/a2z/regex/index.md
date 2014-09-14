@@ -8,6 +8,9 @@ pvc_views:
   - 25117
 ---
 
+<script language="javascript" type="text/javascript" src="//cdn.jsdelivr.net/p5.js/0.3.6/p5.min.js"></script>
+<script language="javascript" type="text/javascript" src="//cdn.jsdelivr.net/p5.js/0.3.6/addons/p5.dom.js"></script>
+
 ## This week&#8217;s topics:
 * [Regular Expressions](#regex)
 * [Testing regex with egrep](#egrep)
@@ -24,9 +27,11 @@ pvc_views:
 * [Replace back reference](https://github.com/shiffman/Programming-from-A-to-Z-F14/blob/master/week2_regex/regex_node/replace2.js)
 
 ## P5 examples
-* [Find double words](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week2_regex/regex_p5/doublewords)
-* [Double the vowels](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week2_regex/regex_p5/voweldoubler)
-* [Test a regex](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week2_regex/regex_p5/regex_tester)
+* [Regex Basics](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week2_regex/regex_p5/01_regexbasics)
+* [Find double words](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week2_regex/regex_p5/02_doublewords)
+* [Double the vowels](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week2_regex/regex_p5/03_voweldoubler)
+* [Test a regex](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week2_regex/regex_p5/04_regex_tester)
+* [Find links](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week2_regex/regex_p5/05_linkfinder)
 
 ## Related references
 * [Chapter 1, Mastering Regular Expressions](http://safari.oreilly.com/0596002890/mastregex2-CHP-1)
@@ -372,4 +377,21 @@ The result is:
 ```
 Dououblee thee vooweels
 ```
+
+You can try out some regex below as well as [take a look at the code for making this regex tester](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week2_regex/regex_p5/regex_tester). 
+
+<script language="javascript" type="text/javascript" src="regex.js"></script>
+<p>
+  <textarea rows="10" cols='50' id='input'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</textarea>
+</p>
+  
+<p>
+  <input type="text" id="regex"><input type="checkbox" id="global">global<input type="checkbox" id="case">case insensitive
+</p>
+<p><button value="undefined" style="padding: 10px;" id="button">Run the regex</button></p>
+
+  <p id="output">results will appear here</p>
+</p>
+
+
 

@@ -101,10 +101,3 @@ function isVowel(c) {
   else                               { return false; }
 }
 
-function noCanvas() {
-  var c = document.getElementById('defaultCanvas');
-  if (c) {
-    c.parentNode.removeChild(c);
-  }
-}
-
