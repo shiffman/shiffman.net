@@ -101,7 +101,7 @@ $     end of line
 Using the above, we could come up with some quick examples:
 
 * <span class="regex">^$</span> &#8211;> matches beginning of line followed by end of line, i.e. match any blank line!
-* <span class="regex">ingb</span> &#8211;> matches &#8216;ing&#8217; followed by a word boundary, i.e. any time &#8216;ing&#8217; appears at the end of a word!
+* <span class="regex">ing\b</span> &#8211;> matches &#8216;ing&#8217; followed by a word boundary, i.e. any time &#8216;ing&#8217; appears at the end of a word!
 
 **Character Classes** allow one to do an &#8220;or&#8221; statement amongst individual characters and are denoted by characters enclosed in brackets, i.e. <span class="regex">[aeiou]</span> means match any vowel.  Using a &#8220;^&#8221; negates the character class, i.e. <span class="regex">[^aeiou]</span> means match any character not a vowel (note this isn&#8217;t just limited to letters, it really means <i>anything at all</i> that is not an a, e, i, o, or u.)  A hyphen indicates a range of characters, such as <span class="regex">[0-9]</span> or <span class="regex">[a-z]</span>.
 
