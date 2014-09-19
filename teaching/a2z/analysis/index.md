@@ -56,11 +56,11 @@ console.log('Is your name ' + nameList[1] + '?'); // Is your name Sue?
 {% endhighlight %}
 
 
-What if, however, instead of numbering the elements of an array we could name them?  This element is named “Sue”, this one “Bob”, this one “Jane”, and so on and so forth.  In programming, this kind of data structure is often referred to as an “associative array”, “map”, “hash” or “dictionary.”  It's a collection of `key, value` pairs.  The key is `Sue`, the value is `24`.  It's just like having a dictionary of words and when you look up, say, `Sue` the definition is `24`.</p>
+What if, however, instead of numbering the elements of an array we could name them?  This element is named “Sue”, this one “Bob”, this one “Jane”, and so on and so forth.  In programming, this kind of data structure is often referred to as an “associative array”, “map”, “hash” or “dictionary.”  It's a collection of `key/value` pairs.  The key is `Sue`, the value is `24`.  It's just like having a dictionary of words and when you look up, say, `Sue` the definition is `24`.</p>
 
-Associative arrays can be incredibly convenient for various applications.  For example, you could keep a list of student IDs <(`student name, id`) or a list of prices (`product name, price`) in a dictionary.  The fundamental building block of just about every text analysis application is a concordance, a list of all words in a document along with how many times each word occurred.  A dictionary is the perfect data structure to hold this information.  Each element of the dictionary is a word paired with its count.
+Associative arrays can be incredibly convenient for various applications.  For example, you could keep a list of student IDs (`student name/id`) or a list of prices (`product name/price`) in a dictionary.  The fundamental building block of just about every text analysis application is a concordance, a list of all words in a document along with how many times each word occurred.  A dictionary is the perfect data structure to hold this information.  Each element of the dictionary consists of a String paired with a number.
 
-Most programming languages and environemnts have specific classes or objects for advanced data structures.  JavaScript, however, does not.  But all is not lost.  Remember that thing called a JavaScript object?
+Most programming languages and environments have specific classes or objects for a variety of data structures (a dictionary is just one example).  JavaScript, however, does not.  But all is not lost.  Remember that thing called a JavaScript object?
 
 {% highlight javascript %}
 var obj = {
@@ -70,9 +70,9 @@ var obj = {
 };
 {% endhighlight %}
 
-That's right.  A JavaScript object is a collection of name-value pairs.  And so while it might be more convenient to have a custom-tailored dictionary object, we're going to fairly easy be able to get all the functionality we need out of just a plain old object itself.
+That's right.  A JavaScript object is a collection of name-value pairs.  And so while it might be more convenient to have a custom-tailored dictionary object, we're going to be able to get all the functionality we need out of just a plain old object itself.
 
-To start writing a concordance program then all we need is an empty object.
+To start writing a concordance all we need is an empty object.
 
 {% highlight javascript %}
 var concordance = {};
