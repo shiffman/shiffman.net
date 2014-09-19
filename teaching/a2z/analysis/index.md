@@ -119,13 +119,20 @@ for (var i = 0; i < tokens.length; i++) {
 
 There, we now have a concordance object that stores all the words and their counts!  The question, however, remains: what do we do with this thing?
 
-The first thing you might want to do is simply examine the results.  For example, let's say we wanted to display the most frequent words (in sorted order).   Unfortunately, the fields of a JavaScript object have no order to them and cannot be easily sorted.  In this case, it can be advantageous to keep a separate array of all the keys.  This array can be sorted easily and used to iterate over the concordance.
+The first thing you might want to do is simply examine the results.  For example, let's say we wanted to display the most frequent words (in sorted order).   Unfortunately, the fields of a JavaScript object have no order to them and cannot be easily sorted.  One solution to this problem is to keep a separate array of all the keys.  This array can be sorted and used to iterate over all the name/value pairs in the concordance object.
 
 {% highlight javascript %}
+// Add another array to track keys
 var keys = [];
 for (var i = 0; i < tokens.length; i++) {
   var word = tokens[i];
-  keys.push(word);
+  if (concordance[word] === undefined) {
+    concordance[word] = 1;
+    // When we have a new word, let's add to our keys array!
+    keys.push(word);
+  } else {
+    concordance[word]++;
+  }
 }
 {% endhighlight %}
 
