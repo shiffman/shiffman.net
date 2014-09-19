@@ -224,8 +224,7 @@ If [logarithmic scale](http://en.wikipedia.org/wiki/Logarithmic_scale) is new to
 <p><iframe width="560" height="315" src="//www.youtube.com/embed/sBhEi4L91Sg" frameborder="0" allowfullscreen></iframe></p>
 
 
-Try running [TF-IDF]() here and the [source]().  For a wonderful example of TF-IDF out in the world, take a look at [Nicholas Felton's 2013 Annual Report](http://bits.blogs.nytimes.com/2014/08/19/a-life-in-data-nicholas-feltons-self-surveillance/).
-
+Here is a [demonstration of TF-IDF](http://shiffman.net/teaching/a2z/analysis/02_tf-idf/) and its [source code](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week3_analysis/02_tf-idf)  For a wonderful example of TF-IDF out in the world, take a look at [Nicholas Felton's 2013 Annual Report](http://bits.blogs.nytimes.com/2014/08/19/a-life-in-data-nicholas-feltons-self-surveillance/).
 
 <a name ="bayes"></a>
 ## Naive Bayesian Text Classification
