@@ -288,7 +288,13 @@ word.probB = ???;  // a probability this word appears in category B document
 // etc. etc.
 {% endhighlight %}
 
-Our dictionary therefore will tie an entire word object itself to a key.  Let's say we are looping through tokens.  We might then have:
+Instead of storing a single number like `dictionary['the'] = 16;` we now need to associate an object with multiple data points with each key.The process of running the filter works as follows:
+
+1. Train the filter with known category A (for example: spam) e-mails and known category B (ham) e-mails.  
+2. For every word, check if it's new.  If it is add it, if not, simply increase the counter for &#8220;A&#8221; or &#8220;B&#8221; (depending on whether it&#8217;s found in A or B).
+
+Here's how this might look:
+
 
 {% highlight javascript %}
 for (var i = 0; i < tokens.length; i++) {
@@ -298,11 +304,23 @@ for (var i = 0; i < tokens.length; i++) {
     dictionary[token].countA = 0;
     dictionary[token].countB = 0;
     dictionary[token].word = token;
+  } else {
+    // Which category are we training for?
+    if (category === 'A') {
+      this.dict[token].countA++;
+      this.tokenCountA++;
+    } else if (category === 'B') {
+      this.dict[token].countB++;
+      this.tokenCountB++;
+    }
   }
 }
 {% endhighlight %}
 
-And assuming we go through a concordance and count how many times in apperas in one category versus another, we can then apply Bayes rule to a word object.
+
+The above steps are repeated over and over again for all training documents.  Once all the "training" files are read, the probabilities can be calculated for every word.
+
+Once we've gone through the process of counting the occurences in each category ('A' or 'B', spam or ham, etc.), we can the calculate the probabilities according to Bayes rule.
 
 {% highlight javascript %}
 // Ok, assuming we have an array of keys
@@ -320,20 +338,10 @@ for (var i = 0; i < keys.length; i++) {
 }
 {% endhighlight %}
 
-The above formula for the probability that a word indicates category A might look a little bit simpler to you than the original Bayes rule.  This is because in this instance I am leaving out the "prior probability" and assuming that any document has a 50% chance of being category A or B.
+The above formula might look a little bit simpler to you than the original Bayes rule.  This is because I am leaving out the "prior probability" and assuming that any document has a 50% chance of being category A or B.
 
 
-One important aspect of this analysis is the &#8220;interesting-ness&#8221 of any given word.  An interesting rating is defined as how different, say, the spam probability is from 0.5 (i.e. 50/50 is as boring as it gets) or the absolute value of `probA - 0.5`.
-
-
-The process of running the filter works as follows:
-
-1. Train the filter with known category A (spam) e-mails and known category B (ham) e-mails.  
-2 .  For every word, check if it's new.  If it is add it, if not, simply increase the counter for &#8220;A&#8221; or &#8220;B&#8221; (depending on whether it&#8217;s found in A or B).
-
-The above steps would then be repeated over and over again.  Once all the "training" files are read, the probabilities can be calculated for every word.
-
-Now, the classifier is trained!  For every word, we know the probability that document containing it is category A.   Now, all that is left to do is take a new document, find the interesting words, and compute the total probability for that document according to the formula specified in <a href="http://www.paulgraham.com/spam.html">Graham&#8217;s essay</a>.  For this step, we need to calculate [combined probability](http://www.paulgraham.com/naivebayes.html).  [Another resource](http://www.mathpages.com/home/kmath267.htm).
+Now, all that is left to do is take a new document, and compute the total probability for that document according to the formula specified in <a href="http://www.paulgraham.com/spam.html">Graham&#8217;s essay</a>.  For this step, we need to calculate [combined probability](http://www.paulgraham.com/naivebayes.html).  [Another resource](http://www.mathpages.com/home/kmath267.htm).
 
 {% highlight java %}
 // Combined probabilities
@@ -353,6 +361,13 @@ var pA = productA / (productA + productB);
 {% endhighlight %}
 
 Now we know the probability the document is in category A!
+
+One important aspect of this analysis that I've left out is the &#8220;interesting-ness&#8221 of any given word.  An interesting rating is defined as how different, say, the spam probability is from 0.5 (i.e. 50/50 is as boring as it gets) or the absolute value of `probA - 0.5`.  Graham's spam filter, for example, only uses the probability of the top 15 most interesting words.   If you are looking for an exercise, you might try adding this feature to the Bayesian classifier example.
+
+Here is an example that you can [try training and classifying with](http://shiffman.net/teaching/a2z/analysis/05_naive_bayes_classifier/) and with the [source code](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week3_analysis/05_naive_bayes_classifier).  This is a quicky and dirty first pass that could use several improvements.  Feel free to contribute!
+
+
+
 
 
 
