@@ -15,9 +15,9 @@ pvc_views:
 * [Naive Bayesian Classification](#bayes)
 
 ## Analysis Examples
-* Text Concordance: [Run the example](http://shiffman.net/teaching/a2z/analysis/01_concordance/) [Source]](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week3_analysis/01_concordance)
-* Keyword finding: TF-IDF [Run the example](http://shiffman.net/teaching/a2z/analysis/02_tf-idf/) [Source code](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week3_analysis/02_tf-idf)
-* Text Classification: Naive Bayes [Run the example](http://shiffman.net/teaching/a2z/analysis/05_naive_bayes_classifier/) [Source Code](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week3_analysis/05_naive_bayes_classifier)
+* [Text Concordance](http://shiffman.net/teaching/a2z/analysis/01_concordance/), [Source code](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week3_analysis/01_concordance)
+* [Keyword finding: TF-IDF](http://shiffman.net/teaching/a2z/analysis/02_tf-idf/), [Source code](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week3_analysis/02_tf-idf)
+* [Text Classification: Naive Bayes](http://shiffman.net/teaching/a2z/analysis/05_naive_bayes_classifier/), [Source Code](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week3_analysis/05_naive_bayes_classifier)
 
 ## RiTa Library Examples
 * [Basics](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week3_analysis/03_rita_basics)
@@ -32,6 +32,7 @@ pvc_views:
 * [TF-IDF Single Page Tutorial](http://www.tfidf.com/)
 * [Paul Graham's A Plan for Spam](http://www.paulgraham.com/spam.html) and [Better Bayesian Filtering](http://www.paulgraham.com/better.html)
 * [Introduction to Bayesian Filtering](http://www.bcc.bilkent.edu.tr/BayesianFiltering.pdf)
+* [Monty Hall and Bayes](http://sciencehouse.wordpress.com/2009/04/19/monty-hall-and-bayes/)
 * [An Intuitive Explanation of Bayes' Theorem by Eliezer S. Yudkowsky](http://yudkowsky.net/rational/bayes)
 * [The RiTa Library](http://rednoise.org/rita/)
 * [Luke Dubois' Missed Connections](http://lukedubois.com/)
