@@ -14,16 +14,35 @@ pvc_views:
 * [TF-IDF](#tfidf)
 * [Naive Bayesian Classification](#bayes)
 
-## P5 examples
-* [Regex Basics](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week2_regex/regex_p5/01_regexbasics)
-* [Find double words](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week2_regex/regex_p5/02_doublewords)
-* [Double the vowels](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week2_regex/regex_p5/03_voweldoubler)
-* [Test a regex](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week2_regex/regex_p5/04_regex_tester)
-* [Find links](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week2_regex/regex_p5/05_linkfinder)
+## Analysis Examples
+* Text Concordance: [Run the example](http://shiffman.net/teaching/a2z/analysis/01_concordance/) [Source]](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week3_analysis/01_concordance)
+* Keyword finding: TF-IDF [Run the example](http://shiffman.net/teaching/a2z/analysis/02_tf-idf/) [Source code](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week3_analysis/02_tf-idf)
+* Text Classification: Naive Bayes [Run the example](http://shiffman.net/teaching/a2z/analysis/05_naive_bayes_classifier/) [Source Code](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week3_analysis/05_naive_bayes_classifier)
+
+## RiTa Library Examples
+* [Basics](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week3_analysis/03_rita_basics)
+* [Parts of Speech Concordance](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week3_analysis/04_parts_of_speech_concordance)
+
+## Sample datasets:
+* [Project Gutenberg](http://www.gutenberg.org/)
+* [Enron e-mail corpus](http://www.aueb.gr/users/ion/data/enron-spam/)
 
 ## Related references
+* [Secret Life of Pronouns](http://secretlifeofpronouns.com/)
+* [TF-IDF Single Page Tutorial](http://www.tfidf.com/)
+* [Paul Graham's A Plan for Spam](http://www.paulgraham.com/spam.html) and [Better Bayesian Filtering](http://www.paulgraham.com/better.html)
+* [Introduction to Bayesian Filtering](http://www.bcc.bilkent.edu.tr/BayesianFiltering.pdf)
+* [An Intuitive Explanation of Bayes' Theorem by Eliezer S. Yudkowsky](http://yudkowsky.net/rational/bayes)
+* [The RiTa Library](http://rednoise.org/rita/)
+* [Luke Dubois' Missed Connections](http://lukedubois.com/)
+* [Nicholas Felton's 2013 Annual Report](http://feltron.com/FAR13.html), [NY Times Article](http://bits.blogs.nytimes.com/2014/08/19/a-life-in-data-nicholas-feltons-self-surveillance/?_php=true&_type=blogs&_r=0)
 
 ## Exercise ideas
+* Visualize the results of a concordance using canvas (or some other means).
+* Expand the information the concordance holds so that it keeps track of word positions (i.e. not only how many times do the words appear in the source text, but where do they appear each time.)
+* Implement some of the ideas specific to spam filtering to the bayesian classification exmple.
+* In James W. Pennebaker's book [</em>The Secret Life of Pronouns<em>](http://secretlifeofpronouns.com/), Pennebaker describes his research into how the frequency of words that have little to no meaning on their own (I, you, they, a, an, the, etc.) are a window into the emotional state or personality of an author or speaker.  For example, heavy use of the pronoun “I” is an indicator of “depression, stress or insecurity”.  Create a page sketch that analyzes the use of pronouns.  For more, visit <a href="http://www.analyzewords.com/">http://www.analyzewords.com/</a>.</em>
+* Use the ideas to find similarities between people. For example, if you look at all the e-mails on the ITP student list, can you determine who is similar? Consider using properties in addition to word count, such as time of e-mails, length of e-mails, etc.
 
 <a name ="dictionary"></a>
 ## Associative Arrays in JavaScript?

@@ -21,3 +21,9 @@ I originally taught this course (2007-2008) in Java.  The [old notes can be foun
 * [Regex in JavaScript](regex/#jsregex)
 * [Splitting with Regex](regex/#splitting)
 * [Search and Replace](regex/#searchreplace)
+
+## [Introduction to Text Analysis](analysis)
+* [Associative Arrays in JavaScript?](analysis/#dictionary)
+* [Text Concordance](analysis/#concordance)
+* [TF-IDF](analysis/#tfidf)
+* [Naive Bayesian Classification](analysis/#bayes)
