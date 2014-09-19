@@ -136,4 +136,194 @@ for (var i = 0; i < keys.length; i++) {
 }
 {% endhighlight %}
 
+You can try [running a concordance here]()
+
+
+<a name ="tfidf"></a>
+## TF-IDF
+
+One common application of a text concordance is [TF-IDF](http://en.wikipedia.org/wiki/Tf%E2%80%93idf) or term frequency–inverse document frequency.  Let's consider a corpus of wikipedia articles.  Is there a way we could automatically generate keywords or tags for an article just based on its content itself?  
+
+TF-IDF has two components.  Term frequency is one that we are already quite familiar with.  How frequent is a given term in a document?  An answer we could give to the question of keyword generation is: "The words that appear most frequently are most important in a document."  While there is some merit to this idea, what we'll mostly see is that we get words that appear commonly in language: junk words.  ([Ironically, these junk words are actually the key to unlocking a world of information about a particular text](http://secretlifeofpronouns.com/).)  
+
+TF-IDF takes a different approach. Yes, a word that appears frequently in a document (TF) is one key indicator.  But adding in another indicator IDF -- is it a word that rarely appears in other documents (inverse document frequency) -- is also key.  This is how TF-IDF is computed.  Let's take a wikipedia article about rainbows.  Here are some of the counts:
+
+```
+the:      16
+and:      6
+rainbow:  5
+droplets: 3
+```
+
+Using this as a score alone is not enough.  Now let's say we looked at five other wikipedia articles.  Let's now count how many articles each of these words appear in.
+
+```
+the:      6
+and:      6
+rainbow:  1
+droplets: 1
+```
+
+This is a somewhat obvious result: 'the' and 'and' appear in all the articles and 'rainbow' and 'droplet' appear in both.  We could therefore compute a score for each of these as:
+
+```
+rainbow:   5 * (6/6)   5
+droplets:  3 * (6/6)   3
+the:      16 * (1/6)   2.67
+and:       6 * (1/6)   1
+```
+
+Now we're getting somewhere!  
+
+TF-IDF is meant to be run on a much larger corpus and in order to dampen the effect of the IDF value, a common solution is to use the logarithm.
+
+```
+rainbow:   5 * log(6/6)   0.58
+droplets:  3 * log(6/6)   0.34
+the:      16 * log(1/6)   0.014
+and:       6 * log(1/6)   0.0006
+```
+
+Try running [TF-IDF]() here and the [source]().  For a wonderful example of TF-IDF out in the world, take a look at [Nicholas Felton's 2013 Annual Report](http://bits.blogs.nytimes.com/2014/08/19/a-life-in-data-nicholas-feltons-self-surveillance/).
+
+
+<a name ="bayes"></a>
+## Naive Bayesian Text Classification
+
+### Bayes&#8217; Theorem:
+
+```
+p(A|B) = ( p(B|A)*p(A) ) / ( p(B|A)*p(A) + p(B|~A)*p(~A) )
+```
+
+Consider the following scenario:
+
+* 1% of all ITP students are afflicted with a rare disease known as ITPosis
+* There is a test you can take to determine if you have it, known as a TID (Test for Interactive Disease).
+* 90% of all students with ITPosis will receive a positivie TID (i.e. 10% that have the disease will receive a false negative).
+* 95% of students without ITPosis will receive a negative TID (i.e. 5% will receive false positives).
+
+You have received a positive TID, what is the likelihood you have ITPosis?
+
+As you might expect, there is a very precise answer to this question but it&#8217;s not what might initially assume.  Bayesian reasoning is counter-intuitive and takes quite a bit of getting used to.  In fact, when [given a similar question related to breast cancer and mammograms](http://yudkowsky.net/rational/bayes)</a>, only 15% of doctors get the answer correct.
+
+<The answer &#8212; 15.3% &#8212; is calculated via Bayes&#8217; Theorem.  Let&#8217;s look at it again with this scenario:
+
+* There are 1000 students.
+* 10 of them have ITPosis.
+* 9 of those 10 with the disease will receive a positive TID.
+* Out of the 990 w/o ITPosis, ~50 will receive positive TIDs.
+* Therefore, 59 total students receive positive TIDs, 9 of which actually have the disease, 50 do not.
+* The chance one has the disease if the test is positive is therefore 9 / 58 = 15.5% (off slightly from the exact result b/c of rounding).
+
+This video illustrates the problem quite nicely.
+
+<p><iframe width="560" height="315" src="//www.youtube.com/embed/D8VZqxcu0I0" frameborder="0" allowfullscreen></iframe></p>
+
+The problem our brains run into are those rascally 90% and 95% numbers.  90% of students who test positive have the disease and 95% who don&#8217;t test negative, if I test positive, I should probably have it, right?!!  The important thing to remember is that only 1% of students actually have the disease. Sure testing positive increases the likelihood, but because 5% of students without the disease receive a false positive, it only increases the chances to 15%.  All of this is explained in incredibly thorough and wonderful detail in [Eliezer Yudkowsky&#8217;s](http://yudkowsky.net/) article [An Intuitive Explanation of Bayesian Reasoning](http://yudkowsky.net/rational/bayes).  My explanation is simply adapted from his.
+
+By the way, we could have calculated it as follows:
+
+```
+P (ITPosis | Positive TID) = (90% * 1%) / (90% * 1% + 5% * 99%)
+```
+
+This reads as &#8220;the probability that a positive TID means you have ITPosis&#8221; equals:
+
+So why do we care?  This type of reasoning can be applied quite nicely to text analysis.   A common example is Spam Filtering.  If we know the probability that a spam e-mail contains certain words and that non-spam e-mails contain certain words, we can calculate the likelihood that an e-mail is spam based on what words it contains.
+
+A wonderful resource for this approach is [Paul Graham&#8217;s A Plan for Spam](http://www.paulgraham.com/spam.html) as well as [Better Bayesian Filtering]((http://www.paulgraham.com/better.html). 
+
+The following example code is not a perfect text classifier by any means.  It's a simple implementation of the idea that outlines the basic steps one might take to apply [Bayesian Filtering](http://en.wikipedia.org/wiki/Bayesian_filtering) to text.
+
+### A Word Object
+
+A key element to making this work is expanding on the concordance where each word is mapped to a single number.  Now, we need to know things like how many times that word appears in spam e-mails, how many times in good (aka 'ham') e-mails, and ultimately the probability that an e-mail is spam based on the appearance of that word.</p>
+
+{% highlight javascript %}
+var word = {};
+word.countA = 0;   // keeping track of category A
+word.countB = 0;   // keeping track of category A
+word.probA = 0.5;  // a probability this word appears in category A document
+word.probB = 0.5;  // a probability this word appears in category B document
+// etc. etc.
+{% endhighlight %}
+
+Our dictionary therefore will tie an entire word object itself to a key.  Let's say we are looping through tokens.  We might then have:
+
+{% highlight javascript %}
+for (var i = 0; i < tokens.length; i++) {
+  var token = tokens[i].toLowerCase();
+  if (dictionary[token] === undefined) {
+    dictionary[token] = {};
+    dictionary[token].countA = 0;
+    dictionary[token].countB = 0;
+    dictionary[token].word = token;
+  }
+}
+{% endhighlight %}
+
+And assuming we go through a concordance and count how many times in apperas in one category versus another, we can then apply Bayes rule to a word object.
+
+{% highlight javascript %}
+// Ok, assuming we have an array of keys
+for (var i = 0; i < keys.length; i++) {
+  var key = keys[i];
+  var word = dictionary[key];
+
+  // Average frequency per document (this assumes we've counted total documents)
+  word.freqA = word.countA / docCountA;      
+  word.freqB = word.countB / docCountB;      
+
+  // Probability via Bayes rule
+  word.probA = word.freqA / (word.freqA + word.freqB);
+  word.probB = 1 - probA;
+}
+{% endhighlight %}
+
+The above formula for the probability that a word indicates category A might look a little bit simpler to you than the original Bayes rule.  This is because in this instance I am leaving out the "prior probability" and assuming that any document has a 50% chance of being category A or B.
+
+
+One important aspect of this analysis is the &#8220;interesting-ness&#8221 of any given word.  An interesting rating is defined as how different, say, the spam probability is from 0.5 (i.e. 50/50 is as boring as it gets) or the absolute value of `probA - 0.5`.
+
+
+The process of running the filter works as follows:
+
+1. Train the filter with known category A (spam) e-mails and known category B (ham) e-mails.  
+2 .  For every word, check if it's new.  If it is add it, if not, simply increase the counter for &#8220;A&#8221; or &#8220;B&#8221; (depending on whether it&#8217;s found in A or B).
+
+The above steps would then be repeated over and over again.  Once all the "training" files are read, the probabilities can be calculated for every word.
+
+Now, the classifier is trained!  For every word, we know the probability that document containing it is category A.   Now, all that is left to do is take a new document, find the interesting words, and compute the total probability for that document according to the formula specified in <a href="http://www.paulgraham.com/spam.html">Graham&#8217;s essay</a>.  For this step, we need to calculate [combined probability](http://www.paulgraham.com/naivebayes.html).  [Another resource](http://www.mathpages.com/home/kmath267.htm).
+
+{% highlight java %}
+// Combined probabilities
+// http://www.paulgraham.com/naivebayes.html
+var productA = 1;
+var productB = 1;
+
+// Multiply probabilities together
+for (var i = 0; i < words.length; i++) {
+  var word = words[i];
+  productA *= word.probA;
+  productB *= word.probB;
+}
+
+// Apply formula
+var pA = productA / (productA + productB);
+{% endhighlight %}
+
+Now we know the probability the document is in category A!
+
+
+
+
+
+
+
+
+
+
+
+
 

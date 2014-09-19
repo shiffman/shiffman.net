@@ -1,0 +1,5 @@
+This is is some sample
+text that has
+some double double words
+in it.
+This is really really cool.
