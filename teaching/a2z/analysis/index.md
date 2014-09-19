@@ -232,7 +232,7 @@ Here is a [demonstration of TF-IDF](http://shiffman.net/teaching/a2z/analysis/02
 ### Bayes&#8217; Theorem:
 
 ```
-p(A|B) = ( p(B|A)*p(A) ) / ( p(B|A)*p(A) + p(B|~A)*p(~A) )
+p(A|B) = (p(B|A) * p(A)) / (p(B|A) * p(A) + p(B|~A) * p(~A) )
 ```
 
 Consider the following scenario:
@@ -328,7 +328,8 @@ for (var i = 0; i < keys.length; i++) {
   var key = keys[i];
   var word = dictionary[key];
 
-  // Average frequency per document (this assumes we've counted total documents)
+  // Average frequency per document 
+  // (this assumes we've counted total documents)
   word.freqA = word.countA / docCountA;      
   word.freqB = word.countB / docCountB;      
 
