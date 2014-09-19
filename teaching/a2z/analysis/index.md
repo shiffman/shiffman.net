@@ -48,11 +48,17 @@ pvc_views:
 <a name ="dictionary"></a>
 ## Associative Arrays in JavaScript?
 
-You know that thing we call an array?  Ok, good.  Yes, an array is ordered list of data. Each element of the array is numbered and be accessed by its numeric index.
+You know that thing we call an array?  Yes, that's right, an ordered list of data.  Each element of an array is numbered and accessed by its numeric index.
 
-What if, however, instead of numbering the elements of an array we could name them?  This element is named “Sue”, this one “Bob”, this one “Jane”, and so on and so forth.  In programming, this kind of data structure is often referred to as an “associative array”, “map”, “hash” or “dictionary.”  It's a collection of <b><em>(key, value)</em></b> pairs.  The key is “Sue”, the value is 24.  It's just like having a dictionary of words and when you look up, say, “Sue” the definition is 24.</p>
+{% highlight javascript %}
+var nameList = ['Jane', 'Sue', 'Bob'];
+console.log('Is your name ' + nameList[1] + '?'); // Is your name Sue?
+{% endhighlight %}
 
-Associative arrays can be incredibly convenient for various applications.  For example, you could keep a list of student IDs <b><em>(student name, id)</em></b> or a list of prices <b><em>(product name, price)</em></b> in a dictionary.  The fundamental building block of just about every text analysis application is a concordance, a list of all words in a document along with how many times each word occurred.  A dictionary is the perfect data structure to hold this information.  Each element of the dictionary is a word paired with its count.
+
+What if, however, instead of numbering the elements of an array we could name them?  This element is named “Sue”, this one “Bob”, this one “Jane”, and so on and so forth.  In programming, this kind of data structure is often referred to as an “associative array”, “map”, “hash” or “dictionary.”  It's a collection of `key, value` pairs.  The key is `Sue`, the value is `24`.  It's just like having a dictionary of words and when you look up, say, `Sue` the definition is `24`.</p>
+
+Associative arrays can be incredibly convenient for various applications.  For example, you could keep a list of student IDs <(`student name, id`) or a list of prices (`product name, price`) in a dictionary.  The fundamental building block of just about every text analysis application is a concordance, a list of all words in a document along with how many times each word occurred.  A dictionary is the perfect data structure to hold this information.  Each element of the dictionary is a word paired with its count.
 
 Most programming languages and environemnts have specific classes or objects for advanced data structures.  JavaScript, however, does not.  But all is not lost.  Remember that thing called a JavaScript object?
 
@@ -227,7 +233,7 @@ You have received a positive TID, what is the likelihood you have ITPosis?
 
 As you might expect, there is a very precise answer to this question but it&#8217;s not what might initially assume.  Bayesian reasoning is counter-intuitive and takes quite a bit of getting used to.  In fact, when [given a similar question related to breast cancer and mammograms](http://yudkowsky.net/rational/bayes)</a>, only 15% of doctors get the answer correct.
 
-<The answer &#8212; 15.3% &#8212; is calculated via Bayes&#8217; Theorem.  Let&#8217;s look at it again with this scenario:
+The answer &#8212; 15.3% &#8212; is calculated via Bayes&#8217; Theorem.  Let&#8217;s look at it again with this scenario:
 
 * There are 1000 students.
 * 10 of them have ITPosis.
