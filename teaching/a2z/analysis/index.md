@@ -78,7 +78,7 @@ To start writing a concordance all we need is an empty object.
 var concordance = {};
 {% endhighlight %}
 
-A value (in this case a count) can be paired with its key by naming the key as a String.
+A value (in this case a count) can be paired with a word by naming the key as a String.
 
 {% highlight javascript %}
 concordance['the'] = 100;
@@ -89,9 +89,10 @@ concordance['go'] = 50;
 <a name ="concordance"></a>
 ## Text Concordance
 
-In the case of our examples, we're going to take a document, split it into an array and increase the value associated with a particular key (i.e. word) one at a time.  Let's assume we have some text in a variable named `data`.  First, we'll split into word "tokens".
+In the case of our examples, we're going to take a text document, split it into an array of Strings and increase the value associated with a particular key (i.e. word) each time we encounter the same String.  Let's assume we have some text in a variable named `data`.  First, we'll split into word "tokens".
 
 {% highlight javascript %}
+// Using an arbitrary delimiter as any non letter or number character
 var tokens = data.split(/\W+/);
 {% endhighlight %}
 
