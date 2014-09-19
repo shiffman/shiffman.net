@@ -172,14 +172,14 @@ for (var i = 0; i < keys.length; i++) {
 }
 {% endhighlight %}
 
-Here is a [text concordance example](http://shiffman.net/teaching/a2z/analysis/01_concordance/) and its [source code](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week3_analysis/01_concordance)
+Here is a [text concordance example](http://shiffman.net/teaching/a2z/analysis/01_concordance/) and its [source code](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week3_analysis/01_concordance).
 
 <a name ="tfidf"></a>
 ## TF-IDF
 
-One common application of a text concordance is [TF-IDF](http://en.wikipedia.org/wiki/Tf%E2%80%93idf) or term frequency–inverse document frequency.  Let's consider a corpus of wikipedia articles.  Is there a way we could automatically generate keywords or tags for an article just based on its content itself?  
+One common application of a text concordance is [TF-IDF](http://en.wikipedia.org/wiki/Tf%E2%80%93idf) or term frequency–inverse document frequency.  Let's consider a corpus of wikipedia articles.  Is there a way we could automatically generate keywords or tags for an article  based on its word counts?  
 
-TF-IDF has two components.  Term frequency is one that we are already quite familiar with.  How frequent is a given term in a document?  An answer we could give to the question of keyword generation is: "The words that appear most frequently are most important in a document."  While there is some merit to this idea, what we'll mostly see is that we get words that appear commonly in language: junk words.  ([Ironically, these junk words are actually the key to unlocking a world of information about a particular text](http://secretlifeofpronouns.com/).)  
+TF-IDF has two components.  Term frequency is one that we are already quite familiar with.  How frequent is a given term in a document?  This is exactly what we calculated in the concordance.  We could stop here and say that keyword generation is: "The words that appear most frequently are most important in a document."    While there is some merit to this idea, what we'll see is that the most frequent words are just the words that appear frequently in all text: junk words like 'to', 'a', 'and', 'you', 'me', etc.  [Ironically, these junk words are actually the key to unlocking a world of information about a particular text](http://secretlifeofpronouns.com/).  Nevertheless, these are clearly not related to a document's subject matter as keywords.  
 
 TF-IDF takes a different approach. Yes, a word that appears frequently in a document (TF) is one key indicator.  But adding in another indicator IDF -- is it a word that rarely appears in other documents (inverse document frequency) -- is also key.  This is how TF-IDF is computed.  Let's take a wikipedia article about rainbows.  Here are some of the counts:
 
