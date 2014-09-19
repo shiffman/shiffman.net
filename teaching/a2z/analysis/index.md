@@ -341,7 +341,7 @@ for (var i = 0; i < keys.length; i++) {
 The above formula might look a little bit simpler to you than the original Bayes rule.  This is because I am leaving out the "prior probability" and assuming that any document has a 50% chance of being category A or B.
 
 
-Now, all that is left to do is take a new document, and compute the total probability for that document according to the formula specified in <a href="http://www.paulgraham.com/spam.html">Graham&#8217;s essay</a>.  For this step, we need to calculate [combined probability](http://www.paulgraham.com/naivebayes.html).  [Another resource](http://www.mathpages.com/home/kmath267.htm).
+Now, all that is left to do is take a new document, and compute the total probability for that document according to the formula specified in <a href="http://www.paulgraham.com/spam.html">Graham&#8217;s essay</a>.  For this step, we need to calculate [combined probability](http://www.paulgraham.com/naivebayes.html) as outlined by Graham.  For more about combined probability, here's [another resource](http://www.mathpages.com/home/kmath267.htm).
 
 {% highlight java %}
 // Combined probabilities
