@@ -210,7 +210,7 @@ and:       6 * (1/6)   1
 
 Now we're getting somewhere!  
 
-TF-IDF is meant to be run on a much larger corpus and in order to dampen the effect of the IDF value, a common solution is to use the logarithm.
+TF-IDF is meant to be run on a much larger corpus and in order to dampen the effect of the IDF value, a common solution is to use the logarithm of IDF.
 
 ```
 rainbow:   5 * log(6/6)   0.58
@@ -218,6 +218,11 @@ droplets:  3 * log(6/6)   0.34
 the:      16 * log(1/6)   0.014
 and:       6 * log(1/6)   0.0006
 ```
+
+If [logarithmic scale](http://en.wikipedia.org/wiki/Logarithmic_scale) is new to you, this Khan Academy video may help.
+
+<p><iframe width="560" height="315" src="//www.youtube.com/embed/sBhEi4L91Sg" frameborder="0" allowfullscreen></iframe></p>
+
 
 Try running [TF-IDF]() here and the [source]().  For a wonderful example of TF-IDF out in the world, take a look at [Nicholas Felton's 2013 Annual Report](http://bits.blogs.nytimes.com/2014/08/19/a-life-in-data-nicholas-feltons-self-surveillance/).
 
