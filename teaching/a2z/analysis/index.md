@@ -181,7 +181,7 @@ One common application of a text concordance is [TF-IDF](http://en.wikipedia.org
 
 TF-IDF has two components.  Term frequency is one that we are already quite familiar with.  How frequent is a given term in a document?  This is exactly what we calculated in the concordance.  We could stop here and say that keyword generation is: "The words that appear most frequently are most important in a document."    While there is some merit to this idea, what we'll see is that the most frequent words are just the words that appear frequently in all text: junk words like 'to', 'a', 'and', 'you', 'me', etc.  [Ironically, these junk words are actually the key to unlocking a world of information about a particular text](http://secretlifeofpronouns.com/).  Nevertheless, these are clearly not related to a document's subject matter as keywords.  
 
-TF-IDF takes a different approach. Yes, a word that appears frequently in a document (TF) is one key indicator.  But adding in another indicator IDF -- is it a word that rarely appears in other documents (inverse document frequency) -- is also key.  This is how TF-IDF is computed.  Let's take a wikipedia article about rainbows.  Here are some of the counts:
+TF-IDF takes a different approach. Yes, a word that appears frequently in a document (TF) is one key indicator.  But adding in another indicator such as inverse document frequency (is it a word that rarely appears in other documents?) takes the junk words out of the equation  Let's consider a wikipedia article about rainbows.  Here are some of the counts:
 
 ```
 the:      16
@@ -190,7 +190,7 @@ rainbow:  5
 droplets: 3
 ```
 
-Using this as a score alone is not enough.  Now let's say we looked at five other wikipedia articles.  Let's now count how many articles each of these words appear in.
+Using this as a keyword score alone is not enough since the most important word is 'the'.  Now let's say we looked at five other wikipedia articles.  Let's now count how many articles each of these words appear at least once in.
 
 ```
 the:      6
