@@ -144,11 +144,11 @@ keys.sort(function(a, b) {
 });
 {% endhighlight %}
 
-This is pretty typical of JavaScript and functional programming.  Here we have an anonymous function that we pass into the `sort()` function itself.  This function takes two arguments: `a` and `b`.  The function is a **comparison** function and should return true if a should appear before b in the sorted result.
+This is pretty typical of JavaScript and functional programming.  Here we have an anonymous function that we pass into the `sort()` function itself.  This function takes two arguments: `a` and `b`.  The function is a **comparison** function and should return true if element `b` should appear before `a` in the sorted result.
 
 {% highlight javascript %}
 keys.sort(function(a, b) {
-  if (concordance[a] > concordance[b]) {
+  if (concordance[b] > concordance[a]) {
     return true;
   } else {
     return false;
