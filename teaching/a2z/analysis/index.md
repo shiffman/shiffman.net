@@ -244,7 +244,7 @@ Consider the following scenario:
 
 You have received a positive TID, what is the likelihood you have ITPosis?
 
-As you might expect, there is a very precise answer to this question but it&#8217;s not what might initially assume.  Bayesian reasoning is counter-intuitive and takes quite a bit of getting used to.  In fact, when [given a similar question related to breast cancer and mammograms](http://yudkowsky.net/rational/bayes)</a>, only 15% of doctors get the answer correct.
+As you might expect, there is a very precise answer to this question but it&#8217;s probably not what you initially guess.  Bayesian reasoning is counter-intuitive and takes quite a bit of getting used to.  In fact, when [given a similar question related to breast cancer and mammograms](http://yudkowsky.net/rational/bayes)</a>, only 15% of doctors get the answer correct.
 
 The answer &#8212; 15.3% &#8212; is calculated via Bayes&#8217; Theorem.  Let&#8217;s look at it again with this scenario:
 
@@ -269,11 +269,11 @@ P (ITPosis | Positive TID) = (90% * 1%) / (90% * 1% + 5% * 99%)
 
 This reads as &#8220;the probability that a positive TID means you have ITPosis&#8221; equals:
 
-So why do we care?  This type of reasoning can be applied quite nicely to text analysis.   A common example is Spam Filtering.  If we know the probability that a spam e-mail contains certain words and that non-spam e-mails contain certain words, we can calculate the likelihood that an e-mail is spam based on what words it contains.
+So why do we care?  This type of reasoning can be applied quite nicely to text analysis.   A common example is spam filtering.  If we know the probability that a spam e-mail contains a specific words, we can calculate the likelihood that an e-mail is spam based on its concordance.
 
 A wonderful resource for this approach is [Paul Graham&#8217;s A Plan for Spam](http://www.paulgraham.com/spam.html) as well as [Better Bayesian Filtering]((http://www.paulgraham.com/better.html). 
 
-The following example code is not a perfect text classifier by any means.  It's a simple implementation of the idea that outlines the basic steps one might take to apply [Bayesian Filtering](http://en.wikipedia.org/wiki/Bayesian_filtering) to text.
+The example code that follows is not a perfect text classifier by any means.  It's a simple implementation of the idea that outlines the basic steps one might take to apply [Bayesian Filtering](http://en.wikipedia.org/wiki/Bayesian_filtering) to text.
 
 ### A Word Object
 
