@@ -168,12 +168,11 @@ Now that we have sorted keys, we can iterate over the concordance.
 
 {% highlight javascript %}
 for (var i = 0; i < keys.length; i++) {
-  console.log(keys[i] + ': ' concordance[keys[i]]);
+  console.log(keys[i] + ': ' + concordance[keys[i]]);
 }
 {% endhighlight %}
 
-You can try [running a concordance here]()
-
+Here is a [text concordance example](http://shiffman.net/teaching/a2z/analysis/01_concordance/) and its [source code](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week3_analysis/01_concordance)
 
 <a name ="tfidf"></a>
 ## TF-IDF
