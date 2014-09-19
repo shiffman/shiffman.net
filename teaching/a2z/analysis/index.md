@@ -277,14 +277,14 @@ The example code that follows is not a perfect text classifier by any means.  It
 
 ### A Word Object
 
-A key element to making this work is expanding on the concordance where each word is mapped to a single number.  Now, we need to know things like how many times that word appears in spam e-mails, how many times in good (aka 'ham') e-mails, and ultimately the probability that an e-mail is spam based on the appearance of that word.</p>
+The first thing we need to do is expand on the concordance example that stores a single number associated with each word.  For classification, we'll need to know things like how many times that word appears in spam e-mails versus good (aka 'ham') e-mails.  And then we'll need to use these values to calculate the probability that each word would appear in a spam or ham e-mail.</p>
 
 {% highlight javascript %}
 var word = {};
 word.countA = 0;   // keeping track of category A
 word.countB = 0;   // keeping track of category A
-word.probA = 0.5;  // a probability this word appears in category A document
-word.probB = 0.5;  // a probability this word appears in category B document
+word.probA = ???;  // a probability this word appears in category A document
+word.probB = ???;  // a probability this word appears in category B document
 // etc. etc.
 {% endhighlight %}
 
