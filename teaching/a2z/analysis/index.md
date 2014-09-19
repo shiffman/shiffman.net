@@ -102,13 +102,15 @@ Then we'll go through each one a a time.
 for (var i = 0; i < tokens.length; i++) {
 {% endhighlight %}
 
-The tricky thing here is we have to determine if this is a word we've encountered before or a new one.  If it's new, we need to set its initial count at 1.  If it's not new, then we just need to increase its count by one.
+The tricky thing here is we have to determine if each token (each element of the resulting array) is a new word or one we've already encountered.  If it's new, we need to set its initial count at 1.  If it's not, we need to increase its count by one.
 
 {% highlight javascript %}
 for (var i = 0; i < tokens.length; i++) {
   var word = tokens[i];
+  // It's a new word!
   if (concordance[word] === undefined) {
     concordance[word] = 1;
+  // We've seen this word before!
   } else {
     concordance[word]++;
   }
