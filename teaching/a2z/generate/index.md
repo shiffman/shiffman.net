@@ -11,7 +11,7 @@ layout: page
 ## This week&#8217;s topics:
 * [N-Grams and Markov Chains](#ngrams)
 * [Grammars](#grammar)
-* [Wordnik(#wordnik)
+* [Wordnik](#wordnik)
 * [TwitterBot](#twitter)
 
 ## Example Code

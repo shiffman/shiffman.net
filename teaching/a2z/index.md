@@ -27,3 +27,9 @@ I originally taught this course (2007-2008) in Java.  The [old notes can be foun
 * [Text Concordance](analysis/#concordance)
 * [TF-IDF](analysis/#tfidf)
 * [Naive Bayesian Classification](analysis/#bayes)
+
+## [Generative Text](generate)
+* [N-Grams and Markov Chains](generate/#ngrams)
+* [Grammars](generate/#grammar)
+* [Wordnik](generate/#wordnik)
+* [TwitterBot](generate/#twitter)
