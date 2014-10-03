@@ -333,12 +333,6 @@ pre, code {
   font-family: "source code pro", monospace;
   font-size: 0.95em;
   line-height: 1.2em; 
-  background-color: #fff;
-  padding: 0;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
-  margin: 0;
-  border-radius: 3px;
 }
 
 pre {
