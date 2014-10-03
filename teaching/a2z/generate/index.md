@@ -8,18 +8,26 @@ layout: page
 <script language="javascript" type="text/javascript" src="//cdn.jsdelivr.net/p5.js/0.3.6/addons/p5.dom.js"></script>
 <script language="javascript" type="text/javascript" src="generate.js"></script>
 
-
 ## This week&#8217;s topics:
 * [N-Grams and Markov Chains](#ngrams)
 * [Grammars](#grammar)
 * [Wordnik](#wordnik)
 * [TwitterBot](#twitter)
 
-## Plain JS Examples:
-
-## P5 examples
+## Example Code
+* [Markov chains](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week4_generate/01_markov)
+* [Context-free Grammars](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week4_generate/02_cfg)
+* [Wordnik API](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week4_generate/03_wordnik/01_wordnik)
+* [TwitterBot](https://github.com/shiffman/Programming-from-A-to-Z-F14/blob/master/week4_generate/04_twitter_bot/bot.js)
 
 ## Related references
+* [N-Grams and Markov Chains by Allison Parrish](http://www.decontextualize.com/teaching/rwet/n-grams-and-markov-chains/)
+* [Context-Free Grammars by Allison Parrish](http://www.decontextualize.com/teaching/rwet/recursion-and-context-free-grammars/)
+* [N-Grams and Markov Chains by Daniel Howe](http://www.rednoise.org/pdal/index.php?n=Main.N-Grams)
+* [Context-Free Grammars by Daniel Howe](http://www.rednoise.org/pdal/index.php?n=Main.Grammars)
+* [Massive Database of N-Grams from Google](http://googleresearch.blogspot.com/2006/08/all-our-n-gram-are-belong-to-you.html)
+* [Markov Models of Natural Language](http://www.cs.princeton.edu/courses/archive/spr05/cos126/assignments/markov.html)
+* [Three Models for the Description of Language (Chomsky)](http://chomsky.info/articles/195609--.pdf)
 
 ## Exercise ideas
 
