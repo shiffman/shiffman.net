@@ -31,7 +31,13 @@ layout: page
 * [Three Models for the Description of Language (Chomsky)](http://chomsky.info/articles/195609--.pdf)
 
 ## Exercise ideas
-* TBA
+* Create page that generates its content by feeding an existing text into the Markov chain algorithm.  What effect does the value of n (the “order” of the n-gram) have on the result?  [Allison Parish's ITP Course generator](http://static.decontextualize.com/toys/next_semester) is an excellent example.
+* Visualize N-gram frequencies.  See [WebTrigrams by Chris Harrison](http://www.chrisharrison.net/index.php/Visualizations/WebTrigrams) for an example.
+* What happens if you mash-up two texts? For example, feed Shakespeare plays and ITP physical computing blog post content into the generator.  Can you modify the MarkovGenerator object to weight the input text (i.e. make shakespeare N-grams have higher probabilities?)  [The Gnoetry Project](http://www.beardofbees.com/gnoetry.html) is a useful reference.  
+* Rework any of the example programs to use something other than text (or, at least, text that represents language) as its basic unit. For example: musical notes, songs in playlists, pixels in an image, etc.
+* Invent your own grammar. Consider using one that generates something other English sentences: music, images, code, etc.
+* Build a grammar that pulls its terminal words from [Wordnik](https://www.wordnik.com/).
+* Build a grammar based on a source text [as demonstrated here](https://github.com/shiffman/Programming-from-A-to-Z-F14/blob/master/week4_generate/02_cfg/04_grammar_maker/grammarmaker.js).  
 
 <a name ="ngrams"></a>
 ## N-Grams and Markov Chains
