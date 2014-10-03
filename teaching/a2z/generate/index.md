@@ -93,7 +93,7 @@ var possibilities = ['a','a', 'd'];
 Now when picking a random element, there is a two out of three chance of picking ‘a’.  In fact, ‘a’ is twice as likely to be picked than ‘d’.
 Using [all the letter frequencies found in this JSON file](letterfreq.json), we could rewrite our random generator to build an array of letters, adding each letter to the array a number of times according to its frequency.
 
-<pre><code id="randomfreq"></code></pre>
+<p id "randomfreq"></p>
 
 {% highlight javascript %}
 // All the possible letters
@@ -150,7 +150,8 @@ order: <select id = "order">
       <option value="6">6</option>
     </select>
 <button id = 'ngrambutton'>show me ngrams</button>
-<p id='ngramsresult'></p>
+
+<pre><code id="ngramsresult"></code></pre>
 
 Looking at all the N-grams of a given text provides a strategy for generating text.  Let’s go back to the phrase “to_be_or_not_to_be” (using an underscore instead of space for clarity).   Let's start with the simplest possible scenario and look at all N-grams where N=1 (which is admittedly a bit silly, but will be a useful demonstration.)
 
