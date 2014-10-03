@@ -11,7 +11,7 @@ layout: page
 ## This week&#8217;s topics:
 * [N-Grams and Markov Chains](#ngrams)
 * [Grammars](#grammar)
-* [Wordnik](#wordnik)
+* [Wordnik(#wordnik)
 * [TwitterBot](#twitter)
 
 ## Example Code
@@ -21,6 +21,7 @@ layout: page
 * [TwitterBot](https://github.com/shiffman/Programming-from-A-to-Z-F14/blob/master/week4_generate/04_twitter_bot/bot.js)
 
 ## Related references
+* [Animated Markov Chain explanation](http://setosa.io/blog/2014/07/26/markov-chains/) 
 * [N-Grams and Markov Chains by Allison Parrish](http://www.decontextualize.com/teaching/rwet/n-grams-and-markov-chains/)
 * [Context-Free Grammars by Allison Parrish](http://www.decontextualize.com/teaching/rwet/recursion-and-context-free-grammars/)
 * [N-Grams and Markov Chains by Daniel Howe](http://www.rednoise.org/pdal/index.php?n=Main.N-Grams)
@@ -30,7 +31,6 @@ layout: page
 * [Three Models for the Description of Language (Chomsky)](http://chomsky.info/articles/195609--.pdf)
 
 ## Exercise ideas
-
 
 <a name ="ngrams"></a>
 ## N-Grams and Markov Chains
@@ -421,6 +421,15 @@ Finally, a grammar file is something we can generate ourselves as well based on 
 
 Here is a [node example that uses a concordance to get al the words from a source file and the RiTa library to count syllables](https://github.com/shiffman/Programming-from-A-to-Z-F14/blob/master/week4_generate/02_cfg/04_grammar_maker/grammarmaker.js).
 
+<a name ="wordnik"></a>
+## Wordnik
+
+coming soon
+
+<a name ="twitter"></a>
+## Twitter Bots
+
+coming soon
 
 
 
