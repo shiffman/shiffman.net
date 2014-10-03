@@ -31,11 +31,12 @@ layout: page
 * [Three Models for the Description of Language (Chomsky)](http://chomsky.info/articles/195609--.pdf)
 
 ## Exercise ideas
+* TBA
 
 <a name ="ngrams"></a>
 ## N-Grams and Markov Chains
 
-The [infinite monkey theorem](http://en.wikipedia.org/wiki/Infinite_monkey_theorem) suggests that a monkey randomly typing at a keyboard for an infinite amount of time would eventually type the complete works of William Shakespeare.  [Working out the math to this problem](http://natureofcode.com/book/chapter-9-the-evolution-of-code/#chapter09_section2) reveals just how insanely long this would actually take.  Even for a monkey to randomly type "to be or not to be" would take eons of time.  This isn't too hard to demonstrate with JavaScript as we can generate random Strings fairly easily.
+The [infinite monkey theorem](http://en.wikipedia.org/wiki/Infinite_monkey_theorem) suggests that a monkey randomly typing at a keyboard for an infinite amount of time would eventually type the complete works of William Shakespeare.  [Working out the math to this problem](http://natureofcode.com/book/chapter-9-the-evolution-of-code/#chapter09_section2) reveals just how insanely long this would actually take.  Even for a monkey to randomly type “to be or not to be” requires eons upon eons of time.  We can demonstrate the idea with JavaScript by generating random Strings.
 
 <p id="randomit"></p>
 
@@ -52,21 +53,21 @@ for (var i = 0; i < 18; i++) {
 console.log(tobe);
 {% endhighlight %}
 
-Have you seen "to be or not to be." yet?  Probably not.  After all, a true monkey types totally at random, meaning there is an equal probability that any key on the keyboard will be hit at any given time.  The chances are incredibly slim we'll get an exact sequence.  But  what if we could generate our own custom probability map for a keyboard (or a sequence of word tokens)?  What kind of results could we achieve?  Let's consider the following scenario.  What if we picked letters according to their [actual frequency in the English language](http://en.wikipedia.org/wiki/Letter_frequency#Relative_frequencies_of_letters_in_the_English_language).  Here's a chart to get us started.
+Have you seen “to be or not to be” yet?  Probably not.  After all, a true monkey types totally at random, meaning there is an equal probability that any key will be pressed at any given time.  The chances are incredibly slim we'll get an exact sequence.  But  what if we could generate our own custom probability map for a keyboard (or a sequence of word tokens)?  What kind of results could we achieve?  Let's consider the following scenario.  What if we picked letters according to their [actual frequency in the English language](http://en.wikipedia.org/wiki/Letter_frequency#Relative_frequencies_of_letters_in_the_English_language)?  Here's a chart to get us started.
 
 <p style="font-size:8pt;"><a href="http://commons.wikimedia.org/wiki/File:English_letter_frequency_(alphabetic).svg#mediaviewer/File:English_letter_frequency_(alphabetic).svg"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/English_letter_frequency_%28alphabetic%29.svg/400px-English_letter_frequency_%28alphabetic%29.svg.png" alt="English letter frequency (alphabetic).svg"></a><br><a href="http://commons.wikimedia.org/wiki/File:English_letter_frequency_(alphabetic).svg#mediaviewer/File:English_letter_frequency_(alphabetic).svg">English letter frequency (alphabetic)</a> by <a href="//commons.wikimedia.org/wiki/User:Nandhp" title="User:Nandhp">Nandhp</a> Licensed under Public domain via <a href="//commons.wikimedia.org/wiki/">Wikimedia Commons</a>.</p>
 
-The actual data itself looks something like:
+```
 
-| Letter        | Probability   | 
-| ------------- | ------------- | 
-| a             | 8.167%        | 
-| b             | 1.492%        | 
-| c             | 2.782%        | 
-| d             | 4.253%        |
+Letter Probability    
+------ ----------- 
+a      8.167%         
+b      1.492%         
+c      2.782%         
+d      4.253%        
+```
 
-
-How might we pick 'a' 8% of the time and 'd' 4% of the time?  Another way of stating this question might be: "How would be pick 'a' twice as often as 'd'".  While there are a variety of solutions to this sort of problem a simple one that we will employ in just about every example for this week is the following.  Imagine we had an array.
+How might we pick ‘a’ 8% of the time and ‘d’ 4% of the time?  Another way of stating this question might be: “How would be pick ‘a’ twice as often as ‘d’”?  While there are a variety of solutions to this sort of problem a simple one that we will employ in our examples is the following.  Imagine we had an array.
 
 {% highlight javascript %}
 // An array of two choices
@@ -82,16 +83,17 @@ var i = floor(random(possibilities.length));
 var pick = possibilities[i];
 {% endhighlight %}
 
-Each element in the case of an array with two spots has a 50% chance of being picked.  But what if my array looked like the following:
+Each element in the case of an array with two spots has a 50% chance of being picked.  But what if created the array as follows instead?
 
 {% highlight javascript %}
 // Two choices, but one appears twice
 var possibilities = ['a','a', 'd'];
 {% endhighlight %}
 
-Now when I go to pick an element I have a two of three chance of picking an 'a'.  In fact, I am twice as likely to pick an 'a'.  Using [all the letter frequencies found in this JSON file](letterfreq.json), we could rewrite our random generator to build an array of letters, adding each letter to the array a number of times according to its frequency.
+Now when picking a random element, there is a two out of three chance of picking ‘a’.  In fact, ‘a’ is twice as likely to be picked than ‘d’.
+Using [all the letter frequencies found in this JSON file](letterfreq.json), we could rewrite our random generator to build an array of letters, adding each letter to the array a number of times according to its frequency.
 
-<p id="randomfreq"></p>
+<pre><code id="randomfreq"></code></pre>
 
 {% highlight javascript %}
 // All the possible letters
@@ -111,9 +113,11 @@ for (var i = 0; i < letters.length; i++) {
 }
 {% endhighlight %}
 
-While we still are not approaching "to be or not to be." the quality of the random generated Strings has changed.  e's appear a great deal more than z's and so on and so forth.  We could take this idea another step forward by examining how letters appear next to each other commonly in English.  For example, how often does 'h' occur after 't' versus 'a' or 'r' and so on and so forth?  
+While we've probably increased the likelihood of randomly typing “to be or not to be” only slightly, we can nevertheless see how the quality of the results have changed.  e’s appear a great deal more than z’s and so on and so forth.  
 
-This is exactly the approach of n-grams.  An n-gram is a contiguous sequence of 'n' elements.  In the case of text, this might be 'n' letters or 'n' words or 'n' syllables.  The following function, for example, displays all word n-grams for a given String (of order N):</p>
+Next, let's take this idea of custom letter probabilities another step forward and examine the frequencies of letters neighboring other letters commonly in English.  For example, how often does ‘h’ occur after ‘t’ versus ‘a’ or ‘r’ and so on and so forth?  
+
+This is exactly the approach of N-grams.  An n-gram is a contiguous sequence of N elements.  In the case of text, this might be N letters or N words or N phonemes or N syllables.  For an example, here's a function that returns all word N-grams for a given String (using a regex to split the text up into tokens):
 
 {% highlight java %}
 function nGrams(sentence, n) {
@@ -148,7 +152,7 @@ order: <select id = "order">
 <button id = 'ngrambutton'>show me ngrams</button>
 <p id='ngramsresult'></p>
 
-Looking at all the n-grams of a given text provides a strategy for generating text.  Let's go back to the phrase 'to_be_or_not_to_be' (using an underscore instead of space for clarity).  Taking the simplest possible approach we could examine all of the n-grams with n=1 (which is admittedly a bit silly, but will help us get started.)
+Looking at all the N-grams of a given text provides a strategy for generating text.  Let’s go back to the phrase “to_be_or_not_to_be” (using an underscore instead of space for clarity).   Let's start with the simplest possible scenario and look at all N-grams where N=1 (which is admittedly a bit silly, but will be a useful demonstration.)
 
 ```
 t o _ b e _ o r _ n o t _ t o _ b e
@@ -162,7 +166,7 @@ t -> _
 t -> o
 ```
 
-From the above we can calculate that in this (very small) piece of text, an 'o' follows a 't' 67% of the time and a space 33%. 
+From the above we can calculate that in this (very small) piece of text, an ‘o’ follows a ‘t’ 67% of the time and a space 33%. 
 
 ```
 o -> _
@@ -171,27 +175,26 @@ o -> t
 o -> _
 ```
 
-With 'o', we next see a space 50% of the time, 'r' 25%, and 't' 25%.
+With ‘o’, we next see a space 50% of the time, ‘r’ 25%, and ‘t’ 25%.
 
 
 We could express this result as a JavaScript object:
 
 {% highlight javascript %}
-// All ngrams
-// and the possible characters that follow 
+// All ngrams and next characters
 var ngrams = {
   't': ['o', '_', 'o'],
   'o': ['_', 'r', 't', '_']
 };
 {% endhighlight %}
 
-Now, imagine we next decided to generate new text based on these probabilities.  We might start with 't':
+Now, imagine we next decided to generate new text based on these probabilities.  We might start with ‘t’:
 
 {% highlight javascript %}
 var txt = 't';
 {% endhighlight %}
 
-And then pick a new character based on the array associated in the ngrams object.
+And then pick a new character based on the array associated in the `ngrams` object.
 
 {% highlight javascript %}
 var txt = 't';
@@ -203,7 +206,7 @@ var next = possible[r];
 txt = txt + next;
 {% endhighlight %}
 
-Now repeat for the next letter picked.  And so and and so forth.  Here's the full code inside a loop that produces the following generated outcomes:
+Now repeat for the next N-gram.  And so and and so forth.  Here are some sample outcomes (and the full code for producing these):
 
 <p id="ngramtest"></p>
 
@@ -231,9 +234,9 @@ for (var i = 0; i < 10; i++) {
 }
 {% endhighlight %}
 
-This technique is known as a Markov Chain.  A [Markov Chain](http://en.wikipedia.org/wiki/Markov_chain) can be described as a sequence of random "states" where each new state is conditional only on the previous state.   An example of a Markov Chain is [monopoly](http://www.bewersdorff-online.de/amonopoly/).   The "next" state of the monopoly board depends on the current state and the roll of the dice.  It doesn't matter how we got to that current state, only what it is at the moment.  A game like blackjack, for example, is different in that the deal of the cards is dependent on the history of many previous deals (assuming a single-deck not continuously shuffled.)
+This technique is known as a Markov Chain.  A [Markov Chain](http://en.wikipedia.org/wiki/Markov_chain) can be described as a sequence of random “states” where each new state is conditional only on the previous state.   An example of a Markov Chain is [monopoly](http://www.bewersdorff-online.de/amonopoly/).   The next state of the monopoly board depends on the current state and the roll of the dice.  It doesn’t matter how we got to that current state, only what it is at the moment.  A game like blackjack, for example, is different in that the deal of the cards is dependent on the history of many previous deals (assuming a single-deck not continuously shuffled.)
 
-Using an n-gram model, can use a markov chain to generate text where each new word or character is dependent on the previous word (or character) or sequence of words (or characters).   For example. given the phrase "I have to" we might say the next word is 50% likely to be "go", 30% likely to be "run" and 20% likely to be "pee."  We can construct these word sequence probabilities based on a large corpus of source texts.  Here, for example, is the full set of ngrams of order 2 and their possible outcomes in the phrase: "to be or not to be, that is the question."
+Using an N-gram model, can use a markov chain to generate text where each new word or character is dependent on the previous word (or character) or sequence of words (or characters).   For example. given the phrase “I have to” we might say the next word is 50% likely to be “go”, 30% likely to be “run” and 20% likely to be “pee.”  We can construct these word sequence probabilities based on a large corpus of source texts.  Here, for example, is the full set of ngrams of order 2 and their possible outcomes in the phrase: “to be or not to be, that is the question.”
 
 {% highlight javascript %}
 var ngrams = {
@@ -270,7 +273,7 @@ var ngrams = {
 };
 {% endhighlight %}
 
-The process to generate the above ngrams object is quite similar to the [concordance](http://shiffman.net/teaching/a2z/analysis/) we previously developed.  Only this time, instead of pairing each token with a count, we are pairing each ngram with an array of possible next characters.  Let's look at how this is built.
+The process to generate the above `ngrams` object is quite similar to the [concordance](http://shiffman.net/teaching/a2z/analysis/) we previously developed.  Only this time, instead of pairing each token with a count, we are pairing each N-gram with an array of possible next characters.  Let's look at how this is built.
 
 {% highlight javascript %}
 var ngrams = {};
@@ -291,9 +294,9 @@ for (var i = 0; i < text.length - n; i++) {
 }
 {% endhighlight %}
 
-A small difference you might notice above is that I'm demonstrating `hasOwnProperty()` which is a universal object method in JavaScript that allows you to test if a variable is a property of the object or not.  Last week, we said `if (ngrams[gram] === undefined)`.  Both are valid strategies.
+A small difference from the concordance you might notice above is the use of `hasOwnProperty()` which is a universal object method in JavaScript that allows you to test if a variable is a property of the object or not.  Last week, we said `if (ngrams[gram] === undefined)`.  Both are valid strategies.
 
-Once we've got the ngram dictionary with all possibities mapped out we can start to generate text.
+Once we've got the `ngrams` object with all possibities mapped out we can start to generate text.
 
 {% highlight javascript %}
 // Start with an arbitrary ngram
@@ -338,7 +341,7 @@ From <a href="http://en.wikipedia.org/wiki/Grammar">Wikipedia</a>:  &#8220;Gramm
 
 A [Context-Free Grammar](http://en.wikipedia.org/wiki/Context-free_grammar) is a set of rules that define the syntax of a language &#8212; what is and is not a valid sequence of &#8220;tokens&#8221;.   Programming languages, for example, are context-free grammars &#8212; a compiler reads your code to make sure it conforms to specific rules and informs you of any errors.   (These rules aren&#8217;t limited to the production of text, and can be used for music, images, etc.) A context-free grammar, however, isn&#8217;t robust enough to describe the complexities of natural language.  After all, they have no context!  Natural languages can be described using <a href="http://en.wikipedia.org/wiki/Context-sensitive_grammar">Context-sensitive grammars</a>, a concept introduced by <a href="http://en.wikipedia.org/wiki/Noam_Chomsky">Chomsky</a> in the 50s.
 
-For our purposes here, we want to learn how to define our own context free grammars and generate text from them.  I&#8217;m going to give a short explanation here, followed by code examples.  For a more detailed discussion I would recommend [Daniel Howe&#8217;s (creator of RiTa)explanation](http://www.rednoise.org/pdal/index.php?n=Main.Grammars).
+For our purposes here, we want to learn how to define our own context free grammars and generate text from them.  I&#8217;m going to give a short explanation here, followed by code examples.  For more detailed discussions, I would recommend [Daniel Howe&#8217;s (creator of RiTa)explanation](http://www.rednoise.org/pdal/index.php?n=Main.Grammars) and [Context-Free Grammars by Allison Parrish](http://www.decontextualize.com/teaching/rwet/recursion-and-context-free-grammars/).
 
 All &#8220;production rules&#8221; in a context-free grammar are of the form:
 
@@ -358,7 +361,9 @@ c -> 'happy'
 c -> 'sad'
 ```
 
-Anything in single quotes is a &#8220;terminal&#8221; element, meaning this is the end, this is the word/string we can use.  In the above &#8220;cat,&#8221; &#8220;happy,&#8221; and &#8220;sad&#8221; are all terminals. Anything that is not in quotes is non-terminal, or a &#8220;symbol.&#8221;  The abve example has 4 symbols &#8212; s,a,b,c. The symbol &#8220;s&#8221; is commonly used to indicate &#8220;start&#8221; or &#8220;sentence.&#8221; Notice how in the above set of rules the symbol c can be &#8220;happy&#8221; or &#8220;sad.&#8221;   We can use an OR (pipe character) to combine these two rules:
+Anything in single quotes is a &#8220;terminal&#8221; element, meaning this is the end and no more substitutions are necessary.  In the above &#8220;cat,&#8221; &#8220;happy,&#8221; and &#8220;sad&#8221; are all terminals. Anything that is not in quotes is non-terminal, or a &#8220;symbol.&#8221;  The abve example has 4 symbols &#8212; s, a, b, c. The symbol &#8220;s&#8221; is commonly used to indicate &#8220;start&#8221; or &#8220;sentence.&#8221; 
+
+Notice how in the above set of rules the symbol c can be &#8220;happy&#8221; or &#8220;sad.&#8221;   This is often express with an OR (pipe character) to combine these two rules:
 
 ```
 c -> 'happy' | 'sad'
@@ -375,7 +380,7 @@ The process of generating the above two sentences goes something like:
 
 `s` becomes `a b` which becomes `the c cat` which then becomes `the happy cat` or `the sad cat`.  Here, either &#8220;happy&#8221; or &#8220;sad&#8221; is picked randomly (with a 50% chance for each one.)
 
-How do we build a data structure to track a context-free grammar?  Yup, again, we're going to use a JavaScript object just like with the concordance or n-gram analysis.  Here we'll take a production rule and map non-terminal characters to keys and the possible outcomes as an array of values.
+How do we build a data structure to track a context-free grammar?  Yup, again, we're going to use a JavaScript object just like with the concordance or N-gram analysis.  Here we'll take a production rule and map non-terminal characters to keys and the possible outcomes as an array of values.
 
 {% highlight javascript %}
 var cfg = {
@@ -386,16 +391,16 @@ var cfg = {
 };
 {% endhighlight %}
 
-The above may look a little strange to you.  Notice how the value for each key is an array of arrays.  Each element of the larger array is one possible outcome which is an array itself: the list of elements in that outcome.
+The above may look a little strange to you.  Notice how the value for each key is an array of arrays.  Each element of the larger array is one possible outcome which is an array itself: the list of elements in that outcome.  I should also note that the is no distinction between a “symbol” and a “terminal.”  Everything is just a String, if there is a rule associated with that String then it is a symbol, if not, it's terminal.
 
-A generated sentence from the CFG is commonly referred to as an "expansion" and is a bit tricky to implement.  We could try to just use a loop, iterating over a sentence and executing the production rules.  The nested nature of the rules, however, introduces a great deal of complexity.  An elegant strategy, however, is to call a function recursively expanding the same sentence over and over again until there are no non-terminal elements left.  Let's assume we have an empty array and some seed (often called an "axiom").
+A generated sentence from the CFG is commonly referred to as an “expansion” and is a bit tricky to implement.  We could try to just use a loop, iterating over a sentence and executing the production rules.  The nested nature of the rules, however, introduces a great deal of complexity.  An elegant strategy, however, is to call a function recursively expanding the same sentence over and over again until there are no non-terminal elements left.  Let's assume we have an empty array and some seed (often called an "axiom").
 
 {% highlight javascript %}
 var expansion = [];
 var seed = 's';
 {% endhighlight %}
 
-We can write a function that receives both the array and the seed and calls itself adding to the array with the production rules.
+We can write a function that receives both the array and the seed and calls itself recursively if a rule that matches that seed String is present.
 
 {% highlight javascript %}
 function expand(start, expansion) {
