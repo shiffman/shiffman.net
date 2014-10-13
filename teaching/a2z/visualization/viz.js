@@ -64,7 +64,9 @@ var s3 = function(sketch) {
     sketch.textSize(32);
     sketch.textFont('Pacifico');
     sketch.text('Pacifico', 10, 48);
-    console.log('looping');
+    if (sketch.frameCount > 5000) {
+      sketch.noLoop();
+    }
   };
 }
 
