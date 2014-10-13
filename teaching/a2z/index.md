@@ -33,3 +33,8 @@ I originally taught this course (2007-2008) in Java.  The [old notes can be foun
 * [Grammars](generate/#grammar)
 * [Wordnik](generate/#wordnik)
 * [TwitterBot](generate/#twitter)
+
+## [Visualization](visualization)
+* [Drawing Text with Canvas](visualization/#canvas)
+* [Drawing Text with DOM Elements](visualization/#dom)
+* [Classic Text Visualization Techniques](visualization/#classic)
