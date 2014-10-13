@@ -7,8 +7,8 @@ var s1 = function(sketch) {
   };
 
   sketch.draw = function() {
-    sketch.background(127);
-    sketch.fill(255);
+    sketch.background(255);
+    sketch.fill(127);
     sketch.stroke(0);
     sketch.textSize(32);
     sketch.text('Drawing some text.', 10, 48);
@@ -27,7 +27,7 @@ var s2 = function(sketch) {
   };
 
   sketch.draw = function() {
-    sketch.background(175);
+    sketch.background(255);
     
     sketch.stroke(0, 51);
     sketch.line(200, 0, 200, 200);
@@ -58,13 +58,13 @@ var s3 = function(sketch) {
   };
 
   sketch.draw = function() {
-    sketch.background(175);
+    sketch.background(255);
     sketch.fill(0);
     sketch.noStroke();
     sketch.textSize(32);
     sketch.textFont('Pacifico');
     sketch.text('Pacifico', 10, 48);
-    sketch.noLoop();
+    console.log('looping');
   };
 }
 
@@ -78,7 +78,7 @@ var s4 = function(sketch) {
   };
 
   sketch.draw = function() {
-    sketch.background(175);
+    sketch.background(255);
     sketch.fill(0);
     sketch.noStroke();
     sketch.textSize(16);
@@ -98,7 +98,7 @@ var s5 = function(sketch) {
   };
 
   sketch.draw = function() {
-    sketch.background(175);
+    sketch.background(255);
     sketch.fill(0);
     sketch.noStroke();
     sketch.textSize(16);
@@ -123,7 +123,7 @@ var s6 = function(sketch) {
   };
 
   sketch.draw = function() {
-    sketch.background(175);
+    sketch.background(255);
     sketch.fill(0);
     sketch.noStroke();
     sketch.textSize(16);
@@ -153,7 +153,7 @@ var s7 = function(sketch) {
   }
 
   sketch.draw = function() {
-    sketch.background(100);
+    sketch.background(255);
 
     // Start in the center and draw the circle
     sketch.translate(sketch.width/2, sketch.height/2);
@@ -579,7 +579,7 @@ var s13 = function(sketch) {
   }
 
   sketch.draw = function() {
-    sketch.background(0);
+    sketch.clear();
 
     // Update the physics
     physics.update();
@@ -655,7 +655,7 @@ var s13 = function(sketch) {
     // Draw the node
     this.display = function(){
       sketch.fill(127);
-      sketch.stroke(200);
+      sketch.stroke(0);
       // Red if being dragged
       if (this.drag) {
         sketch.fill(255,0,0);
