@@ -23,7 +23,7 @@ var p51 = new p5(s1, 'canvas1');
 var s2 = function(sketch) {
  
   sketch.setup = function() {
-    sketch.createCanvas(400, 200);
+    sketch.createCanvas(400, 200-50+32);
   };
 
   sketch.draw = function() {
@@ -132,8 +132,8 @@ var s6 = function(sketch) {
     var s = 'one character at a time';
     var x = 10;
     for (var i = 0; i < s.length; i++) {
-      sketch.textSize(sketch.random(12,32));
-      sketch.text(s.charAt(i), x, 48);
+      sketch.textSize(sketch.random(12,64));
+      sketch.text(s.charAt(i), x, 60);
       x += sketch.textWidth(s.charAt(i));
     }
     sketch.noLoop();
@@ -268,10 +268,10 @@ var s9 = function(sketch) {
     c.remove();
 
     // Not drawing to canvas but making a DIV
-    var div = sketch.createDiv('some text');
+    var div = sketch.createDiv('It was a dark and stormy night.');
     // Size and color
     div.style('font-size','16pt');
-    div.style('color','#000000');
+    div.style('color','DarkOrchid');
     div.style('text-align','center');
   } 
 }
@@ -411,7 +411,7 @@ var s12 = function(sketch) {
 
   sketch.draw = function() {
     // Clear the canvas
-    sketch.clear();
+    sketch.background(255);
     
     // Show all the boxes
     for (var i = 0; i < boxes.length; i++) {
@@ -581,7 +581,7 @@ var s13 = function(sketch) {
   }
 
   sketch.draw = function() {
-    sketch.clear();
+    sketch.background(255);
 
     // Update the physics
     physics.update();
@@ -656,7 +656,7 @@ var s13 = function(sketch) {
 
     // Draw the node
     this.display = function(){
-      sketch.fill(127);
+      sketch.fill(175);
       sketch.stroke(0);
       // Red if being dragged
       if (this.drag) {
@@ -667,7 +667,7 @@ var s13 = function(sketch) {
       sketch.rect(this.p.x,this.p.y, this.w, this.h);
       sketch.textAlign(sketch.CENTER);
 
-      sketch.fill(255);
+      sketch.fill(0);
       sketch.noStroke();
       sketch.text(this.word, this.p.x, this.p.y + this.h/4);      
     }
@@ -683,7 +683,7 @@ var s13 = function(sketch) {
     this.to = b;
 
     this.display = function() {
-      sketch.stroke(255);
+      sketch.stroke(0);
       sketch.line(this.from.p.x, this.from.p.y, this.to.p.x, this.to.p.y);
     }
   }
