@@ -578,7 +578,7 @@ var s13 = function(sketch) {
     // Connect the nodes
     connections[0] = new Connection(nodes[0], nodes[1], 100);
     connections[1] = new Connection(nodes[0], nodes[2], 100);
-    connections[2] = new Connection(nodes[1], nodes[3], 100);
+    connections[2] = new Connection(nodes[1], nodes[3], 150);
     connections[3] = new Connection(nodes[1], nodes[2], 100);
   }
 
