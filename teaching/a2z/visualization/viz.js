@@ -570,10 +570,10 @@ var s13 = function(sketch) {
     sketch.textSize(fs);
 
     // Make some arbitrary nodes
-    nodes[0] = new Node(100, 100, 'test');
-    nodes[1] = new Node(200, 200, 'network');
+    nodes[0] = new Node(100, 50, 'test');
+    nodes[1] = new Node(200, 100, 'network');
     nodes[2] = new Node(300, 100, 'itp');
-    nodes[3] = new Node(400, 200, 'javascript');
+    nodes[3] = new Node(400, 150, 'javascript');
     
     // Connect the nodes
     connections[0] = new Connection(nodes[0], nodes[1], 100);
