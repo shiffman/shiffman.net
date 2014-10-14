@@ -41,9 +41,6 @@ layout: page
 * [SoSoLimited Reconstitution 2008](http://www.sosolimited.com/work/reconstitution-2008/)
 * [Rob Seward Word Association](http://robseward.com/blog/2009/02/23/word-association-apps/)
 
-## Exercise ideas
-* TBA
-
 <a name ="canvas"></a>
 ## Drawing Text with Canvas
 
