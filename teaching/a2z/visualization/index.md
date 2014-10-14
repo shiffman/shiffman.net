@@ -257,6 +257,8 @@ The `style()` method allows you to set CSS properties in order to affect the tex
 // Size and color
 div.style('font-size','16pt');
 div.style('color','DarkOrchid');
+div.style('background-color','#FFFFFF');
+div.style('padding','4px');
 div.style('text-align','center');
 {% endhighlight %}
 
@@ -269,7 +271,7 @@ var h = div.elt.offsetHeight;
 
 Here's an example object that makes an individual DIV for a single character.  [In the full code](https://github.com/shiffman/Programming-from-A-to-Z-F14/blob/master/week5_visualization/02_DOM_drawingtext/05_text_charbychar/sketch.js) for this example, you'll see that each character's starting location is determined using the div's width.
 
-<div id="div10" style="height: 100px"></div>
+<div id="div10" style="height: 72px"></div>
 
 {% highlight javascript %}
 // A class to describe a single Letter
