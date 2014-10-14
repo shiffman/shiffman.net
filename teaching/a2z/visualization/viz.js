@@ -96,7 +96,7 @@ var p54 = new p5(s4, 'canvas4');
 var s5 = function(sketch) {
  
   sketch.setup = function() {
-    sketch.createCanvas(400, 64);
+    sketch.createCanvas(600, 64);
   };
 
   sketch.draw = function() {
