@@ -273,7 +273,7 @@ var s9 = function(sketch) {
     div.style('font-size','16pt');
     div.style('color','DarkOrchid');
     div.style('background-color','#FFFFFF');
-    div.style('padding','4px');
+    div.style('padding','12px');
     div.style('text-align','center');
   } 
 }
