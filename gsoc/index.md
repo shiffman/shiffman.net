@@ -10,8 +10,7 @@ layout: post
 ### 1) [Android Mode for Processing 3.0](https://github.com/processing/processing-android) by [Imil Ziyaztdinov](https://github.com/imilka/), mentored by [Andres Colubri](http://codeanticode.wordpress.com/)
 The new android mode in Processing 3.0 implements several pieces of functionality that were missing from earlier versions: Export Signed Package (with transparent handling of keystores), device selector, automatic SDK download/installation, and target SDK selector. It also fixed some critical bugs, most notably the [missing javac error](https://github.com/processing/processing-android/issues/46) during package building.
 
-### 2) [Contributions Manager: Reloaded](http://www.joelmoniz.com/gsoc-2014/) by [Joel Moniz](http://www.joelmoniz.com), 
-mentored by [Florian Jenett](http://www.florianjenett.de/)
+### 2) [Contributions Manager: Reloaded](http://www.joelmoniz.com/gsoc-2014/) by [Joel Moniz](http://www.joelmoniz.com), mentored by [Florian Jenett](http://www.florianjenett.de/)
 <iframe width="560" height="315" src="//www.youtube.com/embed/GhBd8LITNQY?rel=0" frameborder="0" allowfullscreen></iframe>  
 The Contributions Manager enables easy and convenient installation, removal and update of contributions (Libraries, Tools and Modes) from within the PDE. This summer saw the introduction of a few new features to the Contributions Manager, such as the addition, removal and update of Tools and Modes without a restart, a new "examples-package"-type contribution, and highlighting contributions. For an in-depth view of changes and how they were undertaken, please refer [this](http://www.joelmoniz.com/gsoc-2014/) webpage.([Source code](https://github.com/processing/processing/commits/master?author=joelmoniz))
 
