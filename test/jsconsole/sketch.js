@@ -45,6 +45,8 @@ function draw() {
   y = height + diameter*0.5;
   }
   
+  console.log('test ' + xVel);
+  
   
   // deccelerate
   xVel *= 0.9;
