@@ -57,9 +57,9 @@ function draw() {
   loadPixels();
   for(var i = 0; i < cols; i++) {
     for(var j = 0; j < rows; j++) {
-      var index = (i + j * cols)*4;
+      var index = (i + j * cols);
       // Average brightness
-      var col = pixels[index] + pixels[index+1] + pixels[index+2];
+      var col = pixels[index*4] + pixels[index*4+1] + pixels[index*4+2];
       col /= 3;
 
       // To check or not to check
