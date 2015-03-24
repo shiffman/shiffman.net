@@ -7,7 +7,7 @@ function Part(a_, b_, s, w) {
 	this.b = b_;
 	console.log(s,w);
 	if (s !== null) {
-	  this.img = loadImage('../'+s);
+	  this.img = loadImage('/p5/newyears/2014/'+s);
 	} else {
 		this.img = null;
 	}

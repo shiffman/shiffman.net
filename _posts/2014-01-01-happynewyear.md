@@ -6,6 +6,7 @@ layout: post
 
 <script type="text/javascript" src="/js/toxiclibs.js"></script>
 <script type="text/javascript" src="/js/p5.js"></script>
+<script type="text/javascript" src="/js/p5.sound.js"></script>
 <script type="text/javascript" src="/p5/newyears/2014/dancing_p5/dancing.js"></script>
 <script type="text/javascript" src="/p5/newyears/2014/dancing_p5/particle.js"></script>
 <script type="text/javascript" src="/p5/newyears/2014/dancing_p5/skeleton.js"></script>

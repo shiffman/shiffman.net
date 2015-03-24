@@ -34,7 +34,7 @@ var dance = false;
 var audio;
 
 function preload() {
-  audio = loadSound('../auld2.mp3');
+  audio = loadSound('/p5/newyears/2014/auld2.mp3');
 }
 
 function setup() {
@@ -42,7 +42,7 @@ function setup() {
   canvas.parent('dancing');
   
   var url = 'http://shiffman.net/blog/';
-  var actual = getUrl();
+  var actual = getURL();
   console.log(actual);
   if (actual !== url) {
     audio.play();
