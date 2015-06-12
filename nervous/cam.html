@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"> 
+
+<HTML>
+<HEAD>
+
+<!---------------------------------------------------pop
+//  Produced by Phoenix-Pop Productions, January 2000
+//  www.phoenix-pop.com
+//---------------------------------------------------pop -->
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
+<TITLE>WebCam</TITLE>
+
+<!-- Made with Logitech Quickcam client version 5.2.0.2099 -->
+
+<SCRIPT language="JavaScript">
+	<!--
+
+	var klugedWidth = 320 + 150
+	var klugedHeight = 240 + 150
+	
+	function remote()
+	{
+
+RemoteWin=window.open("webcamremote.html","","resizable=yes,toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=auto,copyhistory=0,width=" + klugedWidth + ",height=" + klugedHeight + "")
+	   RemoteWin.creator=self
+	}
+
+var Interv = 600
+
+function startClock2() {
+	Interv = Interv - 1
+	
+	var now = new Date()
+	var dummystr = parseInt(now.getTime() / 1000)
+	delete now
+
+	if (Interv < 0) {
+		if (document.images) {
+			document.refrimage.src = "http://www.shiffman.net/users/daniel/shiffycam/webcam/pic/image.jpg" + "?" + dummystr
+		} else {
+			window.location.reload()
+		}
+		Interv = 600
+	}
+	document.clock.time.value = Interv
+	timrID = setTimeout("startClock2()", 1000)
+}
+
+	//-->
+</SCRIPT>
+
+
+</HEAD>
+
+<BODY bgcolor="#000000" text="#FFFFFF" link="#FF9933" vlink="#FF9933" alink="#FF9933" marginheight="0" marginwidth="0" leftmargin="0" topmargin="0" onLoad="startClock2()">
+
+<FORM name="clock">
+
+		<br>
+		<br>
+		<blockquote><blockquote>
+		<center>
+		<font face="verdana, arial" size="2" color="#FFFFFF">
+		Welcome to the Nervous Man Webcam.  The nervous man is often so terribly nervous
+		that he cannot handle being in front of his web cam.   The nervous man apologizes
+		and would nervously like to make it up to you.
+		<br>
+		<br>
+		If you would like to view photos or videos of the nervous man, 
+		<a href = "http://www.shiffman.net/nervous/">
+		click here</a>.
+		</font>
+		</blockquote></blockquote>
+		</center>
+
+</table>
+
+<table width="740" height="300" border="0" cellpadding="0" cellspacing="10">
+	<tr>
+		<td width="250" height="300" valign="top" align="left">
+
+		<table cellpadding="2" cellspacing="0" border="0">
+		<tr>
+		<td width="234" align="right">
+		<img src="img/line.gif" width="234" height="1" border="0" vspace="10" align="right">
+		</td>
+		</tr>
+		<tr>
+		<td width="234" align="right">
+		<img src="img/icon_arrow.gif" width="6" height="10" border="0" hspace="14">&nbsp;
+		<A href="javascript:remote()"><font face="verdana, arial" size="2">launch a remote window</font></A>
+		</td>
+		</tr>
+		<tr>
+		<td width="234" align="right">
+		<img src="img/line.gif" width="234" height="1" border="0" vspace="10" align="right">
+		</td>
+		</tr>l
+		<tr>
+		<td width="234" align="right">
+		<font face="verdana, arial" size="2">image will update in </font><input TYPE="text" NAME="time" SIZE="3" value=""><font face="arial,helvetica,sans-serif" size="1">  seconds</font>
+		</td>
+		</tr>
+		<tr>
+		<td width="234" align="right">
+		<img src="shiffycam/img/line.gif" width="234" height="1" border="0" vspace="10" align="right">
+		</td>
+		</tr>
+		</table>
+		
+		</td>
+				
+		<td width="506" height="300" valign="top" align="left">
+		<IMG src="http://www.shiffman.net/users/daniel/shiffycam/webcam/pic/image.jpg" name="refrimage" width="320" height="240" border="0">
+        </td>
+	</tr>
+</table>
+
+
+<table cellpadding=0 border=0 width=250 height=110 align=center bgcolor=#000000 cellspacing="0" vspace="0" hspace="0">
+  <tr align="left" valign="middle"> 
+    <td height="70"> 
+      <center>
+        <p><a href="http://www.krosnoff.com/ring/ringinfo.htm" target="_top"><font face="verdana, arial" size="2" color="#FFFFFF">World's Best Live Webcams Webring</font></a>
+	<b><font face="verdana, arial" size="1"><a href="http://www.webring.org/cgi-bin/webring?ring=realwebcams;id=83;next" target="_top"><br>
+          Next Cam</font></a>
+         <br>
+          </font></b><font face="verdana, arial" size="1"><b><a href="http://www.webring.org/cgi-bin/webring?ring=realwebcams;id=83;prev" target="_top">Previous</a><br>
+          </b></font><font face="verdana, arial" size="1"><b><a href="http://www.webring.org/cgi-bin/webring?random;ring=realwebcams" target="_top">Random</a><br>
+          </b></font>
+          </font></p></center></td>
+  <tr align="left" valign="top"> 
+    <td height="10">
+      <div align="center"><font face="verdana, arial" size="-2"><br>Have a webcam? 
+        <a href="http://www.krosnoff.com/ring/ringinfo.htm" target="_top"><font color=blue>join 
+        this ring</font><br></a>Ringmaster: 
+        <a href="http://www.krosnoff.com" target="_top">Krosnoff</a> </font></div></td></table>
+
+</FORM>
+<!--<img src="ringlogo4.gif" border=0 alt="Click here for the ring homepage" width="75" height="75" align="left">-->
+
+</BODY>
+
+</HTML>

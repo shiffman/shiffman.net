@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"> 
+
+<HTML>
+<HEAD>
+
+
+
+<TITLE>The Nervous Cam</TITLE>
+
+<SCRIPT language="JavaScript">
+	<!--
+
+var Interv = 600
+
+function startClock2() {
+	Interv = Interv - 1
+	
+	var now = new Date()
+	var dummystr = parseInt(now.getTime() / 1000)
+	delete now
+
+	if (Interv < 0) {
+		if (document.images) {
+			document.refrimage.src = "http://www.shiffman.net/users/daniel/shiffycam/webcam/pic/image.jpg" + "?" + dummystr
+		} else {
+			window.location.reload()
+		}
+		Interv = 600
+	}
+	document.clock.time.value = Interv
+	timrID = setTimeout("startClock2()", 1000)
+}
+
+	//-->
+</SCRIPT>
+
+</HEAD>
+
+<BODY bgcolor="#000000" text="#FFFFFF" link="#FF9933" vlink="#FF9933" alink="#FF9933" marginheight="0" marginwidth="0" leftmargin="0" rightmargin="0" onLoad="startClock2()">
+
+<FORM name="clock">
+
+<center>
+<table border="0" cellpadding="5" cellspacing="5">
+	<tr>
+		<td valign="bottom" height="30"><font face="arial,helvetica,sans-serif" size="1" color="#FFFFFF">The Nervous Man Cam</font></td>
+		<td valign="bottom" align="right"><img src="http://www.shiffman.net/users/daniel/shiffycam/webcam/img/icon_arrow.gif" width=6 height=10 hspace=10 border=0><font face="arial,helvetica,sans-serif" size=1><A href="javascript:self.close()">Close window</A></font></td>
+	</tr>
+	<tr>
+	
+		<td valign="top" colspan="2" align="center"><IMG SRC="http://www.shiffman.net/users/daniel/shiffycam/webcam/pic/image.jpg" name="refrimage" width="320" height="240" border="0">
+
+		<p>
+		<font face="arial,helvetica,sans-serif" size=1 color="#FFFFFF">image will update in <input type="text" name="time" size="3" value="">  seconds</font><br>
+		<img src="http://www.shiffman.net/users/daniel/shiffycam/webcam/img/line.gif" width="234" height="1" border="0" vspace="10"><br>
+		</td>
+	</tr>
+</table>
+</center>
+</FORM>
+</BODY>
+</HTML>
