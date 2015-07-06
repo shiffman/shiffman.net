@@ -7,12 +7,15 @@ var testDiv;
 
 function setup() {
   
-  noCanvas();
+  createCanvas(100, 100);
+  // I am so lazy
+  createP('');
+
   checkbox = createElement('input');
   var label = createElement('label');
   label.html('checkbox label');
   checkbox.attribute('type','checkbox');
-  
+
   testDiv = createDiv('not checked');
   checkbox.elt.onchange = function() {
     if (this.checked) {
@@ -43,5 +46,19 @@ function setup() {
 }
 
 function draw() {
+  background(0);
+
+  if (checkbox.elt.checked) {
+    background(0, 0, 255);
+  }
+
+  if (dropdown.elt.value === 'pear') {
+    fill(0, 255, 0);
+  } else if (dropdown.elt.value === 'apple') {
+    fill(255, 0, 0);  
+  } else if (dropdown.elt.value === 'orange') {
+    fill(255, 128, 0);
+  }
+  ellipse(50, 50, 50, 50);
 
 }
