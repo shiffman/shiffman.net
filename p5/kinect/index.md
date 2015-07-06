@@ -25,8 +25,8 @@ The Kinect sensor itself only measures color and depth.  However, once that info
 
 First you need a “stand-alone” kinect.  You do not need to buy an Xbox.  
 
-* **[Standalone Kinect Sensor v1](http://amzn.to/1S2zH4j)**:  I believe this one comes with the power supply so you do not need a separate adapter listed next. However, if you have a kinect v1 that came with an XBox, it will not include the [Kinect Sensor Power Supply](http://amzn.to/1RfUnuO).
-* **[Standalone Kinect Sensor v2](http://amzn.to/1KGoYxG)**:   You also probably need the [Kinect Adapter for Windows](http://www.amazon.com/Kinect-Adapter-Windows-xbox-one/dp/B00NMSHT7E/).  Don't be thrown off, although it says windows, this will allow you to connect it to your mac via USB.  Finally, you'll also want to make sure your computer supports USB 3.  Most modern machines do, but if you are unsure you can [find out more here for Mac OS X](https://support.apple.com/en-gb/HT201163#13).
+* **[Standalone Kinect Sensor v1](http://amzn.to/1S2zH4j)**.  I believe this one comes with the power supply so you do not need a separate adapter listed next. However, if you have a kinect v1 that came with an XBox, it will not include the [Kinect Sensor Power Supply](http://amzn.to/1RfUnuO).
+* **[Standalone Kinect Sensor v2](http://amzn.to/1KGoYxG)**.   You also probably need the [Kinect Adapter for Windows](http://www.amazon.com/Kinect-Adapter-Windows-xbox-one/dp/B00NMSHT7E/).  Don't be thrown off, although it says windows, this will allow you to connect it to your mac via USB.  Finally, you'll also want to make sure your computer supports USB 3.  Most modern machines do, but if you are unsure you can [find out more here for Mac OS X](https://support.apple.com/en-gb/HT201163#13).
 
 
 ## Some additional notes about different models:
@@ -84,10 +84,10 @@ void setup() {
 
 Once you’ve done this you can begin to access data from the kinect sensor.  Currently, the library makes data available to you in five ways:
 
-* **`PImage` (RGB)** from the kinect video camera.
-* **`PImage` (grayscale)** from the kinect IR camera.
-* **`PImage` (grayscale)** with each pixel’s brightness mapped to depth (brighter = closer).
-* **`PImage` (RGB)** with each pixel’s hue mapped to depth.
+* **`PImage (RGB)`** from the kinect video camera.
+* **`PImage (grayscale)`** from the kinect IR camera.
+* **`PImage (grayscale)`** with each pixel’s brightness mapped to depth (brighter = closer).
+* **`PImage (RGB)`** with each pixel’s hue mapped to depth.
 * **`int[] array`** with raw depth data (11 bit numbers  between 0 and 2048).
 
 Let’s look at these one at a time.  If you want to use the Kinect just like a regular old webcam, you can request that the RGB image is captured:
