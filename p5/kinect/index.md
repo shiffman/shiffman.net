@@ -13,18 +13,23 @@ dsq_needs_sync:
 <p><iframe src="http://player.vimeo.com/video/18058700?title=0&amp;byline=0&amp;portrait=0&amp;color=ff9933" width="400" height="225" frameborder="0"></iframe></p>
 <p>So, you want to use the Kinect in Processing.  Great.  This page will serve to document the current state of my Processing Kinect library, with some tips and info.</p>
 
-<h2>The current state of affairs</h2>
+# Kinect and Processing
 
-Since the kinect launched in November 2010, there have been several models released.  Here's a quick list of what is out there and what is supported in Processing for Mac OS X.
+The Microsoft Kinect sensor is a peripheral device (designed for XBox and windows PCs) that functions much like a webcam.  However, in addition to providing an RGB image, it also provides a depth map. Meaning for every pixel seen by the sensor, the Kinect measures distance from the sensor.  This makes a variety of computer vision problems like background removal, blob detection, and more (quite difficult with an RGB image only) easy and fun! 
 
-<ul>
-  <li><b>Kinect 1414</b>: This is the original kinect and works with the library documented on this page in Processing 2.1</li>
-  <li><b>Kinect 1473</b>: This looks identical to the 1414, but is an updated model.  This kinect does not currently work with any of the Processing libraries, but I hope to update the library soon for compatibility.  If you would like to help with this, please get in touch!</li>
-  <li><b>Kinect for Windows version 1</b>: This kinect also does not curently work with Processing, but as with the 1473, I hope to get the library updated soon.
-  <li><b>Kinect for Windows version 2</b>: This is the brand spanking new kinect with all the features found in the XBox One Kinect.  As <a href="https://github.com/OpenKinect/libfreenect2">libfreenect2</a> gets further along, I hope to be able to add support for this kinect in Processing.
-</ul>
+The Kinect sensor itself only measures color and depth.  However, once that information is on your computer, lots more can be done like "skeleton" tracking (i.e. detecting a model of a person and tracking his/her movements).  To do skeleton tracking you'll need to use Thomas Lengling's windows-only [Kinect v2 processing libray](https://github.com/ThomasLengeling/KinectPV2).  However, if you all you want is raw data from the Kinect, you are in luck!  This library here uses the [libfreenect](https://github.com/OpenKinect/libfreenect) and [libfreenect2](https://github.com/OpenKinect/libfreenect2) open source drivers to access that data for Mac OS X.
 
-<p>Now, before you proceed, you could also consider using the <a href="http://code.google.com/p/simple-openni/">SimpleOpenNI library</a> and read Greg Borenstein&#8217;s <a href="http://www.amazon.com/gp/product/1449307078/ref=as_li_ss_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=1449307078&linkCode=as2&tag=learniproces-20">Making Things See</a> book.  OpenNI has lots of features (skeleton tracking, gesture recognition, etc.) that are not available in this library.  Unfortunately, <a href="http://www.openni.org/">OpenNI was recently purchased by Apple</a> and appears to be shutting down.  It's unclear what the future will be of OpenNI and SimpleOpenNI.</p>
+(At the time of this writing, kinect v2 support is still in progress.)  There are also some other [issues](https://github.com/shiffman/OpenKinect-for-Processing/issues) in progress.  Chime in on github if you'd like to help!
+
+## Some notes about different models:
+*<b>Kinect 1414</b>: This is the original kinect and works with the library documented on this page in Processing 2.2.1+</li>
+*<b>Kinect 1473</b>: This looks identical to the 1414, but is an updated model. It should work with this library, but I don't have one to test.  [Please let me know if it does or does not](https://github.com/shiffman/OpenKinect-for-Processing/issues)!
+*<b>Kinect for Windows version 1</b>: ???? Help?  Does this one work?
+*<b>Kinect for Windows version 2</b>: This is the brand spanking new kinect with all the features found in the XBox One Kinect.  Support for this kinect via [libfreenect2](https://github.com/OpenKinect/libfreenect2) is arriving soon!
+
+## SimpleOpenNI
+
+You could also consider using the <a href="http://code.google.com/p/simple-openni/">SimpleOpenNI library</a> and read Greg Borenstein&#8217;s [Making Things See](a href="http://www.amazon.com/gp/product/1449307078/ref=as_li_ss_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=1449307078&linkCode=as2&tag=learniproces-20) book.  OpenNI has features (skeleton tracking, gesture recognition, etc.) that are not available in this library.  Unfortunately, <a href="http://www.openni.org/">OpenNI was recently purchased by Apple</a> and appears to be shutting down.  It's unclear what the future will be of OpenNI and SimpleOpenNI.
 
 <h2>I&#8217;m ready to get started right now</h2>
 <ul>
