@@ -11,7 +11,8 @@ dsq_needs_sync:
 
 ---
 
-<iframe src="http://player.vimeo.com/video/18058700?title=0&amp;byline=0&amp;portrait=0&amp;color=ff9933" width="400" height="225" frameborder="0"></iframe>
+
+<iframe src="http://player.vimeo.com/video/132727296?title=0&amp;byline=0&amp;portrait=0&amp;color=ff9933" width="400" height="225" frameborder="0"></iframe>
 
 # Kinect and Processing
 
@@ -177,7 +178,7 @@ There are four basic examples:
 
 ### Display RGB, IR, and Depth Images
 
-<iframe src="http://player.vimeo.com/video/18748853?title=0&amp;byline=0&amp;portrait=0&amp;color=ff9933" width="500" height="313" frameborder="0"></iframe>
+<iframe src="http://player.vimeo.com/video/132727296?title=0&amp;byline=0&amp;portrait=0&amp;color=ff9933" width="500" height="313" frameborder="0"></iframe>
 
 Code:[RGBDepthTest](https://github.com/shiffman/OpenKinect-for-Processing/blob/master/OpenKinect-Processing/examples/RGBDepthTest/RGBDepthTest.pde)</p>
 
