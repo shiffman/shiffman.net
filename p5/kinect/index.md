@@ -15,21 +15,18 @@ dsq_needs_sync:
 
 # Kinect and Processing
 
-The Microsoft Kinect sensor is a peripheral device (designed for XBox and windows PCs) that functions much like a webcam.  However, in addition to providing an RGB image, it also provides a depth map. Meaning for every pixel seen by the sensor, the Kinect measures distance from the sensor.  This makes a variety of computer vision problems like background removal, blob detection, and more (quite difficult with an RGB image only) easy and fun! 
+The Microsoft Kinect sensor is a peripheral device (designed for XBox and windows PCs) that functions much like a webcam.  However, in addition to providing an RGB image, it also provides a depth map. Meaning for every pixel seen by the sensor, the Kinect measures distance from the sensor.  This makes a variety of computer vision problems like background removal, blob detection, and more easy and fun! 
 
-The Kinect sensor itself only measures color and depth.  However, once that information is on your computer, lots more can be done like "skeleton" tracking (i.e. detecting a model of a person and tracking his/her movements).  To do skeleton tracking you'll need to use Thomas Lengling's windows-only [Kinect v2 processing libray](https://github.com/ThomasLengeling/KinectPV2).  However, if you all you want is raw data from the Kinect, you are in luck!  This library here uses the [libfreenect](https://github.com/OpenKinect/libfreenect) and [libfreenect2](https://github.com/OpenKinect/libfreenect2) open source drivers to access that data for Mac OS X.
+The Kinect sensor itself only measures color and depth.  However, once that information is on your computer, lots more can be done like "skeleton" tracking (i.e. detecting a model of a person and tracking his/her movements).  To do skeleton tracking you'll need to use Thomas Lengling's windows-only [Kinect v2 processing libray](https://github.com/ThomasLengeling/KinectPV2).  However, if you all you want is raw data from the Kinect, you are in luck!  This library uses  [libfreenect](https://github.com/OpenKinect/libfreenect) and [libfreenect2](https://github.com/OpenKinect/libfreenect2) open source drivers to access that data for Mac OS X.
 
-(At the time of this writing, kinect v2 support is still in progress.)  There are also some other [issues](https://github.com/shiffman/OpenKinect-for-Processing/issues) in progress.  Chime in on github if you'd like to help!
+(At the time of this writing, kinect v2 support as well as other [issues](https://github.com/shiffman/OpenKinect-for-Processing/issues) are in progress.  [Chime in on github](https://github.com/shiffman/OpenKinect-for-Processing) if you’d like to help!)
 
 ## What hardware do I need?
 
 First you need a “stand-alone” kinect.  You do not need to buy an Xbox.  
 
-* **[Standalone Kinect Sensor](http://amzn.to/1S2zH4j)**: This is the Kinect v1. I believe it comes with the power supply so you do not need the separate adapter listed next.
-    * However, if you have a kinect v1 that came with an XBox, it will not include the USB adapter.  You’ll need to purchase this separately: [Kinect Sensor Power Supply](http://amzn.to/1RfUnuO).
-* **[Standalone Kinect Sensor v2](http://amzn.to/1KGoYxG)**: This is the Kinect v2!  You also probably need:
-    * To use with a PC/Mac: [Kinect Adapter for Windows](http://www.amazon.com/Kinect-Adapter-Windows-xbox-one/dp/B00NMSHT7E/).  Don't be thrown off, although it says windows, this will allow you to connect it to your mac via USB.
-    * You'll also want to make sure your computer supports USB 3.  Most modern machines do, but if you are unsure you can [find out more here for Mac OS X](https://support.apple.com/en-gb/HT201163#13).
+* **[Standalone Kinect Sensor v1](http://amzn.to/1S2zH4j)**:  I believe this one comes with the power supply so you do not need a separate adapter listed next. However, if you have a kinect v1 that came with an XBox, it will not include the [Kinect Sensor Power Supply](http://amzn.to/1RfUnuO).
+* **[Standalone Kinect Sensor v2](http://amzn.to/1KGoYxG)**:   You also probably need the [Kinect Adapter for Windows](http://www.amazon.com/Kinect-Adapter-Windows-xbox-one/dp/B00NMSHT7E/).  Don't be thrown off, although it says windows, this will allow you to connect it to your mac via USB.  Finally, you'll also want to make sure your computer supports USB 3.  Most modern machines do, but if you are unsure you can [find out more here for Mac OS X](https://support.apple.com/en-gb/HT201163#13).
 
 
 ## Some additional notes about different models:
@@ -45,11 +42,15 @@ You could also consider using the [SimpleOpenNI library](http://code.google.com/
 
 ## I’m ready to get started right now
 
-1. The new updated version of the library is in progress.  Until it is available via the Processing contributions manager, you'll need to [get it here](https://github.com/shiffman/OpenKinect-for-Processing/releases).
+The new updated version of the library is in progress.  Until it is available via the Processing contributions manager, you'll need to [get it here](https://github.com/shiffman/OpenKinect-for-Processing/releases) and install the library manually.
+
+<s>The easiest way to install the library is with the contributions manager *Sketch → Import Libraries → Add library* and search for "Kinect".  A button will appear labeled "install".
+If you want to install it manually download [the most recent release](https://github.com/shiffman/OpenKinect-for-Processing/releases) and extract it in the libraries folder.  Restart Processing, open up one of the examples in the examples folder and you are good to go!</s>
+
 
 ## What is Processing?
 
-I’m going to assume you are familiar with Processing, but just in case you are not, I suggest checking out: [processing.org](processing.org)  (Processing is an open source programming language and environment for people who want to create images, animations, and interactions. Initially developed to serve as a software sketchbook and to teach fundamentals of computer programming within a visual context, Processing also has evolved into a tool for generating finished professional work. Today, there are tens of thousands of students, artists, designers, researchers, and hobbyists who use Processing for learning, prototyping, and production.)
+[Processing](processing.org) is an open source programming language and environment for people who want to create images, animations, and interactions. Initially developed to serve as a software sketchbook and to teach fundamentals of computer programming within a visual context, Processing also has evolved into a tool for generating finished professional work. Today, there are tens of thousands of students, artists, designers, researchers, and hobbyists who use Processing for learning, prototyping, and production.
 
 ## What if I don’t want to use Processing?
 
@@ -58,13 +59,6 @@ If you are comfortable with C++ I suggest you consider using [openFrameworks](ht
 * [ofxKinect](https://github.com/ofTheo/ofxKinect)
 * [Kinect CinderBlock](https://github.com/cinder/Cinder-Kinect)
 * More resources from: [The OpenKinect Project](http://openkinect.org)
-
-## I’ve got Processing, how do I download and install the library?
-
-
-The easiest way to install the library is with the contributions manager *Sketch → Import Libraries → Add library* and search for "Kinect".  A button will appear labeled "install".
-If you want to install it manually download [the most recent release](https://github.com/shiffman/OpenKinect-for-Processing/releases) and extract it in the libraries folder.  Restart Processing, open up one of the examples in the examples folder and you are good to go!
-
 
 ## What code do I write?
 
@@ -77,23 +71,24 @@ import org.openkinect.processing.*;
 As well as a reference to a `Kinect` object, i.e.
 
 {% highlight java %}
-// Kinect Library object
 Kinect kinect;
 {% endhighlight %}
 
 Then in `setup()` you can initialize that kinect object:
 
 {% highlight java %}
+void setup() {
   kinect = new Kinect(this);
+}
 {% endhighlight %}
 
 Once you’ve done this you can begin to access data from the kinect sensor.  Currently, the library makes data available to you in five ways:
 
-* **PImage (RGB)** from the kinect video camera.
-* **PImage (grayscale)** from the kinect IR camera.
-* **PImage (grayscale)** with each pixel’s brightness mapped to depth (brighter = closer).
-* **PImage (RGB)** with each pixel’s hue mapped to depth.
-* **int[] array** with raw depth data (11 bit numbers  between 0 and 2048).
+* **`PImage` (RGB)** from the kinect video camera.
+* **`PImage` (grayscale)** from the kinect IR camera.
+* **`PImage` (grayscale)** with each pixel’s brightness mapped to depth (brighter = closer).
+* **`PImage` (RGB)** with each pixel’s hue mapped to depth.
+* **`int[] array`** with raw depth data (11 bit numbers  between 0 and 2048).
 
 Let’s look at these one at a time.  If you want to use the Kinect just like a regular old webcam, you can request that the RGB image is captured:
 
@@ -275,7 +270,7 @@ When we're done, we calculate the average and draw a point!
 if (count != 0) {
   float avgX = sumX / count;
   float avgY = sumY / count;
-  fill(255,0,0);
+  fill(255, 0, 0);
   ellipse(avgX, avgY, 16, 16);
 }
 {% endhighlight %}
@@ -285,7 +280,7 @@ if (count != 0) {
 Unfortunately, b/c the RGB camera and the IR camera are not physically located in the same spot, we have a stereo vision problem.  Pixel XY in one image is not the same XY in an image from a camera an inch to the right. Tools for calibrating these two images are on my to-do list. For more: [Theory on depth/color calibration and registration](http://nicolas.burrus.name/index.php/Research/KinectCalibration).
 
 ## What’s missing?
-* Everything is being tracked via github issues: [https://github.com/shiffman/OpenKinect-for-Processing/issues](https://github.com/shiffman/OpenKinect-for-Processing/issues)
+* Everything is being tracked [via github issues](https://github.com/shiffman/OpenKinect-for-Processing/issues).
 
 ## FAQ
 1. What are there shadows in the depth image? [Kinect Shadow diagram](http://media.zero997.com/kinect_shadow.pdf)
