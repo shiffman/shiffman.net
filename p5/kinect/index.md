@@ -216,7 +216,7 @@ float rawDepthToMeters(int depthValue) {
   }
   return 0.0f;
 }
-{% highlight java %}
+{% endhighlight java %}
 
 Thanks to [Matthew Fisher](http://graphics.stanford.edu/~mdfisher/Kinect.html) for the above formula.  (Note: for the results to be more accurate, you would need to calibrate your specific kinect device, but the formula is close enough for me so I'm sticking with it for now.  More about calibration in a moment.)
 
