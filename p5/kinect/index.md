@@ -11,7 +11,6 @@ dsq_needs_sync:
 
 ---
 
-
 <p><iframe src="https://player.vimeo.com/video/132727296" width="500" height="217" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <a href="https://vimeo.com/132727296">Open Kinect for Processing Demo</a> from <a href="https://vimeo.com/shiffman">shiffman</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
 # Kinect and Processing
@@ -20,22 +19,20 @@ The Microsoft Kinect sensor is a peripheral device (designed for XBox and window
 
 The Kinect sensor itself only measures color and depth.  However, once that information is on your computer, lots more can be done like "skeleton" tracking (i.e. detecting a model of a person and tracking his/her movements).  To do skeleton tracking you'll need to use Thomas Lengling's windows-only [Kinect v2 processing libray](https://github.com/ThomasLengeling/KinectPV2).  However, if you're on a Mac and all you want is raw data from the Kinect, you are in luck!  This library uses  [libfreenect](https://github.com/OpenKinect/libfreenect) and [libfreenect2](https://github.com/OpenKinect/libfreenect2) open source drivers to access that data for Mac OS X ([windows support coming soon](https://github.com/shiffman/OpenKinect-for-Processing/issues/13)).
 
-(At the time of this writing, kinect v2 support as well as other [issues](https://github.com/shiffman/OpenKinect-for-Processing/issues) are in progress.  [Chime in on github](https://github.com/shiffman/OpenKinect-for-Processing) if you’d like to help!)
-
 ## What hardware do I need?
 
 First you need a “stand-alone” kinect.  You do not need to buy an Xbox.  
 
 * **[Standalone Kinect Sensor v1](http://amzn.to/1S2zH4j)**.  I believe this one comes with the power supply so you do not need a separate adapter listed next. However, if you have a kinect v1 that came with an XBox, it will not include the [Kinect Sensor Power Supply](http://amzn.to/1RfUnuO).
-* **[Standalone Kinect Sensor v2](http://amzn.to/1KGoYxG)**.   You also probably need the [Kinect Adapter for Windows](http://www.amazon.com/Kinect-Adapter-Windows-xbox-one/dp/B00NMSHT7E/).  Don't be thrown off, although it says windows, this will allow you to connect it to your mac via USB.  Finally, you'll also want to make sure your computer supports USB 3.  Most modern machines do, but if you are unsure you can [find out more here for Mac OS X](https://support.apple.com/en-gb/HT201163#13).
+* **[Standalone Kinect Sensor v2](http://amzn.to/1KGoYxG)**.   You also probably need the [Kinect Adapter for Windows](http://amzn.to/1UVeIUw).  Don't be thrown off, although it says windows, this will allow you to connect it to your mac via USB.  Finally, you'll also want to make sure your computer supports USB 3.  Most modern machines do, but if you are unsure you can [find out more here for Mac OS X](https://support.apple.com/en-gb/HT201163#13).
 
 
 ## Some additional notes about different models:
 
-* **Kinect 1414**: This is the original kinect and works with the library documented on this page in Processing 2.2.1+</li>
+* **Kinect 1414**: This is the original kinect and works with the library documented on this page in the Processing 3.0 beta series.</li>
 * **Kinect 1473**: This looks identical to the 1414, but is an updated model. It should work with this library, but I don't have one to test.  [Please let me know if it does or does not](https://github.com/shiffman/OpenKinect-for-Processing/issues)!
 * **Kinect for Windows version 1**: ???? Help?  Does this one work?
-* **Kinect for Windows version 2**: This is the brand spanking new kinect with all the features found in the XBox One Kinect.  Support for this kinect via [libfreenect2](https://github.com/OpenKinect/libfreenect2) is arriving soon!
+* **Kinect for Windows version 2**: This is the brand spanking new kinect with all the features found in the XBox One Kinect. Also works with this library!
 
 ## SimpleOpenNI
 
@@ -43,10 +40,8 @@ You could also consider using the [SimpleOpenNI library](http://code.google.com/
 
 ## I’m ready to get started right now
 
-The new updated version of the library is in progress.  Until it is available via the Processing contributions manager, you'll need to [get it here](https://github.com/shiffman/OpenKinect-for-Processing/releases) and install the library manually.
-
-<s>The easiest way to install the library is with the contributions manager *Sketch → Import Libraries → Add library* and search for "Kinect".  A button will appear labeled "install".
-If you want to install it manually download [the most recent release](https://github.com/shiffman/OpenKinect-for-Processing/releases) and extract it in the libraries folder.  Restart Processing, open up one of the examples in the examples folder and you are good to go!</s>
+The easiest way to install the library is with the [Processing Contributions Manager](https://processing.org/reference/environment/#Extensions) *Sketch → Import Libraries → Add library* and search for "Kinect".  A button will appear labeled "install".
+If you want to install it manually download [the most recent release](https://github.com/shiffman/OpenKinect-for-Processing/releases) and extract it in the libraries folder.  Restart Processing, open up one of the examples in the examples folder and you are good to go!
 
 
 ## What is Processing?
@@ -80,6 +75,18 @@ Then in `setup()` you can initialize that kinect object:
 {% highlight java %}
 void setup() {
   kinect = new Kinect(this);
+  kinect.initDevice();
+}
+{% endhighlight %}
+
+If you are using a Kinect v2, use a Kinect2 object instead.
+
+{% highlight java %}
+Kinect2 kinect2;
+
+void setup() {
+  kinect2 = new Kinect2(this);
+  kinect2.initDevice();
 }
 {% endhighlight %}
 
@@ -91,13 +98,7 @@ Once you’ve done this you can begin to access data from the kinect sensor.  Cu
 * **`PImage (RGB)`** with each pixel’s hue mapped to depth.
 * **`int[] array`** with raw depth data (11 bit numbers  between 0 and 2048).
 
-Let’s look at these one at a time.  If you want to use the Kinect just like a regular old webcam, you can request that the RGB image is captured:
-
-{% highlight java %}
-kinect.startVideo();
-{% endhighlight %}
-
-Then you simply ask for the image as a [PImage](http://processing.org/reference/PImage.html)!
+Let’s look at these one at a time.  If you want to use the Kinect just like a regular old webcam, you can access the video image as a [PImage](http://processing.org/reference/PImage.html)!
 
 {% highlight java %}
 PImage img = kinect.getVideoImage(); 
@@ -112,21 +113,20 @@ void videoEvent(Kinect k) {
 }
 {% endhighlight %}
 
-
-If you want to IR image:
+If you want the IR image:
 
 {% highlight java %}
-kinect.setIR(true);
+kinect.enableIR(true);
 {% endhighlight %}
 
-You cannot get both the RGB image and the IR image.  They are both passed back via getVideoImage() so whichever one was most recently enabled is the one you will get.
+With kinect v1 cannot get both the video image and the IR image.  They are both passed back via getVideoImage() so whichever one was most recently enabled is the one you will get.  However, with the Kinect v2, they are both available as separate methods:
 
-Now, if you want the depth image, you can:
 {% highlight java %}
-kinect.startDepth();
+PImage video = kinect2.getVideoImage();
+PImage ir = kinect2.getIrImage();
 {% endhighlight %}
 
-and request the grayscale image:
+Now, if you want the depth image, you can request the grayscale image:
 
 {% highlight java %}
 PImage img = kinect.getDepthImage();
@@ -139,7 +139,9 @@ As well as the raw depth data:
 int[] depth = kinect.getRawDepth();
 {% endhighlight %}
 
-For the color depth image, use `kinect.setColorDepth(true);`.  And just like with the video image, there's a depth event you can access if necessary.
+For the kinect v1, the raw depth values range between 0 and 2048, for the kinect v2 the range is _________________.
+
+For the color depth image, use `kinect.enableColorDepth(true);`.  And just like with the video image, there's a depth event you can access if necessary.
 
 {% highlight java %}
 void depthEvent(Kinect k) {
@@ -147,7 +149,14 @@ void depthEvent(Kinect k) {
 }
 {% endhighlight %}
 
-Finally, you can also adjust the camera angle with the tilt() function.
+Unfortunately, b/c the RGB camera and the IR camera are not physically located in the same spot, there is a stereo vision problem.  Pixel XY in one image is not the same XY in an image from a camera an inch to the right.  The Kinect v2 offers what's called a "registered" image which aligns all the depth values with the RGB camera ones. This can be accessed as follows:
+
+{% highlight java %}
+PImage img = kinect2.getRegisteredImage()
+{% endhighlight %}
+
+Finally, for kinect v1 (but not v2), you can also adjust the camera angle with the `tilt()` method.
+
 {% highlight java %}
 float angle = kinect.getTilt();
 angle = angle + 1;
@@ -156,31 +165,33 @@ kinect.tilt(angle);
 
 So, there you have it, here are all the useful functions you might need to use the Processing kinect library:
 
-* **`startVideo()`** — start video
-* **`stopVideo()`** — stop video
-* **`toggleVideo()`** — stop or start video
-* **`setIR(boolean)`** — turn on or off the IR camera image
-* **`startDepth()`** — start depth
-* **`toggleDepth()`** — stop or start depth
-* **`stopDepth()`** — stop depth
-* **`setColorDepth(boolean)`** — turn on or off the depth values as color image
-* **`PImage getVideoImage()`** — grab the RGB or IR video image
+* **`initDevice()`** — start everything (video, depth, IR)
+* **`initVideo()`** — start video only
+* **`enableIR(boolean)`** — turn on or off the IR camera image (v1 only)
+* **`initDepth()`** — start depth only
+* **`enableColorDepth(boolean)`** — turn on or off the depth values as color image
+* **`enableMirror(boolean)`** — mirror the image and depth data
+* **`PImage getVideoImage()`** — grab the RGB (or IR for v1) video image
+* **`PImage getIrImage()`** — grab the IR image (v2 only)
 * **`PImage getDepthImage()`** — grab the depth map image
+* **`PImage getRegisteredImage()`** — grab the registered depth image (v2 only)
 * **`int[] getRawDepth()`** — grab the raw depth data
-* **`float getTilt()`** — get the current sensor angle (between 0 and 30 degrees)
-* **`tilt(float)`** — adjust the sensor angle (between 0 and 30 degrees)
+* **`float getTilt()`** — get the current sensor angle (between 0 and 30 degrees) (v1 only)
+* **`tilt(float)`** — adjust the sensor angle (between 0 and 30 degrees) (v1 only)
 
 For everything else, you can also take a look at [the javadoc reference](http://shiffman.net/p5/kinect/reference/).
 
 ## Examples
 
-There are four basic examples:
+There are four basic examples for both v1 and v2.
 
 ### Display RGB, IR, and Depth Images
 
 <iframe src="https://player.vimeo.com/video/132727296" width="500" height="217" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
-Code:[RGBDepthTest](https://github.com/shiffman/OpenKinect-for-Processing/blob/master/OpenKinect-Processing/examples/RGBDepthTest/RGBDepthTest.pde)</p>
+Code for v1:[RGBDepthTest](https://github.com/shiffman/OpenKinect-for-Processing/blob/master/OpenKinect-Processing/examples/Kinect_v1/RGBDepthTest/RGBDepthTest.pde)</p>
+
+Code for v2:[RGBDepthTest2](https://github.com/shiffman/OpenKinect-for-Processing/blob/master/OpenKinect-Processing/examples/Kinect_v2/RGBDepthTest2/RGBDepthTest2.pde)</p>
 
 This example uses all of the above listed functions to display the data from the kinect sensor.
 
@@ -188,7 +199,10 @@ This example uses all of the above listed functions to display the data from the
 
 <iframe src="http://player.vimeo.com/video/18058700?title=0&amp;byline=0&amp;portrait=0&amp;color=ff9933" width="501" height="282" frameborder="0"></iframe>
 
-Code: [PointCloud](https://github.com/shiffman/OpenKinect-for-Processing/blob/master/OpenKinect-Processing/examples/PointCloud/PointCloud.pde)</p>
+Code for v1: [PointCloud](https://github.com/shiffman/OpenKinect-for-Processing/blob/master/OpenKinect-Processing/examples/Kinect_v1/PointCloud/PointCloud.pde)</p>
+
+Code for v2: [PointCloud](https://github.com/shiffman/OpenKinect-for-Processing/blob/master/OpenKinect-Processing/examples/Kinect_v2/DepthPointCloud2/DepthPointCloud2.pde)</p>
+
 
 Here, we’re doing something a bit fancier.  Number one, we’re using the 3D capabilities of Processing to draw points in space.  You’ll want to familiarize yourself with [translate()](http://processing.org/reference/translate_.html), [rotate()](http://processing.org/reference/rotate_.html), [pushMatrix()](http://processing.org/reference/pushMatrix_.html), [popMatrix()](http://processing.org/reference/popMatrix_.html).  This [tutorial](http://processing.org/learning/transform2d/) is also a good place to start.  In addition, the example uses a PVector to describe a point in 3D space.  More here: [PVector tutorial](http://processing.org/learning/pvector/).
 
@@ -245,7 +259,10 @@ The real magic of the kinect lies in its computer vision capabilities.  With dep
 
 <iframe src="http://player.vimeo.com/video/18750684?title=0&amp;byline=0&amp;portrait=0&amp;color=ff9933" width="500" height="313" frameborder="0"></iframe>
 
-Source: [AveragePointTracking](https://github.com/shiffman/OpenKinect-for-Processing/tree/master/OpenKinect-Processing/examples/AveragePointTracking)
+Source for v1: [AveragePointTracking](https://github.com/shiffman/OpenKinect-for-Processing/tree/master/OpenKinect-Processing/examples/Kinect_v1/AveragePointTracking)
+
+Source for v2: [AveragePointTracking2](https://github.com/shiffman/OpenKinect-for-Processing/tree/master/OpenKinect-Processing/examples/Kinect_v2/AveragePointTracking2)
+
 
 In this example, I declare two variables to add up all the appropriate x's and y's and one variable to keep track of how many there are.
 
@@ -276,14 +293,11 @@ if (count != 0) {
 }
 {% endhighlight %}
 
-## Why don’t the RGB images and depth values correspond properly?
-
-Unfortunately, b/c the RGB camera and the IR camera are not physically located in the same spot, we have a stereo vision problem.  Pixel XY in one image is not the same XY in an image from a camera an inch to the right. Tools for calibrating these two images are on my to-do list. For more: [Theory on depth/color calibration and registration](http://nicolas.burrus.name/index.php/Research/KinectCalibration).
 
 ## What’s missing?
 * Everything is being tracked [via github issues](https://github.com/shiffman/OpenKinect-for-Processing/issues).
 
 ## FAQ
-1. What are there shadows in the depth image? [Kinect Shadow diagram](http://media.zero997.com/kinect_shadow.pdf)
-2. What is the range of depth that the kinect can see? ~0.7–6 meters or 2.3–20 feet.  Note you will get black pixels (or raw depth value of 2048) at both elements that are too far away and too close.
+1. What are there shadows in the depth image (v1)? [Kinect Shadow diagram](http://media.zero997.com/kinect_shadow.pdf)
+2. What is the range of depth that the kinect can see? (v1) ~0.7–6 meters or 2.3–20 feet.  Note you will get black pixels (or raw depth value of 2048) at both elements that are too far away and too close.
 
