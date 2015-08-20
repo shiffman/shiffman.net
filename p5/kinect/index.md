@@ -11,7 +11,7 @@ dsq_needs_sync:
 
 ---
 
-<p><iframe src="https://player.vimeo.com/video/132727296" width="500" height="217" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <a href="https://vimeo.com/132727296">Open Kinect for Processing Demo</a> from <a href="https://vimeo.com/shiffman">shiffman</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<p><iframe src="https://player.vimeo.com/video/132727296" width="500" height="217" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <a href="https://vimeo.com/132727296"><br/>Open Kinect for Processing Demo</a> from <a href="https://vimeo.com/shiffman">shiffman</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
 # Kinect and Processing
 
