@@ -155,7 +155,7 @@ Unfortunately, b/c the RGB camera and the IR camera are not physically located i
 PImage img = kinect2.getRegisteredImage()
 {% endhighlight %}
 
-Finally, for kinect v1 (but not v2), you can also adjust the camera angle with the `tilt()` method.
+Finally, for kinect v1 (but not v2), you can also adjust the camera angle with the `setTilt()` method.
 
 {% highlight java %}
 float angle = kinect.getTilt();
@@ -166,11 +166,12 @@ kinect.seTilt(angle);
 So, there you have it, here are all the useful functions you might need to use the Processing kinect library:
 
 * **`initDevice()`** — start everything (video, depth, IR)
+* **'activateDevice(int)'** - activate a specific device when multiple devices are connect
 * **`initVideo()`** — start video only
 * **`enableIR(boolean)`** — turn on or off the IR camera image (v1 only)
 * **`initDepth()`** — start depth only
 * **`enableColorDepth(boolean)`** — turn on or off the depth values as color image
-* **`enableMirror(boolean)`** — mirror the image and depth data
+* **`enableMirror(boolean)`** — mirror the image and depth data (v1 only)
 * **`PImage getVideoImage()`** — grab the RGB (or IR for v1) video image
 * **`PImage getIrImage()`** — grab the IR image (v2 only)
 * **`PImage getDepthImage()`** — grab the depth map image
