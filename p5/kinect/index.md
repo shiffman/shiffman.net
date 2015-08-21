@@ -160,7 +160,7 @@ Finally, for kinect v1 (but not v2), you can also adjust the camera angle with t
 {% highlight java %}
 float angle = kinect.getTilt();
 angle = angle + 1;
-kinect.tilt(angle);
+kinect.seTilt(angle);
 {% endhighlight %}
 
 So, there you have it, here are all the useful functions you might need to use the Processing kinect library:
@@ -177,7 +177,7 @@ So, there you have it, here are all the useful functions you might need to use t
 * **`PImage getRegisteredImage()`** — grab the registered depth image (v2 only)
 * **`int[] getRawDepth()`** — grab the raw depth data
 * **`float getTilt()`** — get the current sensor angle (between 0 and 30 degrees) (v1 only)
-* **`tilt(float)`** — adjust the sensor angle (between 0 and 30 degrees) (v1 only)
+* **`setTilt(float)`** — adjust the sensor angle (between 0 and 30 degrees) (v1 only)
 
 For everything else, you can also take a look at [the javadoc reference](http://shiffman.net/p5/kinect/reference/).
 
