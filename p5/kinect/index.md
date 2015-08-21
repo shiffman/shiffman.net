@@ -5,7 +5,7 @@ layout: page
 dsq_thread_id:
   - 
 pvc_views:
-  - 149402
+  - 149402s
 dsq_needs_sync:
   - 1
 
@@ -160,7 +160,7 @@ Finally, for kinect v1 (but not v2), you can also adjust the camera angle with t
 {% highlight java %}
 float angle = kinect.getTilt();
 angle = angle + 1;
-kinect.seTilt(angle);
+kinect.setTilt(angle);
 {% endhighlight %}
 
 So, there you have it, here are all the useful functions you might need to use the Processing kinect library:
