@@ -166,7 +166,7 @@ kinect.setTilt(angle);
 So, there you have it, here are all the useful functions you might need to use the Processing kinect library:
 
 * **`initDevice()`** — start everything (video, depth, IR)
-* **'activateDevice(int)'** - activate a specific device when multiple devices are connect
+* **`activateDevice(int)`** - activate a specific device when multiple devices are connect
 * **`initVideo()`** — start video only
 * **`enableIR(boolean)`** — turn on or off the IR camera image (v1 only)
 * **`initDepth()`** — start depth only
