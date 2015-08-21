@@ -139,7 +139,7 @@ As well as the raw depth data:
 int[] depth = kinect.getRawDepth();
 {% endhighlight %}
 
-For the kinect v1, the raw depth values range between 0 and 2048, for the kinect v2 the range is _________________.
+For the kinect v1, the raw depth values range between 0 and 2048, for the kinect v2 the range is between 0 and 4500.
 
 For the color depth image, use `kinect.enableColorDepth(true);`.  And just like with the video image, there's a depth event you can access if necessary.
 
