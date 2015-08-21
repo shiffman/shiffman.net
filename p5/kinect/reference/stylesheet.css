@@ -1,90 +1,123 @@
-/* Javadoc style sheet */
-/* Define colors, fonts and other style attributes here to override the defaults */
-/* processingLibs style by andreas schlegel, sojamo */
+/* processingLibs style by andreas schlegel, sojamo. */
+
+
+* {
+	margin:0;
+	padding:0;
+	border:0;
+}
 
 
 body {
-	margin : 0;
-	padding : 0;
-	padding-left : 10px;
-	padding-right : 8px;
-	background-color : #FFFFFF;
 	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif; 
 	font-size : 100%; 
-    font-size : 0.7em;
+    font-size : 0.70em;
 	font-weight : normal;
 	line-height	: normal;
-	margin-bottom:30px;
 }
+
+
+
+#container {
+	margin-left:64px;
+	background-color:#fff;
+}
+
+#header {
+	float:left;
+	padding-top:24px;
+	padding-bottom:48px;
+}
+
+#menu {
+	margin-top:16px;
+	float:left;
+	margin-bottom:64px;
+}
+
+
+#about,
+#download,
+#examples,
+#demos,
+#misc {
+	width:480px;
+	float:left;
+	margin-right:24px;
+}
+
+
+#resources, #info {
+	width:320px;
+	float:left;
+}
+
+
+.clear {
+	clear:both;
+}
+
+#footer {
+	margin-top:300px;
+	height:20px;
+	margin-bottom:32px;
+}
+
+
+ul {
+	list-style:none;
+	padding:0;
+	margin:0;
+}
+
+
+#menu ul li, #subMenu ul li {
+	float:left;
+	padding-right:6px; 
+}
+
+
 
 
 
 
 /* Headings */
-h1, h2, h3, h4, h5, th {
-	font-family :Arial, Helvetica, sans-serif; 	
-	font-size:1.2em;
+
+h1 {
+	font-size:2em;
+	font-weight:normal;
 }
+
+
+h2, h3, h4, h5, th {
+	font-size:1.3em;
+	font-weight:normal;
+	margin-bottom:4px;
+}
+
 
 
 p { 
-	font-size : 1em; 		
-	width:80%;
+	font-size:1em;
+	width:90%;
+	margin-bottom:32px;
 }
+
 
 pre, code {  
-	font-family : "Courier New", Courier, monospace; 
-	font-size : 12px; 
-	line-height : normal;
+	font-family:"Courier New", Courier, monospace; 
+	font-size:1em; 
+	line-height:normal;
 }
 
-
-
-table {
-	border:0;
-	margin-bottom:10px;
-	margin-top:10px;
-}
-
-
-tr, td {
-	border-top: 0px solid;
-	border-left: 0px solid;
-	padding-top:8px;
-	padding-bottom:8px;
-}
 
 
 
 hr {
 	border:0;
 	height:1px;
-	padding:0;
-	margin:0;
-	margin-bottom:4px;
-
+	margin-bottom:24px;
 }
-
-
-
-dd, th, td, font {
-	font-size:1.0em;
-	line-height:1.0em;
-}
-
-
-
-dt {
-	margin-bottom:0px;
-}
-
-
-
-dd {
-	margin-top:2px;
-	margin-bottom:4px;
-}
-
 
 
 a {
@@ -92,17 +125,20 @@ a {
 	font-weight: normal;
 }
 
+
 a:hover, 
 a:active {
 	text-decoration: underline;
 	font-weight: normal;
 }
 
+
 a:visited,
 a:link:visited {
 	text-decoration: underline;
 	font-weight: normal;
 }
+
 
 
 img {
@@ -111,200 +147,57 @@ img {
 
 
 
-/* Navigation bar fonts */
-.NavBarCell1    { 
-	border:0;
-}
-
-.NavBarCell1Rev {
-	border:0;
-}
-
-.NavBarFont1 { 
-	font-family: Arial, Helvetica, sans-serif;  
-	font-size:1.1em;
-}
-
-
-.NavBarFont1 b {
-	font-weight:normal;
-}
-
-
-
-.NavBarFont1:after, .NavBarFont1Rev:after {
-	font-weight:normal;
-	content: " \\";
-}
-
-
-.NavBarFont1Rev { 
-	font-family: Arial, Helvetica, sans-serif;
-	font-size:1.1em;
-}
-
-.NavBarFont1Rev b { 
-	font-family: Arial, Helvetica, sans-serif;
-	font-size:1.1em;
-	font-weight:normal;
-}
-
-.NavBarCell2    { 
-	font-family: Arial, Helvetica, sans-serif; 
-}
-
-.NavBarCell3    { 
-	font-family: Arial, Helvetica, sans-serif;
-}
-
-
-
-font.FrameItemFont {
-	font-family: Helvetica, Arial, sans-serif;
-	font-size:1.1em;
-	line-height:1.1em;
-}
-
-font.FrameHeadingFont {
-	font-family: Helvetica, Arial, sans-serif;
-	line-height:32px;
-}
-
-/* Font used in left-hand frame lists */
-.FrameTitleFont   { 
-	font-family: Helvetica, Arial, sans-serif 
-}
-
-
-.toggleList { 
-	padding:0;
-	margin:0;
-	margin-top:12px;
-}
-
-.toggleList dt {
- 	font-weight:bold;
- 	font-size:12px;
- 	font-family:arial,sans-serif;
-	padding:0px;
-	margin:10px 0px 10px 0px;
-}
-
-.toggleList dt span { 
-	font-family: monospace;
-	padding:0;
-	margin:0;
-}
-
- 
-.toggleList dd {
-	margin:0;
-	padding:0; 
-}
-
-html.isjs .toggleList dd { 
-  display: none; 
-}
-
-.toggleList pre {
-	padding: 4px 4px 4px 4px;
-}
-
-
-
 
 
 /* COLORS */
+
+
+body {
+	color : #333;
+	background-color :#fff;
+}
+
+
+#header {
+	background-color:#fff;
+	color:#333;
+}
+
+
+
+h1, h2, h3, h4, h5, h6 {
+	color:#666;
+}
+
 
 pre, code {  
 	color: #000000;
 }
 
 
-body {
-	color : #333333;
-	background-color :#FFFFFF;
+a,strong {
+	color: #333;
 }
 
-
-h1, h2, h3, h4, h5, h6 {
-	color:#555;
-}
-
-a, 
-.toggleList dt {
-	color: #1a7eb0;
-}
 
 a:hover, 
 a:active {
-	color: #1a7eb0;
+	color: #333;
 }
+
 
 a:visited,
 a:link:visited {
-	color: #1a7eb0;
-}
-
-td,tr {
-	border-color: #999999;
-}
-
-hr {
-	color:#999999;
-	background:#999999;
+	color: #333;
 }
 
 
-.TableHeadingColor     { 
-	background: #dcdcdc;
-	color: #555;
-}
-
-
-.TableSubHeadingColor {
-	background: #EEEEFF 
-}
-
-.TableRowColor {
-	background: #FFFFFF 
-}
-
-
-.NavBarCell1    { 
-	background-color:#dcdcdc; 
-	color:#000; 
-}
-
-.NavBarCell1 a { 
+#footer, #menu {
+	background-color:#fff;
 	color:#333;
 }
 
 
-.NavBarCell1Rev {
-	background-color:transparent;
+#footer a, #menu a {
+	color:#333;
 }
-
-.NavBarFont1    { 
-	color:#333; 
-}
-
-
-.NavBarFont1Rev { 
-	color:#fff; 
-}
-
-.NavBarCell2 { 
-	background-color:#999; 
-}
-
-.NavBarCell2 a { 
-	color:#fff; 
-}
-
-
-
-.NavBarCell3    { 
-	background-color:#dcdcdc;
-}
-
