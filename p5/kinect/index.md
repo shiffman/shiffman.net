@@ -139,7 +139,7 @@ As well as the raw depth data:
 int[] depth = kinect.getRawDepth();
 {% endhighlight %}
 
-For the kinect v1, the raw depth values range between 0 and 2048, for the kinect v2 the range is _________________.
+For the kinect v1, the raw depth values range between 0 and 2048, for the kinect v2 the range is between 0 and 4500.
 
 For the color depth image, use `kinect.enableColorDepth(true);`.  And just like with the video image, there's a depth event you can access if necessary.
 
@@ -155,29 +155,30 @@ Unfortunately, b/c the RGB camera and the IR camera are not physically located i
 PImage img = kinect2.getRegisteredImage()
 {% endhighlight %}
 
-Finally, for kinect v1 (but not v2), you can also adjust the camera angle with the `tilt()` method.
+Finally, for kinect v1 (but not v2), you can also adjust the camera angle with the `setTilt()` method.
 
 {% highlight java %}
 float angle = kinect.getTilt();
 angle = angle + 1;
-kinect.tilt(angle);
+kinect.seTilt(angle);
 {% endhighlight %}
 
 So, there you have it, here are all the useful functions you might need to use the Processing kinect library:
 
 * **`initDevice()`** — start everything (video, depth, IR)
+* **'activateDevice(int)'** - activate a specific device when multiple devices are connect
 * **`initVideo()`** — start video only
 * **`enableIR(boolean)`** — turn on or off the IR camera image (v1 only)
 * **`initDepth()`** — start depth only
 * **`enableColorDepth(boolean)`** — turn on or off the depth values as color image
-* **`enableMirror(boolean)`** — mirror the image and depth data
+* **`enableMirror(boolean)`** — mirror the image and depth data (v1 only)
 * **`PImage getVideoImage()`** — grab the RGB (or IR for v1) video image
 * **`PImage getIrImage()`** — grab the IR image (v2 only)
 * **`PImage getDepthImage()`** — grab the depth map image
 * **`PImage getRegisteredImage()`** — grab the registered depth image (v2 only)
 * **`int[] getRawDepth()`** — grab the raw depth data
 * **`float getTilt()`** — get the current sensor angle (between 0 and 30 degrees) (v1 only)
-* **`tilt(float)`** — adjust the sensor angle (between 0 and 30 degrees) (v1 only)
+* **`setTilt(float)`** — adjust the sensor angle (between 0 and 30 degrees) (v1 only)
 
 For everything else, you can also take a look at [the javadoc reference](http://shiffman.net/p5/kinect/reference/).
 
@@ -194,6 +195,14 @@ Code for v1:[RGBDepthTest](https://github.com/shiffman/OpenKinect-for-Processing
 Code for v2:[RGBDepthTest2](https://github.com/shiffman/OpenKinect-for-Processing/blob/master/OpenKinect-Processing/examples/Kinect_v2/RGBDepthTest2/RGBDepthTest2.pde)</p>
 
 This example uses all of the above listed functions to display the data from the kinect sensor.
+
+### Multiple devices
+
+Both v1 and v2 has multiple kinect support.
+
+Code for v1:[MultiKinect](https://github.com/shiffman/OpenKinect-for-Processing/blob/master/OpenKinect-Processing/examples/Kinect_v1/MultiKinect/MultiKinect.pde)</p>
+
+Code for v2:[MultiKinect2](https://github.com/shiffman/OpenKinect-for-Processing/blob/master/OpenKinect-Processing/examples/Kinect_v2/MultiKinect2/MultiKinect2.pde)</p>
 
 ### Point Cloud
 
