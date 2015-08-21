@@ -196,6 +196,14 @@ Code for v2:[RGBDepthTest2](https://github.com/shiffman/OpenKinect-for-Processin
 
 This example uses all of the above listed functions to display the data from the kinect sensor.
 
+### Multiple devices
+
+Both v1 and v2 has multiple kinect support.
+
+Code for v1:[MultiKinect](https://github.com/shiffman/OpenKinect-for-Processing/blob/master/OpenKinect-Processing/examples/Kinect_v1/MultiKinect/MultiKinect.pde)</p>
+
+Code for v2:[MultiKinect2](https://github.com/shiffman/OpenKinect-for-Processing/blob/master/OpenKinect-Processing/examples/Kinect_v2/MultiKinect2/MultiKinect2.pde)</p>
+
 ### Point Cloud
 
 <iframe src="http://player.vimeo.com/video/18058700?title=0&amp;byline=0&amp;portrait=0&amp;color=ff9933" width="501" height="282" frameborder="0"></iframe>
