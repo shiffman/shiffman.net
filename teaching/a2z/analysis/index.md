@@ -202,10 +202,10 @@ droplets: 1
 This is a somewhat obvious result: 'the' and 'and' appear in all the articles and 'rainbow' and 'droplet' appear in both.  We could therefore compute a score for each of these as:
 
 ```
-rainbow:   5 * (6/6)   5
-droplets:  3 * (6/6)   3
-the:      16 * (1/6)   2.67
-and:       6 * (1/6)   1
+rainbow:   5 * (6/1)   30
+droplets:  3 * (6/1)   18
+the:      16 * (6/6)   16
+and:       6 * (6/6)   6
 ```
 
 Now we're getting somewhere!  
@@ -213,16 +213,15 @@ Now we're getting somewhere!
 TF-IDF is meant to be run on a much larger corpus and in order to dampen the effect of the IDF value, a common solution is to use the logarithm of IDF.
 
 ```
-rainbow:   5 * log(6/6)   0.58
-droplets:  3 * log(6/6)   0.34
-the:      16 * log(1/6)   0.014
-and:       6 * log(1/6)   0.0006
+rainbow:   5 * log(6/1)   3.89
+droplets:  3 * log(6/1)   2.33
+the:      16 * log(6/6)   0.0
+and:       6 * log(6/6)   0.0
 ```
 
-If [logarithmic scale](http://en.wikipedia.org/wiki/Logarithmic_scale) is new to you, this Khan Academy video may help.
+If [logarithmic scale](http://en.wikipedia.org/wiki/Logarithmic_scale) is new to you, this Khan Academy video may help.  (Note how if a term appears in every single document the tf-idf score is always zero.)
 
 <p><iframe width="560" height="315" src="//www.youtube.com/embed/sBhEi4L91Sg" frameborder="0" allowfullscreen></iframe></p>
-
 
 Here is a [demonstration of TF-IDF](http://shiffman.net/teaching/a2z/analysis/02_tf-idf/) and its [source code](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week3_analysis/02_tf-idf)  For a wonderful example of TF-IDF out in the world, take a look at [Nicholas Felton's 2013 Annual Report](http://bits.blogs.nytimes.com/2014/08/19/a-life-in-data-nicholas-feltons-self-surveillance/).
 
