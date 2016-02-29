@@ -11,6 +11,7 @@
 
 
 $lato: 'Lato', sans-serif;
+$noto: 'Noto Serif', serif;
 // MAIN WINDOW STRUCTURE
 
 
@@ -35,8 +36,20 @@ body, html {
 
 	position: relative;
 	width: 60%;
-	padding: 145px;
+	padding: 130px 140px;
 
+	@media only screen and (max-width: $breakpoint-medium) {
+
+		padding: 130px 80px;
+
+	}
+
+	@media only screen and (max-width: $breakpoint-small) {
+
+		padding: 100px 30px;
+		width: 100%;
+
+	}
 }
 
 .right-container {
@@ -45,7 +58,15 @@ body, html {
 	width: 40%;
 	right: 0;
 	top: 0;
-	min-height: 100%;
+	min-height: 600px;
+	height: 100%;
+
+	@media only screen and (max-width: $breakpoint-small) {
+
+		width: 300px;
+		right: -300px;
+
+	}
 
 }
 
@@ -55,7 +76,7 @@ nav {
 
 	position: fixed;
 	top: 0;
-	left: -280px;
+	left: -230px;
 	width: 300px;
 	min-height: 100%;
 	z-index: 1;
@@ -120,7 +141,7 @@ nav {
 
 	position: absolute;
 	left: 45px;
-	top: 45px;
+	top: 30px;
 
 	.logo-set {
 		display: inline-block;
@@ -140,6 +161,7 @@ nav {
 		display: inline-block;
 		vertical-align: top;
 		margin-top: 11px;
+		cursor: pointer;
 	}
 
 	span.intro {
@@ -172,15 +194,18 @@ h1, h2, h3, h4, h5 {
 
 h1 {
 
+	font-family: $noto;
+	font-weight: 700;
 	font-size: 28px;
 
 }
 
 h2 {
 
-	font-size: 18px;
+	font-size: 22px;
 	font-weight: 700;
 	margin-bottom: 0.5em;
+	margin-top: 2em;
 
 }
 
@@ -300,10 +325,16 @@ h3 {
 
 	.feature {
 
-		padding: 0 40px;
+		padding: 0 110px 0px 40px;
 		min-height: 250px;
 		height: 250px;
 		position: relative;
+
+		@media only screen and (max-width: $breakpoint-medium) {
+
+			padding: 0 30px 0px 30px;
+
+		}
 
 		.content, .book {
 
@@ -337,7 +368,7 @@ h3 {
 		color: $white;
 	}
 
-	a {
+	a.primary {
 		display: inline-block;
 		padding: 7px 30px;
 		border-radius: 45px;
@@ -348,6 +379,17 @@ h3 {
 		color: $black;
 		text-decoration: none;
 		margin-top: 25px;
+	}
+
+	a.secondary {
+
+		font-size: 12px;
+		font-weight: 700;
+		letter-spacing: 0.87px;
+		text-decoration: none;
+		display: block;
+		color: $white;
+
 	}
 
 	&.lp {
@@ -366,7 +408,7 @@ h3 {
 		background: $red;
 		color: $white;
 
-		a {
+		a.primary {
 			color: $red;
 		}
 
@@ -396,7 +438,59 @@ h3 {
 
 }
 
+// BOOKS PAGE
+	
+	.right-container.books {
 
+		.feature {
+
+			height: 50%;
+			min-height: auto;
+
+		}
+
+	}
+
+// ARTICLE PAGES
+
+.article {
+
+	.line-charm:first-of-type {
+
+		margin-top: 0px;
+
+	}
+
+}
+
+p {
+
+	margin-bottom: 1.2em;
+
+}
+
+
+// HELPERS
+
+@media only screen and (max-width: $breakpoint-medium) {
+
+	.medium-hide {
+
+		display: none;
+
+	}
+
+}
+
+@media only screen and (max-width: $breakpoint-small) {
+
+	.small-hide {
+
+		display: none;
+
+	}
+
+}
 
 
 

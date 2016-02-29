@@ -4,7 +4,7 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 @import url(https://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic);
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700,900,400italic);
-/* line 5, ../../../../../../../../usr/local/lib/ruby/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../../usr/local/lib/ruby/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -26,55 +26,55 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../../../usr/local/lib/ruby/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../usr/local/lib/ruby/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../../../usr/local/lib/ruby/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../usr/local/lib/ruby/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../../../usr/local/lib/ruby/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../usr/local/lib/ruby/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../../../usr/local/lib/ruby/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../usr/local/lib/ruby/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../../../usr/local/lib/ruby/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../usr/local/lib/ruby/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../../../usr/local/lib/ruby/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../usr/local/lib/ruby/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../../../usr/local/lib/ruby/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../usr/local/lib/ruby/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../../../usr/local/lib/ruby/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../usr/local/lib/ruby/gems/2.1.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
 
-/* line 18, ../sass/shiffman-core.scss */
+/* line 19, ../sass/shiffman-core.scss */
 * {
   box-sizing: border-box;
 }
 
-/* line 24, ../sass/shiffman-core.scss */
+/* line 25, ../sass/shiffman-core.scss */
 body, html {
   min-height: 100%;
   font-family: 'Noto Serif', serif;
@@ -83,27 +83,48 @@ body, html {
   color: #212121;
 }
 
-/* line 34, ../sass/shiffman-core.scss */
+/* line 35, ../sass/shiffman-core.scss */
 .left-container {
   position: relative;
   width: 60%;
-  padding: 145px;
+  padding: 130px 140px;
+}
+@media only screen and (max-width: 1170px) {
+  /* line 35, ../sass/shiffman-core.scss */
+  .left-container {
+    padding: 130px 80px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  /* line 35, ../sass/shiffman-core.scss */
+  .left-container {
+    padding: 100px 30px;
+    width: 100%;
+  }
 }
 
-/* line 42, ../sass/shiffman-core.scss */
+/* line 55, ../sass/shiffman-core.scss */
 .right-container {
   position: fixed;
   width: 40%;
   right: 0;
   top: 0;
-  min-height: 100%;
+  min-height: 600px;
+  height: 100%;
+}
+@media only screen and (max-width: 700px) {
+  /* line 55, ../sass/shiffman-core.scss */
+  .right-container {
+    width: 300px;
+    right: -300px;
+  }
 }
 
-/* line 54, ../sass/shiffman-core.scss */
+/* line 75, ../sass/shiffman-core.scss */
 nav {
   position: fixed;
   top: 0;
-  left: -280px;
+  left: -230px;
   width: 300px;
   min-height: 100%;
   z-index: 1;
@@ -118,7 +139,7 @@ nav {
   background-image: -webkit-linear-gradient(left, #ffffff 0%, #ffffff 50%, rgba(255, 255, 255, 0) 100%);
   background-image: linear-gradient(to right, #ffffff 0%, #ffffff 50%, rgba(255, 255, 255, 0) 100%);
 }
-/* line 71, ../sass/shiffman-core.scss */
+/* line 92, ../sass/shiffman-core.scss */
 nav .nav-logo {
   display: inline-block;
   font-size: 16px;
@@ -128,7 +149,7 @@ nav .nav-logo {
   font-weight: 700;
   color: #212121;
 }
-/* line 85, ../sass/shiffman-core.scss */
+/* line 106, ../sass/shiffman-core.scss */
 nav .nav-links li a {
   font-family: "Lato", sans-serif;
   font-weight: 700;
@@ -138,32 +159,32 @@ nav .nav-links li a {
   color: #212121;
   transition: color 0.15s;
 }
-/* line 95, ../sass/shiffman-core.scss */
+/* line 116, ../sass/shiffman-core.scss */
 nav .nav-links li a:hover {
   color: #EE0058;
 }
-/* line 101, ../sass/shiffman-core.scss */
+/* line 122, ../sass/shiffman-core.scss */
 nav .nav-links li a:hover {
   color: #EE0058;
 }
-/* line 111, ../sass/shiffman-core.scss */
+/* line 132, ../sass/shiffman-core.scss */
 nav:hover {
   left: 0px;
 }
 
-/* line 119, ../sass/shiffman-core.scss */
+/* line 140, ../sass/shiffman-core.scss */
 .logo {
   position: absolute;
   left: 45px;
-  top: 45px;
+  top: 30px;
 }
-/* line 125, ../sass/shiffman-core.scss */
+/* line 146, ../sass/shiffman-core.scss */
 .logo .logo-set {
   display: inline-block;
   vertical-align: top;
   margin-left: 7px;
 }
-/* line 131, ../sass/shiffman-core.scss */
+/* line 152, ../sass/shiffman-core.scss */
 .logo h2 {
   font-family: 'Noto Serif', serif;
   font-size: 26px;
@@ -171,19 +192,20 @@ nav:hover {
   font-weight: 700;
   display: inline-block;
 }
-/* line 139, ../sass/shiffman-core.scss */
+/* line 160, ../sass/shiffman-core.scss */
 .logo span.nav-btn {
   display: inline-block;
   vertical-align: top;
   margin-top: 11px;
+  cursor: pointer;
 }
-/* line 145, ../sass/shiffman-core.scss */
+/* line 167, ../sass/shiffman-core.scss */
 .logo span.intro {
   display: block;
   font-size: 14px;
 }
 
-/* line 154, ../sass/shiffman-core.scss */
+/* line 176, ../sass/shiffman-core.scss */
 .line-charm {
   display: block;
   height: 5px;
@@ -192,32 +214,35 @@ nav:hover {
   margin: 60px 0 16px 0;
 }
 
-/* line 166, ../sass/shiffman-core.scss */
+/* line 188, ../sass/shiffman-core.scss */
 h1, h2, h3, h4, h5 {
   font-family: 'Lato', sans-serif;
   line-height: 1.45em;
 }
 
-/* line 173, ../sass/shiffman-core.scss */
+/* line 195, ../sass/shiffman-core.scss */
 h1 {
+  font-family: "Noto Serif", serif;
+  font-weight: 700;
   font-size: 28px;
 }
 
-/* line 179, ../sass/shiffman-core.scss */
+/* line 203, ../sass/shiffman-core.scss */
 h2 {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 700;
   margin-bottom: 0.5em;
+  margin-top: 2em;
 }
 
-/* line 187, ../sass/shiffman-core.scss */
+/* line 212, ../sass/shiffman-core.scss */
 h3 {
   font-size: 14px;
   font-weight: 700;
   margin-bottom: 35px;
 }
 
-/* line 195, ../sass/shiffman-core.scss */
+/* line 220, ../sass/shiffman-core.scss */
 .body-link {
   font-family: 'Lato', sans-serif;
   font-size: 12px;
@@ -228,18 +253,18 @@ h3 {
   border-left: 3px solid #E9E9E9;
   text-decoration: none;
 }
-/* line 206, ../sass/shiffman-core.scss */
+/* line 231, ../sass/shiffman-core.scss */
 .body-link.primary {
   color: #EE0058;
   border-left: 3px solid #EE0058;
 }
-/* line 213, ../sass/shiffman-core.scss */
+/* line 238, ../sass/shiffman-core.scss */
 .body-link.secondary {
   color: #7D7D7D;
   border-left: 3px solid #7D7D7D;
 }
 
-/* line 224, ../sass/shiffman-core.scss */
+/* line 249, ../sass/shiffman-core.scss */
 .section-link {
   font-family: "Lato", sans-serif;
   font-size: 12px;
@@ -250,55 +275,61 @@ h3 {
   display: inline-block;
 }
 
-/* line 239, ../sass/shiffman-core.scss */
+/* line 264, ../sass/shiffman-core.scss */
 .latest-videos .video-entry {
   overflow: auto;
   margin-bottom: 35px;
 }
-/* line 246, ../sass/shiffman-core.scss */
+/* line 271, ../sass/shiffman-core.scss */
 .latest-videos .thumbnail {
   border-radius: 3px;
 }
-/* line 250, ../sass/shiffman-core.scss */
+/* line 275, ../sass/shiffman-core.scss */
 .latest-videos .thumbnail img {
   width: 100%;
 }
-/* line 256, ../sass/shiffman-core.scss */
+/* line 281, ../sass/shiffman-core.scss */
 .latest-videos .col-left {
   width: 30%;
   float: left;
   padding: 0 7px;
 }
-/* line 264, ../sass/shiffman-core.scss */
+/* line 289, ../sass/shiffman-core.scss */
 .latest-videos .col-right {
   width: 70%;
   float: left;
   padding: 0 7px;
 }
-/* line 272, ../sass/shiffman-core.scss */
+/* line 297, ../sass/shiffman-core.scss */
 .latest-videos p {
   font-size: 14px;
   margin-bottom: 25px;
 }
 
-/* line 286, ../sass/shiffman-core.scss */
+/* line 311, ../sass/shiffman-core.scss */
 .resources .link p {
   display: none;
 }
 
-/* line 296, ../sass/shiffman-core.scss */
+/* line 321, ../sass/shiffman-core.scss */
 .right-container {
   background: #E9E9E9;
   overflow: scroll;
 }
-/* line 301, ../sass/shiffman-core.scss */
+/* line 326, ../sass/shiffman-core.scss */
 .right-container .feature {
-  padding: 0 40px;
+  padding: 0 110px 0px 40px;
   min-height: 250px;
   height: 250px;
   position: relative;
 }
-/* line 308, ../sass/shiffman-core.scss */
+@media only screen and (max-width: 1170px) {
+  /* line 326, ../sass/shiffman-core.scss */
+  .right-container .feature {
+    padding: 0 30px 0px 30px;
+  }
+}
+/* line 339, ../sass/shiffman-core.scss */
 .right-container .feature .content, .right-container .feature .book {
   position: relative;
   top: 50%;
@@ -306,25 +337,25 @@ h3 {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-/* line 318, ../sass/shiffman-core.scss */
+/* line 349, ../sass/shiffman-core.scss */
 .right-container .feature .book {
   position: absolute;
   right: 0;
 }
 
-/* line 329, ../sass/shiffman-core.scss */
+/* line 360, ../sass/shiffman-core.scss */
 .feature p, .feature a {
   font-family: "Lato", sans-serif;
 }
-/* line 333, ../sass/shiffman-core.scss */
+/* line 364, ../sass/shiffman-core.scss */
 .feature h1 {
   font-family: "Lato", sans-serif;
   letter-spacing: 1.87px;
   font-weight: 900;
   color: #ffffff;
 }
-/* line 340, ../sass/shiffman-core.scss */
-.feature a {
+/* line 371, ../sass/shiffman-core.scss */
+.feature a.primary {
   display: inline-block;
   padding: 7px 30px;
   border-radius: 45px;
@@ -336,39 +367,77 @@ h3 {
   text-decoration: none;
   margin-top: 25px;
 }
-/* line 353, ../sass/shiffman-core.scss */
+/* line 384, ../sass/shiffman-core.scss */
+.feature a.secondary {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.87px;
+  text-decoration: none;
+  display: block;
+  color: #ffffff;
+}
+/* line 395, ../sass/shiffman-core.scss */
 .feature.lp {
   background: #FFDE00;
   color: #212121;
 }
-/* line 358, ../sass/shiffman-core.scss */
+/* line 400, ../sass/shiffman-core.scss */
 .feature.lp a, .feature.lp p {
   color: #ED462F;
 }
-/* line 364, ../sass/shiffman-core.scss */
+/* line 406, ../sass/shiffman-core.scss */
 .feature.noc {
   background: #EE0058;
   color: #ffffff;
 }
-/* line 369, ../sass/shiffman-core.scss */
-.feature.noc a {
+/* line 411, ../sass/shiffman-core.scss */
+.feature.noc a.primary {
   color: #EE0058;
 }
-/* line 375, ../sass/shiffman-core.scss */
+/* line 417, ../sass/shiffman-core.scss */
 .feature.youtube {
   background: #00CBFF;
   color: #ffffff;
 }
-/* line 380, ../sass/shiffman-core.scss */
+/* line 422, ../sass/shiffman-core.scss */
 .feature.youtube a {
   color: #00CBFF;
 }
-/* line 386, ../sass/shiffman-core.scss */
+/* line 428, ../sass/shiffman-core.scss */
 .feature.livestream {
   background: #C036F3;
   color: #ffffff;
 }
-/* line 391, ../sass/shiffman-core.scss */
+/* line 433, ../sass/shiffman-core.scss */
 .feature.livestream a {
   color: #C036F3;
+}
+
+/* line 445, ../sass/shiffman-core.scss */
+.right-container.books .feature {
+  height: 50%;
+  min-height: auto;
+}
+
+/* line 458, ../sass/shiffman-core.scss */
+.article .line-charm:first-of-type {
+  margin-top: 0px;
+}
+
+/* line 466, ../sass/shiffman-core.scss */
+p {
+  margin-bottom: 1.2em;
+}
+
+@media only screen and (max-width: 1170px) {
+  /* line 477, ../sass/shiffman-core.scss */
+  .medium-hide {
+    display: none;
+  }
+}
+@media only screen and (max-width: 700px) {
+  /* line 487, ../sass/shiffman-core.scss */
+  .small-hide {
+    display: none;
+  }
 }
