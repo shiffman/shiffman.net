@@ -37,8 +37,8 @@
             <div class="logo">
                 <span class="nav-btn"><img src="images/nav-btn.svg"/></span>
             </div>
-        	<div class="content-wrapper article">
-                <span class="line-charm"></span>
+        	<div id="video-list" class="content-wrapper article">
+                <span class="line-charm first"></span>
                 <h1>Videos</h1>
                 <p>Daniel Shiffman is a Assistant Arts Professor at ITP (Interactive Telecommunications Program). Below is a list of some of the courses that he has taught.</p>
                 <div class="page-anchors">
@@ -48,26 +48,10 @@
                 <a href="" class="body-link secondary">PROGRAMMING FROM A TO Z (2007, 2008, 2014)</a>
                 <a href="" class="body-link secondary">PROCEDURAL PAINTING (2004)</a>
                 </div>
-                <div class="video-playlist">
-                    <span class="line-charm"></span>
-                    <div class="playlist-header">
-                        <h3>PS.5 TUTORIALS</h3>
-                    </div>
-                    <p>
-                        This series covers all the basic concepts of programming in the context of p5.js and canvas animation. Part 2 covers HTML, CSS, and DOM
-                    </p>
-                    <div class="video-list">
-                        <div class="video">
-                            <img class="thumbnail" src=""/>
-                            <span class="label">P5.js Tutorial 1.0 Introduction</span>
-                        </div>
-                    </div>
-                    <a class="body-link primary">COURSE SYLLABUS AND WIKIS</a>
-                </div>
             </div>
         </section>
         
-        <section class="right-container quick-links">
+        <section class="right-container quick-links video">
             <h5>QUICK LINKS</h5>
 	        <div class="quick-link">
                 <a href="" class="secondary">QUICK LINK HERE</a>
@@ -77,7 +61,9 @@
             </div>
         </section>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+        
+        <script src="javascripts/youtube.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

@@ -435,26 +435,30 @@ h5 {
   margin-bottom: 1em;
 }
 /* line 474, ../sass/shiffman-core.scss */
-.article .line-charm:first-of-type {
+.article .line-charm.first {
   margin-top: 0px;
 }
 
-/* line 482, ../sass/shiffman-core.scss */
+/* line 480, ../sass/shiffman-core.scss */
 p {
   margin-bottom: 1.2em;
 }
 
-/* line 489, ../sass/shiffman-core.scss */
+/* line 487, ../sass/shiffman-core.scss */
 .right-container.quick-links {
   padding: 40px;
   background: #EE0058;
   width: 30%;
 }
-/* line 495, ../sass/shiffman-core.scss */
+/* line 493, ../sass/shiffman-core.scss */
+.right-container.quick-links.video {
+  background: #00CBFF;
+}
+/* line 497, ../sass/shiffman-core.scss */
 .right-container.quick-links .quick-link {
   margin-bottom: 15px;
 }
-/* line 499, ../sass/shiffman-core.scss */
+/* line 501, ../sass/shiffman-core.scss */
 .right-container.quick-links .quick-link a {
   font-family: "Lato", sans-serif;
   display: block;
@@ -467,14 +471,19 @@ p {
   text-decoration: none;
 }
 
+/* line 523, ../sass/shiffman-core.scss */
+.video-playlist p {
+  font-size: 14px;
+}
+
 @media only screen and (max-width: 1170px) {
-  /* line 520, ../sass/shiffman-core.scss */
+  /* line 533, ../sass/shiffman-core.scss */
   .medium-hide {
     display: none;
   }
 }
 @media only screen and (max-width: 700px) {
-  /* line 530, ../sass/shiffman-core.scss */
+  /* line 543, ../sass/shiffman-core.scss */
   .small-hide {
     display: none;
   }

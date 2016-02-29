@@ -471,10 +471,8 @@ h5 {
 		margin-bottom: 1em;
 	}
 
-	.line-charm:first-of-type {
-
+	.line-charm.first {
 		margin-top: 0px;
-
 	}
 
 }
@@ -491,6 +489,10 @@ p {
 	padding: 40px;
 	background: $red;
 	width: 30%;
+
+	&.video {
+		background: $blue;
+	}
 
 	.quick-link {
 
@@ -513,6 +515,17 @@ p {
 	}
 
 }
+
+//VIDEOS
+
+.video-playlist {
+
+	p {
+		font-size: 14px;
+	}
+
+}
+
 // HELPERS
 
 @media only screen and (max-width: $breakpoint-medium) {
