@@ -188,24 +188,26 @@ nav:hover {
 .logo h2 {
   font-family: 'Noto Serif', serif;
   font-size: 26px;
-  letter-spacing: 1.72;
+  letter-spacing: 1.72px;
+  margin-bottom: 0;
+  margin-top: 2px;
   font-weight: 700;
   display: inline-block;
 }
-/* line 160, ../sass/shiffman-core.scss */
+/* line 162, ../sass/shiffman-core.scss */
 .logo span.nav-btn {
   display: inline-block;
   vertical-align: top;
   margin-top: 11px;
   cursor: pointer;
 }
-/* line 167, ../sass/shiffman-core.scss */
+/* line 169, ../sass/shiffman-core.scss */
 .logo span.intro {
   display: block;
   font-size: 14px;
 }
 
-/* line 176, ../sass/shiffman-core.scss */
+/* line 178, ../sass/shiffman-core.scss */
 .line-charm {
   display: block;
   height: 5px;
@@ -214,20 +216,20 @@ nav:hover {
   margin: 60px 0 16px 0;
 }
 
-/* line 188, ../sass/shiffman-core.scss */
+/* line 190, ../sass/shiffman-core.scss */
 h1, h2, h3, h4, h5 {
   font-family: 'Lato', sans-serif;
   line-height: 1.45em;
 }
 
-/* line 195, ../sass/shiffman-core.scss */
+/* line 197, ../sass/shiffman-core.scss */
 h1 {
   font-family: "Noto Serif", serif;
   font-weight: 700;
   font-size: 28px;
 }
 
-/* line 203, ../sass/shiffman-core.scss */
+/* line 205, ../sass/shiffman-core.scss */
 h2 {
   font-size: 22px;
   font-weight: 700;
@@ -235,14 +237,14 @@ h2 {
   margin-top: 2em;
 }
 
-/* line 212, ../sass/shiffman-core.scss */
+/* line 214, ../sass/shiffman-core.scss */
 h3 {
   font-size: 14px;
   font-weight: 700;
   margin-bottom: 35px;
 }
 
-/* line 220, ../sass/shiffman-core.scss */
+/* line 222, ../sass/shiffman-core.scss */
 h5 {
   font-size: 12px;
   color: rgba(0, 0, 0, 0.5);
@@ -251,7 +253,7 @@ h5 {
   margin-bottom: 1em;
 }
 
-/* line 230, ../sass/shiffman-core.scss */
+/* line 232, ../sass/shiffman-core.scss */
 .body-link {
   font-family: 'Lato', sans-serif;
   font-size: 12px;
@@ -262,18 +264,18 @@ h5 {
   border-left: 3px solid #E9E9E9;
   text-decoration: none;
 }
-/* line 241, ../sass/shiffman-core.scss */
+/* line 243, ../sass/shiffman-core.scss */
 .body-link.primary {
   color: #EE0058;
   border-left: 3px solid #EE0058;
 }
-/* line 248, ../sass/shiffman-core.scss */
+/* line 250, ../sass/shiffman-core.scss */
 .body-link.secondary {
   color: #7D7D7D;
   border-left: 3px solid #7D7D7D;
 }
 
-/* line 259, ../sass/shiffman-core.scss */
+/* line 261, ../sass/shiffman-core.scss */
 .section-link {
   font-family: "Lato", sans-serif;
   font-size: 12px;
@@ -284,48 +286,48 @@ h5 {
   display: inline-block;
 }
 
-/* line 274, ../sass/shiffman-core.scss */
+/* line 276, ../sass/shiffman-core.scss */
 .latest-videos .video-entry {
   overflow: auto;
   margin-bottom: 35px;
 }
-/* line 281, ../sass/shiffman-core.scss */
+/* line 283, ../sass/shiffman-core.scss */
 .latest-videos .thumbnail {
   border-radius: 3px;
 }
-/* line 285, ../sass/shiffman-core.scss */
+/* line 287, ../sass/shiffman-core.scss */
 .latest-videos .thumbnail img {
   width: 100%;
 }
-/* line 291, ../sass/shiffman-core.scss */
+/* line 293, ../sass/shiffman-core.scss */
 .latest-videos .col-left {
   width: 30%;
   float: left;
   padding: 0 7px;
 }
-/* line 299, ../sass/shiffman-core.scss */
+/* line 301, ../sass/shiffman-core.scss */
 .latest-videos .col-right {
   width: 70%;
   float: left;
   padding: 0 7px;
 }
-/* line 307, ../sass/shiffman-core.scss */
+/* line 309, ../sass/shiffman-core.scss */
 .latest-videos p {
   font-size: 14px;
   margin-bottom: 25px;
 }
 
-/* line 321, ../sass/shiffman-core.scss */
+/* line 323, ../sass/shiffman-core.scss */
 .resources .link p {
   display: none;
 }
 
-/* line 331, ../sass/shiffman-core.scss */
+/* line 333, ../sass/shiffman-core.scss */
 .right-container {
   background: #E9E9E9;
   overflow: scroll;
 }
-/* line 336, ../sass/shiffman-core.scss */
+/* line 338, ../sass/shiffman-core.scss */
 .right-container .feature {
   padding: 0 110px 0px 40px;
   min-height: 250px;
@@ -333,12 +335,12 @@ h5 {
   position: relative;
 }
 @media only screen and (max-width: 1170px) {
-  /* line 336, ../sass/shiffman-core.scss */
+  /* line 338, ../sass/shiffman-core.scss */
   .right-container .feature {
     padding: 0 30px 0px 30px;
   }
 }
-/* line 349, ../sass/shiffman-core.scss */
+/* line 351, ../sass/shiffman-core.scss */
 .right-container .feature .content, .right-container .feature .book {
   position: relative;
   top: 50%;
@@ -346,24 +348,24 @@ h5 {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-/* line 359, ../sass/shiffman-core.scss */
+/* line 361, ../sass/shiffman-core.scss */
 .right-container .feature .book {
   position: absolute;
   right: 0;
 }
 
-/* line 370, ../sass/shiffman-core.scss */
+/* line 372, ../sass/shiffman-core.scss */
 .feature p, .feature a {
   font-family: "Lato", sans-serif;
 }
-/* line 374, ../sass/shiffman-core.scss */
+/* line 376, ../sass/shiffman-core.scss */
 .feature h1 {
   font-family: "Lato", sans-serif;
   letter-spacing: 1.87px;
   font-weight: 900;
   color: #ffffff;
 }
-/* line 381, ../sass/shiffman-core.scss */
+/* line 383, ../sass/shiffman-core.scss */
 .feature a.primary {
   display: inline-block;
   padding: 7px 30px;
@@ -376,7 +378,7 @@ h5 {
   text-decoration: none;
   margin-top: 25px;
 }
-/* line 394, ../sass/shiffman-core.scss */
+/* line 396, ../sass/shiffman-core.scss */
 .feature a.secondary {
   font-size: 12px;
   font-weight: 700;
@@ -385,74 +387,74 @@ h5 {
   display: block;
   color: #ffffff;
 }
-/* line 405, ../sass/shiffman-core.scss */
+/* line 407, ../sass/shiffman-core.scss */
 .feature.lp {
   background: #FFDE00;
   color: #212121;
 }
-/* line 410, ../sass/shiffman-core.scss */
+/* line 412, ../sass/shiffman-core.scss */
 .feature.lp a, .feature.lp p {
   color: #ED462F;
 }
-/* line 416, ../sass/shiffman-core.scss */
+/* line 418, ../sass/shiffman-core.scss */
 .feature.noc {
   background: #EE0058;
   color: #ffffff;
 }
-/* line 421, ../sass/shiffman-core.scss */
+/* line 423, ../sass/shiffman-core.scss */
 .feature.noc a.primary {
   color: #EE0058;
 }
-/* line 427, ../sass/shiffman-core.scss */
+/* line 429, ../sass/shiffman-core.scss */
 .feature.youtube {
   background: #00CBFF;
   color: #ffffff;
 }
-/* line 432, ../sass/shiffman-core.scss */
+/* line 434, ../sass/shiffman-core.scss */
 .feature.youtube a {
   color: #00CBFF;
 }
-/* line 438, ../sass/shiffman-core.scss */
+/* line 440, ../sass/shiffman-core.scss */
 .feature.livestream {
   background: #C036F3;
   color: #ffffff;
 }
-/* line 443, ../sass/shiffman-core.scss */
+/* line 445, ../sass/shiffman-core.scss */
 .feature.livestream a {
   color: #C036F3;
 }
 
-/* line 455, ../sass/shiffman-core.scss */
+/* line 457, ../sass/shiffman-core.scss */
 .right-container.books .feature {
   height: 50%;
   min-height: auto;
 }
 
-/* line 468, ../sass/shiffman-core.scss */
+/* line 470, ../sass/shiffman-core.scss */
 .article h1 {
   margin-bottom: 1em;
 }
-/* line 472, ../sass/shiffman-core.scss */
+/* line 474, ../sass/shiffman-core.scss */
 .article .line-charm:first-of-type {
   margin-top: 0px;
 }
 
-/* line 480, ../sass/shiffman-core.scss */
+/* line 482, ../sass/shiffman-core.scss */
 p {
   margin-bottom: 1.2em;
 }
 
-/* line 487, ../sass/shiffman-core.scss */
+/* line 489, ../sass/shiffman-core.scss */
 .right-container.quick-links {
   padding: 40px;
   background: #EE0058;
   width: 30%;
 }
-/* line 493, ../sass/shiffman-core.scss */
+/* line 495, ../sass/shiffman-core.scss */
 .right-container.quick-links .quick-link {
   margin-bottom: 15px;
 }
-/* line 497, ../sass/shiffman-core.scss */
+/* line 499, ../sass/shiffman-core.scss */
 .right-container.quick-links .quick-link a {
   font-family: "Lato", sans-serif;
   display: block;
@@ -466,13 +468,13 @@ p {
 }
 
 @media only screen and (max-width: 1170px) {
-  /* line 518, ../sass/shiffman-core.scss */
+  /* line 520, ../sass/shiffman-core.scss */
   .medium-hide {
     display: none;
   }
 }
 @media only screen and (max-width: 700px) {
-  /* line 528, ../sass/shiffman-core.scss */
+  /* line 530, ../sass/shiffman-core.scss */
   .small-hide {
     display: none;
   }
