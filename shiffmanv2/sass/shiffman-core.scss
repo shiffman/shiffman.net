@@ -1,0 +1,426 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "compass";
+@import "variables.scss";
+@import url(https://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,900,400italic);
+
+
+$lato: 'Lato', sans-serif;
+// MAIN WINDOW STRUCTURE
+
+
+
+* {
+
+	box-sizing: border-box;
+
+}
+
+body, html {
+
+	min-height: 100%;
+	font-family: 'Noto Serif', serif;
+	font-size: 16px;
+	line-height: 1.45em;
+	color: $black;
+
+}
+
+.left-container {
+
+	position: relative;
+	width: 60%;
+	padding: 145px;
+
+}
+
+.right-container {
+
+	position: fixed;
+	width: 40%;
+	right: 0;
+	top: 0;
+	min-height: 100%;
+
+}
+
+// NAV
+
+nav {
+
+	position: fixed;
+	top: 0;
+	left: -280px;
+	width: 300px;
+	min-height: 100%;
+	z-index: 1;
+	padding: 25px;
+	transition: left 0.4s;
+	// Needs latest Compass, add '@import "compass"' to your scss
+	// Permalink - use to edit and share this gradient:
+	// http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+68,0+100
+	@include filter-gradient(#ffffff, #ffffff, horizontal); // IE6-9
+	@include background-image(linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%));
+
+
+	.nav-logo {
+
+		display: inline-block;
+		font-size: 16px;
+		letter-spacing: 1px;
+		line-height: 20px;
+		text-decoration: none;
+		font-weight: 700;
+		color: $black;
+
+	}
+
+	.nav-links {
+
+		li a {
+
+			font-family: $lato;
+			font-weight: 700;
+			font-size: 12px;
+			letter-spacing: 0.8px;
+			text-decoration: none;
+			color: $black;
+			transition: color 0.15s;
+
+			&:hover {
+
+				color: $red;
+
+			}
+
+			&:hover {
+
+				color: $red;
+
+			}
+
+		}
+
+	}
+
+	&:hover {
+
+		left: 0px;
+
+	}
+
+}
+
+.logo {
+
+	position: absolute;
+	left: 45px;
+	top: 45px;
+
+	.logo-set {
+		display: inline-block;
+		vertical-align: top;
+		margin-left: 7px;
+	}
+
+	h2 {
+		font-family: 'Noto Serif', serif;
+		font-size: 26px;
+		letter-spacing: 1.72;
+		font-weight: 700;
+		display: inline-block;
+	}
+
+	span.nav-btn {
+		display: inline-block;
+		vertical-align: top;
+		margin-top: 11px;
+	}
+
+	span.intro {
+
+		display: block;
+		font-size: 14px;
+
+	}
+
+}
+
+.line-charm {
+
+	display: block;
+	height: 5px;
+	width: 48px;
+	background: $light-grey;
+	margin: 60px 0 16px 0;
+
+}
+
+// TYPOGRAPHY
+
+h1, h2, h3, h4, h5 {
+
+	font-family: 'Lato', sans-serif;
+	line-height: 1.45em;
+
+}
+
+h1 {
+
+	font-size: 28px;
+
+}
+
+h2 {
+
+	font-size: 18px;
+	font-weight: 700;
+	margin-bottom: 0.5em;
+
+}
+
+h3 {
+
+	font-size: 14px;
+	font-weight: 700;
+	margin-bottom: 35px;
+
+}
+
+.body-link {
+
+	font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    display: inline-block;
+    padding: 3px 10px;
+    margin: 2px 10px 2px 0px;
+    border-left: 3px solid #E9E9E9;
+    text-decoration: none;
+
+    &.primary {
+
+    	color: $red;
+    	border-left: 3px solid $red;
+
+    }
+
+    &.secondary {
+
+    	color: $grey;
+    	border-left: 3px solid $grey;
+
+    }
+
+}
+
+//SHIFFMAN.NET SPECIFICS
+
+.section-link {
+
+	font-family: $lato;
+	font-size: 12px;
+	font-weight: 700;
+	color: $red;
+	text-decoration: none;
+	margin: 10px 0;
+	display: inline-block;
+
+}
+
+
+.latest-videos {
+
+	.video-entry {
+
+		overflow: auto;
+		margin-bottom: 35px;
+
+	}
+
+	.thumbnail {
+
+		border-radius: 3px;
+
+		img {
+			width: 100%;
+		}
+
+	}
+
+	.col-left {
+
+		width: 30%;
+		float: left;
+		padding: 0 7px;
+
+	}
+
+	.col-right {
+
+		width: 70%;
+		float: left;
+		padding: 0 7px;
+
+	}
+
+	p {
+
+		font-size: 14px;
+		margin-bottom: 25px;
+	
+	}
+
+}
+
+.resources {
+
+
+	.link {
+
+		p {
+			display: none;
+		}
+
+	}
+
+}
+
+//FEATURED SECTIONS
+
+.right-container {
+
+	background: $light-grey;
+	overflow: scroll;
+
+	.feature {
+
+		padding: 0 40px;
+		min-height: 250px;
+		height: 250px;
+		position: relative;
+
+		.content, .book {
+
+			position: relative;
+  			top: 50%;
+  			-webkit-transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+			transform: translateY(-50%);
+
+		}
+
+		.book {
+			position: absolute;
+			right: 0;
+		}
+
+	}
+
+}
+
+.feature {
+
+	p, a {
+		font-family: $lato;
+	}
+
+	h1 {
+		font-family: $lato;
+		letter-spacing: 1.87px;
+		font-weight: 900;
+		color: $white;
+	}
+
+	a {
+		display: inline-block;
+		padding: 7px 30px;
+		border-radius: 45px;
+		background: $white;
+		font-size: 12px;
+		font-weight: 900;
+		letter-spacing: 0.87px;
+		color: $black;
+		text-decoration: none;
+		margin-top: 25px;
+	}
+
+	&.lp {
+
+		background: $yellow;
+		color: $black;
+
+		a, p {
+			color: $orange;
+		}
+
+	}
+
+	&.noc {
+
+		background: $red;
+		color: $white;
+
+		a {
+			color: $red;
+		}
+
+	}
+
+	&.youtube {
+
+		background: $blue;
+		color: $white;
+
+		a {
+			color: $blue;
+		}
+
+	}
+
+	&.livestream {
+
+		background: $purple;
+		color: $white;
+
+		a {
+			color: $purple;
+		}
+
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
