@@ -24,6 +24,23 @@ function getPlaylists() {
 
 }
 
+function getPlaylistList(id) {
+
+	var playlistHtml = 'Videos will go here';
+
+	console.log('playlist Id '+id);
+	
+	$.get('https://www.googleapis.com/youtube/v3/playlistItems?key=AIzaSyADOKEHZag2UMG52bd7ApxDOssdzVo0j8I', {part: 'snippet', playlistId: id} )
+	.done(function(data){
+
+		console.log(data);
+
+	}, 'JSON');
+
+	return playlistHtml;
+
+}
+
 function populateData(data){
 
 	var playlists = data.items;
@@ -31,6 +48,8 @@ function populateData(data){
 	$.each(playlists, function(index, playlist){
 
 		snippet = playlist.snippet;
+
+		var playlistList = getPlaylistList(playlist.id);
 
 		var block = $(
 		'<div class="video-playlist">'+
@@ -41,8 +60,7 @@ function populateData(data){
             '<p>'+snippet.description+'</p>'+
             '<div class="video-list">'+
                 '<div class="video">'+
-                    '<img class="thumbnail" src=""/>'+
-                    '<span class="label"></span>'+
+                    playlistList+
                 '</div>'+
             '</div>'+
             '<a href="http://youtube.com/playlist?list='+playlist.id+'" target="_blank" class="body-link primary">GO TO PLAYLIST</a>'+

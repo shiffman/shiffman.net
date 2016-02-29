@@ -472,18 +472,22 @@ p {
 }
 
 /* line 523, ../sass/shiffman-core.scss */
+.video-playlist h3 {
+  text-transform: uppercase;
+}
+/* line 527, ../sass/shiffman-core.scss */
 .video-playlist p {
   font-size: 14px;
 }
 
 @media only screen and (max-width: 1170px) {
-  /* line 533, ../sass/shiffman-core.scss */
+  /* line 537, ../sass/shiffman-core.scss */
   .medium-hide {
     display: none;
   }
 }
 @media only screen and (max-width: 700px) {
-  /* line 543, ../sass/shiffman-core.scss */
+  /* line 547, ../sass/shiffman-core.scss */
   .small-hide {
     display: none;
   }
