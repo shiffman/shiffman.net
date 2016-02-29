@@ -217,6 +217,16 @@ h3 {
 
 }
 
+h5 {
+
+	font-size: 12px;
+	color: rgba(0,0,0,0.5);
+	text-transform: uppercase;
+	font-weight: 700;
+	margin-bottom: 1em;
+
+}
+
 .body-link {
 
 	font-family: 'Lato', sans-serif;
@@ -455,6 +465,10 @@ h3 {
 
 .article {
 
+	h1 {
+		margin-bottom: 1em;
+	}
+
 	.line-charm:first-of-type {
 
 		margin-top: 0px;
@@ -470,6 +484,33 @@ p {
 }
 
 
+.right-container.quick-links {
+
+	padding: 40px;
+	background: $red;
+	width: 30%;
+
+	.quick-link {
+
+		margin-bottom: 15px;
+
+		a {
+
+			font-family: $lato;
+			display: block;
+			padding: 10px 15px;
+			border-radius: 45px;
+			background: $white;
+			font-size: 12px;
+			font-weight: 600;
+			color: $black;
+			text-decoration: none;
+
+		}
+
+	}
+
+}
 // HELPERS
 
 @media only screen and (max-width: $breakpoint-medium) {
