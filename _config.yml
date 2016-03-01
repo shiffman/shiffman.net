@@ -1,4 +1,4 @@
-kramdown: rdiscount
+markdown: kramdown
 highlighter: pygments
 permalink: /:year/:month/:day/:title
 name: Daniel Shiffman
