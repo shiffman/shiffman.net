@@ -29,6 +29,7 @@ body, html {
 	font-size: 16px;
 	line-height: 1.45em;
 	color: $black;
+	-webkit-font-smoothing: antialiased;
 
 }
 
@@ -36,7 +37,16 @@ body, html {
 
 	position: relative;
 	width: 60%;
-	padding: 130px 140px;
+	padding: 100px 100px;
+	margin-left: 0;
+	opacity: 1;
+	transition: all 0.6s;
+
+	&.video-page, &.teaching, &.about {
+
+		width: 70%;
+
+	}
 
 	@media only screen and (max-width: $breakpoint-medium) {
 
@@ -47,7 +57,14 @@ body, html {
 	@media only screen and (max-width: $breakpoint-small) {
 
 		padding: 100px 30px;
-		width: 100%;
+		width: 100% !important;
+
+	}
+
+	&.out {
+
+		opacity: 0;
+		margin-left: -20px;
 
 	}
 }
@@ -60,11 +77,20 @@ body, html {
 	top: 0;
 	min-height: 600px;
 	height: 100%;
+	transition: all 0.6s;
+	opacity: 1;
 
 	@media only screen and (max-width: $breakpoint-small) {
 
 		width: 300px;
 		right: -300px;
+
+	}
+
+	&.out {
+
+		right: -5%;
+		opacity: 0;
 
 	}
 
@@ -82,6 +108,10 @@ nav {
 	z-index: 1;
 	padding: 25px;
 	transition: left 0.4s;
+
+	&.moving {
+		left: -230px !important;
+	}
 	// Needs latest Compass, add '@import "compass"' to your scss
 	// Permalink - use to edit and share this gradient:
 	// http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+68,0+100
@@ -181,7 +211,7 @@ nav {
 	height: 5px;
 	width: 48px;
 	background: $light-grey;
-	margin: 60px 0 16px 0;
+	margin: 60px 0 20px 0;
 
 }
 
@@ -207,7 +237,6 @@ h2 {
 	font-size: 22px;
 	font-weight: 700;
 	margin-bottom: 0.5em;
-	margin-top: 2em;
 
 }
 
@@ -216,6 +245,7 @@ h3 {
 	font-size: 14px;
 	font-weight: 700;
 	margin-bottom: 35px;
+	letter-spacing: 0.67px;
 
 }
 
@@ -229,28 +259,55 @@ h5 {
 
 }
 
+p {
+
+	a {
+		color: $black;
+		border-bottom: 2px solid #f1f1f1;
+		text-decoration: none;
+		transition: all 0.2s;
+		&:hover {
+			border-bottom: 2px solid $black;
+		}
+	}
+
+}
+
 .body-link {
 
 	font-family: 'Lato', sans-serif;
     font-size: 12px;
     font-weight: 700;
     display: inline-block;
-    padding: 3px 10px;
-    margin: 2px 10px 2px 0px;
-    border-left: 3px solid #E9E9E9;
+    padding: 2px 7px;
+    margin: 5px 20px 5px 0px;
+    border-left: 2px solid #E9E9E9;
     text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+    border-bottom: 2px solid $white;
+    transition: all 0.3s;
 
     &.primary {
 
     	color: $red;
-    	border-left: 3px solid $red;
+    	border-left: 2px solid $red;
+
+    	&:hover {
+	    	
+	    	border-bottom: 2px solid $red;
+	    }
 
     }
 
     &.secondary {
 
-    	color: $grey;
-    	border-left: 3px solid $grey;
+    	color: $black;
+    	border-left: 2px solid $black;
+
+    	&:hover {
+	    	
+	    	border-bottom: 2px solid $black;
+	    }
 
     }
 
@@ -276,7 +333,13 @@ h5 {
 	.video-entry {
 
 		overflow: auto;
-		margin-bottom: 35px;
+		margin-bottom: 40px;
+	    border-bottom: 1px solid #f1f1f1;
+	    padding-bottom: 30px;
+
+		h2 {
+			margin-top: 0px;
+		}
 
 	}
 
@@ -294,7 +357,7 @@ h5 {
 
 		width: 30%;
 		float: left;
-		padding: 0 7px;
+		padding: 0 7px 0 0;
 
 	}
 
@@ -469,19 +532,37 @@ h5 {
 
 	h1 {
 		margin-bottom: 1em;
+
+		&.no-btm {
+			margin-bottom: 0px;
+		}
 	}
 
 	.line-charm.first {
 		margin-top: 0px;
 	}
 
+	p {
+
+		line-height: 1.7em;
+		margin-bottom: 1.2em;
+
+	}
+
+	img {
+
+		border-radius: 3px;
+		margin-bottom: 30px;
+
+		&.img-responsive {
+			width: 100%;
+		}
+
+	}
+
 }
 
-p {
 
-	margin-bottom: 1.2em;
-
-}
 
 
 .right-container.quick-links {
@@ -490,25 +571,59 @@ p {
 	background: $red;
 	width: 30%;
 
-	&.video {
-		background: $blue;
-	}
-
 	.quick-link {
 
 		margin-bottom: 15px;
 
 		a {
 
-			font-family: $lato;
-			display: block;
-			padding: 10px 15px;
-			border-radius: 45px;
-			background: $white;
-			font-size: 12px;
-			font-weight: 600;
-			color: $black;
-			text-decoration: none;
+			font-family: "Lato", sans-serif;
+		    display: block;
+		    padding: 10px 15px;
+		    border-radius: 45px;
+		    text-transform: uppercase;
+		    line-height: 18px;
+		    background: #C7004A;
+		    font-size: 12px;
+		    font-weight: 600;
+		    color: #FFFAFC;
+		    text-decoration: none;
+		    transition: all 0.25s;
+
+		    &:hover {
+
+		    	background: $white;
+		    	color: $red;
+
+		    }
+
+		}
+
+	}
+
+	&.video {
+		background: $blue;
+
+		.quick-link a {
+
+			&.primary {
+
+				background: $white;
+				color: $blue;
+
+			}
+			&.secondary {
+
+				background: #0098BF;
+				
+			}
+
+			&:hover {
+
+				color: $blue;
+				background: $white;
+
+			}
 
 		}
 
@@ -520,12 +635,107 @@ p {
 
 .video-playlist {
 
-	h3 {
-		text-transform: uppercase;
+	.playlist-header {
+
+		overflow: auto;
+
+		h3 {
+			text-transform: uppercase;
+			margin-bottom: 0px;
+			float: left;
+		}
+
+		a.toplaylist {
+			float: right;
+			color: $blue;
+			font-weight: 400;
+			h3 {
+
+				font-size: 12px;
+				
+			}
+		}
+		
 	}
 
+
 	p {
-		font-size: 14px;
+		font-size: 12px;
+		color: #8C8C8C;
+		overflow: hidden;
+	    white-space: nowrap;
+	    text-overflow: ellipsis;
+	    width: 100%;
+		max-height: 40px;
+		margin-bottom: 20px;
+	}
+
+	.video-list {
+		margin-top: 30px;
+	}
+
+	a.video {
+
+		display: inline-block;
+		width: 25%;
+		height: auto;
+		cursor: pointer;
+		color: $black;
+		text-decoration: none;
+		vertical-align: top;
+		padding: 0 7px;
+		height: 200px;
+		position: relative;
+
+		.watch-button {
+			//position: absolute;
+			font-size: 10px;
+			font-family: $lato;
+			font-weight: 600;
+			padding: 0 10px;
+			//bottom: 10px;
+			//left: 16px;
+			color: $blue;
+			opacity: 0;
+			transition: opacity 0.2s;
+		}
+
+		&:hover {
+
+			.watch-button {
+
+				opacity: 1;
+
+			}
+
+		}
+
+		@media only screen and (max-width: $breakpoint-medium) {
+
+			width: 33%;
+
+		}
+
+		@media only screen and (max-width: $breakpoint-small) {
+
+			width: 50%;
+
+		}
+
+		img {
+			width: 100%;
+			border-radius: 2px;
+		}
+
+		span.video-label {
+
+			font-size: 12px;
+			display: block;
+			padding: 10px;
+			line-height: 1.45em;
+
+		}
+
 	}
 
 }

@@ -33,14 +33,17 @@
         	</ul>
         </nav>
 
-        <section class="left-container">
+        <section class="left-container out">
             <div class="logo">
                 <span class="nav-btn"><img src="images/nav-btn.svg"/></span>
             </div>
         	<div class="content-wrapper article">
-                <span class="line-charm"></span>
-                <h1>Books</h1>
+
+                <span class="line-charm first"></span>
+                <h1 class="no-btm">Books</h1>
                 <p>Daniel is the author of 2 books</p>
+
+                <span class="line-charm"></span>
                 <h2>Learning Processing</h2>
                 <p>
                     The free, open-source Processing programming language environment was created at MIT for people who want to develop images, animation, and sound. Based on the ubiquitous Java, it provides an alternative to daunting languages and expensive proprietary software. 
@@ -51,7 +54,9 @@
                 <p>
                     The author teaches computer graphics at NYU's Tisch School of the Arts, and his book has been developed with a supportive learning experience at its core. From algorithms and data mining to rendering and debugging, it teaches object-oriented programming from the ground up within the fascinating context of interactive visual media.
                 </p>
-                <a class="body-link primary">LINK</a>
+                <a href="http://learningprocessing.com" target="_blank" class="body-link primary">Learning Processing Website</a>
+
+                <span class="line-charm"></span>
                 <h2>Nature of Code</h2>
                 <p>
                    How can we capture the unpredictable evolutionary and emergent properties of nature in software? How can understanding the mathematical principles behind our physical world help us to create digital worlds? 
@@ -62,35 +67,38 @@
                 <p>
                    The book's examples are written in Processing, an open-source language and development environment built on top of the Java programming language. On the book's website (http://www.natureofcode.com), the examples run in the browser via Processing's JavaScript mode.
                 </p>
-                <a class="body-link primary">LINK</a>
+                 <a href="http://natureofcode.com" target="_blank" class="body-link primary">Nature of Code Website</a>
             </div>
         </section>
         
-        <section class="right-container books">
+        <section class="right-container books out">
 	        <div class="feature lp">
 	        	<div class="content">
 	        		<h1>LEARNING PROCESSING</h1>
 	        		<p>Take your first step and find a friend in Code</p>
-                    <a href="" class="secondary">CODE ON GITHUB</a>
-                    <a href="" class="secondary">VISIT WEBSITE</a>
-	        		<a href="" class="primary">GET IT ON AMAZON</a>
+                    <br>
+                    <a href="https://github.com/shiffman/LearningProcessing" target="_blank" class="secondary">CODE ON GITHUB</a>
+                    <a href="http://learningprocessing.com/" target="_blank" class="secondary">VISIT WEBSITE</a>
+	        		<a href="http://www.amazon.com/gp/product/0123736021/ref=as_li_ss_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=0123736021&linkCode=as2&tag=shiffman-20" target="_blank" class="primary">GET THE BOOK</a>
 	        	</div>
 	        	<img class="book medium-hide" src="images/book-lp.png" width="131px"/>
 	        </div>
             <div class="feature noc">
                 <div class="content">
                     <h1>NATURE OF CODE</h1>
-                    <p>Take your first step and find a friend in Code</p>
-                    <a href="" class="secondary">SOURCE CODE ON GITHUB</a>
-                    <a href="" class="secondary">VISIT WEBSITE</a>
-                    <a href="" class="secondary">THIS BOOK WAS CREATED WITH THE MAGIC BOOK PROJECT</a>
-                    <a href="" class="primary">VIEW SITE</a>
+                    <p>Create natural systems in Code</p>
+                    <br>
+                    <a href="https://github.com/shiffman/The-Nature-of-Code-Examples" target="_blank" class="secondary">SOURCE CODE ON GITHUB</a>
+                    <a href="http://natureofcode.com/" target="_blank" class="secondary">VISIT WEBSITE</a>
+                    <a href="https://github.com/runemadsen/Magic-Book-Project" target="_blank" class="secondary">THIS BOOK WAS CREATED WITH THE MAGIC BOOK PROJECT</a>
+                    <a href="http://www.amazon.com/gp/product/0985930802/ref=as_li_ss_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=0985930802&linkCode=as2&tag=shiffman-20" target="_blank" class="primary">GET THE BOOK</a>
                 </div>
                 <img class="book medium-hide" src="images/book-noc.png" width="131px"/>
             </div>
         </section>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+        <script src="javascripts/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

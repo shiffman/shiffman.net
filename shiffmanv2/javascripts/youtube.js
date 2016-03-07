@@ -24,20 +24,12 @@ function getPlaylists() {
 
 }
 
-function getPlaylistList(id) {
+var playlistVideos;
 
-	var playlistHtml = 'Videos will go here';
+function returnHtml(html) {
 
-	console.log('playlist Id '+id);
-	
-	$.get('https://www.googleapis.com/youtube/v3/playlistItems?key=AIzaSyADOKEHZag2UMG52bd7ApxDOssdzVo0j8I', {part: 'snippet', playlistId: id} )
-	.done(function(data){
-
-		console.log(data);
-
-	}, 'JSON');
-
-	return playlistHtml;
+	playlistVideos = html;
+	console.log(playlistVideos);
 
 }
 
@@ -47,27 +39,58 @@ function populateData(data){
 
 	$.each(playlists, function(index, playlist){
 
-		snippet = playlist.snippet;
+		var snippet = playlist.snippet;
 
-		var playlistList = getPlaylistList(playlist.id);
+		$.get('https://www.googleapis.com/youtube/v3/playlistItems?key=AIzaSyADOKEHZag2UMG52bd7ApxDOssdzVo0j8I', {part: 'snippet', playlistId: playlist.id} )
+		.done(function(data){
 
-		var block = $(
-		'<div class="video-playlist">'+
-            '<span class="line-charm"></span>'+
-            '<div class="playlist-header">'+
-                '<h3>'+snippet.title+'</h3>'+
-            '</div>'+
-            '<p>'+snippet.description+'</p>'+
-            '<div class="video-list">'+
-                '<div class="video">'+
-                    playlistList+
-                '</div>'+
-            '</div>'+
-            '<a href="http://youtube.com/playlist?list='+playlist.id+'" target="_blank" class="body-link primary">GO TO PLAYLIST</a>'+
-        '</div>'
-		);
-		
-		$('#video-list').append(block);
+			var playlistHtml = '';
+
+			$.each(data.items, function(index, item){
+
+				if(index == 4) {
+				
+					return false
+				
+				} else {
+				
+					var vidSnip = item.snippet;
+					var html = '<a class="video" href="http://youtube.com/video/'+vidSnip.resourceId.videoId+'" target="_blank">'+
+			                    	'<div class="thumbnail"><img src="'+vidSnip.thumbnails.medium.url+'" /></div>'+
+			                    	'<span class="video-label">'+vidSnip.title+'</span>'+
+			                    	'<span class="watch-button">WATCH VIDEO</span>'
+			                	'</a>';
+					
+					playlistHtml = playlistHtml + html;
+					
+				}
+
+			});
+			
+			buildBlock(playlistHtml);
+
+		}, 'JSON');
+
+		function buildBlock(playlistList) {
+
+			var block = $(
+			'<div class="video-playlist">'+
+	            '<span class="line-charm"></span>'+
+	            '<div class="playlist-header">'+
+	                '<h3>'+snippet.title+'</h3>'+
+	                '<a href="http://youtube.com/playlist?list='+playlist.id+'" target="_blank" class="toplaylist"><h3>GO TO PLAYLIST</h3></a>'+
+	            '</div>'+
+	            '<p>'+snippet.description+'</p>'+
+	            '<div class="video-list">'+
+	                playlistList+
+	            '</div>'+
+	        '</div>'
+			);
+			
+			$('#video-list').append(block);
+			
+		}
+
 	
 	});
 
