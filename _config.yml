@@ -1,5 +1,5 @@
-markdown: rdiscount
-highlighter: pygments
+markdown: kramdown
+highlighter: rouge
 permalink: /:year/:month/:day/:title
 name: Daniel Shiffman
 url: http://shiffman.net
