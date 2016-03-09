@@ -6,7 +6,7 @@ layout: page
 
 I originally taught this course (2007-2008) in Java.  The [old notes can be found here](http://shiffman.net/teaching/a2z_2008/).  I'm now teaching a new version of this course using JavaScript and using [p5.js](http://p5js.org).  
 
-Here is [the current syllabus](https://github.com/shiffman/Programming-from-A-to-Z-F15) (2015) and [course website]() which includes all notes and examples. The notes below are an archive from the 2014.
+Here is [the current syllabus](https://github.com/shiffman/Programming-from-A-to-Z-F15) (2015) and [course website](http://shiffman.github.io/A2Z-F15/) which includes all notes and examples. The notes below are an archive from the 2014.
 
 # 2014 Archive (7 week course)
 * [2014 syllabus](https://github.com/shiffman/Programming-from-A-to-Z-F14)
