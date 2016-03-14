@@ -3,18 +3,16 @@ layout: default
 ---
 
 <section class="left-container about out">
-    <div class="logo">
-        <span class="nav-btn"><img src="images/nav-btn.svg"/></span>
+    <div class="logo-set">
+      <h2>Blog</h2>
+      <span class="intro">Blog description</span>
     </div>
     <div class="content-wrapper article">
-        <span class="line-charm first"></span>
-        <h1>Blog</h1>
-
         {% for post in site.posts %}
             <article class="article-list">
                 <span class="line-charm"></span>
                 <p class="date">{{ post.date | date: "%b %d, %Y" }}</p>
-                <h2><a class="fun-link" href="{{ post.url }}/">{{ post.title }}</a></h2>
+                <h1><a class="fun-link" href="{{ post.url }}/">{{ post.title }}</a></h1>
                 
                 {{ content }}
                 

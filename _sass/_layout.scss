@@ -26,15 +26,15 @@ body, html {
 .left-container {
 
     position: relative;
-    width: 60%;
-    padding: 100px 100px;
+    width: 65%;
+    padding: 70px 65px 33px 130px;
     margin-left: 0;
     opacity: 1;
     transition: all 0.6s;
 
     &.video-page, &.teaching, &.about {
 
-        width: 70%;
+        width: 60%;
 
     }
 
@@ -62,7 +62,7 @@ body, html {
 .right-container {
 
     position: fixed;
-    width: 40%;
+    width: 35%;
     right: 0;
     top: 0;
     min-height: 600px;
@@ -102,11 +102,10 @@ nav {
     &.moving {
         left: -230px !important;
     }
-    // Needs latest Compass, add '@import "compass"' to your scss
-    // Permalink - use to edit and share this gradient:
-    // http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+68,0+100
-    //@include filter-gradient(#ffffff, #ffffff, horizontal); // IE6-9
-    //@include background-image(linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%));
+    background: -moz-linear-gradient(left,  rgba(255,255,255,1) 0%, rgba(255,255,255,1) 48%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 48%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 48%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
 
 
     .nav-logo {
@@ -163,22 +162,6 @@ nav {
     left: 45px;
     top: 30px;
 
-    .logo-set {
-        display: inline-block;
-        vertical-align: top;
-        margin-left: 7px;
-    }
-
-    h2 {
-        font-family: 'Noto Serif', serif;
-        font-size: 26px;
-        letter-spacing: 1.72px;
-        margin-bottom: 0;
-        margin-top: 2px;
-        font-weight: 700;
-        display: inline-block;
-    }
-
     span.nav-btn {
         display: inline-block;
         vertical-align: top;
@@ -186,14 +169,31 @@ nav {
         cursor: pointer;
     }
 
-    span.intro {
-
-        display: block;
-        font-size: 14px;
-
-    }
-
 }
+
+.logo-set {
+        display: inline-block;
+        vertical-align: top;
+        
+        h2 {
+            font-family: 'Noto Serif', serif;
+            font-size: 32px;
+            margin-bottom: 0;
+            margin-top: 2px;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        span.intro {
+
+            display: block;
+            font-size: 16px;
+            margin-top: 0.5em;
+            line-height: 1.7em;
+
+        }
+}
+
 
 .line-charm {
 
@@ -201,7 +201,7 @@ nav {
     height: 5px;
     width: 48px;
     background: $light-grey;
-    margin: 60px 0 20px 0;
+    margin: 60px 0 10px 0;
 
 }
 
@@ -210,7 +210,7 @@ nav {
 h1, h2, h3, h4, h5 {
 
     font-family: 'Lato', sans-serif;
-    line-height: 1.45em;
+    line-height: 1.2em;
 
 }
 
@@ -218,7 +218,7 @@ h1 {
 
     font-family: $noto;
     font-weight: 700;
-    font-size: 28px;
+    font-size: 32px;
 
 }
 
@@ -232,10 +232,10 @@ h2 {
 
 h3 {
 
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 700;
     margin-bottom: 35px;
-    letter-spacing: 0.67px;
+    letter-spacing: 0.8px;
 
 }
 
@@ -269,35 +269,23 @@ p {
     font-size: 12px;
     font-weight: 700;
     display: inline-block;
-    padding: 2px 7px;
+    padding: 5px 0px;
     margin: 5px 20px 5px 0px;
-    border-left: 2px solid #E9E9E9;
     text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
     -webkit-font-smoothing: antialiased;
-    border-bottom: 2px solid $white;
     transition: all 0.3s;
 
     &.primary {
 
         color: $red;
-        border-left: 2px solid $red;
-
-        &:hover {
-            
-            border-bottom: 2px solid $red;
-        }
 
     }
 
     &.secondary {
 
         color: $black;
-        border-left: 2px solid $black;
-
-        &:hover {
-            
-            border-bottom: 2px solid $black;
-        }
 
     }
 
@@ -328,7 +316,7 @@ p {
         padding-bottom: 30px;
 
         h2 {
-            margin-top: 0px;
+            margin-top: 0.5em;
         }
 
     }
@@ -339,6 +327,7 @@ p {
 
         img {
             width: 100%;
+            border-radius: 2px;
         }
 
     }
@@ -347,7 +336,7 @@ p {
 
         width: 30%;
         float: left;
-        padding: 0 7px 0 0;
+        padding: 0 10px 0 0;
 
     }
 
@@ -355,14 +344,13 @@ p {
 
         width: 70%;
         float: left;
-        padding: 0 7px;
+        padding: 0 10px;
 
     }
 
     p {
 
         font-size: 14px;
-        margin-bottom: 25px;
     
     }
 
@@ -555,7 +543,7 @@ p {
 
         h1 {
             margin-bottom: 30px;
-            font-size: 42px;
+            font-size: 32px;
         }
 
         h3 {
@@ -756,6 +744,7 @@ p {
         img {
             width: 100%;
             border-radius: 2px;
+            margin-bottom: 0px;
         }
 
         span.video-label {
@@ -773,10 +762,10 @@ p {
 
 article.article-list {
 
-    h2 {
+    h1 {
 
-        font-size: 62px;
-        color: #928A8A;
+        font-size: 42px;
+        color: #999;
         font-weight: 700;
         margin-bottom: 0.5em;
         line-height: 1.3em;
@@ -814,6 +803,7 @@ article.article-list {
         text-transform: uppercase;
         margin: 0;
         font-family: $lato;
+        color: #999;
         font-size: 12px;
         font-weight: 600;
     }
