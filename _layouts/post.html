@@ -15,8 +15,16 @@ layout: default
     </div>
 </section>
         
-<section class="right-container article-links out">
-
+<section class="right-container quick-links out">
+    <h5>LATEST POSTS</h5>
+	{% for post in site.posts limit:25 %}
+	    <div class="quick-link">
+	        <a href="{{ post.url }}" class="secondary">{{ post.title }}</a>
+	    </div>
+    {% endfor %}
+    <div class="quick-link">
+        <a href="/blog.html" class="secondary">SEE ALL</a>
+    </div>
 </section>
 
 <script src="/js/prism.js"></script>

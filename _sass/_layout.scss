@@ -27,7 +27,7 @@ body, html {
 .left-container {
 
     position: relative;
-    width: 65%;
+    width: 70%;
     padding: 100px 130px 33px 130px;
     margin-left: 0;
     opacity: 1;
@@ -37,9 +37,7 @@ body, html {
     -webkit-overflow-scrolling: touch;
 
     &.video-page, &.teaching, &.about {
-
         width: 70%;
-
     }
 
     &.home {
@@ -47,16 +45,12 @@ body, html {
     }
 
     @media only screen and (max-width: $breakpoint-medium) {
-
         padding: 130px 80px;
-
     }
 
     @media only screen and (max-width: $breakpoint-small) {
-
         padding: 100px 30px !important;
         width: 100% !important;
-
     }
 
     &.out {
@@ -577,7 +571,7 @@ p {
     a.secondary {
 
         font-size: 12px;
-        font-weight: 700;
+        font-weight: 900;
         letter-spacing: 0.87px;
         text-decoration: none;
         display: block;
@@ -669,10 +663,21 @@ p {
     .right-container.books {
 
         .feature {
-
             height: 50%;
             min-height: auto;
+            overflow: hidden;
+            &.lp {
 
+                background: $yellow url('../images/highlight.png') no-repeat;
+                background-position: center right;
+
+            }
+            &.noc {
+
+                background: $red url('../images/highlight.png') no-repeat;
+                background-position: center right;
+
+            }
         }
 
     }
