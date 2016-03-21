@@ -2,7 +2,7 @@ $(document).ready(function(){
 
 	$('.left-container, .right-container').removeClass('out');
 
-	$('.nav-links a').click(function(e){
+	$('.nav-links a, .nav-logo').click(function(e){
 
 		e.preventDefault();
 
@@ -27,6 +27,18 @@ $(document).ready(function(){
 		
 		$(this).removeClass('red blue yellow purple')
 		$(this).addClass(colour);
+
+	});
+
+	$('.mobile-quick-links').click(function(){
+
+		$('.right-container').addClass('in');
+
+	});
+
+	$('.left-container').click(function(){
+
+		$('.right-container').removeClass('in');
 
 	});
 

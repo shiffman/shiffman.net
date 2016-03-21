@@ -14,12 +14,13 @@ $noto: 'Noto Serif', serif;
 
 body, html {
 
-    min-height: 100%;
+    height: 100%;
     font-family: 'Noto Serif', serif;
     font-size: 16px;
     line-height: 1.45em;
     color: $black;
     -webkit-font-smoothing: antialiased;
+    overflow: hidden;
 
 }
 
@@ -27,15 +28,22 @@ body, html {
 
     position: relative;
     width: 65%;
-    padding: 70px 65px 33px 130px;
+    padding: 70px 130px 33px 130px;
     margin-left: 0;
     opacity: 1;
     transition: all 0.6s;
+    height: 100%;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
 
     &.video-page, &.teaching, &.about {
 
-        width: 60%;
+        width: 70%;
 
+    }
+
+    &.home {
+        padding: 119px 65px 33px 200px;
     }
 
     @media only screen and (max-width: $breakpoint-medium) {
@@ -46,7 +54,7 @@ body, html {
 
     @media only screen and (max-width: $breakpoint-small) {
 
-        padding: 100px 30px;
+        padding: 100px 30px !important;
         width: 100% !important;
 
     }
@@ -70,12 +78,6 @@ body, html {
     transition: all 0.6s;
     opacity: 1;
 
-    @media only screen and (max-width: $breakpoint-small) {
-
-        width: 300px;
-        right: -300px;
-
-    }
 
     &.out {
 
@@ -84,6 +86,16 @@ body, html {
 
     }
 
+    @media only screen and (max-width: $breakpoint-small) {
+
+        width: 320px !important;
+        right: -315px;
+        z-index: 2;
+
+        &.in {
+            right: 0px;
+        }
+    }
 }
 
 // NAV
@@ -107,16 +119,29 @@ nav {
     background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 48%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
 
+    &.home {
+        
+        left: 0;
+        background: none;
+
+        @media only screen and (max-width: $breakpoint-small) {
+            left: -230px;
+        }
+    }
 
     .nav-logo {
 
         display: inline-block;
         font-size: 16px;
-        letter-spacing: 1px;
         line-height: 20px;
         text-decoration: none;
         font-weight: 700;
         color: $black;
+        transition: color 0.2s;
+        
+        &:hover {
+            color: $red;
+        }
 
     }
 
@@ -151,6 +176,30 @@ nav {
     &:hover {
 
         left: 0px;
+
+    }
+
+}
+
+.mobile-quick-links {
+
+    position: fixed;
+    right: 30px;
+    top: 30px;
+    background: $black;
+    color: $white;
+    font-family: $lato;
+    font-size: 10px;
+    letter-spacing: 1.6px;
+    font-weight: 600;
+    padding: 5px 15px;
+    display: none;
+    border-radius: 20px;
+    z-index: 1;
+
+    @media only screen and (max-width: $breakpoint-small) {
+
+        display: block;
 
     }
 
@@ -194,6 +243,30 @@ nav {
         }
 }
 
+.logo-set-home {
+
+    width: 150px;
+
+    h2 {    
+        font-family: 'Noto Serif', serif;
+        font-size: 22px;
+        margin-bottom: 0;
+        margin-top: 2px;
+        font-weight: 700;
+        display: inline-block;
+    }
+
+    span.intro {
+        display: block;
+        font-size: 12px;
+        color: $red;
+        line-height: 1.5em;
+        font-family: $lato;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+}
 
 .line-charm {
 
@@ -201,7 +274,7 @@ nav {
     height: 5px;
     width: 48px;
     background: $light-grey;
-    margin: 60px 0 10px 0;
+    margin: 60px 0 20px 0;
 
 }
 
@@ -226,7 +299,7 @@ h2 {
 
     font-size: 22px;
     font-weight: 700;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.4em;
 
 }
 
@@ -276,16 +349,29 @@ p {
     letter-spacing: 0.8px;
     -webkit-font-smoothing: antialiased;
     transition: all 0.3s;
+    border-bottom: 2px solid $white;
 
     &.primary {
 
         color: $red;
+
+        &:hover {
+
+            border-bottom: 2px solid $red;
+
+        }
 
     }
 
     &.secondary {
 
         color: $black;
+
+        &:hover {
+
+            border-bottom: 2px solid $black;
+
+        }
 
     }
 
@@ -338,6 +424,10 @@ p {
         float: left;
         padding: 0 10px 0 0;
 
+        @media only screen and (max-width: $breakpoint-medium) {
+            width: 100%;
+        }
+
     }
 
     .col-right {
@@ -345,6 +435,10 @@ p {
         width: 70%;
         float: left;
         padding: 0 10px;
+
+        @media only screen and (max-width: $breakpoint-medium) {
+            width: 100%;
+        }
 
     }
 
@@ -365,6 +459,48 @@ p {
             display: none;
         }
 
+    }
+
+}
+
+// HOME SUBSCRIBE
+
+.home-subscribe {
+
+    max-width: 400px;
+    overflow: auto;
+    margin: 25px 0;
+
+    input {
+        padding: 12px 15px;
+        border: none;
+        background: $white;
+        border: 1px solid $red;
+        border-radius: 20px 0 0 20px;
+        width: 100%;
+        font-family: $lato;
+        font-size: 13px;
+        font-weight: 600;
+        display: inline-block;
+        width: 70%;
+        min-width: 200px;
+        float: left;
+    }
+
+    .email-submit {
+        display: inline-block;
+        padding: 10px 15px 9px 15px;
+        background: $red;
+        border-radius: 0 20px 20px 0;
+        color: $white;
+        font-family: $lato;
+        font-size: 12px;
+        font-weight: 900;
+        text-decoration: none;
+        letter-spacing: 0.8px;
+        width: 30%;
+        min-width: 120px;
+        float: left;
     }
 
 }
@@ -402,6 +538,9 @@ p {
         .book {
             position: absolute;
             right: 0;
+            @media only screen and (max-width: $breakpoint-medium) {
+                display: none;
+            }
         }
 
     }
@@ -417,6 +556,7 @@ p {
     h1 {
         font-family: $lato;
         letter-spacing: 1.87px;
+        font-size: 28px;
         font-weight: 900;
         color: $white;
     }
@@ -480,11 +620,44 @@ p {
 
     &.livestream {
 
+        padding: 0 40px 0px 40px;
         background: $purple;
         color: $white;
 
+        input {
+            padding: 12px 15px;
+            border: none;
+            background: $white;
+            border-radius: 20px;
+            width: 100%;
+            font-family: $lato;
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 25px;
+        }
+
         a {
             color: $purple;
+        }
+
+        .form-group {
+            
+            position: relative;
+            max-width: 300px;
+
+            .email-btn {
+
+                position: absolute;
+                z-index: 1;
+                right: 15px;
+                top: 33px;
+                font-size: 12px;
+                font-weight: 900;
+                text-decoration: none;
+                display: block;
+                letter-spacing: 1px;
+
+            }
         }
 
     }
@@ -597,7 +770,7 @@ p {
         a {
 
             font-family: "Lato", sans-serif;
-            display: block;
+            display: inline-block;
             padding: 10px 15px;
             border-radius: 45px;
             text-transform: uppercase;
@@ -608,6 +781,7 @@ p {
             color: #FFFAFC;
             text-decoration: none;
             transition: all 0.25s;
+            width: 100%;
 
             &:hover {
 
@@ -616,6 +790,13 @@ p {
 
             }
 
+        }
+
+        img {
+            height: 15px;
+            display: inline-block;
+            margin-right: 10px;
+            vertical-align: middle;
         }
 
     }
@@ -628,18 +809,18 @@ p {
             &.primary {
 
                 background: $white;
-                color: $blue;
+                color: #18677B;
 
             }
             &.secondary {
 
-                background: #0098BF;
+                background: #00ADDA;
                 
             }
 
             &:hover {
 
-                color: $blue;
+                color: #18677B;
                 background: $white;
 
             }
@@ -658,39 +839,46 @@ p {
 
         overflow: auto;
 
+        h2 {
+            margin-bottom: 5px;
+            display: inline-block;
+            text-transform: capitalize;
+        }
+
         h3 {
-            text-transform: uppercase;
-            margin-bottom: 0px;
-            float: left;
+            margin: 0;
         }
 
         a.toplaylist {
-            float: right;
-            color: $blue;
-            font-weight: 400;
-            h3 {
 
-                font-size: 12px;
-                
+            color: $black;
+            transition: color 0.2s;
+
+            &:hover {
+                color: $red;
             }
+        }
+
+        img {
+            width: 7px;
+            margin: 0 0 0 5px;
         }
         
     }
 
 
     p {
-        font-size: 12px;
-        color: #8C8C8C;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
         width: 100%;
         max-height: 40px;
         margin-bottom: 20px;
+        margin-top: 0.4em;
     }
 
     .video-list {
-        margin-top: 30px;
+        margin-top: 25px;
     }
 
     a.video {
@@ -707,13 +895,10 @@ p {
         position: relative;
 
         .watch-button {
-            //position: absolute;
             font-size: 10px;
             font-family: $lato;
             font-weight: 600;
             padding: 0 10px;
-            //bottom: 10px;
-            //left: 16px;
             color: $blue;
             opacity: 0;
             transition: opacity 0.2s;
@@ -811,6 +996,10 @@ article.article-list {
 }
 
 // HELPERS
+
+.hide {
+    display: none !important;
+}
 
 @media only screen and (max-width: $breakpoint-medium) {
 
