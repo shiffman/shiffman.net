@@ -206,7 +206,6 @@ nav {
     top: 30px;
 
     span.nav-btn {
-        display: inline-block;
         vertical-align: top;
         margin-top: 11px;
         cursor: pointer;
@@ -581,7 +580,8 @@ p {
 
     &.lp {
 
-        background: $yellow;
+        background: $yellow url('../images/highlight.png') no-repeat;
+        background-position: center right;
         color: $black;
 
         a, p {
@@ -592,7 +592,8 @@ p {
 
     &.noc {
 
-        background: $red;
+        background: $red url('../images/highlight.png') no-repeat;
+        background-position: center right;
         color: $white;
 
         a.primary {
@@ -603,7 +604,8 @@ p {
 
     &.youtube {
 
-        background: $blue;
+        background: $blue url('../images/highlight.png') no-repeat;
+        background-position: center right;
         color: $white;
 
         a {
@@ -1033,6 +1035,10 @@ article.article-list {
     display: none !important;
 }
 
+.small-show {
+    display: none;
+}
+
 @media only screen and (max-width: $breakpoint-medium) {
 
     .medium-hide {
@@ -1049,6 +1055,10 @@ article.article-list {
 
         display: none;
 
+    }
+
+    .small-show {
+        display: block !important;
     }
 
 }
