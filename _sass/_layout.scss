@@ -27,7 +27,7 @@ body, html {
 .left-container {
 
     position: relative;
-    width: 70%;
+    width: 65%;
     padding: 100px 130px 33px 130px;
     margin-left: 0;
     opacity: 1;
@@ -36,7 +36,7 @@ body, html {
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
 
-    &.video-page, &.teaching, &.about {
+    &.video-page, &.teaching, &.about, &.blog {
         width: 70%;
     }
 
