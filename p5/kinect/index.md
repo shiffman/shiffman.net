@@ -1,7 +1,7 @@
 ---
 title: Getting Started with Kinect and Processing
 author: Daniel
-layout: page
+layout: post
 dsq_thread_id:
   - 
 pvc_views:

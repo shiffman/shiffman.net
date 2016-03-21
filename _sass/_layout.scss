@@ -28,7 +28,7 @@ body, html {
 
     position: relative;
     width: 65%;
-    padding: 70px 130px 33px 130px;
+    padding: 100px 130px 33px 130px;
     margin-left: 0;
     opacity: 1;
     transition: all 0.6s;
@@ -43,7 +43,7 @@ body, html {
     }
 
     &.home {
-        padding: 119px 65px 33px 200px;
+        padding: 112px 65px 33px 200px;
     }
 
     @media only screen and (max-width: $breakpoint-medium) {
@@ -73,7 +73,7 @@ body, html {
     width: 35%;
     right: 0;
     top: 0;
-    min-height: 600px;
+    min-height: 100%;
     height: 100%;
     transition: all 0.6s;
     opacity: 1;
@@ -258,7 +258,7 @@ nav {
 
     span.intro {
         display: block;
-        font-size: 12px;
+        font-size: 10px;
         color: $red;
         line-height: 1.5em;
         font-family: $lato;
@@ -342,7 +342,7 @@ p {
     font-size: 12px;
     font-weight: 700;
     display: inline-block;
-    padding: 5px 0px;
+    padding: 5px 0px 0 0;
     margin: 5px 20px 5px 0px;
     text-decoration: none;
     text-transform: uppercase;
@@ -489,7 +489,7 @@ p {
 
     .email-submit {
         display: inline-block;
-        padding: 10px 15px 9px 15px;
+        padding: 13px 15px 12px 15px;
         background: $red;
         border-radius: 0 20px 20px 0;
         color: $white;
@@ -516,7 +516,7 @@ p {
 
         padding: 0 110px 0px 40px;
         min-height: 250px;
-        height: 250px;
+        height: 33%;
         position: relative;
 
         @media only screen and (max-width: $breakpoint-medium) {
@@ -719,6 +719,10 @@ p {
             font-size: 32px;
         }
 
+        h2 {
+            margin-top: 1.5em;
+        }
+
         h3 {
             font-size: 18px;
             margin-bottom: 20px;
@@ -750,6 +754,29 @@ p {
             font-size: 12px;
             font-weight: 600;
 
+        }
+
+        ul {
+            margin-bottom: 0.5em;
+            margin-top: 1.2em;
+            padding-left: 30px;
+            margin-left: 15px;
+            border-left: 2px solid #f1f1f1;
+            li {
+                list-style-type: disc;
+                margin-bottom: 1em;
+                a {
+                    color: $black;
+                    text-decoration: none;
+                    border-bottom: 2px solid #f1f1f1;
+
+                    &:hover {
+                        
+                        border-bottom: 2px solid $black;
+
+                    }
+                }
+            }
         }
 
     }
