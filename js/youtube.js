@@ -72,6 +72,7 @@ function populateData(data){
 		}, 'JSON');
 
 		function buildBlock(playlistList) {
+			console.log(snippet.title);
 
 			var block = $(
 			'<div class="video-playlist">'+
