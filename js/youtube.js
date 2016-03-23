@@ -77,7 +77,7 @@ function populateData(data){
 			'<div class="video-playlist">'+
 	            '<span class="line-charm"></span>'+
 	            '<div class="playlist-header">'+
-	                '<a href="http://youtube.com/playlist?list='+playlist.id+'" class="toplaylist" target="_blank"><h2>'+snippet.title+'<img src="images/icon-arrow.svg"/></h2></a>'+
+	                '<a href="http://youtube.com/playlist?list='+playlist.id+'" class="toplaylist" target="_blank"><h2>'+snippet.title+'<img src="/images/icon-arrow.svg"/></h2></a>'+
 	            '</div>'+
 	            '<p>'+snippet.description+'</p>'+
 	            '<div class="video-list">'+
