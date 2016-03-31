@@ -394,8 +394,19 @@ p {
         border-bottom: 1px solid #f1f1f1;
         padding-bottom: 30px;
 
+        a {
+            display: inline-block;
+            text-decoration: none;
+            color: $black;
+            transition: all 0.2s;
+            &:hover {
+                color: $red;
+            }
+        }
+
         h2 {
             margin-top: 0.5em;
+            text-transform: capitalize;
         }
 
     }

@@ -33,16 +33,16 @@ function populateData(data){
 
 		var block = '<div class="video-entry row">'+
         				'<div class="col-left">'+
-        					'<div class="thumbnail"><img src="'+snippet.thumbnails.medium.url+'"/></div>'+
+        					'<a href="http://youtube.com/video/'+video.id.videoId+'" target="_blank"><div class="thumbnail"><img src="'+snippet.thumbnails.medium.url+'"/></div></a>'+
         				'</div>'+
         				'<div class="col-right">'+
         					'<div class="content">'+
-        						'<h2>'+snippet.title+'</h2>'+
+        						'<a href="http://youtube.com/video/'+video.id.videoId+'" target="_blank"><h2>'+snippet.title+'</h2></a>'+
         						'<p>'+
         							snippet.description+
         						'</p>'+
         						'<div class="actions">'+
-        							'<a href="http://youtube.com/video/'+video.id.videoId+'" class="body-link primary">Watch on Youtube</a>'+
+        							'<a href="http://youtube.com/video/'+video.id.videoId+'" target="_blank" class="body-link primary">Watch on Youtube</a>'+
         						'</div>'+
         					'</div>'+
         				'</div>'+
