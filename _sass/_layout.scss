@@ -14,13 +14,13 @@ $noto: 'Noto Serif', serif;
 
 body, html {
 
-    height: 100%;
+    //height: 100%;
     font-family: 'Noto Serif', serif;
     font-size: 16px;
     line-height: 1.45em;
     color: $black;
     -webkit-font-smoothing: antialiased;
-    overflow: hidden;
+    //overflow: hidden;
 
 }
 
@@ -28,12 +28,12 @@ body, html {
 
     position: relative;
     width: 65%;
-    padding: 100px 130px 33px 130px;
+    padding: 100px 130px 200px 130px;
     margin-left: 0;
     opacity: 1;
     transition: all 0.6s;
     height: 100%;
-    overflow: scroll;
+    //overflow: scroll;
     -webkit-overflow-scrolling: touch;
 
     &.video-page, &.teaching, &.about, &.blog {
@@ -41,7 +41,7 @@ body, html {
     }
 
     &.home {
-        padding: 112px 155px 33px 200px;
+        padding: 97px 100px 200px 200px;
     }
 
     @media only screen and (max-width: $breakpoint-medium) {
@@ -226,7 +226,7 @@ nav {
             display: inline-block;
         }
 
-        span.intro {
+        .intro {
 
             display: block;
             font-size: 16px;
@@ -329,7 +329,50 @@ p {
 
 }
 
-.body-link {
+a.btn {
+
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    display: inline-block;
+    padding: 10px 25px;
+    margin: 5px 20px 5px 0px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    -webkit-font-smoothing: antialiased;
+    transition: all 0.3s;
+    border-radius: 24px;
+
+    &.primary {
+
+        color: $white;
+        background: $red;
+
+        &:hover {
+
+            background: darken($red, 5%);
+
+        }
+
+    }
+
+    &.secondary {
+
+        color: $white;
+        background: $black;
+
+        &:hover {
+
+            background: darken($black, 5%);
+
+        }
+
+    }
+
+}
+
+a.body-link {
 
     font-family: 'Lato', sans-serif;
     font-size: 12px;
@@ -650,24 +693,36 @@ p {
         .form-group {
             
             position: relative;
-            max-width: 300px;
+            max-width: 320px;
 
             .email-btn {
 
                 position: absolute;
                 z-index: 1;
                 right: 15px;
-                top: 33px;
+                top: 35px;
                 font-size: 12px;
                 font-weight: 900;
+                color: $purple;
                 text-decoration: none;
                 display: block;
-                letter-spacing: 1px;
+                letter-spacing: 0.6px;
+                outline: none;
+                border: none;
+                background: none;
+                cursor: pointer;
 
             }
         }
 
     }
+
+}
+
+input:focus {
+
+    outline: none;
+    border: none;
 
 }
 
