@@ -1,5 +1,7 @@
 var apiKey 				= "AIzaSyADOKEHZag2UMG52bd7ApxDOssdzVo0j8I";
 var shiffmanChannelId 	= "UCvjgXvBlbQiydffZU7m1_aw";
+// Change playlist IDs Here
+var shiffmanPlaylists 	= "PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA,PLRqwX-V7Uu6bI1SlcCRfLH79HZrFAtBvX,PLRqwX-V7Uu6a-SQiI4RtIwuOrLJGnel0r,PLRqwX-V7Uu6ZMlWHdcy8hAGDy6IaoxUKf,PLRqwX-V7Uu6atTSxoRiVnSuOn6JHnq2yV,PLRqwX-V7Uu6YVljJvFRCyRM6mmF5wMPeE";
 
 $(document).ready(function(){
 
@@ -9,18 +11,18 @@ $(document).ready(function(){
 
 function getPlaylists() {
 
-	$.get('https://www.googleapis.com/youtube/v3/playlists?key=AIzaSyADOKEHZag2UMG52bd7ApxDOssdzVo0j8I', { part: 'snippet' , channelId: shiffmanChannelId })
-	.done(function(data){
+		$.get('https://www.googleapis.com/youtube/v3/playlists?key=AIzaSyADOKEHZag2UMG52bd7ApxDOssdzVo0j8I', { part: 'snippet' , id: shiffmanPlaylists })
+		.done(function(data){
 
-		console.log(data);
-		populateData(data);
+			console.log(data);
+			populateData(data);
 
-	}, 'JSON')
-	.error(function(){
+		}, 'JSON')
+		.error(function(){
 
-		alert('Ahh sorry we couldn\' theres a problem');
+			alert('Ahh sorry we couldn\' theres a problem');
 
-	});
+		});
 
 }
 
