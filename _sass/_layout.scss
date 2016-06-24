@@ -599,6 +599,14 @@ a.body-link {
                 display: none;
             }
         }
+        .rainbow {
+            position: absolute;
+            top: 30px;
+            right: -140px;
+            @media only screen and (max-width: $breakpoint-medium) {
+                display: none;
+            }
+        }
 
     }
 
