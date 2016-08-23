@@ -6,7 +6,7 @@ permalink: /learning/
 <section class="left-container teaching out">
     <div class="logo-set">
       <h2>Learning</h2>
-      <p class="intro">In addition to the many <a href="/videos/">video tutorials you can watch on YouTube</a>, here you'll find some additional written tutorials and resources.</p>
+      <p class="intro">In addition to the <a href="/videos/">video tutorials on YouTube</a>, here you'll find some additional written tutorials and resources.</p>
     </div>
     <div class="content-wrapper article">
         <!-- <span class="line-charm"></span>
@@ -31,9 +31,9 @@ permalink: /learning/
             <img src="/images/atoz.png" width="800">
             This course focuses on programming strategies and techniques behind procedural analysis and generation of text-based data. We'll explore topics ranging from evaluating text according to its statistical properties to the automated production of text with probabilistic methods to text visualization. Students will learn server-side and client-side JavaScript programming and develop projects that can be shared and interacted with online. There will be weekly homework assignments as well as a final project.
         </p>
-        <a href="http://shiffman.github.io/A2Z-F15/" class="body-link primary">Notes and examples from the course website</a>
-        <a href="http://shiffman.github.io/A2Z-F15/" class="body-link primary">Notes and examples from the course website 2</a>
-        
+        <a href="http://shiffman.github.io/A2Z-F16/" class="body-link primary">2016 course website</a>
+        <a href="http://shiffman.github.io/A2Z-F15/" class="body-link primary">2015 course website</a>
+
     </div>
 </section>
 
@@ -72,4 +72,16 @@ permalink: /learning/
     <div class="quick-link">
         <a href="https://github.com/shiffman/Most-Pixels-Ever-Processing" target="_blank" class="secondary">Most Pixels Ever</a>
     </div>
+
+    <br>
+    <h5>OLD BLOG POSTS</h5>
+  	{% for post in site.posts limit:25 %}
+  	  <div class="quick-link">
+  	      <a href="{{ post.url }}" class="secondary">{{ post.title }}</a>
+  	  </div>
+    {% endfor %}
+    <div class="quick-link">
+      <a href="/blog.html" class="secondary">SEE ALL</a>
+    </div>
+
 </section>

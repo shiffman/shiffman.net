@@ -3,7 +3,7 @@ title: Getting Started with Kinect and Processing
 author: Daniel
 layout: post
 dsq_thread_id:
-  - 
+  -
 pvc_views:
   - 149402s
 dsq_needs_sync:
@@ -11,11 +11,11 @@ dsq_needs_sync:
 
 ---
 
-<p><iframe src="https://player.vimeo.com/video/132727296" width="500" height="217" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <a href="https://vimeo.com/132727296"><br/>Open Kinect for Processing Demo</a> from <a href="https://vimeo.com/shiffman">shiffman</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/QmVNgdapJJM?list=PLRqwX-V7Uu6ZMlWHdcy8hAGDy6IaoxUKf" frameborder="0" allowfullscreen></iframe></p>
 
 # Kinect and Processing
 
-The Microsoft Kinect sensor is a peripheral device (designed for XBox and windows PCs) that functions much like a webcam.  However, in addition to providing an RGB image, it also provides a depth map. Meaning for every pixel seen by the sensor, the Kinect measures distance from the sensor.  This makes a variety of computer vision problems like background removal, blob detection, and more easy and fun! 
+The Microsoft Kinect sensor is a peripheral device (designed for XBox and windows PCs) that functions much like a webcam.  However, in addition to providing an RGB image, it also provides a depth map. Meaning for every pixel seen by the sensor, the Kinect measures distance from the sensor.  This makes a variety of computer vision problems like background removal, blob detection, and more easy and fun!
 
 The Kinect sensor itself only measures color and depth.  However, once that information is on your computer, lots more can be done like "skeleton" tracking (i.e. detecting a model of a person and tracking his/her movements).  To do skeleton tracking you'll need to use Thomas Lengling's windows-only [Kinect v2 processing libray](https://github.com/ThomasLengeling/KinectPV2).  However, if you're on a Mac and all you want is raw data from the Kinect, you are in luck!  This library uses  [libfreenect](https://github.com/OpenKinect/libfreenect) and [libfreenect2](https://github.com/OpenKinect/libfreenect2) open source drivers to access that data for Mac OS X ([windows support coming soon](https://github.com/shiffman/OpenKinect-for-Processing/issues/13)).
 
@@ -101,7 +101,7 @@ Once you’ve done this you can begin to access data from the kinect sensor.  Cu
 Let’s look at these one at a time.  If you want to use the Kinect just like a regular old webcam, you can access the video image as a [PImage](http://processing.org/reference/PImage.html)!
 
 {% highlight java %}
-PImage img = kinect.getVideoImage(); 
+PImage img = kinect.getVideoImage();
 image(img, 0, 0);
 {% endhighlight %}
 
@@ -188,7 +188,7 @@ There are four basic examples for both v1 and v2.
 
 ### Display RGB, IR, and Depth Images
 
-<iframe src="https://player.vimeo.com/video/132727296" width="500" height="217" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FBmxc4EyVjs?list=PLRqwX-V7Uu6ZMlWHdcy8hAGDy6IaoxUKf" frameborder="0" allowfullscreen></iframe>
 
 Code for v1:[RGBDepthTest](https://github.com/shiffman/OpenKinect-for-Processing/blob/master/OpenKinect-Processing/examples/Kinect_v1/RGBDepthTest/RGBDepthTest.pde)</p>
 
@@ -206,7 +206,7 @@ Code for v2:[MultiKinect2](https://github.com/shiffman/OpenKinect-for-Processing
 
 ### Point Cloud
 
-<iframe src="http://player.vimeo.com/video/18058700?title=0&amp;byline=0&amp;portrait=0&amp;color=ff9933" width="501" height="282" frameborder="0"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/E1eIg54clGo?list=PLRqwX-V7Uu6ZMlWHdcy8hAGDy6IaoxUKf" frameborder="0" allowfullscreen></iframe>
 
 Code for v1: [PointCloud](https://github.com/shiffman/OpenKinect-for-Processing/blob/master/OpenKinect-Processing/examples/Kinect_v1/PointCloud/PointCloud.pde)</p>
 
@@ -266,7 +266,7 @@ Finally, we can draw some points based on the depth values in meters:
 
 The real magic of the kinect lies in its computer vision capabilities.  With depth information, you can do all sorts of fun things like say: "the background is anything beyond 5 feet.  Ignore it!"  Without depth, background removal involves all sorts of painstaking pixel comparisons.  As a quick demonstration of this idea, here is a very basic example that compute the average xy location of any pixels in front of a given depth threshold.
 
-<iframe src="http://player.vimeo.com/video/18750684?title=0&amp;byline=0&amp;portrait=0&amp;color=ff9933" width="500" height="313" frameborder="0"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Kr4s5sLoROY?list=PLRqwX-V7Uu6ZMlWHdcy8hAGDy6IaoxUKf" frameborder="0" allowfullscreen></iframe>
 
 Source for v1: [AveragePointTracking](https://github.com/shiffman/OpenKinect-for-Processing/tree/master/OpenKinect-Processing/examples/Kinect_v1/AveragePointTracking)
 
@@ -304,9 +304,10 @@ if (count != 0) {
 
 
 ## What’s missing?
+
 * Everything is being tracked [via github issues](https://github.com/shiffman/OpenKinect-for-Processing/issues).
 
 ## FAQ
+
 1. What are there shadows in the depth image (v1)? [Kinect Shadow diagram](http://media.zero997.com/kinect_shadow.pdf)
 2. What is the range of depth that the kinect can see? (v1) ~0.7–6 meters or 2.3–20 feet.  Note you will get black pixels (or raw depth value of 2048) at both elements that are too far away and too close.
-
