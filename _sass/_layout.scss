@@ -71,7 +71,7 @@ body, html {
     height: 100%;
     transition: all 0.6s;
     opacity: 1;
-
+    overflow-x: hidden;
 
     &.out {
 
