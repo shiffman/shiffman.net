@@ -5,6 +5,7 @@
  * @author Lea Verou
  */
 
+code,
 code[class*="language-"],
 pre[class*="language-"] {
 	color: black;
@@ -136,4 +137,3 @@ pre[class*="language-"] {
 .token.entity {
 	cursor: help;
 }
-

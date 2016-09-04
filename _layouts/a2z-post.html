@@ -2,33 +2,23 @@
 layout: default
 ---
 
-<section class="left-container about out">
-    <div class="logo-set">
-      <h2>Week 1: Intro</h2>
-    </div>
-    <div class="content-wrapper article a2z">
-        <!-- <span class="line-charm first"></span> -->
-        <p>This site holds my notes and examples for the ITP fall 2015 course "Programming from A to Z." The syllabus and all other materials can be found on github.</p>
-        <a href="https://github.com/shiffman/A2Z-F15/blob/gh-pages/README.md" class="body-link primary">Syllabus</a>
-        <a href="https://github.com/shiffman/A2Z-F15/wiki" class="body-link primary">Homework wikis</a>
-        <a href="https://github.com/shiffman/A2Z-F15" class="body-link primary">All example source code</a>
-        <span class="line-charm"></span>
-        <h2>Notes</h2>
-        <a href="https://github.com/shiffman/A2Z-F15/blob/gh-pages/README.md" class="body-link primary">Syllabus</a>
-        <a href="/a2z-post" class="body-link primary">WEEK 1</a>
-    </div>
+<link rel="stylesheet" type="text/css" href="/css/prism.css">
+<link rel="stylesheet" type="text/css" href="/css/highlight.css">
+<script src="/js/blog.js"></script>
+<script src="/js/prism.js"></script>
+
+<section class="left-container out a2z">
+  <h1>Programming from A to Z</h1>
+  <p><br/><a href="/a2z/" class="body-link primary">home</a> <a href="https://github.com/shiffman/A2Z-F16/blob/gh-pages/README.md" class="body-link primary">syllabus</a></p>
+  <span class="line-charm first"></span>
+  <div class="content-wrapper article a2z">
+    {{ content }}
+  </div>
 </section>
 
 <section class="right-container quick-links out">
-    <h5>OTHER WEEKS</h5>
+    <h5>Tutorials</h5>
     <div class="quick-link">
-        <a href="" class="secondary">WEEK NO</a>
-        <a href="" class="secondary">WEEK NO</a>
-        <a href="" class="secondary">WEEK NO</a>
-        <a href="" class="secondary">WEEK NO</a>
-        <a href="" class="secondary">WEEK NO</a>
-        <a href="" class="secondary">WEEK NO</a>
-        <a href="" class="secondary">WEEK NO</a>
-        <a href="" class="secondary">WEEK NO</a>
+      <a href="/a2z/intro" class="secondary">Introduction - p5.js, JavaScript, and Strings</a>
     </div>
 </section>
