@@ -3,11 +3,12 @@ layout: a2z-post
 permalink: /a2z/intro/
 ---
 
-# Week 1 Notes
+# Technical Overview
 
 ## Git, Github, Github pages
 
 One of the first things we'll explore in this class is git, github, and github pages.  By no means, is github pages required for hosting your projects.  But it's free and fast and lives on github.  So there are many reasons why you might like to consider it, at least during the homework / experimentation stage / of a project.  Here are some resources for getting started.
+
 
 * Git and Github
    * [Introduction to Git and Command Line by Steve Klise](http://sklise.com/2012/09/22/introduction-to-git/)
@@ -15,6 +16,8 @@ One of the first things we'll explore in this class is git, github, and github p
    * ["Try" Git tutorial](https://try.github.io/levels/1/challenges/1)
 * Github Pages:
    * [A Guide to Github pages](https://www.thinkful.com/learn/a-guide-to-using-github-pages/)
+
+<iframe width="312" height="175" src="https://www.youtube.com/embed/BCQHnlnPusY?list=PLRqwX-V7Uu6ZF9C0YMKuns9sLDzK6zoiV" frameborder="0" allowfullscreen></iframe> <iframe width="312" height="175" src="https://www.youtube.com/embed/bFVtrlyH-kc?list=PLRqwX-V7Uu6ZF9C0YMKuns9sLDzK6zoiV" frameborder="0" allowfullscreen></iframe>
 
 ## JavaScript
 
@@ -25,15 +28,9 @@ The core language for this class is JavaScript.  If JavaScript is new to you, I 
 The framework we'll be exploring is [p5.js](http://p5js.org).  Here are some links to get your started.
 
   * [Overview of p5.js](https://github.com/processing/p5.js/wiki/p5.js-overview)
-  * [p5.js transition from Processing](https://github.com/processing/p5.js/wiki/Processing-transition)
-  * [ICM intro p5.js video lessons](https://vimeo.com/channels/learningp5js/)
 
-### Examples
+<iframe width="350" height="200" src="https://www.youtube.com/embed/8j0UDiN7my4?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe>
 
-  * [p5.js basics](00_p5_canvas_js_basics.js/basics/), [source code](https://github.com/shiffman/A2Z-F15/tree/gh-pages/week1/00_p5_canvas_js_basics.js/basics)
-  * [empty example](00_p5_canvas_js_basics.js/empty_example/), [source code](https://github.com/shiffman/A2Z-F15/tree/gh-pages/week1/00_p5_canvas_js_basics.js/empty_example)
-  * [processing vs p5 1](00_p5_canvas_js_basics.js/processing_p5_conversion_0/), [source code](https://github.com/shiffman/A2Z-F15/tree/gh-pages/week1/00_p5_canvas_js_basics.js/processing_p5_conversion_0)
-  * [processing vs p5 2](00_p5_canvas_js_basics.js/processing_p5_conversion_1/), [source code](https://github.com/shiffman/A2Z-F15/tree/gh-pages/week1/00_p5_canvas_js_basics.js/processing_p5_conversion_1)
 
 ## HTML and CSS
 
@@ -41,11 +38,25 @@ The class will assume basic knowledge of HTML and CSS.  Of course I'm happy to a
 
 * [basic HTML and CSS example](02_DOM/01_html_css/), [source code](https://github.com/shiffman/A2Z-F15/tree/gh-pages/week1/02_DOM/01_html_css/)
 
+<iframe width="312" height="175" src="https://www.youtube.com/embed/URSH0QpxKo8?list=PLRqwX-V7Uu6bI1SlcCRfLH79HZrFAtBvX" frameborder="0" allowfullscreen></iframe> <iframe width="312" height="175" src="https://www.youtube.com/embed/zGL8q8iQSQw?list=PLRqwX-V7Uu6bI1SlcCRfLH79HZrFAtBvX" frameborder="0" allowfullscreen></iframe>
+
 ## DOM manipulation with JS
 
 The first JavaScript task I'll demonstrate is "DOM manipulation", i.e. using programming to change the HTML and CSS of a page on the fly.  This is something possible with native JavaScript, as well as many different JS frameworks and libraries, the most well-known probably being [JQuery](https://jquery.com/).  In class, we'll use the p5.js DOM library primarily, as well as dig into native JS and other frameworks when necessary.
 
 * [p5.js DOM library tutorial](https://github.com/processing/p5.js/wiki/Beyond-the-canvas)
+
+The key functions and topics I will discuss in class are:
+
+* The core "create" functions — `createElement()`, `createP()`, `createDiv()`, `createImg()`.
+* Moving things around in the DOM — `parent()`, `child()`
+* Making interface elements — `createButton()`, `createSlider()`, `createInput()`, `createSelect()`, `createCheckbox()`.
+* Events — `mousePressed()`, `mouseOver()`, `mouseOut()`, `changed()`, and more?  What about `addEventListener()`?
+* When to use create vs select — `select()` and `selectAll()`, id vs class vs tag
+* Applying CSS styles — `style()` (and when to use a CSS file).
+
+<iframe width="350" height="200" src="https://www.youtube.com/embed/lAtoaRz78I4?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe>
+
 
 ## Examples
 
@@ -63,6 +74,8 @@ The first JavaScript task I'll demonstrate is "DOM manipulation", i.e. using pro
 
 JavaScript objects will be key to just about everything we do this semester.  We'll be using objects for DOM manipulation like `p5.Element` and the native JS `Element`.  We'll be exploring data coming in as JSON ("JavaScript Object Notation").  We'll focus a lot on the JS `String` object as well as objects from other libraries.  And we'll write our own objects for analyzing and generating text.  JavaScript objects (for now, at least until [ES6](http://es6-features.org/#Constants) is more widely adopted) follow a "prototypical inheritance" model which is quite different than the classical OOP found in Java or C++.  [This "object playground" video](http://www.objectplayground.com/) covers the idea in great detail if you are looking for more info.
 
+<iframe width="350" height="200" src="https://www.youtube.com/embed/F3GeM_KrGjI?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe>
+
 ### Examples
 
 * [single object](01_objects_in_JS_p5/01_object_example/)
@@ -72,27 +85,12 @@ JavaScript objects will be key to just about everything we do this semester.  We
 * [array of objects 3 (with push)](05_array_of_objects_push/)
 * [inheritance](06_inheritance/)
 
-## Text mashups
+<span class="line-charm first"></span>
 
-In class, we'll do an exercise around mashing up text manually.  Here are links to further reading and information about the techinques we discussed, as well as online versions of the algorithms.  Next week, we'll look at how to build single page web apps that mash up text submitted by users.
-
-* "Cut-ups"
-  * [Cut-up Method](http://www.writing.upenn.edu/~afilreis/88v/burroughs-cutup.html) from  Leroi Jones, ed., The Moderns: An Anthology of New Writing in America (NY: Corinth Books, 1963).
-  * [Cut-up machine](http://www.languageisavirus.com/cutupmachine.html#.VfHCY51Viko)
-* "Erasures"
-  * [Erasure Poetry](https://en.wikipedia.org/wiki/Erasure_(artform))
-  * [Make an online Erasure](http://erasures.wavepoetry.com/erasures.php?sourceid=23)
-* "N+7" or "V+__"
-  * [N+7 technique](http://www.languageisavirus.com/articles/articles.php?subaction=showcomments&id=1161978000#.VfHDT51Viko)
-  * [N+7 machine](http://www.spoonbill.org/n+7/)
-* Jackson Mac Low and the Diastic Technique
-  * Excerpt from Virtual Muse: Experiments In Computer Poetry pgs. 95-96
-  * [Online Diastic generator](http://www.eddeaddad.net/eDiastic/)
-
+# Working with Text
 
 ## All examples
 
-* For p5.dom examples, see [Week 1 notes](http://shiffman.github.io/A2Z-F15/week1/notes.html)
 * [loadStrings](01_loadStrings) — [source code](https://github.com/shiffman/A2Z-F15/tree/gh-pages/week2/01_loadStrings)
 * [loadStrings with callback](02_loadStrings_callback) — [source code](https://github.com/shiffman/A2Z-F15/tree/gh-pages/week2/02_loadStrings_callback)
 * ["choose files" button](03_loadFile_Menu) — [source code](https://github.com/shiffman/A2Z-F15/tree/gh-pages/week2/03_loadFile_Menu)
@@ -107,27 +105,9 @@ In class, we'll do an exercise around mashing up text manually.  Here are links 
 * [Diastic Machine](12_diastic) — [source code](https://github.com/shiffman/A2Z-F15/tree/gh-pages/week2/12_diastic)
 * [Simple Rita Test](13_rita_sentence) — [source code](https://github.com/shiffman/A2Z-F15/tree/gh-pages/week2/13_rita_sentence)
 
-## p5 basics and p5.dom
-
-This week we'll spend some time covering the basics of p5 canvas and dom.  These topics are well covered in the following tutorials:
-
-* [Overview of p5.js](https://github.com/processing/p5.js/wiki/p5.js-overview)
-* [p5.js transition from Processing](https://github.com/processing/p5.js/wiki/Processing-transition)
-* [ICM intro p5.js video lessons](https://vimeo.com/channels/learningp5js/) -- these are very basic, for beginner programmers
-* [p5.js DOM library tutorial](https://github.com/processing/p5.js/wiki/Beyond-the-canvas)
-
-The key functions and topics I will discuss in class are:
-
-* The core "create" functions — `createElement()`, `createP()`, `createDiv()`, `createImg()`.
-* Moving things around in the DOM — `parent()`, `child()`
-* Making interface elements — `createButton()`, `createSlider()`, `createInput()`, `createSelect()`, `createCheckbox()`.
-* Events — `mousePressed()`, `mouseOver()`, `mouseOut()`, `changed()`, and more?  What about `addEventListener()`?
-* When to use create vs select — `select()` and `selectAll()`, id vs class vs tag
-* Applying CSS styles — `style()` (and when to use a CSS file).
-
 ## loadStrings() and preload()
 
-The whole point of this week is to work with programmatic text mashups in the browser.  Take a look at the [William Burroughs' Cut-Up](http://shiffman.github.io/A2Z-F15/week2/10_cut_up_machine/) example.  We'll need two essential skills here — how to load text (from a file or user) and how to work with JavaScript Strings.  Let's first start with loading text from a file.  The simplest way to do this in p5 is with `loadStrings()`.  It loads a local file (accessed by its relative path to the hmtl file).  The simplest way to get the data is to use `preload()` which guarantees that the data is read before `setup()` triggers.
+The whole point of this week is to work with programmatic text mashups in the browser.  Take a look at the [William Burroughs' Cut-Up](http://shiffman.github.io/A2Z-F15/week2/10_cut_up_machine/) example.  We'll need two essential skills here — how to load text (from a file or user) and how to work with JavaScript Strings.  Let's first start with loading text from a file.  The simplest way to do this in p5 is with `loadStrings()`.  It loads a local file (accessed by its relative path to the html file).  The simplest way to get the data is to use `preload()` which guarantees that the data is read before `setup()` triggers.
 
 {% highlight javascript %}
 var lines;
@@ -216,7 +196,7 @@ The argument passed to the `gotFile()` callback is a `p5.File` object.  It conta
 
 {% highlight javascript %}
 function gotFile(file) {
-  createDiv(file.name + ', ' + file.type  + file.size + ', bytes');
+  createDiv(file.name + ' ' + file.type + ' ' + file.size + 'bytes');
 
   // Handle image and text differently
   if (file.type === 'image') {
@@ -243,6 +223,7 @@ There's nothing particularly special about the CSS for the above drop zone, just
 #drop_zone {
   padding: 20px;
   border-style: dotted;
+  border-width: 4px;
   width: 200px;
   text-align: center;
 }
@@ -563,3 +544,20 @@ report += "Total Words    : " + totalWords + "\n";
 report += "Total Sentences: " + totalSentences + "\n";
 report += "Flesch Index   : " + flesch + "\n";
 {% endhighlight %}
+
+## Text mashups
+
+In class, we'll do an exercise around mashing up text manually.  Here are links to further reading and information about the techniques we discussed, as well as online versions of the algorithms.  For your homework you can choose to work with one of these methods manually or programmatically.
+
+* "Cut-ups"
+  * [Cut-up Method](http://www.writing.upenn.edu/~afilreis/88v/burroughs-cutup.html) from  Leroi Jones, ed., The Moderns: An Anthology of New Writing in America (NY: Corinth Books, 1963).
+  * [Cut-up machine](http://www.languageisavirus.com/cutupmachine.html#.VfHCY51Viko)
+* "Erasures"
+  * [Erasure Poetry](https://en.wikipedia.org/wiki/Erasure_(artform))
+  * [Make an online Erasure](http://erasures.wavepoetry.com/erasures.php?sourceid=23)
+* "N+7" or "V+__"
+  * [N+7 technique](http://www.languageisavirus.com/articles/articles.php?subaction=showcomments&id=1161978000#.VfHDT51Viko)
+  * [N+7 machine](http://www.spoonbill.org/n+7/)
+* Jackson Mac Low and the Diastic Technique
+  * Excerpt from Virtual Muse: Experiments In Computer Poetry pgs. 95-96
+  * [Online Diastic generator](http://www.eddeaddad.net/eDiastic/)
