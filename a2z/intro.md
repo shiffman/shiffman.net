@@ -90,7 +90,7 @@ JavaScript objects will be key to just about everything we do this semester.  We
 * [text input element with canvas](https://shiffman.github.io/A2Z-F16/week1-strings/06_input_elt_canvas) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-strings/06_input_elt_canvas)
 * [textarea element](https://shiffman.github.io/A2Z-F16/week1-strings/07_textarea) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-strings/07_textarea)
 * [many loading options all together](https://shiffman.github.io/A2Z-F16/week1-strings/08_all_together) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-strings/08_all_together)
-* [Flesch Index Calculator]https://shiffman.github.io/A2Z-F16/week1-strings/(09_flesch) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-strings/09_flesch)
+* [Flesch Index Calculator](https://shiffman.github.io/A2Z-F16/week1-strings/09_flesch) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-strings/09_flesch)
 * [Cut-Up Machine](https://shiffman.github.io/A2Z-F16/week1-strings/10_cut_up_machine) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-strings/10_cut_up_machine)
 * [Erasure Poetry Machine](https://shiffman.github.io/A2Z-F16/week1-strings/11_erasure) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-strings/11_erasure)
 * [Diastic Machine](https://shiffman.github.io/A2Z-F16/week1-strings/12_diastic) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-strings/12_diastic)
