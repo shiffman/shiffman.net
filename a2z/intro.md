@@ -36,7 +36,7 @@ The framework we'll be exploring is [p5.js](http://p5js.org).  Here are some lin
 
 The class will assume basic knowledge of HTML and CSS.  Of course I'm happy to answer questions and go over these topics, but they won't be explicitly covered in class, other than in the context of JavaScript DOM manipulation.  For review, I would suggest reading the p5.js [HTML and CSS overview](https://github.com/processing/p5.js/wiki/Intro-to-HTML-and-CSS).  The [HTML and CSS book](http://www.htmlandcssbook.com/) is also excellent.
 
-* [basic HTML and CSS example](02_DOM/01_html_css/), [source code](https://github.com/shiffman/A2Z-F15/tree/gh-pages/week1/02_DOM/01_html_css/)
+* [basic HTML and CSS example](https://shiffman.github.io/A2Z-F16/week1-dom/01_html_css/), [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-dom/01_html_css/)
 
 <iframe width="312" height="175" src="https://www.youtube.com/embed/URSH0QpxKo8?list=PLRqwX-V7Uu6bI1SlcCRfLH79HZrFAtBvX" frameborder="0" allowfullscreen></iframe> <iframe width="312" height="175" src="https://www.youtube.com/embed/zGL8q8iQSQw?list=PLRqwX-V7Uu6bI1SlcCRfLH79HZrFAtBvX" frameborder="0" allowfullscreen></iframe>
 
@@ -60,15 +60,15 @@ The key functions and topics I will discuss in class are:
 
 ## Examples
 
-* [create HTML elements](02_DOM/02_build_html_css_p5/), [source code](https://github.com/shiffman/A2Z-F15/tree/gh-pages/week1/02_DOM/02_build_html_css_p5/)
-* [using select, and parent/child](02_DOM/03_select_parent_child/), [source code](https://github.com/shiffman/A2Z-F15/tree/gh-pages/week1/02_DOM/03_select_parent_child/)
-* [dynamic CSS with `style()`](02_DOM/04_css_with_p5_style/), [source code](https://github.com/shiffman/A2Z-F15/tree/gh-pages/week1/02_DOM/04_css_with_p5_style/)
-* [absolute positioning of DOM elements](02_DOM/05_absolute_position_DOM/), [source code](https://github.com/shiffman/A2Z-F15/tree/gh-pages/week1/02_DOM/05_absolute_position_DOM/)
-* [handling events: mousePressed](02_DOM/06_mousepressed/), [source code](https://github.com/shiffman/A2Z-F15/tree/gh-pages/week1/02_DOM/06_mousepressed/)
-* [handling events: mouseOver, mouseOut](02_DOM/07_mouseover_mouseout/), [source code](https://github.com/shiffman/A2Z-F15/tree/gh-pages/week1/02_DOM/07_mouseover_mouseout/)
-* [animating a DOM element](02_DOM/08_animateDOM/), [source code](https://github.com/shiffman/A2Z-F15/tree/gh-pages/week1/02_DOM/08_animateDOM/)
-* [building a simple interface](02_DOM/09_interface/), [source code](https://github.com/shiffman/A2Z-F15/tree/gh-pages/week1/02_DOM/09_interface/)
-* [weird sliders experiment](02_DOM/10_sliders/), [source code](https://github.com/shiffman/A2Z-F15/tree/gh-pages/week1/02_DOM/10_sliders/)
+* [create HTML elements](https://shiffman.github.io/A2Z-F16/week1-dom/02_build_html_css_p5/), [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-dom/02_build_html_css_p5/)
+* [using select, and parent/child](https://shiffman.github.io/A2Z-F16/week1-dom/03_select_parent_child/), [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-dom/https://shiffman.github.io/A2Z-F16/week1-dom/03_select_parent_child/)
+* [dynamic CSS with `style()`](https://shiffman.github.io/A2Z-F16/week1-dom/04_css_with_p5_style/), [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-dom/04_css_with_p5_style/)
+* [absolute positioning of DOM elements](https://shiffman.github.io/A2Z-F16/week1-dom/05_absolute_position_DOM/), [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-dom/05_absolute_position_DOM/)
+* [handling events: mousePressed](https://shiffman.github.io/A2Z-F16/week1-dom/06_mousepressed/), [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-dom/06_mousepressed/)
+* [handling events: mouseOver, mouseOut](https://shiffman.github.io/A2Z-F16/week1-dom/07_mouseover_mouseout/), [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-dom/07_mouseover_mouseout/)
+* [animating a DOM element](https://shiffman.github.io/A2Z-F16/week1-dom/08_animateDOM/), [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-dom/08_animateDOM/)
+* [building a simple interface](https://shiffman.github.io/A2Z-F16/week1-dom/09_interface/), [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-dom/09_interface/)
+* [weird sliders experiment](https://shiffman.github.io/A2Z-F16/week1-dom/10_sliders/), [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-dom/10_sliders/)
 
 ## JavaScript Objects
 
@@ -76,34 +76,25 @@ JavaScript objects will be key to just about everything we do this semester.  We
 
 <iframe width="350" height="200" src="https://www.youtube.com/embed/F3GeM_KrGjI?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe>
 
-### Examples
-
-* [single object](01_objects_in_JS_p5/01_object_example/)
-* [parameterized multiple objects](01_objects_in_JS_p5/02_parameterized_objects/)
-* [array of objects 1](01_objects_in_JS_p5/03_array_of_objects//)
-* [array of objects 2](01_objects_in_JS_p5/04_array_interactive_objects/)
-* [array of objects 3 (with push)](05_array_of_objects_push/)
-* [inheritance](06_inheritance/)
-
 <span class="line-charm first"></span>
 
 # Working with Text
 
 ## All examples
 
-* [loadStrings](01_loadStrings) — [source code](https://github.com/shiffman/A2Z-F15/tree/gh-pages/week2/01_loadStrings)
-* [loadStrings with callback](02_loadStrings_callback) — [source code](https://github.com/shiffman/A2Z-F15/tree/gh-pages/week2/02_loadStrings_callback)
-* ["choose files" button](03_loadFile_Menu) — [source code](https://github.com/shiffman/A2Z-F15/tree/gh-pages/week2/03_loadFile_Menu)
-* ["drag and drop" files](04_loadFile_DragDrop) — [source code](https://github.com/shiffman/A2Z-F15/tree/gh-pages/week2/04_loadFile_DragDrop)
-* [text input element](05_input_elt) — [source code](https://github.com/shiffman/A2Z-F15/tree/gh-pages/week2/05_input_elt)
-* [text input element with canvas](06_input_elt_canvas) — [source code](https://github.com/shiffman/A2Z-F15/tree/gh-pages/week2/06_input_elt_canvas)
-* [textarea element](07_textarea) — [source code](https://github.com/shiffman/A2Z-F15/tree/gh-pages/week2/07_textarea)
-* [many loading options all together](08_all_together) — [source code](https://github.com/shiffman/A2Z-F15/tree/gh-pages/week2/08_all_together)
-* [Flesch Index Calculator](09_flesch) — [source code](https://github.com/shiffman/A2Z-F15/tree/gh-pages/week2/09_flesch)
-* [Cut-Up Machine](10_cut_up_machine) — [source code](https://github.com/shiffman/A2Z-F15/tree/gh-pages/week2/10_cut_up_machine)
-* [Erasure Poetry Machine](11_erasure) — [source code](https://github.com/shiffman/A2Z-F15/tree/gh-pages/week2/11_erasure)
-* [Diastic Machine](12_diastic) — [source code](https://github.com/shiffman/A2Z-F15/tree/gh-pages/week2/12_diastic)
-* [Simple Rita Test](13_rita_sentence) — [source code](https://github.com/shiffman/A2Z-F15/tree/gh-pages/week2/13_rita_sentence)
+* [loadStrings](https://shiffman.github.io/A2Z-F16/week1-strings/01_loadStrings) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-strings/01_loadStrings)
+* [loadStrings with callback](https://shiffman.github.io/A2Z-F16/week1-strings/02_loadStrings_callback) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-strings/02_loadStrings_callback)
+* ["choose files" button](https://shiffman.github.io/A2Z-F16/week1-strings/03_loadFile_Menu) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-strings/03_loadFile_Menu)
+* ["drag and drop" files](https://shiffman.github.io/A2Z-F16/week1-strings/04_loadFile_DragDrop) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-strings/04_loadFile_DragDrop)
+* [text input element](https://shiffman.github.io/A2Z-F16/week1-strings/05_input_elt) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-strings/05_input_elt)
+* [text input element with canvas](https://shiffman.github.io/A2Z-F16/week1-strings/06_input_elt_canvas) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-strings/06_input_elt_canvas)
+* [textarea element](https://shiffman.github.io/A2Z-F16/week1-strings/07_textarea) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-strings/07_textarea)
+* [many loading options all together](https://shiffman.github.io/A2Z-F16/week1-strings/08_all_together) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-strings/08_all_together)
+* [Flesch Index Calculator]https://shiffman.github.io/A2Z-F16/week1-strings/(09_flesch) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-strings/09_flesch)
+* [Cut-Up Machine](https://shiffman.github.io/A2Z-F16/week1-strings/10_cut_up_machine) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-strings/10_cut_up_machine)
+* [Erasure Poetry Machine](https://shiffman.github.io/A2Z-F16/week1-strings/11_erasure) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-strings/11_erasure)
+* [Diastic Machine](https://shiffman.github.io/A2Z-F16/week1-strings/12_diastic) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-strings/12_diastic)
+* [Simple Rita Test](https://shiffman.github.io/A2Z-F16/week1-strings/13_rita_sentence) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-strings/13_rita_sentence)
 
 ## loadStrings() and preload()
 
