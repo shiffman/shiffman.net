@@ -22,7 +22,7 @@ One of the first things we'll explore in this class is git, github, and github p
 
 ## JavaScript
 
-The core language for this class is JavaScript.  If JavaScript is new to you, I would suggest starting with the the  [first four chapters of Eloquent JavaScript](http://eloquentjavascript.net/).  And there are [many more resources for learning online](https://github.com/shiffman/A2Z-F15#learning--intro) as well.
+The core language for this class is JavaScript.  If JavaScript is new to you, I would suggest starting with the the  [first four chapters of Eloquent JavaScript](http://eloquentjavascript.net/).  And there are [many more resources for learning online](https://github.com/shiffman/A2Z-F16#learning--intro) as well.
 
 ## p5.js
 
@@ -102,7 +102,7 @@ JavaScript objects will be key to just about everything we do this semester.  We
 
 ## loadStrings() and preload()
 
-The whole point of this week is to work with programmatic text mashups in the browser.  Take a look at the [William Burroughs' Cut-Up](http://shiffman.github.io/A2Z-F15/week2/10_cut_up_machine/) example.  We'll need two essential skills here — how to load text (from a file or user) and how to work with JavaScript Strings.  Let's first start with loading text from a file.  The simplest way to do this in p5 is with `loadStrings()`.  It loads a local file (accessed by its relative path to the html file).  The simplest way to get the data is to use `preload()` which guarantees that the data is read before `setup()` triggers.
+The whole point of this week is to work with programmatic text mashups in the browser.  Take a look at the [William Burroughs' Cut-Up](https://shiffman.github.io/A2Z-F16/week1-strings/10_cut_up_machine/) example.  We'll need two essential skills here — how to load text (from a file or user) and how to work with JavaScript Strings.  Let's first start with loading text from a file.  The simplest way to do this in p5 is with `loadStrings()`.  It loads a local file (accessed by its relative path to the html file).  The simplest way to get the data is to use `preload()` which guarantees that the data is read before `setup()` triggers.
 
 {% highlight javascript %}
 var lines;
