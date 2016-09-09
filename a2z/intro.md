@@ -3,6 +3,7 @@ layout: a2z-post
 permalink: /a2z/intro/
 ---
 
+
 # Technical Overview
 
 ## Git, Github, Github pages
@@ -95,6 +96,9 @@ JavaScript objects will be key to just about everything we do this semester.  We
 * [Erasure Poetry Machine](https://shiffman.github.io/A2Z-F16/week1-strings/11_erasure) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-strings/11_erasure)
 * [Diastic Machine](https://shiffman.github.io/A2Z-F16/week1-strings/12_diastic) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-strings/12_diastic)
 * [Simple Rita Test](https://shiffman.github.io/A2Z-F16/week1-strings/13_rita_sentence) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-strings/13_rita_sentence)
+
+<iframe width="312" height="175" src="https://www.youtube.com/embed/uNQSVU0IKec?list=PLRqwX-V7Uu6YrbSJBg32eTzUU50E2B8Ch" frameborder="0" allowfullscreen></iframe> <iframe width="312" height="175" src="https://www.youtube.com/embed/0Mq2CxspF5s?list=PLRqwX-V7Uu6YrbSJBg32eTzUU50E2B8Ch" frameborder="0" allowfullscreen></iframe>
+
 
 ## loadStrings() and preload()
 
@@ -200,6 +204,8 @@ function gotFile(file) {
 
 ### Drop zone
 
+<iframe width="350" height="200" src="https://www.youtube.com/embed/o4UmGrPst_c" frameborder="0" allowfullscreen></iframe>
+
 Another, often more convenient, way to accept files from a user is to allow the user to "drag and drop" files in the page itself.  To do this, you first need to create and style a div that will act as the "drop zone".  For example:
 
 {% highlight html %}
@@ -303,6 +309,8 @@ var p = select('#editableP');
 
 
 ## Strings in JS
+
+<iframe width="350" height="200" src="https://www.youtube.com/embed/DcoAjEZYies?list=PLRqwX-V7Uu6YrbSJBg32eTzUU50E2B8Ch" frameborder="0" allowfullscreen></iframe>
 
 One you have data from a file or user input (or user file input!), the next step is to do something interesting with it.  For this week, it's up to you to invent something.  To demonstrate some possibilities I'll first run through some of the basic functions available as part of the JavaScript [String object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) and then describe one scenario for analyzing text — the Flesch index.
 
@@ -538,6 +546,8 @@ report += "Flesch Index   : " + flesch + "\n";
 
 ## Text mashups
 
+<iframe width="350" height="200" src="https://www.youtube.com/embed/u-HUtrpyi1c?list=PLRqwX-V7Uu6YrbSJBg32eTzUU50E2B8Ch" frameborder="0" allowfullscreen></iframe>
+
 In class, we'll do an exercise around mashing up text manually.  Here are links to further reading and information about the techniques we discussed, as well as online versions of the algorithms.  For your homework you can choose to work with one of these methods manually or programmatically.
 
 * "Cut-ups"
@@ -552,3 +562,7 @@ In class, we'll do an exercise around mashing up text manually.  Here are links 
 * Jackson Mac Low and the Diastic Technique
   * Excerpt from Virtual Muse: Experiments In Computer Poetry pgs. 95-96
   * [Online Diastic generator](http://www.eddeaddad.net/eDiastic/)
+
+## Assignment
+
+<iframe width="350" height="200" src="https://www.youtube.com/embed/YTzVbuV89RE?list=PLRqwX-V7Uu6YrbSJBg32eTzUU50E2B8Ch" frameborder="0" allowfullscreen></iframe>
