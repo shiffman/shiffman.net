@@ -29,6 +29,7 @@ permalink: /a2z/regex/
 * [Eloquent JavaScript Regular Expressions](http://eloquentjavascript.net/09_regexp.html)
 * [regexplained - a tool to visualize a regular expression](http://www.regexplained.co.uk/)
 * [Play the regex crossword!](http://regexcrossword.com/)
+* [regexr - online tool to learn, build, and test Regular Expressions](http://regexr.com/)
 
 ## Exercise ideas
 * Write a regular expression that matches any e-mail address.
