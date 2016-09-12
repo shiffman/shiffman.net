@@ -7,13 +7,18 @@
 }
 
 /* For regex tutorial*/
-.regex {
+.a2zregex {
   font-family:Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal,monospace;
   background: #BBBBBB;
   font-weight: bold;
   color:#000000;
   padding: 4px;
 }
+
+/*.token.regex {
+  background-color: none;
+  color: #000;
+}*/
 
 /* For closure tutorial */
 
