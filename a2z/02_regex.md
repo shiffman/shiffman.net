@@ -29,13 +29,13 @@ permalink: /a2z/regex/
 * [Eloquent JavaScript Regular Expressions](http://eloquentjavascript.net/09_regexp.html)
 * [regexplained - a tool to visualize a regular expression](http://www.regexplained.co.uk/)
 * [Play the regex crossword!](http://regexcrossword.com/)
-* [regexr - online tool to learn, build, and test Regular Expressions](http://regexr.com/)
+* [RegExr -- a regular expressions playground](http://regexr.com/)
 
 ## Exercise ideas
 * Write a regular expression that matches any e-mail address.
 * Take that regular expression and do a search and replace so that any e-mail address is made into a “mailto:” link.
 * Create an example that reads an HTML page and removes any markup and leaves only the raw content.
-* Adapt the [regex tester](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week2_regex/regex_p5/regex_tester) to be a search/replace tester.
+* Adapt the [regex tester](https://shiffman.github.io/A2Z-F16/week2-regex/04_regex_tester) to be a search/replace tester.
 * Create a regex that matches only code comments in code.
 
 ## Regular Expressions
