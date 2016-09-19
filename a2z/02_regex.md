@@ -10,6 +10,8 @@ permalink: /a2z/regex/
 
 # Regular Expressions
 
+<iframe width="350" height="200" src="https://www.youtube.com/embed/7DG3kCDx53c?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe>
+
 ## All examples
 
 * [Loading file now loads into textarea](https://shiffman.github.io/A2Z-F16/week2-regex/00_all_together_improved) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week2-regex/00_all_together_improved)
@@ -60,16 +62,9 @@ but would not find a match in:
 
 Here are a few common meta-characters (I'm listing them below as they would appear in a JavaScript regular expression, which may differ slightly from other languages or environments) used to get us started:
 
-### Position Metacharacters:
-
-{% highlight text %}
-^     beginning of line
-$     end of line
-\b    word boundary
-\B    a non word boundary
-{% endhighlight %}
-
 ### Single Character Metacharacters:
+
+<iframe width="350" height="200" src="https://www.youtube.com/embed/YTocEnDsMNw?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe>
 
 {% highlight text %}
 .     any one character
@@ -79,6 +74,15 @@ $     end of line
 \s    any whitespace character
       (tab, new line, form feed, end of line, carriage return)
 \S    any non whitespace character
+{% endhighlight %}
+
+### Position Metacharacters:
+
+{% highlight text %}
+^     beginning of line
+$     end of line
+\b    word boundary
+\B    a non word boundary
 {% endhighlight %}
 
 ### Quantifiers (refer to the character that precedes it):
@@ -95,6 +99,8 @@ Using the above, we could come up with some quick examples:
 * <code class="a2zregex">^$</code> — matches beginning of line followed by end of line, i.e. match any blank line!
 * <code class="a2zregex">ing\b</code> — matches “ing” followed by a word boundary, i.e. any time “ing” appears at the end of a word!
 
+<iframe width="350" height="200" src="https://www.youtube.com/embed/EfJU0Y9WAZ4?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe>
+
 **Character Classes** serve as a kind of *or* statement amongst individual characters and are denoted by characters enclosed in brackets, i.e. <code class="a2zregex">[aeiou]</code> means match any vowel.  Using a <code class="a2zregex">^</code> negates the character class, i.e. <code class="a2zregex">[^aeiou]</code> means match any character not a vowel (note this isn't just limited to letters, it really means <i>anything at all</i> that is not an a, e, i, o, or u.)  A hyphen indicates a range of characters, such as <code class="a2zregex">[0-9]</code> or <code class="a2zregex">[a-z]</code>.
 
 Another key metacharacter is <code class="a2zregex">|</code>, meaning or.  This is known as the concept of **alternation**.
@@ -102,6 +108,9 @@ Another key metacharacter is <code class="a2zregex">|</code>, meaning or.  This 
 <code class="a2zregex">John | Jon</code> means match “John” or Jon”
 
 Note: this regex could also be written as <code class="a2zregex">Joh?n</code>, meaning match “Jon” with an optional “h” between the “o” and “n.”
+
+<iframe width="312" height="175" src="https://www.youtube.com/embed/c9HbsUSWilw?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe>
+<iframe width="312" height="175" src="https://www.youtube.com/embed/Z66TeSTcP-Q?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe>
 
 Parentheses can also be used to constrain the alternation.  For example, <code class="a2zregex"> (212|646|917)\d*</code> matches any sequence of zero or more digits preceded by 212, 646, or 917 (presumably to retrieve phone numbers with NYC area codes).  Note this regular expression would need to be improved to take into consideration white spaces and/or punctuation.
 
@@ -136,6 +145,9 @@ Find/replace with regex in Sublime Text is also incredibly useful.  For example,
 ![atom replace](/a2z/images/atom_regex_replace.png)
 
 ## Regular Expressions in JavaScript
+
+<iframe width="312" height="175" src="https://www.youtube.com/embed/W7S_Vmq0GSs?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe>
+<iframe width="312" height="175" src="https://www.youtube.com/embed/t029QcVHtas?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe>
 
 In JavaScript, regular expressions like Strings are objects.  For example, a regex object can be created like so:
 
@@ -246,6 +258,8 @@ while (var results = regex.exec(text)) {
 
 ## Splitting with Regular Expressions
 
+<iframe width="350" height="200" src="https://www.youtube.com/embed/fdyqutmcI2Q?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe>
+
 I can now revisit the [week 2 discussion](http://shiffman.github.io/A2Z-F15/week2/notes.html) of p5's `split()` and `splitTokens()` functions and look at how regular expressions work as a delimiter with the native `String` `split()` method.  In this case, a string is split into an array of substrings beginning at each match of that regular expression. Here's a simple example that quickyl counts the # of words (not perfect by any means).
 
 {% highlight javascript %}
@@ -295,6 +309,9 @@ What if you, however, would like to include all the delimiters?  To accomplish t
 
 ## Search and Replace
 
+<iframe width="350" height="200" src="https://www.youtube.com/embed/7a-a6lKoyIQ?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe>
+
+
 Running a search and replace is one of the more powerful things one can do with regular expressions.  This can be accomplished with the String's `replace()` method.  The method receives two arguments, a regex and a replacement string.  Wherever there is a regex match, it is replaced with the string provided.
 
 {% highlight javascript %}
@@ -327,7 +344,47 @@ The result is:
 Dououblee thee vooweels
 ```
 
-You can try out some regex below as well as [take a look at the code for making this regex tester](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week2-regex/04_regex_tester).
+The `replace()` function also allows you to pass a callback where you can write your own code and `return` the text that replaces any given match of the regex.  This allows enormous flexibility and power because the logic of how you replace text can be written with code rather than simply encoded into a string.  Let's say you have some text:
+
+{% highlight javascript %}
+var txt = "This is some text with words of variable length."
+{% endhighlight %}
+
+You can then call `replace()` to search with a regular expression (the following matches any words 3-5 characters long), and pass in a function call as the second argument.
+
+{% highlight javascript %}
+var output = txt.replace(/\b[a-z]{4,6}\b/gi, replacer);
+{% endhighlight %}
+
+The callback will be executed multiple times, as many times as the regex matches.  The callback will receive the matched text as an argument and replace it with whatever you `return`.
+
+{% highlight javascript %}
+function replacer(match) {
+  var len = match.length;
+  // Four letter words become uppercase
+  if (len == 4) {
+    return match.toUpperCase();
+  // Five letter words become "five"
+  } else if (len == 5) {
+    return "five";
+  // Six letter words turn into today's date
+  } else if (len == 6) {
+    return Date();
+  }
+}
+{% endhighlight %}
+
+The original text now reads:
+
+{% highlight text %}
+THIS is SOME TEXT WITH five of variable Mon Sep 19 2016 13:59:22 GMT-0400 (EDT).
+{% endhighlight %}
+
+The above result is silly and nonsensical, but it shows the beginnings of what is possible when you can execute any logic and call any other functions (query an API?) inside a `replace()` callback.
+
+## Try it
+
+You can try out some regex below as well as [take a look at the code for making this regex tester](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week2-regex/04_regex_tester).  While this works here, if you really want to just mess around with regex in the browser I recommend [RegExr: Learn, Build< Test Regex](http://regexr.com/).
 
 <p>
   <textarea rows="10" cols="75" id='input'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</textarea>
@@ -341,3 +398,7 @@ You can try out some regex below as well as [take a look at the code for making 
 <pre id="output"></pre>
 
 <p>You can also explore this <a href="https://shiffman.github.io/A2Z-F16/week2-regex/01_regexbasics">walk-through of JS regex functionality</a>.</p>
+
+## Assignment
+
+<iframe width="312" height="175" src="https://www.youtube.com/embed/AKuW48WeNMA?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe> <iframe width="312" height="175" src="https://www.youtube.com/embed/pMn44yFxGWk?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe>
