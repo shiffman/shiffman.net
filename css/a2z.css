@@ -23,10 +23,17 @@
 /* For closure tutorial */
 
 .box {
+  margin-top: 20px;
   background-color: #CCC;
   padding: 16px;
   display:inline;
   font-weight: bold;
   text-align: center;
   line-height: 64px;
+}
+
+blockquote {
+  margin-left: 20px;
+  font-size: 90%;
+  font-style:italic;
 }
