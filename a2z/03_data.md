@@ -1,6 +1,6 @@
 ---
 layout: a2z-post
-permalink: /a2z/data/
+permalink: /a2z/data-apis/
 ---
 
 # Data, Libraries and APIs
