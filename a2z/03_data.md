@@ -22,6 +22,86 @@ permalink: /a2z/data-apis/
 * [Google Sheets with tabletop.js](https://shiffman.github.io/A2Z-F16/week3-apis-data/09_google_sheets/), [source](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week3-apis-data/09_google_sheets)
 * [MadLibs with Google Sheets](https://shiffman.github.io/A2Z-F16/week3-apis-data/10_google_sheets_madlibs/), [source](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week3-apis-data/10_google_sheets_madlibs)
 
+
+## RiTaJS
+
+<iframe width="350" height="200" src="https://www.youtube.com/embed/lIPEvh8HbGQ?list=PLRqwX-V7Uu6a-SQiI4RtIwuOrLJGnel0r" frameborder="0" allowfullscreen></iframe>
+
+When I think of programming libraries and frameworks for text-based data I think of python and libraries like the [Nature Language Toolkit (NLTK)](http://www.nltk.org/).  However, there are still lots of options for language and text-based code libraries for JavaScript.  I'll look at two on this page starting with RiTaJS.  [RiTaJS](https://github.com/dhowe/RiTaJS) is the JavaScript implementation of [RiTa](http://rednoise.org/rita/) by Daniel Howe.
+
+<blockquote>Designed to support the creation of new works of computational literature, the RiTa library provides tools for artists and writers working with natural language in programmable media.</blockquote>
+
+The RiTa library has numerous features around text analysis and generation.  For example, it has features built into it to generate text with algorithms and systems (Markov Chains, Context Free Grammer) I'll cover in later tutorials.
+
+To use RiTa, you can grab the JavaScript library files from the [RiTa download page](http://rednoise.org/rita/download.php).  For my examples, I'm using the RiTa Lexicon which requires `rita-full.js`.
+
+For now I want to look at two features, the `RiString` object and the `RiLexicon` object.  `RiString` allows you to analyze a piece of text.  You can tokenize it, count syllables, determine parts of speech, etc.  One particularly useful function is `features()` which returns an object with features for the sentence, including phonemes, syllables, stresses, etc.
+
+{% highlight javascript %}
+var s = "It was a dark and stormy night.";
+var rs = new RiString(s);
+// Look at the "features" of a string.
+console.log(rs.features());
+{% endhighlight %}
+
+![rita1](/a2z/images/ristring.png)
+
+It should be noted that the parts of speech tags are from the [Penn Treebank Project](https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html).
+
+RiTaJS also has a lexicon built into it.  A lexicon is another word for "vocabulary" and operates like a machine readable dictionary.  [The RiTa lexicon](http://rednoise.org/rita/reference/RiLexicon.php) contains about 40,000 words along with associated spelling and phonemic data.  The library provides many hooks into the lexicon.  For example, you can ask it for random words of a given part of speech or with a certain syllable account.  It also can provide words that rhyming words and words that "sound similar." To use the lexicon, you simply need to make a `RiLexicon` object.
+
+{% highlight javascript %}
+var lexicon = new RiLexicon();
+{% endhighlight %}
+
+Once you have the object you can query it anywhere in your code.
+
+{% highlight javascript %}
+// Random noun
+lexicon.randomWord('pos');
+
+// List of words that rhyme with cat
+lexicon.rhymes('cat');
+
+// Alliterations
+lexicon.alliterations('cat');
+{% endhighlight %}
+
+You can also customize the lexicon by editing the JS library files themselves or programmatically with [`addWord()`](http://rednoise.org/rita/reference/RiLexicon/addWord/index.php) and [`removeWord`]((http://rednoise.org/rita/reference/RiLexicon/removeWord/index.php)).  
+
+## NLP-Compromise
+
+<iframe width="350" height="200" src="https://www.youtube.com/embed/tk_JGu2AbJY?list=PLRqwX-V7Uu6a-SQiI4RtIwuOrLJGnel0r" frameborder="0" allowfullscreen></iframe>
+
+Another useful natural language processing library in JavaScript is [NLP-Compromise](http://nlp-compromise.github.io/website/), source on [github](https://github.com/nlp-compromise/nlp_compromise) by [Spencer Kelly](https://s3.amazonaws.com/spencermounta.in/index.html).
+
+Just like with RiTaJS you can download the library files to use with your sketch.  However, most JavaScript libraries are also available via a "CDN" (Content Delivery Network) meaning you can reference them on a web server directly in `index.html`.
+
+{% highlight html %}
+<script src="https://unpkg.com/nlp_compromise@latest/builds/nlp_compromise.min.js"></script>
+{% endhighlight %}
+
+Once the library is loaded you can create a variable to call of its functions on.
+
+{% highlight javascript %}
+var nlp = window.nlp_compromise;
+{% endhighlight %}
+
+NLP-Compromise works by allowing you to chain together a series of functions that build and/or adjust a block of text.  For example, if you want to work with a noun you would say:
+
+{% highlight javascript %}
+var noun = nlp.noun('cat');
+console.log(noun.pluralize()); // cats
+{% endhighlight %}
+
+But typically you'll see these actions chained together:
+
+{% highlight javascript %}
+var cats = nlp.noun('cat').pluralize());
+{% endhighlight %}
+
+NLP-Compromise can negate statements, conjugate verbs (and therby alter tense), provide articles and pronouns, and more.  
+
 ## Data
 
 <iframe width="350" height="200" src="https://www.youtube.com/embed/rJaXOFfwGVw?list=PLRqwX-V7Uu6a-SQiI4RtIwuOrLJGnel0r" frameborder="0" allowfullscreen></iframe>
@@ -308,14 +388,6 @@ loadJSON(encoded, callback);
 
 Coming soon.
 
-## RiTa.js
-
-Coming soon.
-
-## NLP-Compromise
-
-Coming soon.
-
 ## Google sheets
 
-Coming soon.
+<iframe width="350" height="200" src="https://www.youtube.com/embed/ziBO-U2_t3k?list=PLRqwX-V7Uu6a-SQiI4RtIwuOrLJGnel0r" frameborder="0" allowfullscreen></iframe>
