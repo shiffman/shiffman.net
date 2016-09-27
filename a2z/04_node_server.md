@@ -16,6 +16,8 @@ permalink: /a2z/server-node/
 
 ## Node basics
 
+<iframe width="350" height="200" src="https://www.youtube.com/embed/RF5_MPSNAtU?list=PLRqwX-V7Uu6atTSxoRiVnSuOn6JHnq2yV" frameborder="0" allowfullscreen></iframe>
+
 [Node.js](https://nodejs.org/en/) is a JavaScript framework for writing server-side applications.  In its simplest form it allows you to trigger small JavaScript programs from the command line without any browser involved.  For example, assuming [node is installed](https://nodejs.org/en/) if you  write a JavaScript program in a file called `hello.js`:
 
 {% highlight javascript %}
@@ -28,6 +30,8 @@ And then execute it from terminal with `node hello.js` you'll see:
 $ node hello.js
 Node works!
 {% endhighlight %}
+
+<iframe width="350" height="200" src="https://www.youtube.com/embed/s70-Vsud9Vk?list=PLRqwX-V7Uu6atTSxoRiVnSuOn6JHnq2yV" frameborder="0" allowfullscreen></iframe>
 
 [Node Package Manager (npm)](https://www.npmjs.com/) comes with node and allows you to install and work with node packages.  Node packages are like libraries or add-ons and you can work with them in the same way that you might use a Processing or JavaScript library.
 
