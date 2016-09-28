@@ -21,12 +21,17 @@ permalink: /a2z/twitter-bots/
 * [More comprehensive twitter bot list](https://twitter.com/ckolderup/lists/the-fall-of-humanity/members)
 * [Bot wiki](https://botwiki.org/tag/twitterbot)
 * [Another bot wiki](https://github.com/shiffman/A2Z-F15/wiki/Twitter-Bots)
-* [New York Magazine article on bots](http://nymag.com/following/2015/11/12-weirdest-funniest-smartest-twitter-bots.html)
 
-## Watch this!
+## Read
+* [Strategies on Bot Poetics](https://harrygiles.org/2016/04/06/some-strategies-of-bot-poetics/) by Harry Giles
+* [New York Magazine article on bots](http://nymag.com/following/2015/11/12-weirdest-funniest-smartest-twitter-bots.html)
+* [Rules for Automation and Best Practices](https://support.twitter.com/articles/76915) from Twitter, [Bot Etiquette](http://tinysubversions.com/2013/03/basic-twitter-bot-etiquette/) by Darius Kazemi
+
+## Watch
 * [Darius Kazemi Eyeo talk](https://vimeo.com/112289364)
 
 ## Bot resources / tutorials
+* [A wiki with links to more bot resources](https://github.com/shiffman/A2Z-F16/wiki/Twitter-Bot-References)
 * [Allison Parrish spreadsheet bot tutorial](http://air.decontextualize.com/twitterbot/)
 * [Allison Parrish bot workshop notes](https://gist.github.com/aparrish/3ee64d07f0a00b08618a)
 * [Allison Parrish node bot example](https://github.com/aparrish/example-twitter-bot-node)
