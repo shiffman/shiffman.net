@@ -6,10 +6,11 @@ permalink: /a2z/text-analysis/
 # Word Counting and Text Analysis
 
 ## Examples
-* [Basic word counting](https://shiffman.github.io/A2Z-F16/week5-analysis/01_concordance/) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week5-analysis/01_concordance)
+* [Word counting](https://shiffman.github.io/A2Z-F16/week5-analysis/01_concordance/) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week5-analysis/01_concordance)
 * [Parts of Speech Concordance](https://shiffman.github.io/A2Z-F16/week5-analysis/02_pos_concordance/) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week5-analysis/02_pos_concordance)
 * [Keyword extraction - TF-IDF](https://shiffman.github.io/A2Z-F16/week5-analysis/03_tf-idf/) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week5-analysis/03_tf-idf)
 * [Text Classification - Naive Bayes](https://shiffman.github.io/A2Z-F16/week5-analysis/04_classification/) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week5-analysis/04_classification)
+* [Node concordance](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week5-analysis/05_node_concordance)
 
 ## Sample datasets:
 * [Project Gutenberg](http://www.gutenberg.org/)
