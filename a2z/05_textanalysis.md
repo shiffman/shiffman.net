@@ -1,4 +1,5 @@
 ---
+title: Word Counting and Text Analysis
 layout: a2z-post
 permalink: /a2z/text-analysis/
 ---

@@ -1,4 +1,5 @@
 ---
+title: Introduction to A2Z
 layout: a2z-post
 permalink: /a2z/intro/
 ---

@@ -1,4 +1,5 @@
 ---
+title: JavaScript Closures
 layout: a2z-post
 permalink: /a2z/closures/
 ---

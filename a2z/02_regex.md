@@ -1,4 +1,5 @@
 ---
+title: Regular Expressions in JavaScript
 layout: a2z-post
 permalink: /a2z/regex/
 ---

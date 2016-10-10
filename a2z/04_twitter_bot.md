@@ -1,4 +1,5 @@
 ---
+title: Node.js Twitter Bots
 layout: a2z-post
 permalink: /a2z/twitter-bots/
 ---
@@ -56,15 +57,11 @@ To create the app, you'll need to enter an app name, description, and associated
 
 3. Once the app is created, navigate to "Keys and Access Tokens".  There you'll find your "Consumer Key (API Key)" and "Consumer Secret (API Secret)".
 
-<p>
-  <img src="images/tokens1.png" width="600"/>
-</p>
+![tokens1](/a2z/images/tokens1.png)
 
 Also, scroll down and click the "Generate Access Token" button.  Now you also have an "Access Token" and "Access Token Secret".
 
-<p>
-  <img src="images/tokens2.png" width="600"/>
-</p>
+![tokens2](/a2z/images/tokens2.png)
 
 Don't worry, if you ever post these keys somewhere by accident (like in an image file on a tutorial) you can always regenerate new ones.
 
@@ -74,9 +71,9 @@ That's it, you're done and ready to use Twit!
 
 To make any calls to the API you first need to install Twit and then include the package with `require()`.
 
-<pre>
+{% highlight text %}
 $ npm install Twit --save
-</pre>
+{% endhighlight %}
 
 {% highlight javascript %}
 var Twit = require('twit');
