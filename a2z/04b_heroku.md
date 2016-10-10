@@ -4,6 +4,8 @@ layout: a2z-post
 permalink: /a2z/bot-heroku/
 ---
 
+<iframe width="350" height="200" src="https://www.youtube.com/embed/DwWPunpypNA?list=PLRqwX-V7Uu6atTSxoRiVnSuOn6JHnq2yV" frameborder="0" allowfullscreen></iframe>
+
 # Notes on Deploying to Heroku
 
 * [Heroku Getting Started Guide](https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction)

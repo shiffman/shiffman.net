@@ -6,6 +6,8 @@ permalink: /a2z/text-analysis/
 
 # Word Counting and Text Analysis
 
+<iframe width="350" height="200" src="https://www.youtube.com/embed/tE-ZYXU8A8U?list=PLRqwX-V7Uu6bZQkJcGM5S9fn9R9Yyd8iZ" frameborder="0" allowfullscreen></iframe>
+
 ## Examples
 * [Word counting](https://shiffman.github.io/A2Z-F16/week5-analysis/01_concordance/) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week5-analysis/01_concordance)
 * [Parts of Speech Concordance](https://shiffman.github.io/A2Z-F16/week5-analysis/02_pos_concordance/) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week5-analysis/02_pos_concordance)
@@ -44,6 +46,8 @@ permalink: /a2z/text-analysis/
 * Use the ideas to find similarities between people. For example, if you look at all the e-mails on the ITP student list, can you determine who is similar? Consider using properties in addition to word count, such as time of e-mails, length of e-mails, who writes to whom, etc.
 
 ## Associative Arrays in JavaScript?
+
+<iframe width="350" height="200" src="https://www.youtube.com/embed/_5jdE6RKxVk?list=PLRqwX-V7Uu6bZQkJcGM5S9fn9R9Yyd8iZ" frameborder="0" allowfullscreen></iframe>
 
 You know that thing we call an array?  Yes, that's right, an ordered list of data.  Each element of an array is numbered and accessed by its numeric index.
 
@@ -96,6 +100,8 @@ var concordance = {
 We'll need this new way since we'll be pulling the names for the object as strings from a source text.
 
 ## Text Concordance
+
+<iframe width="350" height="200" src="https://www.youtube.com/embed/unm0BLor8aE?list=PLRqwX-V7Uu6bZQkJcGM5S9fn9R9Yyd8iZ" frameborder="0" allowfullscreen></iframe>
 
 In the case of our examples, we're going to take a text document, split it into an array of Strings and increase the value associated with a particular key (i.e. word) each time we encounter the same String.  Let's assume we have some text in a variable named `data`.  First, we'll split into word "tokens".
 
@@ -183,6 +189,9 @@ for (var i = 0; i < keys.length; i++) {
 Here is a [text concordance example](http://shiffman.net/teaching/a2z/analysis/01_concordance/) and its [source code](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week3_analysis/01_concordance).
 
 ## TF-IDF
+
+<iframe width="350" height="200" src="https://www.youtube.com/embed/RPMYV-eb6?list=PLRqwX-V7Uu6bZQkJcGM5S9fn9R9Yyd8iZ" frameborder="0" allowfullscreen></iframe>
+
 
 One common application of a text concordance is [TF-IDF](http://en.wikipedia.org/wiki/Tf%E2%80%93idf) or term frequency–inverse document frequency.  Let's consider a corpus of wikipedia articles.  Is there a way we could automatically generate keywords or tags for an article  based on its word counts?  
 
@@ -378,3 +387,5 @@ var pA = productA / (productA + productB);
 Now we know the probability the document is in category A!
 
 One important aspect of this analysis that I've left out is the "interesting-ness&#8221 of any given word.  An interesting rating is defined as how different, say, the spam probability is from 0.5 (i.e. 50/50 is as boring as it gets) or the absolute value of `probA - 0.5`. Graham's spam filter, for example, only uses the probability of the top 15 most interesting words. If you are looking for an exercise, you might try adding this feature to the Bayesian classifier example.
+
+<iframe width="350" height="200" src="https://www.youtube.com/embed/6DoJob85jE0?list=PLRqwX-V7Uu6bZQkJcGM5S9fn9R9Yyd8iZ" frameborder="0" allowfullscreen></iframe>
