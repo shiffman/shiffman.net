@@ -26,7 +26,7 @@ permalink: /a2z/data-apis/
 
 ## RiTaJS
 
-<iframe width="350" height="200" src="https://www.youtube.com/embed/lIPEvh8HbGQ?list=PLRqwX-V7Uu6a-SQiI4RtIwuOrLJGnel0r" frameborder="0" allowfullscreen></iframe>
+<iframe width="525" height="300" src="https://www.youtube.com/embed/lIPEvh8HbGQ?list=PLRqwX-V7Uu6a-SQiI4RtIwuOrLJGnel0r" frameborder="0" allowfullscreen></iframe>
 
 When I think of programming libraries and frameworks for text-based data I think of python and libraries like the [Nature Language Toolkit (NLTK)](http://www.nltk.org/).  However, there are still lots of options for language and text-based code libraries for JavaScript.  I'll look at two on this page starting with RiTaJS.  [RiTaJS](https://github.com/dhowe/RiTaJS) is the JavaScript implementation of [RiTa](http://rednoise.org/rita/) by Daniel Howe.
 
@@ -72,7 +72,7 @@ You can also customize the lexicon by editing the JS library files themselves or
 
 ## NLP-Compromise
 
-<iframe width="350" height="200" src="https://www.youtube.com/embed/tk_JGu2AbJY?list=PLRqwX-V7Uu6a-SQiI4RtIwuOrLJGnel0r" frameborder="0" allowfullscreen></iframe>
+<iframe width="525" height="300" src="https://www.youtube.com/embed/tk_JGu2AbJY?list=PLRqwX-V7Uu6a-SQiI4RtIwuOrLJGnel0r" frameborder="0" allowfullscreen></iframe>
 
 Another useful natural language processing library in JavaScript is [NLP-Compromise](http://nlp-compromise.github.io/website/), source on [github](https://github.com/nlp-compromise/nlp_compromise) by [Spencer Kelly](https://s3.amazonaws.com/spencermounta.in/index.html).
 
@@ -105,7 +105,7 @@ NLP-Compromise can negate statements, conjugate verbs (and therby alter tense), 
 
 ## Data
 
-<iframe width="350" height="200" src="https://www.youtube.com/embed/rJaXOFfwGVw?list=PLRqwX-V7Uu6a-SQiI4RtIwuOrLJGnel0r" frameborder="0" allowfullscreen></iframe>
+<iframe width="525" height="300" src="https://www.youtube.com/embed/rJaXOFfwGVw?list=PLRqwX-V7Uu6a-SQiI4RtIwuOrLJGnel0r" frameborder="0" allowfullscreen></iframe>
 
 Some parts of this page is excerpted (and adapted for JavaScript) from <a href="http://learningprocessing.com">Learning Processing</a>.
 
@@ -210,7 +210,7 @@ A great place to find a selection of JSON data sources to play with is <a href="
 
 ## Loading JSON into your code
 
-<iframe width="350" height="200" src="https://www.youtube.com/embed/6mT3r8Qn1VY?list=PLRqwX-V7Uu6a-SQiI4RtIwuOrLJGnel0r" frameborder="0" allowfullscreen></iframe>
+<iframe width="525" height="300" src="https://www.youtube.com/embed/6mT3r8Qn1VY?list=PLRqwX-V7Uu6a-SQiI4RtIwuOrLJGnel0r" frameborder="0" allowfullscreen></iframe>
 
 
 <p>Now that I've covered the syntax of JSON, I can look at using the data in JavaScript and p5.js.  The first step is simply loading the data <code>loadJSON()</code>. <code>loadJSON()</code> can be called in <code>preload</code> or used with a callback.  I'm using callbacks in just about all my examples so let's follow that syntax here.</p>
@@ -300,7 +300,7 @@ Here's what this looks like:
 
 ## APIs
 
-<iframe width="350" height="200" src="https://www.youtube.com/embed/ecT42O6I_WI?list=PLRqwX-V7Uu6a-SQiI4RtIwuOrLJGnel0r" frameborder="0" allowfullscreen></iframe>
+<iframe width="525" height="300" src="https://www.youtube.com/embed/ecT42O6I_WI?list=PLRqwX-V7Uu6a-SQiI4RtIwuOrLJGnel0r" frameborder="0" allowfullscreen></iframe>
 
 <p>What makes something an API versus just some data you found, and what are some pitfalls you might run into when using an API?</p>
 
@@ -378,12 +378,12 @@ loadJSON(encoded, callback);
 
 ## Wordnik API
 
-<iframe width="350" height="200" src="https://www.youtube.com/embed/YsgdUaOrFnQ?list=PLRqwX-V7Uu6a-SQiI4RtIwuOrLJGnel0r" frameborder="0" allowfullscreen></iframe>
+<iframe width="525" height="300" src="https://www.youtube.com/embed/YsgdUaOrFnQ?list=PLRqwX-V7Uu6a-SQiI4RtIwuOrLJGnel0r" frameborder="0" allowfullscreen></iframe>
 
 
 ## NYTimes API
 
-<iframe width="350" height="200" src="https://www.youtube.com/embed/IMne3LY4bks?list=PLRqwX-V7Uu6a-SQiI4RtIwuOrLJGnel0r" frameborder="0" allowfullscreen></iframe>
+<iframe width="525" height="300" src="https://www.youtube.com/embed/IMne3LY4bks?list=PLRqwX-V7Uu6a-SQiI4RtIwuOrLJGnel0r" frameborder="0" allowfullscreen></iframe>
 
 ## Wikipedia API
 
@@ -391,4 +391,4 @@ Coming soon.
 
 ## Google sheets
 
-<iframe width="350" height="200" src="https://www.youtube.com/embed/ziBO-U2_t3k?list=PLRqwX-V7Uu6a-SQiI4RtIwuOrLJGnel0r" frameborder="0" allowfullscreen></iframe>
+<iframe width="525" height="300" src="https://www.youtube.com/embed/ziBO-U2_t3k?list=PLRqwX-V7Uu6a-SQiI4RtIwuOrLJGnel0r" frameborder="0" allowfullscreen></iframe>

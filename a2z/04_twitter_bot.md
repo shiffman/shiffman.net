@@ -43,7 +43,7 @@ permalink: /a2z/twitter-bots/
 
 ## The Twitter API
 
-<iframe width="350" height="200" src="https://www.youtube.com/embed/7-nX3YOC4OA?list=PLRqwX-V7Uu6atTSxoRiVnSuOn6JHnq2yV" frameborder="0" allowfullscreen></iframe>
+<iframe width="525" height="300" src="https://www.youtube.com/embed/7-nX3YOC4OA?list=PLRqwX-V7Uu6atTSxoRiVnSuOn6JHnq2yV" frameborder="0" allowfullscreen></iframe>
 
 Some APIs require a level of authentication that can't be done from client-side JavaScript.  A prime example of this is the [Twitter API](https://dev.twitter.com/overview/documentation) which requires something known as [OAuth](https://dev.twitter.com/oauth/overview/faq). For basic API querying, you don't need to go to deep into the inner workings of authenticating.  With node, you can pick one of many node packages that help you connet and query the API. The one I'm using for these examples is called [Twit](https://github.com/ttezel/twit).
 
@@ -147,7 +147,7 @@ Included in this week's examples is [an example that expands on the above](https
 
 ## Writing a bot
 
-<iframe width="350" height="200" src="https://www.youtube.com/embed/ZvsqQjwrISQ?list=PLRqwX-V7Uu6atTSxoRiVnSuOn6JHnq2yV" frameborder="0" allowfullscreen></iframe>
+<iframe width="525" height="300" src="https://www.youtube.com/embed/ZvsqQjwrISQ?list=PLRqwX-V7Uu6atTSxoRiVnSuOn6JHnq2yV" frameborder="0" allowfullscreen></iframe>
 
 There's not much left to say about writing a bot. All of the pieces you need are in the above sections.  And none of the additional complexity of a web server via express is needed.  The bot is simply just a process that executes every so often and tweets something based on some sort of algorithm or data source.  
 
@@ -234,6 +234,6 @@ var stream = T.stream('statuses/filter', { locations: sanfran })
 stream.on('tweet', tweetEvent);
 {% endhighlight %}
 
-<iframe width="350" height="200" src="https://www.youtube.com/embed/mUoIPmZ4KwA?list=PLRqwX-V7Uu6atTSxoRiVnSuOn6JHnq2yV" frameborder="0" allowfullscreen></iframe>
+<iframe width="525" height="300" src="https://www.youtube.com/embed/mUoIPmZ4KwA?list=PLRqwX-V7Uu6atTSxoRiVnSuOn6JHnq2yV" frameborder="0" allowfullscreen></iframe>
 
-<iframe width="350" height="200" src="https://www.youtube.com/embed/b4JShWhWADY?list=PLRqwX-V7Uu6atTSxoRiVnSuOn6JHnq2yV" frameborder="0" allowfullscreen></iframe>
+<iframe width="525" height="300" src="https://www.youtube.com/embed/b4JShWhWADY?list=PLRqwX-V7Uu6atTSxoRiVnSuOn6JHnq2yV" frameborder="0" allowfullscreen></iframe>

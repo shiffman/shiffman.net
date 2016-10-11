@@ -31,7 +31,7 @@ The framework we'll be exploring is [p5.js](http://p5js.org).  Here are some lin
 
   * [Overview of p5.js](https://github.com/processing/p5.js/wiki/p5.js-overview)
 
-<iframe width="350" height="200" src="https://www.youtube.com/embed/8j0UDiN7my4?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe>
+<iframe width="525" height="300" src="https://www.youtube.com/embed/8j0UDiN7my4?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe>
 
 
 ## HTML and CSS
@@ -57,7 +57,7 @@ The key functions and topics I will discuss in class are:
 * When to use create vs select — `select()` and `selectAll()`, id vs class vs tag
 * Applying CSS styles — `style()` (and when to use a CSS file).
 
-<iframe width="350" height="200" src="https://www.youtube.com/embed/lAtoaRz78I4?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe>
+<iframe width="525" height="300" src="https://www.youtube.com/embed/lAtoaRz78I4?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe>
 
 
 ## Examples
@@ -76,7 +76,7 @@ The key functions and topics I will discuss in class are:
 
 JavaScript objects will be key to just about everything we do this semester.  We'll be using objects for DOM manipulation like `p5.Element` and the native JS `Element`.  We'll be exploring data coming in as JSON ("JavaScript Object Notation").  We'll focus a lot on the JS `String` object as well as objects from other libraries.  And we'll write our own objects for analyzing and generating text.  JavaScript objects (for now, at least until [ES6](http://es6-features.org/#Constants) is more widely adopted) follow a "prototypical inheritance" model which is quite different than the classical OOP found in Java or C++.  [This "object playground" video](http://www.objectplayground.com/) covers the idea in great detail if you are looking for more info.
 
-<iframe width="350" height="200" src="https://www.youtube.com/embed/F3GeM_KrGjI?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe>
+<iframe width="525" height="300" src="https://www.youtube.com/embed/F3GeM_KrGjI?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe>
 
 <span class="line-charm first"></span>
 
@@ -205,7 +205,7 @@ function gotFile(file) {
 
 ### Drop zone
 
-<iframe width="350" height="200" src="https://www.youtube.com/embed/o4UmGrPst_c" frameborder="0" allowfullscreen></iframe>
+<iframe width="525" height="300" src="https://www.youtube.com/embed/o4UmGrPst_c" frameborder="0" allowfullscreen></iframe>
 
 Another, often more convenient, way to accept files from a user is to allow the user to "drag and drop" files in the page itself.  To do this, you first need to create and style a div that will act as the "drop zone".  For example:
 
@@ -311,7 +311,7 @@ var p = select('#editableP');
 
 ## Strings in JS
 
-<iframe width="350" height="200" src="https://www.youtube.com/embed/DcoAjEZYies?list=PLRqwX-V7Uu6YrbSJBg32eTzUU50E2B8Ch" frameborder="0" allowfullscreen></iframe>
+<iframe width="525" height="300" src="https://www.youtube.com/embed/DcoAjEZYies?list=PLRqwX-V7Uu6YrbSJBg32eTzUU50E2B8Ch" frameborder="0" allowfullscreen></iframe>
 
 One you have data from a file or user input (or user file input!), the next step is to do something interesting with it.  For this week, it's up to you to invent something.  To demonstrate some possibilities I'll first run through some of the basic functions available as part of the JavaScript [String object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) and then describe one scenario for analyzing text — the Flesch index.
 
@@ -547,7 +547,7 @@ report += "Flesch Index   : " + flesch + "\n";
 
 ## Text mashups
 
-<iframe width="350" height="200" src="https://www.youtube.com/embed/u-HUtrpyi1c?list=PLRqwX-V7Uu6YrbSJBg32eTzUU50E2B8Ch" frameborder="0" allowfullscreen></iframe>
+<iframe width="525" height="300" src="https://www.youtube.com/embed/u-HUtrpyi1c?list=PLRqwX-V7Uu6YrbSJBg32eTzUU50E2B8Ch" frameborder="0" allowfullscreen></iframe>
 
 In class, we'll do an exercise around mashing up text manually.  Here are links to further reading and information about the techniques we discussed, as well as online versions of the algorithms.  For your homework you can choose to work with one of these methods manually or programmatically.
 
@@ -566,4 +566,4 @@ In class, we'll do an exercise around mashing up text manually.  Here are links 
 
 ## Assignment
 
-<iframe width="350" height="200" src="https://www.youtube.com/embed/YTzVbuV89RE?list=PLRqwX-V7Uu6YrbSJBg32eTzUU50E2B8Ch" frameborder="0" allowfullscreen></iframe>
+<iframe width="525" height="300" src="https://www.youtube.com/embed/YTzVbuV89RE?list=PLRqwX-V7Uu6YrbSJBg32eTzUU50E2B8Ch" frameborder="0" allowfullscreen></iframe>

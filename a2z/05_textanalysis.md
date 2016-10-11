@@ -6,7 +6,7 @@ permalink: /a2z/text-analysis/
 
 # Word Counting and Text Analysis
 
-<iframe width="350" height="200" src="https://www.youtube.com/embed/tE-ZYXU8A8U?list=PLRqwX-V7Uu6bZQkJcGM5S9fn9R9Yyd8iZ" frameborder="0" allowfullscreen></iframe>
+<iframe width="525" height="300" src="https://www.youtube.com/embed/tE-ZYXU8A8U?list=PLRqwX-V7Uu6bZQkJcGM5S9fn9R9Yyd8iZ" frameborder="0" allowfullscreen></iframe>
 
 ## Examples
 * [Word counting](https://shiffman.github.io/A2Z-F16/week5-analysis/01_concordance/) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week5-analysis/01_concordance)
@@ -47,7 +47,7 @@ permalink: /a2z/text-analysis/
 
 ## Associative Arrays in JavaScript?
 
-<iframe width="350" height="200" src="https://www.youtube.com/embed/_5jdE6RKxVk?list=PLRqwX-V7Uu6bZQkJcGM5S9fn9R9Yyd8iZ" frameborder="0" allowfullscreen></iframe>
+<iframe width="525" height="300" src="https://www.youtube.com/embed/_5jdE6RKxVk?list=PLRqwX-V7Uu6bZQkJcGM5S9fn9R9Yyd8iZ" frameborder="0" allowfullscreen></iframe>
 
 You know that thing we call an array?  Yes, that's right, an ordered list of data.  Each element of an array is numbered and accessed by its numeric index.
 
@@ -101,7 +101,7 @@ We'll need this new way since we'll be pulling the names for the object as strin
 
 ## Text Concordance
 
-<iframe width="350" height="200" src="https://www.youtube.com/embed/unm0BLor8aE?list=PLRqwX-V7Uu6bZQkJcGM5S9fn9R9Yyd8iZ" frameborder="0" allowfullscreen></iframe>
+<iframe width="525" height="300" src="https://www.youtube.com/embed/unm0BLor8aE?list=PLRqwX-V7Uu6bZQkJcGM5S9fn9R9Yyd8iZ" frameborder="0" allowfullscreen></iframe>
 
 In the case of our examples, we're going to take a text document, split it into an array of Strings and increase the value associated with a particular key (i.e. word) each time we encounter the same String.  Let's assume we have some text in a variable named `data`.  First, we'll split into word "tokens".
 
@@ -190,7 +190,7 @@ Here is a [text concordance example](http://shiffman.net/teaching/a2z/analysis/0
 
 ## TF-IDF
 
-<iframe width="350" height="200" src="https://www.youtube.com/embed/RPMYV-eb6?list=PLRqwX-V7Uu6bZQkJcGM5S9fn9R9Yyd8iZ" frameborder="0" allowfullscreen></iframe>
+<iframe width="525" height="300" src="https://www.youtube.com/embed/RPMYV-eb6?list=PLRqwX-V7Uu6bZQkJcGM5S9fn9R9Yyd8iZ" frameborder="0" allowfullscreen></iframe>
 
 
 One common application of a text concordance is [TF-IDF](http://en.wikipedia.org/wiki/Tf%E2%80%93idf) or term frequency–inverse document frequency.  Let's consider a corpus of wikipedia articles.  Is there a way we could automatically generate keywords or tags for an article  based on its word counts?  
@@ -237,7 +237,7 @@ and:       6 * log(6/6)   0.0
 
 If [logarithmic scale](http://en.wikipedia.org/wiki/Logarithmic_scale) is new to you, this Khan Academy video may help.  (Note how if a term appears in every single document the tf-idf score is always zero.)
 
-<iframe width="350" height="200" src="//www.youtube.com/embed/sBhEi4L91Sg" frameborder="0" allowfullscreen></iframe>
+<iframe width="525" height="300" src="//www.youtube.com/embed/sBhEi4L91Sg" frameborder="0" allowfullscreen></iframe>
 
 We can improve this one more step by using not just the raw count of how many times a term (such as "rainbow") appears in a document, but the ratio of of its count to the total number of words in the document.  This normalizes the score by document length.  So if the total number of words in the article is 100, the score would now be:
 
@@ -282,7 +282,7 @@ The answer — 15.3% — is calculated via Bayes' Theorem.  Let's look at it aga
 
 This video illustrates the problem quite nicely.
 
-<p><iframe width="350" height="200" src="//www.youtube.com/embed/D8VZqxcu0I0" frameborder="0" allowfullscreen></iframe></p>
+<p><iframe width="525" height="300" src="//www.youtube.com/embed/D8VZqxcu0I0" frameborder="0" allowfullscreen></iframe></p>
 
 The problem our brains run into are those rascally 90% and 95% numbers.  90% of students who test positive have the disease and 95% who don't test negative, if I test positive, I should probably have it, right?!!  The important thing to remember is that only 1% of students actually have the disease. Sure testing positive increases the likelihood, but because 5% of students without the disease receive a false positive, it only increases the chances to 15%.  All of this is explained in incredibly thorough and wonderful detail in [Eliezer Yudkowsky's](http://yudkowsky.net/) article [An Intuitive Explanation of Bayesian Reasoning](http://yudkowsky.net/rational/bayes).  My explanation is simply adapted from his.
 
@@ -388,4 +388,4 @@ Now we know the probability the document is in category A!
 
 One important aspect of this analysis that I've left out is the "interesting-ness&#8221 of any given word.  An interesting rating is defined as how different, say, the spam probability is from 0.5 (i.e. 50/50 is as boring as it gets) or the absolute value of `probA - 0.5`. Graham's spam filter, for example, only uses the probability of the top 15 most interesting words. If you are looking for an exercise, you might try adding this feature to the Bayesian classifier example.
 
-<iframe width="350" height="200" src="https://www.youtube.com/embed/6DoJob85jE0?list=PLRqwX-V7Uu6bZQkJcGM5S9fn9R9Yyd8iZ" frameborder="0" allowfullscreen></iframe>
+<iframe width="525" height="300" src="https://www.youtube.com/embed/6DoJob85jE0?list=PLRqwX-V7Uu6bZQkJcGM5S9fn9R9Yyd8iZ" frameborder="0" allowfullscreen></iframe>

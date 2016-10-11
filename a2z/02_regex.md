@@ -11,7 +11,7 @@ permalink: /a2z/regex/
 
 # Regular Expressions
 
-<iframe width="350" height="200" src="https://www.youtube.com/embed/7DG3kCDx53c?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe>
+<iframe width="525" height="300" src="https://www.youtube.com/embed/7DG3kCDx53c?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe>
 
 ## All examples
 
@@ -65,7 +65,7 @@ Here are a few common meta-characters (I'm listing them below as they would appe
 
 ### Single Character Metacharacters:
 
-<iframe width="350" height="200" src="https://www.youtube.com/embed/YTocEnDsMNw?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe>
+<iframe width="525" height="300" src="https://www.youtube.com/embed/YTocEnDsMNw?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe>
 
 {% highlight text %}
 .     any one character
@@ -100,7 +100,7 @@ Using the above, we could come up with some quick examples:
 * <code class="a2zregex">^$</code> — matches beginning of line followed by end of line, i.e. match any blank line!
 * <code class="a2zregex">ing\b</code> — matches “ing” followed by a word boundary, i.e. any time “ing” appears at the end of a word!
 
-<iframe width="350" height="200" src="https://www.youtube.com/embed/EfJU0Y9WAZ4?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe>
+<iframe width="525" height="300" src="https://www.youtube.com/embed/EfJU0Y9WAZ4?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe>
 
 **Character Classes** serve as a kind of *or* statement amongst individual characters and are denoted by characters enclosed in brackets, i.e. <code class="a2zregex">[aeiou]</code> means match any vowel.  Using a <code class="a2zregex">^</code> negates the character class, i.e. <code class="a2zregex">[^aeiou]</code> means match any character not a vowel (note this isn't just limited to letters, it really means <i>anything at all</i> that is not an a, e, i, o, or u.)  A hyphen indicates a range of characters, such as <code class="a2zregex">[0-9]</code> or <code class="a2zregex">[a-z]</code>.
 
@@ -259,7 +259,7 @@ while (var results = regex.exec(text)) {
 
 ## Splitting with Regular Expressions
 
-<iframe width="350" height="200" src="https://www.youtube.com/embed/fdyqutmcI2Q?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe>
+<iframe width="525" height="300" src="https://www.youtube.com/embed/fdyqutmcI2Q?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe>
 
 I can now revisit the [week 2 discussion](http://shiffman.github.io/A2Z-F15/week2/notes.html) of p5's `split()` and `splitTokens()` functions and look at how regular expressions work as a delimiter with the native `String` `split()` method.  In this case, a string is split into an array of substrings beginning at each match of that regular expression. Here's a simple example that quickyl counts the # of words (not perfect by any means).
 
@@ -310,7 +310,7 @@ What if you, however, would like to include all the delimiters?  To accomplish t
 
 ## Search and Replace
 
-<iframe width="350" height="200" src="https://www.youtube.com/embed/7a-a6lKoyIQ?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe>
+<iframe width="525" height="300" src="https://www.youtube.com/embed/7a-a6lKoyIQ?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe>
 
 
 Running a search and replace is one of the more powerful things one can do with regular expressions.  This can be accomplished with the String's `replace()` method.  The method receives two arguments, a regex and a replacement string.  Wherever there is a regex match, it is replaced with the string provided.
