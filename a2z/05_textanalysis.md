@@ -20,7 +20,7 @@ permalink: /a2z/text-analysis/
 * [Enron e-mail corpus](http://www.aueb.gr/users/ion/data/enron-spam/)
 
 ## Related references
-* [Secret Life of Pronouns](http://secretlifeofpronouns.com/)
+* [Secret Life of Pronouns](http://secretlifeofpronouns.com/), [Pennebaker Ted Talk](https://www.youtube.com/watch?v=PGsQwAu3PzU)
 * [TF-IDF Single Page Tutorial](http://www.tfidf.com/)
 * [Paul Graham's A Plan for Spam](http://www.paulgraham.com/spam.html) and [Better Bayesian Filtering](http://www.paulgraham.com/better.html)
 * [Introduction to Bayesian Filtering](http://www.bcc.bilkent.edu.tr/BayesianFiltering.pdf)
