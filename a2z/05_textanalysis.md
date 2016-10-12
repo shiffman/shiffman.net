@@ -190,7 +190,7 @@ Here is a [text concordance example](http://shiffman.net/teaching/a2z/analysis/0
 
 ## TF-IDF
 
-<iframe width="525" height="300" src="https://www.youtube.com/embed/RPMYV-eb6?list=PLRqwX-V7Uu6bZQkJcGM5S9fn9R9Yyd8iZ" frameborder="0" allowfullscreen></iframe>
+<iframe width="525" height="300" src="https://www.youtube.com/embed/RPMYV-eb6lI?list=PLRqwX-V7Uu6bZQkJcGM5S9fn9R9Yyd8iZ" frameborder="0" allowfullscreen></iframe>
 
 
 One common application of a text concordance is [TF-IDF](http://en.wikipedia.org/wiki/Tf%E2%80%93idf) or term frequency–inverse document frequency.  Let's consider a corpus of wikipedia articles.  Is there a way we could automatically generate keywords or tags for an article  based on its word counts?  
