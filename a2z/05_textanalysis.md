@@ -41,7 +41,7 @@ permalink: /a2z/text-analysis/
 ## Exercise ideas
 * Visualize the results of a concordance using canvas (or some other means).
 * Expand the information the concordance holds so that it keeps track of word positions (i.e. not only how many times do the words appear in the source text, but where do they appear each time.)
-* Implement some of the ideas specific to spam filtering to the bayesian classification exmple.
+* Implement some of the ideas specific to spam filtering to the bayesian classification example.
 * In James W. Pennebaker's book [The Secret Life of Pronouns](http://secretlifeofpronouns.com/), Pennebaker describes his research into how the frequency of words that have little to no meaning on their own (I, you, they, a, an, the, etc.) are a window into the emotional state or personality of an author or speaker.  For example, heavy use of the pronoun “I” is an indicator of “depression, stress or insecurity”.  Create a page sketch that analyzes the use of pronouns.  For more, visit <a href="http://www.analyzewords.com/">analyzewords.com</a>.
 * Use the ideas to find similarities between people. For example, if you look at all the e-mails on the ITP student list, can you determine who is similar? Consider using properties in addition to word count, such as time of e-mails, length of e-mails, who writes to whom, etc.
 
@@ -343,7 +343,7 @@ for (var i = 0; i < tokens.length; i++) {
 
 The above steps are repeated over and over again for all training documents.  Once all the "training" files are read, the probabilities can be calculated for every word.
 
-Once we've gone through the process of counting the occurences in each category ('A' or 'B', spam or ham, etc.), we can the calculate the probabilities according to Bayes rule.
+Once we've gone through the process of counting the occurrences in each category ('A' or 'B', spam or ham, etc.), we can the calculate the probabilities according to Bayes rule.
 
 {% highlight javascript %}
 // Ok, assuming we have an array of keys
