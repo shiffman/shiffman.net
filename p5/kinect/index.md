@@ -11,6 +11,17 @@ dsq_needs_sync:
 
 ---
 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Test Ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9064317682916014"
+     data-ad-slot="9555273281"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 <p><iframe width="560" height="315" src="https://www.youtube.com/embed/QmVNgdapJJM?list=PLRqwX-V7Uu6ZMlWHdcy8hAGDy6IaoxUKf" frameborder="0" allowfullscreen></iframe></p>
 
 # Kinect and Processing

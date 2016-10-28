@@ -59,7 +59,7 @@ Once you have the object you can query it anywhere in your code.
 
 {% highlight javascript %}
 // Random noun
-lexicon.randomWord('pos');
+lexicon.randomWord('nn');
 
 // List of words that rhyme with cat
 lexicon.rhymes('cat');
