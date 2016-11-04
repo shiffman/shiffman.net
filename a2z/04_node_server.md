@@ -68,6 +68,8 @@ $ npm install Twit --save
 
 ## Express basics
 
+<iframe width="525" height="300" src="https://www.youtube.com/embed/6oiabY1xpBo?list=PLRqwX-V7Uu6Yyn-fBtGHfN0_xCtBwUkBp" frameborder="0" allowfullscreen></iframe>
+
 [Express](http://expressjs.com/) is a popular, simple web framework for node.  It includes hooks for the usual things you want to do with a web server, like hosting files and getting query input from a user.  Although Express is not necessary for the ultimate goal of writing twitter bots (no need to be a web server), I'm going to take a little time on this page to walk through some basics related to other kinds of server-side functionality you might need for projects in this course.
 
 First thing you need to do is install express.
@@ -105,6 +107,8 @@ Now anytime you enter the url to your server (if you are running it on your mach
 
 ## Routes with express
 
+<iframe width="525" height="300" src="https://www.youtube.com/embed/e4qKBkwwkNg?list=PLRqwX-V7Uu6Yyn-fBtGHfN0_xCtBwUkBp" frameborder="0" allowfullscreen></iframe>
+
 Beyond hosting static files, one of the most useful things you can do with server-side programming is execute different blocks of code based on the users' "route".  A route is a path on the server like `http://yourserver.com/path/to/route`.  With static files, this is just a folder structure, but new possibilities open up when you programatically handle a route.  For example, the following code specifies a function to call whenever a user goes to `http://server.com/someroute`.
 
 {% highlight javascript %}
@@ -134,6 +138,8 @@ function sayHello(request, response) {
 
 ## RESTful routes
 
+<iframe width="525" height="300" src="https://www.youtube.com/embed/oMhAd864bBc?list=PLRqwX-V7Uu6Yyn-fBtGHfN0_xCtBwUkBp" frameborder="0" allowfullscreen></iframe>
+
 [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) (Representational_state_transfer) is a common style of web architecture that is used by many APIs.  For example, as you may have seeen in previous examples, a request to the [Wordnik API](http://developer.wordnik.com/) looks something like: `http://api.wordnik.com:80/v4/word.json/unicorn/definitions`.  Note how this is different than using a url query string like `http://someapi.com/?word=unicorn`.  Instead of a query string, the API pulls out commands ("definitions") and parameters ("unicorn") from the route itself.  This translates to "Please send the definitons for the word unicorn."
 
 You can implement this style in node using `app.get()` as above.  The difference is the following.  
@@ -154,6 +160,7 @@ function sayHello(request, response) {
   res.send("Hello " + name + ", " + age + ' years old!');
 }
 {% endhighlight %}
+
 
 ## Making your own API
 
