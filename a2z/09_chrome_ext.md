@@ -81,7 +81,7 @@ If your code is complicated and long it's often simpler to just put it in anothe
 })();
 {% endhighlight %}
 
-Now try this <a class="bookmarklet" href="javascript:(function(){var script = document.createElement('script');script.src = 'http://shiffman.net/a2z/js/bookmarklet.js?' + new Date().getTime();document.body.appendChild(script);})();">parapinkify</a> example which runs the following code (located at <a href="http://shiffman.net/a2z/js/bookmarklet.js">http://shiffman.net/a2z/js/bookmarklet.js</a>) to turn all `<p>` elements pink.
+Now try this <a class="bookmarklet" href="javascript:(function(){var script = document.createElement('script');script.src = 'http://shiffman.net/a2z/js/bookmarklet.js?' + new Date().getTime();document.body.appendChild(script);})();">purpler</a> example which runs the following code (located at <a href="http://shiffman.net/a2z/js/bookmarklet.js">http://shiffman.net/a2z/js/bookmarklet.js</a>) to turn all `<p>` elements pink.
 
 {% highlight javascript %}
 (function() {
