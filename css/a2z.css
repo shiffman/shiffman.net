@@ -37,3 +37,9 @@ blockquote {
   font-size: 90%;
   font-style:italic;
 }
+
+.bookmarklet {
+  background-color: #C036F3;
+  padding: 4px;
+  color: #FFF;
+}

@@ -4,7 +4,7 @@ layout: a2z-post
 permalink: /a2z/chrome-ext/
 ---
 
-# Chrome Extensions
+# Chrome Extensions (and Bookmarklets)
 
 ## Example extensions
 * [Basic "hello world" extension -- Browser Action](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week10-chrome-ext/00_extension_basics_browser)
@@ -30,6 +30,78 @@ permalink: /a2z/chrome-ext/
 * [How to make a chrome extension](https://robots.thoughtbot.com/how-to-make-a-chrome-extension)
 * [Developing chrome extensions tutorial](http://code.tutsplus.com/tutorials/developing-google-chrome-extensions--net-33076)
 
+## Bookmarklets
+
+Before I discuss chrome extensions, let's briefly look at how bookmarklets work.  In JavaScript you can define a function like so:
+
+{% highlight javascript %}
+function unicorn() {
+  alert('unicorn!');
+}
+{% endhighlight %}
+
+You can then execute that function like so:
+
+{% highlight javascript %}
+unicorn();
+{% endhighlight %}
+
+Functions in JavaScript, however, can be anonymous.
+
+{% highlight javascript %}
+function() {
+  alert('unicorn!');
+}
+{% endhighlight %}
+
+And if you put that whole anonymous function in parentheses and then add parentheses after it, it's a "self-executing" function.  Meaning it's called the moment it's defined.
+
+
+{% highlight javascript %}
+(function() {
+  alert('unicorn!');
+})();
+{% endhighlight %}
+
+And that is what a bookmarklet is!  Here, try <a class="bookmarklet" href="javascript:(function() { alert('unicorn!');})();">dragging this one</a> to you bookmarks bar.
+
+It's the above javascript code inside an `a href` element with `javascript:` in front of the self-executable function.
+
+{% highlight html %}
+<a href="javascript:(function(){})()">bookmarklet</a>
+{% endhighlight %}
+
+If your code is complicated and long it's often simpler to just put it in another JS file and reference it like so:
+
+{% highlight javascript %}
+(function () {
+  var script = document.createElement('script');
+  script.src = 'http://shiffman.net/a2z/js/bookmarklet.js';
+  document.body.appendChild(script);
+})();
+{% endhighlight %}
+
+Now try this <a class="bookmarklet" href="javascript:(function(){var script = document.createElement('script');script.src = 'http://shiffman.net/a2z/js/bookmarklet.js?' + new Date().getTime();document.body.appendChild(script);})();">parapinkify</a> example which runs the following code (located at <a href="http://shiffman.net/a2z/js/bookmarklet.js">http://shiffman.net/a2z/js/bookmarklet.js</a>) to turn all `<p>` elements pink.
+
+{% highlight javascript %}
+(function() {
+  var elts = document.getElementsByTagName('p');
+  for (var i = 0; i < elts.length; i++) {
+    elts[i].style['background-color'] = '#C0C';
+  }
+})();
+{% endhighlight %}
+
+The advantage of this solution is that is also makes it possible to update the bookmarklet without user's having to re-add it.  There is the problem of browser caching, however, which can usually be addressed with adding a random number or timestamp to the url.
+
+{% highlight javascript %}
+var url = 'http://shiffman.net/a2z/js/bookmarklet.js';
+script.src = url + "?" + new Date().getTime();
+{% endhighlight %}
+
+(Note you can get fancier with the above if you want to cache hourly, daily, etc.)
+
+
 ## Basics
 
 A chrome extension is a way of adding functionality to the chrome browser.  You can add interface elements, open and close tabs, interact with the address bar, as well as modify the contents of any page the browser is currently on.  The lovely thing for us is that extensions can be built with the same open web tools that we are already using -- HTML, CSS, JavaScript.
@@ -38,7 +110,7 @@ All chrome extensions require a `manifest.json` file.  This file includes metada
 
 Here is an example:
 
-{% highlight javascript %}
+{% highlight json %}
 {
   "manifest_version": 2,
   "name": "My Extension",
