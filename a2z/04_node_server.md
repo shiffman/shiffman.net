@@ -132,7 +132,7 @@ You can also look at the data associated with the user's `request`.  For example
 {% highlight javascript %}
 function sayHello(request, response) {
   var name = request.query.name;
-  res.send("Hello " + name + "!");
+  response.send("Hello " + name + "!");
 }
 {% endhighlight %}
 
@@ -157,7 +157,7 @@ A valid url for the above might then be: `http://server.com/hello/Elias/7`.  You
 function sayHello(request, response) {
   var name = request.params.name;
   var age = request.params.age;
-  res.send("Hello " + name + ", " + age + ' years old!');
+  response.send("Hello " + name + ", " + age + ' years old!');
 }
 {% endhighlight %}
 
