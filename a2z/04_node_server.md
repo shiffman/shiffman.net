@@ -119,7 +119,7 @@ With the above code, you then need to do define the `sayHello()` function (which
 
 {% highlight javascript %}
 function sayHello(request, response) {
-  res.send("Hello!");
+  response.send("Hello!");
 }
 {% endhighlight %}
 
