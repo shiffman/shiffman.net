@@ -67,6 +67,8 @@ var wordcounts = new Concordance();
 
 ### Reading files
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6iZiqQZBQJY?list=PLRqwX-V7Uu6Yyn-fBtGHfN0_xCtBwUkBp" frameborder="0" allowfullscreen></iframe>
+
 Now that I have a `Concordance` object I can start filling it with data on the server.  Let's say I had a sequence of numbered files sitting on the server that I want to process.  I can read those files and pass the contents to the concordance with node's [file system module](https://nodejs.org/api/fs.html) (aka `fs`).  The `fs` module has functions for grabbing a list of files in a directory as well as reading specific files.
 
 {% highlight javascript %}
@@ -126,6 +128,8 @@ function showOne(req, res) {
 {% endhighlight %}
 
 ### What does the client say?
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4zr8j-jeU_M?list=PLRqwX-V7Uu6Yyn-fBtGHfN0_xCtBwUkBp" frameborder="0" allowfullscreen></iframe>
 
 The client can then access this data with `loadJSON()`.
 
@@ -221,6 +225,8 @@ function finished(err) {
 Writing out a text file is a nice quick and dirty solution that can work for many small-scale creative projects in a prototyping stage.  Often, however, a more involved database is required. In addition to creating a database on your own server, there is also the option of using an API service like [Firebase](https://firebase.google.com) to store your data.  I have [notes and examples on firebase here](/a2z/firebase/).
 
 ## GET vs POST
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GZ2nwxhQUTU?list=PLRqwX-V7Uu6Yyn-fBtGHfN0_xCtBwUkBp" frameborder="0" allowfullscreen></iframe>
 
 The [HTTP (Hypertext Transfer Protocol)](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) includes several different kinds of requests.  The one you are likely most commonly familiar with is a `GET` request.  This is the request that happens when you type a URL into an address bar.  You are asking the server if you can "get" something, and what is sent back is some sort of data, often in the form of HTML, but in can be anything.
 
