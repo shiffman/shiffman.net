@@ -6,6 +6,8 @@ permalink: /a2z/firebase/
 
 ## Database as Service
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JrHT1iqSrAQ?list=PLRqwX-V7Uu6agS82Le9lLCBbeaW8inATT" frameborder="0" allowfullscreen></iframe>
+
 In [Building an API with node](/a2z/node-api), I discussed strategies for storing data associated with a web application from a local JSOn file to creating a custom database on your own server.  Another strategy is to use a "database as service" to store your data.  On this page, I'll explore the service [Firebase](https://firebase.google.com) which allows you to send and retrieve data from your client-side or server-side JavaScript code.  Firebase is a commercial service (from Google), but it has [a pretty decent free plan](https://firebase.google.com/pricing/).
 
 ## Examples:
@@ -14,6 +16,8 @@ In [Building an API with node](/a2z/node-api), I discussed strategies for storin
 * [Saving data for mad libs](https://shiffman.github.io/A2Z-F16/week9-firebase/03_firebase_madlibs) (from client) -- [source](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week9-firebase/03_firebase_madlibs)
 * [Creating permalinks for generated text](https://shiffman.github.io/A2Z-F16/week9-firebase/04_firebase_markov) (from client) -- [source](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week9-firebase/04_firebase_markov)
 * [Saving and retrieving with node](https://github.com/shiffman/A2Z-F16/blob/gh-pages/week9-firebase/05_node_firebase/server.js) (from server)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7lEU1UEw3YI?list=PLRqwX-V7Uu6agS82Le9lLCBbeaW8inATT" frameborder="0" allowfullscreen></iframe>
 
 ## Important links:
 * [Firebase Console](https://console.firebase.google.com/)
@@ -116,6 +120,8 @@ You can then navigate to the firebase console to view the data.
 
 ## Retrieving Data
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NcewaPfFR6Y?list=PLRqwX-V7Uu6agS82Le9lLCBbeaW8inATT" frameborder="0" allowfullscreen></iframe>
+
 The flip side of this is asking Firebase for data.  An easy thing to do is assign a callback that returns all of the data for a specific reference (i.e. path).
 
 {% highlight javascript %}
@@ -150,3 +156,5 @@ function gotOne(data) {
   var fruit = data.val();
 }
 {% endhighlight %}
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RUSvMxxm_Jo?list=PLRqwX-V7Uu6agS82Le9lLCBbeaW8inATT" frameborder="0" allowfullscreen></iframe>
