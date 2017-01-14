@@ -445,8 +445,8 @@ a.body-link {
         }
         .rainbow {
             position: absolute;
-            top: 30px;
-            right: -140px;
+            top: 15px;
+            right: -30px;
             @media only screen and (max-width: $breakpoint-medium) {
                 display: none;
             }
