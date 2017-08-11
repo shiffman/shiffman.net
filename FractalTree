@@ -1,0 +1,31 @@
+// I just watched coding challenge #14 and tried to put my own spin to it.
+
+float angle = PI / 6;
+float trunk = 200;
+
+void setup(){
+  size(700, 700);
+  background(51);
+}
+
+void draw(){
+  translate(width / 2, height);
+  stroke(255);
+  branch(trunk);
+}
+
+void branch(float len){
+  strokeWeight(len / 10);
+  line(0, 0, 0, -len);
+  translate(0, -len);
+  if(len > 2){
+    pushMatrix();
+    rotate(angle);
+    branch(len * 0.67);
+    popMatrix();
+    pushMatrix();
+    rotate(- angle / (len / (trunk / 2)));
+    branch(len * 0.67);
+    popMatrix();
+  }
+}
