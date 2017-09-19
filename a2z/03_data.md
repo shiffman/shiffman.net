@@ -7,21 +7,21 @@ permalink: /a2z/data-apis/
 # Data, Libraries and APIs
 
 ## Simple JSON
-* [JSON from Corpora](https://shiffman.github.io/A2Z-F16/week3-apis-data/00_corpora/), [source](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week3-apis-data/00_corpora)
+* [JSON from Corpora](https://shiffman.github.io/A2Z-F17/week3-apis-data/00_corpora/), [source](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week3-apis-data/00_corpora)
 
 ## JavaScript Language Processing Libraries
-* [RiTa.js Demo](https://shiffman.github.io/A2Z-F16/week3-apis-data/01_rita_demo/), [source](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week3-apis-data/01_rita_demo)
-* [NLP Compromise Demo](https://shiffman.github.io/A2Z-F16/week3-apis-data/02_nlp_compromise/), [source](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week3-apis-data/02_nlp_compromise)
+* [RiTa.js Demo](https://shiffman.github.io/A2Z-F17/week3-apis-data/01_rita_demo/), [source](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week3-apis-data/01_rita_demo)
+* [NLP Compromise Demo](https://shiffman.github.io/A2Z-F17/week3-apis-data/02_nlp_compromise/), [source](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week3-apis-data/02_nlp_compromise)
 
 ## API examples
-* [Wordnik -- get random words](https://shiffman.github.io/A2Z-F16/week3-apis-data/03_wordnik_randomwords/), [source](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week3-apis-data/03_wordnik_randomwords)
-* [Wordnik -- word info](https://shiffman.github.io/A2Z-F16/week3-apis-data/04_wordnik_word_info/), [source](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week3-apis-data/04_wordnik_word_info)
-* [Wordnik -- related wordso](https://shiffman.github.io/A2Z-F16/week3-apis-data/05_wordnik_related/), [source](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week3-apis-data/05_wordnik_related)
-* [NYTimes API article search](https://shiffman.github.io/A2Z-F16/week3-apis-data/06_nytimes_articles/), [source](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week3-apis-data/06_nytimes_articles)
-* [Wikipedia API article search](https://shiffman.github.io/A2Z-F16/week3-apis-data/07_wikipedia/), [source](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week3-apis-data/07_wikipedia)
-* [NYTimes word counts -- many API calls](https://shiffman.github.io/A2Z-F16/week3-apis-data/08_nytimes_word_counts/), [source](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week3-apis-data/08_nytimes_word_counts)
-* [Google Sheets with tabletop.js](https://shiffman.github.io/A2Z-F16/week3-apis-data/09_google_sheets/), [source](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week3-apis-data/09_google_sheets)
-* [MadLibs with Google Sheets](https://shiffman.github.io/A2Z-F16/week3-apis-data/10_google_sheets_madlibs/), [source](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week3-apis-data/10_google_sheets_madlibs)
+* [Wordnik -- get random words](https://shiffman.github.io/A2Z-F17/week3-apis-data/03_wordnik_randomwords/), [source](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week3-apis-data/03_wordnik_randomwords)
+* [Wordnik -- word info](https://shiffman.github.io/A2Z-F17/week3-apis-data/04_wordnik_word_info/), [source](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week3-apis-data/04_wordnik_word_info)
+* [Wordnik -- related words](https://shiffman.github.io/A2Z-F17/week3-apis-data/05_wordnik_related/), [source](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week3-apis-data/05_wordnik_related)
+* [NYTimes API article search](https://shiffman.github.io/A2Z-F17/week3-apis-data/06_nytimes_articles/), [source](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week3-apis-data/06_nytimes_articles)
+* [Wikipedia API article search](https://shiffman.github.io/A2Z-F17/week3-apis-data/07_wikipedia/), [source](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week3-apis-data/07_wikipedia)
+* [NYTimes word counts -- many API calls](https://shiffman.github.io/A2Z-F17/week3-apis-data/08_nytimes_word_counts/), [source](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week3-apis-data/08_nytimes_word_counts)
+* [Google Sheets with tabletop.js](https://shiffman.github.io/A2Z-F17/week3-apis-data/09_google_sheets/), [source](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week3-apis-data/09_google_sheets)
+* [MadLibs with Google Sheets](https://shiffman.github.io/A2Z-F17/week3-apis-data/10_google_sheets_madlibs/), [source](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week3-apis-data/10_google_sheets_madlibs)
 
 
 ## RiTaJS

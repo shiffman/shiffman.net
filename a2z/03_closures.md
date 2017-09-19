@@ -14,11 +14,11 @@ permalink: /a2z/closures/
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-jysK0nlz7A" frameborder="0" allowfullscreen></iframe>
 
 ## Examples
-* Closure Basics — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week3-closures/00_closure_basics)
-* [Closure for Animation 1](https://shiffman.github.io/A2Z-F16/week3-closures/00_closure_basics/) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week3-closures/01_closure_for_animation)
-* [Closure for Animation 2](https://shiffman.github.io/A2Z-F16/week3-closures/01_closure_for_animation/) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week3-closures/02_closure_for_animation_part2)
-* [Closure with API call and animation while loading](https://shiffman.github.io/A2Z-F16/week3-closures/03_closure_animation_while_API_loading/) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week3-closures/03_closure_animation_while_API_loading)
-* [Closure with loop through many delayed API calls](https://shiffman.github.io/A2Z-F16/week3-closures/04_closure_delay_API_calls/) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week3-closures/04_closure_delay_API_calls)
+* Closure Basics — [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week3-closures/00_closure_basics)
+* [Closure for Animation 1](https://shiffman.github.io/A2Z-F17/week3-closures/00_closure_basics/) — [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week3-closures/01_closure_for_animation)
+* [Closure for Animation 2](https://shiffman.github.io/A2Z-F17/week3-closures/01_closure_for_animation/) — [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week3-closures/02_closure_for_animation_part2)
+* [Closure with API call and animation while loading](https://shiffman.github.io/A2Z-F17/week3-closures/03_closure_animation_while_API_loading/) — [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week3-closures/03_closure_animation_while_API_loading)
+* [Closure with loop through many delayed API calls](https://shiffman.github.io/A2Z-F17/week3-closures/04_closure_delay_API_calls/) — [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week3-closures/04_closure_delay_API_calls)
 
 ## Related references
 * [Mozilla Closure page](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)

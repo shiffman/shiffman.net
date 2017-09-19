@@ -23,7 +23,7 @@ One of the first things we'll explore in this class is git, github, and github p
 
 ## JavaScript
 
-The core language for this class is JavaScript.  If JavaScript is new to you, I would suggest starting with the the  [first four chapters of Eloquent JavaScript](http://eloquentjavascript.net/).  And there are [many more resources for learning online](https://github.com/shiffman/A2Z-F16#learning--intro) as well.
+The core language for this class is JavaScript.  If JavaScript is new to you, I would suggest starting with the the  [first four chapters of Eloquent JavaScript](http://eloquentjavascript.net/).  And there are [many more resources for learning online](https://github.com/shiffman/A2Z-F17#learning--intro) as well.
 
 ## p5.js
 
@@ -38,7 +38,7 @@ The framework we'll be exploring is [p5.js](http://p5js.org).  Here are some lin
 
 The class will assume basic knowledge of HTML and CSS.  Of course I'm happy to answer questions and go over these topics, but they won't be explicitly covered in class, other than in the context of JavaScript DOM manipulation.  For review, I would suggest reading the p5.js [HTML and CSS overview](https://github.com/processing/p5.js/wiki/Intro-to-HTML-and-CSS).  The [HTML and CSS book](http://www.htmlandcssbook.com/) is also excellent.
 
-* [basic HTML and CSS example](https://shiffman.github.io/A2Z-F16/week1-dom/01_html_css/), [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-dom/01_html_css/)
+* [basic HTML and CSS example](https://shiffman.github.io/A2Z-F17/week1-dom/01_html_css/), [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week1-dom/01_html_css/)
 
 <iframe width="312" height="175" src="https://www.youtube.com/embed/URSH0QpxKo8?list=PLRqwX-V7Uu6bI1SlcCRfLH79HZrFAtBvX" frameborder="0" allowfullscreen></iframe> <iframe width="312" height="175" src="https://www.youtube.com/embed/zGL8q8iQSQw?list=PLRqwX-V7Uu6bI1SlcCRfLH79HZrFAtBvX" frameborder="0" allowfullscreen></iframe>
 
@@ -62,15 +62,15 @@ The key functions and topics I will discuss in class are:
 
 ## Examples
 
-* [create HTML elements](https://shiffman.github.io/A2Z-F16/week1-dom/02_build_html_css_p5/), [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-dom/02_build_html_css_p5/)
-* [using select, and parent/child](https://shiffman.github.io/A2Z-F16/week1-dom/03_select_parent_child/), [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-dom/https://shiffman.github.io/A2Z-F16/week1-dom/03_select_parent_child/)
-* [dynamic CSS with `style()`](https://shiffman.github.io/A2Z-F16/week1-dom/04_css_with_p5_style/), [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-dom/04_css_with_p5_style/)
-* [absolute positioning of DOM elements](https://shiffman.github.io/A2Z-F16/week1-dom/05_absolute_position_DOM/), [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-dom/05_absolute_position_DOM/)
-* [handling events: mousePressed](https://shiffman.github.io/A2Z-F16/week1-dom/06_mousepressed/), [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-dom/06_mousepressed/)
-* [handling events: mouseOver, mouseOut](https://shiffman.github.io/A2Z-F16/week1-dom/07_mouseover_mouseout/), [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-dom/07_mouseover_mouseout/)
-* [animating a DOM element](https://shiffman.github.io/A2Z-F16/week1-dom/08_animateDOM/), [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-dom/08_animateDOM/)
-* [building a simple interface](https://shiffman.github.io/A2Z-F16/week1-dom/09_interface/), [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-dom/09_interface/)
-* [weird sliders experiment](https://shiffman.github.io/A2Z-F16/week1-dom/10_sliders/), [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-dom/10_sliders/)
+* [create HTML elements](https://shiffman.github.io/A2Z-F17/week1-dom/02_build_html_css_p5/), [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week1-dom/02_build_html_css_p5/)
+* [using select, and parent/child](https://shiffman.github.io/A2Z-F17/week1-dom/03_select_parent_child/), [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week1-dom/https://shiffman.github.io/A2Z-F17/week1-dom/03_select_parent_child/)
+* [dynamic CSS with `style()`](https://shiffman.github.io/A2Z-F17/week1-dom/04_css_with_p5_style/), [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week1-dom/04_css_with_p5_style/)
+* [absolute positioning of DOM elements](https://shiffman.github.io/A2Z-F17/week1-dom/05_absolute_position_DOM/), [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week1-dom/05_absolute_position_DOM/)
+* [handling events: mousePressed](https://shiffman.github.io/A2Z-F17/week1-dom/06_mousepressed/), [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week1-dom/06_mousepressed/)
+* [handling events: mouseOver, mouseOut](https://shiffman.github.io/A2Z-F17/week1-dom/07_mouseover_mouseout/), [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week1-dom/07_mouseover_mouseout/)
+* [animating a DOM element](https://shiffman.github.io/A2Z-F17/week1-dom/08_animateDOM/), [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week1-dom/08_animateDOM/)
+* [building a simple interface](https://shiffman.github.io/A2Z-F17/week1-dom/09_interface/), [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week1-dom/09_interface/)
+* [weird sliders experiment](https://shiffman.github.io/A2Z-F17/week1-dom/10_sliders/), [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week1-dom/10_sliders/)
 
 ## JavaScript Objects
 
@@ -84,26 +84,26 @@ JavaScript objects will be key to just about everything we do this semester.  We
 
 ## All examples
 
-* [loadStrings](https://shiffman.github.io/A2Z-F16/week1-strings/01_loadStrings) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-strings/01_loadStrings)
-* [loadStrings with callback](https://shiffman.github.io/A2Z-F16/week1-strings/02_loadStrings_callback) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-strings/02_loadStrings_callback)
-* ["choose files" button](https://shiffman.github.io/A2Z-F16/week1-strings/03_loadFile_Menu) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-strings/03_loadFile_Menu)
-* ["drag and drop" files](https://shiffman.github.io/A2Z-F16/week1-strings/04_loadFile_DragDrop) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-strings/04_loadFile_DragDrop)
-* [text input element](https://shiffman.github.io/A2Z-F16/week1-strings/05_input_elt) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-strings/05_input_elt)
-* [text input element with canvas](https://shiffman.github.io/A2Z-F16/week1-strings/06_input_elt_canvas) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-strings/06_input_elt_canvas)
-* [textarea element](https://shiffman.github.io/A2Z-F16/week1-strings/07_textarea) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-strings/07_textarea)
-* [many loading options all together](https://shiffman.github.io/A2Z-F16/week1-strings/08_all_together) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-strings/08_all_together)
-* [Flesch Index Calculator](https://shiffman.github.io/A2Z-F16/week1-strings/09_flesch) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-strings/09_flesch)
-* [Cut-Up Machine](https://shiffman.github.io/A2Z-F16/week1-strings/10_cut_up_machine) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-strings/10_cut_up_machine)
-* [Erasure Poetry Machine](https://shiffman.github.io/A2Z-F16/week1-strings/11_erasure) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-strings/11_erasure)
-* [Diastic Machine](https://shiffman.github.io/A2Z-F16/week1-strings/12_diastic) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-strings/12_diastic)
-* [Simple Rita Test](https://shiffman.github.io/A2Z-F16/week1-strings/13_rita_sentence) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week1-strings/13_rita_sentence)
+* [loadStrings](https://shiffman.github.io/A2Z-F17/week1-strings/01_loadStrings) — [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week1-strings/01_loadStrings)
+* [loadStrings with callback](https://shiffman.github.io/A2Z-F17/week1-strings/02_loadStrings_callback) — [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week1-strings/02_loadStrings_callback)
+* ["choose files" button](https://shiffman.github.io/A2Z-F17/week1-strings/03_loadFile_Menu) — [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week1-strings/03_loadFile_Menu)
+* ["drag and drop" files](https://shiffman.github.io/A2Z-F17/week1-strings/04_loadFile_DragDrop) — [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week1-strings/04_loadFile_DragDrop)
+* [text input element](https://shiffman.github.io/A2Z-F17/week1-strings/05_input_elt) — [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week1-strings/05_input_elt)
+* [text input element with canvas](https://shiffman.github.io/A2Z-F17/week1-strings/06_input_elt_canvas) — [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week1-strings/06_input_elt_canvas)
+* [textarea element](https://shiffman.github.io/A2Z-F17/week1-strings/07_textarea) — [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week1-strings/07_textarea)
+* [many loading options all together](https://shiffman.github.io/A2Z-F17/week1-strings/08_all_together) — [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week1-strings/08_all_together)
+* [Flesch Index Calculator](https://shiffman.github.io/A2Z-F17/week1-strings/09_flesch) — [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week1-strings/09_flesch)
+* [Cut-Up Machine](https://shiffman.github.io/A2Z-F17/week1-strings/10_cut_up_machine) — [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week1-strings/10_cut_up_machine)
+* [Erasure Poetry Machine](https://shiffman.github.io/A2Z-F17/week1-strings/11_erasure) — [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week1-strings/11_erasure)
+* [Diastic Machine](https://shiffman.github.io/A2Z-F17/week1-strings/12_diastic) — [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week1-strings/12_diastic)
+* [Simple Rita Test](https://shiffman.github.io/A2Z-F17/week1-strings/13_rita_sentence) — [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week1-strings/13_rita_sentence)
 
 <iframe width="312" height="175" src="https://www.youtube.com/embed/uNQSVU0IKec?list=PLRqwX-V7Uu6YrbSJBg32eTzUU50E2B8Ch" frameborder="0" allowfullscreen></iframe> <iframe width="312" height="175" src="https://www.youtube.com/embed/0Mq2CxspF5s?list=PLRqwX-V7Uu6YrbSJBg32eTzUU50E2B8Ch" frameborder="0" allowfullscreen></iframe>
 
 
 ## loadStrings() and preload()
 
-The whole point of this week is to work with programmatic text mashups in the browser.  Take a look at the [William Burroughs' Cut-Up](https://shiffman.github.io/A2Z-F16/week1-strings/10_cut_up_machine/) example.  We'll need two essential skills here — how to load text (from a file or user) and how to work with JavaScript Strings.  Let's first start with loading text from a file.  The simplest way to do this in p5 is with `loadStrings()`.  It loads a local file (accessed by its relative path to the html file).  The simplest way to get the data is to use `preload()` which guarantees that the data is read before `setup()` triggers.
+The whole point of this week is to work with programmatic text mashups in the browser.  Take a look at the [William Burroughs' Cut-Up](https://shiffman.github.io/A2Z-F17/week1-strings/10_cut_up_machine/) example.  We'll need two essential skills here — how to load text (from a file or user) and how to work with JavaScript Strings.  Let's first start with loading text from a file.  The simplest way to do this in p5 is with `loadStrings()`.  It loads a local file (accessed by its relative path to the html file).  The simplest way to get the data is to use `preload()` which guarantees that the data is read before `setup()` triggers.
 
 {% highlight javascript %}
 var lines;

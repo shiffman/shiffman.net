@@ -15,15 +15,15 @@ permalink: /a2z/regex/
 
 ## All examples
 
-* [Loading file now loads into textarea](https://shiffman.github.io/A2Z-F16/week2-regex/00_all_together_improved) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week2-regex/00_all_together_improved)
-* [Regex basics with live ACE editor](https://shiffman.github.io/A2Z-F16/week2-regex/01_regexbasics) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week2-regex/01_regexbasics)
-* [Finding double words](https://shiffman.github.io/A2Z-F16/week2-regex/02_doublewords) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week2-regex/02_doublewords)
-* [Doubling the vowels using replace](https://shiffman.github.io/A2Z-F16/week2-regex/03_voweldoubler) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week2-regex/03_voweldoubler)
-* [Regex from user](https://shiffman.github.io/A2Z-F16/week2-regex/04_regex_tester) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week2-regex/04_regex_tester)
-* [Finding links](https://shiffman.github.io/A2Z-F16/week2-regex/05_linkfinder) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week2-regex/05_linkfinder)
-* [Random Expression Generator](https://shiffman.github.io/A2Z-F16/week2-regex/06_reverse_regex_generator) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week2-regex/06_reverse_regex_generator), thanks to <a href="http://fent.github.io/randexp.js/">randexp.js</a>.
-* [Split and rebuild text](https://shiffman.github.io/A2Z-F16/week2-regex/07_split_and_rebuild_text) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week2-regex/07_split_and_rebuild_text)
-* [Replace with a callback](https://shiffman.github.io/A2Z-F16/week2-regex/08_replace_with_callback) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week2-regex/08_replace_with_callback)
+* [Loading file now loads into textarea](https://shiffman.github.io/A2Z-F17/week2-regex/00_all_together_improved) — [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week2-regex/00_all_together_improved)
+* [Regex basics with live ACE editor](https://shiffman.github.io/A2Z-F17/week2-regex/01_regexbasics) — [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week2-regex/01_regexbasics)
+* [Finding double words](https://shiffman.github.io/A2Z-F17/week2-regex/02_doublewords) — [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week2-regex/02_doublewords)
+* [Doubling the vowels using replace](https://shiffman.github.io/A2Z-F17/week2-regex/03_voweldoubler) — [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week2-regex/03_voweldoubler)
+* [Regex from user](https://shiffman.github.io/A2Z-F17/week2-regex/04_regex_tester) — [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week2-regex/04_regex_tester)
+* [Finding links](https://shiffman.github.io/A2Z-F17/week2-regex/05_linkfinder) — [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week2-regex/05_linkfinder)
+* [Random Expression Generator](https://shiffman.github.io/A2Z-F17/week2-regex/06_reverse_regex_generator) — [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week2-regex/06_reverse_regex_generator), thanks to <a href="http://fent.github.io/randexp.js/">randexp.js</a>.
+* [Split and rebuild text](https://shiffman.github.io/A2Z-F17/week2-regex/07_split_and_rebuild_text) — [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week2-regex/07_split_and_rebuild_text)
+* [Replace with a callback](https://shiffman.github.io/A2Z-F17/week2-regex/08_replace_with_callback) — [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week2-regex/08_replace_with_callback)
 
 
 ## Related references
@@ -38,7 +38,7 @@ permalink: /a2z/regex/
 * Write a regular expression that matches any e-mail address.
 * Take that regular expression and do a search and replace so that any e-mail address is made into a “mailto:” link.
 * Create an example that reads an HTML page and removes any markup and leaves only the raw content.
-* Adapt the [regex tester](https://shiffman.github.io/A2Z-F16/week2-regex/04_regex_tester) to be a search/replace tester.
+* Adapt the [regex tester](https://shiffman.github.io/A2Z-F17/week2-regex/04_regex_tester) to be a search/replace tester.
 * Create a regex that matches only code comments in code.
 
 ## Regular Expressions
@@ -385,7 +385,7 @@ The above result is silly and nonsensical, but it shows the beginnings of what i
 
 ## Try it
 
-You can try out some regex below as well as [take a look at the code for making this regex tester](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week2-regex/04_regex_tester).  While this works here, if you really want to just mess around with regex in the browser I recommend [RegExr: Learn, Build< Test Regex](http://regexr.com/).
+You can try out some regex below as well as [take a look at the code for making this regex tester](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week2-regex/04_regex_tester).  While this works here, if you really want to just mess around with regex in the browser I recommend [RegExr: Learn, Build< Test Regex](http://regexr.com/).
 
 <p>
   <textarea rows="10" cols="75" id='input'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</textarea>
@@ -398,7 +398,7 @@ You can try out some regex below as well as [take a look at the code for making 
 
 <pre id="output"></pre>
 
-<p>You can also explore this <a href="https://shiffman.github.io/A2Z-F16/week2-regex/01_regexbasics">walk-through of JS regex functionality</a>.</p>
+<p>You can also explore this <a href="https://shiffman.github.io/A2Z-F17/week2-regex/01_regexbasics">walk-through of JS regex functionality</a>.</p>
 
 ## Assignment
 
