@@ -21,7 +21,7 @@ permalink: /a2z/twitter-bots/
 * [Bot twitter list](https://twitter.com/shiffman/lists/bots)
 * [More comprehensive twitter bot list](https://twitter.com/ckolderup/lists/the-fall-of-humanity/members)
 * [Bot wiki](https://botwiki.org/tag/twitterbot)
-* [Another bot wiki](https://github.com/shiffman/A2Z-F15/wiki/Twitter-Bots)
+* [Another bot wiki](https://github.com/shiffman/A2Z-F15/wiki/Twiter-Bots)
 
 ## Read
 * [Strategies on Bot Poetics](https://harrygiles.org/2016/04/06/some-strategies-of-bot-poetics/) by Harry Giles
@@ -42,6 +42,8 @@ permalink: /a2z/twitter-bots/
 * [Making a Twitter bot with node.js and Cloud9](https://botwiki.org/tutorials/making-what_capital/)
 
 ## The Twitter API
+
+<iframe width="525" height="300" src="https://www.youtube.com/embed/GQC2lJIAyzM?list=PLRqwX-V7Uu6atTSxoRiVnSuOn6JHnq2yV" frameborder="0" allowfullscreen></iframe>
 
 <iframe width="525" height="300" src="https://www.youtube.com/embed/7-nX3YOC4OA?list=PLRqwX-V7Uu6atTSxoRiVnSuOn6JHnq2yV" frameborder="0" allowfullscreen></iframe>
 
@@ -108,7 +110,7 @@ var config = require('./config.js');
 var T = new Twit(config);
 {% endhighlight %}
 
-This way if you want to share or publish your code, you can do so leaving out the `config.js` file.  This is what I've done in [this repo here](https://github.com/shiffman/A2Z-F15/tree/gh-pages/week9/07_twitter_api_oauth), though I've included a `config-empty.js` file with some comments on how to enter the tokens.
+This way if you want to share or publish your code, you can do so leaving out the `config.js` file.  This is what I've done in [this repo here](https://github.com/shiffman/A2Z-F17/tree/master/week9/07_twitter_api_oauth), though I've included a `config-empty.js` file with some comments on how to enter the tokens.
 
 ## Querying the Twitter API
 
@@ -143,7 +145,7 @@ T.post('statuses/update', { status: 'I am tweeting via the API!' }, tweeted);
 
 The `tweeted()` callback is where you can check whether the tweet was successfully posted or not.
 
-Included in this week's examples is [an example that expands on the above](https://github.com/shiffman/A2Z-F15/tree/gh-pages/week9/07_twitter_api_oauth).  Features include (1) searching the Twitter API and returning the results as JSON for client-side JavaScript to parse and (2) receiving a tweet via a URL query string and passing it along via the API to be posted.
+Included in this week's examples is [an example that expands on the above](https://github.com/shiffman/A2Z-F17/tree/master/week9/07_twitter_api_oauth).  Features include (1) searching the Twitter API and returning the results as JSON for client-side JavaScript to parse and (2) receiving a tweet via a URL query string and passing it along via the API to be posted.
 
 ## Writing a bot
 
@@ -223,7 +225,7 @@ function tweetEvent(tweet) {
 }
 {% endhighlight %}
 
-[Here's an example of a bot](https://github.com/shiffman/A2Z-F15/tree/gh-pages/week9/10_twitter_replier_bot) that replies to all @mentions with the same exact text in reverse.
+[Here's an example of a bot](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week9/10_twitter_replier_bot) that replies to all @mentions with the same exact text in reverse.
 
 The same search I used in the `get()` examples can also be accessed as a stream.  For example, to get a continuous stream of all tweets from a certain geolocation:
 
