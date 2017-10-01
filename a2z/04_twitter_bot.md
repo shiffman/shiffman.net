@@ -7,15 +7,15 @@ permalink: /a2z/twitter-bots/
 # Twitter API and Twitter Bots
 
 ## Examples (twitter bots)
-* [Twitter API with p5 sketch](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week4-twitter/01_twitter_api_oauth)
-* [Basic Bot](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week4-twitter/02_basic_bot)
-* [Liking and Retweeting Bot](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week4-twitter/03_liking_retweeter_bot)
-* [Twitter Bot Queue](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week4-twitter/04_retweet_queue)
-* [Bot Example with Tracery](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week4-twitter/05_tracery_bot)
-* [Replier Bot](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week4-twitter/06_replier_bot)
-* [Bot making API request](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week4-twitter/07_api_requests)
-* [Image Bot](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week4-twitter/08_twitter_image_bot)
-* [Image Processing Bot](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week4-twitter/09_twitter_replier_image)
+* [Twitter API with p5 sketch](https://github.com/shiffman/A2Z-F17/tree/master/week4-twitter/01_twitter_api_oauth)
+* [Basic Bot](https://github.com/shiffman/A2Z-F17/tree/master/week4-twitter/02_basic_bot)
+* [Liking and Retweeting Bot](https://github.com/shiffman/A2Z-F17/tree/master/week4-twitter/03_liking_retweeter_bot)
+* [Twitter Bot Queue](https://github.com/shiffman/A2Z-F17/tree/master/week4-twitter/04_retweet_queue)
+* [Bot Example with Tracery](https://github.com/shiffman/A2Z-F17/tree/master/week4-twitter/05_tracery_bot)
+* [Replier Bot](https://github.com/shiffman/A2Z-F17/tree/master/week4-twitter/06_replier_bot)
+* [Bot making API request](https://github.com/shiffman/A2Z-F17/tree/master/week4-twitter/07_api_requests)
+* [Image Bot](https://github.com/shiffman/A2Z-F17/tree/master/week4-twitter/08_twitter_image_bot)
+* [Image Processing Bot](https://github.com/shiffman/A2Z-F17/tree/master/week4-twitter/09_twitter_replier_image)
 
 ## Bot lists
 * [Bot twitter list](https://twitter.com/shiffman/lists/bots)
