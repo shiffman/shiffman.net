@@ -9,12 +9,12 @@ permalink: /a2z/cfg/
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Rhqk9HYiB7Q?list=PLRqwX-V7Uu6Y7iXZe_8XKJhaw_kRo8REO" frameborder="0" allowfullscreen></iframe>
 
 ## Examples
-* [Context-Free Grammar with Tracery](https://shiffman.github.io/A2Z-F16/week8-cfg/00_tracery/) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week8-cfg/00_tracery)
-* [Context-Free Grammar basic](https://shiffman.github.io/A2Z-F16/week8-cfg/01_cfg_raw/) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week8-cfg/01_cfg_raw)
-* [Context-Free Grammar from file](https://shiffman.github.io/A2Z-F16/week8-cfg/02_cfg_reader/) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week8-cfg/02_cfg_reader)
-* [Context-Free Grammar from JSON file](https://shiffman.github.io/A2Z-F16/week8-cfg/03_cfg_reader_json/) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week8-cfg/03_cfg_reader_json)
-* [Generate Context-Free Grammar JSON file](https://shiffman.github.io/A2Z-F16/week8-cfg/04_cfg_generate_grammar/) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week8-cfg/04_cfg_generate_grammar)
-* [LSystem](https://shiffman.github.io/A2Z-F16/week8-cfg/05_LSystem/) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week8-cfg/05_LSystem)
+* [Context-Free Grammar with Tracery](https://shiffman.github.io/A2Z-F17/week7-cfg/00_tracery/) — [source code](https://github.com/shiffman/A2Z-F17/tree/master/week7-cfg/00_tracery)
+* [Context-Free Grammar basic](https://shiffman.github.io/A2Z-F17/week7-cfg/01_cfg_raw/) — [source code](https://github.com/shiffman/A2Z-F17/tree/master/week7-cfg/01_cfg_raw)
+* [Context-Free Grammar from file](https://shiffman.github.io/A2Z-F17/week7-cfg/02_cfg_reader/) — [source code](https://github.com/shiffman/A2Z-F17/tree/master/week7-cfg/02_cfg_reader)
+* [Context-Free Grammar from JSON file](https://shiffman.github.io/A2Z-F17/week7-cfg/03_cfg_reader_json/) — [source code](https://github.com/shiffman/A2Z-F17/tree/master/week7-cfg/03_cfg_reader_json)
+* [Generate Context-Free Grammar JSON file](https://shiffman.github.io/A2Z-F17/week7-cfg/04_cfg_generate_grammar/) — [source code](https://github.com/shiffman/A2Z-F17/tree/master/week7-cfg/04_cfg_generate_grammar)
+* [LSystem](https://shiffman.github.io/A2Z-F17/week7-cfg/05_LSystem/) — [source code](https://github.com/shiffman/A2Z-F17/tree/master/week7-cfg/05_LSystem)
 
 ## CFG projects
 * [Context-Free Art](http://www.contextfreeart.org/)
@@ -32,7 +32,7 @@ permalink: /a2z/cfg/
 * Rework any of the example programs to use something other than text (or, at least, text that represents language) as its basic unit. For example: musical notes, songs in playlists, pixels in an image, etc.
 * Invent your own grammar. Consider using one that generates something other English sentences: music, images, code, etc.
 * Build a grammar that pulls its terminal words from [Wordnik](https://www.wordnik.com/).
-* Build a grammar based on a source text [as demonstrated here](https://shiffman.github.io/A2Z-F16/week8-cfg/04_cfg_generate_grammar/) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week8-cfg/04_cfg_generate_grammar).  
+* Build a grammar based on a source text [as demonstrated here](https://shiffman.github.io/A2Z-F17/week7-cfg/04_cfg_generate_grammar/) — [source code](https://github.com/shiffman/A2Z-F17/tree/master/week7-cfg/04_cfg_generate_grammar).  
 
 ## Grammars
 
@@ -165,11 +165,11 @@ function expand(start, expansion) {
 }
 {% endhighlight %}
 
-The [full implementation of the CFG object can be found here](https://github.com/shiffman/A2Z-F16/blob/gh-pages/week8-cfg/01_cfg_raw/cf.js).  In addition, here are some sample grammars: [creating a grammar in code](https://github.com/shiffman/A2Z-F16/blob/gh-pages/week8-cfg/01_cfg_raw/sketch.js), [a grammar file](https://github.com/shiffman/A2Z-F16/blob/gh-pages/week8-cfg/02_cfg_reader/test.grammar), [a grammar files as JSON](https://github.com/shiffman/A2Z-F15/tree/gh-pages/week8/03_cfg_reader_json/grammars/grammar.json), [haiku grammar file as JSON](https://github.com/shiffman/A2Z-F16/blob/gh-pages/week8-cfg/03_cfg_reader_json/grammars/haiku.json).  These grammars come from [Allison Parrish](https://github.com/aparrish/rwet-examples) and [Daniel Howe](http://rednoise.org/rita/).
+The [full implementation of the CFG object can be found here](https://github.com/shiffman/A2Z-F17/blob/master/week7-cfg/01_cfg_raw/cf.js).  In addition, here are some sample grammars: [creating a grammar in code](https://github.com/shiffman/A2Z-F17/blob/master/week7-cfg/01_cfg_raw/sketch.js), [a grammar file](https://github.com/shiffman/A2Z-F17/blob/master/week7-cfg/02_cfg_reader/test.grammar), [a grammar files as JSON](https://github.com/shiffman/A2Z-F15/tree/master/week8/03_cfg_reader_json/grammars/grammar.json), [haiku grammar file as JSON](https://github.com/shiffman/A2Z-F17/blob/master/week7-cfg/03_cfg_reader_json/grammars/haiku.json).  These grammars come from [Allison Parrish](https://github.com/aparrish/rwet-examples) and [Daniel Howe](http://rednoise.org/rita/).
 
-Finally, a grammar file is something you can generate yourself based on some algorithm.  For example, using [this haiku grammar file from Daniel Howe](https://github.com/shiffman/A2Z-F16/blob/gh-pages/week8-cfg/03_cfg_reader_json/grammars/haiku.json), you could read in a source text, analyze the syllable counts of all the words, and rewrite the grammar file to reflect these new words.  Here is a version of this grammar file using words from an Obama speech: [generated_grammar.json](http://shiffman.net/a2z/generated_grammar.g).
+Finally, a grammar file is something you can generate yourself based on some algorithm.  For example, using [this haiku grammar file from Daniel Howe](https://github.com/shiffman/A2Z-F17/blob/master/week7-cfg/03_cfg_reader_json/grammars/haiku.json), you could read in a source text, analyze the syllable counts of all the words, and rewrite the grammar file to reflect these new words.  Here is a version of this grammar file using words from an Obama speech: [generated_grammar.json](http://shiffman.net/a2z/generated_grammar.g).
 
-Here is an [example that uses a concordance to get al the words from a source file and the RiTa library to count syllables](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week8-cfg/04_cfg_generate_grammar).
+Here is an [example that uses a concordance to get al the words from a source file and the RiTa library to count syllables](https://github.com/shiffman/A2Z-F17/tree/master/week7-cfg/04_cfg_generate_grammar).
 
 ## More on Recursion
 
