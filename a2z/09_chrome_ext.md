@@ -6,20 +6,23 @@ permalink: /a2z/chrome-ext/
 
 # Chrome Extensions (and Bookmarklets)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hkOTAmmuv_4?list=PLRqwX-V7Uu6bL9VOMT65ahNEri9uqLWfS" frameborder="0" allowfullscreen></iframe>
+
 ## Example extensions
-* [Basic "hello world" extension -- Browser Action](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week10-chrome-ext/00_extension_basics_browser)
-* [Basic "hello world" extension -- Page action](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week10-chrome-ext/01_extension_basics_page)
-* [Extension with pop-up (using p5)](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week10-chrome-ext/02_extension_browser_popup_p5)
-* [Extension with pop-up controlling content](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week10-chrome-ext/03_extension_browser_popup_messaging)
-* [Extension with pop-up querying wordnik](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week10-chrome-ext/04_extension_browser_popup_messaging_2)
-* [Image swap and content altering](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week10-chrome-ext/05_content_changer)
-* [Content script with p5 canvas overlay](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week10-chrome-ext/06_with_p5)
-* [Searching and redacting a word](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week10-chrome-ext/07_word_redacter)
-* [Override "new tab"](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week10-chrome-ext/08_override)
-* [OmniBox](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week10-chrome-ext/09_omnibox)
-* [Alarms](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week10-chrome-ext/10_alarms)
+* [Basic "hello world" extension -- Browser Action](https://github.com/shiffman/A2Z-F17/tree/master/week10-chrome-ext/00_extension_basics_browser)
+* [Basic "hello world" extension -- Page action](https://github.com/shiffman/A2Z-F17/tree/master/week10-chrome-ext/01_extension_basics_page)
+* [Extension with pop-up (using p5)](https://github.com/shiffman/A2Z-F17/tree/master/week10-chrome-ext/02_extension_browser_popup_p5)
+* [Extension with pop-up controlling content](https://github.com/shiffman/A2Z-F17/tree/master/week10-chrome-ext/03_extension_browser_popup_messaging)
+* [Extension with pop-up querying wordnik](https://github.com/shiffman/A2Z-F17/tree/master/week10-chrome-ext/04_extension_browser_popup_messaging_2)
+* [Image swap and content altering](https://github.com/shiffman/A2Z-F17/tree/master/week10-chrome-ext/05_content_changer)
+* [Content script with p5 canvas overlay](https://github.com/shiffman/A2Z-F17/tree/master/week10-chrome-ext/06_with_p5)
+* [Searching and redacting a word](https://github.com/shiffman/A2Z-F17/tree/master/week10-chrome-ext/07_word_redacter)
+* [Override "new tab"](https://github.com/shiffman/A2Z-F17/tree/master/week10-chrome-ext/08_override)
+* [OmniBox](https://github.com/shiffman/A2Z-F17/tree/master/week10-chrome-ext/09_omnibox)
+* [Alarms](https://github.com/shiffman/A2Z-F17/tree/master/week10-chrome-ext/10_alarms)
 
 ## Examples of Creative Extensions
+* [decodelia](https://melanie-hoff.com/DECODELIA/)
 * [girlsvsgit](https://github.com/wheresaddie/girlsvsgit) by [wheresaddie](https://twitter.com/wheresaddie)
 * [wordless web](http://pleaseenjoy.com/projects/personal/wordless-web/#image454) (this is actually a bookmarklet but as a content script could be an extension).
 * [code doodles](http://codedoodl.es/)
@@ -31,6 +34,8 @@ permalink: /a2z/chrome-ext/
 * [Developing chrome extensions tutorial](http://code.tutsplus.com/tutorials/developing-google-chrome-extensions--net-33076)
 
 ## Bookmarklets
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DloHqUfPbJc?list=PLRqwX-V7Uu6bL9VOMT65ahNEri9uqLWfS" frameborder="0" allowfullscreen></iframe>
 
 Before I discuss chrome extensions, let's briefly look at how bookmarklets work.  In JavaScript you can define a function like so:
 
@@ -103,6 +108,8 @@ script.src = url + "?" + new Date().getTime();
 
 
 ## Basics
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9Tl3OmwrSaM?list=PLRqwX-V7Uu6bL9VOMT65ahNEri9uqLWfS" frameborder="0" allowfullscreen></iframe>
 
 A chrome extension is a way of adding functionality to the chrome browser.  You can add interface elements, open and close tabs, interact with the address bar, as well as modify the contents of any page the browser is currently on.  The lovely thing for us is that extensions can be built with the same open web tools that we are already using -- HTML, CSS, JavaScript.
 
@@ -185,6 +192,8 @@ Once the extension is installed you can enable or disable it, as well as delete 
 
 ## Browser Actions
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ew9ut7ixIlI?list=PLRqwX-V7Uu6bL9VOMT65ahNEri9uqLWfS" frameborder="0" allowfullscreen></iframe>
+
 User interface elements can be added as part of chrome extension via "browser" or "page" actions.  A browser action creates a button that lives on the top right of the browser.  A page action is an icon that appears in the address bar itself.
 
 Browser and page actions can't access the DOM itself, however, they can communicate with the content script via the chrome "messaging" API.  A browser action should have an icon (for the button) as well as a JavaScript file for the code.
@@ -237,9 +246,13 @@ function receiver(request, sender, sendResponse) {
 }
 {% endhighlight %}
 
+<iframe width="312" height="175" src="https://www.youtube.com/embed/8zMMOdI5SOk?list=PLRqwX-V7Uu6bL9VOMT65ahNEri9uqLWfS" frameborder="0" allowfullscreen></iframe> <iframe width="312" height="175" src="https://www.youtube.com/embed/IXXNIcQQLU8?list=PLRqwX-V7Uu6bL9VOMT65ahNEri9uqLWfS" frameborder="0" allowfullscreen></iframe>
+
 ## Pop-ups
 
-The browser action can also trigger a pop-up, which is just an HTML page.  For example, you could run a p5 sketch in the pop-up as in [this example](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week10-chrome-ext/02_extension_browser_popup_p5).  To do this, reference the pop-up HTML file in `manifest.json`.
+<iframe width="312" height="175" src="https://www.youtube.com/embed/YQnRSa8MGwM?list=PLRqwX-V7Uu6bL9VOMT65ahNEri9uqLWfS" frameborder="0" allowfullscreen></iframe> <iframe width="312" height="175" src="https://www.youtube.com/embed/kP-UmHrxCYk?list=PLRqwX-V7Uu6bL9VOMT65ahNEri9uqLWfS" frameborder="0" allowfullscreen></iframe>
+
+The browser action can also trigger a pop-up, which is just an HTML page.  For example, you could run a p5 sketch in the pop-up as in [this example](https://github.com/shiffman/A2Z-F16/tree/master/week10-chrome-ext/02_extension_browser_popup_p5).  To do this, reference the pop-up HTML file in `manifest.json`.
 
 {% highlight javascript %}
 "browser_action": {
@@ -248,11 +261,13 @@ The browser action can also trigger a pop-up, which is just an HTML page.  For e
 }
 {% endhighlight %}
 
-The pop-up can also communicate with the content script via messaging.  There are two examples that demonstrate this functionality.  [This first one](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week10-chrome-ext/03_extension_browser_popup_messaging) uses a slider and text field in the pop-up to alter the DOM content.  [This second one](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week10-chrome-ext/04_extension_browser_popup_messaging_2) uses text that is selected on the page itself to make an API query.  Any JavaScript associated with the pop-up is not triggered unless the user clicks the button.  So in the second example, it's worth noting that the message goes from the content script to the background script.  A pop-up can then access variables in the background script.  For example if the background script has a variable called `word`, you would say:
+The pop-up can also communicate with the content script via messaging.  There are two examples that demonstrate this functionality.  [This first one](https://github.com/shiffman/A2Z-F16/tree/master/week10-chrome-ext/03_extension_browser_popup_messaging) uses a slider and text field in the pop-up to alter the DOM content.  [This second one](https://github.com/shiffman/A2Z-F16/tree/master/week10-chrome-ext/04_extension_browser_popup_messaging_2) uses text that is selected on the page itself to make an API query.  Any JavaScript associated with the pop-up is not triggered unless the user clicks the button.  So in the second example, it's worth noting that the message goes from the content script to the background script.  A pop-up can then access variables in the background script.  For example if the background script has a variable called `word`, you would say:
 
 {% highlight javascript %}
 var word = chrome.extension.getBackgroundPage().word;
 {% endhighlight %}
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GWDx1GnxhOw?list=PLRqwX-V7Uu6bL9VOMT65ahNEri9uqLWfS" frameborder="0" allowfullscreen></iframe>
 
 ## Omnibox
 
@@ -280,6 +295,8 @@ function omniChanged(text) {
 
 ## Override Page
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vNb3P5KIxXw?list=PLRqwX-V7Uu6bL9VOMT65ahNEri9uqLWfS" frameborder="0" allowfullscreen></iframe>
+
 Chrome extensions allow you to replace the default chrome pages for bookmarks, history, and new tab. To replace new tab, for example, add the following to manifest.json.
 
 {% highlight javascript %}
@@ -288,7 +305,7 @@ Chrome extensions allow you to replace the default chrome pages for bookmarks, h
   }
 {% endhighlight %}
 
-Then you can create `newtab.html` with any HTML, CSS, or JavaScript. [Here's an example that picks a random "word of the day" from Wordnik](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week10-chrome-ext/08_override).
+Then you can create `newtab.html` with any HTML, CSS, or JavaScript. [Here's an example that picks a random "word of the day" from Wordnik](https://github.com/shiffman/A2Z-F16/tree/master/week10-chrome-ext/08_override).
 
 
 ## APIs
@@ -299,3 +316,5 @@ One of the benefits of using a chrome extension is [all of the APIs](https://dev
 * [tabs](https://developer.chrome.com/extensions/tabs) and [windows](https://developer.chrome.com/extensions/windows)
 * [tts (text-to-speech)](https://developer.chrome.com/extensions/tts)
 * [webRequest](https://developer.chrome.com/extensions/webRequest)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RJtjp-Vtwjs?list=PLRqwX-V7Uu6bL9VOMT65ahNEri9uqLWfS" frameborder="0" allowfullscreen></iframe>
