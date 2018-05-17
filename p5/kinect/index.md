@@ -40,7 +40,7 @@ First you need a “stand-alone” kinect.  You do not need to buy an Xbox.
 
 ## Some additional notes about different models:
 
-* **Kinect 1414**: This is the original kinect and works with the library documented on this page in the Processing 3.0 beta series.</li>
+* **Kinect 1414**: This is the original kinect and works with the library documented on this page in the Processing 3.0 beta series.
 * **Kinect 1473**: This looks identical to the 1414, but is an updated model. It should work with this library, but I don't have one to test.  [Please let me know if it does or does not](https://github.com/shiffman/OpenKinect-for-Processing/issues)!
 * **Kinect for Windows version 1**: ???? Help?  Does this one work?
 * **Kinect for Windows version 2**: This is the brand spanking new kinect with all the features found in the XBox One Kinect. Also works with this library!
@@ -201,9 +201,9 @@ There are four basic examples for both v1 and v2.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/FBmxc4EyVjs?list=PLRqwX-V7Uu6ZMlWHdcy8hAGDy6IaoxUKf" frameborder="0" allowfullscreen></iframe>
 
-Code for v1:[RGBDepthTest](https://github.com/shiffman/OpenKinect-for-Processing/blob/master/OpenKinect-Processing/examples/Kinect_v1/RGBDepthTest/RGBDepthTest.pde)</p>
+Code for v1:[RGBDepthTest](https://github.com/shiffman/OpenKinect-for-Processing/blob/master/OpenKinect-Processing/examples/Kinect_v1/RGBDepthTest/RGBDepthTest.pde)
 
-Code for v2:[RGBDepthTest2](https://github.com/shiffman/OpenKinect-for-Processing/blob/master/OpenKinect-Processing/examples/Kinect_v2/RGBDepthTest2/RGBDepthTest2.pde)</p>
+Code for v2:[RGBDepthTest2](https://github.com/shiffman/OpenKinect-for-Processing/blob/master/OpenKinect-Processing/examples/Kinect_v2/RGBDepthTest2/RGBDepthTest2.pde)
 
 This example uses all of the above listed functions to display the data from the kinect sensor.
 
@@ -211,17 +211,17 @@ This example uses all of the above listed functions to display the data from the
 
 Both v1 and v2 has multiple kinect support.
 
-Code for v1:[MultiKinect](https://github.com/shiffman/OpenKinect-for-Processing/blob/master/OpenKinect-Processing/examples/Kinect_v1/MultiKinect/MultiKinect.pde)</p>
+Code for v1:[MultiKinect](https://github.com/shiffman/OpenKinect-for-Processing/blob/master/OpenKinect-Processing/examples/Kinect_v1/MultiKinect/MultiKinect.pde)
 
-Code for v2:[MultiKinect2](https://github.com/shiffman/OpenKinect-for-Processing/blob/master/OpenKinect-Processing/examples/Kinect_v2/MultiKinect2/MultiKinect2.pde)</p>
+Code for v2:[MultiKinect2](https://github.com/shiffman/OpenKinect-for-Processing/blob/master/OpenKinect-Processing/examples/Kinect_v2/MultiKinect2/MultiKinect2.pde)
 
 ### Point Cloud
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/E1eIg54clGo?list=PLRqwX-V7Uu6ZMlWHdcy8hAGDy6IaoxUKf" frameborder="0" allowfullscreen></iframe>
 
-Code for v1: [PointCloud](https://github.com/shiffman/OpenKinect-for-Processing/blob/master/OpenKinect-Processing/examples/Kinect_v1/PointCloud/PointCloud.pde)</p>
+Code for v1: [PointCloud](https://github.com/shiffman/OpenKinect-for-Processing/blob/master/OpenKinect-Processing/examples/Kinect_v1/PointCloud/PointCloud.pde)
 
-Code for v2: [PointCloud](https://github.com/shiffman/OpenKinect-for-Processing/blob/master/OpenKinect-Processing/examples/Kinect_v2/DepthPointCloud2/DepthPointCloud2.pde)</p>
+Code for v2: [PointCloud](https://github.com/shiffman/OpenKinect-for-Processing/blob/master/OpenKinect-Processing/examples/Kinect_v2/DepthPointCloud2/DepthPointCloud2.pde)
 
 
 Here, we’re doing something a bit fancier.  Number one, we’re using the 3D capabilities of Processing to draw points in space.  You’ll want to familiarize yourself with [translate()](http://processing.org/reference/translate_.html), [rotate()](http://processing.org/reference/rotate_.html), [pushMatrix()](http://processing.org/reference/pushMatrix_.html), [popMatrix()](http://processing.org/reference/popMatrix_.html).  This [tutorial](http://processing.org/learning/transform2d/) is also a good place to start.  In addition, the example uses a PVector to describe a point in 3D space.  More here: [PVector tutorial](http://processing.org/learning/pvector/).
