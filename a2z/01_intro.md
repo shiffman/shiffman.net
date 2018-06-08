@@ -278,7 +278,7 @@ Type a sentence: <input size="50" value="I can only fit one sentence here in thi
 For a larger body of text the `<textarea>` element can be generated using `createElement()`.
 
 {% highlight JavaScript %}
-var area = createElememt('textarea', 'Some text to start initially.');
+var area = createElement('textarea', 'Some text to start initially.');
 {% endhighlight %}
 
 <p><textarea>Some text to start initially.</textarea></p>
