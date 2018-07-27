@@ -15,7 +15,7 @@ tags:
   - processing.org
 ---
 
-<script src="http://www.shiffman.net/javascript/processing-1.4.1.min.js" type="text/javascript"></script>
+<script src="https://www.shiffman.net/javascript/processing-1.4.1.min.js" type="text/javascript"></script>
 
 <p>I have <a href="http://www.learningprocessing.com/exercises/chapter-15/exercise-15-5/">an example from Learning Processing</a> which demonstrates how to package a &#8220;pre-made&#8221; animation (i.e. sequence of images) into an object in Processing so that it can be duplicated many times on screen.   For tonight&#8217;s example, I&#8217;m going to make a new version that improves a few key points.</p>
 <p>First, in the original example the the image files are loaded in the class itself.  This is problematic.  Sure, if you make one object then you are loading files from the hard drive once.  However, if you make many objects, then you are loading the same images over and over again which is totally unnecessary (and can cause problems like using too much memory, stuttering if objects are made during draw(), taking too long to start up, etc.).</p>
