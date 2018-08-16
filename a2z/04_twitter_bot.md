@@ -20,7 +20,7 @@ permalink: /a2z/twitter-bots/
 ## Bot lists
 * [Bot twitter list](https://twitter.com/shiffman/lists/bots)
 * [More comprehensive twitter bot list](https://twitter.com/ckolderup/lists/the-fall-of-humanity/members)
-* [Bot wiki](https://botwiki.org/tag/twitterbot)
+* [Bot wiki](https://botwiki.org/bot/?networks=twitter-bots)
 * [Another bot wiki](https://github.com/shiffman/A2Z-F15/wiki/Twiter-Bots)
 
 ## Read
