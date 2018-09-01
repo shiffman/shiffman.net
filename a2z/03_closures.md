@@ -148,7 +148,7 @@ function animate(elt, howlong) {
 
 ## Closure for API callback
 
-Closures are also helpful when querying APIs.  Let's say for example, you have several DOM elements, each associated with a particular term.  And whenever you click on any of the elements, you can to make an API call with the associated term.
+Closures are also helpful when querying APIs.  Let's say for example, you have several DOM elements, each associated with a particular term.  And whenever you click on any of the elements, you want to make an API call with the associated term.
 
 {% highlight javascript %}
 var words = ['rainbow', 'heart', 'sparkle', 'canteen', 'ridiculous'];
