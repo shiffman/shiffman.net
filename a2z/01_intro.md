@@ -74,9 +74,9 @@ The key functions and topics I will discuss in class are:
 
 ## JavaScript Objects
 
-JavaScript objects will be key to just about everything we do this semester.  We'll be using objects for DOM manipulation like `p5.Element` and the native JS `Element`.  We'll be exploring data coming in as JSON ("JavaScript Object Notation").  We'll focus a lot on the JS `String` object as well as objects from other libraries.  And we'll write our own objects for analyzing and generating text.  JavaScript objects (for now, at least until [ES6](http://es6-features.org/#Constants) is more widely adopted) follow a "prototypical inheritance" model which is quite different than the classical OOP found in Java or C++.  [This "object playground" video](http://www.objectplayground.com/) covers the idea in great detail if you are looking for more info.
+JavaScript objects will be key to just about everything we do this semester.  We'll be using objects for DOM manipulation like `p5.Element` and the native JS `Element`.  We'll be exploring data coming in as JSON ("JavaScript Object Notation").  We'll focus a lot on the JS `String` object as well as objects from other libraries.  And we'll write our own objects for analyzing and generating text.  The examples will use [ES6 classes](http://es6-features.org/#Classes).
 
-<iframe width="525" height="300" src="https://www.youtube.com/embed/F3GeM_KrGjI?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe>
+<iframe width="312" height="175" src="https://youtu.be/T-HGdc8L-7w?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe> <iframe width="312" height="175" src="https://youtu.be/rHiSsgFRgx4?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe>
 
 <span class="line-charm first"></span>
 
