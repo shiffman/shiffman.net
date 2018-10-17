@@ -23,8 +23,7 @@ permalink: /a2z/cfg/
 * [Context-Free Grammars by Allison Parrish](http://www.decontextualize.com/teaching/rwet/recursion-and-context-free-grammars/)
 * [Context-Free Grammars by Daniel Howe](http://www.rednoise.org/pdal/index.php?n=Main.Grammars)
 * [Context-Free Grammars by Randal C. Nelson](https://www.cs.rochester.edu/~nelson/courses/csc_173/grammars/cfg.html) -- includes some info about thinking about programming syntax as CFG
-* [Example grammars](http://marvin.cs.uidaho.edu/Teaching/CS445/grammar.html)
-* [Three Models for the Description of Language (Chomsky)](http://chomsky.info/articles/195609--.pdf)
+* [Three Models for the Description of Language (Chomsky)](https://chomsky.info/wp-content/uploads/195609-.pdf)
 * [More on grammars](http://matt.might.net/articles/grammars-bnf-ebnf/)
 * [More on L-Systems](http://natureofcode.com/book/chapter-8-fractals/#86-l-systems) from [The Nature of Code](http://natureofcode.com/book).
 
