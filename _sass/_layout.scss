@@ -489,9 +489,11 @@ a.body-link {
         background: $yellow url('../images/highlight.png') no-repeat;
         background-position: center right;
         color: $black;
-        a,
+        a {
+            color: $yellow;
+        }
         p {
-            color: $orange;
+            color: $white;
         }
     }
     &.noc {
@@ -544,7 +546,7 @@ a.body-link {
                 letter-spacing: 0.6px;
                 outline: none;
                 border: none;
-                background: none;
+                background: $white;
                 cursor: pointer;
             }
         }
