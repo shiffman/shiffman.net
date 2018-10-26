@@ -661,8 +661,11 @@ input:focus {
 .right-container.article-links,
 .right-container.quick-links {
     padding: 40px;
-    background: $red;
+    background: #FF80AE;
     width: 30%;
+    h5 {
+        color: $black;
+    }
     .quick-link {
         margin-bottom: 15px;
         a {
@@ -672,7 +675,7 @@ input:focus {
             border-radius: 45px;
             text-transform: uppercase;
             line-height: 18px;
-            background: #C7004A;
+            background: $red;
             font-size: 12px;
             font-weight: 600;
             color: #FFFAFC;
@@ -692,14 +695,14 @@ input:focus {
         }
     }
     &.video {
-        background: $blue;
+        background: #00ADDA;
         .quick-link a {
             &.primary {
                 background: $white;
                 color: #18677B;
             }
             &.secondary {
-                background: #00ADDA;
+                background:$blue ;
             }
             &:hover {
                 color: #18677B;
