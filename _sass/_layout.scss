@@ -486,7 +486,7 @@ a.body-link {
         color: $white;
     }
     &.lp {
-        background: $yellow url('../images/highlight.png') no-repeat;
+        background: $yellow;
         background-position: center right;
         color: $black;
         a {
@@ -497,7 +497,7 @@ a.body-link {
         }
     }
     &.noc {
-        background: $red url('../images/highlight.png') no-repeat;
+        background: $red;
         background-position: center right;
         color: $white;
         a.primary {
@@ -505,7 +505,7 @@ a.body-link {
         }
     }
     &.youtube {
-        background: $blue url('../images/highlight.png') no-repeat;
+        background: $blue;
         background-position: center right;
         color: $white;
         a {
@@ -563,11 +563,11 @@ input:focus {
         min-height: auto;
         overflow: hidden;
         &.lp {
-            background: $yellow url('../images/highlight.png') no-repeat;
+            background: $yellow;
             background-position: center right;
         }
         &.noc {
-            background: $red url('../images/highlight.png') no-repeat;
+            background: $red;
             background-position: center right;
         }
     }
