@@ -302,7 +302,7 @@ The example code that follows is not a perfect text classifier by any means.  It
 
 ### A Word Object
 
-The first thing we need to do is expand on the concordance example that stores a single number associated with each word.  For classification, we'll need to know things like how many times that word appears in spam e-mails versus good (aka 'ham') e-mails.  And then we'll need to use these values to calculate the probability that each word would appear in a spam or ham e-mail.</p>
+The first thing we need to do is expand on the concordance example that stores a single number associated with each word.  For classification, we'll need to know things like how many times that word appears in spam e-mails versus good (aka 'ham') e-mails.  And then we'll need to use these values to calculate the probability that each word would appear in a spam or ham e-mail.
 
 {% highlight javascript %}
 var word = {};
