@@ -269,7 +269,7 @@ Consider the following scenario:
 
 You have received a positive TID, what is the likelihood you have ITPosis?
 
-As you might expect, there is a very precise answer to this question but it's probably not what you initially guess.  Bayesian reasoning is counter-intuitive and takes quite a bit of getting used to.  In fact, when [given a similar question related to breast cancer and mammograms](http://yudkowsky.net/rational/bayes)</a>, only 15% of doctors get the answer correct.
+As you might expect, there is a very precise answer to this question but it's probably not what you initially guess.  Bayesian reasoning is counter-intuitive and takes quite a bit of getting used to.  In fact, when [given a similar question related to breast cancer and mammograms](http://yudkowsky.net/rational/bayes), only 15% of doctors get the answer correct.
 
 The answer — 15.3% — is calculated via Bayes' Theorem.  Let's look at it again with this scenario:
 
