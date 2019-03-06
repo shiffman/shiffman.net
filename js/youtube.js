@@ -1,4 +1,4 @@
-var apiKey 				= "AIzaSyADOKEHZag2UMG52bd7ApxDOssdzVo0j8I";
+var apiKey 				= "AIzaSyAInyAq_CBIJ0W7p_pqJlnA7dBHvC5FG8M";
 var shiffmanChannelId 	= "UCvjgXvBlbQiydffZU7m1_aw";
 // Change playlist IDs Here
 var shiffmanPlaylists 	= "PLRqwX-V7Uu6ZiZxtDDRCi6uhfTH4FilpH,PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA,PLRqwX-V7Uu6bI1SlcCRfLH79HZrFAtBvX,PLRqwX-V7Uu6a-SQiI4RtIwuOrLJGnel0r,PLRqwX-V7Uu6ZMlWHdcy8hAGDy6IaoxUKf,PLRqwX-V7Uu6atTSxoRiVnSuOn6JHnq2yV,PLRqwX-V7Uu6YVljJvFRCyRM6mmF5wMPeE";
