@@ -10,8 +10,8 @@ $(document).ready(function(){
 });
 
 function getPlaylists() {
-
-		$.get('https://www.googleapis.com/youtube/v3/playlists?key=AIzaSyADOKEHZag2UMG52bd7ApxDOssdzVo0j8I', { part: 'snippet' , id: shiffmanPlaylists })
+		let getPlaylistsStr = 'https://www.googleapis.com/youtube/v3/playlists?key=' + apiKey;
+		$.get(getPlaylistsStr, { part: 'snippet' , id: shiffmanPlaylists })
 		.done(function(data){
 
 			console.log(data);
@@ -42,8 +42,8 @@ function populateData(data){
 	$.each(playlists, function(index, playlist){
 
 		var snippet = playlist.snippet;
-
-		$.get('https://www.googleapis.com/youtube/v3/playlistItems?key=AIzaSyADOKEHZag2UMG52bd7ApxDOssdzVo0j8I', {part: 'snippet', playlistId: playlist.id} )
+		let getPlaylistItemsStr = 'https://www.googleapis.com/youtube/v3/playlists?key=' + apiKey;
+		$.get(getPlaylistItemsStr, {part: 'snippet', playlistId: playlist.id} )
 		.done(function(data){
 
 			var playlistHtml = '';

@@ -1,5 +1,6 @@
 var shiffmanChannelId = "UCvjgXvBlbQiydffZU7m1_aw";
-
+var apiKey 				= "AIzaSyAInyAq_CBIJ0W7p_pqJlnA7dBHvC5FG8M";
+let getPlaylistsStr = 'https://www.googleapis.com/youtube/v3/playlists?key=' + apiKey;
 $(document).ready(function() {
 
   getVideos();
@@ -7,8 +8,8 @@ $(document).ready(function() {
 });
 
 function getVideos() {
-
-  $.get('https://www.googleapis.com/youtube/v3/search?key=AIzaSyADOKEHZag2UMG52bd7ApxDOssdzVo0j8I', {
+  let searchStr = 'https://www.googleapis.com/youtube/v3/search?key=' + apiKey;
+  $.get(searchStr, {
       part: 'snippet',
       channelId: shiffmanChannelId,
       order: 'date'
