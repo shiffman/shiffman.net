@@ -43,3 +43,10 @@ $breakpoint-large: 	1440px;
         "reset",
         "layout"
 ;
+
+@font-face {
+    font-family: 'cubanoregular';
+    src: url('../css/fonts/cubano-regular-webfont.woff2') format('woff2'), url('../css/fonts/cubano-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
