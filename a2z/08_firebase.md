@@ -4,13 +4,13 @@ layout: a2z-post
 permalink: /a2z/firebase/
 ---
 
-## Database as Service
+### Database as Service
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/JrHT1iqSrAQ?list=PLRqwX-V7Uu6agS82Le9lLCBbeaW8inATT" frameborder="0" allowfullscreen></iframe>
 
 In [Building an API with node](/a2z/node-api), I discussed strategies for storing data associated with a web application from a local JSOn file to creating a custom database on your own server.  Another strategy is to use a "database as service" to store your data.  On this page, I'll explore the service [Firebase](https://firebase.google.com) which allows you to send and retrieve data from your client-side or server-side JavaScript code.  Firebase is a commercial service (from Google), but it has [a pretty decent free plan](https://firebase.google.com/pricing/).
 
-## Examples:
+### Examples:
 * [Saving web form data](https://shiffman.github.io/A2Z-F16/week9-firebase/01_firebase_form/) (from client) -- [source](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week9-firebase/01_firebase_form)
 * [Saving coordinates for drawings](https://shiffman.github.io/A2Z-F16/week9-firebase/02_firebase_drawing) (from client) -- [source](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week9-firebase/02_firebase_drawing)
 * [Saving data for mad libs](https://shiffman.github.io/A2Z-F16/week9-firebase/03_firebase_madlibs) (from client) -- [source](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week9-firebase/03_firebase_madlibs)
@@ -19,7 +19,7 @@ In [Building an API with node](/a2z/node-api), I discussed strategies for storin
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7lEU1UEw3YI?list=PLRqwX-V7Uu6agS82Le9lLCBbeaW8inATT" frameborder="0" allowfullscreen></iframe>
 
-## Important links:
+### Important links:
 * [Firebase Console](https://console.firebase.google.com/)
 * [Reading and Writing Data from firebase documentation](https://firebase.google.com/docs/database/web/read-and-write)
 
@@ -118,7 +118,7 @@ You can then navigate to the firebase console to view the data.
 
 ![firebase](/a2z/images/firebase2.png)
 
-## Retrieving Data
+### Retrieving Data
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/NcewaPfFR6Y?list=PLRqwX-V7Uu6agS82Le9lLCBbeaW8inATT" frameborder="0" allowfullscreen></iframe>
 

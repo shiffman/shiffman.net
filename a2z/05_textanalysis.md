@@ -4,22 +4,22 @@ layout: a2z-post
 permalink: /a2z/text-analysis/
 ---
 
-# Word Counting and Text Analysis
+## Word Counting and Text Analysis
 
 <iframe width="525" height="300" src="https://www.youtube.com/embed/tE-ZYXU8A8U?list=PLRqwX-V7Uu6bZQkJcGM5S9fn9R9Yyd8iZ" frameborder="0" allowfullscreen></iframe>
 
-## Examples
+### Examples
 * [Word counting](https://shiffman.github.io/A2Z-F17/week5-analysis/01_concordance/) — [source code](https://github.com/shiffman/A2Z-F17/tree/master/week5-analysis/01_concordance)
 * [Parts of Speech Concordance](https://shiffman.github.io/A2Z-F17/week5-analysis/02_pos_concordance/) — [source code](https://github.com/shiffman/A2Z-F17/tree/master/week5-analysis/02_pos_concordance)
 * [Keyword extraction - TF-IDF](https://shiffman.github.io/A2Z-F17/week5-analysis/03_tf-idf/) — [source code](https://github.com/shiffman/A2Z-F17/tree/master/week5-analysis/03_tf-idf)
 * [Text Classification - Naive Bayes](https://shiffman.github.io/A2Z-F17/week5-analysis/04_classification/) — [source code](https://github.com/shiffman/A2Z-F17/tree/master/week5-analysis/04_classification)
 * [Node concordance](https://github.com/shiffman/A2Z-F17/tree/master/week5-analysis/05_node_concordance)
 
-## Sample datasets:
+### Sample datasets:
 * [Project Gutenberg](http://www.gutenberg.org/)
 * [Enron e-mail corpus](http://www.aueb.gr/users/ion/data/enron-spam/)
 
-## Related references
+### Related references
 * [Secret Life of Pronouns](http://secretlifeofpronouns.com/), [Pennebaker Ted Talk](https://www.youtube.com/watch?v=PGsQwAu3PzU)
 * [TF-IDF Single Page Tutorial](http://www.tfidf.com/)
 * [Paul Graham's A Plan for Spam](http://www.paulgraham.com/spam.html) and [Better Bayesian Filtering](http://www.paulgraham.com/better.html)
@@ -27,7 +27,7 @@ permalink: /a2z/text-analysis/
 * [Monty Hall and Bayes](http://sciencehouse.wordpress.com/2009/04/19/monty-hall-and-bayes/)
 * [An Intuitive Explanation of Bayes' Theorem by Eliezer S. Yudkowsky](http://yudkowsky.net/rational/bayes)
 
-## Related Projects
+### Related Projects
 * [SPEECH COMPARISON](http://www.runemadsen.com/work/speech-comparison/) by Rune Madsen
 * [Book-Book](http://www.sarahgp.com/index.html) by Sarah Groff-Palermo
 * [Word Tree](https://www.jasondavies.com/wordtree/) by Jason Davies
@@ -38,14 +38,14 @@ permalink: /a2z/text-analysis/
 * [Nicholas Felton's 2013 Annual Report](http://feltron.com/FAR13.html), [NY Times Article](http://bits.blogs.nytimes.com/2014/08/19/a-life-in-data-nicholas-feltons-self-surveillance/?_php=true&_type=blogs&_r=0)
 * [Lyrical Indicators](http://style.org/lyrics/) and [Parsing the State of the Union](http://style.org/stateoftheunion/) by Jonathan Corum
 
-## Exercise ideas
+### Exercise ideas
 * Visualize the results of a concordance using canvas (or some other means).
 * Expand the information the concordance holds so that it keeps track of word positions (i.e. not only how many times do the words appear in the source text, but where do they appear each time.)
 * Implement some of the ideas specific to spam filtering to the bayesian classification example.
 * In James W. Pennebaker's book [The Secret Life of Pronouns](http://secretlifeofpronouns.com/), Pennebaker describes his research into how the frequency of words that have little to no meaning on their own (I, you, they, a, an, the, etc.) are a window into the emotional state or personality of an author or speaker.  For example, heavy use of the pronoun “I” is an indicator of “depression, stress or insecurity”.  Create a page sketch that analyzes the use of pronouns.  For more, visit <a href="http://www.analyzewords.com/">analyzewords.com</a>.
 * Use the ideas to find similarities between people. For example, if you look at all the e-mails on the ITP student list, can you determine who is similar? Consider using properties in addition to word count, such as time of e-mails, length of e-mails, who writes to whom, etc.
 
-## Associative Arrays in JavaScript?
+### Associative Arrays in JavaScript?
 
 <iframe width="525" height="300" src="https://www.youtube.com/embed/_5jdE6RKxVk?list=PLRqwX-V7Uu6bZQkJcGM5S9fn9R9Yyd8iZ" frameborder="0" allowfullscreen></iframe>
 
@@ -99,7 +99,7 @@ var concordance = {
 
 We'll need this new way since we'll be pulling the names for the object as strings from a source text.
 
-## Text Concordance
+### Text Concordance
 
 <iframe width="525" height="300" src="https://www.youtube.com/embed/unm0BLor8aE?list=PLRqwX-V7Uu6bZQkJcGM5S9fn9R9Yyd8iZ" frameborder="0" allowfullscreen></iframe>
 
@@ -188,7 +188,7 @@ for (var i = 0; i < keys.length; i++) {
 
 Here is a [text concordance example](http://shiffman.net/teaching/a2z/analysis/01_concordance/) and its [source code](https://github.com/shiffman/Programming-from-A-to-Z-F14/tree/master/week3_analysis/01_concordance).
 
-## TF-IDF
+### TF-IDF
 
 <iframe width="525" height="300" src="https://www.youtube.com/embed/RPMYV-eb6lI?list=PLRqwX-V7Uu6bZQkJcGM5S9fn9R9Yyd8iZ" frameborder="0" allowfullscreen></iframe>
 
@@ -252,9 +252,9 @@ In the case of only examining this document it makes no difference, but if we we
 
 For a wonderful example of TF-IDF out in the world, take a look at [Nicholas Felton's 2013 Annual Report](http://bits.blogs.nytimes.com/2014/08/19/a-life-in-data-nicholas-feltons-self-surveillance/).
 
-## Naive Bayesian Text Classification
+### Naive Bayesian Text Classification
 
-### Bayes' Theorem:
+#### Bayes' Theorem:
 
 {% highlight text %}
 p(A|B) = (p(B|A) * p(A)) / (p(B|A) * p(A) + p(B|~A) * p(~A) )
@@ -300,7 +300,7 @@ A wonderful resource for this approach is [Paul Graham's A Plan for Spam](http:/
 
 The example code that follows is not a perfect text classifier by any means.  It's a simple implementation of the idea that outlines the basic steps one might take to apply [Bayesian Filtering](http://en.wikipedia.org/wiki/Bayesian_filtering) to text.
 
-### A Word Object
+#### A Word Object
 
 The first thing we need to do is expand on the concordance example that stores a single number associated with each word.  For classification, we'll need to know things like how many times that word appears in spam e-mails versus good (aka 'ham') e-mails.  And then we'll need to use these values to calculate the probability that each word would appear in a spam or ham e-mail.
 

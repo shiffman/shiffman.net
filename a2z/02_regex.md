@@ -9,11 +9,11 @@ permalink: /a2z/regex/
 <script language="javascript" type="text/javascript" src="/a2z/js/regex.js"></script>
 </head>
 
-# Regular Expressions
+## Regular Expressions
 
 <iframe width="525" height="300" src="https://www.youtube.com/embed/7DG3kCDx53c?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe>
 
-## All examples
+### All examples
 
 * [Loading file now loads into textarea](https://shiffman.github.io/A2Z-F17/week2-regex/00_all_together_improved) — [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week2-regex/00_all_together_improved)
 * [Regex basics with live ACE editor](https://shiffman.github.io/A2Z-F17/week2-regex/01_regexbasics) — [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week2-regex/01_regexbasics)
@@ -26,7 +26,7 @@ permalink: /a2z/regex/
 * [Replace with a callback](https://shiffman.github.io/A2Z-F17/week2-regex/08_replace_with_callback) — [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week2-regex/08_replace_with_callback)
 
 
-## Related references
+### Related references
 * [Chapter 1, Mastering Regular Expressions](https://www.safaribooksonline.com/library/view/mastering-regular-expressions/0596528124/)
 * [Guide to regex in JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
 * [Eloquent JavaScript Regular Expressions](http://eloquentjavascript.net/09_regexp.html)
@@ -34,14 +34,14 @@ permalink: /a2z/regex/
 * [Play the regex crossword!](http://regexcrossword.com/)
 * [RegExr -- a regular expressions playground](http://regexr.com/)
 
-## Exercise ideas
+### Exercise ideas
 * Write a regular expression that matches any e-mail address.
 * Take that regular expression and do a search and replace so that any e-mail address is made into a “mailto:” link.
 * Create an example that reads an HTML page and removes any markup and leaves only the raw content.
 * Adapt the [regex tester](https://shiffman.github.io/A2Z-F17/week2-regex/04_regex_tester) to be a search/replace tester.
 * Create a regex that matches only code comments in code.
 
-## Regular Expressions
+### Regular Expressions
 
 <p><div style="background: #DDDDDD; padding: 18px"><em>WARNING: This is a woefully incomplete overview of regular expressions.  It would be absurd to try to fully cover the topic in a short handout like this.  Hopefully, this will provide some of the basics to get you started, but to really understand regular expressions, I suggest you to read as much of <a href="https://www.safaribooksonline.com/library/view/mastering-regular-expressions/0596528124/">Mastering Regular Expressions</a> by Jeffrey E.F. Friedl as you have time for.  In addition, the <a href="http://eloquentjavascript.net/09_regexp.html">regular expressions chapter in Eloquent JavaScript</a> is more comprehensive than below.</em></div></p>
 
@@ -77,7 +77,7 @@ Here are a few common meta-characters (I'm listing them below as they would appe
 \S    any non whitespace character
 {% endhighlight %}
 
-### Position Metacharacters:
+#### Position Metacharacters:
 
 {% highlight text %}
 ^     beginning of line
@@ -86,7 +86,7 @@ $     end of line
 \B    a non word boundary
 {% endhighlight %}
 
-### Quantifiers (refer to the character that precedes it):
+#### Quantifiers (refer to the character that precedes it):
 
 {% highlight text %}
 ?         appearing once or not at all
@@ -121,7 +121,7 @@ The first part of the expression in parentheses reads: <code class="a2zregex">\b
 
 **This is really really super super duper duper fun.  Fun!**
 
-## Testing regex with Atom Editor
+### Testing regex with Atom Editor
 
 One quick way you can test regular expressions is with Atom text's "find".  Simply enable the regex option (indicated by the <code class="a2zregex">.*</code> button) after hitting ⌘F.
 
@@ -145,7 +145,7 @@ Find/replace with regex in Sublime Text is also incredibly useful.  For example,
 
 ![atom replace](/a2z/images/atom_regex_replace.png)
 
-## Regular Expressions in JavaScript
+### Regular Expressions in JavaScript
 
 <iframe width="312" height="175" src="https://www.youtube.com/embed/W7S_Vmq0GSs?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe>
 <iframe width="312" height="175" src="https://www.youtube.com/embed/t029QcVHtas?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe>
@@ -209,7 +209,7 @@ The above isn't necessarily the greatest phone number matching regex, but it'll 
 
 Notice how the full phone number match appears as the first (index 0) element and the captured group (the area code) follows.  You might notice, however, that there are three phone numbers in the original input String and yet `match()` only matched the first one.  In order to find all the matches, we'll need to add several other steps.
 
-### Step 1. Add the global flag: `g`.
+#### Step 1. Add the global flag: `g`.
 
 Regular expressions can include flags that modify how the search operates.  For example the flag `i` is for case-insensitivity so that the regular expression <code class="a2zregex">hello</code> with the flag `i` would match “hello”, “Hello”, “HELLO”, and “hElLO” (and other permutations).  A flag is added after the second forward slash like so: <code class="a2zregex">/hello/i</code>.  The global flag `g` tells the regular expression that we want to search for **all** of the matches and not just the first one.
 
@@ -257,7 +257,7 @@ while (var results = regex.exec(text)) {
 }
 {% endhighlight %}
 
-## Splitting with Regular Expressions
+### Splitting with Regular Expressions
 
 <iframe width="525" height="300" src="https://www.youtube.com/embed/fdyqutmcI2Q?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe>
 
@@ -308,7 +308,7 @@ What if you, however, would like to include all the delimiters?  To accomplish t
   '' ]
 {% endhighlight %}
 
-## Search and Replace
+### Search and Replace
 
 <iframe width="525" height="300" src="https://www.youtube.com/embed/7a-a6lKoyIQ?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe>
 
@@ -383,7 +383,7 @@ THIS is SOME TEXT WITH five of variable Mon Sep 19 2016 13:59:22 GMT-0400 (EDT).
 
 The above result is silly and nonsensical, but it shows the beginnings of what is possible when you can execute any logic and call any other functions (query an API?) inside a `replace()` callback.
 
-## Try it
+### Try it
 
 You can try out some regex below as well as [take a look at the code for making this regex tester](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week2-regex/04_regex_tester).  While this works here, if you really want to just mess around with regex in the browser I recommend [RegExr: Learn, Build< Test Regex](http://regexr.com/).
 
@@ -400,6 +400,6 @@ You can try out some regex below as well as [take a look at the code for making 
 
 <p>You can also explore this <a href="https://shiffman.github.io/A2Z-F17/week2-regex/01_regexbasics">walk-through of JS regex functionality</a>.</p>
 
-## Assignment
+### Assignment
 
 <iframe width="312" height="175" src="https://www.youtube.com/embed/AKuW48WeNMA?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe> <iframe width="312" height="175" src="https://www.youtube.com/embed/pMn44yFxGWk?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe>

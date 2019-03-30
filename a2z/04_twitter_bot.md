@@ -4,9 +4,9 @@ layout: a2z-post
 permalink: /a2z/twitter-bots/
 ---
 
-# Twitter API and Twitter Bots
+## Twitter API and Twitter Bots
 
-## Examples (twitter bots)
+### Examples (twitter bots)
 * [Twitter API with p5 sketch](https://github.com/shiffman/A2Z-F17/tree/master/week4-twitter/01_twitter_api_oauth)
 * [Basic Bot](https://github.com/shiffman/A2Z-F17/tree/master/week4-twitter/02_basic_bot)
 * [Liking and Retweeting Bot](https://github.com/shiffman/A2Z-F17/tree/master/week4-twitter/03_liking_retweeter_bot)
@@ -17,21 +17,21 @@ permalink: /a2z/twitter-bots/
 * [Image Bot](https://github.com/shiffman/A2Z-F17/tree/master/week4-twitter/08_twitter_image_bot)
 * [Image Processing Bot](https://github.com/shiffman/A2Z-F17/tree/master/week4-twitter/09_twitter_replier_image)
 
-## Bot lists
+### Bot lists
 * [Bot twitter list](https://twitter.com/shiffman/lists/bots)
 * [More comprehensive twitter bot list](https://twitter.com/ckolderup/lists/the-fall-of-humanity/members)
 * [Bot wiki](https://botwiki.org/bot/?networks=twitter-bots)
 * [Another bot wiki](https://github.com/shiffman/A2Z-F15/wiki/Twiter-Bots)
 
-## Read
+### Read
 * [Strategies on Bot Poetics](https://harrygiles.org/2016/04/06/some-strategies-of-bot-poetics/) by Harry Giles
 * [New York Magazine article on bots](http://nymag.com/following/2015/11/12-weirdest-funniest-smartest-twitter-bots.html)
 * [Rules for Automation and Best Practices](https://support.twitter.com/articles/76915) from Twitter, [Bot Etiquette](http://tinysubversions.com/2013/03/basic-twitter-bot-etiquette/) by Darius Kazemi
 
-## Watch
+### Watch
 * [Darius Kazemi Eyeo talk](https://vimeo.com/112289364)
 
-## Bot resources / tutorials
+### Bot resources / tutorials
 * [A wiki with links to more bot resources](https://github.com/shiffman/A2Z-F16/wiki/Twitter-Bot-References)
 * [Allison Parrish spreadsheet bot tutorial](http://air.decontextualize.com/twitterbot/)
 * [Allison Parrish bot workshop notes](https://gist.github.com/aparrish/3ee64d07f0a00b08618a)
@@ -41,7 +41,7 @@ permalink: /a2z/twitter-bots/
 * [Another Node bot tutorial](http://kiafathi.azurewebsites.net/project-making-a-twitter-bot-with-node-js/)
 * [Making a Twitter bot with node.js and Cloud9](https://botwiki.org/tutorials/making-what_capital/)
 
-## The Twitter API
+### The Twitter API
 
 <iframe width="525" height="300" src="https://www.youtube.com/embed/GQC2lJIAyzM?list=PLRqwX-V7Uu6atTSxoRiVnSuOn6JHnq2yV" frameborder="0" allowfullscreen></iframe>
 
@@ -69,7 +69,7 @@ Don't worry, if you ever post these keys somewhere by accident (like in an image
 
 That's it, you're done and ready to use Twit!
 
-## Authenticating with Twit
+### Authenticating with Twit
 
 To make any calls to the API you first need to install Twit and then include the package with `require()`.
 
@@ -112,7 +112,7 @@ var T = new Twit(config);
 
 This way if you want to share or publish your code, you can do so leaving out the `config.js` file.  This is what I've done in [this repo here](https://github.com/shiffman/A2Z-F17/tree/master/week9/07_twitter_api_oauth), though I've included a `config-empty.js` file with some comments on how to enter the tokens.
 
-## Querying the Twitter API
+### Querying the Twitter API
 
 [Full documentation of the various Twit methods is available on github](https://github.com/ttezel/twit), but I'll highlight what you need here for a basic p5.js sketch or bot.
 
@@ -147,7 +147,7 @@ The `tweeted()` callback is where you can check whether the tweet was successful
 
 Included in this week's examples is [an example that expands on the above](https://github.com/shiffman/A2Z-F17/tree/master/week9/07_twitter_api_oauth).  Features include (1) searching the Twitter API and returning the results as JSON for client-side JavaScript to parse and (2) receiving a tweet via a URL query string and passing it along via the API to be posted.
 
-## Writing a bot
+### Writing a bot
 
 <iframe width="525" height="300" src="https://www.youtube.com/embed/ZvsqQjwrISQ?list=PLRqwX-V7Uu6atTSxoRiVnSuOn6JHnq2yV" frameborder="0" allowfullscreen></iframe>
 
@@ -181,7 +181,7 @@ That's it!  Your first twitter bot.  Of course you might want to do something mo
 
 [Here's an example of a twitter bot using a Context-Free Grammar](https://github.com/shiffman/A2Z-F15/tree/gh-pages/week9/09_twitter_bot_cfg) to generate tweets.
 
-## Using the streaming API
+### Using the streaming API
 
 The above bot scenario involved tweeting every N milliseconds.  This is what you think of when you think of some sort of autonomous robot tweeting.  It operates on its own, never gets tired, and tweets at a precise time.  But it is also possible to create a bot that participates in the social activity of twitter itself.  This can be accomplished using `stream()`.   [The Twitter streaming API](https://dev.twitter.com/streaming/overview) allows you to execute callbacks when certain events occur -- like when someone follows you.  
 

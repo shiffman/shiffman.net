@@ -4,9 +4,9 @@ layout: a2z-post
 permalink: /a2z/server-node/
 ---
 
-# Server-side Programming and Node
+## Server-side Programming and Node
 
-## Examples (node basics)
+### Examples (node basics)
 * [Hello World Node + Express](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week4-node/01_hello_world_express)
 * [Serving static files](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week4-node/02_serve_files_express)
 * [Route basics](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week4-node/03_routes_express)
@@ -15,7 +15,7 @@ permalink: /a2z/server-node/
 * [Saving data to JSON file](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week4-node/06_save_JSON)
 * [Proxy for scraping html](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week4-node/07_scraping_proxy_express)
 
-## Node basics
+### Node basics
 
 <iframe width="525" height="300" src="https://www.youtube.com/embed/RF5_MPSNAtU?list=PLRqwX-V7Uu6atTSxoRiVnSuOn6JHnq2yV" frameborder="0" allowfullscreen></iframe>
 
@@ -66,7 +66,7 @@ Now let's say you are creating a node application where you want to use the [Twi
 $ npm install Twit --save
 </pre>
 
-## Express basics
+### Express basics
 
 <iframe width="525" height="300" src="https://www.youtube.com/embed/6oiabY1xpBo?list=PLRqwX-V7Uu6Yyn-fBtGHfN0_xCtBwUkBp" frameborder="0" allowfullscreen></iframe>
 
@@ -105,7 +105,7 @@ app.use(express.static('public'));
 
 Now anytime you enter the url to your server (if you are running it on your machine, this will be `http://localhost:3000`), the contents of the public folder will be hosted.  (By the way, this is exactly what the [p5.js editor](https://github.com/processing/p5.js-editor) is doing when you hit the run button.)
 
-## Routes with express
+### Routes with express
 
 <iframe width="525" height="300" src="https://www.youtube.com/embed/e4qKBkwwkNg?list=PLRqwX-V7Uu6Yyn-fBtGHfN0_xCtBwUkBp" frameborder="0" allowfullscreen></iframe>
 
@@ -136,7 +136,7 @@ function sayHello(request, response) {
 }
 {% endhighlight %}
 
-## RESTful routes
+### RESTful routes
 
 <iframe width="525" height="300" src="https://www.youtube.com/embed/oMhAd864bBc?list=PLRqwX-V7Uu6Yyn-fBtGHfN0_xCtBwUkBp" frameborder="0" allowfullscreen></iframe>
 
@@ -162,7 +162,7 @@ function sayHello(request, response) {
 {% endhighlight %}
 
 
-## Making your own API
+### Making your own API
 
 Let's say you want to build a node app then reads in lots of text, analyzes the text, and provides the analysis to the end user.  (Files can be read using the [node file system](https://nodejs.org/api/fs.html) module.)  Then when the user requests a route, say "all":
 
@@ -202,7 +202,7 @@ function gotData(data) {
 }
 {% endhighlight %}
 
-## Scraping
+### Scraping
 
 Another scenario server-side programming can be useful for is scraping HTML from another site.  You can't make an HTTP request to another server from client-side JavaScript, but you can ask your own server to make this request for you!  To do this, you can use the `http` node package.
 

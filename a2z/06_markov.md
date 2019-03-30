@@ -10,11 +10,11 @@ permalink: /a2z/markov/
 <script language="javascript" type="text/javascript" src="/a2z/js/markov.js"></script>
 </head>
 
-# N-Grams and Markov Chains
+## N-Grams and Markov Chains
 
 <iframe width="525" height="300" src="https://www.youtube.com/embed/v4kL0OHuxXs?list=PLRqwX-V7Uu6ah9Oqs_BFQIbGIn1XynsVT" frameborder="0" allowfullscreen></iframe>
 
-## Examples
+### Examples
 * [Markov chain generation by character (short)](https://shiffman.github.io/A2Z-F16/week7-markov/01_markov_bychar_short/) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week7-markov/01_markov_bychar_short)
 * [Markov chain generation by character (long)](https://shiffman.github.io/A2Z-F16/week7-markov/02_markov_bychar_long/) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week7-markov/02_markov_bychar_long)
 * [Markov chain generation by word](https://shiffman.github.io/A2Z-F16/week7-markov/03_markov_byword/) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week7-markov/03_markov_byword)
@@ -26,14 +26,14 @@ permalink: /a2z/markov/
 * [RiTa markov generator](https://shiffman.github.io/A2Z-F16/week7-markov/09_markov_RiTa/) — [source code](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week7-markov/09_markov_RiTa)
 * [Markov Generation in Node](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week7-markov/10_node_markov)
 
-## Markov projects
+### Markov projects
 * [ITP Course Generator by Allison Parrish](http://static.decontextualize.com/toys/next_semester)
 * [WebTrigrams by Chris Harrison](http://www.chrisharrison.net/index.php/Visualizations/WebTrigrams)
 * [GenGen by Darius Kazemi](http://tinysubversions.com/gengen/)
 * [King James Programming](http://kingjamesprogramming.tumblr.com/)
 * [Gnoetry](http://www.beardofbees.com/gnoetry.html)
 
-## Related references
+### Related references
 * [Animated Markov Chain explanation](http://setosa.io/blog/2014/07/26/markov-chains/)
 * [N-Grams and Markov Chains by Allison Parrish](http://www.decontextualize.com/teaching/rwet/n-grams-and-markov-chains/)
 * [Context-Free Grammars by Allison Parrish](http://www.decontextualize.com/teaching/rwet/recursion-and-context-free-grammars/)
@@ -41,13 +41,13 @@ permalink: /a2z/markov/
 * [Google N-Gram Viewer](https://books.google.com/ngrams), [google blog post about n-grams](http://googleresearch.blogspot.com/2006/08/all-our-n-gram-are-belong-to-you.html)
 * [Markov Models of Natural Language](http://www.cs.princeton.edu/courses/archive/spr05/cos126/assignments/markov.html)
 
-## Exercise ideas
+### Exercise ideas
 * Create page that generates its content by feeding an existing text into the Markov chain algorithm.  What effect does the value of n (the “order” of the n-gram) have on the result?  [Allison Parish's ITP Course generator](http://static.decontextualize.com/toys/next_semester) is an excellent example.
 * Visualize N-gram frequencies.  See [WebTrigrams by Chris Harrison](http://www.chrisharrison.net/index.php/Visualizations/WebTrigrams) for an example.
 * What happens if you mash-up two texts? For example, feed Shakespeare plays and ITP physical computing blog post content into the generator.  Can you modify the MarkovGenerator object to weight the input text (i.e. make shakespeare N-grams have higher probabilities?)  [The Gnoetry Project](http://www.beardofbees.com/gnoetry.html) is a useful reference.
 * Rework any of the example programs to use something other than text (or, at least, text that represents language) as its basic unit. For example: musical notes, songs in playlists, pixels in an image, etc.
 
-## N-Grams and Markov Chains
+### N-Grams and Markov Chains
 
 <iframe width="300" height="175" src="https://www.youtube.com/embed/eGFJ8vugIWA?list=PLRqwX-V7Uu6ah9Oqs_BFQIbGIn1XynsVT" frameborder="0" allowfullscreen></iframe> <iframe width="300" height="175" src="https://www.youtube.com/embed/9r8CmofnbAQ?list=PLRqwX-V7Uu6ah9Oqs_BFQIbGIn1XynsVT" frameborder="0" allowfullscreen></iframe>
 

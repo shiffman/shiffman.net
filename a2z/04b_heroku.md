@@ -6,24 +6,24 @@ permalink: /a2z/bot-heroku/
 
 <iframe width="525" height="300" src="https://www.youtube.com/embed/DwWPunpypNA?list=PLRqwX-V7Uu6atTSxoRiVnSuOn6JHnq2yV" frameborder="0" allowfullscreen></iframe>
 
-# Notes on Deploying to Heroku
+## Notes on Deploying to Heroku
 
 * [Heroku Getting Started Guide](https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction)
 * [How to Deploy a Node.js App to Heroku](https://scotch.io/tutorials/how-to-deploy-a-node-js-app-to-heroku)
 
-## Sign up and create an app
+### Sign up and create an app
 
 * [Sign up for Heroku](https://heroku.com/)
 * [Install Heroku Toolbelt](https://toolbelt.heroku.com/)
 
-## Create the app
+### Create the app
 
 * Go to your [dashboard](https://dashboard.heroku.com/apps)
 * Select "Create new app" (top right)
 * Name your app something (only letters, numbers, and dashes)
 * Click "Create App"
 
-## Push your code to heroku
+### Push your code to heroku
 
 * Login with toolbelt:
 
@@ -59,7 +59,7 @@ $ git push heroku master
 
 You should then see a whole lot of stuff telling you about how your app is starting and running!
 
-## Was your app a bot?
+### Was your app a bot?
 
 If your app was a bot, you need an additional step.  Since it's not a web server, you have to tell heroku that this app is a ["worker"](https://devcenter.heroku.com/articles/background-jobs-queueing) app.  This is done with a ["Procfile"](https://devcenter.heroku.com/articles/procfile).  This is a file called exactly "Procfile" in your node directory with a single line:
 
@@ -79,7 +79,7 @@ Depending on the order in which you have done things, you might need to restart 
 $ heroku restart
 {% endhighlight %}
 
-## Heroku config settings
+### Heroku config settings
 
 Something else you can do with heroku is set variables specific to your app.  This is convenient for, say, API keys.  In other words if you say:
 

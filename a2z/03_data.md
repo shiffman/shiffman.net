@@ -4,16 +4,16 @@ layout: a2z-post
 permalink: /a2z/data-apis/
 ---
 
-# Data, Libraries and APIs
+## Data, Libraries and APIs
 
-## Simple JSON
+### Simple JSON
 * [JSON from Corpora](https://shiffman.github.io/A2Z-F17/week3-apis-data/00_corpora/), [source](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week3-apis-data/00_corpora)
 
-## JavaScript Language Processing Libraries
+### JavaScript Language Processing Libraries
 * [RiTa.js Demo](https://shiffman.github.io/A2Z-F17/week3-apis-data/01_rita_demo/), [source](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week3-apis-data/01_rita_demo)
 * [NLP Compromise Demo](https://shiffman.github.io/A2Z-F17/week3-apis-data/02_nlp_compromise/), [source](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week3-apis-data/02_nlp_compromise)
 
-## API examples
+### API examples
 * [Wordnik -- get random words](https://shiffman.github.io/A2Z-F17/week3-apis-data/03_wordnik_randomwords/), [source](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week3-apis-data/03_wordnik_randomwords)
 * [Wordnik -- word info](https://shiffman.github.io/A2Z-F17/week3-apis-data/04_wordnik_word_info/), [source](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week3-apis-data/04_wordnik_word_info)
 * [Wordnik -- related words](https://shiffman.github.io/A2Z-F17/week3-apis-data/05_wordnik_related/), [source](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week3-apis-data/05_wordnik_related)
@@ -24,7 +24,7 @@ permalink: /a2z/data-apis/
 * [MadLibs with Google Sheets](https://shiffman.github.io/A2Z-F17/week3-apis-data/10_google_sheets_madlibs/), [source](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week3-apis-data/10_google_sheets_madlibs)
 
 
-## RiTaJS
+### RiTaJS
 
 <iframe width="525" height="300" src="https://www.youtube.com/embed/lIPEvh8HbGQ?list=PLRqwX-V7Uu6a-SQiI4RtIwuOrLJGnel0r" frameborder="0" allowfullscreen></iframe>
 
@@ -70,7 +70,7 @@ lexicon.alliterations('cat');
 
 You can also customize the lexicon by editing the JS library files themselves or programmatically with [`addWord()`](http://rednoise.org/rita/reference/RiLexicon/addWord/index.php) and [`removeWord`]((http://rednoise.org/rita/reference/RiLexicon/removeWord/index.php)).  
 
-## NLP-Compromise
+### NLP-Compromise
 
 <iframe width="525" height="300" src="https://www.youtube.com/embed/tk_JGu2AbJY?list=PLRqwX-V7Uu6a-SQiI4RtIwuOrLJGnel0r" frameborder="0" allowfullscreen></iframe>
 
@@ -103,7 +103,7 @@ var cats = nlp.noun('cat').pluralize());
 
 NLP-Compromise can negate statements, conjugate verbs (and therby alter tense), provide articles and pronouns, and more.  
 
-## Data
+### Data
 
 <iframe width="525" height="300" src="https://www.youtube.com/embed/rJaXOFfwGVw?list=PLRqwX-V7Uu6a-SQiI4RtIwuOrLJGnel0r" frameborder="0" allowfullscreen></iframe>
 
@@ -208,7 +208,7 @@ You might find an array as part of an object. Below the value of “favorite col
 
 A great place to find a selection of JSON data sources to play with is <a href="https://github.com/dariusk/corpora">corpora</a>, a github repository maintained by <a href="http://tinysubversions.com/">Darius Kazemi</a>.  For example, here's <a href="https://github.com/dariusk/corpora/blob/master/data/animals/birds_antarctica.json">a JSON file containing information about birds in Antarctica</a>.
 
-## Loading JSON into your code
+### Loading JSON into your code
 
 <iframe width="525" height="300" src="https://www.youtube.com/embed/6mT3r8Qn1VY?list=PLRqwX-V7Uu6a-SQiI4RtIwuOrLJGnel0r" frameborder="0" allowfullscreen></iframe>
 
@@ -298,7 +298,7 @@ Here's what this looks like:
 </div>
 
 
-## APIs
+### APIs
 
 <iframe width="525" height="300" src="https://www.youtube.com/embed/ecT42O6I_WI?list=PLRqwX-V7Uu6a-SQiI4RtIwuOrLJGnel0r" frameborder="0" allowfullscreen></iframe>
 
@@ -363,7 +363,7 @@ function setup() {
 <iframe width="312" height="175" src="https://www.youtube.com/embed/4UoUqnjUC2c?list=PLRqwX-V7Uu6a-SQiI4RtIwuOrLJGnel0r" frameborder="0" allowfullscreen></iframe>
 <iframe width="312" height="175" src="https://www.youtube.com/embed/UNtqhnhD-wo?list=PLRqwX-V7Uu6a-SQiI4RtIwuOrLJGnel0r" frameborder="0" allowfullscreen></iframe>
 
-## Encoding URLs
+### Encoding URLs
 
 Certain characters and invalid in URLs.  For example, let's say you were querying wordnik for the words "bath towel".  You would have to say <code>bath%20towel</code>.  You could do this yourself with a regex or use URI encoding with <code>encodeURI()</code>.  [Here is more documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI) and an example below.
 
@@ -376,19 +376,19 @@ loadJSON(encoded, callback);
 
 <code>encodeURI</code> does not encode the following characters: <code>, / ? : @ & = + $ #</code>. This is as it should be since these are used in URLs to mean certain things.  However, if you wanted to have a $ or / as part of some text you are passing into a key/value pair you *would* want to encode these characters.  For this <code>encodeURIcomponent()</code> can be used.
 
-## Wordnik API
+### Wordnik API
 
 <iframe width="525" height="300" src="https://www.youtube.com/embed/YsgdUaOrFnQ?list=PLRqwX-V7Uu6a-SQiI4RtIwuOrLJGnel0r" frameborder="0" allowfullscreen></iframe>
 
 
-## NYTimes API
+### NYTimes API
 
 <iframe width="525" height="300" src="https://www.youtube.com/embed/IMne3LY4bks?list=PLRqwX-V7Uu6a-SQiI4RtIwuOrLJGnel0r" frameborder="0" allowfullscreen></iframe>
 
-## Wikipedia API
+### Wikipedia API
 
 Coming soon.
 
-## Google sheets
+### Google sheets
 
 <iframe width="525" height="300" src="https://www.youtube.com/embed/ziBO-U2_t3k?list=PLRqwX-V7Uu6a-SQiI4RtIwuOrLJGnel0r" frameborder="0" allowfullscreen></iframe>
