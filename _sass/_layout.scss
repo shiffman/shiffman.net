@@ -177,14 +177,6 @@ nav {
 .logo-set {
     display: inline-block;
     vertical-align: top;
-    h2 {
-        font-family: 'Noto Serif', serif;
-        font-size: 32px;
-        margin-bottom: 0;
-        margin-top: 2px;
-        font-weight: 700;
-        display: inline-block;
-    }
     .intro {
         display: block;
         font-size: 16px;
@@ -194,13 +186,14 @@ nav {
 }
 .logo-set-home {
     width: 150px;
-    h2 {
+    .brand {
         font-family: 'Noto Serif', serif;
         font-size: 22px;
         margin-bottom: 0;
         margin-top: 2px;
         font-weight: 700;
         display: inline-block;
+        line-height: 1.2em;
     }
     span.intro {
         display: block;
@@ -226,30 +219,24 @@ h3,
 h4,
 h5 {
     font-family: 'Lato', sans-serif;
+    font-weight: 700;
     line-height: 1.2em;
 }
 h1 {
     font-family: $noto;
-    font-weight: 700;
     font-size: 32px;
 }
 h2 {
     font-size: 22px;
-    font-weight: 700;
     margin-bottom: 0.4em;
 }
 h3 {
     font-size: 12px;
-    font-weight: 700;
     margin-bottom: 35px;
-    letter-spacing: 0.8px;
 }
 h5 {
     font-size: 12px;
-    color: rgba(0,0,0,0.5);
     text-transform: uppercase;
-    font-weight: 700;
-    margin-bottom: 1em;
 }
 p {
     a {
@@ -458,20 +445,23 @@ a.body-link {
     p {
         font-family: $lato;
     }
-    p.ct {
-        font-family: "cubanoregular";
-        font-size: 2.35rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        line-height: 1.1em;
-        color: $white;
-    }
-    h1 {
+    h3 {
         font-family: $lato;
         letter-spacing: 1.87px;
         font-size: 28px;
         font-weight: 900;
         color: $white;
+        text-transform: uppercase;
+        margin-bottom: 0;
+    }
+    h3.ct {
+        font-family: "cubanoregular";
+        letter-spacing: 0;
+        font-size: 2.35rem;
+        font-weight: 700;
+        line-height: 1.1em;
+        color: $white;
+        max-width: 21rem;
     }
     a.primary {
         display: inline-block;
@@ -497,9 +487,11 @@ a.body-link {
         background: $yellow url('../images/highlight.png') no-repeat;
         background-position: center right;
         color: $black;
-        a,
-        p {
+        a.primary {
             color: $orange;
+        }
+        p {
+            color: $white;
         }
     }
     &.noc {
@@ -669,6 +661,13 @@ input:focus {
     padding: 40px;
     background: $red;
     width: 30%;
+    h3 {
+        font-size: 12px;
+        color: rgba(0,0,0,0.5);
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: 1em;
+    }
     .quick-link {
         margin-bottom: 15px;
         a {
