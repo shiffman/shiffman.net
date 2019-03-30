@@ -570,6 +570,7 @@ input:focus {
         }
     }
 }
+
 // ARTICLE PAGES
 .article {
     h1 {
@@ -595,6 +596,25 @@ input:focus {
     }
     &.a2z,
     &.blog {
+        .course-week-list {
+            ul {
+                margin: 0;
+                padding: 0;
+                border-left: none;
+                li {
+                  list-style-type: none;
+                  margin-bottom: 0;
+                  margin-right: 20px;
+                  a {
+                      color: $red;
+                      border-bottom: 2px solid $white;
+                      &:hover {
+                        border-bottom: 2px solid $red;
+                    }
+                  }
+                }
+            }
+        }
         h1 {
             margin-bottom: 30px;
             font-size: 32px;
