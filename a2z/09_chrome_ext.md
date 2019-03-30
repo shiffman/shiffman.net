@@ -4,11 +4,11 @@ layout: a2z-post
 permalink: /a2z/chrome-ext/
 ---
 
-# Chrome Extensions (and Bookmarklets)
+## Chrome Extensions (and Bookmarklets)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/hkOTAmmuv_4?list=PLRqwX-V7Uu6bL9VOMT65ahNEri9uqLWfS" frameborder="0" allowfullscreen></iframe>
 
-## Example extensions
+### Example extensions
 * [Basic "hello world" extension -- Browser Action](https://github.com/shiffman/A2Z-F17/tree/master/week10-chrome-ext/00_extension_basics_browser)
 * [Basic "hello world" extension -- Page action](https://github.com/shiffman/A2Z-F17/tree/master/week10-chrome-ext/01_extension_basics_page)
 * [Extension with pop-up (using p5)](https://github.com/shiffman/A2Z-F17/tree/master/week10-chrome-ext/02_extension_browser_popup_p5)
@@ -21,19 +21,19 @@ permalink: /a2z/chrome-ext/
 * [OmniBox](https://github.com/shiffman/A2Z-F17/tree/master/week10-chrome-ext/09_omnibox)
 * [Alarms](https://github.com/shiffman/A2Z-F17/tree/master/week10-chrome-ext/10_alarms)
 
-## Examples of Creative Extensions
+### Examples of Creative Extensions
 * [decodelia](https://melanie-hoff.com/DECODELIA/)
 * [girlsvsgit](https://github.com/wheresaddie/girlsvsgit) by [wheresaddie](https://twitter.com/wheresaddie)
 * [wordless web](http://pleaseenjoy.com/projects/personal/wordless-web/#image454) (this is actually a bookmarklet but as a content script could be an extension).
 * [code doodles](http://codedoodl.es/)
 
-## Resources / Tutorials
+### Resources / Tutorials
 * [Official Google guide to chrome extensions](https://developer.chrome.com/extensions/getstarted)
 * [Building your first chrome extension video tutorial](https://www.youtube.com/watch?v=pT-b2SpFIWo)
 * [How to make a chrome extension](https://robots.thoughtbot.com/how-to-make-a-chrome-extension)
 * [Developing chrome extensions tutorial](http://code.tutsplus.com/tutorials/developing-google-chrome-extensions--net-33076)
 
-## Bookmarklets
+### Bookmarklets
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DloHqUfPbJc?list=PLRqwX-V7Uu6bL9VOMT65ahNEri9uqLWfS" frameborder="0" allowfullscreen></iframe>
 
@@ -107,7 +107,7 @@ script.src = url + "?" + new Date().getTime();
 (Note you can get fancier with the above if you want to cache hourly, daily, etc.)
 
 
-## Basics
+### Basics
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/9Tl3OmwrSaM?list=PLRqwX-V7Uu6bL9VOMT65ahNEri9uqLWfS" frameborder="0" allowfullscreen></iframe>
 
@@ -127,7 +127,7 @@ Here is an example:
 
 The [manifest_version](https://developer.chrome.com/extensions/manifestVersion) should always be 2 as this is the current manifest specification.  [Here is the full spec](https://developer.chrome.com/extensions/manifest) for manifest.json.
 
-## Content Scripts
+### Content Scripts
 
 The first thing you might try with an extension is making a content script.  A content script is a piece of JavaScript code (which can also include and reference CSS) that runs after the page loads.  It has full access to the DOM so you can do things like alter content, styles, layout, images, anything that is on the page.  The manifest.json file should reference your content script.
 
@@ -190,7 +190,7 @@ This is all you need for a working chrome extension!  To test the extension, go 
 
 Once the extension is installed you can enable or disable it, as well as delete it.  Also note that if you change the code you'll need to select "reload" before the new code will run.
 
-## Browser Actions
+### Browser Actions
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ew9ut7ixIlI?list=PLRqwX-V7Uu6bL9VOMT65ahNEri9uqLWfS" frameborder="0" allowfullscreen></iframe>
 
@@ -219,7 +219,7 @@ function buttonClicked(tab) {
 }
 {% endhighlight %}
 
-## Messaging
+### Messaging
 
 Let's say you want to execute some code in the content script (to manipulate the DOM) whenever the user triggers the browser action.  This is where you need to use "messaging".  A message is just a JavaScript object of your own design that you send from the background script to the content script.  Here is the sending:
 
@@ -248,7 +248,7 @@ function receiver(request, sender, sendResponse) {
 
 <iframe width="312" height="175" src="https://www.youtube.com/embed/8zMMOdI5SOk?list=PLRqwX-V7Uu6bL9VOMT65ahNEri9uqLWfS" frameborder="0" allowfullscreen></iframe> <iframe width="312" height="175" src="https://www.youtube.com/embed/IXXNIcQQLU8?list=PLRqwX-V7Uu6bL9VOMT65ahNEri9uqLWfS" frameborder="0" allowfullscreen></iframe>
 
-## Pop-ups
+### Pop-ups
 
 <iframe width="312" height="175" src="https://www.youtube.com/embed/YQnRSa8MGwM?list=PLRqwX-V7Uu6bL9VOMT65ahNEri9uqLWfS" frameborder="0" allowfullscreen></iframe> <iframe width="312" height="175" src="https://www.youtube.com/embed/kP-UmHrxCYk?list=PLRqwX-V7Uu6bL9VOMT65ahNEri9uqLWfS" frameborder="0" allowfullscreen></iframe>
 
@@ -269,7 +269,7 @@ var word = chrome.extension.getBackgroundPage().word;
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/GWDx1GnxhOw?list=PLRqwX-V7Uu6bL9VOMT65ahNEri9uqLWfS" frameborder="0" allowfullscreen></iframe>
 
-## Omnibox
+### Omnibox
 
 Actions can also be triggered by typing a keyword into the "omnibox" (also known as "address bar").  The keyword is specified in `manifest.json`.
 
@@ -293,7 +293,7 @@ function omniChanged(text) {
 }
 {% endhighlight %}
 
-## Override Page
+### Override Page
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/vNb3P5KIxXw?list=PLRqwX-V7Uu6bL9VOMT65ahNEri9uqLWfS" frameborder="0" allowfullscreen></iframe>
 
@@ -308,7 +308,7 @@ Chrome extensions allow you to replace the default chrome pages for bookmarks, h
 Then you can create `newtab.html` with any HTML, CSS, or JavaScript. [Here's an example that picks a random "word of the day" from Wordnik](https://github.com/shiffman/A2Z-F16/tree/master/week10-chrome-ext/08_override).
 
 
-## APIs
+### APIs
 
 One of the benefits of using a chrome extension is [all of the APIs](https://developer.chrome.com/extensions/api_index) that are available for controlling the behavior of the browser.  Some that might interest you are:
 

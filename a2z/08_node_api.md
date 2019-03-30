@@ -4,32 +4,32 @@ layout: a2z-post
 permalink: /a2z/node-api/
 ---
 
-# Building an API with Node and Express
+## Building an API with Node and Express
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/P-Upi9TMrBk?list=PLRqwX-V7Uu6Yyn-fBtGHfN0_xCtBwUkBp" frameborder="0" allowfullscreen></iframe>
 
 
-## Examples
+### Examples
 * [basic routes](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week4-node/04_routes_rest_express)
 * [concordance API example](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week9-node-api/01_concordance_API_express) -- demonstrates how a server can pre-process a large dataset in advance and hand results to clients.
 * [Spellcheck API](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week9-node-api/02_spellcheck_API) -- demonstrates how to pass results from node package ([NodeNatural](https://github.com/NaturalNode/natural)) to client, also processes large dataset.
 * [Sentiment API](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week9-node-api/03_sentiment_API) -- demonstrates how to pass results from node package and also save data for persistence to a JSON file standing in as a basic database.
 * [Classification API](https://github.com/shiffman/A2Z-F16/tree/gh-pages/week9-node-api/04_classification_API) -- An API that can be trained to classify text into any number of categories.  Picks up the thread of week 5's word counting examples.
 
-## Node packages
+### Node packages
 * [Natural](https://github.com/NaturalNode/natural) -- includes modules for string operations (tokenizing, differencing), classification, and other misc tools like spell checking.
 * [Sentiment](https://github.com/thisandagain/sentiment) -- AFINN-based sentiment analysis with an easy means of adding/updating your own words and positive/negative scores.
 * [RiTa](https://github.com/dhowe/RiTaJS) -- same RiTa library we looked at before but also available in node.
 * [nlp-compromise](https://github.com/spencermountain/nlp_compromise) -- client and server-side misc natual language processing tools.
 
-## Other relevant resources
+### Other relevant resources
 * [AFINN-111](http://www2.imm.dtu.dk/pubdb/views/publication_details.php?id=6010) -- AFINN is a list of English words rated for valence with an integer between minus five (negative) and plus five (positive). The words have been manually labeled by Finn Årup Nielsen in 2009-2011.
 * [How to write a spelling checker](http://norvig.com/spell-correct.html) by [Peter Norvig](http://norvig.com/)
 * [Text file containing 355k English words](https://github.com/dwyl/english-words)
 
 <iframe width="250" height="140" src="https://www.youtube.com/embed/6oiabY1xpBo?list=PLRqwX-V7Uu6Yyn-fBtGHfN0_xCtBwUkBp" frameborder="0" allowfullscreen></iframe> <iframe width="250" height="140" src="https://www.youtube.com/embed/e4qKBkwwkNg?list=PLRqwX-V7Uu6Yyn-fBtGHfN0_xCtBwUkBp" frameborder="0" allowfullscreen></iframe> <iframe width="250" height="140" src="https://www.youtube.com/embed/oMhAd864bBc?list=PLRqwX-V7Uu6Yyn-fBtGHfN0_xCtBwUkBp" frameborder="0" allowfullscreen></iframe>
 
-## Why use server-side programming?
+### Why use server-side programming?
 
 In [session four's notes](/a2z/server-node/) on node and twitter bots I covered the basics of working with [node](https://nodejs.org/en/), [npm](https://www.npmjs.com/), and building an API with "RESTian" routes.
 
@@ -37,7 +37,7 @@ This page picks up on that thread and looks at a few scenarios where running ser
 
 One of the main reasons you might go down this road is if you have a large dataset that takes a significant amount of time to process.  For example, let's say you want to build a word counting app and you have one million documents to process.  This would be unrealistic to do on the client-side, but reasonable on the server.  
 
-### module.exports
+#### module.exports
 
 To build this example the first thing I'll do is go and grab [`concordance.js`](https://github.com/shiffman/A2Z-F16/blob/gh-pages/week5-analysis/01_concordance/concordance.js) from the [text analysis examples](/a2z/text-analysis).  Functions and objects from separate JS files can be used in node just like in an HTML page.  However, this must be done via [node modules](https://nodejs.org/api/modules.html) and the `require()` function.
 
@@ -65,7 +65,7 @@ var Concordance = require('./concordance');
 var wordcounts = new Concordance();
 {% endhighlight %}
 
-### Reading files
+#### Reading files
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/6iZiqQZBQJY?list=PLRqwX-V7Uu6Yyn-fBtGHfN0_xCtBwUkBp" frameborder="0" allowfullscreen></iframe>
 
@@ -85,7 +85,7 @@ for (var i = 0; i  < files.length; i++) {
 
 One thing you might notice about the above is the use of `readdirSync()` and `readFileSync()` as opposed to `readdir()` and `readFile()`.   The "sync" refers to "synchronous" meaning these lines of code are "blocking".  The data has to be read before moving onto the next line.  This is unusual in JavaScript in that typically a callback is required to be executed when the data is read.  This is a case where I am happy for the program to stop and wait because I want to process all of the data before the server starts listening for connections. It's ok if it takes a long time because this only happens once when the server starts.  (This, however, would not be advisable at other points in the code like handling a client request to the server.)
 
-### Routes for results
+#### Routes for results
 
 Now that the data is read, I can create routes that send the data to a client making a `loadJSON()` request with p5 (or pick your function using any JS library that can make HTTP requests.)  Here's one that sends everything in the concordance object.
 
@@ -127,7 +127,7 @@ function showOne(req, res) {
 }
 {% endhighlight %}
 
-### What does the client say?
+#### What does the client say?
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/4zr8j-jeU_M?list=PLRqwX-V7Uu6Yyn-fBtGHfN0_xCtBwUkBp" frameborder="0" allowfullscreen></iframe>
 
@@ -149,7 +149,7 @@ The client can then access this data with `loadJSON()`.
   }
 {% endhighlight %}
 
-## CORS
+### CORS
 
 One thing you might notice about the above `loadJSON()` calls is that they do not reference the domain itself, simply the route "all" or "search".  This is because I am assuming that the p5 sketch will be hosted by the same node app that is running the API code.  In fact, in my example I'm doing exactly this by placing the p5 sketch in a "public" folder and serving those files statically using node and express:
 
@@ -170,7 +170,7 @@ var cors = require('cors');
 app.use(cors());
 {% endhighlight %}
 
-## Persistance
+### Persistance
 
 Another topic relevant to server-side programming is "persistance".  In other words, let's say you want to build a text classifier.  [NaturalNode](https://github.com/NaturalNode/natural) includes as one of its features [Bayesian Text Classification](https://web.stanford.edu/class/cs124/lec/naivebayes.pdf) which I briefly covered in [text analysis](/a2z/text-analysis).  
 
@@ -224,7 +224,7 @@ function finished(err) {
 
 Writing out a text file is a nice quick and dirty solution that can work for many small-scale creative projects in a prototyping stage.  Often, however, a more involved database is required. In addition to creating a database on your own server, there is also the option of using an API service like [Firebase](https://firebase.google.com) to store your data.  I have [notes and examples on firebase here](/a2z/firebase/).
 
-## GET vs POST
+### GET vs POST
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/GZ2nwxhQUTU?list=PLRqwX-V7Uu6Yyn-fBtGHfN0_xCtBwUkBp" frameborder="0" allowfullscreen></iframe>
 

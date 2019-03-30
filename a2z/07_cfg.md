@@ -4,11 +4,11 @@ layout: a2z-post
 permalink: /a2z/cfg/
 ---
 
-# Context-Free Grammar
+## Context-Free Grammar
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Rhqk9HYiB7Q?list=PLRqwX-V7Uu6Y7iXZe_8XKJhaw_kRo8REO" frameborder="0" allowfullscreen></iframe>
 
-## Examples
+### Examples
 * [Context-Free Grammar with Tracery](https://shiffman.github.io/A2Z-F17/week7-cfg/00_tracery/) — [source code](https://github.com/shiffman/A2Z-F17/tree/master/week7-cfg/00_tracery)
 * [Context-Free Grammar basic](https://shiffman.github.io/A2Z-F17/week7-cfg/01_cfg_raw/) — [source code](https://github.com/shiffman/A2Z-F17/tree/master/week7-cfg/01_cfg_raw)
 * [Context-Free Grammar from file](https://shiffman.github.io/A2Z-F17/week7-cfg/02_cfg_reader/) — [source code](https://github.com/shiffman/A2Z-F17/tree/master/week7-cfg/02_cfg_reader)
@@ -16,10 +16,10 @@ permalink: /a2z/cfg/
 * [Generate Context-Free Grammar JSON file](https://shiffman.github.io/A2Z-F17/week7-cfg/04_cfg_generate_grammar/) — [source code](https://github.com/shiffman/A2Z-F17/tree/master/week7-cfg/04_cfg_generate_grammar)
 * [LSystem](https://shiffman.github.io/A2Z-F17/week7-cfg/05_LSystem/) — [source code](https://github.com/shiffman/A2Z-F17/tree/master/week7-cfg/05_LSystem)
 
-## CFG projects
+### CFG projects
 * [Context-Free Art](http://www.contextfreeart.org/)
 
-## Related references
+### Related references
 * [Context-Free Grammars by Allison Parrish](http://www.decontextualize.com/teaching/rwet/recursion-and-context-free-grammars/)
 * [Context-Free Grammars by Daniel Howe](http://www.rednoise.org/pdal/index.php?n=Main.Grammars)
 * [Context-Free Grammars by Randal C. Nelson](https://www.cs.rochester.edu/~nelson/courses/csc_173/grammars/cfg.html) -- includes some info about thinking about programming syntax as CFG
@@ -27,13 +27,13 @@ permalink: /a2z/cfg/
 * [More on grammars](http://matt.might.net/articles/grammars-bnf-ebnf/)
 * [More on L-Systems](http://natureofcode.com/book/chapter-8-fractals/#86-l-systems) from [The Nature of Code](http://natureofcode.com/book).
 
-## Exercise ideas
+### Exercise ideas
 * Rework any of the example programs to use something other than text (or, at least, text that represents language) as its basic unit. For example: musical notes, songs in playlists, pixels in an image, etc.
 * Invent your own grammar. Consider using one that generates something other English sentences: music, images, code, etc.
 * Build a grammar that pulls its terminal words from [Wordnik](https://www.wordnik.com/).
 * Build a grammar based on a source text [as demonstrated here](https://shiffman.github.io/A2Z-F17/week7-cfg/04_cfg_generate_grammar/) — [source code](https://github.com/shiffman/A2Z-F17/tree/master/week7-cfg/04_cfg_generate_grammar).  
 
-## Grammars
+### Grammars
 
 From <a href="http://en.wikipedia.org/wiki/Grammar">Wikipedia</a>:  “Grammar is the study of the rules governing the use of a given natural language, and, as such, is a field of linguistics. Traditionally, grammar included morphology and syntax; in modern linguistics these subfields are complemented by phonetics, phonology, semantics, and pragmatics.”
 
@@ -78,7 +78,7 @@ The process of generating the above two sentences goes something like:
 
 `s` becomes `a b` which becomes `the c cat` which then becomes `the happy cat` or `the sad cat`.  Here, either “happy” or “sad” is picked randomly (with a 50% chance for each one.)
 
-## Tracery
+### Tracery
 
 <p><iframe width="560" height="315" src="https://www.youtube.com/embed/C3EwsSNJeOE?list=PLRqwX-V7Uu6Y7iXZe_8XKJhaw_kRo8REO" frameborder="0" allowfullscreen></iframe></p>
 
@@ -86,7 +86,7 @@ A great way to get started experimenting with CFG text generation is to use a li
 
 {% highlight javascript %}
 var story = {
-  "start": ['Once upon a time, there was a #adj# #hero#'.],
+  "start": ['Once upon a time, there was a #adj## #hero#'.],
   "hero": ['fairy', 'unicorn', 'dragon', 'bear'],
   "adj": ['smart', 'pretty', 'smelly', 'funny', 'angry']
 }
@@ -99,7 +99,7 @@ var grammar = tracery.createGrammar(story);
 var expansion = grammar.flatten('#start#');
 {% endhighlight %}
 
-## CFG with RiTa.js
+### CFG with RiTa.js
 
 <p><iframe width="560" height="315" src="https://www.youtube.com/embed/VaAoIaZ3YKs?list=PLRqwX-V7Uu6Y7iXZe_8XKJhaw_kRo8REO" frameborder="0" allowfullscreen></iframe></p>
 
@@ -120,7 +120,7 @@ var story = grammar.expand();
 
 RiTa also allows you pass a third argument (weight) to each rule to increase the probability of a particular option being selected.  And finally, RiTa  allows you to load grammars from a file (formatted with JSON or YAML) with `loadFrom()`.
 
-## Coding your own CFG
+### Coding your own CFG
 
 <p><iframe width="560" height="315" src="https://www.youtube.com/embed/8Z9FRiW2Jlc?list=PLRqwX-V7Uu6Y7iXZe_8XKJhaw_kRo8REO" frameborder="0" allowfullscreen></iframe></p>
 
@@ -170,19 +170,19 @@ Finally, a grammar file is something you can generate yourself based on some alg
 
 Here is an [example that uses a concordance to get al the words from a source file and the RiTa library to count syllables](https://github.com/shiffman/A2Z-F17/tree/master/week7-cfg/04_cfg_generate_grammar).
 
-## More on Recursion
+### More on Recursion
 
 If the concept of recursion in the `expand()` function above is confusing to you, this video about recursion in algorithmic drawing from [The Nature of Code](http://natureofcode.com) may help.
 
 <p><iframe width="560" height="315" src="https://www.youtube.com/embed/0jjeOYMjmDU?list=PLRqwX-V7Uu6Y7iXZe_8XKJhaw_kRo8REO" frameborder="0" allowfullscreen></iframe></p>
 
 
-## L-Systems
+### L-Systems
 
 Finally, another example of a Context-Free Grammar is an [L-System](https://en.wikipedia.org/wiki/L-system), a grammar used to generated growth patterns found in nature.
 
 <p><iframe width="560" height="315" src="https://www.youtube.com/embed/E1B4UoSQMFw?list=PLRqwX-V7Uu6Y7iXZe_8XKJhaw_kRo8REO" frameborder="0" allowfullscreen></iframe></p>
 
-## Exercise ideas
+### Exercise ideas
 
 <p><iframe width="560" height="315" src="https://www.youtube.com/embed/UzVtOS2DBA8?list=PLRqwX-V7Uu6Y7iXZe_8XKJhaw_kRo8REO" frameborder="0" allowfullscreen></iframe></p>

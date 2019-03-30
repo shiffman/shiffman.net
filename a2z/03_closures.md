@@ -9,22 +9,22 @@ permalink: /a2z/closures/
 <script language="javascript" type="text/javascript" src="/a2z/js/closure.js"></script>
 </head>
 
-# Closures
+## Closures
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-jysK0nlz7A" frameborder="0" allowfullscreen></iframe>
 
-## Examples
+### Examples
 * Closure Basics — [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week3-closures/00_closure_basics)
 * [Closure for Animation 1](https://shiffman.github.io/A2Z-F17/week3-closures/00_closure_basics/) — [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week3-closures/01_closure_for_animation)
 * [Closure for Animation 2](https://shiffman.github.io/A2Z-F17/week3-closures/01_closure_for_animation/) — [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week3-closures/02_closure_for_animation_part2)
 * [Closure with API call and animation while loading](https://shiffman.github.io/A2Z-F17/week3-closures/03_closure_animation_while_API_loading/) — [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week3-closures/03_closure_animation_while_API_loading)
 * [Closure with loop through many delayed API calls](https://shiffman.github.io/A2Z-F17/week3-closures/04_closure_delay_API_calls/) — [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week3-closures/04_closure_delay_API_calls)
 
-## Related references
+### Related references
 * [Mozilla Closure page](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
 * [Eloquent JavaScript section](http://eloquentjavascript.net/03_functions.html#h_hOd+yVxaku)
 
-## Closures
+### Closures
 
 Closures are a key aspect of the JavaScript programming language.  
 
@@ -92,7 +92,7 @@ This is the magic of JavaScript.  Whenever a function is declared, a "closure" w
 
 This idea of keeping scope for "later" is crucial for callbacks and becomes relevant for scenarios like animation and API callbacks.  Let's look at animation first.
 
-## Closure for Animation
+### Closure for Animation
 
 Let's say you have a DOM element.
 
@@ -146,7 +146,7 @@ function animate(elt, howlong) {
 <div id="count3" class="box"></div>
 
 
-## Closure for API callback
+### Closure for API callback
 
 Closures are also helpful when querying APIs.  Let's say for example, you have several DOM elements, each associated with a particular term.  And whenever you click on any of the elements, you want to make an API call with the associated term.
 
@@ -208,9 +208,9 @@ Again, the key here is that while the scope of `elt` and `word` is defined local
 
 Here is the a [full example that queries wordnik](13_closure_animation_while_API_loading/) and returns substitutes a "related" in the DOM element.  And the [source code](https://github.com/shiffman/A2Z-F15/tree/gh-pages/week8/13_closure_animation_while_API_loading).  The example also uses the "animation" closure to count while waiting for data back from the API.
 
-## Exercise ideas
+### Exercise ideas
 
-### 1: Closure with setTimeout()
+#### 1: Closure with setTimeout()
 
 Use a closure to create 100 DOM elements with `setTimeout()`.  Here is code that doesn't make use of a closure and does not work properly.
 
@@ -225,7 +225,7 @@ function makeElt() {
 {% endhighlight %}
 
 
-### 2: Closure to animate a DOM element.
+#### 2: Closure to animate a DOM element.
 
 Use a closure to animate a DOM element in some way with the `style()` function.  (Fill in the blanks).
 
@@ -262,7 +262,7 @@ Now make many elements, each that start animating when you click on them.  Do yo
 
 Finally, can you get your `animate()` function to return a reference to the interval so that you can start and stop the animation when you click on it?  This one is hard!
 
-### 3: Closure for an API call.
+#### 3: Closure for an API call.
 
 Use a closure to make an API call to openweathermap.org.  Send openweathermap a zip code and when the weather is returned, create a DOM element with that zip code and the weather data.  Here is some code to help you get started.
 

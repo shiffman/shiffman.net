@@ -5,9 +5,9 @@ permalink: /a2z/intro/
 ---
 
 
-# Technical Overview
+## Technical Overview
 
-## Git, Github, Github pages
+### Git, Github, Github pages
 
 One of the first things we'll explore in this class is git, github, and github pages.  By no means, is github pages required for hosting your projects.  But it's free and fast and lives on github.  So there are many reasons why you might like to consider it, at least during the homework / experimentation stage / of a project.  Here are some resources for getting started.
 
@@ -21,11 +21,11 @@ One of the first things we'll explore in this class is git, github, and github p
 
 <iframe width="312" height="175" src="https://www.youtube.com/embed/BCQHnlnPusY?list=PLRqwX-V7Uu6ZF9C0YMKuns9sLDzK6zoiV" frameborder="0" allowfullscreen></iframe> <iframe width="312" height="175" src="https://www.youtube.com/embed/bFVtrlyH-kc?list=PLRqwX-V7Uu6ZF9C0YMKuns9sLDzK6zoiV" frameborder="0" allowfullscreen></iframe>
 
-## JavaScript
+### JavaScript
 
 The core language for this class is JavaScript.  If JavaScript is new to you, I would suggest starting with the the  [first four chapters of Eloquent JavaScript](http://eloquentjavascript.net/).  And there are [many more resources for learning online](https://github.com/shiffman/A2Z-F17#learning--intro) as well.
 
-## p5.js
+### p5.js
 
 The framework we'll be exploring is [p5.js](http://p5js.org).  Here are some links to get your started.
 
@@ -34,7 +34,7 @@ The framework we'll be exploring is [p5.js](http://p5js.org).  Here are some lin
 <iframe width="525" height="300" src="https://www.youtube.com/embed/8j0UDiN7my4?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe>
 
 
-## HTML and CSS
+### HTML and CSS
 
 The class will assume basic knowledge of HTML and CSS.  Of course I'm happy to answer questions and go over these topics, but they won't be explicitly covered in class, other than in the context of JavaScript DOM manipulation.  For review, I would suggest reading the p5.js [HTML and CSS overview](https://github.com/processing/p5.js/wiki/Intro-to-HTML-and-CSS).  The [HTML and CSS book](http://www.htmlandcssbook.com/) is also excellent.
 
@@ -42,7 +42,7 @@ The class will assume basic knowledge of HTML and CSS.  Of course I'm happy to a
 
 <iframe width="312" height="175" src="https://www.youtube.com/embed/URSH0QpxKo8?list=PLRqwX-V7Uu6bI1SlcCRfLH79HZrFAtBvX" frameborder="0" allowfullscreen></iframe> <iframe width="312" height="175" src="https://www.youtube.com/embed/zGL8q8iQSQw?list=PLRqwX-V7Uu6bI1SlcCRfLH79HZrFAtBvX" frameborder="0" allowfullscreen></iframe>
 
-## DOM manipulation with JS
+### DOM manipulation with JS
 
 The first JavaScript task I'll demonstrate is "DOM manipulation", i.e. using programming to change the HTML and CSS of a page on the fly.  This is something possible with native JavaScript, as well as many different JS frameworks and libraries, the most well-known probably being [JQuery](https://jquery.com/).  In class, we'll use the p5.js DOM library primarily, as well as dig into native JS and other frameworks when necessary.
 
@@ -60,7 +60,7 @@ The key functions and topics I will discuss in class are:
 <iframe width="525" height="300" src="https://www.youtube.com/embed/lAtoaRz78I4?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA" frameborder="0" allowfullscreen></iframe>
 
 
-## Examples
+### Examples
 
 * [create HTML elements](https://shiffman.github.io/A2Z-F17/week1-dom/02_build_html_css_p5/), [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week1-dom/02_build_html_css_p5/)
 * [using select, and parent/child](https://shiffman.github.io/A2Z-F17/week1-dom/03_select_parent_child/), [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week1-dom/https://shiffman.github.io/A2Z-F17/week1-dom/03_select_parent_child/)
@@ -72,7 +72,7 @@ The key functions and topics I will discuss in class are:
 * [building a simple interface](https://shiffman.github.io/A2Z-F17/week1-dom/09_interface/), [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week1-dom/09_interface/)
 * [weird sliders experiment](https://shiffman.github.io/A2Z-F17/week1-dom/10_sliders/), [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week1-dom/10_sliders/)
 
-## JavaScript Objects
+### JavaScript Objects
 
 JavaScript objects will be key to just about everything we do this semester.  We'll be using objects for DOM manipulation like `p5.Element` and the native JS `Element`.  We'll be exploring data coming in as JSON ("JavaScript Object Notation").  We'll focus a lot on the JS `String` object as well as objects from other libraries.  And we'll write our own objects for analyzing and generating text.  The examples will use [ES6 classes](http://es6-features.org/#Classes).
 
@@ -80,9 +80,9 @@ JavaScript objects will be key to just about everything we do this semester.  We
 
 <span class="line-charm first"></span>
 
-# Working with Text
+## Working with Text
 
-## All examples
+### All examples
 
 * [loadStrings](https://shiffman.github.io/A2Z-F17/week1-strings/01_loadStrings) — [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week1-strings/01_loadStrings)
 * [loadStrings with callback](https://shiffman.github.io/A2Z-F17/week1-strings/02_loadStrings_callback) — [source code](https://github.com/shiffman/A2Z-F17/tree/gh-pages/week1-strings/02_loadStrings_callback)
@@ -101,7 +101,7 @@ JavaScript objects will be key to just about everything we do this semester.  We
 <iframe width="312" height="175" src="https://www.youtube.com/embed/uNQSVU0IKec?list=PLRqwX-V7Uu6YrbSJBg32eTzUU50E2B8Ch" frameborder="0" allowfullscreen></iframe> <iframe width="312" height="175" src="https://www.youtube.com/embed/0Mq2CxspF5s?list=PLRqwX-V7Uu6YrbSJBg32eTzUU50E2B8Ch" frameborder="0" allowfullscreen></iframe>
 
 
-## loadStrings() and preload()
+### loadStrings() and preload()
 
 The whole point of this week is to work with programmatic text mashups in the browser.  Take a look at the [William Burroughs' Cut-Up](https://shiffman.github.io/A2Z-F17/week1-strings/10_cut_up_machine/) example.  We'll need two essential skills here — how to load text (from a file or user) and how to work with JavaScript Strings.  Let's first start with loading text from a file.  The simplest way to do this in p5 is with `loadStrings()`.  It loads a local file (accessed by its relative path to the html file).  The simplest way to get the data is to use `preload()` which guarantees that the data is read before `setup()` triggers.
 
@@ -144,7 +144,7 @@ function setup() {
 }
 {% endhighlight %}
 
-## loadStrings and a callback
+### loadStrings and a callback
 
 While using `preload()` is a nice, quick and easy trick to getting text in, it's not how you might typically see code in JavaScript working.  The flow of a program in JavaScript is usually a sequence of events and functions can act as blocks of code triggered when certain events occur.  These functions are known as "callbacks", they are "called back" when the event is triggered.  You've likely seen this with the p5.js dom functions `mousePressed()`, `mouseOver()`, `mouseOut()`, etc.
 
@@ -170,11 +170,11 @@ function fileready(lines) {
 
 The function takes a single argument: lines.  lines containa all of the text from the file in a array of strings (unless there was an error).
 
-## User-selected files
+### User-selected files
 
 The next way of getting text in I want to examine is with a user-selected file.  This can be accomplished one of two ways, a select file button (as below) or a "drop zone" (an area in the page that a user can drag and drop a file.)
 
-### Choose file button
+#### Choose file button
 
 <input type="file" multiple="">
 
@@ -203,7 +203,7 @@ function gotFile(file) {
 }
 {% endhighlight %}
 
-### Drop zone
+#### Drop zone
 
 <iframe width="525" height="300" src="https://www.youtube.com/embed/o4UmGrPst_c" frameborder="0" allowfullscreen></iframe>
 
@@ -269,7 +269,7 @@ function gotFile(file) {
 
 Note how I am re-using the exact same `gotFile()` function that we had with the "choose files" button.
 
-## &lt;textarea&gt; and "contenteditable"
+### &lt;textarea&gt; and "contenteditable"
 
 If you want to get a large body of text typed in by a user, `createInput()` isn't a great choice.  It's meant more for just a couple words or a single sentence:
 
@@ -309,7 +309,7 @@ var p = select('#editableP');
 {% endhighlight %}
 
 
-## Strings in JS
+### Strings in JS
 
 <iframe width="525" height="300" src="https://www.youtube.com/embed/DcoAjEZYies?list=PLRqwX-V7Uu6YrbSJBg32eTzUU50E2B8Ch" frameborder="0" allowfullscreen></iframe>
 
@@ -339,7 +339,7 @@ var s2 = new String('hello');   // an object
 
 For the most part, this is a distinction you don't have to worry about.  JavaScript will automatically convert a primitive String into an object when necessary. In general, however, it's good practice to initialize  strings as primitives to increase performance.
 
-## Manipulating Strings
+### Manipulating Strings
 
 JavaScript provides us with a basic set of strings functions that allow for simple manipulation and analysis (again, leaving out regular expression for now!) All of the availabe String properties and functions are laid out in [the JavaScript reference](ttp://docs.oracle.com/javase/7/docs/api/java/lang/String.html), and I'll explore a few useful ones here.  Let's take a closer look at three: `indexOf()`, `substring()`, and the `length` property.
 
@@ -379,7 +379,7 @@ var num = 5 + 6;                        // ADDING TWO NUMBERS!
 var phrase = 'To be' + ' or not to be'; // JOINING TWO STRINGS!
 {% endhighlight %}
 
-## Splitting
+### Splitting
 
 One string-related function that will prove very useful in our text analysis programs is [split()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split).  `split()` separates a group of strings embedded into a longer string into an array of strings.
 
@@ -425,7 +425,7 @@ var words = ['it','was','a','dark','and','stormy','night'];
 var sentence = join(words, ' ');
 {% endhighlight %}
 
-## Single Page Analysis / Text-Mashup App
+### Single Page Analysis / Text-Mashup App
 
 I'll end this week by looking at a basic example of text analysis.  I'll read in a file, examine some of its statistical properties, and display a report.  The example will compute the [Flesch Index](http://en.wikipedia.org/wiki/Flesch-Kincaid_Readability_Test)  (aka Flesch-Kincaid Reading Ease test), a numeric score that indicates the readability of a text.   The lower the score, the more difficult the text.  The higher, the easier.  For example, texts with a score of 90-100 are, say, around the 5th grade level, wheras 0-30 would be for &#8220;college graduates&#8221;.  
 
@@ -545,7 +545,7 @@ report += "Total Sentences: " + totalSentences + "\n";
 report += "Flesch Index   : " + flesch + "\n";
 {% endhighlight %}
 
-## Text mashups
+### Text mashups
 
 <iframe width="525" height="300" src="https://www.youtube.com/embed/u-HUtrpyi1c?list=PLRqwX-V7Uu6YrbSJBg32eTzUU50E2B8Ch" frameborder="0" allowfullscreen></iframe>
 
@@ -564,6 +564,6 @@ In class, we'll do an exercise around mashing up text manually.  Here are links 
   * Excerpt from Virtual Muse: Experiments In Computer Poetry pgs. 95-96
   * [Online Diastic generator](http://www.eddeaddad.net/eDiastic/)
 
-## Assignment
+### Assignment
 
 <iframe width="525" height="300" src="https://www.youtube.com/embed/YTzVbuV89RE?list=PLRqwX-V7Uu6YrbSJBg32eTzUU50E2B8Ch" frameborder="0" allowfullscreen></iframe>
