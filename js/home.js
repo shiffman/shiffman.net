@@ -20,9 +20,7 @@ function getVideos() {
 
     }, 'JSON')
     .error(function() {
-
-      alert('Ahh sorry we couldn\' theres a problem');
-
+      alert('Apologies, there was an error communicating with the YouTube API.');
     });
 
 }
