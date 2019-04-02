@@ -25,6 +25,16 @@ html {
     -webkit-font-smoothing: antialiased;
     /*overflow: hidden;*/
 }
+.visually-hidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
 .left-container {
     position: relative;
     width: 65%;
@@ -121,7 +131,7 @@ nav {
         font-weight: 700;
         color: $black;
         transition: color 0.2s;
-        &:hover {
+        &:hover, &:focus {
             color: $red;
         }
     }
@@ -134,15 +144,15 @@ nav {
             text-decoration: none;
             color: $black;
             transition: color 0.15s;
-            &:hover {
+            &:hover, &:focus {
                 color: $red;
             }
-            &:hover {
+            &:hover, &:focus{
                 color: $red;
             }
         }
     }
-    &:hover {
+    &:hover, &:focus {
         left: 0;
     }
 }
@@ -244,7 +254,7 @@ p {
         border-bottom: 2px solid #f1f1f1;
         text-decoration: none;
         transition: all 0.2s;
-        &:hover {
+        &:hover, &:focus {
             border-bottom: 2px solid $black;
         }
     }
@@ -265,14 +275,14 @@ a.btn {
     &.primary {
         color: $white;
         background: $red;
-        &:hover {
+        &:hover, &:focus{
             background: darken($red, 5%);
         }
     }
     &.secondary {
         color: $white;
         background: $black;
-        &:hover {
+        &:hover, &:focus{
             background: darken($black, 5%);
         }
     }
@@ -291,13 +301,14 @@ a.body-link {
     border-bottom: 2px solid $white;
     &.primary {
         color: $red;
-        &:hover {
+        border-bottom: 2px solid lighten($red, 60%);
+        &:hover, &:focus{
             border-bottom: 2px solid $red;
         }
     }
     &.secondary {
         color: $black;
-        &:hover {
+        &:hover, &:focus{
             border-bottom: 2px solid $black;
         }
     }
@@ -323,7 +334,7 @@ a.body-link {
             text-decoration: none;
             color: $black;
             transition: all 0.2s;
-            &:hover {
+            &:hover, &:focus{
                 color: $red;
             }
         }
@@ -473,6 +484,7 @@ a.body-link {
         letter-spacing: 0.87px;
         color: $black;
         text-decoration: none;
+        text-transform: uppercase;
         margin-top: 25px;
     }
     a.secondary {
@@ -480,8 +492,12 @@ a.body-link {
         font-weight: 900;
         letter-spacing: 0.87px;
         text-decoration: none;
-        display: block;
+        text-transform: uppercase;
         color: $white;
+        border-bottom: 2px solid rgba(255,255,255,0.3);
+        &:hover, &:focus {
+            border-bottom: 2px solid $white;
+        }
     }
     &.lp {
         background: $yellow url('../images/highlight.png') no-repeat;
@@ -540,6 +556,7 @@ a.body-link {
                 font-weight: 900;
                 color: $purple;
                 text-decoration: none;
+                text-transform: uppercase;
                 display: block;
                 letter-spacing: 0.6px;
                 outline: none;
@@ -608,7 +625,7 @@ input:focus {
                   a {
                       color: $red;
                       border-bottom: 2px solid $white;
-                      &:hover {
+                      &:hover, &:focus{
                         border-bottom: 2px solid $red;
                     }
                   }
@@ -631,7 +648,7 @@ input:focus {
                 color: $black;
                 text-decoration: none;
                 border-bottom: 2px solid #f1f1f1;
-                &:hover {
+                &:hover, &:focus{
                     border-bottom: 2px solid $black;
                 }
             }
@@ -658,7 +675,7 @@ input:focus {
                     color: $black;
                     text-decoration: none;
                     border-bottom: 2px solid #f1f1f1;
-                    &:hover {
+                    &:hover, &:focus{
                         border-bottom: 2px solid $black;
                     }
                 }
@@ -679,11 +696,11 @@ input:focus {
 .right-container.article-links,
 .right-container.quick-links {
     padding: 40px;
-    background: $red;
+    background: $lightred;
     width: 30%;
     h3 {
         font-size: 12px;
-        color: rgba(0,0,0,0.5);
+        color: rgba(0,0,0,0.8);
         text-transform: uppercase;
         font-weight: 700;
         margin-bottom: 1em;
@@ -697,14 +714,14 @@ input:focus {
             border-radius: 45px;
             text-transform: uppercase;
             line-height: 18px;
-            background: #C7004A;
+            background: $red;
             font-size: 12px;
             font-weight: 600;
             color: #FFFAFC;
             text-decoration: none;
             transition: all 0.25s;
             width: 100%;
-            &:hover {
+            &:hover, &:focus {
                 background: $white;
                 color: $red;
             }
@@ -717,16 +734,16 @@ input:focus {
         }
     }
     &.video {
-        background: $blue;
+        background: $lightblue;
         .quick-link a {
             &.primary {
                 background: $white;
                 color: #18677B;
             }
             &.secondary {
-                background: #00ADDA;
+                background: $blue;
             }
-            &:hover {
+            &:hover, &:focus {
                 color: #18677B;
                 background: $white;
             }
@@ -748,7 +765,7 @@ input:focus {
         a.toplaylist {
             color: $black;
             transition: color 0.2s;
-            &:hover {
+            &:hover, &:focus {
                 color: $red;
             }
         }
@@ -789,7 +806,7 @@ input:focus {
             opacity: 0;
             transition: opacity 0.2s;
         }
-        &:hover {
+        &:hover, &:focus {
             .watch-button {
                 opacity: 1;
             }
@@ -824,7 +841,7 @@ article.article-list {
             color: $black;
             text-decoration: none;
             transition: color 0.2s;
-            &:hover {
+            &:hover, &:focus {
                 color: $red;
                 .red {
                     color: $red;
