@@ -1,10 +1,10 @@
 <!--[if lt IE 7]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
-<nav>
-  <a href="/" class="nav-logo">DANIEL <br>SHIFFMAN</a>
-  <span class="line-charm"></span>
+<nav id="global-nav" aria-label="Main navigation">
   <ul class="nav-links">
+    <li><a href="/" class="nav-logo">DANIEL <br>SHIFFMAN</a></li>
+    <span class="line-charm"></span>
     <li><a href="/books/">BOOKS</a></li>
     <li><a href="/videos/">VIDEOS</a></li>
     <li><a href="/learning/">LEARNING</a></li>
@@ -15,13 +15,11 @@
     <li><a href="https://www.patreon.com/codingtrain?ty=h" target="_blank">PATREON</a></li>
   </ul>
 </nav>
-
-<div class="logo">
-    <span class="nav-btn"><img src="/images/nav-btn.svg" alt="Menu toggle"/></span>
-    <!-- <div class="logo-set">
-      <h2>DANIEL SHIFFMAN</h2>
-      <span class="intro">Teacher of Code and Programming</span>
-    </div> -->
+<div id="container">
+  <button aria-controls="global-nav" aria-haspopup="true" tabindex="2" id="menu-button">
+    <span class="menu-icon" aria-hidden="true">
+      <img src="/images/nav-btn.svg" alt="Menu toggle" />
+    </span>
+  </button>
 </div>
-
 <span class="mobile-quick-links">VIEW QUICK LINKS</span>
