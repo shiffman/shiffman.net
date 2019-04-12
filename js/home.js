@@ -2,11 +2,18 @@ var shiffmanChannelId = "UCvjgXvBlbQiydffZU7m1_aw";
 var apiKey 				= "AIzaSyAInyAq_CBIJ0W7p_pqJlnA7dBHvC5FG8M";
 let getPlaylistsStr = 'https://www.googleapis.com/youtube/v3/playlists?key=' + apiKey;
 $(document).ready(function() {
-
+  expandNav(); 
   getVideos();
 
 });
-
+function expandNav() {
+  if (!document.body.classList.contains('active')) {
+		document.body.classList.add('active');
+		document.getElementById('menu-button').classList.add('active');
+		enableNavLinks();
+		navLinks.eq(0).focus();
+	}
+}
 function getVideos() {
   let searchStr = 'https://www.googleapis.com/youtube/v3/search?key=' + apiKey;
   $.get(searchStr, {
