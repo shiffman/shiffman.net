@@ -1,5 +1,5 @@
 # SHIFFMAN.NET
-Repo for https://shiffman.net
+Repo for https://shiffman.net.
 
 ## Main Technical Dependencies
 
