@@ -629,7 +629,7 @@ input:focus {
 .right-container.books {
     .feature {
         height: 50%;
-        min-height: auto;
+        min-height: 16em;
         overflow: hidden;
         &.lp {
             background: $yellow url('../images/highlight.png') no-repeat;
