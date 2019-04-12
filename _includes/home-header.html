@@ -1,7 +1,7 @@
 <!--[if lt IE 7]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
-<nav class="home">
+<nav id="global-nav">
   <div class="logo-set-home">
     <p class="brand">DANIEL SHIFFMAN</p>
     <span class="intro">Learn Creative Code</span>
@@ -19,8 +19,11 @@
   </ul>
 </nav>
 
-<div class="logo">
-    <span class="nav-btn small-show"><img src="/images/nav-btn.svg"/></span>
+<div id="container">
+  <button aria-controls="global-nav" aria-haspopup="true" tabindex="2" id="menu-button">
+    <span class="menu-icon" aria-hidden="true">
+      <img src="/images/nav-btn.svg" alt="Menu toggle" />
+    </span>
+  </button>
 </div>
-
-<span class="mobile-quick-links">BOOKS AND VIDEOS</span>
+<span class="mobile-quick-links">VIEW QUICK LINKS</span>
