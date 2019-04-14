@@ -6,6 +6,10 @@ $(document).ready(function() {
   getVideos();
 
 });
+var navButton = $('#menu-button'),
+navMenu = $('#global-nav');
+var navLinks = navMenu.find('a');
+
 function expandNav() {
   if ((!document.body.classList.contains('active') && ($(document).width() >= 700))) {
 		document.body.classList.add('active');
@@ -13,6 +17,12 @@ function expandNav() {
 		enableNavLinks();
 		navLinks.eq(0).focus();
 	}
+}
+function enableNavLinks() {
+  navButton.attr('aria-label', 'Close navigation menu');
+  navButton.attr('aria-expanded', 'true');
+  navMenu.removeAttr('aria-hidden');
+  navLinks.removeAttr('tabIndex');
 }
 function getVideos() {
   let searchStr = 'https://www.googleapis.com/youtube/v3/search?key=' + apiKey;
@@ -28,12 +38,15 @@ function getVideos() {
     }, 'JSON')
     .error(function() {
 
-      alert('Ahh sorry we couldn\' theres a problem');
+      displayApiError();
 
     });
 
 }
-
+function displayApiError() {
+  var message = '<p>We\'ve hit Youtube API quota for the day. Please <a href="https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw">visit our Youtube Channel</a>.</p>'
+  $('#apiError').append(message);
+}
 function populateData(data) {
 
   var videos = data.items;
