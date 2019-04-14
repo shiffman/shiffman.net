@@ -60,25 +60,42 @@ $(document).ready(function(){
 		var quicklinksButton = $('#quicklinks-btn');
 		var quicklinksMenu = $('#quicklinks-section');
 //		var qlLinks = quicklinksMenu.find('a');
-//		var qlInput = $('#user-email');
+		var qlInput = $('#user-email');
 //		var qlBtn = $('.email-btn');
 
 		function initApp() {
-//			quicklinksMenu.on('keydown', handleKeydown);
-//			quicklinksButton.on('click', handleClick);
-//			disableQuicklinks();
+			quicklinksMenu.on('keydown', handleKeydown);
+			quicklinksButton.on('click', handleClick);
+			enableQuicklinks();
 		}
 		function handleKeydown() {
-
+			if (event.keyCode === ESCAPE_CODE) {
+			//	document.body.classList.toggle('active');
+			//	document.getElementById('menu-button').classList.remove('active');
+				disableQuicklinks();
+				qlInput.focus();
+			}
 		}
 		function handleClick() {
-
+			var active = 1;
+			if (active === 1) {
+				disableQuicklinks();
+			} else {
+				active = 1;
+				enableNavLinks();
+				qlInput.focus();
+				}
+		}
+		function enableQuicklinks() {
+			quicklinksButton.html('Hide quick links');
+			quicklinksButton.attr('aria-expanded', 'true');
+			quicklinksMenu.attr('aria-hidden', 'false');			
 		}
 		function disableQuicklinks() {
-	//		quicklinksButton.html('Hide quick links');
-	//		quicklinksButton.attr('aria-expanded', 'false');
-	//		quicklinksMenu.attr('aria-hidden', 'true');
-	//		quicklinksMenu.addClass('out');
+			quicklinksButton.html('View quick links');
+			quicklinksButton.attr('aria-expanded', 'false');
+			quicklinksMenu.attr('aria-hidden', 'true');
+
 		}
 		return {
 			init: function(){
@@ -117,17 +134,11 @@ $(document).ready(function(){
 		$(this).addClass(colour);
 
 	});
-
 	$('.mobile-quick-links').click(function(){
-
 		$('.right-container').addClass('in');
-
 	});
-
 	$('.left-container').click(function(){
-
 		$('.right-container').removeClass('in');
-
 	});
 
 });

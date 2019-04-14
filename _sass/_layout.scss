@@ -45,6 +45,10 @@ html {
     height: 100%;
     /*overflow: scroll;*/
     -webkit-overflow-scrolling: touch;
+    &.about {
+        padding-left: 200px;
+        font-size: 0.8em;
+    }
     &.about,
     &.blog,
     &.teaching,
@@ -94,9 +98,6 @@ html {
 }
 footer.left-container {
     padding-bottom: 30px;
-    p {
-        font-size: 12px;
-    }
 }
 
 //NEW ACCESSIBLE NAV
@@ -228,7 +229,7 @@ z-index: 2;
     padding: 5px 15px;
     display: none;
     border-radius: 20px;
-    z-index: 1;
+    z-index: 3;
     @media only screen and (max-width: $breakpoint-small) {
         display: block;
     }
