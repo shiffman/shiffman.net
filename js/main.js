@@ -4,6 +4,7 @@ $(document).ready(function(){
 	var MainNav = {};
 	var RightAside = {};
 	var ESCAPE_CODE = 27;
+	
 	MainNav.App = (function() {
 		var navButton = $('#menu-button'),
 		navMenu = $('#global-nav');
@@ -70,15 +71,15 @@ $(document).ready(function(){
 		}
 		function handleKeydown() {
 			if (event.keyCode === ESCAPE_CODE) {
-			//	document.body.classList.toggle('active');
-			//	document.getElementById('menu-button').classList.remove('active');
 				disableQuicklinks();
 				qlInput.focus();
 			}
 		}
+	
 		function handleClick() {
-			var active = 1;
+			var active = 0;
 			if (active === 1) {
+				active = 0;
 				disableQuicklinks();
 			} else {
 				active = 1;
