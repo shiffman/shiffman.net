@@ -44,7 +44,7 @@ function getVideos() {
 
 }
 function displayApiError() {
-  var message = '<p>We\'ve hit Youtube API quota for the day. Please <a href="https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw">visit our Youtube Channel</a>.</p>'
+  var message = 'Please <a href="https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw">visit our Youtube Channel</a> for latest videos.'
   $('#apiError').append(message);
 }
 function populateData(data) {
