@@ -218,8 +218,8 @@ z-index: 2;
 
 .mobile-quick-links {
     position: fixed;
-    right: 30px;
-    top: 65px;
+    right: 0px;
+    top: 0;
     background: $black;
     color: $white;
     font-family: $lato;
@@ -227,7 +227,7 @@ z-index: 2;
     letter-spacing: 1.6px;
     font-weight: 600;
     padding: 5px 15px;
-    display: none;
+    display: block;
     border-radius: 20px;
     z-index: 3;
     @media only screen and (max-width: $breakpoint-small) {

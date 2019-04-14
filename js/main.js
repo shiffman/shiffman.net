@@ -49,8 +49,6 @@ $(document).ready(function(){
 			navMenu.attr('aria-hidden', 'true');
 			navLinks.attr('tabIndex', '-1');
 		}
-
-
 		return {
 			init: function(){
 			initApp();
@@ -63,7 +61,7 @@ $(document).ready(function(){
 //		var qlLinks = quicklinksMenu.find('a');
 		var qlInput = $('#user-email');
 //		var qlBtn = $('.email-btn');
-
+var active = 1;
 		function initApp() {
 			quicklinksMenu.on('keydown', handleKeydown);
 			quicklinksButton.on('click', handleClick);
@@ -77,13 +75,13 @@ $(document).ready(function(){
 		}
 	
 		function handleClick() {
-			var active = 0;
+			
 			if (active === 1) {
 				active = 0;
 				disableQuicklinks();
 			} else {
 				active = 1;
-				enableNavLinks();
+				enableQuicklinks();
 				qlInput.focus();
 				}
 		}
