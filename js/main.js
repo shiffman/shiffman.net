@@ -2,14 +2,15 @@
 
 $(document).ready(function(){
 	var MainNav = {};
-
+	var RightAside = {};
+	var ESCAPE_CODE = 27;
 	MainNav.App = (function() {
 
-	var ESCAPE_CODE = 27;
+
 
 	var navButton = $('#menu-button'),
 		navMenu = $('#global-nav');
-	
+
 	var navLinks = navMenu.find('a');
 
 	function initApp() {
@@ -20,6 +21,7 @@ $(document).ready(function(){
 	function handleKeydown(event) {
 		if (event.keyCode === ESCAPE_CODE) {
 		document.body.classList.toggle('active');
+		document.getElementById('menu-button').classList.remove('active');
 		disableNavLinks();
 		navButton.focus();
 		}
@@ -50,14 +52,19 @@ $(document).ready(function(){
 		navLinks.attr('tabIndex', '-1');
 	}
 
+
 	return {
 		init: function(){
 		initApp();
 		}
 	}
 	})();
-	new MainNav.App.init();
+	RightAside.App = (function() {
 
+
+	})();
+	new MainNav.App.init();
+	//new RightAside.App.init();
 	$('.left-container, .right-container').removeClass('out');
 
 	$('.nav-links a, .nav-logo').click(function(e){

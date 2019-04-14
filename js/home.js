@@ -7,7 +7,7 @@ $(document).ready(function() {
 
 });
 function expandNav() {
-  if (!document.body.classList.contains('active')) {
+  if ((!document.body.classList.contains('active') && ($(document).width() >= 700))) {
 		document.body.classList.add('active');
 		document.getElementById('menu-button').classList.add('active');
 		enableNavLinks();
