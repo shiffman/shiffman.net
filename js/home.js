@@ -5,6 +5,83 @@ $(document).ready(function() {
   expandNav(); 
   getVideos();
 
+  var HomeRightAside = {};
+  var rightActive;
+	HomeRightAside.App = (function() {
+		var quicklinksButton = $('#quicklinks-btn-home');
+		var quicklinksMenu = $('#quicklinks-section-home');
+		var qlLinks = quicklinksMenu.find('a');
+		var qlInput = $('#user-email');
+		var qlBtn = $('.email-btn');
+
+		function initApp() {
+			quicklinksMenu.on('keydown', handleKeydown);
+			quicklinksButton.on('click', handleClick);
+
+			if ($(document).width() > 700) {
+				rightActive = true;
+				enableQuicklinks();
+				$('.nav-links a, .nav-logo').click(function(e){
+					e.preventDefault();
+					var url = $(this).attr("href");
+					$('.left-container, .right-container').addClass('out');
+					$('nav').addClass('moving');
+					setTimeout(function(){
+						window.location = url;
+					}, 600);
+				});
+			} else {
+				rightActive = false;
+				disableQuicklinks();
+				quicklinksButton.css('display', 'block');
+			}
+		}
+		function handleKeydown() {
+			if (event.keyCode === ESCAPE_CODE) {
+				rightActive = false;
+				disableQuicklinks();
+				qlInput.focus();
+			}
+		}
+	
+		function handleClick() {
+			if (rightActive === true) {
+				rightActive = false;
+				disableQuicklinks();
+			} else {
+				rightActive = true;
+				enableQuicklinks();
+				qlInput.focus();
+				}
+		}
+		function enableQuicklinks() {
+			quicklinksButton.html('Hide quick links');
+			$('.right-container').removeClass('out');
+			$('.right-container').addClass('in');
+			quicklinksButton.attr('aria-expanded', 'true');
+			quicklinksMenu.removeAttr('aria-hidden');
+			qlLinks.removeAttr('tabindex');
+			qlInput.removeAttr('tabindex');
+			qlBtn.removeAttr('tabindex');		
+		}
+		
+		function disableQuicklinks() {
+			quicklinksButton.html('View quick links');
+			$('.right-container').removeClass('in');
+			$('.right-container').addClass('out');
+			quicklinksButton.attr('aria-expanded', 'false');
+			quicklinksMenu.attr('aria-hidden', 'true');
+			qlLinks.attr('tabindex', '-1');
+			qlInput.attr('tabindex', '-1');
+			qlBtn.attr('tabindex', '-1');	
+		}
+		return {
+			init: function(){
+			initApp();
+			}
+		}
+	})();
+	new HomeRightAside.App.init();
 });
 var navButton = $('#menu-button'),
 navMenu = $('#global-nav');

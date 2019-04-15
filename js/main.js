@@ -4,7 +4,8 @@ $(document).ready(function(){
 	var MainNav = {};
 	var RightAside = {};
 	var ESCAPE_CODE = 27;
-	
+	var rightActive;
+
 	MainNav.App = (function() {
 		var navButton = $('#menu-button'),
 		navMenu = $('#global-nav');
@@ -55,46 +56,68 @@ $(document).ready(function(){
 			}
 		}
 	})();
+
 	RightAside.App = (function() {
 		var quicklinksButton = $('#quicklinks-btn');
 		var quicklinksMenu = $('#quicklinks-section');
-//		var qlLinks = quicklinksMenu.find('a');
-		var qlInput = $('#user-email');
-//		var qlBtn = $('.email-btn');
-var active = 1;
+		var qlLinks = quicklinksMenu.find('a');
+
 		function initApp() {
 			quicklinksMenu.on('keydown', handleKeydown);
 			quicklinksButton.on('click', handleClick);
-			enableQuicklinks();
+
+			if ($(document).width() > 700) {
+				rightActive = true;
+				enableQuicklinks();
+				$('.nav-links a, .nav-logo').click(function(e){
+					e.preventDefault();
+					var url = $(this).attr("href");
+					$('.left-container, .right-container').addClass('out');
+					$('nav').addClass('moving');
+					setTimeout(function(){
+						window.location = url;
+					}, 600);
+				});
+			} else {
+				rightActive = false;
+				disableQuicklinks();
+				quicklinksButton.css('display', 'block');
+			}
 		}
 		function handleKeydown() {
 			if (event.keyCode === ESCAPE_CODE) {
+				rightActive = false;
 				disableQuicklinks();
 				qlInput.focus();
 			}
 		}
 	
 		function handleClick() {
-			
-			if (active === 1) {
-				active = 0;
+			if (rightActive === true) {
+				rightActive = false;
 				disableQuicklinks();
 			} else {
-				active = 1;
+				rightActive = true;
 				enableQuicklinks();
-				qlInput.focus();
+				qlLinks.eq(0).focus();
 				}
 		}
 		function enableQuicklinks() {
 			quicklinksButton.html('Hide quick links');
+			$('.right-container').removeClass('out');
+			$('.right-container').addClass('in');
 			quicklinksButton.attr('aria-expanded', 'true');
-			quicklinksMenu.attr('aria-hidden', 'false');			
+			quicklinksMenu.removeAttr('aria-hidden');
+			qlLinks.removeAttr('tabindex');	
 		}
+		
 		function disableQuicklinks() {
 			quicklinksButton.html('View quick links');
+			$('.right-container').removeClass('in');
+			$('.right-container').addClass('out');
 			quicklinksButton.attr('aria-expanded', 'false');
 			quicklinksMenu.attr('aria-hidden', 'true');
-
+			qlLinks.attr('tabindex', '-1');
 		}
 		return {
 			init: function(){
@@ -104,25 +127,10 @@ var active = 1;
 	})();
 	new MainNav.App.init();
 	new RightAside.App.init();
-	$('.left-container, .right-container').removeClass('out');
+	$('.left-container').removeClass('out');
+});
 
-	$('.nav-links a, .nav-logo').click(function(e){
-
-		e.preventDefault();
-
-		var url = $(this).attr("href");
-
-		$('.left-container, .right-container').addClass('out');
-		$('nav').addClass('moving');
-
-		setTimeout(function(){
-
-			window.location = url;
-
-		}, 600);
-
-	});
-
+/* Remove - deprecated
 	$('.fun-link').hover(function(){
 
 		var array = ["blue", "red", "yellow", "purple"];
@@ -133,11 +141,5 @@ var active = 1;
 		$(this).addClass(colour);
 
 	});
-	$('.mobile-quick-links').click(function(){
-		$('.right-container').addClass('in');
-	});
-	$('.left-container').click(function(){
-		$('.right-container').removeClass('in');
-	});
+*/
 
-});
