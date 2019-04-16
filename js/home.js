@@ -1,6 +1,8 @@
 var shiffmanChannelId = "UCvjgXvBlbQiydffZU7m1_aw";
 var apiKey 				= "AIzaSyAInyAq_CBIJ0W7p_pqJlnA7dBHvC5FG8M";
 let getPlaylistsStr = 'https://www.googleapis.com/youtube/v3/playlists?key=' + apiKey;
+var RightAside = {};
+var ESCAPE_CODE = 27;
 $(document).ready(function() {
   expandNav(); 
   getVideos();
@@ -15,7 +17,8 @@ $(document).ready(function() {
 		var qlBtn = $('.email-btn');
 
 		function initApp() {
-			quicklinksMenu.on('keydown', handleKeydown);
+      quicklinksMenu.on('keydown', handleKeydown);
+      qlInput.on('keydown', handleKeydown);
 			quicklinksButton.on('click', handleClick);
 
 			if ($(document).width() > 700) {
@@ -33,14 +36,13 @@ $(document).ready(function() {
 			} else {
 				rightActive = false;
 				disableQuicklinks();
-				quicklinksButton.css('display', 'block');
 			}
 		}
 		function handleKeydown() {
-			if (event.keyCode === ESCAPE_CODE) {
+			if (event.which === ESCAPE_CODE) {
 				rightActive = false;
 				disableQuicklinks();
-				qlInput.focus();
+				quicklinksButton.focus();
 			}
 		}
 	
@@ -109,19 +111,15 @@ function getVideos() {
       order: 'date'
     })
     .done(function(data) {
-
       populateData(data);
-
     }, 'JSON')
-    .error(function() {
-
+    .fail(function() {
       displayApiError();
-
     });
 
 }
 function displayApiError() {
-  var message = 'Please <a href="https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw">visit our Youtube Channel</a> for latest videos.'
+  var message = 'Please <a href="https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw">visit the Coding Train on YouTube</a> for the latest videos.'
   $('#apiError').append(message);
 }
 function populateData(data) {

@@ -89,6 +89,7 @@ $(document).ready(function(){
 				rightActive = false;
 				disableQuicklinks();
 				qlInput.focus();
+				quicklinksButton.focus();
 			}
 		}
 	

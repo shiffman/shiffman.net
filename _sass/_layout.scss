@@ -90,7 +90,7 @@ html {
     @media only screen and (max-width: $breakpoint-small) {
         width: 320px !important;
         right: -315px;
-        z-index: 2;
+        z-index: 1;
         &.in {
             right: 0;
         }
