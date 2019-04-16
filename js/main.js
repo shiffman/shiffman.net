@@ -88,7 +88,6 @@ $(document).ready(function(){
 			if (event.keyCode === ESCAPE_CODE) {
 				rightActive = false;
 				disableQuicklinks();
-				qlInput.focus();
 				quicklinksButton.focus();
 			}
 		}
