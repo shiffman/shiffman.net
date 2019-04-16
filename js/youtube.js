@@ -16,14 +16,10 @@ function getPlaylists() {
 
 			console.log(data);
 			populateData(data);
-
 		}, 'JSON')
-		.error(function(){
-
-			alert('Ahh sorry we couldn\' theres a problem');
-
+		.fail(function(){
+			console.error("The website has hit API quota for the day.")
 		});
-
 }
 
 var playlistVideos;
@@ -36,43 +32,29 @@ function returnHtml(html) {
 }
 
 function populateData(data){
-
 	var playlists = data.items;
-
 	$.each(playlists, function(index, playlist){
-
 		var snippet = playlist.snippet;
 		let getPlaylistItemsStr = 'https://www.googleapis.com/youtube/v3/playlists?key=' + apiKey;
 		$.get(getPlaylistItemsStr, {part: 'snippet', playlistId: playlist.id} )
 		.done(function(data){
-
 			var playlistHtml = '';
-
 			$.each(data.items, function(index, item){
-
 				if(index == 4) {
-
 					return false
-
 				} else {
-
 					var vidSnip = item.snippet;
 					var html = '<a class="video" href="http://youtube.com/video/'+vidSnip.resourceId.videoId+'" target="_blank">'+
 			                    	'<div class="thumbnail"><img src="'+vidSnip.thumbnails.medium.url+'" /></div>'+
 			                    	'<span class="video-label">'+vidSnip.title+'</span>'+
 			                    	'<span class="watch-button">WATCH VIDEO</span>'
 			                	'</a>';
-
 					playlistHtml = playlistHtml + html;
-
 				}
-
 			});
-
 			buildBlock(playlistHtml);
-
 		}, 'JSON');
-
+	
 		function buildBlock(playlistList) {
 
 			var block = $(
@@ -87,12 +69,7 @@ function populateData(data){
 	            '</div>'+
 	        '</div>'
 			);
-
 			$('#video-list').append(block);
-
 		}
-
-
 	});
-
 }

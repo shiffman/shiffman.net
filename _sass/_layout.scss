@@ -45,6 +45,10 @@ html {
     height: 100%;
     /*overflow: scroll;*/
     -webkit-overflow-scrolling: touch;
+    &.about {
+        padding-left: 200px;
+        font-size: 0.8em;
+    }
     &.about,
     &.blog,
     &.teaching,
@@ -65,6 +69,9 @@ html {
         opacity: 0;
         margin-left: -20px;
     }
+    #apiError {
+        font-size: 1.05em;
+    }
 }
 .right-container {
     position: fixed;
@@ -83,7 +90,7 @@ html {
     @media only screen and (max-width: $breakpoint-small) {
         width: 320px !important;
         right: -315px;
-        z-index: 2;
+        z-index: 1;
         &.in {
             right: 0;
         }
@@ -91,9 +98,6 @@ html {
 }
 footer.left-container {
     padding-bottom: 30px;
-    p {
-        font-size: 12px;
-    }
 }
 
 //NEW ACCESSIBLE NAV
@@ -214,8 +218,8 @@ z-index: 2;
 
 .mobile-quick-links {
     position: fixed;
-    right: 30px;
-    top: 65px;
+    right: 0px;
+    top: 0;
     background: $black;
     color: $white;
     font-family: $lato;
@@ -223,7 +227,7 @@ z-index: 2;
     letter-spacing: 1.6px;
     font-weight: 600;
     padding: 5px 15px;
-    display: none;
+    display: block;
     border-radius: 20px;
     z-index: 1;
     @media only screen and (max-width: $breakpoint-small) {
@@ -434,42 +438,7 @@ a.body-link {
         }
     }
 }
-// HOME SUBSCRIBE
-.home-subscribe {
-    max-width: 400px;
-    overflow: auto;
-    margin: 25px 0;
-    input {
-        padding: 12px 15px;
-        border: none;
-        background: $white;
-        border: 1px solid $red;
-        border-radius: 20px 0 0 20px;
-        width: 100%;
-        font-family: $lato;
-        font-size: 13px;
-        font-weight: 600;
-        display: inline-block;
-        width: 70%;
-        min-width: 200px;
-        float: left;
-    }
-    .email-submit {
-        display: inline-block;
-        padding: 13px 15px 12px;
-        background: $red;
-        border-radius: 0 20px 20px 0;
-        color: $white;
-        font-family: $lato;
-        font-size: 12px;
-        font-weight: 900;
-        text-decoration: none;
-        letter-spacing: 0.8px;
-        width: 30%;
-        min-width: 120px;
-        float: left;
-    }
-}
+
 //FEATURED SECTIONS
 .right-container {
     background: $light-grey;
@@ -629,7 +598,7 @@ input:focus {
 .right-container.books {
     .feature {
         height: 50%;
-        min-height: auto;
+        min-height: 16em;
         overflow: hidden;
         &.lp {
             background: $yellow url('../images/highlight.png') no-repeat;

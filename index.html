@@ -3,11 +3,12 @@ layout: home
 title: Home
 ---
 
-<section class="left-container out home">
+<main class="left-container out home">
   <div class="content-wrapper">
     <div class="latest-videos content">
       <span class="line-charm first"></span>
       <h2>Latest videos</h2>
+      <p id="apiError"></p>
       <br>
     </div>
     <div class="more-videos content-wrapper article">
@@ -21,23 +22,10 @@ title: Home
         <p>For more videos:</p>
         <a href="https://www.youtube.com/thecodingtrain?sub_confirmation=1" target="_blank" class="btn primary">Subscribe to The Coding Train on YouTube.</a>
     </div>
-    <!-- <div class="sign-up content">
-      <span class="line-charm first"></span>
-      <h2>Live Streams</h2>
-      <p>
-        Sign up for live stream notifications via e-mail.
-      </p>
-      <div class="form-group home-subscribe">
-      <form action="//shiffman.us13.list-manage.com/subscribe/post?u=a3b0ca7250524fb6a4ddc769a&amp;id=a204c80fa5" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-          <input id="user-email" type="email" name="EMAIL" class="email-input" placeholder="Your email"/>
-          <input type="submit" name="subscribe" class="email-submit" value="GET UPDATES">
-      </form>
-      </div>
-    </div> -->
   </div>
-</section>
-
-<section class="right-container out">
+</main>
+<button class="mobile-quick-links" aria-controls="quicklinks-section-home" aria-haspopup="true" id="quicklinks-btn-home"></button>
+<aside class="right-container out" id="quicklinks-section-home">
   <div class="feature livestream">
     <div class="content">
       <h3>Live stream updates</h3>
@@ -74,6 +62,6 @@ title: Home
     </div>
     <img class="book" src="images/book-noc.png" alt="The Nature of Code book" width="131px"/>
   </div>
-</section>
+</aside>
 
 <script src="/js/home.js"></script>
