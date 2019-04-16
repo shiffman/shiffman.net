@@ -1,5 +1,5 @@
 # SHIFFMAN.NET
-Repo for https://shiffman.net
+Repo for https://shiffman.net.
 
 ## Main Technical Dependencies
 
@@ -34,8 +34,3 @@ https://jekyllrb.com/docs/installation/
 
 ## Credits
 This document is a modified version of the [Contributing to Open Source Projects Article](https://contribution-guide-org.readthedocs.io/)
-
-
-//TODO 
-RESPONSIVE FIX FOR image on LEARNING PAGE
-HOMEPAGE HIDE?SHOW RIGHT LINKS
