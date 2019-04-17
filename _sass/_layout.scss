@@ -84,7 +84,7 @@ html {
     opacity: 1;
     overflow-x: hidden;
     &.out {
-        right: -29%;
+        right: -34%;
         opacity: 1;
         @media only screen and (max-width: $breakpoint-small) { 
             right: -313px;
@@ -724,7 +724,6 @@ input:focus {
 .right-container.quick-links {
     padding: 40px;
     background: $lightred;
-    width: 30%;
     h3 {
         font-size: 12px;
         color: rgba(0,0,0,0.8);
