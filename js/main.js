@@ -58,7 +58,6 @@ $(document).ready(function(){
 	})();
 
 	RightAside.App = (function() {
-		console.log(window.location.pathname);
 		var showText, hideText;
 		switch(window.location.pathname) {
 			case '/learning/':
@@ -77,7 +76,6 @@ $(document).ready(function(){
 				showText = 'Show quick links';
 				hideText = 'Hide quick links';
 		}
-		console.log (showText + " " + hideText);
 		var quicklinksButton = $('#quicklinks-btn');
 		var quicklinksMenu = $('#quicklinks-section');
 		var qlLinks = quicklinksMenu.find('a');
