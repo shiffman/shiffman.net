@@ -84,8 +84,12 @@ html {
     opacity: 1;
     overflow-x: hidden;
     &.out {
-        right: -5%;
+        right: -29%;
         opacity: 0;
+        @media only screen and (max-width: $breakpoint-small) { 
+            right: -313px;
+            opacity: 1;
+        }
     }
     @media only screen and (max-width: $breakpoint-small) {
         width: 320px !important;

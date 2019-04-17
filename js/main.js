@@ -58,6 +58,26 @@ $(document).ready(function(){
 	})();
 
 	RightAside.App = (function() {
+		console.log(window.location.pathname);
+		var showText, hideText;
+		switch(window.location.pathname) {
+			case '/learning/':
+				showText = 'Show courses links';
+				hideText = 'Hide courses links';
+				break;
+			case '/books/':
+				showText = 'View books';
+				hideText = 'Hide books';
+				break;
+			case '/videos/':
+				showText = 'Video quick links';
+				hideText = 'Hide quick links';
+				break;
+			default:
+				showText = 'Show quick links';
+				hideText = 'Hide quick links';
+		}
+		console.log (showText + " " + hideText);
 		var quicklinksButton = $('#quicklinks-btn');
 		var quicklinksMenu = $('#quicklinks-section');
 		var qlLinks = quicklinksMenu.find('a');
@@ -103,7 +123,7 @@ $(document).ready(function(){
 				}
 		}
 		function enableQuicklinks() {
-			quicklinksButton.html('Hide quick links');
+			quicklinksButton.html(hideText);
 			$('.right-container').removeClass('out');
 			$('.right-container').addClass('in');
 			quicklinksButton.attr('aria-expanded', 'true');
@@ -112,7 +132,7 @@ $(document).ready(function(){
 		}
 		
 		function disableQuicklinks() {
-			quicklinksButton.html('View quick links');
+			quicklinksButton.html(showText);
 			$('.right-container').removeClass('in');
 			$('.right-container').addClass('out');
 			quicklinksButton.attr('aria-expanded', 'false');
