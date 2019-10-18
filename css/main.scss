@@ -42,9 +42,9 @@ $breakpoint-large: 	1440px;
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-        "reset",
-        "layout"
-;
+    "reset",
+    "layout"
+    ;
 
 @font-face {
     font-family: 'cubanoregular';
