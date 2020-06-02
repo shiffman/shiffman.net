@@ -7,17 +7,17 @@ permalink: /a2z/intro/
 
 ## Technical Overview
 
-### Git, Github, Github pages
+### Git, GitHub, GitHub pages
 
 One of the first things we'll explore in this class is git, github, and github pages.  By no means, is github pages required for hosting your projects.  But it's free and fast and lives on github.  So there are many reasons why you might like to consider it, at least during the homework / experimentation stage / of a project.  Here are some resources for getting started.
 
 
-* Git and Github
+* Git and GitHub
    * [Introduction to Git and Command Line by Steve Klise](http://sklise.com/2012/09/22/introduction-to-git/)
    * [Git workflow for beginners](http://sklise.com/2012/10/07/git-workflow-beginner/)
    * ["Try" Git tutorial](https://try.github.io/levels/1/challenges/1)
-* Github Pages:
-   * [A Guide to Github pages](https://www.thinkful.com/learn/a-guide-to-using-github-pages/)
+* GitHub Pages:
+   * [A Guide to GitHub pages](https://www.thinkful.com/learn/a-guide-to-using-github-pages/)
 
 <iframe width="312" height="175" src="https://www.youtube.com/embed/BCQHnlnPusY?list=PLRqwX-V7Uu6ZF9C0YMKuns9sLDzK6zoiV" frameborder="0" allowfullscreen></iframe> <iframe width="312" height="175" src="https://www.youtube.com/embed/bFVtrlyH-kc?list=PLRqwX-V7Uu6ZF9C0YMKuns9sLDzK6zoiV" frameborder="0" allowfullscreen></iframe>
 
