@@ -1,0 +1,92 @@
+---
+layout: default
+title: Learning
+permalink: /learning/
+---
+
+<section class="left-container teaching out">
+    <div class="logo-set">
+      <h2>Learning</h2>
+      <p class="intro">In addition to the <a href="/videos/">video tutorials on YouTube</a>, here you'll find some additional written tutorials and resources.</p>
+    </div>
+    <div class="content-wrapper article">
+        <!-- <span class="line-charm"></span>
+        <div class="page-anchors">
+            <a href="#bigscreens" class="body-link secondary">Big Screens</a>
+            <a href="#natureofcode" class="body-link secondary">Nature of Code</a>
+            <a href="#computationalmedia" class="body-link secondary">Introduction to Computational Media</a>
+            <a href="#programming" class="body-link secondary">Programming from A - Z</a>
+            <a href="#painting" class="body-link secondary">Procedural Painting</a>
+        </div> -->
+
+        <span id="a to z" class="line-charm"></span>
+        <h2>Programming from A to Z</h2>
+        <p>
+            <img src="/images/atoz.png" width="800">
+            This course focuses on programming strategies and techniques behind procedural analysis and generation of text-based data. We'll explore topics ranging from evaluating text according to its statistical properties to the automated production of text with probabilistic methods to text visualization. Students will learn server-side and client-side JavaScript programming and develop projects that can be shared and interacted with online. There will be weekly homework assignments as well as a final project.
+        </p>
+        <a href="https://shiffman.net/a2z/" class="body-link primary">2016 course website</a>
+        <a href="https://shiffman.github.io/A2Z-F15/" class="body-link primary">2015 course website</a>
+
+
+
+        <span id="kinect" class="line-charm"></span>
+        <h2>Depth Sensing with the Microsoft Kinect</h2>
+        <p>
+            <img src="/images/kinect.png" width="800">
+            The Microsoft Kinect can be used with Processing for a variety of computer vision applications.
+        </p>
+        <a href="https://shiffman.net/p5/kinect/" class="body-link primary">Visit the online tutorial</a>
+
+
+    </div>
+</section>
+
+<section class="right-container quick-links out">
+    <h5>COURSES</h5>
+    <div class="quick-link">
+        <a href="/a2z/" target="_blank" class="secondary">Programming from A to Z</a>
+    </div>
+    <div class="quick-link">
+        <a href="https://github.com/ITPNYU/ICM-2016" target="_blank" class="secondary">Introduction to Computational Media</a>
+    </div>
+    <div class="quick-link">
+        <a href="https://github.com/shiffman/The-Nature-of-Code-S14" target="_blank" class="secondary">The Nature of Code</a>
+    </div>
+    <div class="quick-link">
+        <a href="https://github.com/shiffman/The-Nature-of-Code-Cosmos-Edition" target="_blank" class="secondary">The Nature of Code Cosmos Edition</a>
+    </div>
+    <div class="quick-link">
+        <a href="https://github.com/shiffman/Faces" target="_blank" class="secondary">Face It</a>
+    </div>
+    <div class="quick-link">
+        <a href="https://itp.nyu.edu/varwiki/BigScreens/BigScreens" target="_blank" class="secondary">Big Screens</a>
+    </div>
+
+    <br>
+    <h5>OPEN SOURCE PROJECTS</h5>
+    <div class="quick-link">
+        <a href="https://processingfoundation.org/" target="_blank" class="secondary">The Processing Foundation</a>
+    </div>
+    <div class="quick-link">
+        <a href="https://shiffman.net/p5/kinect/" target="_blank" class="secondary">Open Kinect for Processing</a>
+    </div>
+    <div class="quick-link">
+        <a href="https://github.com/shiffman/PBox2D" target="_blank" class="secondary">Box2D for Processing</a>
+    </div>
+    <div class="quick-link">
+        <a href="https://github.com/shiffman/Most-Pixels-Ever-Processing" target="_blank" class="secondary">Most Pixels Ever</a>
+    </div>
+
+    <br>
+    <h5>OLD BLOG POSTS</h5>
+  	{% for post in site.posts limit:25 %}
+  	  <div class="quick-link">
+  	      <a href="{{ post.url }}" class="secondary">{{ post.title }}</a>
+  	  </div>
+    {% endfor %}
+    <div class="quick-link">
+      <a href="/blog.html" class="secondary">SEE ALL</a>
+    </div>
+
+</section>

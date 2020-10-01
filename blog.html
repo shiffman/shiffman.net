@@ -1,0 +1,38 @@
+---
+layout: default
+permalink: /blog.deprecated/
+---
+
+<section class="left-container about out blog">
+    <div class="logo-set">
+      <h2>Blog</h2>
+      <span class="intro">Shiffman's blog</span>
+    </div>
+    <div class="content-wrapper article">
+        {% for post in site.posts %}
+            <article class="article-list">
+                <span class="line-charm"></span>
+                <p class="date">{{ post.date | date: "%b %d, %Y" }}</p>
+                <h1><a class="fun-link" href="{{ post.url }}">{{ post.title }}</a></h1>
+
+                {{ content }}
+
+                <!-- <a href="{{ post.url }}/" class="body-link primary">READ ARTICLE</a> -->
+            </article>
+        {% endfor %}
+
+    </div>
+</section>
+
+<section class="right-container quick-links out">
+    <h5>QUICK LINKS</h5>
+    <div class="quick-link">
+        <a href="mailto:daniel@shiffman.net" class="secondary">Contact Daniel via Email</a>
+    </div>
+    <div class="quick-link">
+        <a href="https://twitter.com/shiffman" target="_blank" class="secondary">Shiffman on Twitter</a>
+    </div>
+    <div class="quick-link">
+        <a href="https://github.com/shiffman" target="_blank" class="secondary">Shiffman on Github</a>
+    </div>
+</section>
