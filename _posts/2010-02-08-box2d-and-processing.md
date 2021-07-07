@@ -28,7 +28,7 @@ Google code repository: <a href="http://code.google.com/p/pbox2d/">http://code.g
 	Updated (3/27/2104) links:
 	<ul>
 		<li><a href="http://natureofcode.com/book/chapter-5-physics-libraries/">Nature of Code Chapter 5</a></li>
-		<li><a href="https://github.com/shiffman/Box2D-for-Processing">Box2D for Processing Github Repo</a></li>
+		<li><a href="https://github.com/shiffman/Box2D-for-Processing">Box2D for Processing GitHub Repo</a></li>
 	</ul>
 </p>
 
