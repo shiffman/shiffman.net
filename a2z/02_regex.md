@@ -91,13 +91,11 @@ $ end of line
 #### Quantifiers (refer to the character that precedes it):
 
 {% highlight text %}
-? appearing once or not at all
-
--         appearing zero or more times
-
-*         appearing one or more times
-  {min,max} appearing within the specified range
-  {% endhighlight %}
+? appearing 0 or 1 times
+* appearing 0 or more times
++ appearing one or more times
++ {min,max} appearing within the specified range
+{% endhighlight %}
 
 Using the above, we could come up with some quick examples:
 
