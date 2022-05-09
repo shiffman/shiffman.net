@@ -54,7 +54,12 @@ $(document).ready(function() {
 				rightActive = true;
 				enableQuicklinks();
 				qlInput.focus();
+				if (document.body.classList.contains('active')) {
+					document.body.classList.remove('active');
+					document.getElementById('menu-button').classList.remove('active');
+					// disableNavLinks();
 				}
+			}
 		}
 		function enableQuicklinks() {
 			quicklinksButton.html('Hide quick links');
