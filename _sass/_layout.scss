@@ -234,6 +234,7 @@ z-index: 2;
     display: block;
     border-radius: 20px;
     z-index: 3; /* quicklink button needs to be on top*/
+    border: none;
     @media only screen and (max-width: $breakpoint-small) {
         display: block;
     }
