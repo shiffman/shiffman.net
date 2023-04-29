@@ -1,5 +1,10 @@
-# SHIFFMAN.NET
-Repo for https://shiffman.net.
+# Archived Daniel Shiffman Website
+
+*You can find the content from my old website here: https://shiffman-archive.netlify.app/*
+
+New website:
+* https://thecodingtrain.com/
+* https://github.com/CodingTrain/thecodingtrain.com
 
 ## Main Technical Dependencies
 
