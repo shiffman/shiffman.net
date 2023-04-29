@@ -2,29 +2,26 @@
 layout: default
 ---
 
-<link rel="stylesheet" type="text/css" href="/css/prism.css">
-<link rel="stylesheet" type="text/css" href="/css/highlight.css">
+<link rel="stylesheet" type="text/css" href="css/prism.css" />
+<link rel="stylesheet" type="text/css" href="css/highlight.css" />
 
 <main class="left-container out blog">
-    <div class="content-wrapper article blog">
-
-        <span class="line-charm first"></span>
-        <p class="date">{{ page.date | date: "%b %d, %Y" }}</p>
-        <h1 class="no-btm">{{ page.title }}</h1>
-        {{ content }}
-
-    </div>
+  <div class="content-wrapper article blog">
+    <span class="line-charm first"></span>
+    <p class="date">{{ page.date | date: "%b %d, %Y" }}</p>
+    <h1 class="no-btm">{{ page.title }}</h1>
+    {{ content }}
+  </div>
 </main>
 
 <aside class="right-container quick-links out">
   <h5>HIGHLIGHTED TUTORIALS</h5>
 
   <div class="quick-link">
-      <a href="/p5/kinect/" class="secondary">Microsoft Kinect with Processing</a>
+    <a href="p5/kinect/" class="secondary">Microsoft Kinect with Processing</a>
   </div>
 
-
-    <!-- <h5>LATEST POSTS</h5>
+  <!-- <h5>LATEST POSTS</h5>
 	{% for post in site.posts limit:25 %}
 	    <div class="quick-link">
 	        <a href="{{ post.url }}" class="secondary">{{ post.title }}</a>
