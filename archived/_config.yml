@@ -1,0 +1,8 @@
+markdown: kramdown
+highlighter: rouge
+permalink: /:year/:month/:day/:title
+name: Daniel Shiffman
+url: http://shiffman.net
+future: false
+paginate: 15
+paginate_path: "/blog/:num"

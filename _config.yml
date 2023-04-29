@@ -1,8 +1,17 @@
-markdown: rdiscount
-highlighter: pygments
-permalink: /:year/:month/:day/:title
-name: Daniel Shiffman
-url: http://shiffman.net
-future: false
-paginate: 15
-paginate_path: "/blog/:num"
+# Site settings
+title: Daniel Shiffman
+email: daniel@shiffman.net
+description: > # this means to ignore newlines until "baseurl:"
+  Learn Creative Code. Daniel Shiffman works as an Associate Arts Professor at the Interactive Telecommunications Program at NYU’s Tisch School of the Arts.
+baseurl: '' # the subpath of your site, e.g. /blog/
+url: 'http://shiffman.net' # the base hostname & protocol for your site
+twitter_username: shiffman
+github_username: shiffman
+permalink: pretty
+
+# Build settings
+markdown: kramdown
+
+exclude:
+  - archived
+  - shiffmanv2

@@ -1,0 +1,54 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+
+
+// Our variables
+$black: 			#212121;
+$white: 			#ffffff;
+$light-grey: 		#E9E9E9;
+$grey: 				#7D7D7D;
+
+$red: 				#b30041;
+$lightred:          #FF146A;
+$yellow:			#78791C;
+$blue:				#0078C2;
+$lightblue:         #00ADDA;
+$orange:			#BD5B00;
+$purple:			#B718F2;
+
+$breakpoint-small: 	700px;
+$breakpoint-medium: 1170px;
+$breakpoint-large: 	1440px;
+
+
+
+// Using media queries with like this:
+// @include media-query($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
+
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+        "reset",
+        "layout"
+;
+
+@font-face {
+    font-family: 'cubanoregular';
+    src: url('../css/fonts/cubano-regular-webfont.woff2') format('woff2'), url('../css/fonts/cubano-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

@@ -4,14 +4,13 @@ author: Daniel
 layout: post
 ---
 
-<script type="text/javascript" src="/js/toxiclibs.js"></script>
-<script type="text/javascript" src="/js/p5.js"></script>
-<script type="text/javascript" src="/js/p5.sound.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.sound.min.js"></script>
+<script type="text/javascript" src="/p5/newyears/2014/dancing_p5/js/toxiclibs.js"></script>
 <script type="text/javascript" src="/p5/newyears/2014/dancing_p5/dancing.js"></script>
 <script type="text/javascript" src="/p5/newyears/2014/dancing_p5/particle.js"></script>
 <script type="text/javascript" src="/p5/newyears/2014/dancing_p5/skeleton.js"></script>
 <script type="text/javascript" src="/p5/newyears/2014/dancing_p5/part.js"></script>
-
 
 <!--<canvas data-processing-sources="http://shiffman.net/p5/newyears/2014/Dancing/Dancing.pde http://shiffman.net/p5/newyears/2014/Dancing/Particle.pde http://shiffman.net/p5/newyears/2014/Dancing/Skeleton.pde http://shiffman.net/p5/newyears/2014/Dancing/Part.pde">
 </canvas>-->
