@@ -47,7 +47,7 @@ permalink: /a2z/twitter-bots/
 
 <iframe width="525" height="300" src="https://www.youtube.com/embed/7-nX3YOC4OA?list=PLRqwX-V7Uu6atTSxoRiVnSuOn6JHnq2yV" frameborder="0" allowfullscreen></iframe>
 
-Some APIs require a level of authentication that can't be done from client-side JavaScript.  A prime example of this is the [Twitter API](https://dev.twitter.com/overview/documentation) which requires something known as [OAuth](https://dev.twitter.com/oauth/overview/faq). For basic API querying, you don't need to go to deep into the inner workings of authenticating.  With node, you can pick one of many node packages that help you connet and query the API. The one I'm using for these examples is called [Twit](https://github.com/ttezel/twit).
+Some APIs require a level of authentication that can't be done from client-side JavaScript.  A prime example of this is the [Twitter API](https://dev.twitter.com/overview/documentation) which requires something known as [OAuth](https://dev.twitter.com/oauth/overview/faq). For basic API querying, you don't need to go to deep into the inner workings of authenticating.  With node, you can pick one of many node packages that help you connect and query the API. The one I'm using for these examples is called [Twit](https://github.com/ttezel/twit).
 
 Before you can use Twit, you need to follow a few steps.
 
