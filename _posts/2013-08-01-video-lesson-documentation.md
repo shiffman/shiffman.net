@@ -4,7 +4,7 @@ author: Daniel
 layout: post
 ---
 
-<iframe src="http://player.vimeo.com/video/71476071" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> <p><a href="http://vimeo.com/71476071">ITP Lesson Recording Documentation</a> from <a href="http://vimeo.com/shiffman">shiffman</a> on <a href="https://vimeo.com">Vimeo</a>.
+<iframe src="http://player.vimeo.com/video/71476071" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 
 Over the last year, I've been developing two video series about learning to program, [one for beginners](https://vimeo.com/channels/introcompmedia/) based on my [Learning Processing](http://www.amazon.com/gp/product/0123736021/ref=as_li_ss_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=0123736021&linkCode=as2&tag=shiffman-20) book and [one for advanced](https://vimeo.com/channels/natureofcode/) based on [The Nature of Code](http://natureofcode.com).
 
@@ -21,8 +21,3 @@ The thing is, as you may have noticed, I got a little side tracked.  Along the w
 Following is a recording of a quick and dirty test using Google Hangout.  A hangout allowed us to screen share the wirecast window as one of the feeds as well as invite viewers to call in and ask questions.  Think of it as open office hours or a "call-in" programming advice show.  I'm hoping to do one more test next week and then officially begin once per week in September.
 
 <iframe width="560" height="315" src="//www.youtube.com/embed/x7ZKr6_QEuk" frameborder="0" allowfullscreen></iframe>
-
-
-
-
-

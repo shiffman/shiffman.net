@@ -2,30 +2,35 @@
 layout: default
 ---
 
-<div class="post">
-  <h1>{{page.title}}</h1>
-  <h6>{{page.date | date: "%B %e, %Y"}}</h6>
+<link rel="stylesheet" type="text/css" href="/css/prism.css" />
+<link rel="stylesheet" type="text/css" href="/css/highlight.css" />
 
-  <div class="post-content">{{content}}</div>
+<main class="left-container out blog">
+  <div class="content-wrapper article blog">
+    <span class="line-charm first"></span>
+    <p class="date">{{ page.date | date: "%b %d, %Y" }}</p>
+    <h1 class="no-btm">{{ page.title }}</h1>
+    {{ content }}
+  </div>
+</main>
 
-  <div class="footer"></div>
+<aside class="right-container quick-links out">
+  <h5>HIGHLIGHTED TUTORIALS</h5>
 
-{% if page.comments != false %}
-<div class="comments">
-  <div id="disqus_thread"></div>
-  <script type="text/javascript">
-      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-      var disqus_shortname = 'shiffman'; // required: replace example with your forum shortname
+  <div class="quick-link">
+    <a href="/p5/kinect/" class="secondary">Microsoft Kinect with Processing</a>
+  </div>
 
-      /* * * DON'T EDIT BELOW THIS LINE * * */
-      (function() {
-          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      })();
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-</div>
-{% endif %}
-</div>
+  <!-- <h5>LATEST POSTS</h5>
+	{% for post in site.posts limit:25 %}
+	    <div class="quick-link">
+	        <a href="{{ post.url }}" class="secondary">{{ post.title }}</a>
+	    </div>
+    {% endfor %}
+    <div class="quick-link">
+        <a href="/blog.html" class="secondary">SEE ALL</a>
+    </div> -->
+</aside>
+
+<script src="/js/blog.js"></script>
+<script src="/js/prism.js"></script>
